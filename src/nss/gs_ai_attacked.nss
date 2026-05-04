@@ -1,0 +1,26 @@
+#include "gs_inc_combat"
+#include "gs_inc_event"
+
+void main()
+{
+    SignalEvent(OBJECT_SELF, EventUserDefined(GS_EV_ON_PHYSICAL_ATTACKED));
+
+    object oAttacker = GetLastAttacker();
+
+    if (gsCBGetHasAttackTarget())
+    {
+        object oTarget = gsCBGetLastAttackTarget();
+
+        if (oAttacker != oTarget &&
+            (gsCBGetIsFollowing() ||
+             GetDistanceToObject(oAttacker) <=
+             GetDistanceToObject(oTarget) + 5.0))
+        {
+            gsCBDetermineCombatRound(oAttacker);
+        }
+    }
+    else
+    {
+        gsCBDetermineCombatRound(oAttacker);
+    }
+}

@@ -1,0 +1,116 @@
+{
+  "__data_type": "UTI ",
+  "AddCost": {
+    "type": "dword",
+    "value": 1
+  },
+  "BaseItem": {
+    "type": "int",
+    "value": 74
+  },
+  "Charges": {
+    "type": "byte",
+    "value": 0
+  },
+  "Comment": {
+    "type": "cexostring",
+    "value": ""
+  },
+  "Cost": {
+    "type": "dword",
+    "value": 5
+  },
+  "Cursed": {
+    "type": "byte",
+    "value": 0
+  },
+  "DescIdentified": {
+    "type": "cexolocstring",
+    "value": {
+      "0": "The Book of Deities contains an elaborate overview of the pantheon. By *using* it, you can opt for the belief in a deity.\n\nThe strength of a deity is determined by two factors: Its presence and its power. The higher the presence of a deity, the more attention it pays to the prayers of its worshipers and the more likely it is willing to return them from the threshold of death. To increase the presence of a deity you have to sacrifice gold to it at an altar. If a deity receives no oblations, its presence will fade until it is finally forgotten.\n\nEvery prayer is in vain, if the power of the invoked deity is not sufficient to do wonders. The power of a deity increases permanently. The higher its presence, the faster the respective deity gains power. A deity must have a presence of at least 10% to obtain power at all. If a deity works a wonder, it consumes a certain amount of its power reserves, depending on the type of the wonder.\n\nTo invoke a deity, use the command *prays* in the chat console. This can be particularly helpful, when you are badly wounded, affected by negative influences or to request the deities blessing before striding into battle. When you die, your deity can bring you back to life. Whether this succeeds, depends also on its presence and power. A deity grants favors as well as revivals only once in a certain time for the same person.",
+      "4": "Das Buch der Gottheiten enthält eine umfangreiche Übersicht des Pantheons. Indem Ihr es *verwendet*, könnt Ihr Euch für den Glauben an eine Gottheit entscheiden.\n\nDie Stärke einer Gottheit ist von zwei Faktoren abhängig: Ihrer Präsenz und ihrer Macht. Je höher die Präsenz einer Gottheit ist, desto eher beachtet sie die Gebete ihrer Anhänger oder ist gewillt, diese von der Schwelle des Todes zurückzuholen. Um die Präsenz einer Gottheit zu erhöhen muss man ihr Opfer in Form von Gold an einem Altar darbringen. Erhält eine Gottheit keine Opfergaben, schwindet ihre Präsenz mit der Zeit, bis sie letztendlich in Vergessenheit gerät.\n\nJedes Gebet ist vergebens, wenn die Macht der angerufenen Gottheit nicht ausreicht, um ein Wunder zu vollbringen. Die Macht einer Gottheit steigt permanent an. Je grösser ihre Präsenz ist, desto schneller gewinnt die jeweilige Gottheit an Macht. Eine Gottheit muss mindestens eine Präsenz von 10% besitzen, um an Macht zu gewinnen. Wirkt eine Gottheit ein Wunder, verbraucht sie je nach Art des Wunders einen Teil ihrer Machtreserven.\n\nUm eine Gottheit anzurufen, benutzt den Befehl *betet* in der Chatzeile. Dies kann insbesondere nützlich sein, wenn Ihr schwer verwundet seid, unter negativen Einflüssen steht oder den Segen der Gottheit erbitten wollt, bevor Ihr in eine Schlacht schreitet. Sterbt Ihr, kann Eure Gottheit Euch ins Leben zurückrufen. Ob dies gelingt, ist ebenfalls von ihrer Präsenz und ihrer Macht abhängig. Sowohl ihre Gunst als auch Erweckungen gewährt eine Gottheit innerhalb eines gewissen Zeitraumes nur einmal für die gleiche Person."
+    }
+  },
+  "Description": {
+    "type": "cexolocstring",
+    "value": {
+      "0": "",
+      "4": ""
+    }
+  },
+  "Identified": {
+    "type": "byte",
+    "value": 1
+  },
+  "LocalizedName": {
+    "type": "cexolocstring",
+    "value": {
+      "0": "Book of Deities (Examine for Information)",
+      "4": "Buch der Gottheiten (Für Informationen untersuchen)"
+    }
+  },
+  "ModelPart1": {
+    "type": "byte",
+    "value": 3
+  },
+  "PaletteID": {
+    "type": "byte",
+    "value": 60
+  },
+  "Plot": {
+    "type": "byte",
+    "value": 0
+  },
+  "PropertiesList": {
+    "type": "list",
+    "value": [
+      {
+        "__struct_id": 0,
+        "ChanceAppear": {
+          "type": "byte",
+          "value": 100
+        },
+        "CostTable": {
+          "type": "byte",
+          "value": 3
+        },
+        "CostValue": {
+          "type": "word",
+          "value": 13
+        },
+        "Param1": {
+          "type": "byte",
+          "value": 255
+        },
+        "Param1Value": {
+          "type": "byte",
+          "value": 0
+        },
+        "PropertyName": {
+          "type": "word",
+          "value": 15
+        },
+        "Subtype": {
+          "type": "word",
+          "value": 335
+        }
+      }
+    ]
+  },
+  "StackSize": {
+    "type": "word",
+    "value": 1
+  },
+  "Stolen": {
+    "type": "byte",
+    "value": 0
+  },
+  "Tag": {
+    "type": "cexostring",
+    "value": "GS_WO_SELECT"
+  },
+  "TemplateResRef": {
+    "type": "resref",
+    "value": "gs_item568"
+  }
+}

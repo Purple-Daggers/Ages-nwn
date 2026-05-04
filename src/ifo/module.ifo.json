@@ -1,0 +1,353 @@
+{
+  "__data_type": "IFO ",
+  "Expansion_Pack": {
+    "type": "word",
+    "value": 3
+  },
+  "Mod_Area_list": {
+    "type": "list",
+    "value": [
+      {
+        "__struct_id": 6,
+        "Area_Name": {
+          "type": "resref",
+          "value": "gs_area_court"
+        }
+      },
+      {
+        "__struct_id": 6,
+        "Area_Name": {
+          "type": "resref",
+          "value": "gs_area_demo1"
+        }
+      },
+      {
+        "__struct_id": 6,
+        "Area_Name": {
+          "type": "resref",
+          "value": "gs_area_demo2"
+        }
+      },
+      {
+        "__struct_id": 6,
+        "Area_Name": {
+          "type": "resref",
+          "value": "gs_area_demo3"
+        }
+      },
+      {
+        "__struct_id": 6,
+        "Area_Name": {
+          "type": "resref",
+          "value": "gs_area_demo4"
+        }
+      },
+      {
+        "__struct_id": 6,
+        "Area_Name": {
+          "type": "resref",
+          "value": "gs_area_demo5"
+        }
+      },
+      {
+        "__struct_id": 6,
+        "Area_Name": {
+          "type": "resref",
+          "value": "gs_area_dm"
+        }
+      },
+      {
+        "__struct_id": 6,
+        "Area_Name": {
+          "type": "resref",
+          "value": "gs_area_inventor"
+        }
+      },
+      {
+        "__struct_id": 6,
+        "Area_Name": {
+          "type": "resref",
+          "value": "gs_area_trade"
+        }
+      },
+      {
+        "__struct_id": 6,
+        "Area_Name": {
+          "type": "resref",
+          "value": "gs_death"
+        }
+      },
+      {
+        "__struct_id": 6,
+        "Area_Name": {
+          "type": "resref",
+          "value": "gs_enter"
+        }
+      }
+    ]
+  },
+  "Mod_Creator_ID": {
+    "type": "int",
+    "value": 2
+  },
+  "Mod_CustomTlk": {
+    "type": "cexostring",
+    "value": ""
+  },
+  "Mod_CutSceneList": {
+    "type": "list",
+    "value": []
+  },
+  "Mod_DawnHour": {
+    "type": "byte",
+    "value": 6
+  },
+  "Mod_DefaultBic": {
+    "type": "resref",
+    "value": ""
+  },
+  "Mod_Description": {
+    "type": "cexolocstring",
+    "value": {
+      "0": "",
+      "4": "Khaarsis ist anders.\n\nHomepage: http://khaarsis.de.vu"
+    }
+  },
+  "Mod_DuskHour": {
+    "type": "byte",
+    "value": 22
+  },
+  "Mod_Entry_Area": {
+    "type": "resref",
+    "value": "gs_enter"
+  },
+  "Mod_Entry_Dir_X": {
+    "type": "float",
+    "value": 0.0
+  },
+  "Mod_Entry_Dir_Y": {
+    "type": "float",
+    "value": 1.0
+  },
+  "Mod_Entry_X": {
+    "type": "float",
+    "value": 10.0
+  },
+  "Mod_Entry_Y": {
+    "type": "float",
+    "value": 10.0
+  },
+  "Mod_Entry_Z": {
+    "type": "float",
+    "value": 0.0
+  },
+  "Mod_Expan_List": {
+    "type": "list",
+    "value": []
+  },
+  "Mod_GVar_List": {
+    "type": "list",
+    "value": []
+  },
+  "Mod_HakList": {
+    "type": "list",
+    "value": []
+  },
+  "Mod_IsSaveGame": {
+    "type": "byte",
+    "value": 0
+  },
+  "Mod_MinGameVer": {
+    "type": "cexostring",
+    "value": "1.89"
+  },
+  "Mod_MinPerHour": {
+    "type": "byte",
+    "value": 6
+  },
+  "Mod_Name": {
+    "type": "cexolocstring",
+    "value": {
+      "0": "Gigaschatten",
+      "4": "Gigaschatten"
+    }
+  },
+  "Mod_OnAcquirItem": {
+    "type": "resref",
+    "value": "gs_m_acquire"
+  },
+  "Mod_OnActvtItem": {
+    "type": "resref",
+    "value": "gs_m_activate"
+  },
+  "Mod_OnClientEntr": {
+    "type": "resref",
+    "value": "gs_m_enter"
+  },
+  "Mod_OnClientLeav": {
+    "type": "resref",
+    "value": "gs_m_leave"
+  },
+  "Mod_OnCutsnAbort": {
+    "type": "resref",
+    "value": ""
+  },
+  "Mod_OnHeartbeat": {
+    "type": "resref",
+    "value": "gs_m_heartbeat"
+  },
+  "Mod_OnModLoad": {
+    "type": "resref",
+    "value": "gs_m_load"
+  },
+  "Mod_OnModStart": {
+    "type": "resref",
+    "value": ""
+  },
+  "Mod_OnNuiEvent": {
+    "type": "resref",
+    "value": ""
+  },
+  "Mod_OnPlrChat": {
+    "type": "resref",
+    "value": ""
+  },
+  "Mod_OnPlrDeath": {
+    "type": "resref",
+    "value": "gs_m_death"
+  },
+  "Mod_OnPlrDying": {
+    "type": "resref",
+    "value": "gs_m_dying"
+  },
+  "Mod_OnPlrEqItm": {
+    "type": "resref",
+    "value": "gs_m_equip"
+  },
+  "Mod_OnPlrGuiEvt": {
+    "type": "resref",
+    "value": ""
+  },
+  "Mod_OnPlrLvlUp": {
+    "type": "resref",
+    "value": "gs_m_level_up"
+  },
+  "Mod_OnPlrRest": {
+    "type": "resref",
+    "value": "gs_m_rest"
+  },
+  "Mod_OnPlrTarget": {
+    "type": "resref",
+    "value": ""
+  },
+  "Mod_OnPlrTileAct": {
+    "type": "resref",
+    "value": ""
+  },
+  "Mod_OnPlrUnEqItm": {
+    "type": "resref",
+    "value": "gs_m_unequip"
+  },
+  "Mod_OnSpawnBtnDn": {
+    "type": "resref",
+    "value": "gs_m_respawn"
+  },
+  "Mod_OnUnAqreItem": {
+    "type": "resref",
+    "value": "gs_m_unacquire"
+  },
+  "Mod_OnUsrDefined": {
+    "type": "resref",
+    "value": ""
+  },
+  "Mod_PartyControl": {
+    "type": "int",
+    "value": 0
+  },
+  "Mod_StartDay": {
+    "type": "byte",
+    "value": 1
+  },
+  "Mod_StartHour": {
+    "type": "byte",
+    "value": 12
+  },
+  "Mod_StartMonth": {
+    "type": "byte",
+    "value": 1
+  },
+  "Mod_StartMovie": {
+    "type": "resref",
+    "value": ""
+  },
+  "Mod_StartYear": {
+    "type": "dword",
+    "value": 0
+  },
+  "Mod_Tag": {
+    "type": "cexostring",
+    "value": "GS_MODULE"
+  },
+  "Mod_UUID": {
+    "type": "cexostring",
+    "value": ""
+  },
+  "Mod_Version": {
+    "type": "dword",
+    "value": 3
+  },
+  "Mod_XPScale": {
+    "type": "byte",
+    "value": 0
+  },
+  "VarTable": {
+    "type": "list",
+    "value": [
+      {
+        "__struct_id": 0,
+        "Name": {
+          "type": "cexostring",
+          "value": "GS_STORE_MODIFIER_SELL"
+        },
+        "Type": {
+          "type": "dword",
+          "value": 1
+        },
+        "Value": {
+          "type": "int",
+          "value": 0
+        }
+      },
+      {
+        "__struct_id": 0,
+        "Name": {
+          "type": "cexostring",
+          "value": "GS_STORE_MODIFIER_BUY"
+        },
+        "Type": {
+          "type": "dword",
+          "value": 1
+        },
+        "Value": {
+          "type": "int",
+          "value": -95
+        }
+      },
+      {
+        "__struct_id": 0,
+        "Name": {
+          "type": "cexostring",
+          "value": "X2_S_UD_SPELLSCRIPT"
+        },
+        "Type": {
+          "type": "dword",
+          "value": 3
+        },
+        "Value": {
+          "type": "cexostring",
+          "value": "gs_spellscript"
+        }
+      }
+    ]
+  }
+}

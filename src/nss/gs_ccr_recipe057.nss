@@ -1,0 +1,8 @@
+#include "gs_inc_token"
+
+int StartingConditional()
+{
+    gsTKRecallToken(103);
+    gsTKRecallToken(109);
+    return TRUE;
+}

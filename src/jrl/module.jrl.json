@@ -1,0 +1,114 @@
+{
+  "__data_type": "JRL ",
+  "Categories": {
+    "type": "list",
+    "value": [
+      {
+        "__struct_id": 0,
+        "Comment": {
+          "type": "cexostring",
+          "value": ""
+        },
+        "EntryList": {
+          "type": "list",
+          "value": [
+            {
+              "__struct_id": 0,
+              "End": {
+                "type": "word",
+                "value": 1
+              },
+              "ID": {
+                "type": "dword",
+                "value": 1
+              },
+              "Text": {
+                "type": "cexolocstring",
+                "value": {
+                  "0": "Depending on race, subrace, class and alignment, your character can understand and speak various languages. By using the following command in the chat console, you can speak a sentence in a specific language:\n\n/dm -xx The text, you want to speak.\n\nReplace xx with the mnemonic of the language the text should be translated into, e.g. '/dm -el This is Elven.' A List of all available languages and the according mnemonics you receive by entering '-' (hyphen) in the chat console. Languages your character knows are displayed in yellow.\n\nYou character can also perform additional actions by using the following commands in the chat console:\n\n*prays* (invoke deity)\n*threatens*\n*follows* (follow player)\n*scoffs*\n*worships*\n*cheers*\n*laughs*\n*lies*\n*reads*\n*sits*\n*leaves*\n*bows*\n*waves*\n*trembles*",
+                  "4": "Je nach Rasse, Unterrasse, Klasse und Gesinnung kann Dein Spielcharakter verschiedene Sprachen verstehen und sprechen. Mit dem folgenden Befehl kannst Du über die Chatzeile einen Satz in einer bestimmten Sprache sprechen:\n\n/dm -xx Der Text, den Du sprechen willst.\n\nSetze für xx das Kürzel der Sprache ein, in die der Text übersetzt werden soll, z.B. '/dm -el Dies ist elfisch.' Ein Liste aller verfügbaren Sprachen und der zugehörigen Kürzel erhältst Du, indem Du '-' (Bindestrich) in die Chatzeile eingibst. Sprachen, die Dein Charakter kennt, werden gelb dargestellt.\n\nAusserdem kann Dein Charakter zusätzliche Aktionen ausführen, indem er die folgenden Befehle über die Chatzeile aufruft:\n\n*betet* (Gottheit anrufen)\n*droht*\n*folgt* (Spieler folgen)\n*höhnt*\n*huldigt*\n*jubelt*\n*lacht*\n*liegt*\n*liest*\n*sitzt*\n*verabschiedet*\n*verbeugt*\n*winkt*\n*zittert*"
+                }
+              }
+            }
+          ]
+        },
+        "Name": {
+          "type": "cexolocstring",
+          "value": {
+            "0": "Languages & Emotes",
+            "4": "Sprachen & Emotes"
+          }
+        },
+        "Picture": {
+          "type": "word",
+          "value": 65535
+        },
+        "Priority": {
+          "type": "dword",
+          "value": 4
+        },
+        "Tag": {
+          "type": "cexostring",
+          "value": "GS_DIARY_002"
+        },
+        "XP": {
+          "type": "dword",
+          "value": 0
+        }
+      },
+      {
+        "__struct_id": 1,
+        "Comment": {
+          "type": "cexostring",
+          "value": ""
+        },
+        "EntryList": {
+          "type": "list",
+          "value": [
+            {
+              "__struct_id": 0,
+              "End": {
+                "type": "word",
+                "value": 1
+              },
+              "ID": {
+                "type": "dword",
+                "value": 1
+              },
+              "Text": {
+                "type": "cexolocstring",
+                "value": {
+                  "0": "Character:\nThe prestige class Shadowdancer is not permitted.\n\nItems:\nOn some items your player character equips, permanent properties are automatically adjusted. Magical damage bonus, resistance and immunity to magical damage, as well as damage reduction are removed without replacement. Damage resistance to physical damage (slashing, piercing, bludgeoning) is replaced by damage immunity (5%) to the same damage type. Damage resistance of more than 5 to elemental damage (electrical, fire, divine, cold, negative energy, positive energy, acid, sonic) is decreased to 5, skill boni of more than 5 are also reduced to 5.",
+                  "4": "Charakter:\nDie Prestigeklasse Schattentänzer ist nicht zugelassen.\n\nErfahrung:\nKhaarsis versteht sich als Rollenspiel-Server. Zwar sind Kämpfe essentieller Bestandteil, um jedoch zu vermeiden, dass man sich zu sehr auf den Kampf konzentriert, ist die Erfahrung, die Dein Charakter täglich (Realzeit) durch das Besiegen von Gegnern erhalten kann ab Stufe 5 auf 100 EP pro Stufe beschränkt. Das bezieht sich ausschliesslich auf kampfbedingte Erfahrung, andere Boni werden davon nicht betroffen. Die Berechnung erfolgt *vor* Einbezug des ECL (durch Unterrassen bedingter, effektiver Charakterlevel) und des RP-Status. Dadurch entspricht die Beschränkung auf 100 EP pro Stufe in der Regel nicht den effektiven Erfahrungspunkten, welche täglich im Kampf gewonnen werden können. Beispiel: Ein Tiefling der Stufe 10 (ECL +1) mit einem RP-Status von 70 gewinnt 100 EP im Kampf. Diese werden auf die tägliche Summe angerechnet. Effektiv erhält der Tiefling allerdings 100 * 10 / 11 * 70 / 50 = 127 EP. Praktisch liegt sein Tageslimit also bei 1270 EP.\n\nGegenstände:\nBei manchen Gegenständen, die Dein Spielcharakter ausrüstet, werden deren permanente Eigenschaften automatisch angepasst. Magischer Schadensbonus, Resistenz und Immunität gegen magischen Schaden, sowie Schadensreduzierung werden ersatzlos entfernt. Schadensresistenz gegen physischen Schaden (Hieb, Stich, Wucht) wird durch Schadensimmunität (5%) gegen die gleiche Schadensart ersetzt. Bei einer Schadensresistenz von mehr als 5 gegen elementaren Schaden (Elektrizität, Feuer, Göttliche Energie, Kälte, Negative Energie, Positive Energie, Säure, Schall), wird diese auf 5 heruntergestuft, Fertigkeitsboni von mehr als 5 werden ebenfalls auf 5 herabgesetzt."
+                }
+              }
+            }
+          ]
+        },
+        "Name": {
+          "type": "cexolocstring",
+          "value": {
+            "0": "Restrictions",
+            "4": "Einschränkungen"
+          }
+        },
+        "Picture": {
+          "type": "word",
+          "value": 65535
+        },
+        "Priority": {
+          "type": "dword",
+          "value": 4
+        },
+        "Tag": {
+          "type": "cexostring",
+          "value": "GS_DIARY_001"
+        },
+        "XP": {
+          "type": "dword",
+          "value": 0
+        }
+      }
+    ]
+  }
+}

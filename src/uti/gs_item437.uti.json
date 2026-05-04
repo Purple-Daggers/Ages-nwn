@@ -1,0 +1,147 @@
+{
+  "__data_type": "UTI ",
+  "AddCost": {
+    "type": "dword",
+    "value": 1500
+  },
+  "BaseItem": {
+    "type": "int",
+    "value": 34
+  },
+  "Charges": {
+    "type": "byte",
+    "value": 0
+  },
+  "Comment": {
+    "type": "cexostring",
+    "value": ""
+  },
+  "Cost": {
+    "type": "dword",
+    "value": 1500
+  },
+  "Cursed": {
+    "type": "byte",
+    "value": 0
+  },
+  "DescIdentified": {
+    "type": "cexolocstring",
+    "value": {
+      "0": "Fixture objects can be placed on the floor by dragging them from the inventory to a desired location. A maximum of 40 fixture objects are permanently stored per area. This way you can for example customize the interior furnishings of a house individually. The inventory of a fixture object is NOT saved.\n\nWorkstations are special fixture objects that are required to practice a trade.",
+      "4": "Einrichtungsgegenstände können auf dem Boden platziert werden, indem Ihr sie aus dem Gepäck an die gewünschte Stelle zieht. Es werden maximal 40 solcher Objekte permanent pro Gebiet gespeichert. So lässt sich z.B. die Inneneinrichtung eines Hauses individuell gestalten. Das Inventar der Gegenstände wird NICHT mitgespeichert.\n\nWerkstätten sind besondere Einrichtungsgegenstände, die zur Ausübung eines Handwerks benötigt werden."
+    }
+  },
+  "Description": {
+    "type": "cexolocstring",
+    "value": {
+      "0": "",
+      "4": ""
+    }
+  },
+  "Identified": {
+    "type": "byte",
+    "value": 1
+  },
+  "LocalizedName": {
+    "type": "cexolocstring",
+    "value": {
+      "0": "Workstation: Forging",
+      "4": "Werkstätte: Schmieden"
+    }
+  },
+  "ModelPart1": {
+    "type": "byte",
+    "value": 6
+  },
+  "PaletteID": {
+    "type": "byte",
+    "value": 3
+  },
+  "Plot": {
+    "type": "byte",
+    "value": 0
+  },
+  "PropertiesList": {
+    "type": "list",
+    "value": [
+      {
+        "__struct_id": 0,
+        "ChanceAppear": {
+          "type": "byte",
+          "value": 100
+        },
+        "CostTable": {
+          "type": "byte",
+          "value": 0
+        },
+        "CostValue": {
+          "type": "word",
+          "value": 0
+        },
+        "Param1": {
+          "type": "byte",
+          "value": 11
+        },
+        "Param1Value": {
+          "type": "byte",
+          "value": 5
+        },
+        "PropertyName": {
+          "type": "word",
+          "value": 81
+        },
+        "Subtype": {
+          "type": "word",
+          "value": 0
+        }
+      },
+      {
+        "__struct_id": 0,
+        "ChanceAppear": {
+          "type": "byte",
+          "value": 100
+        },
+        "CostTable": {
+          "type": "byte",
+          "value": 0
+        },
+        "CostValue": {
+          "type": "word",
+          "value": 0
+        },
+        "Param1": {
+          "type": "byte",
+          "value": 11
+        },
+        "Param1Value": {
+          "type": "byte",
+          "value": 5
+        },
+        "PropertyName": {
+          "type": "word",
+          "value": 81
+        },
+        "Subtype": {
+          "type": "word",
+          "value": 0
+        }
+      }
+    ]
+  },
+  "StackSize": {
+    "type": "word",
+    "value": 1
+  },
+  "Stolen": {
+    "type": "byte",
+    "value": 0
+  },
+  "Tag": {
+    "type": "cexostring",
+    "value": "GS_FX_gs_placeable231"
+  },
+  "TemplateResRef": {
+    "type": "resref",
+    "value": "gs_item437"
+  }
+}
