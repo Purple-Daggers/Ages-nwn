@@ -301,11 +301,11 @@ void gsXPGiveExperience(object oCreature, int nAmount, int nFloat = TRUE, int nK
             return;
         }
 
-        sMessage     = "<cªÕþ>+";
+        sMessage     = "<cÂªÃ•Ã¾>+";
     }
     else
     {
-        sMessage     = "<cþ((>";
+        sMessage     = "<cÃ¾((>";
     }
 
     SetXP(oCreature, nXP + nAmount);
@@ -327,7 +327,7 @@ void gsXPApply(object oCreature, int nBonus, int nParty = FALSE)
 
     if (nBonus < 0)
     {
-        sColor = "<cþ((>";
+        sColor = "<cÃ¾((>";
         sType  = GS_T_16777316;
 
         if (nBonus < GS_XP_PUNISHMENT_MEDIUM)   sSubType = GS_T_16777321;
@@ -336,7 +336,7 @@ void gsXPApply(object oCreature, int nBonus, int nParty = FALSE)
     }
     else
     {
-        sColor = "<cªÕþ>";
+        sColor = "<cÂªÃ•Ã¾>";
         sType  = GS_T_16777317;
 
         if (nBonus <= GS_XP_BONUS_MINI)         sSubType = GS_T_16777318;
@@ -470,7 +470,7 @@ int gsXPGetMultiClassPenalty(object oPC, int nSubRace = FALSE)
         nLevel2 = nNth;
     }
 
-    //favored class
+    /* favored class
     if (nSubRace)
     {
         nFavoredClass = gsSUGetFavoredClass(nSubRace, GetGender(oPC));
@@ -508,6 +508,9 @@ int gsXPGetMultiClassPenalty(object oPC, int nSubRace = FALSE)
             break;
         }
     }
+    */
+
+    nFavoredClass = nClass1;
 
     // Edits by Mithreas to correct a number of XP-related bugs. Compare
     // levels in classes, not class constants (i.e. nLevel* not nClass*).

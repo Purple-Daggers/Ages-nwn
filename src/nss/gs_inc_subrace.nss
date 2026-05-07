@@ -35,6 +35,77 @@ const int GS_SU_SPECIAL_GOBLIN            = 101;
 const int GS_SU_SPECIAL_KOBOLD            = 102;
 const int GS_SU_SPECIAL_BAATEZU           = 103;
 
+//Ages Races
+//Heartlander
+const int GS_SU_HUMAN_PRASIENE = 20;
+const int GS_SU_HUMAN_ORI = 21;
+const int GS_SU_HUMAN_NAVARREE = 22;
+//Imperial
+const int GS_SU_HUMAN_DAVURI = 23;
+const int GS_SU_HUMAN_ASHLANDER = 24;
+//Nijaran
+const int GS_SU_HUMAN_INEN = 25;
+const int GS_SU_HUMAN_ASHARI = 26;
+//Bholdic
+const int GS_SU_HUMAN_FYRSTUMEN = 27;
+const int GS_SU_HUMAN_KALANORF = 28;
+//Adhean (half elves)
+const int GS_SU_ADHEAN_JUDHEAN = 29;
+const int GS_SU_ADHEAN_RUDHEAN = 30;
+//Malari (orcs)
+const int GS_SU_MALARI_ASHFORGED = 31;
+const int GS_SU_MALARI_TUSKKIN = 32;
+const int GS_SU_MALARI_VARTOARI = 33;
+const int GS_SU_MALARI_UNBOWED = 34;
+//Nujiit (khajiit)
+const int GS_SU_NUJIIT_PADARR_TWILIGHTBORN = 35;
+const int GS_SU_NUJIIT_PADARR_FANGLORD = 36;
+const int GS_SU_NUJIIT_PADARR_WHISPERSTALKER = 37;
+const int GS_SU_NUJIIT_KOMALARI_TWILIGHTBORN = 38;
+const int GS_SU_NUJIIT_KOMALARI_FANGLORD = 39;
+const int GS_SU_NUJIIT_KOMALARI_WHISPERSTALKER = 40;
+const int GS_SU_NUJIIT_RIVERLORD_TWILIGHTBORN = 41;
+const int GS_SU_NUJIIT_RIVERLORD_FANGLORD = 42;
+const int GS_SU_NUJIIT_RIVERLORD_WHISPERSTALKER = 43;
+const int GS_SU_NUJIIT_RESPLENDENT_TWILIGHTBORN = 44;
+const int GS_SU_NUJIIT_RESPLENDENT_FANGLORD = 45;
+const int GS_SU_NUJIIT_RESPLENDENT_WHISPERSTALKER = 46;
+//Malosari (wood elves)
+const int GS_SU_MALOSARI_GREENSWORN = 47;
+const int GS_SU_MALOSARI_FREESWORN = 48;
+const int GS_SU_MALOSARI_HORNSWORN = 49;
+const int GS_SU_MALOSARI_EMERALD = 50;
+//Eldari (high elves)
+const int GS_SU_ELDARI_EMAELARI = 51;
+const int GS_SU_ELDARI_ELDARI = 52;
+const int GS_SU_ELDARI_ALARI = 53;
+//Dunari (dark elves)
+const int GS_SU_DUNARI_FALLARI = 54;
+const int GS_SU_DUNARI_VRAILSIARI = 55;
+const int GS_SU_DUNARI_VULSWORN = 56;
+const int GS_SU_DUNARI_LANTERNBEARER = 57;
+//Veydran (dragonborn)
+const int GS_SU_VEYDRAN_ABYSSALCOURT_SKYBLESSED = 58;
+const int GS_SU_VEYDRAN_ABYSSALCOURT_SEAFORGED = 59;
+const int GS_SU_VEYDRAN_ABYSSALCOURT_STONEWROUGHT = 60;
+const int GS_SU_VEYDRAN_ABYSSALCOURT_TIMESWORN = 61;
+const int GS_SU_VEYDRAN_ABYSSALCOURT_AETHERTOUCHED = 62;
+const int GS_SU_VEYDRAN_WYRMBLOODED_SKYBLESSED = 63;
+const int GS_SU_VEYDRAN_WYRMBLOODED_SEAFORGED = 64;
+const int GS_SU_VEYDRAN_WYRMBLOODED_STONEWROUGHT = 65;
+const int GS_SU_VEYDRAN_WYRMBLOODED_TIMESWORN = 66;
+const int GS_SU_VEYDRAN_WYRMBLOODED_AETHERTOUCHED = 67;
+const int GS_SU_VEYDRAN_UNFADING_SKYBLESSED = 68;
+const int GS_SU_VEYDRAN_UNFADING_SEAFORGED = 69;
+const int GS_SU_VEYDRAN_UNFADING_STONEWROUGHT = 70;
+const int GS_SU_VEYDRAN_UNFADING_TIMESWORN = 71;
+const int GS_SU_VEYDRAN_UNFADING_AETHERTOUCHED = 72;
+//Cipher
+const int GS_SU_HUMAN_PRASIENE_CIPHER = 73;
+const int GS_SU_HUMAN_ORI_CIPHER = 74;
+const int GS_SU_HUMAN_NAVARREE_CIPHER = 75;
+
+
 //apply properties for nSubrace of nLevel to oItem
 void gsSUApplyProperty(object oItem, int nSubRace, int nLevel);
 //apply abilities for nSubrace of nLevel to oItem
@@ -1030,6 +1101,8 @@ string gsSUGetNameBySubRace(int nSubRace)
 //----------------------------------------------------------------
 int gsSUGetECL(int nSubRace, int nLevel)
 {
+    //not implementing ECL for subraces
+    return nlevel;
     switch (nSubRace)
     {
     case GS_SU_DWARF_GOLD:                return nLevel;
@@ -1059,7 +1132,7 @@ int gsSUGetECL(int nSubRace, int nLevel)
 
     return nLevel;
 }
-//----------------------------------------------------------------
+//not used anywhere. would need updating with new races if we decided to use favored classes
 int gsSUGetFavoredClass(int nSubRace, int nGender = GENDER_MALE)
 {
     switch (nSubRace)
