@@ -1102,7 +1102,7 @@ string gsSUGetNameBySubRace(int nSubRace)
 int gsSUGetECL(int nSubRace, int nLevel)
 {
     //not implementing ECL for subraces
-    return nlevel;
+    return nLevel;
     switch (nSubRace)
     {
     case GS_SU_DWARF_GOLD:                return nLevel;
