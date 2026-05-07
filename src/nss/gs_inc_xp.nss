@@ -301,11 +301,11 @@ void gsXPGiveExperience(object oCreature, int nAmount, int nFloat = TRUE, int nK
             return;
         }
 
-        sMessage     = "<cÂªÃ•Ã¾>+";
+        sMessage     = "<cªÕþ>+";
     }
     else
     {
-        sMessage     = "<cÃ¾((>";
+        sMessage     = "<cþ((>";
     }
 
     SetXP(oCreature, nXP + nAmount);
@@ -327,7 +327,7 @@ void gsXPApply(object oCreature, int nBonus, int nParty = FALSE)
 
     if (nBonus < 0)
     {
-        sColor = "<cÃ¾((>";
+        sColor = "<cþ((>";
         sType  = GS_T_16777316;
 
         if (nBonus < GS_XP_PUNISHMENT_MEDIUM)   sSubType = GS_T_16777321;
@@ -336,7 +336,7 @@ void gsXPApply(object oCreature, int nBonus, int nParty = FALSE)
     }
     else
     {
-        sColor = "<cÂªÃ•Ã¾>";
+        sColor = "<cªÕþ>";
         sType  = GS_T_16777317;
 
         if (nBonus <= GS_XP_BONUS_MINI)         sSubType = GS_T_16777318;
