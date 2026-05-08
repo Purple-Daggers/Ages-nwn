@@ -1063,7 +1063,6 @@ int gsSUGetSubRaceByName(string sSubRace)
     if (sSubRace == GS_T_16777428) return GS_SU_SPECIAL_GOBLIN;
     if (sSubRace == GS_T_16777429) return GS_SU_SPECIAL_KOBOLD;
     if (sSubRace == GS_T_16777536) return GS_SU_SPECIAL_BAATEZU;
-    if (ss)
 
 //Ages Races
 //Heartlander
