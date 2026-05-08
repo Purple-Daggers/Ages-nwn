@@ -1064,6 +1064,77 @@ int gsSUGetSubRaceByName(string sSubRace)
     if (sSubRace == GS_T_16777429) return GS_SU_SPECIAL_KOBOLD;
     if (sSubRace == GS_T_16777536) return GS_SU_SPECIAL_BAATEZU;
 
+//Ages Races
+//Heartlander
+    if (sSubRace == GS_T_16777554) return GS_SU_HUMAN_PRASIENE;
+    if (sSubRace == GS_T_16777555) return GS_SU_HUMAN_ORI;
+    if (sSubRace == GS_T_16777556) return GS_SU_HUMAN_NAVARREE;
+//Imperial
+    if (sSubRace == GS_T_16777558) return GS_SU_HUMAN_DAVURI;
+    if (sSubRace == GS_T_16777559) return GS_SU_HUMAN_ASHLANDER;
+//Nijaran
+    if (sSubRace == GS_T_16777561) return GS_SU_HUMAN_INEN ;
+    if (sSubRace == GS_T_16777562) return GS_SU_HUMAN_ASHARI;
+//Bholdic
+    if (sSubRace == GS_T_16777564) return GS_SU_HUMAN_FYRSTUMEN;
+    if (sSubRace == GS_T_16777565) return GS_SU_HUMAN_KALANORF;
+//Adhean (half elves)
+    if (sSubRace == GS_T_16777567) return GS_SU_ADHEAN_JUDHEAN;
+    if (sSubRace == GS_T_16777568) return GS_SU_ADHEAN_RUDHEAN;
+//Malari (orcs)
+    if (sSubRace == GS_T_16777570) return GS_SU_MALARI_ASHFORGED;
+    if (sSubRace == GS_T_16777571) return GS_SU_MALARI_TUSKKIN;
+    if (sSubRace == GS_T_16777572) return GS_SU_MALARI_VARTOARI;
+    if (sSubRace == GS_T_16777573) return GS_SU_MALARI_UNBOWED;
+//Nujiit (khajiit)
+    if (sSubRace == GS_T_16777609) return GS_SU_NUJIIT_PADARR_TWILIGHTBORN;
+    if (sSubRace == GS_T_16777601) return GS_SU_NUJIIT_PADARR_FANGLORD;
+    if (sSubRace == GS_T_16777605) return GS_SU_NUJIIT_PADARR_WHISPERSTALKER;
+    if (sSubRace == GS_T_16777610) return GS_SU_NUJIIT_KOMALARI_TWILIGHTBORN;
+    if (sSubRace == GS_T_16777602) return GS_SU_NUJIIT_KOMALARI_FANGLORD;
+    if (sSubRace == GS_T_16777606) return GS_SU_NUJIIT_KOMALARI_WHISPERSTALKER;
+    if (sSubRace == GS_T_16777611) return GS_SU_NUJIIT_RIVERLORD_TWILIGHTBORN;
+    if (sSubRace == GS_T_16777603) return GS_SU_NUJIIT_RIVERLORD_FANGLORD;
+    if (sSubRace == GS_T_16777607) return GS_SU_NUJIIT_RIVERLORD_WHISPERSTALKER;
+    if (sSubRace == GS_T_16777612) return GS_SU_NUJIIT_RESPLENDENT_TWILIGHTBORN;
+    if (sSubRace == GS_T_16777604) return GS_SU_NUJIIT_RESPLENDENT_FANGLORD;
+    if (sSubRace == GS_T_16777608) return GS_SU_NUJIIT_RESPLENDENT_WHISPERSTALKER;
+//Malosari (wood elves)
+    if (sSubRace == GS_T_16777580) return GS_SU_MALOSARI_GREENSWORN;
+    if (sSubRace == GS_T_16777581) return GS_SU_MALOSARI_FREESWORN;
+    if (sSubRace == GS_T_16777582) return GS_SU_MALOSARI_HORNSWORN;
+    if (sSubRace == GS_T_16777583) return GS_SU_MALOSARI_EMERALD;
+//Eldari (high elves)
+    if (sSubRace == GS_T_16777585) return GS_SU_ELDARI_EMAELARI;
+    if (sSubRace == GS_T_16777586) return GS_SU_ELDARI_ELDARI;
+    if (sSubRace == GS_T_16777587) return GS_SU_ELDARI_ALARI;
+//Dunari (dark elves)
+    if (sSubRace == GS_T_16777589) return GS_SU_DUNARI_FALLARI;
+    if (sSubRace == GS_T_16777590) return GS_SU_DUNARI_VRAILSIARI;
+    if (sSubRace == GS_T_16777591) return GS_SU_DUNARI_VULSWORN;
+    if (sSubRace == GS_T_16777592) return GS_SU_DUNARI_LANTERNBEARER;
+//Veydran (dragonborn)
+    if (sSubRace == GS_T_16777618) return GS_SU_VEYDRAN_ABYSSALCOURT_SKYBLESSED;
+    if (sSubRace == GS_T_16777619) return GS_SU_VEYDRAN_ABYSSALCOURT_SEAFORGED;
+    if (sSubRace == GS_T_16777620) return GS_SU_VEYDRAN_ABYSSALCOURT_STONEWROUGHT;
+    if (sSubRace == GS_T_16777621) return GS_SU_VEYDRAN_ABYSSALCOURT_TIMESWORN;
+    if (sSubRace == GS_T_16777622) return GS_SU_VEYDRAN_ABYSSALCOURT_AETHERTOUCHED;
+    if (sSubRace == GS_T_16777623) return GS_SU_VEYDRAN_WYRMBLOODED_SKYBLESSED;
+    if (sSubRace == GS_T_16777624) return GS_SU_VEYDRAN_WYRMBLOODED_SEAFORGED;
+    if (sSubRace == GS_T_16777625) return GS_SU_VEYDRAN_WYRMBLOODED_STONEWROUGHT;
+    if (sSubRace == GS_T_16777626) return GS_SU_VEYDRAN_WYRMBLOODED_TIMESWORN;
+    if (sSubRace == GS_T_16777627) return GS_SU_VEYDRAN_WYRMBLOODED_AETHERTOUCHED;
+    if (sSubRace == GS_T_16777628) return GS_SU_VEYDRAN_UNFADING_SKYBLESSED;
+    if (sSubRace == GS_T_16777629) return GS_SU_VEYDRAN_UNFADING_SEAFORGED;
+    if (sSubRace == GS_T_16777630) return GS_SU_VEYDRAN_UNFADING_STONEWROUGHT;
+    if (sSubRace == GS_T_16777631) return GS_SU_VEYDRAN_UNFADING_TIMESWORN;
+    if (sSubRace == GS_T_16777632) return GS_SU_VEYDRAN_UNFADING_AETHERTOUCHED;
+//Cipher
+    if (sSubRace == GS_T_16777633) return GS_SU_HUMAN_PRASIENE_CIPHER;
+    if (sSubRace == GS_T_16777634) return GS_SU_HUMAN_ORI_CIPHER;
+    if (sSubRace == GS_T_16777635) return GS_SU_HUMAN_NAVARREE_CIPHER;
+
+
     return GS_SU_NONE;
 }
 //----------------------------------------------------------------
@@ -1094,6 +1165,76 @@ string gsSUGetNameBySubRace(int nSubRace)
     case GS_SU_SPECIAL_GOBLIN:            return GS_T_16777428;
     case GS_SU_SPECIAL_KOBOLD:            return GS_T_16777429;
     case GS_SU_SPECIAL_BAATEZU:           return GS_T_16777536;
+//Ages Races
+//Heartlander
+    case GS_SU_HUMAN_PRASIENE: return GS_T_16777554;
+    case GS_SU_HUMAN_ORI: return GS_T_16777555;
+    case GS_SU_HUMAN_NAVARREE: return GS_T_16777556;
+//Imperial
+    case GS_SU_HUMAN_DAVURI: return GS_T_16777558;
+    case GS_SU_HUMAN_ASHLANDER: return GS_T_16777559;
+//Nijaran
+    case GS_SU_HUMAN_INEN: return GS_T_16777561;
+    case GS_SU_HUMAN_ASHARI: return GS_T_16777562;
+//Bholdic
+    case GS_SU_HUMAN_FYRSTUMEN: return GS_T_16777564;
+    case GS_SU_HUMAN_KALANORF: return GS_T_16777565;
+//Adhean (half elves)
+    case GS_SU_ADHEAN_JUDHEAN: return GS_T_16777567;
+    case GS_SU_ADHEAN_RUDHEAN: return GS_T_16777568;
+//Malari (orcs)
+    case GS_SU_MALARI_ASHFORGED: return GS_T_16777570;
+    case GS_SU_MALARI_TUSKKIN: return GS_T_16777571;
+    case GS_SU_MALARI_VARTOARI: return GS_T_16777572;
+    case GS_SU_MALARI_UNBOWED: return GS_T_16777573;
+//Nujiit (khajiit)
+    case GS_SU_NUJIIT_PADARR_TWILIGHTBORN: return GS_T_16777609;
+    case GS_SU_NUJIIT_PADARR_FANGLORD: return GS_T_16777601;
+    case GS_SU_NUJIIT_PADARR_WHISPERSTALKER: return GS_T_16777605;
+    case GS_SU_NUJIIT_KOMALARI_TWILIGHTBORN: return GS_T_16777610;
+    case GS_SU_NUJIIT_KOMALARI_FANGLORD: return GS_T_16777602;
+    case GS_SU_NUJIIT_KOMALARI_WHISPERSTALKER: return GS_T_16777606;
+    case GS_SU_NUJIIT_RIVERLORD_TWILIGHTBORN: return GS_T_16777611;
+    case GS_SU_NUJIIT_RIVERLORD_FANGLORD: return GS_T_16777603;
+    case GS_SU_NUJIIT_RIVERLORD_WHISPERSTALKER: return GS_T_16777607;
+    case GS_SU_NUJIIT_RESPLENDENT_TWILIGHTBORN: return GS_T_16777612;
+    case GS_SU_NUJIIT_RESPLENDENT_FANGLORD: return GS_T_16777604;
+    case GS_SU_NUJIIT_RESPLENDENT_WHISPERSTALKER: return GS_T_16777608;
+//Malosari (wood elves)
+    case GS_SU_MALOSARI_GREENSWORN: return GS_T_16777580;
+    case GS_SU_MALOSARI_FREESWORN: return GS_T_16777581;
+    case GS_SU_MALOSARI_HORNSWORN: return GS_T_16777582;
+    case GS_SU_MALOSARI_EMERALD: return GS_T_16777583;
+//Eldari (high elves)
+    case GS_SU_ELDARI_EMAELARI: return GS_T_16777585;
+    case GS_SU_ELDARI_ELDARI: return GS_T_16777586;
+    case GS_SU_ELDARI_ALARI: return GS_T_16777587;
+//Dunari (dark elves)
+    case GS_SU_DUNARI_FALLARI: return GS_T_16777589;
+    case GS_SU_DUNARI_VRAILSIARI: return GS_T_16777590;
+    case GS_SU_DUNARI_VULSWORN: return GS_T_16777591;
+    case GS_SU_DUNARI_LANTERNBEARER: return GS_T_16777592;
+//Veydran (dragonborn)
+    case GS_SU_VEYDRAN_ABYSSALCOURT_SKYBLESSED: return GS_T_16777618;
+    case GS_SU_VEYDRAN_ABYSSALCOURT_SEAFORGED: return GS_T_16777619;
+    case GS_SU_VEYDRAN_ABYSSALCOURT_STONEWROUGHT: return GS_T_16777620;
+    case GS_SU_VEYDRAN_ABYSSALCOURT_TIMESWORN: return GS_T_16777621;
+    case GS_SU_VEYDRAN_ABYSSALCOURT_AETHERTOUCHED: return GS_T_16777622;
+    case GS_SU_VEYDRAN_WYRMBLOODED_SKYBLESSED: return GS_T_16777623;
+    case GS_SU_VEYDRAN_WYRMBLOODED_SEAFORGED: return GS_T_16777624;
+    case GS_SU_VEYDRAN_WYRMBLOODED_STONEWROUGHT: return GS_T_16777625;
+    case GS_SU_VEYDRAN_WYRMBLOODED_TIMESWORN: return GS_T_16777626;
+    case GS_SU_VEYDRAN_WYRMBLOODED_AETHERTOUCHED: return GS_T_16777627;
+    case GS_SU_VEYDRAN_UNFADING_SKYBLESSED: return GS_T_16777628;
+    case GS_SU_VEYDRAN_UNFADING_SEAFORGED: return GS_T_16777629;
+    case GS_SU_VEYDRAN_UNFADING_STONEWROUGHT: return GS_T_16777630;
+    case GS_SU_VEYDRAN_UNFADING_TIMESWORN: return GS_T_16777631;
+    case GS_SU_VEYDRAN_UNFADING_AETHERTOUCHED: return GS_T_16777632;
+//Cipher
+    case GS_SU_HUMAN_PRASIENE_CIPHER: return GS_T_16777633;
+    case GS_SU_HUMAN_ORI_CIPHER: return GS_T_16777634;
+    case GS_SU_HUMAN_NAVARREE_CIPHER: return GS_T_16777635;
+
     }
 
     return "";
