@@ -1172,7 +1172,7 @@ string gsSUGetNameBySubRace(int nSubRace)
     case GS_SU_HUMAN_NAVARREE: return GS_T_16777556;
 //Imperial
     case GS_SU_HUMAN_DAVURI: return GS_T_16777558;
-    case S_SU_HUMAN_ASHLANDER: return GS_T_16777559;
+    case GS_SU_HUMAN_ASHLANDER: return GS_T_16777559;
 //Nijaran
     case GS_SU_HUMAN_INEN: return GS_T_16777561;
     case GS_SU_HUMAN_ASHARI: return GS_T_16777562;
