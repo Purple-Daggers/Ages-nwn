@@ -7,31 +7,31 @@
       "__struct_id": 100,
       "AmbientSndDay": {
         "type": "int",
-        "value": 49
+        "value": 0
       },
       "AmbientSndDayVol": {
         "type": "int",
-        "value": 127
+        "value": 95
       },
       "AmbientSndNight": {
         "type": "int",
-        "value": 49
+        "value": 0
       },
       "AmbientSndNitVol": {
         "type": "int",
-        "value": 127
+        "value": 95
       },
       "EnvAudio": {
         "type": "int",
-        "value": 15
+        "value": 0
       },
       "MusicBattle": {
         "type": "int",
-        "value": 35
+        "value": 0
       },
       "MusicDay": {
         "type": "int",
-        "value": 4
+        "value": 0
       },
       "MusicDelay": {
         "type": "int",
@@ -39,7 +39,7 @@
       },
       "MusicNight": {
         "type": "int",
-        "value": 6
+        "value": 0
       }
     }
   },
@@ -54,11 +54,11 @@
         "__struct_id": 8,
         "AnimationState": {
           "type": "byte",
-          "value": 1
+          "value": 0
         },
         "Appearance": {
           "type": "dword",
-          "value": 65
+          "value": 44
         },
         "AutoRemoveKey": {
           "type": "byte",
@@ -66,7 +66,7 @@
         },
         "Bearing": {
           "type": "float",
-          "value": -1.5708
+          "value": -0.0
         },
         "CloseLockDC": {
           "type": "byte",
@@ -122,11 +122,11 @@
         },
         "LinkedTo": {
           "type": "cexostring",
-          "value": "Road_B"
+          "value": ""
         },
         "LinkedToFlags": {
           "type": "byte",
-          "value": 1
+          "value": 0
         },
         "LoadScreenID": {
           "type": "word",
@@ -143,7 +143,6 @@
         "LocName": {
           "type": "cexolocstring",
           "value": {
-            "0": "Road_B",
             "id": 5349
           }
         },
@@ -221,11 +220,11 @@
         },
         "Tag": {
           "type": "cexostring",
-          "value": "Road_B"
+          "value": "CastleDoor"
         },
         "TemplateResRef": {
           "type": "resref",
-          "value": "nw_door_ttr_29"
+          "value": "nw_door_ttr_18"
         },
         "TrapDetectable": {
           "type": "byte",
@@ -257,7 +256,7 @@
         },
         "X": {
           "type": "float",
-          "value": 138.19
+          "value": 75.0
         },
         "Y": {
           "type": "float",
@@ -265,7 +264,7 @@
         },
         "Z": {
           "type": "float",
-          "value": 0.0
+          "value": 1.5
         }
       },
       {
@@ -276,7 +275,7 @@
         },
         "Appearance": {
           "type": "dword",
-          "value": 1
+          "value": 37
         },
         "AutoRemoveKey": {
           "type": "byte",
@@ -284,7 +283,7 @@
         },
         "Bearing": {
           "type": "float",
-          "value": 3.1416
+          "value": -0.0
         },
         "CloseLockDC": {
           "type": "byte",
@@ -438,11 +437,11 @@
         },
         "Tag": {
           "type": "cexostring",
-          "value": "Wall1Gate"
+          "value": "DoubleDoors"
         },
         "TemplateResRef": {
           "type": "resref",
-          "value": "nw_door_ttr_01"
+          "value": "nw_door_ttr_15"
         },
         "TrapDetectable": {
           "type": "byte",
@@ -474,15 +473,15 @@
         },
         "X": {
           "type": "float",
-          "value": 85.0
+          "value": 125.0
         },
         "Y": {
           "type": "float",
-          "value": 65.0
+          "value": 126.6
         },
         "Z": {
           "type": "float",
-          "value": 0.0
+          "value": 4.6
         }
       },
       {
@@ -493,7 +492,7 @@
         },
         "Appearance": {
           "type": "dword",
-          "value": 4
+          "value": 40
         },
         "AutoRemoveKey": {
           "type": "byte",
@@ -501,7 +500,7 @@
         },
         "Bearing": {
           "type": "float",
-          "value": 3.1416
+          "value": -0.0
         },
         "CloseLockDC": {
           "type": "byte",
@@ -557,11 +556,11 @@
         },
         "LinkedTo": {
           "type": "cexostring",
-          "value": ""
+          "value": "Prasinos_South_Gate"
         },
         "LinkedToFlags": {
           "type": "byte",
-          "value": 0
+          "value": 1
         },
         "LoadScreenID": {
           "type": "word",
@@ -578,6 +577,7 @@
         "LocName": {
           "type": "cexolocstring",
           "value": {
+            "0": "Prasinos South Gate",
             "id": 5349
           }
         },
@@ -655,11 +655,11 @@
         },
         "Tag": {
           "type": "cexostring",
-          "value": "Barn1Door"
+          "value": "Prasinos_South_Gate"
         },
         "TemplateResRef": {
           "type": "resref",
-          "value": "nw_door_ttr_04"
+          "value": "nw_door_ttr_07"
         },
         "TrapDetectable": {
           "type": "byte",
@@ -691,15 +691,15 @@
         },
         "X": {
           "type": "float",
-          "value": 36.5
+          "value": 75.0
         },
         "Y": {
           "type": "float",
-          "value": 66.8
+          "value": 6.3
         },
         "Z": {
           "type": "float",
-          "value": 0.0
+          "value": 0.46
         }
       },
       {
@@ -710,442 +710,7 @@
         },
         "Appearance": {
           "type": "dword",
-          "value": 4
-        },
-        "AutoRemoveKey": {
-          "type": "byte",
           "value": 0
-        },
-        "Bearing": {
-          "type": "float",
-          "value": 0.0
-        },
-        "CloseLockDC": {
-          "type": "byte",
-          "value": 0
-        },
-        "Conversation": {
-          "type": "resref",
-          "value": ""
-        },
-        "CurrentHP": {
-          "type": "short",
-          "value": 80
-        },
-        "Description": {
-          "type": "cexolocstring",
-          "value": {}
-        },
-        "DisarmDC": {
-          "type": "byte",
-          "value": 15
-        },
-        "Faction": {
-          "type": "dword",
-          "value": 1
-        },
-        "Fort": {
-          "type": "byte",
-          "value": 16
-        },
-        "GenericType_New": {
-          "type": "dword",
-          "value": 0
-        },
-        "Hardness": {
-          "type": "byte",
-          "value": 5
-        },
-        "HP": {
-          "type": "short",
-          "value": 80
-        },
-        "Interruptable": {
-          "type": "byte",
-          "value": 1
-        },
-        "KeyName": {
-          "type": "cexostring",
-          "value": ""
-        },
-        "KeyRequired": {
-          "type": "byte",
-          "value": 0
-        },
-        "LinkedTo": {
-          "type": "cexostring",
-          "value": ""
-        },
-        "LinkedToFlags": {
-          "type": "byte",
-          "value": 0
-        },
-        "LoadScreenID": {
-          "type": "word",
-          "value": 0
-        },
-        "Lockable": {
-          "type": "byte",
-          "value": 0
-        },
-        "Locked": {
-          "type": "byte",
-          "value": 0
-        },
-        "LocName": {
-          "type": "cexolocstring",
-          "value": {
-            "id": 5349
-          }
-        },
-        "OnClick": {
-          "type": "resref",
-          "value": ""
-        },
-        "OnClosed": {
-          "type": "resref",
-          "value": ""
-        },
-        "OnDamaged": {
-          "type": "resref",
-          "value": ""
-        },
-        "OnDeath": {
-          "type": "resref",
-          "value": "x2_door_death"
-        },
-        "OnDisarm": {
-          "type": "resref",
-          "value": ""
-        },
-        "OnFailToOpen": {
-          "type": "resref",
-          "value": ""
-        },
-        "OnHeartbeat": {
-          "type": "resref",
-          "value": ""
-        },
-        "OnLock": {
-          "type": "resref",
-          "value": ""
-        },
-        "OnMeleeAttacked": {
-          "type": "resref",
-          "value": ""
-        },
-        "OnOpen": {
-          "type": "resref",
-          "value": ""
-        },
-        "OnSpellCastAt": {
-          "type": "resref",
-          "value": ""
-        },
-        "OnTrapTriggered": {
-          "type": "resref",
-          "value": ""
-        },
-        "OnUnlock": {
-          "type": "resref",
-          "value": ""
-        },
-        "OnUserDefined": {
-          "type": "resref",
-          "value": ""
-        },
-        "OpenLockDC": {
-          "type": "byte",
-          "value": 18
-        },
-        "Plot": {
-          "type": "byte",
-          "value": 0
-        },
-        "PortraitId": {
-          "type": "word",
-          "value": 0
-        },
-        "Ref": {
-          "type": "byte",
-          "value": 0
-        },
-        "Tag": {
-          "type": "cexostring",
-          "value": "Barn1Door"
-        },
-        "TemplateResRef": {
-          "type": "resref",
-          "value": "nw_door_ttr_04"
-        },
-        "TrapDetectable": {
-          "type": "byte",
-          "value": 1
-        },
-        "TrapDetectDC": {
-          "type": "byte",
-          "value": 0
-        },
-        "TrapDisarmable": {
-          "type": "byte",
-          "value": 1
-        },
-        "TrapFlag": {
-          "type": "byte",
-          "value": 0
-        },
-        "TrapOneShot": {
-          "type": "byte",
-          "value": 1
-        },
-        "TrapType": {
-          "type": "byte",
-          "value": 0
-        },
-        "Will": {
-          "type": "byte",
-          "value": 0
-        },
-        "X": {
-          "type": "float",
-          "value": 36.51
-        },
-        "Y": {
-          "type": "float",
-          "value": 53.21
-        },
-        "Z": {
-          "type": "float",
-          "value": 0.07000000000000001
-        }
-      },
-      {
-        "__struct_id": 8,
-        "AnimationState": {
-          "type": "byte",
-          "value": 1
-        },
-        "Appearance": {
-          "type": "dword",
-          "value": 65
-        },
-        "AutoRemoveKey": {
-          "type": "byte",
-          "value": 0
-        },
-        "Bearing": {
-          "type": "float",
-          "value": 3.1416
-        },
-        "CloseLockDC": {
-          "type": "byte",
-          "value": 0
-        },
-        "Conversation": {
-          "type": "resref",
-          "value": ""
-        },
-        "CurrentHP": {
-          "type": "short",
-          "value": 80
-        },
-        "Description": {
-          "type": "cexolocstring",
-          "value": {}
-        },
-        "DisarmDC": {
-          "type": "byte",
-          "value": 15
-        },
-        "Faction": {
-          "type": "dword",
-          "value": 1
-        },
-        "Fort": {
-          "type": "byte",
-          "value": 16
-        },
-        "GenericType_New": {
-          "type": "dword",
-          "value": 0
-        },
-        "Hardness": {
-          "type": "byte",
-          "value": 5
-        },
-        "HP": {
-          "type": "short",
-          "value": 80
-        },
-        "Interruptable": {
-          "type": "byte",
-          "value": 1
-        },
-        "KeyName": {
-          "type": "cexostring",
-          "value": ""
-        },
-        "KeyRequired": {
-          "type": "byte",
-          "value": 0
-        },
-        "LinkedTo": {
-          "type": "cexostring",
-          "value": "GS_DOOR_D5_01"
-        },
-        "LinkedToFlags": {
-          "type": "byte",
-          "value": 1
-        },
-        "LoadScreenID": {
-          "type": "word",
-          "value": 0
-        },
-        "Lockable": {
-          "type": "byte",
-          "value": 0
-        },
-        "Locked": {
-          "type": "byte",
-          "value": 0
-        },
-        "LocName": {
-          "type": "cexolocstring",
-          "value": {
-            "0": "Road_C",
-            "id": 5349
-          }
-        },
-        "OnClick": {
-          "type": "resref",
-          "value": ""
-        },
-        "OnClosed": {
-          "type": "resref",
-          "value": ""
-        },
-        "OnDamaged": {
-          "type": "resref",
-          "value": ""
-        },
-        "OnDeath": {
-          "type": "resref",
-          "value": "x2_door_death"
-        },
-        "OnDisarm": {
-          "type": "resref",
-          "value": ""
-        },
-        "OnFailToOpen": {
-          "type": "resref",
-          "value": ""
-        },
-        "OnHeartbeat": {
-          "type": "resref",
-          "value": ""
-        },
-        "OnLock": {
-          "type": "resref",
-          "value": ""
-        },
-        "OnMeleeAttacked": {
-          "type": "resref",
-          "value": ""
-        },
-        "OnOpen": {
-          "type": "resref",
-          "value": ""
-        },
-        "OnSpellCastAt": {
-          "type": "resref",
-          "value": ""
-        },
-        "OnTrapTriggered": {
-          "type": "resref",
-          "value": ""
-        },
-        "OnUnlock": {
-          "type": "resref",
-          "value": ""
-        },
-        "OnUserDefined": {
-          "type": "resref",
-          "value": ""
-        },
-        "OpenLockDC": {
-          "type": "byte",
-          "value": 18
-        },
-        "Plot": {
-          "type": "byte",
-          "value": 0
-        },
-        "PortraitId": {
-          "type": "word",
-          "value": 0
-        },
-        "Ref": {
-          "type": "byte",
-          "value": 0
-        },
-        "Tag": {
-          "type": "cexostring",
-          "value": "Road_C"
-        },
-        "TemplateResRef": {
-          "type": "resref",
-          "value": "nw_door_ttr_29"
-        },
-        "TrapDetectable": {
-          "type": "byte",
-          "value": 1
-        },
-        "TrapDetectDC": {
-          "type": "byte",
-          "value": 0
-        },
-        "TrapDisarmable": {
-          "type": "byte",
-          "value": 1
-        },
-        "TrapFlag": {
-          "type": "byte",
-          "value": 0
-        },
-        "TrapOneShot": {
-          "type": "byte",
-          "value": 1
-        },
-        "TrapType": {
-          "type": "byte",
-          "value": 0
-        },
-        "Will": {
-          "type": "byte",
-          "value": 0
-        },
-        "X": {
-          "type": "float",
-          "value": 85.0
-        },
-        "Y": {
-          "type": "float",
-          "value": 1.81
-        },
-        "Z": {
-          "type": "float",
-          "value": 0.0
-        }
-      },
-      {
-        "__struct_id": 8,
-        "AnimationState": {
-          "type": "byte",
-          "value": 0
-        },
-        "Appearance": {
-          "type": "dword",
-          "value": 1
         },
         "AutoRemoveKey": {
           "type": "byte",
@@ -1165,11 +730,13 @@
         },
         "CurrentHP": {
           "type": "short",
-          "value": 80
+          "value": 15
         },
         "Description": {
           "type": "cexolocstring",
-          "value": {}
+          "value": {
+            "id": 9078
+          }
         },
         "DisarmDC": {
           "type": "byte",
@@ -1185,7 +752,7 @@
         },
         "GenericType_New": {
           "type": "dword",
-          "value": 0
+          "value": 12
         },
         "Hardness": {
           "type": "byte",
@@ -1193,7 +760,7 @@
         },
         "HP": {
           "type": "short",
-          "value": 80
+          "value": 15
         },
         "Interruptable": {
           "type": "byte",
@@ -1307,11 +874,11 @@
         },
         "Tag": {
           "type": "cexostring",
-          "value": "Wall1Gate"
+          "value": "x3_door_wood002"
         },
         "TemplateResRef": {
           "type": "resref",
-          "value": "nw_door_ttr_01"
+          "value": "x3_door_wood002"
         },
         "TrapDetectable": {
           "type": "byte",
@@ -1343,26 +910,26 @@
         },
         "X": {
           "type": "float",
-          "value": 25.0
+          "value": 53.5
         },
         "Y": {
           "type": "float",
-          "value": 75.0
+          "value": 42.5
         },
         "Z": {
           "type": "float",
-          "value": 0.0
+          "value": 0.2
         }
       },
       {
         "__struct_id": 8,
         "AnimationState": {
           "type": "byte",
-          "value": 1
+          "value": 0
         },
         "Appearance": {
           "type": "dword",
-          "value": 65
+          "value": 0
         },
         "AutoRemoveKey": {
           "type": "byte",
@@ -1382,11 +949,13 @@
         },
         "CurrentHP": {
           "type": "short",
-          "value": 80
+          "value": 15
         },
         "Description": {
           "type": "cexolocstring",
-          "value": {}
+          "value": {
+            "id": 9078
+          }
         },
         "DisarmDC": {
           "type": "byte",
@@ -1402,7 +971,7 @@
         },
         "GenericType_New": {
           "type": "dword",
-          "value": 0
+          "value": 11
         },
         "Hardness": {
           "type": "byte",
@@ -1410,7 +979,7 @@
         },
         "HP": {
           "type": "short",
-          "value": 80
+          "value": 15
         },
         "Interruptable": {
           "type": "byte",
@@ -1447,7 +1016,6 @@
         "LocName": {
           "type": "cexolocstring",
           "value": {
-            "0": "Road_A",
             "id": 5349
           }
         },
@@ -1525,11 +1093,11 @@
         },
         "Tag": {
           "type": "cexostring",
-          "value": "Road_A"
+          "value": "x3_door_wood003"
         },
         "TemplateResRef": {
           "type": "resref",
-          "value": "nw_door_ttr_29"
+          "value": "x3_door_wood003"
         },
         "TrapDetectable": {
           "type": "byte",
@@ -1561,15 +1129,15 @@
         },
         "X": {
           "type": "float",
-          "value": 1.81
+          "value": 55.24
         },
         "Y": {
           "type": "float",
-          "value": 75.0
+          "value": 38.5
         },
         "Z": {
           "type": "float",
-          "value": 0.0
+          "value": 0.2
         }
       }
     ]
