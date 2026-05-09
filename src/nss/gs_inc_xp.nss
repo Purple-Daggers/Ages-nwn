@@ -470,7 +470,7 @@ int gsXPGetMultiClassPenalty(object oPC, int nSubRace = FALSE)
         nLevel2 = nNth;
     }
 
-    //favored class
+    /* favored class
     if (nSubRace)
     {
         nFavoredClass = gsSUGetFavoredClass(nSubRace, GetGender(oPC));
@@ -508,6 +508,9 @@ int gsXPGetMultiClassPenalty(object oPC, int nSubRace = FALSE)
             break;
         }
     }
+    */
+
+    nFavoredClass = nClass1;
 
     // Edits by Mithreas to correct a number of XP-related bugs. Compare
     // levels in classes, not class constants (i.e. nLevel* not nClass*).
