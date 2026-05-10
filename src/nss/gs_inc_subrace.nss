@@ -904,6 +904,14 @@ void gsSUApplyProperty(object oItem, int nSubRace, int nLevel)
             SendMessageToPC(oPossessor, gsCMReplaceString(GS_T_16777537, GS_T_16777547));
         }
         break;
+        //Ages Races
+        case GS_SU_HUMAN_ORI:
+            AddItemProperty(DURATION_TYPE_PERMANENT,
+                            ItemPropertyAbilityBonus(IP_CONST_ABILITY_CHA, 2),
+                         oItem);
+
+        break;
+
     }
 }
 //----------------------------------------------------------------
@@ -1027,8 +1035,25 @@ void gsSUApplyAbility(object oItem, int nSubRace, int nLevel)
         break;
 
     case GS_SU_SPECIAL_BAATEZU:
+        break;
 
-
+    //Ages Races
+    case GS_SU_HUMAN_ORI:
+        AddItemProperty(DURATION_TYPE_PERMANENT,
+            ItemPropertyCastSpell(IP_CONST_CASTSPELL_LIGHT_5,
+                                IP_CONST_CASTSPELL_NUMUSES_UNLIMITED_USE),
+            oItem);
+        switch (nLevel){
+            case 1:
+            case 2:
+                break;
+            default:
+                AddItemProperty(DURATION_TYPE_PERMANENT,
+                                    ItemPropertyCastSpell(IP_CONST_CASTSPELL_SEARING_LIGHT_5,
+                                                        IP_CONST_CASTSPELL_NUMUSES_1_USE_PER_DAY),
+                                    oItem);
+                break;
+        }
         //...
         break;
     }
