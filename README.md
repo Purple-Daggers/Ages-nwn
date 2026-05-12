@@ -25,9 +25,11 @@ You can find some useful notes for setting up your workspace at [this nwnlexicon
 
 VSCode's default encoding is UTF-8 but the .nss files used in Neverwinter Nights are packed in the windows-1252 format. Saving in UTF-8 can break colored text and special characters, so make sure you set VSCode's encoding to Western (Windows 1252) under File->Preferences->Settings->Text Editor->Files->Encoding.
 
+Sometimes include statements will be incorrectly highlighted red like they do not exist. Open the included file in a separate VSCode tab and the red highlighting should resolve.
+
 After making edits to scripts, you should commit to your branch and run `nasher install` for your scripts to compile and pack. After this their changes should appear in the module.
 
-If you successfully built your module after `nasher install`  but your changes aren't present in the module, do not run `nasher unpack` to check. You could lose your changes. Try deleting all the cached files in the .nasher folder and installing again before unpacking.
+If you successfully built your module after `nasher install`  but your changes aren't present in the module, do not run `nasher unpack` to check. You could lose any uncommitted changes. Try deleting all the cached files in the .nasher folder and installing again before unpacking.
 
 When you open the Aurora Toolset and the ages module, it will likely ask if you should open the directory as a module. You should select "yes".
 
