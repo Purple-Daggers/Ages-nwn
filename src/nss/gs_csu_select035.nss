@@ -2,5 +2,5 @@
 
 void main()
 {
-    SetLocalInt(GetPCSpeaker(), "GS_SU_SELECTION", GS_SU_PLANETOUCHED_GENASI_EARTH);
+    SetLocalInt(GetPCSpeaker(), "GS_SU_SELECTION", GS_SU_NUJIIT_PADARR_TWILIGHTBORN);
 }

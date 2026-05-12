@@ -2,5 +2,5 @@
 
 void main()
 {
-    SetLocalInt(GetPCSpeaker(), "GS_SU_SELECTION", GS_SU_PLANETOUCHED_GENASI_AIR);
+    SetLocalInt(GetPCSpeaker(), "GS_SU_SELECTION", GS_SU_MALARI_UNBOWED);
 }
