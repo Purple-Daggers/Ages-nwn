@@ -11,7 +11,9 @@ $ nasher pack haks
 $ nasher install
 ```
 There are external hak file requirements. Download the following like you would any Neverwinter Nights haks:
+
 [CEP 3.1.4](https://neverwintervault.org/project/nwnee/hakpak/combined/cep-3-community-expansion-pack)
+
 [Complete Rural/City](https://neverwintervault.org/project/nwn1/hakpak/combined/complete-ruralcity)
 
 Following this, you can run the module on Neverwinter Nights whether through the Aurora Toolset or the client.
