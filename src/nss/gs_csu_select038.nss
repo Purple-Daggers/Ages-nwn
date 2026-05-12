@@ -2,5 +2,5 @@
 
 void main()
 {
-    SetLocalInt(GetPCSpeaker(), "GS_SU_SELECTION", GS_SU_PLANETOUCHED_TIEFLING);
+    SetLocalInt(GetPCSpeaker(), "GS_SU_SELECTION", GS_SU_NUJIIT_RESPLENDENT_TWILIGHTBORN);
 }

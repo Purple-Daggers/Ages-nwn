@@ -2,5 +2,5 @@
 
 void main()
 {
-    SetLocalInt(GetPCSpeaker(), "GS_SU_SELECTION", GS_SU_GNOME_DEEP);
+    SetLocalInt(GetPCSpeaker(), "GS_SU_SELECTION", GS_SU_HUMAN_KALANORF);
 }

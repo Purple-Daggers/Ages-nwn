@@ -1,8 +1,6 @@
-int StartingConditional()
-{
-    object oSpeaker = GetPCSpeaker();
+#include "gs_inc_subrace"
 
-    return GetRacialType(oSpeaker) == RACIAL_TYPE_HUMAN &&
-           GetAlignmentGoodEvil(oSpeaker) == ALIGNMENT_EVIL &&
-           GetAlignmentLawChaos(oSpeaker) == ALIGNMENT_LAWFUL;
+void main()
+{
+    SetLocalInt(GetPCSpeaker(), "GS_SU_SELECTION", GS_SU_NUJIIT_RIVERLORD_FANGLORD);
 }

@@ -77,7 +77,7 @@ const int GS_SU_MALOSARI_HORNSWORN = 49;
 const int GS_SU_MALOSARI_EMERALD = 50;
 //Eldari (high elves)
 const int GS_SU_ELDARI_EMAELARI = 51;
-const int GS_SU_ELDARI_ELDARI = 52;
+const int GS_SU_ELDARI_AURARI = 52;
 const int GS_SU_ELDARI_ALARI = 53;
 //Dunari (dark elves)
 const int GS_SU_DUNARI_FALLARI = 54;
@@ -1131,7 +1131,7 @@ int gsSUGetSubRaceByName(string sSubRace)
     if (sSubRace == GS_T_16777583) return GS_SU_MALOSARI_EMERALD;
 //Eldari (high elves)
     if (sSubRace == GS_T_16777585) return GS_SU_ELDARI_EMAELARI;
-    if (sSubRace == GS_T_16777586) return GS_SU_ELDARI_ELDARI;
+    if (sSubRace == GS_T_16777586) return GS_SU_ELDARI_AURARI;
     if (sSubRace == GS_T_16777587) return GS_SU_ELDARI_ALARI;
 //Dunari (dark elves)
     if (sSubRace == GS_T_16777589) return GS_SU_DUNARI_FALLARI;
@@ -1232,7 +1232,7 @@ string gsSUGetNameBySubRace(int nSubRace)
     case GS_SU_MALOSARI_EMERALD: return GS_T_16777583;
 //Eldari (high elves)
     case GS_SU_ELDARI_EMAELARI: return GS_T_16777585;
-    case GS_SU_ELDARI_ELDARI: return GS_T_16777586;
+    case GS_SU_ELDARI_AURARI: return GS_T_16777586;
     case GS_SU_ELDARI_ALARI: return GS_T_16777587;
 //Dunari (dark elves)
     case GS_SU_DUNARI_FALLARI: return GS_T_16777589;

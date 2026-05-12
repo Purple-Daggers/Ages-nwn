@@ -2,5 +2,5 @@
 
 void main()
 {
-    SetLocalInt(GetPCSpeaker(), "GS_SU_SELECTION", GS_SU_GNOME_ROCK);
+    SetLocalInt(GetPCSpeaker(), "GS_SU_SELECTION", GS_SU_ADHEAN_JUDHEAN);
 }

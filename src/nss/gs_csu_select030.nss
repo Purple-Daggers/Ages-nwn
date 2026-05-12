@@ -2,5 +2,5 @@
 
 void main()
 {
-    SetLocalInt(GetPCSpeaker(), "GS_SU_SELECTION", GS_SU_HALFLING_GHOSTWISE);
+    SetLocalInt(GetPCSpeaker(), "GS_SU_SELECTION", GS_SU_ADHEAN_RUDHEAN);
 }
