@@ -118,6 +118,64 @@ string gsSUGetNameBySubRace(int nSubRace);
 int gsSUGetECL(int nSubRace, int nLevel);
 //return favored class of nSubRace and nGender
 int gsSUGetFavoredClass(int nSubRace, int nGender = GENDER_MALE);
+//apply a gift local variable to a subrace item
+void gsSUAddGift(object oItem, int nAbility, int nIncrease);
+//remove a gift local variable to a subrace item
+void gsSURemoveGift(object oItem, int nAbility, int nIncrease);
+
+void gsSUAddGift(object oItem, int nAbility, int nIncrease)
+{
+    switch(nAbility)
+    {
+        case IP_CONST_ABILITY_CHA:
+            SetLocalInt(oItem, "GS_SU_CHARISMA", nIncrease);
+        break;
+        case IP_CONST_ABILITY_CON:
+            SetLocalInt(oItem, "GS_SU_CONSTITUTION", nIncrease);
+        break;
+        case IP_CONST_ABILITY_DEX:
+            SetLocalInt(oItem, "GS_SU_DEXTERITY", nIncrease);
+        break;
+        case IP_CONST_ABILITY_INT:
+            SetLocalInt(oItem, "GS_SU_INTELLIGENCE", nIncrease);
+        break;
+        case IP_CONST_ABILITY_STR:
+            SetLocalInt(oItem, "GS_SU_STRENGTH", nIncrease);
+        break;
+        case IP_CONST_ABILITY_WIS:
+            SetLocalInt(oItem, "GS_SU_WISDOM", nIncrease);
+        break;
+        default:
+        break;
+    }
+}
+
+void gsSURemoveGifts(object oItem, int nAbility)
+{
+    switch(nAbility)
+    {
+        case IP_CONST_ABILITY_CHA:
+            DeleteLocalInt(oItem, "GS_SU_CHARISMA");
+        break;
+        case IP_CONST_ABILITY_CON:
+            DeleteLocalInt(oItem, "GS_SU_CONSTITUTION");
+        break;
+        case IP_CONST_ABILITY_DEX:
+            DeleteLocalInt(oItem, "GS_SU_DEXTERITY");
+        break;
+        case IP_CONST_ABILITY_INT:
+            DeleteLocalInt(oItem, "GS_SU_INTELLIGENCE");
+        break;
+        case IP_CONST_ABILITY_STR:
+            DeleteLocalInt(oItem, "GS_SU_STRENGTH");
+        break;
+        case IP_CONST_ABILITY_WIS:
+            DeleteLocalInt(oItem, "GS_SU_WISDOM");
+        break;
+        default:
+        break;
+    }
+}
 
 void gsSUApplyProperty(object oItem, int nSubRace, int nLevel)
 {
@@ -913,7 +971,49 @@ void gsSUApplyProperty(object oItem, int nSubRace, int nLevel)
         break;
 
     }
+    //Gift system
+
+    int nCharismaGift = GetLocalInt(oItem, "GS_SU_CHARISMA");
+    int nConstitutionGift = GetLocalInt(oItem, "GS_SU_CONSTITUTION");
+    int nIntelligenceGift = GetLocalInt(oItem, "GS_SU_INTELLIGENCE");
+    int nDexterityGift = GetLocalInt(oItem, "GS_SU_DEXTERITY");
+    int nStrengthGift = GetLocalInt(oItem, "GS_SU_STRENGTH");
+    int nWisdomGift = GetLocalInt(oItem, "GS_SU_WISDOM");
+
+    if(nCharismaGift != 0) {
+        AddItemProperty(DURATION_TYPE_PERMANENT,
+                            ItemPropertyAbilityBonus(IP_CONST_ABILITY_CHA, nCharismaGift),
+                         oItem);
+    }
+    if(nConstitutionGift != 0) {
+        AddItemProperty(DURATION_TYPE_PERMANENT,
+                            ItemPropertyAbilityBonus(IP_CONST_ABILITY_CON, nConstitutionGift),
+                         oItem);
+    }
+    if(nIntelligenceGift != 0) {
+        AddItemProperty(DURATION_TYPE_PERMANENT,
+                            ItemPropertyAbilityBonus(IP_CONST_ABILITY_INT, nIntelligenceGift),
+                         oItem);
+    }
+    if(nDexterityGift != 0) {
+        AddItemProperty(DURATION_TYPE_PERMANENT,
+                            ItemPropertyAbilityBonus(IP_CONST_ABILITY_DEX, nDexterityGift),
+                         oItem);
+    }
+    if(nStrengthGift != 0) {
+        AddItemProperty(DURATION_TYPE_PERMANENT,
+                            ItemPropertyAbilityBonus(IP_CONST_ABILITY_STR, nStrengthGift),
+                         oItem);
+    }
+    if(nWisdomGift != 0) {
+        AddItemProperty(DURATION_TYPE_PERMANENT,
+                            ItemPropertyAbilityBonus(IP_CONST_ABILITY_WIS, nWisdomGift),
+                         oItem);
+    }
+    
 }
+
+
 //----------------------------------------------------------------
 void gsSUApplyAbility(object oItem, int nSubRace, int nLevel)
 {
@@ -922,7 +1022,8 @@ void gsSUApplyAbility(object oItem, int nSubRace, int nLevel)
     switch (nSubRace)
     {
     case GS_SU_NONE:
-        DestroyObject(oItem);
+        //We won't destroy it if there's no subrace.
+        //DestroyObject(oItem);
         break;
 
     case GS_SU_DWARF_GOLD:
