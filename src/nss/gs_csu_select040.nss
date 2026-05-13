@@ -23,12 +23,6 @@ void main()
         oAbility  = CreateItemOnObject(GS_SU_TEMPLATE_ABILITY,  oSpeaker);
     }
 
-    if (GetIsObjectValid(oProperty))
-    {
-        gsSUApplyProperty(oProperty, nSubRace, nLevel);
-        if (nFlag) AssignCommand(oSpeaker, ActionEquipItem(oProperty, INVENTORY_SLOT_CARMOUR));
-    }
-
     if (nGift != "")
     {
         if(nGift == "CHARISMA"){
@@ -67,6 +61,12 @@ void main()
         else if(nGift == "MINORWISDOM"){
             gsSUAddGift(oProperty, IP_CONST_ABILITY_WIS, 1);
         }
+    }
+
+    if (GetIsObjectValid(oProperty))
+    {
+        gsSUApplyProperty(oProperty, nSubRace, nLevel);
+        if (nFlag) AssignCommand(oSpeaker, ActionEquipItem(oProperty, INVENTORY_SLOT_CARMOUR));
     }
 
     if (GetIsObjectValid(oAbility))
