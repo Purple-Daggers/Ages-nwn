@@ -2,5 +2,5 @@
 
 void main()
 {
-    SetLocalInt(GetPCSpeaker(), "GS_SU_SELECTION", GS_SU_HUMAN_DAVURI);
+    SetLocalInt(GetPCSpeaker(), "GS_SU_SELECTION", GS_SU_HUMAN_CIVITAS_DAVURI);
 }

@@ -1,14 +1,75 @@
 #include "gs_inc_subrace"
 
+void gsParseGift(object oProperty, string sGift);
+
+void gsSUParseGift(object oProperty, string sGift){
+    if(sGift == "CHARISMA"){
+            gsSUAddGift(oProperty, IP_CONST_ABILITY_CHA, 2);
+    }
+    else if(sGift == "STRENGTH"){
+        gsSUAddGift(oProperty, IP_CONST_ABILITY_STR, 2);
+    }
+    else if(sGift == "DEXTERITY"){
+        gsSUAddGift(oProperty, IP_CONST_ABILITY_DEX, 2);
+    }
+    else if(sGift == "CONSTITUTION"){
+        gsSUAddGift(oProperty, IP_CONST_ABILITY_CON, 2);
+    }
+    else if(sGift == "INTELLIGENCE"){
+        gsSUAddGift(oProperty, IP_CONST_ABILITY_INT, 2);
+    }
+    else if(sGift == "WISDOM"){
+        gsSUAddGift(oProperty, IP_CONST_ABILITY_WIS, 2);
+    }
+    else if(sGift == "MINORCHARISMA"){
+        gsSUAddGift(oProperty, IP_CONST_ABILITY_CHA, 1);
+    }
+    else if(sGift == "MINORSTRENGTH"){
+        gsSUAddGift(oProperty, IP_CONST_ABILITY_STR, 1);
+    }
+    else if(sGift == "MINORDEXTERITY"){
+        gsSUAddGift(oProperty, IP_CONST_ABILITY_DEX, 1);
+    }
+    else if(sGift == "MINORCONSTITUTION"){
+        gsSUAddGift(oProperty, IP_CONST_ABILITY_CON, 1);
+    }
+    else if(sGift == "MINORINTELLIGENCE"){
+        gsSUAddGift(oProperty, IP_CONST_ABILITY_INT, 1);
+    }
+    else if(sGift == "MINORWISDOM"){
+        gsSUAddGift(oProperty, IP_CONST_ABILITY_WIS, 1);
+    }
+    else if(sGift == "LOSEMINORCHARISMA"){
+        gsSUAddGift(oProperty, IP_CONST_ABILITY_WIS, -1);
+    }
+    else if(sGift == "LOSEMINORSTRENGTH"){
+        gsSUAddGift(oProperty, IP_CONST_ABILITY_STR, -1);
+    }
+    else if(sGift == "LOSEMINORDEXTERITY"){
+        gsSUAddGift(oProperty, IP_CONST_ABILITY_DEX, -1);
+    }
+    else if(sGift == "LOSEMINORCONSTITUTION"){
+        gsSUAddGift(oProperty, IP_CONST_ABILITY_CON, -1);
+    }
+    else if(sGift == "LOSEMINORINTELLIGENCE"){
+        gsSUAddGift(oProperty, IP_CONST_ABILITY_INT, -1);
+    }
+    else if(sGift == "LOSEMINORWISDOM"){
+        gsSUAddGift(oProperty, IP_CONST_ABILITY_WIS, -1);
+    }
+}
+
 void main()
 {
     object oSpeaker  = GetPCSpeaker();
     object oProperty = GetItemInSlot(INVENTORY_SLOT_CARMOUR, oSpeaker);
     object oAbility  = GetItemPossessedBy(oSpeaker, "GS_SU_ABILITY");
     int nSubRace     = GetLocalInt(oSpeaker, "GS_SU_SELECTION");
-    string nGift     = GetLocalString(oSpeaker, "GS_SU_GIFT1");
-    string nGift2    = GetLocalString(oSpeaker, "GS_SU_GIFT2");
-    string nGift3    = GetLocalString(oSpeaker, "GS_SU_GIFT3");
+    string sGift1     = GetLocalString(oSpeaker, "GS_SU_GIFT1");
+    string sGift2    = GetLocalString(oSpeaker, "GS_SU_GIFT2");
+    string sGift3    = GetLocalString(oSpeaker, "GS_SU_GIFT3");
+    string sGift4    = GetLocalString(oSpeaker, "GS_SU_GIFT4");
+    string sGift5    = GetLocalString(oSpeaker, "GS_SU_GIFT5");
     int nLevel       = GetHitDice(oSpeaker);
     int nFlag        = FALSE;
 
@@ -23,45 +84,11 @@ void main()
         oAbility  = CreateItemOnObject(GS_SU_TEMPLATE_ABILITY,  oSpeaker);
     }
 
-    if (nGift != "")
-    {
-        if(nGift == "CHARISMA"){
-            gsSUAddGift(oProperty, IP_CONST_ABILITY_CHA, 2);
-        }
-        else if(nGift == "STRENGTH"){
-            gsSUAddGift(oProperty, IP_CONST_ABILITY_STR, 2);
-        }
-        else if(nGift == "DEXTERITY"){
-            gsSUAddGift(oProperty, IP_CONST_ABILITY_DEX, 2);
-        }
-        else if(nGift == "CONSTITUTION"){
-            gsSUAddGift(oProperty, IP_CONST_ABILITY_CON, 2);
-        }
-        else if(nGift == "INTELLIGENCE"){
-            gsSUAddGift(oProperty, IP_CONST_ABILITY_INT, 2);
-        }
-        else if(nGift == "WISDOM"){
-            gsSUAddGift(oProperty, IP_CONST_ABILITY_WIS, 2);
-        }
-        else if(nGift == "MINORCHARISMA"){
-            gsSUAddGift(oProperty, IP_CONST_ABILITY_CHA, 1);
-        }
-        else if(nGift == "MINORSTRENGTH"){
-            gsSUAddGift(oProperty, IP_CONST_ABILITY_STR, 1);
-        }
-        else if(nGift == "MINORDEXTERITY"){
-            gsSUAddGift(oProperty, IP_CONST_ABILITY_DEX, 1);
-        }
-        else if(nGift == "MINORCONSTITUTION"){
-            gsSUAddGift(oProperty, IP_CONST_ABILITY_CON, 1);
-        }
-        else if(nGift == "MINORINTELLIGENCE"){
-            gsSUAddGift(oProperty, IP_CONST_ABILITY_INT, 1);
-        }
-        else if(nGift == "MINORWISDOM"){
-            gsSUAddGift(oProperty, IP_CONST_ABILITY_WIS, 1);
-        }
-    }
+    gsSUParseGift(oProperty, sGift1);
+    gsSUParseGift(oProperty, sGift2);
+    gsSUParseGift(oProperty, sGift3);
+    gsSUParseGift(oProperty, sGift4);
+    gsSUParseGift(oProperty, sGift5);
 
     if (GetIsObjectValid(oProperty))
     {
