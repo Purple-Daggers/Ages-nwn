@@ -1019,32 +1019,32 @@ void gsSUApplyProperty(object oItem, int nSubRace, int nLevel)
     //negative
     if(nCharismaGift < 0) {
         AddItemProperty(DURATION_TYPE_PERMANENT,
-                            ItemPropertyDecreaseAbility(IP_CONST_ABILITY_CHA, nCharismaGift),
+                            ItemPropertyDecreaseAbility(IP_CONST_ABILITY_CHA, abs(nCharismaGift)),
                          oItem);
     }
     if(nConstitutionGift < 0) {
         AddItemProperty(DURATION_TYPE_PERMANENT,
-                            ItemPropertyDecreaseAbility(IP_CONST_ABILITY_CON, nConstitutionGift),
+                            ItemPropertyDecreaseAbility(IP_CONST_ABILITY_CON, abs(nConstitutionGift)),
                          oItem);
     }
     if(nIntelligenceGift < 0) {
         AddItemProperty(DURATION_TYPE_PERMANENT,
-                            ItemPropertyDecreaseAbility(IP_CONST_ABILITY_INT, nIntelligenceGift),
+                            ItemPropertyDecreaseAbility(IP_CONST_ABILITY_INT, abs(nIntelligenceGift)),
                          oItem);
     }
     if(nDexterityGift < 0) {
         AddItemProperty(DURATION_TYPE_PERMANENT,
-                            ItemPropertyDecreaseAbility(IP_CONST_ABILITY_DEX, nDexterityGift),
+                            ItemPropertyDecreaseAbility(IP_CONST_ABILITY_DEX, abs(nDexterityGift)),
                          oItem);
     }
     if(nStrengthGift < 0) {
         AddItemProperty(DURATION_TYPE_PERMANENT,
-                            ItemPropertyDecreaseAbility(IP_CONST_ABILITY_STR, nStrengthGift),
+                            ItemPropertyDecreaseAbility(IP_CONST_ABILITY_STR, abs(nStrengthGift)),
                          oItem);
     }
     if(nWisdomGift < 0) {
         AddItemProperty(DURATION_TYPE_PERMANENT,
-                            ItemPropertyDecreaseAbility(IP_CONST_ABILITY_WIS, nWisdomGift),
+                            ItemPropertyDecreaseAbility(IP_CONST_ABILITY_WIS, abs(nWisdomGift)),
                          oItem);
     }
     
