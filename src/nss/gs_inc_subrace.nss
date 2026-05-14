@@ -41,8 +41,8 @@ const int GS_SU_HUMAN_PRASIENE = 20;
 const int GS_SU_HUMAN_ORI = 21;
 const int GS_SU_HUMAN_NAVARREE = 22;
 //Imperial
-const int GS_SU_HUMAN_DAVURI = 23;
-const int GS_SU_HUMAN_ASHLANDER = 24;
+const int GS_SU_HUMAN_ARCHONBLOODED_DAVURI = 23;
+const int GS_SU_HUMAN_ARCHONBLOODED_ASHLANDER = 24;
 //Nijaran
 const int GS_SU_HUMAN_INEN = 25;
 const int GS_SU_HUMAN_ASHARI = 26;
@@ -104,6 +104,8 @@ const int GS_SU_VEYDRAN_UNFADING_AETHERTOUCHED = 72;
 const int GS_SU_HUMAN_PRASIENE_CIPHER = 73;
 const int GS_SU_HUMAN_ORI_CIPHER = 74;
 const int GS_SU_HUMAN_NAVARREE_CIPHER = 75;
+const int GS_SU_HUMAN_CIVITAS_DAVURI = 76;
+const int GS_SU_HUMAN_CIVITAS_ASHLANDER = 77;
 
 
 //apply properties for nSubrace of nLevel to oItem
@@ -128,22 +130,22 @@ void gsSUAddGift(object oItem, int nAbility, int nIncrease)
     switch(nAbility)
     {
         case IP_CONST_ABILITY_CHA:
-            SetLocalInt(oItem, "GS_SU_CHARISMA", nIncrease);
+            SetLocalInt(oItem, "GS_SU_CHARISMA", GetLocalInt(oItem, "GS_SU_CHARISMA") + nIncrease);
         break;
         case IP_CONST_ABILITY_CON:
-            SetLocalInt(oItem, "GS_SU_CONSTITUTION", nIncrease);
+            SetLocalInt(oItem, "GS_SU_CONSTITUTION", GetLocalInt(oItem, "GS_SU_CONSTITUTION") + nIncrease);
         break;
         case IP_CONST_ABILITY_DEX:
-            SetLocalInt(oItem, "GS_SU_DEXTERITY", nIncrease);
+            SetLocalInt(oItem, "GS_SU_DEXTERITY", GetLocalInt(oItem, "GS_SU_DEXTERITY") + nIncrease);
         break;
         case IP_CONST_ABILITY_INT:
-            SetLocalInt(oItem, "GS_SU_INTELLIGENCE", nIncrease);
+            SetLocalInt(oItem, "GS_SU_INTELLIGENCE", GetLocalInt(oItem, "GS_SU_INTELLIGENCE") + nIncrease);
         break;
         case IP_CONST_ABILITY_STR:
-            SetLocalInt(oItem, "GS_SU_STRENGTH", nIncrease);
+            SetLocalInt(oItem, "GS_SU_STRENGTH", GetLocalInt(oItem, "GS_SU_STRENGTH") + nIncrease);
         break;
         case IP_CONST_ABILITY_WIS:
-            SetLocalInt(oItem, "GS_SU_WISDOM", nIncrease);
+            SetLocalInt(oItem, "GS_SU_WISDOM", GetLocalInt(oItem, "GS_SU_WISDOM") + nIncrease);
         break;
         default:
         break;
@@ -970,6 +972,10 @@ void gsSUApplyProperty(object oItem, int nSubRace, int nLevel)
 
         break;
 
+        case GS_SU_MALOSARI_FREESWORN:
+
+        break;
+
     }
     //Gift system
 
@@ -980,34 +986,65 @@ void gsSUApplyProperty(object oItem, int nSubRace, int nLevel)
     int nStrengthGift = GetLocalInt(oItem, "GS_SU_STRENGTH");
     int nWisdomGift = GetLocalInt(oItem, "GS_SU_WISDOM");
 
-    if(nCharismaGift != 0) {
+    if(nCharismaGift > 0) {
         AddItemProperty(DURATION_TYPE_PERMANENT,
                             ItemPropertyAbilityBonus(IP_CONST_ABILITY_CHA, nCharismaGift),
                          oItem);
     }
-    if(nConstitutionGift != 0) {
+    if(nConstitutionGift > 0) {
         AddItemProperty(DURATION_TYPE_PERMANENT,
                             ItemPropertyAbilityBonus(IP_CONST_ABILITY_CON, nConstitutionGift),
                          oItem);
     }
-    if(nIntelligenceGift != 0) {
+    if(nIntelligenceGift > 0) {
         AddItemProperty(DURATION_TYPE_PERMANENT,
                             ItemPropertyAbilityBonus(IP_CONST_ABILITY_INT, nIntelligenceGift),
                          oItem);
     }
-    if(nDexterityGift != 0) {
+    if(nDexterityGift > 0) {
         AddItemProperty(DURATION_TYPE_PERMANENT,
                             ItemPropertyAbilityBonus(IP_CONST_ABILITY_DEX, nDexterityGift),
                          oItem);
     }
-    if(nStrengthGift != 0) {
+    if(nStrengthGift > 0) {
         AddItemProperty(DURATION_TYPE_PERMANENT,
                             ItemPropertyAbilityBonus(IP_CONST_ABILITY_STR, nStrengthGift),
                          oItem);
     }
-    if(nWisdomGift != 0) {
+    if(nWisdomGift > 0) {
         AddItemProperty(DURATION_TYPE_PERMANENT,
                             ItemPropertyAbilityBonus(IP_CONST_ABILITY_WIS, nWisdomGift),
+                         oItem);
+    }
+    //negative
+    if(nCharismaGift < 0) {
+        AddItemProperty(DURATION_TYPE_PERMANENT,
+                            ItemPropertyDecreaseAbility(IP_CONST_ABILITY_CHA, nCharismaGift),
+                         oItem);
+    }
+    if(nConstitutionGift < 0) {
+        AddItemProperty(DURATION_TYPE_PERMANENT,
+                            ItemPropertyDecreaseAbility(IP_CONST_ABILITY_CON, nConstitutionGift),
+                         oItem);
+    }
+    if(nIntelligenceGift < 0) {
+        AddItemProperty(DURATION_TYPE_PERMANENT,
+                            ItemPropertyDecreaseAbility(IP_CONST_ABILITY_INT, nIntelligenceGift),
+                         oItem);
+    }
+    if(nDexterityGift < 0) {
+        AddItemProperty(DURATION_TYPE_PERMANENT,
+                            ItemPropertyDecreaseAbility(IP_CONST_ABILITY_DEX, nDexterityGift),
+                         oItem);
+    }
+    if(nStrengthGift < 0) {
+        AddItemProperty(DURATION_TYPE_PERMANENT,
+                            ItemPropertyDecreaseAbility(IP_CONST_ABILITY_STR, nStrengthGift),
+                         oItem);
+    }
+    if(nWisdomGift < 0) {
+        AddItemProperty(DURATION_TYPE_PERMANENT,
+                            ItemPropertyDecreaseAbility(IP_CONST_ABILITY_WIS, nWisdomGift),
                          oItem);
     }
     
@@ -1196,8 +1233,10 @@ int gsSUGetSubRaceByName(string sSubRace)
     if (sSubRace == GS_T_16777555) return GS_SU_HUMAN_ORI;
     if (sSubRace == GS_T_16777556) return GS_SU_HUMAN_NAVARREE;
 //Imperial
-    if (sSubRace == GS_T_16777558) return GS_SU_HUMAN_DAVURI;
-    if (sSubRace == GS_T_16777559) return GS_SU_HUMAN_ASHLANDER;
+    if (sSubRace == GS_T_16777639) return GS_SU_HUMAN_ARCHONBLOODED_DAVURI;
+    if (sSubRace == GS_T_16777641) return GS_SU_HUMAN_ARCHONBLOODED_ASHLANDER;
+    if (sSubRace == GS_T_16777640) return GS_SU_HUMAN_CIVITAS_ASHLANDER;
+    if (sSubRace == GS_T_16777638) return GS_SU_HUMAN_CIVITAS_DAVURI;
 //Nijaran
     if (sSubRace == GS_T_16777561) return GS_SU_HUMAN_INEN ;
     if (sSubRace == GS_T_16777562) return GS_SU_HUMAN_ASHARI;
@@ -1297,8 +1336,10 @@ string gsSUGetNameBySubRace(int nSubRace)
     case GS_SU_HUMAN_ORI: return GS_T_16777555;
     case GS_SU_HUMAN_NAVARREE: return GS_T_16777556;
 //Imperial
-    case GS_SU_HUMAN_DAVURI: return GS_T_16777558;
-    case GS_SU_HUMAN_ASHLANDER: return GS_T_16777559;
+    case GS_SU_HUMAN_ARCHONBLOODED_DAVURI: return GS_T_16777639;
+    case GS_SU_HUMAN_ARCHONBLOODED_ASHLANDER: return GS_T_16777641;
+    case GS_SU_HUMAN_CIVITAS_ASHLANDER: return GS_T_16777640;
+    case GS_SU_HUMAN_CIVITAS_DAVURI: return GS_T_16777638;
 //Nijaran
     case GS_SU_HUMAN_INEN: return GS_T_16777561;
     case GS_SU_HUMAN_ASHARI: return GS_T_16777562;
