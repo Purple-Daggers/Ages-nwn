@@ -39,8 +39,26 @@ void gsSUParseGift(object oProperty, string sGift){
     else if(sGift == "MINORWISDOM"){
         gsSUAddGift(oProperty, IP_CONST_ABILITY_WIS, 1);
     }
+    else if(sGift == "LOSEWISDOM"){
+        gsSUAddGift(oProperty, IP_CONST_ABILITY_WIS, -2);
+    }
+    else if(sGift == "LOSECHARISMA"){
+        gsSUAddGift(oProperty, IP_CONST_ABILITY_CHA, -2);
+    }
+    else if(sGift == "LOSESTRENGTH"){
+        gsSUAddGift(oProperty, IP_CONST_ABILITY_STR, -2);
+    }
+    else if(sGift == "LOSEDEXTERITY"){
+        gsSUAddGift(oProperty, IP_CONST_ABILITY_DEX, -2);
+    }
+    else if(sGift == "LOSECONSTITUTION"){
+        gsSUAddGift(oProperty, IP_CONST_ABILITY_CON, -2);
+    }
+    else if(sGift == "LOSEINTELLIGENCE"){
+        gsSUAddGift(oProperty, IP_CONST_ABILITY_INT, -2);
+    }
     else if(sGift == "LOSEMINORCHARISMA"){
-        gsSUAddGift(oProperty, IP_CONST_ABILITY_WIS, -1);
+        gsSUAddGift(oProperty, IP_CONST_ABILITY_CHA, -1);
     }
     else if(sGift == "LOSEMINORSTRENGTH"){
         gsSUAddGift(oProperty, IP_CONST_ABILITY_STR, -1);
