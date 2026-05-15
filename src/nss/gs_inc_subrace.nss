@@ -965,11 +965,76 @@ void gsSUApplyProperty(object oItem, int nSubRace, int nLevel)
         }
         break;
         //Ages Races
+        case GS_SU_HUMAN_PRASIENE:
+            AddItemProperty(DURATION_TYPE_PERMANENT,
+                            ItemPropertyAbilityBonus(IP_CONST_ABILITY_WIS, 2),
+                         oItem);
+            AddItemProperty(DURATION_TYPE_PERMANENT,
+                            ItemPropertyAbilityBonus(IP_CONST_ABILITY_INT, 1),
+                         oItem);
+            AddItemProperty(DURATION_TYPE_PERMANENT,
+                            ItemPropertyBonusSavingThrowVsX(IP_CONST_SAVEVS_FEAR, 2),
+                         oItem);
+            AddItemProperty(DURATION_TYPE_PERMANENT,
+                            ItemPropertyBonusSavingThrowVsX(IP_CONST_SAVEVS_MINDAFFECTING, 2),
+                         oItem);
+            AddItemProperty(DURATION_TYPE_PERMANENT,
+                            ItemPropertyBonusFeat(IP_CONST_FEAT_ARMOR_PROF_LIGHT),
+                         oItem);
+            AddItemProperty(DURATION_TYPE_PERMANENT,
+                            ItemPropertyBonusFeat(IP_CONST_FEAT_SHIELD_PROFICIENCY),
+                         oItem);
+            AddItemProperty(DURATION_TYPE_PERMANENT,
+                        ItemPropertySkillBonus(SKILL_ALL_SKILLS, 1),
+                        oItem);
+        break;
+
         case GS_SU_HUMAN_ORI:
             AddItemProperty(DURATION_TYPE_PERMANENT,
                             ItemPropertyAbilityBonus(IP_CONST_ABILITY_CHA, 2),
                          oItem);
+            AddItemProperty(DURATION_TYPE_PERMANENT,
+                            ItemPropertyBonusSavingThrowVsX(IP_CONST_SAVEVS_FEAR, 2),
+                         oItem);
+            AddItemProperty(DURATION_TYPE_PERMANENT,
+                            ItemPropertyBonusSavingThrowVsX(IP_CONST_SAVEVS_MINDAFFECTING, 2),
+                         oItem);
+            AddItemProperty(DURATION_TYPE_PERMANENT,
+                        ItemPropertySkillBonus(SKILL_PERFORM, 2),
+                        oItem);
+            AddItemProperty(DURATION_TYPE_PERMANENT,
+                        ItemPropertySkillBonus(SKILL_PERSUADE, 2),
+                        oItem);
+            AddItemProperty(DURATION_TYPE_PERMANENT,
+                        ItemPropertySkillBonus(SKILL_CONCENTRATION, 2),
+                        oItem);
+        break;
 
+        case GS_SU_HUMAN_NAVARREE:
+            AddItemProperty(DURATION_TYPE_PERMANENT,
+                            ItemPropertyAbilityBonus(IP_CONST_ABILITY_CON, 1),
+                         oItem);
+            AddItemProperty(DURATION_TYPE_PERMANENT,
+                            ItemPropertyBonusSavingThrowVsX(IP_CONST_SAVEVS_FEAR, 2),
+                         oItem);
+            AddItemProperty(DURATION_TYPE_PERMANENT,
+                            ItemPropertyBonusSavingThrowVsX(IP_CONST_SAVEVS_MINDAFFECTING, 2),
+                         oItem);
+            AddItemProperty(DURATION_TYPE_PERMANENT,
+                        ItemPropertySkillBonus(SKILL_LORE, 2),
+                        oItem);
+            AddItemProperty(DURATION_TYPE_PERMANENT,
+                        ItemPropertySkillBonus(SKILL_DISCIPLINE, 2),
+                        oItem);
+            AddItemProperty(DURATION_TYPE_PERMANENT,
+                        ItemPropertySkillBonus(SKILL_INTIMIDATE, 2),
+                        oItem);
+            AddItemProperty(DURATION_TYPE_PERMANENT,
+                        ItemPropertySkillBonus(SKILL_SET_TRAP, 2),
+                        oItem);
+            AddItemProperty(DURATION_TYPE_PERMANENT,
+                        ItemPropertySkillBonus(SKILL_BLUFF, 4),
+                        oItem);
         break;
 
         case GS_SU_MALOSARI_FREESWORN:
@@ -1176,6 +1241,34 @@ void gsSUApplyAbility(object oItem, int nSubRace, int nLevel)
         break;
 
     //Ages Races
+
+    case GS_SU_HUMAN_PRASIENE:
+        AddItemProperty(DURATION_TYPE_PERMANENT,
+            ItemPropertyCastSpell(IP_CONST_CASTSPELL_RESISTANCE_5,
+                                IP_CONST_CASTSPELL_NUMUSES_UNLIMITED_USE),
+            oItem);
+
+    break;
+
+    case GS_SU_HUMAN_NAVARREE:
+        AddItemProperty(DURATION_TYPE_PERMANENT,
+            ItemPropertyCastSpell(IP_CONST_CASTSPELL_INFLICT_MINOR_WOUNDS_1,
+                                IP_CONST_CASTSPELL_NUMUSES_UNLIMITED_USE),
+            oItem);
+        switch (nLevel){
+            case 1:
+            case 2:
+                break;
+            default:
+                AddItemProperty(DURATION_TYPE_PERMANENT,
+                                    ItemPropertyCastSpell(IP_CONST_CASTSPELL_CHARM_PERSON_10,
+                                                        IP_CONST_CASTSPELL_NUMUSES_1_USE_PER_DAY),
+                                    oItem);
+                break;
+        }
+    break;
+
+
     case GS_SU_HUMAN_ORI:
         AddItemProperty(DURATION_TYPE_PERMANENT,
             ItemPropertyCastSpell(IP_CONST_CASTSPELL_LIGHT_5,
@@ -1192,8 +1285,7 @@ void gsSUApplyAbility(object oItem, int nSubRace, int nLevel)
                                     oItem);
                 break;
         }
-        //...
-        break;
+    break;
     }
 
     AddItemProperty(DURATION_TYPE_PERMANENT,
