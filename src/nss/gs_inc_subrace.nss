@@ -1037,6 +1037,157 @@ void gsSUApplyProperty(object oItem, int nSubRace, int nLevel)
                         oItem);
         break;
 
+        case GS_SU_HUMAN_ARCHONBLOODED_ASHLANDER:
+            AddItemProperty(DURATION_TYPE_PERMANENT,
+                        ItemPropertySkillBonus(SKILL_INTIMIDATE, 4),
+                        oItem);
+            AddItemProperty(DURATION_TYPE_PERMANENT,
+                        ItemPropertyDamageResistance(IP_CONST_DAMAGETYPE_FIRE,
+                                                     IP_CONST_DAMAGERESIST_10),
+                        oItem);
+            AddItemProperty(DURATION_TYPE_PERMANENT,
+                            ItemPropertyBonusFeat(FEAT_WEAPON_SPECIALIZATION_UNARMED_STRIKE),
+                         oItem);
+            AddItemProperty(DURATION_TYPE_PERMANENT,
+                            ItemPropertyAbilityBonus(IP_CONST_ABILITY_CON, 2),
+                         oItem);
+            AddItemProperty(DURATION_TYPE_PERMANENT,
+                            ItemPropertyAbilityBonus(IP_CONST_ABILITY_WIS, 1),
+                         oItem);
+            AddItemProperty(DURATION_TYPE_PERMANENT,
+                            ItemPropertyDecreaseAbility(IP_CONST_ABILITY_INT, 2),
+                         oItem);
+            AddItemProperty(DURATION_TYPE_PERMANENT,
+                        ItemPropertySkillBonus(SKILL_SET_TRAP, 4),
+                        oItem);
+            AddItemProperty(DURATION_TYPE_PERMANENT,
+                            ItemPropertyBonusSavingThrowVsX(IP_CONST_SAVEVS_DISEASE, 4),
+                         oItem);
+            AddItemProperty(DURATION_TYPE_PERMANENT,
+                        ItemPropertySkillBonus(SKILL_OPEN_LOCK, 4),
+                        oItem);
+            AddItemProperty(DURATION_TYPE_PERMANENT,
+                        ItemPropertySkillBonus(SKILL_SEARCH, 4),
+                        oItem);
+            AddItemProperty(DURATION_TYPE_PERMANENT,
+                        ItemPropertySkillBonus(SKILL_APPRAISE, 4),
+                        oItem);
+            AddItemProperty(DURATION_TYPE_PERMANENT,
+                        ItemPropertySkillBonus(SKILL_HIDE, 4),
+                        oItem);
+            AddItemProperty(DURATION_TYPE_PERMANENT,
+                        ItemPropertySkillBonus(SKILL_MOVE_SILENTLY, 4),
+                        oItem);
+            
+        break;
+        case GS_SU_HUMAN_ARCHONBLOODED_DAVURI:
+            AddItemProperty(DURATION_TYPE_PERMANENT,
+                        ItemPropertySkillBonus(SKILL_INTIMIDATE, 4),
+                        oItem);
+            AddItemProperty(DURATION_TYPE_PERMANENT,
+                        ItemPropertyDamageResistance(IP_CONST_DAMAGETYPE_FIRE,
+                                                     IP_CONST_DAMAGERESIST_10),
+                        oItem);
+            AddItemProperty(DURATION_TYPE_PERMANENT,
+                            ItemPropertyBonusFeat(FEAT_WEAPON_SPECIALIZATION_UNARMED_STRIKE),
+                         oItem);
+            AddItemProperty(DURATION_TYPE_PERMANENT,
+                            ItemPropertyAbilityBonus(IP_CONST_ABILITY_CON, 1),
+                         oItem);
+            AddItemProperty(DURATION_TYPE_PERMANENT,
+                            ItemPropertyAbilityBonus(IP_CONST_ABILITY_WIS, 1),
+                         oItem);
+            AddItemProperty(DURATION_TYPE_PERMANENT,
+                            ItemPropertyDecreaseAbility(IP_CONST_ABILITY_INT, 1),
+                         oItem);
+            AddItemProperty(DURATION_TYPE_PERMANENT,
+                            ItemPropertyBonusSavingThrowVsX(IP_CONST_SAVEVS_UNIVERSAL, 1),
+                         oItem);
+            AddItemProperty(DURATION_TYPE_PERMANENT,
+                        ItemPropertySkillBonus(SKILL_CONCENTRATION, 2),
+                        oItem);
+            AddItemProperty(DURATION_TYPE_PERMANENT,
+                        ItemPropertySkillBonus(SKILL_SEARCH, 2),
+                        oItem);
+            AddItemProperty(DURATION_TYPE_PERMANENT,
+                        ItemPropertySkillBonus(SKILL_HEAL, 2),
+                        oItem);
+            AddItemProperty(DURATION_TYPE_PERMANENT,
+                        ItemPropertySkillBonus(SKILL_SET_TRAP, 2),
+                        oItem);
+            
+        break;
+        case GS_SU_HUMAN_CIVITAS_ASHLANDER:
+            AddItemProperty(DURATION_TYPE_PERMANENT,
+                        ItemPropertySkillBonus(SKILL_PERSUADE, 4),
+                        oItem);
+            AddItemProperty(DURATION_TYPE_PERMANENT,
+                        ItemPropertySkillBonus(SKILL_PERFORM, 4),
+                        oItem);
+            AddItemProperty(DURATION_TYPE_PERMANENT,
+                            ItemPropertyAbilityBonus(IP_CONST_ABILITY_CON, 2),
+                         oItem);
+            AddItemProperty(DURATION_TYPE_PERMANENT,
+                            ItemPropertyAbilityBonus(IP_CONST_ABILITY_WIS, 1),
+                         oItem);
+            AddItemProperty(DURATION_TYPE_PERMANENT,
+                            ItemPropertyDecreaseAbility(IP_CONST_ABILITY_INT, 2),
+                         oItem);
+            AddItemProperty(DURATION_TYPE_PERMANENT,
+                        ItemPropertySkillBonus(SKILL_SET_TRAP, 4),
+                        oItem);
+            AddItemProperty(DURATION_TYPE_PERMANENT,
+                            ItemPropertyBonusSavingThrowVsX(IP_CONST_SAVEVS_DISEASE, 4),
+                         oItem);
+            AddItemProperty(DURATION_TYPE_PERMANENT,
+                        ItemPropertySkillBonus(SKILL_OPEN_LOCK, 4),
+                        oItem);
+            AddItemProperty(DURATION_TYPE_PERMANENT,
+                        ItemPropertySkillBonus(SKILL_SEARCH, 4),
+                        oItem);
+            AddItemProperty(DURATION_TYPE_PERMANENT,
+                        ItemPropertySkillBonus(SKILL_APPRAISE, 4),
+                        oItem);
+            AddItemProperty(DURATION_TYPE_PERMANENT,
+                        ItemPropertySkillBonus(SKILL_HIDE, 4),
+                        oItem);
+            AddItemProperty(DURATION_TYPE_PERMANENT,
+                        ItemPropertySkillBonus(SKILL_MOVE_SILENTLY, 4),
+                        oItem);
+        break;
+        case GS_SU_HUMAN_CIVITAS_DAVURI:
+            AddItemProperty(DURATION_TYPE_PERMANENT,
+                        ItemPropertySkillBonus(SKILL_PERSUADE, 4),
+                        oItem);
+            AddItemProperty(DURATION_TYPE_PERMANENT,
+                        ItemPropertySkillBonus(SKILL_PERFORM, 4),
+                        oItem);
+            AddItemProperty(DURATION_TYPE_PERMANENT,
+                            ItemPropertyAbilityBonus(IP_CONST_ABILITY_CON, 1),
+                         oItem);
+            AddItemProperty(DURATION_TYPE_PERMANENT,
+                            ItemPropertyAbilityBonus(IP_CONST_ABILITY_WIS, 1),
+                         oItem);
+            AddItemProperty(DURATION_TYPE_PERMANENT,
+                            ItemPropertyDecreaseAbility(IP_CONST_ABILITY_INT, 1),
+                         oItem);
+            AddItemProperty(DURATION_TYPE_PERMANENT,
+                            ItemPropertyBonusSavingThrowVsX(IP_CONST_SAVEVS_UNIVERSAL, 1),
+                         oItem);
+            AddItemProperty(DURATION_TYPE_PERMANENT,
+                        ItemPropertySkillBonus(SKILL_CONCENTRATION, 2),
+                        oItem);
+            AddItemProperty(DURATION_TYPE_PERMANENT,
+                        ItemPropertySkillBonus(SKILL_SEARCH, 2),
+                        oItem);
+            AddItemProperty(DURATION_TYPE_PERMANENT,
+                        ItemPropertySkillBonus(SKILL_HEAL, 2),
+                        oItem);
+            AddItemProperty(DURATION_TYPE_PERMANENT,
+                        ItemPropertySkillBonus(SKILL_SET_TRAP, 2),
+                        oItem);
+        break;
+
         case GS_SU_MALOSARI_FREESWORN:
 
         break;
