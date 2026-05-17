@@ -9,6 +9,8 @@
 const string GS_SU_TEMPLATE_PROPERTY      = "gs_item317";
 const string GS_SU_TEMPLATE_ABILITY       = "gs_item318";
 
+const int IP_CONST_FEAT_WEAPON_SPEC_UNARMED = 1196;
+
 const int GS_SU_NONE                      =   0;
 const int GS_SU_DWARF_GOLD                =   1;
 const int GS_SU_DWARF_GRAY                =   2;
@@ -1046,7 +1048,7 @@ void gsSUApplyProperty(object oItem, int nSubRace, int nLevel)
                                                      IP_CONST_DAMAGERESIST_10),
                         oItem);
             AddItemProperty(DURATION_TYPE_PERMANENT,
-                            ItemPropertyBonusFeat(FEAT_WEAPON_SPECIALIZATION_UNARMED_STRIKE),
+                            ItemPropertyBonusFeat(IP_CONST_FEAT_WEAPON_SPEC_UNARMED),
                          oItem);
             AddItemProperty(DURATION_TYPE_PERMANENT,
                             ItemPropertyAbilityBonus(IP_CONST_ABILITY_CON, 2),
@@ -1089,7 +1091,7 @@ void gsSUApplyProperty(object oItem, int nSubRace, int nLevel)
                                                      IP_CONST_DAMAGERESIST_10),
                         oItem);
             AddItemProperty(DURATION_TYPE_PERMANENT,
-                            ItemPropertyBonusFeat(FEAT_WEAPON_SPECIALIZATION_UNARMED_STRIKE),
+                            ItemPropertyBonusFeat(IP_CONST_FEAT_WEAPON_SPEC_UNARMED),
                          oItem);
             AddItemProperty(DURATION_TYPE_PERMANENT,
                             ItemPropertyAbilityBonus(IP_CONST_ABILITY_CON, 1),
