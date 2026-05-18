@@ -10,6 +10,7 @@ const string GS_SU_TEMPLATE_PROPERTY      = "gs_item317";
 const string GS_SU_TEMPLATE_ABILITY       = "gs_item318";
 
 const int IP_CONST_FEAT_WEAPON_SPEC_UNARMED = 1196;
+const int IP_CONST_FEAT_TOUGHNESS = 1197;
 
 const int GS_SU_NONE                      =   0;
 const int GS_SU_DWARF_GOLD                =   1;
@@ -1190,6 +1191,92 @@ void gsSUApplyProperty(object oItem, int nSubRace, int nLevel)
                         oItem);
         break;
 
+        case GS_SU_HUMAN_INEN:
+            AddItemProperty(DURATION_TYPE_PERMANENT,
+                            ItemPropertyAbilityBonus(IP_CONST_ABILITY_CHA, 1),
+                         oItem);
+            AddItemProperty(DURATION_TYPE_PERMANENT,
+                            ItemPropertyAbilityBonus(IP_CONST_ABILITY_DEX, 1),
+                         oItem);
+            AddItemProperty(DURATION_TYPE_PERMANENT,
+                            ItemPropertyDecreaseAbility(IP_CONST_ABILITY_WIS, 1),
+                         oItem);
+            AddItemProperty(DURATION_TYPE_PERMANENT,
+                        ItemPropertySkillBonus(SKILL_BLUFF, 2),
+                        oItem);
+            AddItemProperty(DURATION_TYPE_PERMANENT,
+                        ItemPropertySkillBonus(SKILL_PERSUADE, 2),
+                        oItem);
+            AddItemProperty(DURATION_TYPE_PERMANENT,
+                        ItemPropertySkillBonus(SKILL_PICK_POCKET, 2),
+                        oItem);
+            AddItemProperty(DURATION_TYPE_PERMANENT,
+                        ItemPropertySkillBonus(SKILL_HIDE, 2),
+                        oItem);
+            AddItemProperty(DURATION_TYPE_PERMANENT,
+                        ItemPropertySkillBonus(SKILL_MOVE_SILENTLY, 2),
+                        oItem);
+        break;
+
+        case GS_SU_HUMAN_ASHARI:
+            AddItemProperty(DURATION_TYPE_PERMANENT,
+                            ItemPropertyAbilityBonus(IP_CONST_ABILITY_STR, 2),
+                         oItem);
+            AddItemProperty(DURATION_TYPE_PERMANENT,
+                            ItemPropertyAbilityBonus(IP_CONST_ABILITY_CHA, 1),
+                         oItem);
+            AddItemProperty(DURATION_TYPE_PERMANENT,
+                            ItemPropertyBonusFeat(IP_CONST_FEAT_WEAPON_PROF_MARTIAL),
+                         oItem);
+            AddItemProperty(DURATION_TYPE_PERMANENT,
+                        ItemPropertySkillBonus(SKILL_SET_TRAP, 4),
+                        oItem);
+            AddItemProperty(DURATION_TYPE_PERMANENT,
+                        ItemPropertySkillBonus(SKILL_PERFORM, 4),
+                        oItem);
+        break;
+
+        case GS_SU_HUMAN_FYRSTUMEN:
+            AddItemProperty(DURATION_TYPE_PERMANENT,
+                            ItemPropertyBonusFeat(IP_CONST_FEAT_TOUGHNESS),
+                         oItem);
+            AddItemProperty(DURATION_TYPE_PERMANENT,
+                            ItemPropertyDamageResistance(IP_CONST_DAMAGETYPE_COLD,
+                                                         IP_CONST_DAMAGERESIST_10),
+                         oItem);
+            AddItemProperty(DURATION_TYPE_PERMANENT,
+                            ItemPropertyDecreaseAbility(IP_CONST_ABILITY_INT, 2),
+                         oItem);
+            AddItemProperty(DURATION_TYPE_PERMANENT,
+                            ItemPropertyBonusFeat(IP_CONST_FEAT_WEAPON_PROF_MARTIAL),
+                         oItem);
+            AddItemProperty(DURATION_TYPE_PERMANENT,
+                            ItemPropertyBonusFeat(IP_CONST_FEAT_WEAPON_PROF_SIMPLE),
+                         oItem);
+        break;
+        case GS_SU_HUMAN_KALANORF:
+            AddItemProperty(DURATION_TYPE_PERMANENT,
+                            ItemPropertyBonusFeat(IP_CONST_FEAT_TOUGHNESS),
+                         oItem);
+            AddItemProperty(DURATION_TYPE_PERMANENT,
+                            ItemPropertyDamageResistance(IP_CONST_DAMAGETYPE_COLD,
+                                                         IP_CONST_DAMAGERESIST_10),
+                         oItem);
+            AddItemProperty(DURATION_TYPE_PERMANENT,
+                            ItemPropertyDecreaseAbility(IP_CONST_ABILITY_INT, 2),
+                         oItem);
+            AddItemProperty(DURATION_TYPE_PERMANENT,
+                            ItemPropertyBonusFeat(IP_CONST_FEAT_WEAPON_PROF_MARTIAL),
+                         oItem);
+            AddItemProperty(DURATION_TYPE_PERMANENT,
+                            ItemPropertyBonusFeat(IP_CONST_FEAT_WEAPON_PROF_SIMPLE),
+                         oItem);
+            AddItemProperty(DURATION_TYPE_PERMANENT,
+                        ItemPropertySkillBonus(SKILL_SET_TRAP, 4),
+                        oItem);
+        break;
+        
+
         case GS_SU_MALOSARI_FREESWORN:
 
         break;
@@ -1439,6 +1526,83 @@ void gsSUApplyAbility(object oItem, int nSubRace, int nLevel)
                 break;
         }
     break;
+
+    case GS_SU_HUMAN_INEN:
+        AddItemProperty(DURATION_TYPE_PERMANENT,
+                        ItemPropertyCastSpell(IP_CONST_CASTSPELL_DAZE_1,
+                                              IP_CONST_CASTSPELL_NUMUSES_UNLIMITED_USE),
+                        oItem);
+        switch (nLevel){
+            case 1:
+            case 2:
+            case 3:
+            case 4:
+            case 5:
+                AddItemProperty(DURATION_TYPE_PERMANENT,
+                        ItemPropertyCastSpell(IP_CONST_CASTSPELL_HASTE_5,
+                                              IP_CONST_CASTSPELL_NUMUSES_1_USE_PER_DAY),
+                        oItem);
+            break;
+            default:
+                AddItemProperty(DURATION_TYPE_PERMANENT,
+                        ItemPropertyCastSpell(IP_CONST_CASTSPELL_HASTE_10,
+                                              IP_CONST_CASTSPELL_NUMUSES_1_USE_PER_DAY),
+                        oItem);
+            break;
+        }
+    break;
+
+    case GS_SU_HUMAN_ASHARI:
+        AddItemProperty(DURATION_TYPE_PERMANENT,
+                        ItemPropertyCastSpell(IP_CONST_CASTSPELL_FLARE_1,
+                                              IP_CONST_CASTSPELL_NUMUSES_UNLIMITED_USE),
+                        oItem);
+        switch (nLevel){
+            case 1:
+            case 2:
+            case 3:
+            case 4:
+            case 5:
+                AddItemProperty(DURATION_TYPE_PERMANENT,
+                        ItemPropertyCastSpell(IP_CONST_CASTSPELL_HASTE_5,
+                                              IP_CONST_CASTSPELL_NUMUSES_1_USE_PER_DAY),
+                        oItem);
+            break;
+            default:
+                AddItemProperty(DURATION_TYPE_PERMANENT,
+                        ItemPropertyCastSpell(IP_CONST_CASTSPELL_HASTE_10,
+                                              IP_CONST_CASTSPELL_NUMUSES_1_USE_PER_DAY),
+                        oItem);
+            break;
+        }
+    break;
+
+    case GS_SU_HUMAN_FYRSTUMEN:
+        AddItemProperty(DURATION_TYPE_PERMANENT,
+                        ItemPropertyCastSpell(IP_CONST_CASTSPELL_WAR_CRY_7,
+                                              IP_CONST_CASTSPELL_NUMUSES_1_USE_PER_DAY),
+                        oItem);
+    break;
+
+    case GS_SU_HUMAN_KALANORF:
+        AddItemProperty(DURATION_TYPE_PERMANENT,
+                        ItemPropertyCastSpell(IP_CONST_CASTSPELL_RESISTANCE_5,
+                                              IP_CONST_CASTSPELL_NUMUSES_UNLIMITED_USE),
+                        oItem);
+        switch (nLevel){
+            case 1:
+            case 2:
+            break;
+            default:
+                AddItemProperty(DURATION_TYPE_PERMANENT,
+                        ItemPropertyCastSpell(IP_CONST_CASTSPELL_CHARM_PERSON_OR_ANIMAL_10,
+                                              IP_CONST_CASTSPELL_NUMUSES_1_USE_PER_DAY),
+                        oItem);
+            break;
+        }
+    break;
+
+
     }
 
     AddItemProperty(DURATION_TYPE_PERMANENT,
