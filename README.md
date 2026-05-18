@@ -35,6 +35,16 @@ When you open the Aurora Toolset and the ages module, it will likely ask if you 
 
 Branch protection is active on this repository. Any changes to master require a pull request. Submit changes on your own branch and then create a pull request for review.
 
+# Other useful tools
+
+[Axe Murderer's Killer TLK Editor](https://neverwintervault.org/project/nwn1/other/tool/axe-murderers-killer-tlk-editor) for editing TLK files
+
+[NWNExplorer](https://github.com/virusman/nwnexplorer) for viewing and exporting various files in the base game.
+
+[gffEditor](https://neverwintervault.org/project/nwn1/other/tool/gffeditor) for editing .gff files including character data saved to the server vault.
+
+[Yata](https://neverwintervault.org/project/nwn2/other/tool/yata) for editing .2da files. This is a NWN2 tool but it works just as good for NWN:EE.
+
 # Workflow
 ### Updating your branch:
 ```bash
