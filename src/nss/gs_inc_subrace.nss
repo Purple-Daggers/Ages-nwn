@@ -11,6 +11,7 @@ const string GS_SU_TEMPLATE_ABILITY       = "gs_item318";
 
 const int IP_CONST_FEAT_WEAPON_SPEC_UNARMED = 1196;
 const int IP_CONST_FEAT_TOUGHNESS = 1197;
+const int IP_CONST_CASTSPELL_DEATH_ARMOR_6 = 540;
 
 const int GS_SU_NONE                      =   0;
 const int GS_SU_DWARF_GOLD                =   1;
@@ -1275,6 +1276,194 @@ void gsSUApplyProperty(object oItem, int nSubRace, int nLevel)
                         ItemPropertySkillBonus(SKILL_SET_TRAP, 4),
                         oItem);
         break;
+
+        case GS_SU_ADHEAN_JUDHEAN:
+            AddItemProperty(DURATION_TYPE_PERMANENT,
+                            ItemPropertyAbilityBonus(IP_CONST_ABILITY_WIS, 1),
+                         oItem);
+            AddItemProperty(DURATION_TYPE_PERMANENT,
+                            ItemPropertyAbilityBonus(IP_CONST_ABILITY_CHA, 1),
+                         oItem);
+            AddItemProperty(DURATION_TYPE_PERMANENT,
+                            ItemPropertyDecreaseAbility(IP_CONST_ABILITY_CON, 1),
+                         oItem);
+            AddItemProperty(DURATION_TYPE_PERMANENT,
+                        ItemPropertySkillBonus(SKILL_HEAL, 4),
+                        oItem);
+            AddItemProperty(DURATION_TYPE_PERMANENT,
+                        ItemPropertySkillBonus(SKILL_SPOT, 2),
+                        oItem);
+            AddItemProperty(DURATION_TYPE_PERMANENT,
+                        ItemPropertySkillBonus(SKILL_LISTEN, 2),
+                        oItem); 
+            AddItemProperty(DURATION_TYPE_PERMANENT,
+                        ItemPropertySkillBonus(SKILL_SET_TRAP, 2),
+                        oItem); 
+            AddItemProperty(DURATION_TYPE_PERMANENT,
+                        ItemPropertySkillBonus(SKILL_SPELLCRAFT, 2),
+                        oItem);
+            AddItemProperty(DURATION_TYPE_PERMANENT,
+                        ItemPropertyBonusSavingThrow(IP_CONST_SAVEBASETYPE_WILL, 4),
+                        oItem);
+        switch (nLevel)
+        {
+        case  1:
+        case  2:
+            AddItemProperty(DURATION_TYPE_PERMANENT,
+                            ItemPropertyBonusSpellResistance(IP_CONST_SPELLRESISTANCEBONUS_10),
+                            oItem);
+            break;
+        case  3:
+        case  4:
+        case  5:
+        case  6:
+            AddItemProperty(DURATION_TYPE_PERMANENT,
+                            ItemPropertyBonusSpellResistance(IP_CONST_SPELLRESISTANCEBONUS_12),
+                            oItem);
+            break;
+        case  7:
+        case  8:
+        case  9:
+        case 10:
+            AddItemProperty(DURATION_TYPE_PERMANENT,
+                            ItemPropertyBonusSpellResistance(IP_CONST_SPELLRESISTANCEBONUS_14),
+                            oItem);
+            break;
+
+        case 11:
+        case 12:
+        case 13:
+        case 14:
+            AddItemProperty(DURATION_TYPE_PERMANENT,
+                            ItemPropertyBonusSpellResistance(IP_CONST_SPELLRESISTANCEBONUS_16),
+                            oItem);
+            break;
+        case 15:
+        case 16:
+        case 17:
+        case 18:
+            AddItemProperty(DURATION_TYPE_PERMANENT,
+                            ItemPropertyBonusSpellResistance(IP_CONST_SPELLRESISTANCEBONUS_18),
+                            oItem);
+            break;
+        case 19:
+        case 20:
+        default:
+            AddItemProperty(DURATION_TYPE_PERMANENT,
+                            ItemPropertyBonusSpellResistance(IP_CONST_SPELLRESISTANCEBONUS_20),
+                            oItem);
+            break;
+        }
+            
+        break;
+
+        case GS_SU_ADHEAN_RUDHEAN:
+            AddItemProperty(DURATION_TYPE_PERMANENT,
+                            ItemPropertyAbilityBonus(IP_CONST_ABILITY_CON, 1),
+                         oItem);
+            AddItemProperty(DURATION_TYPE_PERMANENT,
+                            ItemPropertyAbilityBonus(IP_CONST_ABILITY_STR, 1),
+                         oItem);
+            AddItemProperty(DURATION_TYPE_PERMANENT,
+                            ItemPropertyAbilityBonus(IP_CONST_ABILITY_CHA, 1),
+                         oItem);
+            AddItemProperty(DURATION_TYPE_PERMANENT,
+                            ItemPropertyDecreaseAbility(IP_CONST_ABILITY_INT, 2),
+                         oItem);
+            AddItemProperty(DURATION_TYPE_PERMANENT,
+                        ItemPropertyBonusSavingThrow(IP_CONST_SAVEBASETYPE_WILL, 4),
+                        oItem);
+            AddItemProperty(DURATION_TYPE_PERMANENT,
+                            ItemPropertyBonusSavingThrowVsX(IP_CONST_SAVEVS_FEAR, 2),
+                         oItem);
+            AddItemProperty(DURATION_TYPE_PERMANENT,
+                            ItemPropertyBonusSavingThrowVsX(IP_CONST_SAVEVS_MINDAFFECTING, 2),
+                         oItem);
+            AddItemProperty(DURATION_TYPE_PERMANENT,
+                        ItemPropertySkillBonus(SKILL_HEAL, 4),
+                        oItem);
+            AddItemProperty(DURATION_TYPE_PERMANENT,
+                        ItemPropertySkillBonus(SKILL_SPOT, 2),
+                        oItem);
+            AddItemProperty(DURATION_TYPE_PERMANENT,
+                        ItemPropertySkillBonus(SKILL_LISTEN, 2),
+                        oItem); 
+            AddItemProperty(DURATION_TYPE_PERMANENT,
+                        ItemPropertySkillBonus(SKILL_ANIMAL_EMPATHY , 2),
+                        oItem); 
+            AddItemProperty(DURATION_TYPE_PERMANENT,
+                        ItemPropertySkillBonus(SKILL_HIDE, 2),
+                        oItem); 
+            AddItemProperty(DURATION_TYPE_PERMANENT,
+                        ItemPropertySkillBonus(SKILL_MOVE_SILENTLY, 2),
+                        oItem); 
+            AddItemProperty(DURATION_TYPE_PERMANENT,
+                        ItemPropertySkillBonus(SKILL_SET_TRAP, 2),
+                        oItem); 
+        switch (nLevel)
+        {
+        case  1:
+        case  2:
+            AddItemProperty(DURATION_TYPE_PERMANENT,
+                            ItemPropertyBonusSpellResistance(IP_CONST_SPELLRESISTANCEBONUS_10),
+                            oItem);
+            break;
+        case  3:
+        case  4:
+        case  5:
+        case  6:
+            AddItemProperty(DURATION_TYPE_PERMANENT,
+                            ItemPropertyBonusSpellResistance(IP_CONST_SPELLRESISTANCEBONUS_12),
+                            oItem);
+            break;
+        case  7:
+        case  8:
+        case  9:
+        case 10:
+            AddItemProperty(DURATION_TYPE_PERMANENT,
+                            ItemPropertyBonusSpellResistance(IP_CONST_SPELLRESISTANCEBONUS_14),
+                            oItem);
+            break;
+
+        case 11:
+        case 12:
+        case 13:
+        case 14:
+            AddItemProperty(DURATION_TYPE_PERMANENT,
+                            ItemPropertyBonusSpellResistance(IP_CONST_SPELLRESISTANCEBONUS_16),
+                            oItem);
+            break;
+        case 15:
+        case 16:
+        case 17:
+        case 18:
+            AddItemProperty(DURATION_TYPE_PERMANENT,
+                            ItemPropertyBonusSpellResistance(IP_CONST_SPELLRESISTANCEBONUS_18),
+                            oItem);
+            break;
+        case 19:
+        case 20:
+        default:
+            AddItemProperty(DURATION_TYPE_PERMANENT,
+                            ItemPropertyBonusSpellResistance(IP_CONST_SPELLRESISTANCEBONUS_20),
+                            oItem);
+            break;
+        }
+
+
+        break;
+
+        case GS_SU_MALARI_ASHFORGED:
+        break;
+
+        case GS_SU_MALARI_TUSKKIN:
+        break;
+
+        case GS_SU_MALARI_UNBOWED:
+        break;
+
+        case GS_SU_MALARI_VARTOARI:
+        break;
         
 
         case GS_SU_MALOSARI_FREESWORN:
@@ -1602,6 +1791,19 @@ void gsSUApplyAbility(object oItem, int nSubRace, int nLevel)
         }
     break;
 
+    case GS_SU_ADHEAN_JUDHEAN:
+        AddItemProperty(DURATION_TYPE_PERMANENT,
+                        ItemPropertyCastSpell(IP_CONST_CASTSPELL_SUMMON_CREATURE_I_5,
+                                              IP_CONST_CASTSPELL_NUMUSES_1_USE_PER_DAY),
+                        oItem);
+    break;
+
+    case GS_SU_ADHEAN_RUDHEAN:
+        AddItemProperty(DURATION_TYPE_PERMANENT,
+                        ItemPropertyCastSpell(IP_CONST_CASTSPELL_DEATH_ARMOR_6,
+                                              IP_CONST_CASTSPELL_NUMUSES_3_USES_PER_DAY),
+                        oItem);
+    break;
 
     }
 
