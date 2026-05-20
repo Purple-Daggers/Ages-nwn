@@ -58,7 +58,7 @@
         },
         "Appearance": {
           "type": "dword",
-          "value": 40
+          "value": 33
         },
         "AutoRemoveKey": {
           "type": "byte",
@@ -66,7 +66,7 @@
         },
         "Bearing": {
           "type": "float",
-          "value": 0.0
+          "value": -0.0
         },
         "CloseLockDC": {
           "type": "byte",
@@ -122,11 +122,11 @@
         },
         "LinkedTo": {
           "type": "cexostring",
-          "value": "Prasinos_South_Gate"
+          "value": ""
         },
         "LinkedToFlags": {
           "type": "byte",
-          "value": 1
+          "value": 0
         },
         "LoadScreenID": {
           "type": "word",
@@ -143,7 +143,6 @@
         "LocName": {
           "type": "cexolocstring",
           "value": {
-            "0": "Prasinos South Gate",
             "id": 5349
           }
         },
@@ -221,11 +220,11 @@
         },
         "Tag": {
           "type": "cexostring",
-          "value": "Prasinos_South_Gate"
+          "value": "CryptExit"
         },
         "TemplateResRef": {
           "type": "resref",
-          "value": "nw_door_ttr_07"
+          "value": "nw_door_ttr_14"
         },
         "TrapDetectable": {
           "type": "byte",
@@ -257,26 +256,26 @@
         },
         "X": {
           "type": "float",
-          "value": 75.0
+          "value": 74.98
         },
         "Y": {
           "type": "float",
-          "value": 66.3
+          "value": 87.67
         },
         "Z": {
           "type": "float",
-          "value": 0.46
+          "value": 0.0
         }
       },
       {
         "__struct_id": 8,
         "AnimationState": {
           "type": "byte",
-          "value": 1
+          "value": 0
         },
         "Appearance": {
           "type": "dword",
-          "value": 65
+          "value": 0
         },
         "AutoRemoveKey": {
           "type": "byte",
@@ -296,7 +295,7 @@
         },
         "CurrentHP": {
           "type": "short",
-          "value": 80
+          "value": 60
         },
         "Description": {
           "type": "cexolocstring",
@@ -304,7 +303,7 @@
         },
         "DisarmDC": {
           "type": "byte",
-          "value": 15
+          "value": 28
         },
         "Faction": {
           "type": "dword",
@@ -312,19 +311,19 @@
         },
         "Fort": {
           "type": "byte",
-          "value": 16
+          "value": 28
         },
         "GenericType_New": {
           "type": "dword",
-          "value": 0
+          "value": 14
         },
         "Hardness": {
           "type": "byte",
-          "value": 5
+          "value": 15
         },
         "HP": {
           "type": "short",
-          "value": 80
+          "value": 60
         },
         "Interruptable": {
           "type": "byte",
@@ -340,7 +339,7 @@
         },
         "LinkedTo": {
           "type": "cexostring",
-          "value": "Outskirts_Road_A"
+          "value": "Burrow_Door_A"
         },
         "LinkedToFlags": {
           "type": "byte",
@@ -361,7 +360,7 @@
         "LocName": {
           "type": "cexolocstring",
           "value": {
-            "0": "Forest Road",
+            "0": "Old_Burrow_Door_A",
             "id": 5349
           }
         },
@@ -379,7 +378,7 @@
         },
         "OnDeath": {
           "type": "resref",
-          "value": "x2_door_death"
+          "value": ""
         },
         "OnDisarm": {
           "type": "resref",
@@ -423,7 +422,7 @@
         },
         "OpenLockDC": {
           "type": "byte",
-          "value": 18
+          "value": 28
         },
         "Plot": {
           "type": "byte",
@@ -439,11 +438,11 @@
         },
         "Tag": {
           "type": "cexostring",
-          "value": "Outskirt_Road_A"
+          "value": "Old_Burrow_Door_A"
         },
         "TemplateResRef": {
           "type": "resref",
-          "value": "nw_door_ttr_29"
+          "value": "x3_door_stn002"
         },
         "TrapDetectable": {
           "type": "byte",
@@ -467,7 +466,7 @@
         },
         "TrapType": {
           "type": "byte",
-          "value": 0
+          "value": 2
         },
         "Will": {
           "type": "byte",
@@ -479,11 +478,11 @@
         },
         "Y": {
           "type": "float",
-          "value": 1.81
+          "value": 15.2
         },
         "Z": {
           "type": "float",
-          "value": 0.0
+          "value": 1.6
         }
       }
     ]
