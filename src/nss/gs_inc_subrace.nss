@@ -12,6 +12,7 @@ const string GS_SU_TEMPLATE_ABILITY       = "gs_item318";
 const int IP_CONST_FEAT_WEAPON_SPEC_UNARMED = 1196;
 const int IP_CONST_FEAT_TOUGHNESS = 1197;
 const int IP_CONST_CASTSPELL_DEATH_ARMOR_6 = 540;
+const int IP_CONST_CASTSPELL_MALARI_RAGE = 541;
 
 const int GS_SU_NONE                      =   0;
 const int GS_SU_DWARF_GOLD                =   1;
@@ -1454,15 +1455,102 @@ void gsSUApplyProperty(object oItem, int nSubRace, int nLevel)
         break;
 
         case GS_SU_MALARI_ASHFORGED:
+            AddItemProperty(DURATION_TYPE_PERMANENT,
+                            ItemPropertyAbilityBonus(IP_CONST_ABILITY_CON, 2),
+                         oItem);
+            AddItemProperty(DURATION_TYPE_PERMANENT,
+                            ItemPropertyAbilityBonus(IP_CONST_ABILITY_WIS, 1),
+                         oItem);
+            AddItemProperty(DURATION_TYPE_PERMANENT,
+                            ItemPropertySkillBonus(SKILL_INTIMIDATE, 4),
+                            oItem);
+            AddItemProperty(DURATION_TYPE_PERMANENT,
+                            ItemPropertyBonusSavingThrowVsX(IP_CONST_SAVEVS_POISON, 4),
+                         oItem);
+            AddItemProperty(DURATION_TYPE_PERMANENT,
+                            ItemPropertySkillBonus(SKILL_CONCENTRATION, 2),
+                            oItem); 
+            AddItemProperty(DURATION_TYPE_PERMANENT,
+                            ItemPropertySkillBonus(SKILL_SPOT, 2),
+                            oItem); 
+            AddItemProperty(DURATION_TYPE_PERMANENT,
+                            ItemPropertySkillBonus(SKILL_PERSUADE, 2),
+                            oItem);
+            AddItemProperty(DURATION_TYPE_PERMANENT,
+                            ItemPropertySkillBonus(SKILL_SET_TRAP, 2),
+                            oItem); 
         break;
 
         case GS_SU_MALARI_TUSKKIN:
+            AddItemProperty(DURATION_TYPE_PERMANENT,
+                            ItemPropertyAbilityBonus(IP_CONST_ABILITY_DEX, 1),
+                         oItem);
+            AddItemProperty(DURATION_TYPE_PERMANENT,
+                            ItemPropertyAbilityBonus(IP_CONST_ABILITY_CON, 1),
+                         oItem);
+            AddItemProperty(DURATION_TYPE_PERMANENT,
+                            ItemPropertyDecreaseAbility(IP_CONST_ABILITY_INT, 2),
+                         oItem);
+            AddItemProperty(DURATION_TYPE_PERMANENT,
+                            ItemPropertySkillBonus(SKILL_INTIMIDATE, 4),
+                            oItem); 
+            AddItemProperty(DURATION_TYPE_PERMANENT,
+                            ItemPropertyBonusFeat(IP_CONST_FEAT_WEAPON_PROF_MARTIAL),
+                         oItem);
+            AddItemProperty(DURATION_TYPE_PERMANENT,
+                            ItemPropertyBonusFeat(IP_CONST_FEAT_WEAPON_PROF_SIMPLE),
+                         oItem);
         break;
 
         case GS_SU_MALARI_UNBOWED:
+            AddItemProperty(DURATION_TYPE_PERMANENT,
+                            ItemPropertyAbilityBonus(IP_CONST_ABILITY_STR, 1),
+                         oItem);
+            AddItemProperty(DURATION_TYPE_PERMANENT,
+                            ItemPropertyAbilityBonus(IP_CONST_ABILITY_CON, 1),
+                         oItem);
+            AddItemProperty(DURATION_TYPE_PERMANENT,
+                            ItemPropertyDecreaseAbility(IP_CONST_ABILITY_INT, 2),
+                         oItem);
+            AddItemProperty(DURATION_TYPE_PERMANENT,
+                            ItemPropertySkillBonus(SKILL_INTIMIDATE, 4),
+                            oItem); 
+            AddItemProperty(DURATION_TYPE_PERMANENT,
+                            ItemPropertyBonusFeat(IP_CONST_FEAT_WEAPON_PROF_MARTIAL),
+                         oItem);
+            AddItemProperty(DURATION_TYPE_PERMANENT,
+                            ItemPropertyBonusFeat(IP_CONST_FEAT_WEAPON_PROF_SIMPLE),
+                         oItem);
         break;
 
         case GS_SU_MALARI_VARTOARI:
+            AddItemProperty(DURATION_TYPE_PERMANENT,
+                            ItemPropertyAbilityBonus(IP_CONST_ABILITY_CON, 2),
+                         oItem);
+            AddItemProperty(DURATION_TYPE_PERMANENT,
+                            ItemPropertyAbilityBonus(IP_CONST_ABILITY_WIS, 1),
+                         oItem);
+            AddItemProperty(DURATION_TYPE_PERMANENT,
+                            ItemPropertySkillBonus(SKILL_INTIMIDATE, 4),
+                            oItem);
+            AddItemProperty(DURATION_TYPE_PERMANENT,
+                            ItemPropertyBonusSavingThrowVsX(IP_CONST_SAVEVS_FEAR, 2),
+                         oItem);
+            AddItemProperty(DURATION_TYPE_PERMANENT,
+                            ItemPropertyBonusSavingThrowVsX(IP_CONST_SAVEVS_MINDAFFECTING, 2),
+                         oItem);
+            AddItemProperty(DURATION_TYPE_PERMANENT,
+                            ItemPropertySkillBonus(SKILL_SPELLCRAFT, 2),
+                            oItem); 
+            AddItemProperty(DURATION_TYPE_PERMANENT,
+                            ItemPropertySkillBonus(SKILL_LORE, 2),
+                            oItem); 
+            AddItemProperty(DURATION_TYPE_PERMANENT,
+                            ItemPropertySkillBonus(SKILL_BLUFF, 2),
+                            oItem);
+            AddItemProperty(DURATION_TYPE_PERMANENT,
+                            ItemPropertySkillBonus(SKILL_SET_TRAP, 2),
+                            oItem); 
         break;
         
 
@@ -1803,6 +1891,54 @@ void gsSUApplyAbility(object oItem, int nSubRace, int nLevel)
                         ItemPropertyCastSpell(IP_CONST_CASTSPELL_DEATH_ARMOR_6,
                                               IP_CONST_CASTSPELL_NUMUSES_3_USES_PER_DAY),
                         oItem);
+    break;
+
+    case GS_SU_MALARI_TUSKKIN:
+        AddItemProperty(DURATION_TYPE_PERMANENT,
+                        ItemPropertyCastSpell(IP_CONST_CASTSPELL_MALARI_RAGE,
+                                              IP_CONST_CASTSPELL_NUMUSES_1_USE_PER_DAY),
+                        oItem);
+        AddItemProperty(DURATION_TYPE_PERMANENT,
+                        ItemPropertyCastSpell(IP_CONST_CASTSPELL_EXPEDITIOUS_RETREAT_5,
+                                              IP_CONST_CASTSPELL_NUMUSES_3_USES_PER_DAY),
+                        oItem);
+
+    break;
+
+    case GS_SU_MALARI_UNBOWED:
+        AddItemProperty(DURATION_TYPE_PERMANENT,
+                        ItemPropertyCastSpell(IP_CONST_CASTSPELL_MALARI_RAGE,
+                                              IP_CONST_CASTSPELL_NUMUSES_1_USE_PER_DAY),
+                        oItem);
+    break;
+
+    case GS_SU_MALARI_VARTOARI:
+        AddItemProperty(DURATION_TYPE_PERMANENT,
+                        ItemPropertyCastSpell(IP_CONST_CASTSPELL_RAY_OF_FROST_1,
+                                              IP_CONST_CASTSPELL_NUMUSES_UNLIMITED_USE),
+                        oItem);
+        switch (nLevel){
+            case 1:
+            case 2:
+            break;
+            case 3:
+            case 4:
+            case 5:
+            case 6:
+            case 7:
+            case 8:
+            case 9:
+                AddItemProperty(DURATION_TYPE_PERMANENT,
+                        ItemPropertyCastSpell(IP_CONST_CASTSPELL_NEGATIVE_ENERGY_BURST_5,
+                                              IP_CONST_CASTSPELL_NUMUSES_1_USE_PER_DAY),
+                        oItem);
+            default:
+                AddItemProperty(DURATION_TYPE_PERMANENT,
+                        ItemPropertyCastSpell(IP_CONST_CASTSPELL_NEGATIVE_ENERGY_BURST_10,
+                                              IP_CONST_CASTSPELL_NUMUSES_1_USE_PER_DAY),
+                        oItem);
+            break;
+        }
     break;
 
     }
