@@ -11,6 +11,8 @@ const string GS_SU_TEMPLATE_ABILITY       = "gs_item318";
 
 const int IP_CONST_FEAT_WEAPON_SPEC_UNARMED = 1196;
 const int IP_CONST_FEAT_TOUGHNESS = 1197;
+const int IP_CONST_FEAT_TRACKLESS_STEP = 1198;
+const int IP_CONST_FEAT_WOODLAND_STRIDE = 1199;
 const int IP_CONST_CASTSPELL_DEATH_ARMOR_6 = 540;
 const int IP_CONST_CASTSPELL_MALARI_RAGE = 541;
 
@@ -1554,9 +1556,118 @@ void gsSUApplyProperty(object oItem, int nSubRace, int nLevel)
         break;
         
 
-        case GS_SU_MALOSARI_FREESWORN:
+        case GS_SU_MALOSARI_EMERALD:
+            AddItemProperty(DURATION_TYPE_PERMANENT,
+                            ItemPropertyAbilityBonus(IP_CONST_ABILITY_DEX, 1),
+                         oItem);
+            AddItemProperty(DURATION_TYPE_PERMANENT,
+                            ItemPropertyAbilityBonus(IP_CONST_ABILITY_WIS, 1),
+                         oItem);
+            AddItemProperty(DURATION_TYPE_PERMANENT,
+                            ItemPropertyDecreaseAbility(IP_CONST_ABILITY_STR, 1),
+                         oItem);
 
+            AddItemProperty(DURATION_TYPE_PERMANENT,
+                            ItemPropertyBonusFeat(IP_CONST_FEAT_TRACKLESS_STEP),
+                         oItem);
+            AddItemProperty(DURATION_TYPE_PERMANENT,
+                            ItemPropertyBonusSavingThrowVsX(IP_CONST_SAVEVS_POISON, 4),
+                         oItem);
+            AddItemProperty(DURATION_TYPE_PERMANENT,
+                            ItemPropertyBonusSavingThrowVsX(IP_CONST_SAVEVS_DISEASE, 4),
+                         oItem);
+            AddItemProperty(DURATION_TYPE_PERMANENT,
+                            ItemPropertySkillBonus(SKILL_ANIMAL_EMPATHY, 4),
+                            oItem);
+
+            AddItemProperty(DURATION_TYPE_PERMANENT,
+                            ItemPropertyBonusFeat(IP_CONST_FEAT_WOODLAND_STRIDE),
+                         oItem);
         break;
+
+        case GS_SU_MALOSARI_FREESWORN:
+            AddItemProperty(DURATION_TYPE_PERMANENT,
+                            ItemPropertyBonusFeat(IP_CONST_FEAT_TRACKLESS_STEP),
+                         oItem);
+            AddItemProperty(DURATION_TYPE_PERMANENT,
+                            ItemPropertyBonusSavingThrowVsX(IP_CONST_SAVEVS_POISON, 4),
+                         oItem);
+            AddItemProperty(DURATION_TYPE_PERMANENT,
+                            ItemPropertyBonusSavingThrowVsX(IP_CONST_SAVEVS_DISEASE, 4),
+                         oItem);
+            AddItemProperty(DURATION_TYPE_PERMANENT,
+                            ItemPropertySkillBonus(SKILL_ANIMAL_EMPATHY, 4),
+                            oItem);
+
+            AddItemProperty(DURATION_TYPE_PERMANENT,
+                            ItemPropertySkillBonus(SKILL_PERSUADE, 4),
+                            oItem);
+        break;
+
+        case GS_SU_MALOSARI_GREENSWORN:
+            AddItemProperty(DURATION_TYPE_PERMANENT,
+                            ItemPropertyAbilityBonus(IP_CONST_ABILITY_INT, 1),
+                         oItem);
+            AddItemProperty(DURATION_TYPE_PERMANENT,
+                            ItemPropertyDecreaseAbility(IP_CONST_ABILITY_STR, 1),
+                         oItem);
+
+            AddItemProperty(DURATION_TYPE_PERMANENT,
+                            ItemPropertyBonusFeat(IP_CONST_FEAT_TRACKLESS_STEP),
+                         oItem);
+            AddItemProperty(DURATION_TYPE_PERMANENT,
+                            ItemPropertyBonusSavingThrowVsX(IP_CONST_SAVEVS_POISON, 4),
+                         oItem);
+            AddItemProperty(DURATION_TYPE_PERMANENT,
+                            ItemPropertyBonusSavingThrowVsX(IP_CONST_SAVEVS_DISEASE, 4),
+                         oItem);
+            AddItemProperty(DURATION_TYPE_PERMANENT,
+                            ItemPropertySkillBonus(SKILL_ANIMAL_EMPATHY, 4),
+                            oItem);
+
+            AddItemProperty(DURATION_TYPE_PERMANENT,
+                            ItemPropertySkillBonus(SKILL_SPELLCRAFT, 2),
+                            oItem);
+            AddItemProperty(DURATION_TYPE_PERMANENT,
+                            ItemPropertySkillBonus(SKILL_LORE, 2),
+                            oItem);
+            AddItemProperty(DURATION_TYPE_PERMANENT,
+                            ItemPropertySkillBonus(SKILL_HEAL, 2),
+                            oItem);
+            AddItemProperty(DURATION_TYPE_PERMANENT,
+                            ItemPropertySkillBonus(SKILL_PERSUADE, 2),
+                            oItem);
+        break;
+
+        case GS_SU_MALOSARI_HORNSWORN:
+            AddItemProperty(DURATION_TYPE_PERMANENT,
+                            ItemPropertyAbilityBonus(IP_CONST_ABILITY_WIS, 2),
+                         oItem);
+            AddItemProperty(DURATION_TYPE_PERMANENT,
+                            ItemPropertyDecreaseAbility(IP_CONST_ABILITY_STR, 2),
+                         oItem);
+
+            AddItemProperty(DURATION_TYPE_PERMANENT,
+                            ItemPropertyBonusFeat(IP_CONST_FEAT_TRACKLESS_STEP),
+                         oItem);
+            AddItemProperty(DURATION_TYPE_PERMANENT,
+                            ItemPropertyBonusSavingThrowVsX(IP_CONST_SAVEVS_POISON, 4),
+                         oItem);
+            AddItemProperty(DURATION_TYPE_PERMANENT,
+                            ItemPropertyBonusSavingThrowVsX(IP_CONST_SAVEVS_DISEASE, 4),
+                         oItem);
+            AddItemProperty(DURATION_TYPE_PERMANENT,
+                            ItemPropertySkillBonus(SKILL_ANIMAL_EMPATHY, 4),
+                            oItem);
+
+            AddItemProperty(DURATION_TYPE_PERMANENT,
+                            ItemPropertySkillBonus(SKILL_HIDE, 4),
+                            oItem);
+            AddItemProperty(DURATION_TYPE_PERMANENT,
+                            ItemPropertySkillBonus(SKILL_MOVE_SILENTLY, 4),
+                            oItem);
+        break;
+
 
     }
     //Gift system
@@ -1939,6 +2050,41 @@ void gsSUApplyAbility(object oItem, int nSubRace, int nLevel)
                         oItem);
             break;
         }
+    break;
+
+    case GS_SU_MALOSARI_EMERALD:
+    break;
+
+    case GS_SU_MALOSARI_FREESWORN:
+            AddItemProperty(DURATION_TYPE_PERMANENT,
+                    ItemPropertyCastSpell(IP_CONST_CASTSPELL_CHARM_PERSON_10,
+                                        IP_CONST_CASTSPELL_NUMUSES_UNLIMITED_USE),
+                    oItem);
+    break;
+
+    case GS_SU_MALOSARI_GREENSWORN:
+            AddItemProperty(DURATION_TYPE_PERMANENT,
+                    ItemPropertyCastSpell(IP_CONST_CASTSPELL_DAZE_1,
+                                        IP_CONST_CASTSPELL_NUMUSES_UNLIMITED_USE),
+                    oItem);
+            switch (nLevel){
+                case 1:
+                case 2:
+                break;
+                default:
+                    AddItemProperty(DURATION_TYPE_PERMANENT,
+                            ItemPropertyCastSpell(IP_CONST_CASTSPELL_SLEEP_5,
+                                                IP_CONST_CASTSPELL_NUMUSES_1_USE_PER_DAY),
+                            oItem);
+                break;
+            }
+    break;
+
+    case GS_SU_MALOSARI_HORNSWORN:
+            AddItemProperty(DURATION_TYPE_PERMANENT,
+                    ItemPropertyCastSpell(IP_CONST_CASTSPELL_CHARM_PERSON_OR_ANIMAL_10,
+                                        IP_CONST_CASTSPELL_NUMUSES_UNLIMITED_USE),
+                    oItem);
     break;
 
     }
