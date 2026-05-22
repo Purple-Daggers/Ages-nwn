@@ -1842,6 +1842,13 @@ void gsSUApplyProperty(object oItem, int nSubRace, int nLevel)
 
         case GS_SU_ELDARI_EMAELARI:
             AddItemProperty(DURATION_TYPE_PERMANENT,
+                            ItemPropertyDecreaseAbility(IP_CONST_ABILITY_STR, 1),
+                         oItem);
+            AddItemProperty(DURATION_TYPE_PERMANENT,
+                            ItemPropertyDecreaseAbility(IP_CONST_ABILITY_CON, 1),
+                         oItem);
+
+            AddItemProperty(DURATION_TYPE_PERMANENT,
                             ItemPropertyReducedSavingThrowVsX(IP_CONST_SAVEVS_COLD, 4),
                          oItem);
             AddItemProperty(DURATION_TYPE_PERMANENT,
