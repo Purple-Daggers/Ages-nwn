@@ -15,6 +15,7 @@ const int IP_CONST_FEAT_TRACKLESS_STEP = 1198;
 const int IP_CONST_FEAT_WOODLAND_STRIDE = 1199;
 const int IP_CONST_CASTSPELL_DEATH_ARMOR_6 = 540;
 const int IP_CONST_CASTSPELL_MALARI_RAGE = 541;
+const int IP_CONST_CASTSPELL_CLOUD_OF_BEWILDERMENT_6 = 542;
 
 const int GS_SU_NONE                      =   0;
 const int GS_SU_DWARF_GOLD                =   1;
@@ -1668,6 +1669,237 @@ void gsSUApplyProperty(object oItem, int nSubRace, int nLevel)
                             oItem);
         break;
 
+        case GS_SU_ELDARI_ALARI:
+            AddItemProperty(DURATION_TYPE_PERMANENT,
+                            ItemPropertyReducedSavingThrowVsX(IP_CONST_SAVEVS_COLD, 4),
+                         oItem);
+            AddItemProperty(DURATION_TYPE_PERMANENT,
+                            ItemPropertyReducedSavingThrowVsX(IP_CONST_SAVEVS_FIRE, 4),
+                         oItem);
+            AddItemProperty(DURATION_TYPE_PERMANENT,
+                            ItemPropertyReducedSavingThrowVsX(IP_CONST_SAVEVS_ELECTRICAL, 4),
+                         oItem);
+            AddItemProperty(DURATION_TYPE_PERMANENT,
+                            ItemPropertyReducedSavingThrowVsX(IP_CONST_SAVEVS_ACID, 4),
+                         oItem);
+
+            AddItemProperty(DURATION_TYPE_PERMANENT,
+                                ItemPropertyBonusLevelSpell(IP_CONST_CLASS_WIZARD, 0),
+                            oItem);
+            AddItemProperty(DURATION_TYPE_PERMANENT,
+                                ItemPropertyBonusLevelSpell(IP_CONST_CLASS_WIZARD, 1),
+                            oItem);
+            AddItemProperty(DURATION_TYPE_PERMANENT,
+                                ItemPropertyBonusLevelSpell(IP_CONST_CLASS_WIZARD, 2),
+                            oItem);
+
+            AddItemProperty(DURATION_TYPE_PERMANENT,
+                                ItemPropertyBonusLevelSpell(IP_CONST_CLASS_BARD, 0),
+                            oItem);
+            AddItemProperty(DURATION_TYPE_PERMANENT,
+                                ItemPropertyBonusLevelSpell(IP_CONST_CLASS_BARD, 1),
+                            oItem);
+            switch (nLevel)
+            {
+                case 1:
+                case 2:
+                break;
+                default:
+                AddItemProperty(DURATION_TYPE_PERMANENT,
+                                    ItemPropertyBonusLevelSpell(IP_CONST_CLASS_BARD, 2),
+                                oItem);
+                break;
+            }
+
+            AddItemProperty(DURATION_TYPE_PERMANENT,
+                                ItemPropertyBonusLevelSpell(IP_CONST_CLASS_SORCERER, 0),
+                            oItem);
+            AddItemProperty(DURATION_TYPE_PERMANENT,
+                                ItemPropertyBonusLevelSpell(IP_CONST_CLASS_SORCERER, 1),
+                            oItem);
+            AddItemProperty(DURATION_TYPE_PERMANENT,
+                                ItemPropertyBonusLevelSpell(IP_CONST_CLASS_SORCERER, 2),
+                            oItem);
+
+            AddItemProperty(DURATION_TYPE_PERMANENT,
+                            ItemPropertyDamageResistance(IP_CONST_DAMAGETYPE_DIVINE,
+                                                         IP_CONST_DAMAGERESIST_10),
+                         oItem);
+            AddItemProperty(DURATION_TYPE_PERMANENT,
+                            ItemPropertyBonusSavingThrowVsX(IP_CONST_SAVEVS_DISEASE, 4),
+                         oItem);
+
+            AddItemProperty(DURATION_TYPE_PERMANENT,
+                            ItemPropertySkillBonus(SKILL_LORE, 4),
+                            oItem);
+
+            AddItemProperty(DURATION_TYPE_PERMANENT,
+                            ItemPropertySkillBonus(SKILL_SPELLCRAFT, 4),
+                            oItem);
+
+            AddItemProperty(DURATION_TYPE_PERMANENT,
+                                ItemPropertyBonusLevelSpell(IP_CONST_CLASS_SORCERER, 0),
+                            oItem);
+            AddItemProperty(DURATION_TYPE_PERMANENT,
+                                ItemPropertyBonusLevelSpell(IP_CONST_CLASS_SORCERER, 1),
+                            oItem);
+
+            AddItemProperty(DURATION_TYPE_PERMANENT,
+                                ItemPropertyBonusLevelSpell(IP_CONST_CLASS_BARD, 0),
+                            oItem);
+            AddItemProperty(DURATION_TYPE_PERMANENT,
+                                ItemPropertyBonusLevelSpell(IP_CONST_CLASS_BARD, 1),
+                            oItem);
+
+            AddItemProperty(DURATION_TYPE_PERMANENT,
+                                ItemPropertyBonusLevelSpell(IP_CONST_CLASS_WIZARD, 0),
+                            oItem);
+            AddItemProperty(DURATION_TYPE_PERMANENT,
+                                ItemPropertyBonusLevelSpell(IP_CONST_CLASS_WIZARD, 1),
+                            oItem);
+
+
+        break;
+
+        case GS_SU_ELDARI_AURARI:
+            AddItemProperty(DURATION_TYPE_PERMANENT,
+                            ItemPropertyReducedSavingThrowVsX(IP_CONST_SAVEVS_COLD, 4),
+                         oItem);
+            AddItemProperty(DURATION_TYPE_PERMANENT,
+                            ItemPropertyReducedSavingThrowVsX(IP_CONST_SAVEVS_FIRE, 4),
+                         oItem);
+            /*AddItemProperty(DURATION_TYPE_PERMANENT,
+                            ItemPropertyReducedSavingThrowVsX(IP_CONST_SAVEVS_ELECTRICAL, 4),
+                         oItem);*/
+            AddItemProperty(DURATION_TYPE_PERMANENT,
+                            ItemPropertyReducedSavingThrowVsX(IP_CONST_SAVEVS_ACID, 4),
+                         oItem);
+
+            AddItemProperty(DURATION_TYPE_PERMANENT,
+                                ItemPropertyBonusLevelSpell(IP_CONST_CLASS_WIZARD, 0),
+                            oItem);
+            AddItemProperty(DURATION_TYPE_PERMANENT,
+                                ItemPropertyBonusLevelSpell(IP_CONST_CLASS_WIZARD, 1),
+                            oItem);
+            AddItemProperty(DURATION_TYPE_PERMANENT,
+                                ItemPropertyBonusLevelSpell(IP_CONST_CLASS_WIZARD, 2),
+                            oItem);
+
+            AddItemProperty(DURATION_TYPE_PERMANENT,
+                                ItemPropertyBonusLevelSpell(IP_CONST_CLASS_BARD, 0),
+                            oItem);
+            AddItemProperty(DURATION_TYPE_PERMANENT,
+                                ItemPropertyBonusLevelSpell(IP_CONST_CLASS_BARD, 1),
+                            oItem);
+            switch (nLevel)
+            {
+                case 1:
+                case 2:
+                break;
+                default:
+                AddItemProperty(DURATION_TYPE_PERMANENT,
+                                    ItemPropertyBonusLevelSpell(IP_CONST_CLASS_BARD, 2),
+                                oItem);
+                break;
+            }
+
+            AddItemProperty(DURATION_TYPE_PERMANENT,
+                                ItemPropertyBonusLevelSpell(IP_CONST_CLASS_SORCERER, 0),
+                            oItem);
+            AddItemProperty(DURATION_TYPE_PERMANENT,
+                                ItemPropertyBonusLevelSpell(IP_CONST_CLASS_SORCERER, 1),
+                            oItem);
+            AddItemProperty(DURATION_TYPE_PERMANENT,
+                                ItemPropertyBonusLevelSpell(IP_CONST_CLASS_SORCERER, 2),
+                            oItem);
+
+            AddItemProperty(DURATION_TYPE_PERMANENT,
+                            ItemPropertyDamageResistance(IP_CONST_DAMAGETYPE_ELECTRICAL,
+                                                         IP_CONST_DAMAGERESIST_10),
+                         oItem);
+
+
+            AddItemProperty(DURATION_TYPE_PERMANENT,
+                            ItemPropertySkillBonus(SKILL_DISCIPLINE, 4),
+                            oItem);
+
+            AddItemProperty(DURATION_TYPE_PERMANENT,
+                            ItemPropertySkillBonus(SKILL_PERSUADE, 2),
+                            oItem);
+            AddItemProperty(DURATION_TYPE_PERMANENT,
+                            ItemPropertySkillBonus(SKILL_BLUFF, 2),
+                            oItem);
+            AddItemProperty(DURATION_TYPE_PERMANENT,
+                            ItemPropertySkillBonus(SKILL_PERFORM, 2),
+                            oItem);
+            AddItemProperty(DURATION_TYPE_PERMANENT,
+                            ItemPropertySkillBonus(SKILL_APPRAISE, 2),
+                            oItem);     
+            AddItemProperty(DURATION_TYPE_PERMANENT,
+                            ItemPropertySkillBonus(SKILL_SPOT, 2),
+                            oItem);
+        break;
+
+        case GS_SU_ELDARI_EMAELARI:
+            AddItemProperty(DURATION_TYPE_PERMANENT,
+                            ItemPropertyDecreaseAbility(IP_CONST_ABILITY_STR, 1),
+                         oItem);
+            AddItemProperty(DURATION_TYPE_PERMANENT,
+                            ItemPropertyDecreaseAbility(IP_CONST_ABILITY_CON, 1),
+                         oItem);
+
+            AddItemProperty(DURATION_TYPE_PERMANENT,
+                            ItemPropertyReducedSavingThrowVsX(IP_CONST_SAVEVS_COLD, 4),
+                         oItem);
+            AddItemProperty(DURATION_TYPE_PERMANENT,
+                            ItemPropertyReducedSavingThrowVsX(IP_CONST_SAVEVS_FIRE, 4),
+                         oItem);
+            AddItemProperty(DURATION_TYPE_PERMANENT,
+                            ItemPropertyReducedSavingThrowVsX(IP_CONST_SAVEVS_ELECTRICAL, 4),
+                         oItem);
+            AddItemProperty(DURATION_TYPE_PERMANENT,
+                            ItemPropertyReducedSavingThrowVsX(IP_CONST_SAVEVS_ACID, 4),
+                         oItem);
+
+            AddItemProperty(DURATION_TYPE_PERMANENT,
+                                ItemPropertyBonusLevelSpell(IP_CONST_CLASS_WIZARD, 0),
+                            oItem);
+            AddItemProperty(DURATION_TYPE_PERMANENT,
+                                ItemPropertyBonusLevelSpell(IP_CONST_CLASS_WIZARD, 1),
+                            oItem);
+            AddItemProperty(DURATION_TYPE_PERMANENT,
+                                ItemPropertyBonusLevelSpell(IP_CONST_CLASS_WIZARD, 2),
+                            oItem);
+
+            AddItemProperty(DURATION_TYPE_PERMANENT,
+                                ItemPropertyBonusLevelSpell(IP_CONST_CLASS_BARD, 0),
+                            oItem);
+            AddItemProperty(DURATION_TYPE_PERMANENT,
+                                ItemPropertyBonusLevelSpell(IP_CONST_CLASS_BARD, 1),
+                            oItem);
+            switch (nLevel)
+            {
+                case 1:
+                case 2:
+                break;
+                default:
+                AddItemProperty(DURATION_TYPE_PERMANENT,
+                                    ItemPropertyBonusLevelSpell(IP_CONST_CLASS_BARD, 2),
+                                oItem);
+                break;
+            }
+
+            AddItemProperty(DURATION_TYPE_PERMANENT,
+                                ItemPropertyBonusLevelSpell(IP_CONST_CLASS_SORCERER, 0),
+                            oItem);
+            AddItemProperty(DURATION_TYPE_PERMANENT,
+                                ItemPropertyBonusLevelSpell(IP_CONST_CLASS_SORCERER, 1),
+                            oItem);
+            AddItemProperty(DURATION_TYPE_PERMANENT,
+                                ItemPropertyBonusLevelSpell(IP_CONST_CLASS_SORCERER, 2),
+                            oItem);
+        break;
+
 
     }
     //Gift system
@@ -2085,6 +2317,113 @@ void gsSUApplyAbility(object oItem, int nSubRace, int nLevel)
                     ItemPropertyCastSpell(IP_CONST_CASTSPELL_CHARM_PERSON_OR_ANIMAL_10,
                                         IP_CONST_CASTSPELL_NUMUSES_UNLIMITED_USE),
                     oItem);
+    break;
+
+    case GS_SU_ELDARI_ALARI:
+            AddItemProperty(DURATION_TYPE_PERMANENT,
+                    ItemPropertyCastSpell(IP_CONST_CASTSPELL_CURE_MINOR_WOUNDS_1,
+                                        IP_CONST_CASTSPELL_NUMUSES_UNLIMITED_USE),
+                    oItem);
+            AddItemProperty(DURATION_TYPE_PERMANENT,
+                    ItemPropertyCastSpell(IP_CONST_CASTSPELL_RESISTANCE_5,
+                                        IP_CONST_CASTSPELL_NUMUSES_UNLIMITED_USE),
+                    oItem);
+            AddItemProperty(DURATION_TYPE_PERMANENT,
+                ItemPropertyCastSpell(IP_CONST_CASTSPELL_SHIELD_5,
+                                        IP_CONST_CASTSPELL_NUMUSES_3_USES_PER_DAY),
+                    oItem);
+            AddItemProperty(DURATION_TYPE_PERMANENT,
+                ItemPropertyCastSpell(IP_CONST_CASTSPELL_MAGE_ARMOR_2,
+                                        IP_CONST_CASTSPELL_NUMUSES_3_USES_PER_DAY),
+                    oItem);
+            switch (nLevel){
+                case 1:
+                case 2:
+                    AddItemProperty(DURATION_TYPE_PERMANENT,
+                        ItemPropertyCastSpell(IP_CONST_CASTSPELL_MAGIC_MISSILE_5,
+                                            IP_CONST_CASTSPELL_NUMUSES_1_USE_PER_DAY),
+                        oItem);
+                break;
+                case 3:
+                case 4:
+                case 5:
+                case 6:
+                case 7:
+                    AddItemProperty(DURATION_TYPE_PERMANENT,
+                        ItemPropertyCastSpell(IP_CONST_CASTSPELL_MAGIC_MISSILE_5,
+                                            IP_CONST_CASTSPELL_NUMUSES_1_USE_PER_DAY),
+                        oItem);
+                    AddItemProperty(DURATION_TYPE_PERMANENT,
+                        ItemPropertyCastSpell(IP_CONST_CASTSPELL_INVISIBILITY_3,
+                                            IP_CONST_CASTSPELL_NUMUSES_1_USE_PER_DAY),
+                        oItem);
+                default:
+                    AddItemProperty(DURATION_TYPE_PERMANENT,
+                        ItemPropertyCastSpell(IP_CONST_CASTSPELL_MAGIC_MISSILE_9,
+                                            IP_CONST_CASTSPELL_NUMUSES_2_USES_PER_DAY),
+                        oItem);
+                    AddItemProperty(DURATION_TYPE_PERMANENT,
+                        ItemPropertyCastSpell(IP_CONST_CASTSPELL_INVISIBILITY_3,
+                                            IP_CONST_CASTSPELL_NUMUSES_1_USE_PER_DAY),
+                        oItem);
+                break;
+            }
+    break;
+
+    case GS_SU_ELDARI_AURARI:
+            AddItemProperty(DURATION_TYPE_PERMANENT,
+                    ItemPropertyCastSpell(IP_CONST_CASTSPELL_CURE_MINOR_WOUNDS_1,
+                                        IP_CONST_CASTSPELL_NUMUSES_UNLIMITED_USE),
+                    oItem);
+            AddItemProperty(DURATION_TYPE_PERMANENT,
+                    ItemPropertyCastSpell(IP_CONST_CASTSPELL_RESISTANCE_5,
+                                        IP_CONST_CASTSPELL_NUMUSES_UNLIMITED_USE),
+                    oItem);
+            AddItemProperty(DURATION_TYPE_PERMANENT,
+                ItemPropertyCastSpell(IP_CONST_CASTSPELL_MAGE_ARMOR_2,
+                                        IP_CONST_CASTSPELL_NUMUSES_3_USES_PER_DAY),
+                    oItem);
+            switch (nLevel){
+                case 1:
+                case 2:
+                break;
+                default:
+                    AddItemProperty(DURATION_TYPE_PERMANENT,
+                        ItemPropertyCastSpell(IP_CONST_CASTSPELL_INVISIBILITY_3,
+                                            IP_CONST_CASTSPELL_NUMUSES_1_USE_PER_DAY),
+                        oItem);
+                    AddItemProperty(DURATION_TYPE_PERMANENT,
+                        ItemPropertyCastSpell(IP_CONST_CASTSPELL_CLOUD_OF_BEWILDERMENT_6,
+                                            IP_CONST_CASTSPELL_NUMUSES_1_USE_PER_DAY),
+                        oItem);
+                break;
+            }
+    break;
+
+    case GS_SU_ELDARI_EMAELARI:
+            AddItemProperty(DURATION_TYPE_PERMANENT,
+                    ItemPropertyCastSpell(IP_CONST_CASTSPELL_RESISTANCE_5,
+                                        IP_CONST_CASTSPELL_NUMUSES_UNLIMITED_USE),
+                    oItem);
+            AddItemProperty(DURATION_TYPE_PERMANENT,
+                ItemPropertyCastSpell(IP_CONST_CASTSPELL_MAGE_ARMOR_2,
+                                        IP_CONST_CASTSPELL_NUMUSES_3_USES_PER_DAY),
+                    oItem);
+            AddItemProperty(DURATION_TYPE_PERMANENT,
+                ItemPropertyCastSpell(IP_CONST_CASTSPELL_GHOSTLY_VISAGE_9,
+                                        IP_CONST_CASTSPELL_NUMUSES_1_USE_PER_DAY),
+                    oItem);
+            switch (nLevel){
+                case 1:
+                case 2:
+                break;
+                default:
+                    AddItemProperty(DURATION_TYPE_PERMANENT,
+                        ItemPropertyCastSpell(IP_CONST_CASTSPELL_INVISIBILITY_3,
+                                            IP_CONST_CASTSPELL_NUMUSES_1_USE_PER_DAY),
+                        oItem);
+                break;
+            }
     break;
 
     }
