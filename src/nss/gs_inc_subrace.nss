@@ -2314,26 +2314,26 @@ void gsSUApplyAbility(object oItem, int nSubRace, int nLevel)
 
     case GS_SU_ELDARI_ALARI:
             AddItemProperty(DURATION_TYPE_PERMANENT,
-                    ItemPropertyCastSpell(IP_CONST_CASTSPELL_CURE_MINOR_WOUNDS_1
+                    ItemPropertyCastSpell(IP_CONST_CASTSPELL_CURE_MINOR_WOUNDS_1,
                                         IP_CONST_CASTSPELL_NUMUSES_UNLIMITED_USE),
                     oItem);
             AddItemProperty(DURATION_TYPE_PERMANENT,
-                    ItemPropertyCastSpell(IP_CONST_CASTSPELL_RESISTANCE_5
+                    ItemPropertyCastSpell(IP_CONST_CASTSPELL_RESISTANCE_5,
                                         IP_CONST_CASTSPELL_NUMUSES_UNLIMITED_USE),
                     oItem);
             AddItemProperty(DURATION_TYPE_PERMANENT,
-                ItemPropertyCastSpell(IP_CONST_CASTSPELL_SHIELD_5
+                ItemPropertyCastSpell(IP_CONST_CASTSPELL_SHIELD_5,
                                         IP_CONST_CASTSPELL_NUMUSES_3_USES_PER_DAY),
                     oItem);
             AddItemProperty(DURATION_TYPE_PERMANENT,
-                ItemPropertyCastSpell(IP_CONST_CASTSPELL_MAGE_ARMOR_2
+                ItemPropertyCastSpell(IP_CONST_CASTSPELL_MAGE_ARMOR_2,
                                         IP_CONST_CASTSPELL_NUMUSES_3_USES_PER_DAY),
                     oItem);
             switch (nLevel){
                 case 1:
                 case 2:
                     AddItemProperty(DURATION_TYPE_PERMANENT,
-                        ItemPropertyCastSpell(IP_CONST_CASTSPELL_MAGIC_MISSILE_5
+                        ItemPropertyCastSpell(IP_CONST_CASTSPELL_MAGIC_MISSILE_5,
                                             IP_CONST_CASTSPELL_NUMUSES_1_USE_PER_DAY),
                         oItem);
                 break;
@@ -2343,20 +2343,20 @@ void gsSUApplyAbility(object oItem, int nSubRace, int nLevel)
                 case 6:
                 case 7:
                     AddItemProperty(DURATION_TYPE_PERMANENT,
-                        ItemPropertyCastSpell(IP_CONST_CASTSPELL_MAGIC_MISSILE_5
+                        ItemPropertyCastSpell(IP_CONST_CASTSPELL_MAGIC_MISSILE_5,
                                             IP_CONST_CASTSPELL_NUMUSES_1_USE_PER_DAY),
                         oItem);
                     AddItemProperty(DURATION_TYPE_PERMANENT,
-                        ItemPropertyCastSpell(IP_CONST_CASTSPELL_INVISIBILITY_3
+                        ItemPropertyCastSpell(IP_CONST_CASTSPELL_INVISIBILITY_3,
                                             IP_CONST_CASTSPELL_NUMUSES_1_USE_PER_DAY),
                         oItem);
                 default:
                     AddItemProperty(DURATION_TYPE_PERMANENT,
-                        ItemPropertyCastSpell(IP_CONST_CASTSPELL_MAGIC_MISSILE_9
+                        ItemPropertyCastSpell(IP_CONST_CASTSPELL_MAGIC_MISSILE_9,
                                             IP_CONST_CASTSPELL_NUMUSES_2_USES_PER_DAY),
                         oItem);
                     AddItemProperty(DURATION_TYPE_PERMANENT,
-                        ItemPropertyCastSpell(IP_CONST_CASTSPELL_INVISIBILITY_3
+                        ItemPropertyCastSpell(IP_CONST_CASTSPELL_INVISIBILITY_3,
                                             IP_CONST_CASTSPELL_NUMUSES_1_USE_PER_DAY),
                         oItem);
                 break;
@@ -2365,15 +2365,15 @@ void gsSUApplyAbility(object oItem, int nSubRace, int nLevel)
 
     case GS_SU_ELDARI_AURARI:
             AddItemProperty(DURATION_TYPE_PERMANENT,
-                    ItemPropertyCastSpell(IP_CONST_CASTSPELL_CURE_MINOR_WOUNDS_1
+                    ItemPropertyCastSpell(IP_CONST_CASTSPELL_CURE_MINOR_WOUNDS_1,
                                         IP_CONST_CASTSPELL_NUMUSES_UNLIMITED_USE),
                     oItem);
             AddItemProperty(DURATION_TYPE_PERMANENT,
-                    ItemPropertyCastSpell(IP_CONST_CASTSPELL_RESISTANCE_5
+                    ItemPropertyCastSpell(IP_CONST_CASTSPELL_RESISTANCE_5,
                                         IP_CONST_CASTSPELL_NUMUSES_UNLIMITED_USE),
                     oItem);
             AddItemProperty(DURATION_TYPE_PERMANENT,
-                ItemPropertyCastSpell(IP_CONST_CASTSPELL_MAGE_ARMOR_2
+                ItemPropertyCastSpell(IP_CONST_CASTSPELL_MAGE_ARMOR_2,
                                         IP_CONST_CASTSPELL_NUMUSES_3_USES_PER_DAY),
                     oItem);
             switch (nLevel){
@@ -2382,11 +2382,11 @@ void gsSUApplyAbility(object oItem, int nSubRace, int nLevel)
                 break;
                 default:
                     AddItemProperty(DURATION_TYPE_PERMANENT,
-                        ItemPropertyCastSpell(IP_CONST_CASTSPELL_INVISIBILITY_3
+                        ItemPropertyCastSpell(IP_CONST_CASTSPELL_INVISIBILITY_3,
                                             IP_CONST_CASTSPELL_NUMUSES_1_USE_PER_DAY),
                         oItem);
                     AddItemProperty(DURATION_TYPE_PERMANENT,
-                        ItemPropertyCastSpell(IP_CONST_CASTSPELL_CLOUD_OF_BEWILDERMENT_6
+                        ItemPropertyCastSpell(IP_CONST_CASTSPELL_CLOUD_OF_BEWILDERMENT_6,
                                             IP_CONST_CASTSPELL_NUMUSES_1_USE_PER_DAY),
                         oItem);
                 break;
@@ -2395,15 +2395,15 @@ void gsSUApplyAbility(object oItem, int nSubRace, int nLevel)
 
     case GS_SU_ELDARI_EMAELARI:
             AddItemProperty(DURATION_TYPE_PERMANENT,
-                    ItemPropertyCastSpell(IP_CONST_CASTSPELL_RESISTANCE_5
+                    ItemPropertyCastSpell(IP_CONST_CASTSPELL_RESISTANCE_5,
                                         IP_CONST_CASTSPELL_NUMUSES_UNLIMITED_USE),
                     oItem);
             AddItemProperty(DURATION_TYPE_PERMANENT,
-                ItemPropertyCastSpell(IP_CONST_CASTSPELL_MAGE_ARMOR_2
+                ItemPropertyCastSpell(IP_CONST_CASTSPELL_MAGE_ARMOR_2,
                                         IP_CONST_CASTSPELL_NUMUSES_3_USES_PER_DAY),
                     oItem);
             AddItemProperty(DURATION_TYPE_PERMANENT,
-                ItemPropertyCastSpell(IP_CONST_CASTSPELL_GHOSTLY_VISAGE_9
+                ItemPropertyCastSpell(IP_CONST_CASTSPELL_GHOSTLY_VISAGE_9,
                                         IP_CONST_CASTSPELL_NUMUSES_1_USE_PER_DAY),
                     oItem);
             switch (nLevel){
@@ -2412,7 +2412,7 @@ void gsSUApplyAbility(object oItem, int nSubRace, int nLevel)
                 break;
                 default:
                     AddItemProperty(DURATION_TYPE_PERMANENT,
-                        ItemPropertyCastSpell(IP_CONST_CASTSPELL_INVISIBILITY_3
+                        ItemPropertyCastSpell(IP_CONST_CASTSPELL_INVISIBILITY_3,
                                             IP_CONST_CASTSPELL_NUMUSES_1_USE_PER_DAY),
                         oItem);
                 break;
