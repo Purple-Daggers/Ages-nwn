@@ -7,6 +7,7 @@ After this, you can build the module, haks, and tlk with these prompts:
 ```bash
 $ git clone https://github.com/Purple-Daggers/Ages-nwn/
 $ cd Ages-nwn
+$ nasher config --set --tlkFlags:"--pretty"
 $ nasher pack haks
 $ nasher install
 ```
