@@ -2035,7 +2035,7 @@ void gsSUApplyProperty(object oItem, int nSubRace, int nLevel)
                             ItemPropertyBonusSpellResistance(IP_CONST_SPELLRESISTANCEBONUS_24),
                             oItem);
             break;
-
+        }
         break;
 
 
