@@ -16,6 +16,7 @@ const int IP_CONST_FEAT_WOODLAND_STRIDE = 1199;
 const int IP_CONST_CASTSPELL_DEATH_ARMOR_6 = 540;
 const int IP_CONST_CASTSPELL_MALARI_RAGE = 541;
 const int IP_CONST_CASTSPELL_CLOUD_OF_BEWILDERMENT_6 = 542;
+const int IP_CONST_CASTSPELL_HEALING_STING_10 = 543;
 
 const int GS_SU_NONE                      =   0;
 const int GS_SU_DWARF_GOLD                =   1;
@@ -1900,6 +1901,143 @@ void gsSUApplyProperty(object oItem, int nSubRace, int nLevel)
                             oItem);
         break;
 
+        case GS_SU_DUNARI_FALLARI:
+            AddItemProperty(DURATION_TYPE_PERMANENT,
+                            ItemPropertyAbilityBonus(IP_CONST_ABILITY_INT, 2),
+                         oItem);
+            AddItemProperty(DURATION_TYPE_PERMANENT,
+                            ItemPropertyDecreaseAbility(IP_CONST_ABILITY_WIS, 2),
+                         oItem);
+            AddItemProperty(DURATION_TYPE_PERMANENT,
+                            ItemPropertySkillBonus(SKILL_LORE, 4),
+                            oItem);
+            AddItemProperty(DURATION_TYPE_PERMANENT,
+                            ItemPropertySkillBonus(SKILL_SEARCH, 4),
+                            oItem);
+
+            AddItemProperty(DURATION_TYPE_PERMANENT,
+                                ItemPropertyDarkvision(),
+                            oItem);
+            AddItemProperty(DURATION_TYPE_PERMANENT,
+                            ItemPropertyDamageResistance(IP_CONST_DAMAGETYPE_FIRE,
+                                                         IP_CONST_DAMAGERESIST_10),
+                         oItem);
+        break;
+
+        case GS_SU_DUNARI_LANTERNBEARER:
+            AddItemProperty(DURATION_TYPE_PERMANENT,
+                            ItemPropertyAbilityBonus(IP_CONST_ABILITY_WIS, 1),
+                         oItem);
+            AddItemProperty(DURATION_TYPE_PERMANENT,
+                            ItemPropertyAbilityBonus(IP_CONST_ABILITY_CHA, 1),
+                         oItem);
+            AddItemProperty(DURATION_TYPE_PERMANENT,
+                            ItemPropertyDecreaseAbility(IP_CONST_ABILITY_STR, 1),
+                         oItem);
+
+            AddItemProperty(DURATION_TYPE_PERMANENT,
+                            ItemPropertySkillBonus(SKILL_SPELLCRAFT, 2),
+                            oItem);
+            AddItemProperty(DURATION_TYPE_PERMANENT,
+                            ItemPropertySkillBonus(SKILL_LORE, 4),
+                            oItem);
+            AddItemProperty(DURATION_TYPE_PERMANENT,
+                            ItemPropertySkillBonus(SKILL_CONCENTRATION, 2),
+                            oItem);
+
+            AddItemProperty(DURATION_TYPE_PERMANENT,
+                                ItemPropertyDarkvision(),
+                            oItem);
+            AddItemProperty(DURATION_TYPE_PERMANENT,
+                            ItemPropertyDamageResistance(IP_CONST_DAMAGETYPE_FIRE,
+                                                         IP_CONST_DAMAGERESIST_10),
+                         oItem);
+        break;
+
+        //no info as of yet
+        case GS_SU_DUNARI_VRAILSIARI:
+            AddItemProperty(DURATION_TYPE_PERMANENT,
+                                ItemPropertyDarkvision(),
+                            oItem);
+        break;
+
+        case GS_SU_DUNARI_VULSWORN:
+            AddItemProperty(DURATION_TYPE_PERMANENT,
+                            ItemPropertyAbilityBonus(IP_CONST_ABILITY_CON, 2),
+                         oItem);
+            AddItemProperty(DURATION_TYPE_PERMANENT,
+                            ItemPropertyAbilityBonus(IP_CONST_ABILITY_CHA, 2),
+                         oItem);
+            AddItemProperty(DURATION_TYPE_PERMANENT,
+                            ItemPropertyDecreaseAbility(IP_CONST_ABILITY_INT, 1),
+                         oItem);
+            AddItemProperty(DURATION_TYPE_PERMANENT,
+                            ItemPropertyDecreaseAbility(IP_CONST_ABILITY_WIS, 1),
+                         oItem);
+
+            AddItemProperty(DURATION_TYPE_PERMANENT,
+                            ItemPropertyBonusFeat(IP_CONST_FEAT_USE_POISON),
+                         oItem);
+
+            AddItemProperty(DURATION_TYPE_PERMANENT,
+                                ItemPropertyDarkvision(),
+                            oItem);
+            AddItemProperty(DURATION_TYPE_PERMANENT,
+                            ItemPropertyDamageResistance(IP_CONST_DAMAGETYPE_FIRE,
+                                                         IP_CONST_DAMAGERESIST_10),
+                         oItem);
+
+        switch (nLevel)
+        {
+        case  1:
+        case  2:
+            AddItemProperty(DURATION_TYPE_PERMANENT,
+                            ItemPropertyBonusSpellResistance(IP_CONST_SPELLRESISTANCEBONUS_14),
+                            oItem);
+            break;
+        case  3:
+        case  4:
+        case  5:
+        case  6:
+            AddItemProperty(DURATION_TYPE_PERMANENT,
+                            ItemPropertyBonusSpellResistance(IP_CONST_SPELLRESISTANCEBONUS_16),
+                            oItem);
+            break;
+        case  7:
+        case  8:
+        case  9:
+        case 10:
+            AddItemProperty(DURATION_TYPE_PERMANENT,
+                            ItemPropertyBonusSpellResistance(IP_CONST_SPELLRESISTANCEBONUS_18),
+                            oItem);
+            break;
+
+        case 11:
+        case 12:
+        case 13:
+        case 14:
+            AddItemProperty(DURATION_TYPE_PERMANENT,
+                            ItemPropertyBonusSpellResistance(IP_CONST_SPELLRESISTANCEBONUS_20),
+                            oItem);
+            break;
+        case 15:
+        case 16:
+        case 17:
+        case 18:
+            AddItemProperty(DURATION_TYPE_PERMANENT,
+                            ItemPropertyBonusSpellResistance(IP_CONST_SPELLRESISTANCEBONUS_22),
+                            oItem);
+            break;
+        case 19:
+        case 20:
+        default:
+            AddItemProperty(DURATION_TYPE_PERMANENT,
+                            ItemPropertyBonusSpellResistance(IP_CONST_SPELLRESISTANCEBONUS_24),
+                            oItem);
+            break;
+
+        break;
+
 
     }
     //Gift system
@@ -2424,6 +2562,50 @@ void gsSUApplyAbility(object oItem, int nSubRace, int nLevel)
                         oItem);
                 break;
             }
+    break;
+
+    case GS_SU_DUNARI_FALLARI:
+            AddItemProperty(DURATION_TYPE_PERMANENT,
+                ItemPropertyCastSpell(IP_CONST_CASTSPELL_IDENTIFY_3,
+                                        IP_CONST_CASTSPELL_NUMUSES_1_USE_PER_DAY),
+                    oItem);
+            AddItemProperty(DURATION_TYPE_PERMANENT,
+                    ItemPropertyCastSpell(IP_CONST_CASTSPELL_CURE_MINOR_WOUNDS_1,
+                                        IP_CONST_CASTSPELL_NUMUSES_UNLIMITED_USE),
+                    oItem);
+            AddItemProperty(DURATION_TYPE_PERMANENT,
+                    ItemPropertyCastSpell(IP_CONST_CASTSPELL_VIRTUE_1,
+                                        IP_CONST_CASTSPELL_NUMUSES_UNLIMITED_USE),
+                    oItem);
+    break;
+
+    case GS_SU_DUNARI_LANTERNBEARER:
+            AddItemProperty(DURATION_TYPE_PERMANENT,
+                ItemPropertyCastSpell(IP_CONST_CASTSPELL_PROTECTION_FROM_ALIGNMENT_5,
+                                        IP_CONST_CASTSPELL_NUMUSES_1_USE_PER_DAY),
+                    oItem);
+            AddItemProperty(DURATION_TYPE_PERMANENT,
+                ItemPropertyCastSpell(IP_CONST_CASTSPELL_REMOVE_FEAR_2,
+                                        IP_CONST_CASTSPELL_NUMUSES_1_USE_PER_DAY),
+                    oItem);
+    break;
+
+    case GS_SU_DUNARI_VRAILSIARI:
+    break;
+
+    case GS_SU_DUNARI_VULSWORN:
+            AddItemProperty(DURATION_TYPE_PERMANENT,
+                ItemPropertyCastSpell(IP_CONST_CASTSPELL_INFLICT_MINOR_WOUNDS_1,
+                                        IP_CONST_CASTSPELL_NUMUSES_UNLIMITED_USE),
+                    oItem);
+            AddItemProperty(DURATION_TYPE_PERMANENT,
+                ItemPropertyCastSpell(IP_CONST_CASTSPELL_POISON_5,
+                                        IP_CONST_CASTSPELL_NUMUSES_1_USE_PER_DAY),
+                    oItem);
+            AddItemProperty(DURATION_TYPE_PERMANENT,
+                ItemPropertyCastSpell(IP_CONST_CASTSPELL_HEALING_STING_10,
+                                        IP_CONST_CASTSPELL_NUMUSES_1_USE_PER_DAY),
+                    oItem);
     break;
 
     }
