@@ -17,6 +17,7 @@ const int IP_CONST_CASTSPELL_DEATH_ARMOR_6 = 540;
 const int IP_CONST_CASTSPELL_MALARI_RAGE = 541;
 const int IP_CONST_CASTSPELL_CLOUD_OF_BEWILDERMENT_6 = 542;
 const int IP_CONST_CASTSPELL_HEALING_STING_10 = 543;
+const int IP_CONST_CASTSPELL_SHELGARNS_PERSISTENT_BLADE = 544;
 
 const int GS_SU_NONE                      =   0;
 const int GS_SU_DWARF_GOLD                =   1;
@@ -52,6 +53,9 @@ const int GS_SU_HUMAN_NAVARREE = 22;
 //Imperial
 const int GS_SU_HUMAN_ARCHONBLOODED_DAVURI = 23;
 const int GS_SU_HUMAN_ARCHONBLOODED_ASHLANDER = 24;
+const int GS_SU_HUMAN_CIVITAS_DAVURI = 76;
+const int GS_SU_HUMAN_CIVITAS_ASHLANDER = 77;
+
 //Nijaran
 const int GS_SU_HUMAN_INEN = 25;
 const int GS_SU_HUMAN_ASHARI = 26;
@@ -70,15 +74,19 @@ const int GS_SU_MALARI_UNBOWED = 34;
 const int GS_SU_NUJIIT_PADARR_TWILIGHTBORN = 35;
 const int GS_SU_NUJIIT_PADARR_FANGLORD = 36;
 const int GS_SU_NUJIIT_PADARR_WHISPERSTALKER = 37;
+const int GS_SU_NUJIIT_PADARR_BRIGHTMOON = 78;
 const int GS_SU_NUJIIT_KOMALARI_TWILIGHTBORN = 38;
 const int GS_SU_NUJIIT_KOMALARI_FANGLORD = 39;
 const int GS_SU_NUJIIT_KOMALARI_WHISPERSTALKER = 40;
+const int GS_SU_NUJIIT_KOMALARI_BRIGHTMOON = 79;
 const int GS_SU_NUJIIT_RIVERLORD_TWILIGHTBORN = 41;
 const int GS_SU_NUJIIT_RIVERLORD_FANGLORD = 42;
 const int GS_SU_NUJIIT_RIVERLORD_WHISPERSTALKER = 43;
+const int GS_SU_NUJIIT_RIVERLORD_BRIGHTMOON = 80;
 const int GS_SU_NUJIIT_RESPLENDENT_TWILIGHTBORN = 44;
 const int GS_SU_NUJIIT_RESPLENDENT_FANGLORD = 45;
 const int GS_SU_NUJIIT_RESPLENDENT_WHISPERSTALKER = 46;
+const int GS_SU_NUJIIT_RESPLENDENT_BRIGHTMOON = 81;
 //Malosari (wood elves)
 const int GS_SU_MALOSARI_GREENSWORN = 47;
 const int GS_SU_MALOSARI_FREESWORN = 48;
@@ -113,8 +121,7 @@ const int GS_SU_VEYDRAN_UNFADING_AETHERTOUCHED = 72;
 const int GS_SU_HUMAN_PRASIENE_CIPHER = 73;
 const int GS_SU_HUMAN_ORI_CIPHER = 74;
 const int GS_SU_HUMAN_NAVARREE_CIPHER = 75;
-const int GS_SU_HUMAN_CIVITAS_DAVURI = 76;
-const int GS_SU_HUMAN_CIVITAS_ASHLANDER = 77;
+
 
 
 //apply properties for nSubrace of nLevel to oItem
@@ -2038,6 +2045,629 @@ void gsSUApplyProperty(object oItem, int nSubRace, int nLevel)
         }
         break;
 
+        case GS_SU_NUJIIT_PADARR_TWILIGHTBORN:
+            AddItemProperty(DURATION_TYPE_PERMANENT,
+                            ItemPropertyAbilityBonus(IP_CONST_ABILITY_CON, 1),
+                         oItem);
+            AddItemProperty(DURATION_TYPE_PERMANENT,
+                            ItemPropertyAbilityBonus(IP_CONST_ABILITY_CHA, 1),
+                         oItem);
+            AddItemProperty(DURATION_TYPE_PERMANENT,
+                            ItemPropertyDecreaseAbility(IP_CONST_ABILITY_STR, 1),
+                         oItem);
+            AddItemProperty(DURATION_TYPE_PERMANENT,
+                            ItemPropertyDecreaseAbility(IP_CONST_ABILITY_INT, 1),
+                         oItem);
+
+            AddItemProperty(DURATION_TYPE_PERMANENT,
+                            ItemPropertySkillBonus(SKILL_CONCENTRATION, 2),
+                            oItem);
+            AddItemProperty(DURATION_TYPE_PERMANENT,
+                            ItemPropertySkillBonus(SKILL_LORE, 2),
+                            oItem);
+            AddItemProperty(DURATION_TYPE_PERMANENT,
+                            ItemPropertySkillBonus(SKILL_PERSUADE, 2),
+                            oItem);
+
+            AddItemProperty(DURATION_TYPE_PERMANENT,
+                            ItemPropertyDarkvision(),
+                            oItem);
+            AddItemProperty(DURATION_TYPE_PERMANENT,
+                            ItemPropertyBonusFeat(IP_CONST_FEAT_WEAPON_SPEC_UNARMED),
+                         oItem);
+
+            AddItemProperty(DURATION_TYPE_PERMANENT,
+                            ItemPropertySkillBonus(SKILL_BLUFF, 2),
+                            oItem);
+        break;
+
+        case GS_SU_NUJIIT_PADARR_FANGLORD:
+            AddItemProperty(DURATION_TYPE_PERMANENT,
+                            ItemPropertyAbilityBonus(IP_CONST_ABILITY_CON, 1),
+                         oItem);
+            AddItemProperty(DURATION_TYPE_PERMANENT,
+                            ItemPropertyAbilityBonus(IP_CONST_ABILITY_CHA, 1),
+                         oItem);
+            AddItemProperty(DURATION_TYPE_PERMANENT,
+                            ItemPropertyDecreaseAbility(IP_CONST_ABILITY_STR, 1),
+                         oItem);
+            AddItemProperty(DURATION_TYPE_PERMANENT,
+                            ItemPropertyDecreaseAbility(IP_CONST_ABILITY_INT, 1),
+                         oItem);
+
+            AddItemProperty(DURATION_TYPE_PERMANENT,
+                            ItemPropertySkillBonus(SKILL_CONCENTRATION, 2),
+                            oItem);
+            AddItemProperty(DURATION_TYPE_PERMANENT,
+                            ItemPropertySkillBonus(SKILL_LORE, 2),
+                            oItem);
+            AddItemProperty(DURATION_TYPE_PERMANENT,
+                            ItemPropertySkillBonus(SKILL_PERSUADE, 2),
+                            oItem);
+
+            AddItemProperty(DURATION_TYPE_PERMANENT,
+                            ItemPropertyDarkvision(),
+                            oItem);
+            AddItemProperty(DURATION_TYPE_PERMANENT,
+                            ItemPropertyBonusFeat(IP_CONST_FEAT_WEAPON_SPEC_UNARMED),
+                         oItem);
+
+            AddItemProperty(DURATION_TYPE_PERMANENT,
+                            ItemPropertySkillBonus(SKILL_INTIMIDATE, 4),
+                            oItem);
+        break;
+
+        case GS_SU_NUJIIT_PADARR_WHISPERSTALKER:
+            AddItemProperty(DURATION_TYPE_PERMANENT,
+                            ItemPropertyAbilityBonus(IP_CONST_ABILITY_CON, 1),
+                         oItem);
+            AddItemProperty(DURATION_TYPE_PERMANENT,
+                            ItemPropertyAbilityBonus(IP_CONST_ABILITY_CHA, 1),
+                         oItem);
+            AddItemProperty(DURATION_TYPE_PERMANENT,
+                            ItemPropertyDecreaseAbility(IP_CONST_ABILITY_STR, 1),
+                         oItem);
+            AddItemProperty(DURATION_TYPE_PERMANENT,
+                            ItemPropertyDecreaseAbility(IP_CONST_ABILITY_INT, 1),
+                         oItem);
+
+            AddItemProperty(DURATION_TYPE_PERMANENT,
+                            ItemPropertySkillBonus(SKILL_CONCENTRATION, 2),
+                            oItem);
+            AddItemProperty(DURATION_TYPE_PERMANENT,
+                            ItemPropertySkillBonus(SKILL_LORE, 2),
+                            oItem);
+            AddItemProperty(DURATION_TYPE_PERMANENT,
+                            ItemPropertySkillBonus(SKILL_PERSUADE, 2),
+                            oItem);
+
+            AddItemProperty(DURATION_TYPE_PERMANENT,
+                            ItemPropertyDarkvision(),
+                            oItem);
+            AddItemProperty(DURATION_TYPE_PERMANENT,
+                            ItemPropertyBonusFeat(IP_CONST_FEAT_WEAPON_SPEC_UNARMED),
+                         oItem);
+
+            AddItemProperty(DURATION_TYPE_PERMANENT,
+                            ItemPropertySkillBonus(SKILL_HIDE, 8),
+                            oItem);
+            AddItemProperty(DURATION_TYPE_PERMANENT,
+                            ItemPropertySkillBonus(SKILL_MOVE_SILENTLY, 8),
+                            oItem);
+        break;
+
+        case GS_SU_NUJIIT_PADARR_BRIGHTMOON:
+            AddItemProperty(DURATION_TYPE_PERMANENT,
+                            ItemPropertyAbilityBonus(IP_CONST_ABILITY_CON, 1),
+                         oItem);
+            AddItemProperty(DURATION_TYPE_PERMANENT,
+                            ItemPropertyAbilityBonus(IP_CONST_ABILITY_CHA, 1),
+                         oItem);
+            AddItemProperty(DURATION_TYPE_PERMANENT,
+                            ItemPropertyDecreaseAbility(IP_CONST_ABILITY_STR, 1),
+                         oItem);
+            AddItemProperty(DURATION_TYPE_PERMANENT,
+                            ItemPropertyDecreaseAbility(IP_CONST_ABILITY_INT, 1),
+                         oItem);
+
+            AddItemProperty(DURATION_TYPE_PERMANENT,
+                            ItemPropertySkillBonus(SKILL_CONCENTRATION, 2),
+                            oItem);
+            AddItemProperty(DURATION_TYPE_PERMANENT,
+                            ItemPropertySkillBonus(SKILL_LORE, 2),
+                            oItem);
+            AddItemProperty(DURATION_TYPE_PERMANENT,
+                            ItemPropertySkillBonus(SKILL_PERSUADE, 2),
+                            oItem);
+
+            AddItemProperty(DURATION_TYPE_PERMANENT,
+                            ItemPropertyDarkvision(),
+                            oItem);
+            AddItemProperty(DURATION_TYPE_PERMANENT,
+                            ItemPropertyBonusFeat(IP_CONST_FEAT_WEAPON_SPEC_UNARMED),
+                         oItem);
+        
+            AddItemProperty(DURATION_TYPE_PERMANENT,
+                        ItemPropertySkillBonus(SKILL_ALL_SKILLS, 1),
+                        oItem);
+        break;
+
+        case GS_SU_NUJIIT_KOMALARI_FANGLORD:
+            AddItemProperty(DURATION_TYPE_PERMANENT,
+                            ItemPropertyAbilityBonus(IP_CONST_ABILITY_WIS, 1),
+                         oItem);
+            AddItemProperty(DURATION_TYPE_PERMANENT,
+                            ItemPropertyAbilityBonus(IP_CONST_ABILITY_CHA, 1),
+                         oItem);
+            AddItemProperty(DURATION_TYPE_PERMANENT,
+                            ItemPropertyDecreaseAbility(IP_CONST_ABILITY_STR, 1),
+                         oItem);
+
+            AddItemProperty(DURATION_TYPE_PERMANENT,
+                            ItemPropertyBonusSavingThrowVsX(IP_CONST_SAVEVS_POISON, 4),
+                         oItem);
+            AddItemProperty(DURATION_TYPE_PERMANENT,
+                            ItemPropertyBonusSavingThrowVsX(IP_CONST_SAVEVS_DISEASE, 4),
+                         oItem);
+
+            AddItemProperty(DURATION_TYPE_PERMANENT,
+                            ItemPropertySkillBonus(SKILL_CONCENTRATION, 2),
+                            oItem);
+            AddItemProperty(DURATION_TYPE_PERMANENT,
+                            ItemPropertySkillBonus(SKILL_BLUFF, 2),
+                            oItem);
+            AddItemProperty(DURATION_TYPE_PERMANENT,
+                            ItemPropertySkillBonus(SKILL_PERSUADE, 2),
+                            oItem);
+            AddItemProperty(DURATION_TYPE_PERMANENT,
+                            ItemPropertySkillBonus(SKILL_SET_TRAP, 2),
+                            oItem);
+
+            AddItemProperty(DURATION_TYPE_PERMANENT,
+                            ItemPropertyDarkvision(),
+                            oItem);
+            AddItemProperty(DURATION_TYPE_PERMANENT,
+                            ItemPropertyBonusFeat(IP_CONST_FEAT_WEAPON_SPEC_UNARMED),
+                         oItem);
+
+            AddItemProperty(DURATION_TYPE_PERMANENT,
+                            ItemPropertySkillBonus(SKILL_INTIMIDATE, 4),
+                            oItem);
+        break;
+
+        case GS_SU_NUJIIT_KOMALARI_TWILIGHTBORN:
+            AddItemProperty(DURATION_TYPE_PERMANENT,
+                            ItemPropertyAbilityBonus(IP_CONST_ABILITY_WIS, 1),
+                         oItem);
+            AddItemProperty(DURATION_TYPE_PERMANENT,
+                            ItemPropertyAbilityBonus(IP_CONST_ABILITY_CHA, 1),
+                         oItem);
+            AddItemProperty(DURATION_TYPE_PERMANENT,
+                            ItemPropertyDecreaseAbility(IP_CONST_ABILITY_STR, 1),
+                         oItem);
+
+            AddItemProperty(DURATION_TYPE_PERMANENT,
+                            ItemPropertyBonusSavingThrowVsX(IP_CONST_SAVEVS_POISON, 4),
+                         oItem);
+            AddItemProperty(DURATION_TYPE_PERMANENT,
+                            ItemPropertyBonusSavingThrowVsX(IP_CONST_SAVEVS_DISEASE, 4),
+                         oItem);
+
+            AddItemProperty(DURATION_TYPE_PERMANENT,
+                            ItemPropertySkillBonus(SKILL_CONCENTRATION, 2),
+                            oItem);
+            AddItemProperty(DURATION_TYPE_PERMANENT,
+                            ItemPropertySkillBonus(SKILL_BLUFF, 4),
+                            oItem);
+            AddItemProperty(DURATION_TYPE_PERMANENT,
+                            ItemPropertySkillBonus(SKILL_PERSUADE, 2),
+                            oItem);
+            AddItemProperty(DURATION_TYPE_PERMANENT,
+                            ItemPropertySkillBonus(SKILL_SET_TRAP, 2),
+                            oItem);
+
+            AddItemProperty(DURATION_TYPE_PERMANENT,
+                            ItemPropertyDarkvision(),
+                            oItem);
+            AddItemProperty(DURATION_TYPE_PERMANENT,
+                            ItemPropertyBonusFeat(IP_CONST_FEAT_WEAPON_SPEC_UNARMED),
+                         oItem);
+        break;
+
+        case GS_SU_NUJIIT_KOMALARI_WHISPERSTALKER:
+            AddItemProperty(DURATION_TYPE_PERMANENT,
+                            ItemPropertyAbilityBonus(IP_CONST_ABILITY_WIS, 1),
+                         oItem);
+            AddItemProperty(DURATION_TYPE_PERMANENT,
+                            ItemPropertyAbilityBonus(IP_CONST_ABILITY_CHA, 1),
+                         oItem);
+            AddItemProperty(DURATION_TYPE_PERMANENT,
+                            ItemPropertyDecreaseAbility(IP_CONST_ABILITY_STR, 1),
+                         oItem);
+
+            AddItemProperty(DURATION_TYPE_PERMANENT,
+                            ItemPropertyBonusSavingThrowVsX(IP_CONST_SAVEVS_POISON, 4),
+                         oItem);
+            AddItemProperty(DURATION_TYPE_PERMANENT,
+                            ItemPropertyBonusSavingThrowVsX(IP_CONST_SAVEVS_DISEASE, 4),
+                         oItem);
+
+            AddItemProperty(DURATION_TYPE_PERMANENT,
+                            ItemPropertySkillBonus(SKILL_CONCENTRATION, 2),
+                            oItem);
+            AddItemProperty(DURATION_TYPE_PERMANENT,
+                            ItemPropertySkillBonus(SKILL_BLUFF, 2),
+                            oItem);
+            AddItemProperty(DURATION_TYPE_PERMANENT,
+                            ItemPropertySkillBonus(SKILL_PERSUADE, 2),
+                            oItem);
+            AddItemProperty(DURATION_TYPE_PERMANENT,
+                            ItemPropertySkillBonus(SKILL_SET_TRAP, 2),
+                            oItem);
+
+            AddItemProperty(DURATION_TYPE_PERMANENT,
+                            ItemPropertyDarkvision(),
+                            oItem);
+            AddItemProperty(DURATION_TYPE_PERMANENT,
+                            ItemPropertyBonusFeat(IP_CONST_FEAT_WEAPON_SPEC_UNARMED),
+                         oItem);
+
+            AddItemProperty(DURATION_TYPE_PERMANENT,
+                            ItemPropertySkillBonus(SKILL_HIDE, 8),
+                            oItem);
+            AddItemProperty(DURATION_TYPE_PERMANENT,
+                            ItemPropertySkillBonus(SKILL_MOVE_SILENTLY, 8),
+                            oItem);
+        break;
+
+        case GS_SU_NUJIIT_KOMALARI_BRIGHTMOON:
+            AddItemProperty(DURATION_TYPE_PERMANENT,
+                            ItemPropertyAbilityBonus(IP_CONST_ABILITY_WIS, 1),
+                         oItem);
+            AddItemProperty(DURATION_TYPE_PERMANENT,
+                            ItemPropertyAbilityBonus(IP_CONST_ABILITY_CHA, 1),
+                         oItem);
+            AddItemProperty(DURATION_TYPE_PERMANENT,
+                            ItemPropertyDecreaseAbility(IP_CONST_ABILITY_STR, 1),
+                         oItem);
+
+            AddItemProperty(DURATION_TYPE_PERMANENT,
+                            ItemPropertyBonusSavingThrowVsX(IP_CONST_SAVEVS_POISON, 4),
+                         oItem);
+            AddItemProperty(DURATION_TYPE_PERMANENT,
+                            ItemPropertyBonusSavingThrowVsX(IP_CONST_SAVEVS_DISEASE, 4),
+                         oItem);
+
+            AddItemProperty(DURATION_TYPE_PERMANENT,
+                            ItemPropertySkillBonus(SKILL_CONCENTRATION, 2),
+                            oItem);
+            AddItemProperty(DURATION_TYPE_PERMANENT,
+                            ItemPropertySkillBonus(SKILL_BLUFF, 2),
+                            oItem);
+            AddItemProperty(DURATION_TYPE_PERMANENT,
+                            ItemPropertySkillBonus(SKILL_PERSUADE, 2),
+                            oItem);
+            AddItemProperty(DURATION_TYPE_PERMANENT,
+                            ItemPropertySkillBonus(SKILL_SET_TRAP, 2),
+                            oItem);
+
+            AddItemProperty(DURATION_TYPE_PERMANENT,
+                            ItemPropertyDarkvision(),
+                            oItem);
+            AddItemProperty(DURATION_TYPE_PERMANENT,
+                            ItemPropertyBonusFeat(IP_CONST_FEAT_WEAPON_SPEC_UNARMED),
+                         oItem);
+
+            AddItemProperty(DURATION_TYPE_PERMANENT,
+                        ItemPropertySkillBonus(SKILL_ALL_SKILLS, 1),
+                        oItem);
+        break;
+
+        case GS_SU_NUJIIT_RIVERLORD_FANGLORD:
+            AddItemProperty(DURATION_TYPE_PERMANENT,
+                            ItemPropertyAbilityBonus(IP_CONST_ABILITY_STR, 1),
+                         oItem);
+            AddItemProperty(DURATION_TYPE_PERMANENT,
+                            ItemPropertyAbilityBonus(IP_CONST_ABILITY_WIS, 1),
+                         oItem);
+            AddItemProperty(DURATION_TYPE_PERMANENT,
+                            ItemPropertyDecreaseAbility(IP_CONST_ABILITY_INT, 1),
+                         oItem);
+
+            AddItemProperty(DURATION_TYPE_PERMANENT,
+                            ItemPropertySkillBonus(SKILL_LORE, 2),
+                            oItem);
+            AddItemProperty(DURATION_TYPE_PERMANENT,
+                            ItemPropertySkillBonus(SKILL_CONCENTRATION, 2),
+                            oItem);
+            AddItemProperty(DURATION_TYPE_PERMANENT,
+                            ItemPropertySkillBonus(SKILL_SET_TRAP, 2),
+                            oItem);
+            AddItemProperty(DURATION_TYPE_PERMANENT,
+                            ItemPropertySkillBonus(SKILL_SPOT, 4),
+                            oItem);
+            AddItemProperty(DURATION_TYPE_PERMANENT,
+                            ItemPropertySkillBonus(SKILL_LISTEN, 4),
+                            oItem);
+
+            AddItemProperty(DURATION_TYPE_PERMANENT,
+                            ItemPropertyDarkvision(),
+                            oItem);
+            AddItemProperty(DURATION_TYPE_PERMANENT,
+                            ItemPropertyBonusFeat(IP_CONST_FEAT_WEAPON_SPEC_UNARMED),
+                         oItem);
+
+            AddItemProperty(DURATION_TYPE_PERMANENT,
+                            ItemPropertySkillBonus(SKILL_INTIMIDATE, 4),
+                            oItem);
+        break;
+
+        case GS_SU_NUJIIT_RIVERLORD_TWILIGHTBORN:
+            AddItemProperty(DURATION_TYPE_PERMANENT,
+                            ItemPropertyAbilityBonus(IP_CONST_ABILITY_STR, 1),
+                         oItem);
+            AddItemProperty(DURATION_TYPE_PERMANENT,
+                            ItemPropertyAbilityBonus(IP_CONST_ABILITY_WIS, 1),
+                         oItem);
+            AddItemProperty(DURATION_TYPE_PERMANENT,
+                            ItemPropertyDecreaseAbility(IP_CONST_ABILITY_INT, 1),
+                         oItem);
+
+            AddItemProperty(DURATION_TYPE_PERMANENT,
+                            ItemPropertySkillBonus(SKILL_LORE, 2),
+                            oItem);
+            AddItemProperty(DURATION_TYPE_PERMANENT,
+                            ItemPropertySkillBonus(SKILL_CONCENTRATION, 2),
+                            oItem);
+            AddItemProperty(DURATION_TYPE_PERMANENT,
+                            ItemPropertySkillBonus(SKILL_SET_TRAP, 2),
+                            oItem);
+            AddItemProperty(DURATION_TYPE_PERMANENT,
+                            ItemPropertySkillBonus(SKILL_SPOT, 4),
+                            oItem);
+            AddItemProperty(DURATION_TYPE_PERMANENT,
+                            ItemPropertySkillBonus(SKILL_LISTEN, 4),
+                            oItem);
+
+            AddItemProperty(DURATION_TYPE_PERMANENT,
+                            ItemPropertyDarkvision(),
+                            oItem);
+            AddItemProperty(DURATION_TYPE_PERMANENT,
+                            ItemPropertyBonusFeat(IP_CONST_FEAT_WEAPON_SPEC_UNARMED),
+                         oItem);
+
+            AddItemProperty(DURATION_TYPE_PERMANENT,
+                            ItemPropertySkillBonus(SKILL_BLUFF, 2),
+                            oItem);
+        break;
+
+        case GS_SU_NUJIIT_RIVERLORD_WHISPERSTALKER:
+            AddItemProperty(DURATION_TYPE_PERMANENT,
+                            ItemPropertyAbilityBonus(IP_CONST_ABILITY_STR, 1),
+                         oItem);
+            AddItemProperty(DURATION_TYPE_PERMANENT,
+                            ItemPropertyAbilityBonus(IP_CONST_ABILITY_WIS, 1),
+                         oItem);
+            AddItemProperty(DURATION_TYPE_PERMANENT,
+                            ItemPropertyDecreaseAbility(IP_CONST_ABILITY_INT, 1),
+                         oItem);
+
+            AddItemProperty(DURATION_TYPE_PERMANENT,
+                            ItemPropertySkillBonus(SKILL_LORE, 2),
+                            oItem);
+            AddItemProperty(DURATION_TYPE_PERMANENT,
+                            ItemPropertySkillBonus(SKILL_CONCENTRATION, 2),
+                            oItem);
+            AddItemProperty(DURATION_TYPE_PERMANENT,
+                            ItemPropertySkillBonus(SKILL_SET_TRAP, 2),
+                            oItem);
+            AddItemProperty(DURATION_TYPE_PERMANENT,
+                            ItemPropertySkillBonus(SKILL_SPOT, 4),
+                            oItem);
+            AddItemProperty(DURATION_TYPE_PERMANENT,
+                            ItemPropertySkillBonus(SKILL_LISTEN, 4),
+                            oItem);
+
+            AddItemProperty(DURATION_TYPE_PERMANENT,
+                            ItemPropertyDarkvision(),
+                            oItem);
+            AddItemProperty(DURATION_TYPE_PERMANENT,
+                            ItemPropertyBonusFeat(IP_CONST_FEAT_WEAPON_SPEC_UNARMED),
+                         oItem);
+
+            AddItemProperty(DURATION_TYPE_PERMANENT,
+                            ItemPropertySkillBonus(SKILL_HIDE, 8),
+                            oItem);
+            AddItemProperty(DURATION_TYPE_PERMANENT,
+                            ItemPropertySkillBonus(SKILL_MOVE_SILENTLY, 8),
+                            oItem);
+        break;
+
+        case GS_SU_NUJIIT_RIVERLORD_BRIGHTMOON:
+            AddItemProperty(DURATION_TYPE_PERMANENT,
+                            ItemPropertyAbilityBonus(IP_CONST_ABILITY_STR, 1),
+                         oItem);
+            AddItemProperty(DURATION_TYPE_PERMANENT,
+                            ItemPropertyAbilityBonus(IP_CONST_ABILITY_WIS, 1),
+                         oItem);
+            AddItemProperty(DURATION_TYPE_PERMANENT,
+                            ItemPropertyDecreaseAbility(IP_CONST_ABILITY_INT, 1),
+                         oItem);
+
+            AddItemProperty(DURATION_TYPE_PERMANENT,
+                            ItemPropertySkillBonus(SKILL_LORE, 2),
+                            oItem);
+            AddItemProperty(DURATION_TYPE_PERMANENT,
+                            ItemPropertySkillBonus(SKILL_CONCENTRATION, 2),
+                            oItem);
+            AddItemProperty(DURATION_TYPE_PERMANENT,
+                            ItemPropertySkillBonus(SKILL_SET_TRAP, 2),
+                            oItem);
+            AddItemProperty(DURATION_TYPE_PERMANENT,
+                            ItemPropertySkillBonus(SKILL_SPOT, 4),
+                            oItem);
+            AddItemProperty(DURATION_TYPE_PERMANENT,
+                            ItemPropertySkillBonus(SKILL_LISTEN, 4),
+                            oItem);
+
+            AddItemProperty(DURATION_TYPE_PERMANENT,
+                            ItemPropertyDarkvision(),
+                            oItem);
+            AddItemProperty(DURATION_TYPE_PERMANENT,
+                            ItemPropertyBonusFeat(IP_CONST_FEAT_WEAPON_SPEC_UNARMED),
+                         oItem);
+
+            AddItemProperty(DURATION_TYPE_PERMANENT,
+                        ItemPropertySkillBonus(SKILL_ALL_SKILLS, 1),
+                        oItem);
+        break;
+
+        case GS_SU_NUJIIT_RESPLENDENT_FANGLORD:
+            AddItemProperty(DURATION_TYPE_PERMANENT,
+                            ItemPropertyAbilityBonus(IP_CONST_ABILITY_CHA, 2),
+                         oItem);
+            AddItemProperty(DURATION_TYPE_PERMANENT,
+                            ItemPropertyAbilityBonus(IP_CONST_ABILITY_INT, 1),
+                         oItem);
+            AddItemProperty(DURATION_TYPE_PERMANENT,
+                            ItemPropertyDecreaseAbility(IP_CONST_ABILITY_STR, 1),
+                         oItem);
+
+            AddItemProperty(DURATION_TYPE_PERMANENT,
+                            ItemPropertySkillBonus(SKILL_LORE, 2),
+                            oItem);
+            AddItemProperty(DURATION_TYPE_PERMANENT,
+                            ItemPropertySkillBonus(SKILL_SEARCH, 4),
+                            oItem);
+            AddItemProperty(DURATION_TYPE_PERMANENT,
+                            ItemPropertySkillBonus(SKILL_PERFORM, 2),
+                            oItem);
+            AddItemProperty(DURATION_TYPE_PERMANENT,
+                            ItemPropertySkillBonus(SKILL_PERSUADE, 4),
+                            oItem);
+
+            AddItemProperty(DURATION_TYPE_PERMANENT,
+                            ItemPropertyDarkvision(),
+                            oItem);
+            AddItemProperty(DURATION_TYPE_PERMANENT,
+                            ItemPropertyBonusFeat(IP_CONST_FEAT_WEAPON_SPEC_UNARMED),
+                         oItem);
+
+            AddItemProperty(DURATION_TYPE_PERMANENT,
+                            ItemPropertySkillBonus(SKILL_INTIMIDATE, 4),
+                            oItem);
+        break;
+
+        case GS_SU_NUJIIT_RESPLENDENT_TWILIGHTBORN:
+            AddItemProperty(DURATION_TYPE_PERMANENT,
+                            ItemPropertyAbilityBonus(IP_CONST_ABILITY_CHA, 2),
+                         oItem);
+            AddItemProperty(DURATION_TYPE_PERMANENT,
+                            ItemPropertyAbilityBonus(IP_CONST_ABILITY_INT, 1),
+                         oItem);
+            AddItemProperty(DURATION_TYPE_PERMANENT,
+                            ItemPropertyDecreaseAbility(IP_CONST_ABILITY_STR, 1),
+                         oItem);
+
+            AddItemProperty(DURATION_TYPE_PERMANENT,
+                            ItemPropertySkillBonus(SKILL_LORE, 2),
+                            oItem);
+            AddItemProperty(DURATION_TYPE_PERMANENT,
+                            ItemPropertySkillBonus(SKILL_SEARCH, 4),
+                            oItem);
+            AddItemProperty(DURATION_TYPE_PERMANENT,
+                            ItemPropertySkillBonus(SKILL_PERFORM, 2),
+                            oItem);
+            AddItemProperty(DURATION_TYPE_PERMANENT,
+                            ItemPropertySkillBonus(SKILL_PERSUADE, 4),
+                            oItem);
+
+            AddItemProperty(DURATION_TYPE_PERMANENT,
+                            ItemPropertyDarkvision(),
+                            oItem);
+            AddItemProperty(DURATION_TYPE_PERMANENT,
+                            ItemPropertyBonusFeat(IP_CONST_FEAT_WEAPON_SPEC_UNARMED),
+                         oItem);
+
+            AddItemProperty(DURATION_TYPE_PERMANENT,
+                            ItemPropertySkillBonus(SKILL_BLUFF, 2),
+                            oItem);
+        break;
+
+        case GS_SU_NUJIIT_RESPLENDENT_WHISPERSTALKER:
+            AddItemProperty(DURATION_TYPE_PERMANENT,
+                            ItemPropertyAbilityBonus(IP_CONST_ABILITY_CHA, 2),
+                         oItem);
+            AddItemProperty(DURATION_TYPE_PERMANENT,
+                            ItemPropertyAbilityBonus(IP_CONST_ABILITY_INT, 1),
+                         oItem);
+            AddItemProperty(DURATION_TYPE_PERMANENT,
+                            ItemPropertyDecreaseAbility(IP_CONST_ABILITY_STR, 1),
+                         oItem);
+
+            AddItemProperty(DURATION_TYPE_PERMANENT,
+                            ItemPropertySkillBonus(SKILL_LORE, 2),
+                            oItem);
+            AddItemProperty(DURATION_TYPE_PERMANENT,
+                            ItemPropertySkillBonus(SKILL_SEARCH, 4),
+                            oItem);
+            AddItemProperty(DURATION_TYPE_PERMANENT,
+                            ItemPropertySkillBonus(SKILL_PERFORM, 2),
+                            oItem);
+            AddItemProperty(DURATION_TYPE_PERMANENT,
+                            ItemPropertySkillBonus(SKILL_PERSUADE, 4),
+                            oItem);
+
+            AddItemProperty(DURATION_TYPE_PERMANENT,
+                            ItemPropertyDarkvision(),
+                            oItem);
+            AddItemProperty(DURATION_TYPE_PERMANENT,
+                            ItemPropertyBonusFeat(IP_CONST_FEAT_WEAPON_SPEC_UNARMED),
+                         oItem);
+
+            AddItemProperty(DURATION_TYPE_PERMANENT,
+                            ItemPropertySkillBonus(SKILL_HIDE, 8),
+                            oItem);
+            AddItemProperty(DURATION_TYPE_PERMANENT,
+                            ItemPropertySkillBonus(SKILL_MOVE_SILENTLY, 8),
+                            oItem);
+        break;
+
+        case GS_SU_NUJIIT_RESPLENDENT_BRIGHTMOON:
+            AddItemProperty(DURATION_TYPE_PERMANENT,
+                            ItemPropertyAbilityBonus(IP_CONST_ABILITY_CHA, 2),
+                         oItem);
+            AddItemProperty(DURATION_TYPE_PERMANENT,
+                            ItemPropertyAbilityBonus(IP_CONST_ABILITY_INT, 1),
+                         oItem);
+            AddItemProperty(DURATION_TYPE_PERMANENT,
+                            ItemPropertyDecreaseAbility(IP_CONST_ABILITY_STR, 1),
+                         oItem);
+
+            AddItemProperty(DURATION_TYPE_PERMANENT,
+                            ItemPropertySkillBonus(SKILL_LORE, 2),
+                            oItem);
+            AddItemProperty(DURATION_TYPE_PERMANENT,
+                            ItemPropertySkillBonus(SKILL_SEARCH, 4),
+                            oItem);
+            AddItemProperty(DURATION_TYPE_PERMANENT,
+                            ItemPropertySkillBonus(SKILL_PERFORM, 2),
+                            oItem);
+            AddItemProperty(DURATION_TYPE_PERMANENT,
+                            ItemPropertySkillBonus(SKILL_PERSUADE, 4),
+                            oItem);
+
+            AddItemProperty(DURATION_TYPE_PERMANENT,
+                            ItemPropertyDarkvision(),
+                            oItem);
+            AddItemProperty(DURATION_TYPE_PERMANENT,
+                            ItemPropertyBonusFeat(IP_CONST_FEAT_WEAPON_SPEC_UNARMED),
+                         oItem);
+
+            AddItemProperty(DURATION_TYPE_PERMANENT,
+                        ItemPropertySkillBonus(SKILL_ALL_SKILLS, 1),
+                        oItem);
+        break;
 
     }
     //Gift system
@@ -2608,6 +3238,118 @@ void gsSUApplyAbility(object oItem, int nSubRace, int nLevel)
                     oItem);
     break;
 
+    case GS_SU_NUJIIT_PADARR_TWILIGHTBORN:
+            AddItemProperty(DURATION_TYPE_PERMANENT,
+                ItemPropertyCastSpell(IP_CONST_CASTSPELL_GHOSTLY_VISAGE_9,
+                                        IP_CONST_CASTSPELL_NUMUSES_1_USE_PER_DAY),
+                    oItem);
+    break;
+
+    case GS_SU_NUJIIT_PADARR_FANGLORD:
+        AddItemProperty(DURATION_TYPE_PERMANENT,
+                        ItemPropertyCastSpell(IP_CONST_CASTSPELL_WAR_CRY_7,
+                                              IP_CONST_CASTSPELL_NUMUSES_1_USE_PER_DAY),
+                        oItem);
+    break;
+
+    case GS_SU_NUJIIT_PADARR_WHISPERSTALKER:
+            AddItemProperty(DURATION_TYPE_PERMANENT,
+                ItemPropertyCastSpell(IP_CONST_CASTSPELL_SHELGARNS_PERSISTENT_BLADE,
+                                        IP_CONST_CASTSPELL_NUMUSES_1_USE_PER_DAY),
+                    oItem);
+    break;
+
+    case GS_SU_NUJIIT_PADARR_BRIGHTMOON:
+    break;
+
+    case GS_SU_NUJIIT_KOMALARI_FANGLORD:
+        AddItemProperty(DURATION_TYPE_PERMANENT,
+                        ItemPropertyCastSpell(IP_CONST_CASTSPELL_WAR_CRY_7,
+                                              IP_CONST_CASTSPELL_NUMUSES_1_USE_PER_DAY),
+                        oItem);
+    break;
+
+    case GS_SU_NUJIIT_KOMALARI_TWILIGHTBORN:
+            AddItemProperty(DURATION_TYPE_PERMANENT,
+                ItemPropertyCastSpell(IP_CONST_CASTSPELL_GHOSTLY_VISAGE_9,
+                                        IP_CONST_CASTSPELL_NUMUSES_1_USE_PER_DAY),
+                    oItem);
+    break;
+
+    case GS_SU_NUJIIT_KOMALARI_WHISPERSTALKER:
+            AddItemProperty(DURATION_TYPE_PERMANENT,
+                ItemPropertyCastSpell(IP_CONST_CASTSPELL_SHELGARNS_PERSISTENT_BLADE,
+                                        IP_CONST_CASTSPELL_NUMUSES_1_USE_PER_DAY),
+                    oItem);
+    break;
+
+    case GS_SU_NUJIIT_KOMALARI_BRIGHTMOON:
+    break;
+
+    case GS_SU_NUJIIT_RIVERLORD_FANGLORD:
+        AddItemProperty(DURATION_TYPE_PERMANENT,
+                        ItemPropertyCastSpell(IP_CONST_CASTSPELL_WAR_CRY_7,
+                                              IP_CONST_CASTSPELL_NUMUSES_1_USE_PER_DAY),
+                        oItem);
+        AddItemProperty(DURATION_TYPE_PERMANENT,
+                        ItemPropertyCastSpell(IP_CONST_CASTSPELL_CLAIRAUDIENCE_CLAIRVOYANCE_15,
+                                              IP_CONST_CASTSPELL_NUMUSES_1_USE_PER_DAY),
+                        oItem);
+    break;
+
+    case GS_SU_NUJIIT_RIVERLORD_TWILIGHTBORN:
+            AddItemProperty(DURATION_TYPE_PERMANENT,
+                ItemPropertyCastSpell(IP_CONST_CASTSPELL_GHOSTLY_VISAGE_9,
+                                        IP_CONST_CASTSPELL_NUMUSES_1_USE_PER_DAY),
+                    oItem);
+            AddItemProperty(DURATION_TYPE_PERMANENT,
+                ItemPropertyCastSpell(IP_CONST_CASTSPELL_CLAIRAUDIENCE_CLAIRVOYANCE_15,
+                                        IP_CONST_CASTSPELL_NUMUSES_1_USE_PER_DAY),
+                    oItem);
+    break;
+
+    case GS_SU_NUJIIT_RIVERLORD_WHISPERSTALKER:
+            AddItemProperty(DURATION_TYPE_PERMANENT,
+                ItemPropertyCastSpell(IP_CONST_CASTSPELL_SHELGARNS_PERSISTENT_BLADE,
+                                        IP_CONST_CASTSPELL_NUMUSES_1_USE_PER_DAY),
+                    oItem);
+            AddItemProperty(DURATION_TYPE_PERMANENT,
+                ItemPropertyCastSpell(IP_CONST_CASTSPELL_CLAIRAUDIENCE_CLAIRVOYANCE_15,
+                                        IP_CONST_CASTSPELL_NUMUSES_1_USE_PER_DAY),
+                    oItem);
+    break;
+
+    case GS_SU_NUJIIT_RIVERLORD_BRIGHTMOON:
+            AddItemProperty(DURATION_TYPE_PERMANENT,
+                ItemPropertyCastSpell(IP_CONST_CASTSPELL_CLAIRAUDIENCE_CLAIRVOYANCE_15,
+                                        IP_CONST_CASTSPELL_NUMUSES_1_USE_PER_DAY),
+                    oItem);
+    break;
+
+    case GS_SU_NUJIIT_RESPLENDENT_FANGLORD:
+        AddItemProperty(DURATION_TYPE_PERMANENT,
+                        ItemPropertyCastSpell(IP_CONST_CASTSPELL_WAR_CRY_7,
+                                              IP_CONST_CASTSPELL_NUMUSES_1_USE_PER_DAY),
+                        oItem);
+    break;
+
+    case GS_SU_NUJIIT_RESPLENDENT_TWILIGHTBORN:
+            AddItemProperty(DURATION_TYPE_PERMANENT,
+                ItemPropertyCastSpell(IP_CONST_CASTSPELL_GHOSTLY_VISAGE_9,
+                                        IP_CONST_CASTSPELL_NUMUSES_1_USE_PER_DAY),
+                    oItem);
+    break;
+
+    case GS_SU_NUJIIT_RESPLENDENT_WHISPERSTALKER:
+            AddItemProperty(DURATION_TYPE_PERMANENT,
+                ItemPropertyCastSpell(IP_CONST_CASTSPELL_SHELGARNS_PERSISTENT_BLADE,
+                                        IP_CONST_CASTSPELL_NUMUSES_1_USE_PER_DAY),
+                    oItem);
+    break;
+
+    case GS_SU_NUJIIT_RESPLENDENT_BRIGHTMOON:
+    break;
+
     }
 
     AddItemProperty(DURATION_TYPE_PERMANENT,
@@ -2669,15 +3411,19 @@ int gsSUGetSubRaceByName(string sSubRace)
     if (sSubRace == GS_T_16777609) return GS_SU_NUJIIT_PADARR_TWILIGHTBORN;
     if (sSubRace == GS_T_16777601) return GS_SU_NUJIIT_PADARR_FANGLORD;
     if (sSubRace == GS_T_16777605) return GS_SU_NUJIIT_PADARR_WHISPERSTALKER;
+    if (sSubRace == GS_T_16777643) return GS_SU_NUJIIT_PADARR_BRIGHTMOON;
     if (sSubRace == GS_T_16777610) return GS_SU_NUJIIT_KOMALARI_TWILIGHTBORN;
     if (sSubRace == GS_T_16777602) return GS_SU_NUJIIT_KOMALARI_FANGLORD;
     if (sSubRace == GS_T_16777606) return GS_SU_NUJIIT_KOMALARI_WHISPERSTALKER;
+    if (sSubRace == GS_T_16777644) return GS_SU_NUJIIT_KOMALARI_BRIGHTMOON;
     if (sSubRace == GS_T_16777611) return GS_SU_NUJIIT_RIVERLORD_TWILIGHTBORN;
     if (sSubRace == GS_T_16777603) return GS_SU_NUJIIT_RIVERLORD_FANGLORD;
     if (sSubRace == GS_T_16777607) return GS_SU_NUJIIT_RIVERLORD_WHISPERSTALKER;
+    if (sSubRace == GS_T_16777645) return GS_SU_NUJIIT_RIVERLORD_BRIGHTMOON;
     if (sSubRace == GS_T_16777612) return GS_SU_NUJIIT_RESPLENDENT_TWILIGHTBORN;
     if (sSubRace == GS_T_16777604) return GS_SU_NUJIIT_RESPLENDENT_FANGLORD;
     if (sSubRace == GS_T_16777608) return GS_SU_NUJIIT_RESPLENDENT_WHISPERSTALKER;
+    if (sSubRace == GS_T_16777646) return GS_SU_NUJIIT_RESPLENDENT_BRIGHTMOON;
 //Malosari (wood elves)
     if (sSubRace == GS_T_16777580) return GS_SU_MALOSARI_GREENSWORN;
     if (sSubRace == GS_T_16777581) return GS_SU_MALOSARI_FREESWORN;
@@ -2772,15 +3518,19 @@ string gsSUGetNameBySubRace(int nSubRace)
     case GS_SU_NUJIIT_PADARR_TWILIGHTBORN: return GS_T_16777609;
     case GS_SU_NUJIIT_PADARR_FANGLORD: return GS_T_16777601;
     case GS_SU_NUJIIT_PADARR_WHISPERSTALKER: return GS_T_16777605;
+    case GS_SU_NUJIIT_PADARR_BRIGHTMOON: return GS_T_16777643;
     case GS_SU_NUJIIT_KOMALARI_TWILIGHTBORN: return GS_T_16777610;
     case GS_SU_NUJIIT_KOMALARI_FANGLORD: return GS_T_16777602;
     case GS_SU_NUJIIT_KOMALARI_WHISPERSTALKER: return GS_T_16777606;
+    case GS_SU_NUJIIT_KOMALARI_BRIGHTMOON: return GS_T_16777644;
     case GS_SU_NUJIIT_RIVERLORD_TWILIGHTBORN: return GS_T_16777611;
     case GS_SU_NUJIIT_RIVERLORD_FANGLORD: return GS_T_16777603;
     case GS_SU_NUJIIT_RIVERLORD_WHISPERSTALKER: return GS_T_16777607;
+    case GS_SU_NUJIIT_RIVERLORD_BRIGHTMOON: return GS_T_16777645;
     case GS_SU_NUJIIT_RESPLENDENT_TWILIGHTBORN: return GS_T_16777612;
     case GS_SU_NUJIIT_RESPLENDENT_FANGLORD: return GS_T_16777604;
     case GS_SU_NUJIIT_RESPLENDENT_WHISPERSTALKER: return GS_T_16777608;
+    case GS_SU_NUJIIT_RESPLENDENT_BRIGHTMOON: return GS_T_16777646;
 //Malosari (wood elves)
     case GS_SU_MALOSARI_GREENSWORN: return GS_T_16777580;
     case GS_SU_MALOSARI_FREESWORN: return GS_T_16777581;
