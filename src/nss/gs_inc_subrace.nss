@@ -18,6 +18,10 @@ const int IP_CONST_CASTSPELL_MALARI_RAGE = 541;
 const int IP_CONST_CASTSPELL_CLOUD_OF_BEWILDERMENT_6 = 542;
 const int IP_CONST_CASTSPELL_HEALING_STING_10 = 543;
 const int IP_CONST_CASTSPELL_SHELGARNS_PERSISTENT_BLADE = 544;
+const int IP_CONST_CASTSPELL_VEYDRAN_LIGHTNING_BREATH = 545;
+const int IP_CONST_CASTSPELL_VEYDRAN_COLD_BREATH = 546;
+const int IP_CONST_CASTSPELL_VEYDRAN_FIRE_BREATH = 547;
+const int IP_CONST_CASTSPELL_VEYDRAN_RAGE = 548;
 
 const int GS_SU_NONE                      =   0;
 const int GS_SU_DWARF_GOLD                =   1;
@@ -2669,6 +2673,289 @@ void gsSUApplyProperty(object oItem, int nSubRace, int nLevel)
                         oItem);
         break;
 
+        case GS_SU_VEYDRAN_ABYSSALCOURT_SEAFORGED:
+            AddItemProperty(DURATION_TYPE_PERMANENT,
+                            ItemPropertyAbilityBonus(IP_CONST_ABILITY_WIS, 1),
+                         oItem);
+            AddItemProperty(DURATION_TYPE_PERMANENT,
+                            ItemPropertyAbilityBonus(IP_CONST_ABILITY_CON, 2),
+                         oItem);
+            AddItemProperty(DURATION_TYPE_PERMANENT,
+                            ItemPropertyBonusFeat(IP_CONST_FEAT_WEAPON_SPEC_UNARMED),
+                         oItem);
+            AddItemProperty(DURATION_TYPE_PERMANENT,
+                            ItemPropertySkillBonus(SKILL_DISCIPLINE, 4),
+                            oItem);
+            AddItemProperty(DURATION_TYPE_PERMANENT,
+                        ItemPropertyDamageResistance(IP_CONST_DAMAGETYPE_COLD,
+                                                     IP_CONST_DAMAGERESIST_15),
+                        oItem);
+
+            AddItemProperty(DURATION_TYPE_PERMANENT,
+                            ItemPropertySkillBonus(SKILL_CONCENTRATION, 4),
+                            oItem);
+            AddItemProperty(DURATION_TYPE_PERMANENT,
+                            ItemPropertySkillBonus(SKILL_SPOT, 4),
+                            oItem);
+            AddItemProperty(DURATION_TYPE_PERMANENT,
+                            ItemPropertySkillBonus(SKILL_LISTEN, 4),
+                            oItem);
+            AddItemProperty(DURATION_TYPE_PERMANENT,
+                            ItemPropertySkillBonus(SKILL_LORE, 4),
+                            oItem);
+        break;
+        
+        case GS_SU_VEYDRAN_ABYSSALCOURT_SKYBLESSED:
+            AddItemProperty(DURATION_TYPE_PERMANENT,
+                            ItemPropertyAbilityBonus(IP_CONST_ABILITY_WIS, 1),
+                         oItem);
+            AddItemProperty(DURATION_TYPE_PERMANENT,
+                            ItemPropertyAbilityBonus(IP_CONST_ABILITY_CON, 1),
+                         oItem);
+            AddItemProperty(DURATION_TYPE_PERMANENT,
+                            ItemPropertyAbilityBonus(IP_CONST_ABILITY_DEX, 1),
+                         oItem);
+            AddItemProperty(DURATION_TYPE_PERMANENT,
+                            ItemPropertyBonusFeat(IP_CONST_FEAT_WEAPON_SPEC_UNARMED),
+                         oItem);
+            AddItemProperty(DURATION_TYPE_PERMANENT,
+                            ItemPropertySkillBonus(SKILL_DISCIPLINE, 4),
+                            oItem);
+            AddItemProperty(DURATION_TYPE_PERMANENT,
+                        ItemPropertyDamageResistance(IP_CONST_DAMAGETYPE_ELECTRICAL,
+                                                     IP_CONST_DAMAGERESIST_15),
+                        oItem);
+
+            AddItemProperty(DURATION_TYPE_PERMANENT,
+                            ItemPropertySkillBonus(SKILL_CONCENTRATION, 4),
+                            oItem);
+            AddItemProperty(DURATION_TYPE_PERMANENT,
+                            ItemPropertySkillBonus(SKILL_SPOT, 4),
+                            oItem);
+            AddItemProperty(DURATION_TYPE_PERMANENT,
+                            ItemPropertySkillBonus(SKILL_LISTEN, 4),
+                            oItem);
+            AddItemProperty(DURATION_TYPE_PERMANENT,
+                            ItemPropertySkillBonus(SKILL_LORE, 4),
+                            oItem);
+
+        break;
+
+        case GS_SU_VEYDRAN_ABYSSALCOURT_STONEWROUGHT:
+            AddItemProperty(DURATION_TYPE_PERMANENT,
+                            ItemPropertyAbilityBonus(IP_CONST_ABILITY_WIS, 1),
+                         oItem);
+            AddItemProperty(DURATION_TYPE_PERMANENT,
+                            ItemPropertyAbilityBonus(IP_CONST_ABILITY_CON, 2),
+                         oItem);
+            AddItemProperty(DURATION_TYPE_PERMANENT,
+                            ItemPropertyBonusFeat(IP_CONST_FEAT_WEAPON_SPEC_UNARMED),
+                         oItem);
+            AddItemProperty(DURATION_TYPE_PERMANENT,
+                            ItemPropertySkillBonus(SKILL_DISCIPLINE, 4),
+                            oItem);
+            AddItemProperty(DURATION_TYPE_PERMANENT,
+                        ItemPropertyDamageResistance(IP_CONST_DAMAGETYPE_FIRE,
+                                                     IP_CONST_DAMAGERESIST_15),
+                        oItem);
+
+            AddItemProperty(DURATION_TYPE_PERMANENT,
+                            ItemPropertySkillBonus(SKILL_CONCENTRATION, 4),
+                            oItem);
+            AddItemProperty(DURATION_TYPE_PERMANENT,
+                            ItemPropertySkillBonus(SKILL_SPOT, 4),
+                            oItem);
+            AddItemProperty(DURATION_TYPE_PERMANENT,
+                            ItemPropertySkillBonus(SKILL_LISTEN, 4),
+                            oItem);
+            AddItemProperty(DURATION_TYPE_PERMANENT,
+                            ItemPropertySkillBonus(SKILL_LORE, 4),
+                            oItem);
+        break;
+
+        case GS_SU_VEYDRAN_UNFADING_SEAFORGED:
+            AddItemProperty(DURATION_TYPE_PERMANENT,
+                            ItemPropertyAbilityBonus(IP_CONST_ABILITY_WIS, 2),
+                         oItem);
+            AddItemProperty(DURATION_TYPE_PERMANENT,
+                            ItemPropertyAbilityBonus(IP_CONST_ABILITY_CON, 1),
+                         oItem);
+            AddItemProperty(DURATION_TYPE_PERMANENT,
+                            ItemPropertyBonusFeat(IP_CONST_FEAT_WEAPON_SPEC_UNARMED),
+                         oItem);
+            AddItemProperty(DURATION_TYPE_PERMANENT,
+                            ItemPropertySkillBonus(SKILL_DISCIPLINE, 4),
+                            oItem);
+            AddItemProperty(DURATION_TYPE_PERMANENT,
+                        ItemPropertyDamageResistance(IP_CONST_DAMAGETYPE_COLD,
+                                                     IP_CONST_DAMAGERESIST_15),
+                        oItem);
+
+            AddItemProperty(DURATION_TYPE_PERMANENT,
+                        ItemPropertyBonusSavingThrowVsX(IP_CONST_SAVEVS_MINDAFFECTING, 4),
+                        oItem);
+            AddItemProperty(DURATION_TYPE_PERMANENT,
+                            ItemPropertySkillBonus(SKILL_CONCENTRATION, 2),
+                            oItem);
+            AddItemProperty(DURATION_TYPE_PERMANENT,
+                            ItemPropertySkillBonus(SKILL_SPELLCRAFT, 2),
+                            oItem);
+            AddItemProperty(DURATION_TYPE_PERMANENT,
+                            ItemPropertySkillBonus(SKILL_LORE, 2),
+                            oItem);
+            AddItemProperty(DURATION_TYPE_PERMANENT,
+                            ItemPropertySkillBonus(SKILL_SPOT, 2),
+                            oItem);
+            AddItemProperty(DURATION_TYPE_PERMANENT,
+                            ItemPropertySkillBonus(SKILL_LISTEN, 2),
+                            oItem);
+        break;
+
+        case GS_SU_VEYDRAN_UNFADING_SKYBLESSED:
+            AddItemProperty(DURATION_TYPE_PERMANENT,
+                            ItemPropertyAbilityBonus(IP_CONST_ABILITY_WIS, 2),
+                         oItem);
+            AddItemProperty(DURATION_TYPE_PERMANENT,
+                            ItemPropertyAbilityBonus(IP_CONST_ABILITY_DEX, 1),
+                         oItem);
+            AddItemProperty(DURATION_TYPE_PERMANENT,
+                            ItemPropertyBonusFeat(IP_CONST_FEAT_WEAPON_SPEC_UNARMED),
+                         oItem);
+            AddItemProperty(DURATION_TYPE_PERMANENT,
+                            ItemPropertySkillBonus(SKILL_DISCIPLINE, 4),
+                            oItem);
+            AddItemProperty(DURATION_TYPE_PERMANENT,
+                        ItemPropertyDamageResistance(IP_CONST_DAMAGETYPE_ELECTRICAL,
+                                                     IP_CONST_DAMAGERESIST_15),
+                        oItem);
+
+            AddItemProperty(DURATION_TYPE_PERMANENT,
+                        ItemPropertyBonusSavingThrowVsX(IP_CONST_SAVEVS_MINDAFFECTING, 4),
+                        oItem);
+            AddItemProperty(DURATION_TYPE_PERMANENT,
+                            ItemPropertySkillBonus(SKILL_CONCENTRATION, 2),
+                            oItem);
+            AddItemProperty(DURATION_TYPE_PERMANENT,
+                            ItemPropertySkillBonus(SKILL_SPELLCRAFT, 2),
+                            oItem);
+            AddItemProperty(DURATION_TYPE_PERMANENT,
+                            ItemPropertySkillBonus(SKILL_LORE, 2),
+                            oItem);
+            AddItemProperty(DURATION_TYPE_PERMANENT,
+                            ItemPropertySkillBonus(SKILL_SPOT, 2),
+                            oItem);
+            AddItemProperty(DURATION_TYPE_PERMANENT,
+                            ItemPropertySkillBonus(SKILL_LISTEN, 2),
+                            oItem);
+        break;
+
+        case GS_SU_VEYDRAN_UNFADING_STONEWROUGHT:
+            AddItemProperty(DURATION_TYPE_PERMANENT,
+                            ItemPropertyAbilityBonus(IP_CONST_ABILITY_WIS, 2),
+                         oItem);
+            AddItemProperty(DURATION_TYPE_PERMANENT,
+                            ItemPropertyAbilityBonus(IP_CONST_ABILITY_CON, 1),
+                         oItem);
+            AddItemProperty(DURATION_TYPE_PERMANENT,
+                            ItemPropertyBonusFeat(IP_CONST_FEAT_WEAPON_SPEC_UNARMED),
+                         oItem);
+            AddItemProperty(DURATION_TYPE_PERMANENT,
+                            ItemPropertySkillBonus(SKILL_DISCIPLINE, 4),
+                            oItem);
+            AddItemProperty(DURATION_TYPE_PERMANENT,
+                        ItemPropertyDamageResistance(IP_CONST_DAMAGETYPE_FIRE,
+                                                     IP_CONST_DAMAGERESIST_15),
+                        oItem);
+
+            AddItemProperty(DURATION_TYPE_PERMANENT,
+                        ItemPropertyBonusSavingThrowVsX(IP_CONST_SAVEVS_MINDAFFECTING, 4),
+                        oItem);
+            AddItemProperty(DURATION_TYPE_PERMANENT,
+                            ItemPropertySkillBonus(SKILL_CONCENTRATION, 2),
+                            oItem);
+            AddItemProperty(DURATION_TYPE_PERMANENT,
+                            ItemPropertySkillBonus(SKILL_SPELLCRAFT, 2),
+                            oItem);
+            AddItemProperty(DURATION_TYPE_PERMANENT,
+                            ItemPropertySkillBonus(SKILL_LORE, 2),
+                            oItem);
+            AddItemProperty(DURATION_TYPE_PERMANENT,
+                            ItemPropertySkillBonus(SKILL_SPOT, 2),
+                            oItem);
+            AddItemProperty(DURATION_TYPE_PERMANENT,
+                            ItemPropertySkillBonus(SKILL_LISTEN, 2),
+                            oItem);
+        break;
+
+        case GS_SU_VEYDRAN_WYRMBLOODED_SEAFORGED:
+            AddItemProperty(DURATION_TYPE_PERMANENT,
+                            ItemPropertyAbilityBonus(IP_CONST_ABILITY_STR, 2),
+                         oItem);
+            AddItemProperty(DURATION_TYPE_PERMANENT,
+                            ItemPropertyAbilityBonus(IP_CONST_ABILITY_CON, 1),
+                         oItem);
+            AddItemProperty(DURATION_TYPE_PERMANENT,
+                            ItemPropertyBonusFeat(IP_CONST_FEAT_WEAPON_SPEC_UNARMED),
+                         oItem);
+            AddItemProperty(DURATION_TYPE_PERMANENT,
+                            ItemPropertySkillBonus(SKILL_DISCIPLINE, 4),
+                            oItem);
+            AddItemProperty(DURATION_TYPE_PERMANENT,
+                        ItemPropertyDamageResistance(IP_CONST_DAMAGETYPE_COLD,
+                                                     IP_CONST_DAMAGERESIST_15),
+                        oItem);
+
+            AddItemProperty(DURATION_TYPE_PERMANENT,
+                            ItemPropertySkillBonus(SKILL_INTIMIDATE, 4),
+                            oItem);
+        break;
+
+        case GS_SU_VEYDRAN_WYRMBLOODED_SKYBLESSED:
+            AddItemProperty(DURATION_TYPE_PERMANENT,
+                            ItemPropertyAbilityBonus(IP_CONST_ABILITY_STR, 2),
+                         oItem);
+            AddItemProperty(DURATION_TYPE_PERMANENT,
+                            ItemPropertyAbilityBonus(IP_CONST_ABILITY_DEX, 1),
+                         oItem);
+            AddItemProperty(DURATION_TYPE_PERMANENT,
+                            ItemPropertyBonusFeat(IP_CONST_FEAT_WEAPON_SPEC_UNARMED),
+                         oItem);
+            AddItemProperty(DURATION_TYPE_PERMANENT,
+                            ItemPropertySkillBonus(SKILL_DISCIPLINE, 4),
+                            oItem);
+            AddItemProperty(DURATION_TYPE_PERMANENT,
+                        ItemPropertyDamageResistance(IP_CONST_DAMAGETYPE_ELECTRICAL,
+                                                     IP_CONST_DAMAGERESIST_15),
+                        oItem);
+
+            AddItemProperty(DURATION_TYPE_PERMANENT,
+                            ItemPropertySkillBonus(SKILL_INTIMIDATE, 4),
+                            oItem);
+        break;
+
+        case GS_SU_VEYDRAN_WYRMBLOODED_STONEWROUGHT:
+            AddItemProperty(DURATION_TYPE_PERMANENT,
+                            ItemPropertyAbilityBonus(IP_CONST_ABILITY_STR, 2),
+                         oItem);
+            AddItemProperty(DURATION_TYPE_PERMANENT,
+                            ItemPropertyAbilityBonus(IP_CONST_ABILITY_CON, 1),
+                         oItem);
+            AddItemProperty(DURATION_TYPE_PERMANENT,
+                            ItemPropertyBonusFeat(IP_CONST_FEAT_WEAPON_SPEC_UNARMED),
+                         oItem);
+            AddItemProperty(DURATION_TYPE_PERMANENT,
+                            ItemPropertySkillBonus(SKILL_DISCIPLINE, 4),
+                            oItem);
+            AddItemProperty(DURATION_TYPE_PERMANENT,
+                        ItemPropertyDamageResistance(IP_CONST_DAMAGETYPE_FIRE,
+                                                     IP_CONST_DAMAGERESIST_15),
+                        oItem);
+
+            AddItemProperty(DURATION_TYPE_PERMANENT,
+                            ItemPropertySkillBonus(SKILL_INTIMIDATE, 4),
+                            oItem);
+        break;
+
     }
     //Gift system
 
@@ -3348,6 +3635,129 @@ void gsSUApplyAbility(object oItem, int nSubRace, int nLevel)
     break;
 
     case GS_SU_NUJIIT_RESPLENDENT_BRIGHTMOON:
+    break;
+
+    case GS_SU_VEYDRAN_ABYSSALCOURT_SEAFORGED:
+            AddItemProperty(DURATION_TYPE_PERMANENT,
+                ItemPropertyCastSpell(IP_CONST_CASTSPELL_VEYDRAN_COLD_BREATH,
+                                        IP_CONST_CASTSPELL_NUMUSES_1_USE_PER_DAY),
+                    oItem);
+            AddItemProperty(DURATION_TYPE_PERMANENT,
+                ItemPropertyCastSpell(IP_CONST_CASTSPELL_BLESS_2,
+                                        IP_CONST_CASTSPELL_NUMUSES_1_USE_PER_DAY),
+                    oItem);
+            AddItemProperty(DURATION_TYPE_PERMANENT,
+                ItemPropertyCastSpell(IP_CONST_CASTSPELL_IDENTIFY_3,
+                                        IP_CONST_CASTSPELL_NUMUSES_1_USE_PER_DAY),
+                    oItem);
+    break;
+        
+    case GS_SU_VEYDRAN_ABYSSALCOURT_SKYBLESSED:
+            AddItemProperty(DURATION_TYPE_PERMANENT,
+                ItemPropertyCastSpell(IP_CONST_CASTSPELL_VEYDRAN_LIGHTNING_BREATH,
+                                        IP_CONST_CASTSPELL_NUMUSES_1_USE_PER_DAY),
+                    oItem);
+            AddItemProperty(DURATION_TYPE_PERMANENT,
+                ItemPropertyCastSpell(IP_CONST_CASTSPELL_BLESS_2,
+                                        IP_CONST_CASTSPELL_NUMUSES_1_USE_PER_DAY),
+                    oItem);
+            AddItemProperty(DURATION_TYPE_PERMANENT,
+                ItemPropertyCastSpell(IP_CONST_CASTSPELL_IDENTIFY_3,
+                                        IP_CONST_CASTSPELL_NUMUSES_1_USE_PER_DAY),
+                    oItem);
+    break;
+
+    case GS_SU_VEYDRAN_ABYSSALCOURT_STONEWROUGHT:
+            AddItemProperty(DURATION_TYPE_PERMANENT,
+                ItemPropertyCastSpell(IP_CONST_CASTSPELL_VEYDRAN_FIRE_BREATH,
+                                        IP_CONST_CASTSPELL_NUMUSES_1_USE_PER_DAY),
+                    oItem);
+            AddItemProperty(DURATION_TYPE_PERMANENT,
+                ItemPropertyCastSpell(IP_CONST_CASTSPELL_BLESS_2,
+                                        IP_CONST_CASTSPELL_NUMUSES_1_USE_PER_DAY),
+                    oItem);
+            AddItemProperty(DURATION_TYPE_PERMANENT,
+                ItemPropertyCastSpell(IP_CONST_CASTSPELL_IDENTIFY_3,
+                                        IP_CONST_CASTSPELL_NUMUSES_1_USE_PER_DAY),
+                    oItem);
+    break;
+
+    case GS_SU_VEYDRAN_UNFADING_SEAFORGED:
+            AddItemProperty(DURATION_TYPE_PERMANENT,
+                ItemPropertyCastSpell(IP_CONST_CASTSPELL_VEYDRAN_COLD_BREATH,
+                                        IP_CONST_CASTSPELL_NUMUSES_1_USE_PER_DAY),
+                    oItem);
+            AddItemProperty(DURATION_TYPE_PERMANENT,
+                ItemPropertyCastSpell(IP_CONST_CASTSPELL_SHELGARNS_PERSISTENT_BLADE,
+                                        IP_CONST_CASTSPELL_NUMUSES_1_USE_PER_DAY),
+                    oItem);
+    break;
+
+    case GS_SU_VEYDRAN_UNFADING_SKYBLESSED:
+            AddItemProperty(DURATION_TYPE_PERMANENT,
+                ItemPropertyCastSpell(IP_CONST_CASTSPELL_VEYDRAN_LIGHTNING_BREATH,
+                                        IP_CONST_CASTSPELL_NUMUSES_1_USE_PER_DAY),
+                    oItem);
+            AddItemProperty(DURATION_TYPE_PERMANENT,
+                ItemPropertyCastSpell(IP_CONST_CASTSPELL_SHELGARNS_PERSISTENT_BLADE,
+                                        IP_CONST_CASTSPELL_NUMUSES_1_USE_PER_DAY),
+                    oItem);
+    break;
+
+    case GS_SU_VEYDRAN_UNFADING_STONEWROUGHT:
+            AddItemProperty(DURATION_TYPE_PERMANENT,
+                ItemPropertyCastSpell(IP_CONST_CASTSPELL_VEYDRAN_FIRE_BREATH,
+                                        IP_CONST_CASTSPELL_NUMUSES_1_USE_PER_DAY),
+                    oItem);
+            AddItemProperty(DURATION_TYPE_PERMANENT,
+                ItemPropertyCastSpell(IP_CONST_CASTSPELL_SHELGARNS_PERSISTENT_BLADE,
+                                        IP_CONST_CASTSPELL_NUMUSES_1_USE_PER_DAY),
+                    oItem);
+    break;
+
+    case GS_SU_VEYDRAN_WYRMBLOODED_SEAFORGED:
+            AddItemProperty(DURATION_TYPE_PERMANENT,
+                ItemPropertyCastSpell(IP_CONST_CASTSPELL_VEYDRAN_COLD_BREATH,
+                                        IP_CONST_CASTSPELL_NUMUSES_1_USE_PER_DAY),
+                    oItem);
+            AddItemProperty(DURATION_TYPE_PERMANENT,
+                ItemPropertyCastSpell(IP_CONST_CASTSPELL_VEYDRAN_RAGE,
+                                        IP_CONST_CASTSPELL_NUMUSES_1_USE_PER_DAY),
+                    oItem);
+            AddItemProperty(DURATION_TYPE_PERMANENT,
+                        ItemPropertyCastSpell(IP_CONST_CASTSPELL_WAR_CRY_7,
+                                              IP_CONST_CASTSPELL_NUMUSES_1_USE_PER_DAY),
+                        oItem);
+    break;
+
+    case GS_SU_VEYDRAN_WYRMBLOODED_SKYBLESSED:
+            AddItemProperty(DURATION_TYPE_PERMANENT,
+                ItemPropertyCastSpell(IP_CONST_CASTSPELL_VEYDRAN_LIGHTNING_BREATH,
+                                        IP_CONST_CASTSPELL_NUMUSES_1_USE_PER_DAY),
+                    oItem);
+            AddItemProperty(DURATION_TYPE_PERMANENT,
+                ItemPropertyCastSpell(IP_CONST_CASTSPELL_VEYDRAN_RAGE,
+                                        IP_CONST_CASTSPELL_NUMUSES_1_USE_PER_DAY),
+                    oItem);
+            AddItemProperty(DURATION_TYPE_PERMANENT,
+                        ItemPropertyCastSpell(IP_CONST_CASTSPELL_WAR_CRY_7,
+                                              IP_CONST_CASTSPELL_NUMUSES_1_USE_PER_DAY),
+                        oItem);
+    break;
+
+    case GS_SU_VEYDRAN_WYRMBLOODED_STONEWROUGHT:
+            AddItemProperty(DURATION_TYPE_PERMANENT,
+                ItemPropertyCastSpell(IP_CONST_CASTSPELL_VEYDRAN_FIRE_BREATH,
+                                        IP_CONST_CASTSPELL_NUMUSES_1_USE_PER_DAY),
+                    oItem);
+            AddItemProperty(DURATION_TYPE_PERMANENT,
+                ItemPropertyCastSpell(IP_CONST_CASTSPELL_VEYDRAN_RAGE,
+                                        IP_CONST_CASTSPELL_NUMUSES_1_USE_PER_DAY),
+                    oItem);
+            AddItemProperty(DURATION_TYPE_PERMANENT,
+                        ItemPropertyCastSpell(IP_CONST_CASTSPELL_WAR_CRY_7,
+                                              IP_CONST_CASTSPELL_NUMUSES_1_USE_PER_DAY),
+                        oItem);
     break;
 
     }
