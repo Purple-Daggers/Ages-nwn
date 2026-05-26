@@ -12,6 +12,17 @@ void gsRestMonitor(int nEffect = TRUE)
         gsSTAdjustState(GS_ST_REST, 5.0);
         gsSTAdjustState(GS_ST_SOBRIETY, 5.0);
 
+        int nCurrentMana = GetLocalInt(OBJECT_SELF, "GS_CURRENT_MANA");
+        int nMaximumMana = GetLocalInt(OBJECT_SELF, "GS_MAXIMUM_MANA");
+
+        if(nMaximumMana > nCurrentMana){
+            int nResultingMana = nCurrentMana += 5;
+            if(nCurrentMana >= nMaximumMana){
+                nCurrentMana = nMaximumMana;
+            }
+            SetLocalInt(OBJECT_SELF, "GS_CURRENT_MANA", nResultingMana);
+        }
+
         if (nEffect)
         {
             ApplyEffectToObject(DURATION_TYPE_INSTANT,
@@ -23,7 +34,7 @@ void gsRestMonitor(int nEffect = TRUE)
     }
     else
     {
-        FadeFromBlack(OBJECT_SELF);
+        //FadeFromBlack(OBJECT_SELF);
     }
 }
 //----------------------------------------------------------------
@@ -108,7 +119,7 @@ void main()
         {
             float fDelay = IntToFloat(5000 + Random(4000 + GetHitDice(oRested) * 500)) / 1000.0;
 
-            FadeToBlack(oRested);
+            //FadeToBlack(oRested);
             AssignCommand(oRested, gsRestMonitor());
             AssignCommand(oRested, DelayCommand(fDelay, gsAmbush()));
         }
