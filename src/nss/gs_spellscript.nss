@@ -61,6 +61,18 @@ void main()
         gsSPTCast(OBJECT_SELF, nSpell, GetMetaMagicFeat());
 
         int nLevel = gsSPGetSpellLevel(nSpell, GetLastSpellCastClass());
+        int nCurrentMana = GetLocalInt(OBJECT_SELF, "GS_CURRENT_MANA");
+        int nResultingMana = nCurrentMana - (nLevel * 2);
+
+        if (nResultingMana < 0){
+                FloatingTextStringOnCreature(
+                    gsCMReplaceString(GS_T_16777648, IntToString(nLevel)),
+                    OBJECT_SELF,
+                    FALSE);
+                gsSPSetOverrideSpell();
+                SetModuleOverrideSpellScriptFinished();
+                return;
+        }
 
         if (nLevel >= 7)
         {
@@ -114,6 +126,12 @@ void main()
                 return;
             }
         }
+        
+        FloatingTextStringOnCreature(
+                    gsCMReplaceString(GS_T_16777647, IntToString(nResultingMana)),
+                    OBJECT_SELF,
+                    FALSE);
+        SetLocalInt(OBJECT_SELF, "GS_CURRENT_MANA", nResultingMana);
     }
 
     //spell information

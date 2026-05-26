@@ -432,3 +432,5 @@ const string GS_T_16777643 = "Pa'Darr Bright-Moon";
 const string GS_T_16777644 = "Komal'ari Bright-Moon";
 const string GS_T_16777645 = "River Lord Bright-Moon";
 const string GS_T_16777646 = "Resplendent Bright-Moon";
+const string GS_T_16777647 = "Mana remaining: %1";
+const string GS_T_16777648 = "Insufficient mana to cast spell of level: %1";
