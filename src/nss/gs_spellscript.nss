@@ -71,9 +71,11 @@ void main()
                     FALSE);
                 gsSPSetOverrideSpell();
                 SetModuleOverrideSpellScriptFinished();
+                ReadySpellLevel(OBJECT_SELF, nLevel, CLASS_TYPE_INVALID, 255);
                 return;
         }
 
+        /*
         if (nLevel >= 7)
         {
             //deity
@@ -126,12 +128,14 @@ void main()
                 return;
             }
         }
+        */
         
         FloatingTextStringOnCreature(
                     gsCMReplaceString(GS_T_16777647, IntToString(nResultingMana)),
                     OBJECT_SELF,
                     FALSE);
         SetLocalInt(OBJECT_SELF, "GS_CURRENT_MANA", nResultingMana);
+        ReadySpellLevel(OBJECT_SELF, nLevel, CLASS_TYPE_INVALID, 255);
     }
 
     //spell information
