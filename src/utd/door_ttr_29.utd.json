@@ -1,18 +1,14 @@
 {
-  "__data_type": "UTP ",
+  "__data_type": "UTD ",
   "AnimationState": {
     "type": "byte",
-    "value": 0
+    "value": 1
   },
   "Appearance": {
     "type": "dword",
-    "value": 4630
+    "value": 65
   },
   "AutoRemoveKey": {
-    "type": "byte",
-    "value": 0
-  },
-  "BodyBag": {
     "type": "byte",
     "value": 0
   },
@@ -22,7 +18,7 @@
   },
   "Comment": {
     "type": "cexostring",
-    "value": ""
+    "value": "RuralExit"
   },
   "Conversation": {
     "type": "resref",
@@ -30,7 +26,7 @@
   },
   "CurrentHP": {
     "type": "short",
-    "value": 10
+    "value": 80
   },
   "Description": {
     "type": "cexolocstring",
@@ -38,7 +34,7 @@
   },
   "DisarmDC": {
     "type": "byte",
-    "value": 0
+    "value": 15
   },
   "Faction": {
     "type": "dword",
@@ -46,19 +42,19 @@
   },
   "Fort": {
     "type": "byte",
-    "value": 5
+    "value": 16
+  },
+  "GenericType_New": {
+    "type": "dword",
+    "value": 0
   },
   "Hardness": {
     "type": "byte",
     "value": 5
   },
-  "HasInventory": {
-    "type": "byte",
-    "value": 0
-  },
   "HP": {
     "type": "short",
-    "value": 10
+    "value": 80
   },
   "Interruptable": {
     "type": "byte",
@@ -72,9 +68,21 @@
     "type": "byte",
     "value": 0
   },
+  "LinkedTo": {
+    "type": "cexostring",
+    "value": ""
+  },
+  "LinkedToFlags": {
+    "type": "byte",
+    "value": 0
+  },
+  "LoadScreenID": {
+    "type": "word",
+    "value": 0
+  },
   "Lockable": {
     "type": "byte",
-    "value": 1
+    "value": 0
   },
   "Locked": {
     "type": "byte",
@@ -83,7 +91,8 @@
   "LocName": {
     "type": "cexolocstring",
     "value": {
-      "0": "Cabinet5"
+      "0": "Forest_Grove_A",
+      "id": 5349
     }
   },
   "OnClick": {
@@ -100,17 +109,17 @@
   },
   "OnDeath": {
     "type": "resref",
-    "value": ""
+    "value": "x2_door_death"
   },
   "OnDisarm": {
     "type": "resref",
     "value": ""
   },
-  "OnHeartbeat": {
+  "OnFailToOpen": {
     "type": "resref",
     "value": ""
   },
-  "OnInvDisturbed": {
+  "OnHeartbeat": {
     "type": "resref",
     "value": ""
   },
@@ -138,21 +147,17 @@
     "type": "resref",
     "value": ""
   },
-  "OnUsed": {
-    "type": "resref",
-    "value": ""
-  },
   "OnUserDefined": {
     "type": "resref",
     "value": ""
   },
   "OpenLockDC": {
     "type": "byte",
-    "value": 0
+    "value": 18
   },
   "PaletteID": {
     "type": "byte",
-    "value": 155
+    "value": 5
   },
   "Plot": {
     "type": "byte",
@@ -166,17 +171,13 @@
     "type": "byte",
     "value": 0
   },
-  "Static": {
-    "type": "byte",
-    "value": 1
-  },
   "Tag": {
     "type": "cexostring",
-    "value": "Cabinet5"
+    "value": "Forest_Grove_A"
   },
   "TemplateResRef": {
     "type": "resref",
-    "value": "blueprint098"
+    "value": "door_ttr_29"
   },
   "TrapDetectable": {
     "type": "byte",
@@ -199,14 +200,6 @@
     "value": 1
   },
   "TrapType": {
-    "type": "byte",
-    "value": 0
-  },
-  "Type": {
-    "type": "byte",
-    "value": 0
-  },
-  "Useable": {
     "type": "byte",
     "value": 0
   },
