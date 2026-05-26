@@ -122,8 +122,8 @@ void gsInitialize()
     //mana system for magic
 
     //determine maximum mana
-    SetLocalInt(OBJECT_SELF, "GS_MAXIMUM_MANA", 300);
-    SetLocalInt(OBJECT_SELF, "GS_CURRENT_MANA", 200);
+    SetLocalInt(OBJECT_SELF, "GS_MAXIMUM_MANA", 50);
+    SetLocalInt(OBJECT_SELF, "GS_CURRENT_MANA", 45);
 
     SetLocalInt(OBJECT_SELF, "GS_ENABLED", TRUE);
 }
