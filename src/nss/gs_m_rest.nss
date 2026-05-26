@@ -34,7 +34,7 @@ void gsRestMonitor(int nEffect = TRUE)
     }
     else
     {
-        FadeFromBlack(OBJECT_SELF);
+        //FadeFromBlack(OBJECT_SELF);
     }
 }
 //----------------------------------------------------------------
