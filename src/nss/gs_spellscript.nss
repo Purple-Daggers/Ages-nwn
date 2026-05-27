@@ -3,6 +3,7 @@
 #include "gs_inc_worship"
 #include "gs_inc_spell"
 #include "gs_inc_strack"
+#include "gs_inc_state"
 #include "x2_inc_switches"
 
 void main()
@@ -73,6 +74,24 @@ void main()
                 SetModuleOverrideSpellScriptFinished();
                 ReadySpellLevel(OBJECT_SELF, nLevel, CLASS_TYPE_INVALID, 255);
                 return;
+        }
+
+        if (nLevel > 5)
+        {
+            int nCurrentExhaustion = GetLocalInt(OBJECT_SELF, "GS_SPELL_EXHAUSTION_CURRENT");
+            int nMaximumExhaustion = GetAbilityModifier(ABILITY_CONSTITUTION, OBJECT_SELF);
+
+            if (nCurrentExhaustion >= nMaximumExhaustion){
+                if (FortitudeSave(OBJECT_SELF, 10 + nCurrentExhaustion) == 0)
+                {
+                    gsSTAdjustState(GS_ST_REST,  -2.083);
+                    DelayCommand(0.6, FloatingTextStringOnCreature(
+                                      GS_T_16777649,
+                                      OBJECT_SELF,
+                                      FALSE));
+                }
+            }
+            SetLocalInt(OBJECT_SELF, "GS_SPELL_EXHAUSTION_CURRENT", nCurrentExhaustion + 1);
         }
 
         /*

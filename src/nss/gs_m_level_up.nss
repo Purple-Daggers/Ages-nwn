@@ -157,6 +157,8 @@ void main()
         if (GetIsObjectValid(oItem)) gsSUApplyAbility(oItem, nSubRace, nLevel);
     }
 
+    gsCMCalculateMaximumMana(oPC);
+
     gsPCMemorizeClassData(oPC);
     SendMessageToAllDMs(
         gsCMReplaceString(
