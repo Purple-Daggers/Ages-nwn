@@ -61,7 +61,21 @@ void main()
         gsSPTCast(OBJECT_SELF, nSpell, GetMetaMagicFeat());
 
         int nLevel = gsSPGetSpellLevel(nSpell, GetLastSpellCastClass());
+        int nCurrentMana = GetLocalInt(OBJECT_SELF, "GS_CURRENT_MANA");
+        int nResultingMana = nCurrentMana - (nLevel * 2);
 
+        if (nResultingMana < 0){
+                FloatingTextStringOnCreature(
+                    gsCMReplaceString(GS_T_16777648, IntToString(nLevel)),
+                    OBJECT_SELF,
+                    FALSE);
+                gsSPSetOverrideSpell();
+                SetModuleOverrideSpellScriptFinished();
+                ReadySpellLevel(OBJECT_SELF, nLevel, CLASS_TYPE_INVALID, 255);
+                return;
+        }
+
+        /*
         if (nLevel >= 7)
         {
             //deity
@@ -114,6 +128,14 @@ void main()
                 return;
             }
         }
+        */
+        
+        FloatingTextStringOnCreature(
+                    gsCMReplaceString(GS_T_16777647, IntToString(nResultingMana)),
+                    OBJECT_SELF,
+                    FALSE);
+        SetLocalInt(OBJECT_SELF, "GS_CURRENT_MANA", nResultingMana);
+        ReadySpellLevel(OBJECT_SELF, nLevel, CLASS_TYPE_INVALID, 255);
     }
 
     //spell information

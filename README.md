@@ -7,6 +7,7 @@ After this, you can build the module, haks, and tlk with these prompts:
 ```bash
 $ git clone https://github.com/Purple-Daggers/Ages-nwn/
 $ cd Ages-nwn
+$ nasher config --set --tlkFlags:"--pretty"
 $ nasher pack haks
 $ nasher install
 ```
@@ -44,6 +45,16 @@ Branch protection is active on this repository. Any changes to master require a 
 [gffEditor](https://neverwintervault.org/project/nwn1/other/tool/gffeditor) for editing .gff files including character data saved to the server vault.
 
 [Yata](https://neverwintervault.org/project/nwn2/other/tool/yata) for editing .2da files. This is a NWN2 tool but it works just as good for NWN:EE.
+
+# Resources
+
+[Neverwinter Vault Modding Wiki (nwn.wiki)](https://nwn.wiki/spaces/NWN1/pages/38175366/GFF) for general Neverwinter Nights modding information
+
+[NWN Lexicon](https://nwnlexicon.com/Main_Page) for NWScript language reference
+
+[NWN Developer Chat](https://nwn.zulipchat.com/) for questions, advice, and resources related to NWN development.
+
+[NWN Fandom](https://nwn.fandom.com/wiki/Main_Page) for information about game mechanics typically from the perspective of a player.
 
 # Workflow
 ### Updating your branch:

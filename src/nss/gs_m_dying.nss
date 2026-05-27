@@ -69,6 +69,6 @@ void main()
     }
 
     FloatingTextStringOnCreature(GS_T_16777438, oDying, FALSE);
-    FadeToBlack(oDying, FADE_SPEED_SLOWEST);
+    //FadeToBlack(oDying, FADE_SPEED_SLOWEST);
     AssignCommand(oDying, DelayCommand(6.0, gsDying()));
 }
