@@ -23,6 +23,8 @@ void gsRestMonitor(int nEffect = TRUE)
             SetLocalInt(OBJECT_SELF, "GS_CURRENT_MANA", nResultingMana);
         }
 
+        SetLocalInt(OBJECT_SELF, "GS_SPELL_EXHAUSTION_CURRENT", 0);
+
         if (nEffect)
         {
             ApplyEffectToObject(DURATION_TYPE_INSTANT,
