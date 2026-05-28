@@ -59,9 +59,10 @@ void main()
     if (! GetIsObjectValid(GetSpellCastItem()))
     {
         //spelltracker
-        gsSPTCast(OBJECT_SELF, nSpell, GetMetaMagicFeat());
-
-        int nLevel = gsSPGetSpellLevel(nSpell, GetLastSpellCastClass());
+        int nMetaMagic = GetMetaMagicFeat();
+        gsSPTCast(OBJECT_SELF, nSpell, nMetaMagic);
+        int nClass = GetLastSpellCastClass();
+        int nLevel = gsSPGetSpellLevel(nSpell, nClass);
         int nCurrentMana = GetLocalInt(OBJECT_SELF, "GS_CURRENT_MANA");
         int nResultingMana = nCurrentMana - (nLevel * 2);
 
@@ -94,6 +95,38 @@ void main()
             SetLocalInt(OBJECT_SELF, "GS_SPELL_EXHAUSTION_CURRENT", nCurrentExhaustion + 1);
         }
 
+        int nSurgeChance = 0;
+        switch (nClass){
+            case CLASS_TYPE_CLERIC:
+                nSurgeChance = 1;
+            break;
+            case CLASS_TYPE_DRUID:
+                nSurgeChance = 1;
+            break;
+            case CLASS_TYPE_WIZARD:
+                nSurgeChance = 2;
+            break;
+            case CLASS_TYPE_BARD:
+                nSurgeChance = 2;
+            break;
+            case CLASS_TYPE_PALADIN:
+                nSurgeChance = 2;
+            break;
+            case CLASS_TYPE_SORCERER:
+                nSurgeChance = 10;
+            break;
+            default:
+                nSurgeChance = 0;
+            break;
+        }
+
+        if(nMetaMagic != METAMAGIC_NONE){
+            nSurgeChance *= 2;
+        }
+
+        if (d100(1) <= nSurgeChance){
+            DelayCommand(0.8, gsSPMagicSurge(OBJECT_SELF, oTarget, lTarget));
+        }
         /*
         if (nLevel >= 7)
         {
@@ -154,7 +187,7 @@ void main()
                     OBJECT_SELF,
                     FALSE);
         SetLocalInt(OBJECT_SELF, "GS_CURRENT_MANA", nResultingMana);
-        ReadySpellLevel(OBJECT_SELF, nLevel, CLASS_TYPE_INVALID, 255);
+        ReadySpellLevel(OBJECT_SELF, nLevel + gsSPGetMetaMagicLevel(nMetaMagic), CLASS_TYPE_INVALID, 255);
     }
 
     //spell information

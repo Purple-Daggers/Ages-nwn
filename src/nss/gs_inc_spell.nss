@@ -63,6 +63,8 @@ int gsSPGetSpellCallback(object oCaster = OBJECT_SELF);
 void gsSPResetSpellCallback(object oCaster = OBJECT_SELF);
 //return level of nSpell for nClass
 int gsSPGetSpellLevel(int nSpell, int nClass = CLASS_TYPE_INVALID);
+//return level of metamagic
+int gsSPGetMetaMagicLevel(int nMetaMagic);
 
 //remove up to nCount spells from oTarget that are affected by spell breach
 void gsSPApplySpellBreach(object oTarget, int nCount);
@@ -70,6 +72,9 @@ void gsSPApplySpellBreach(object oTarget, int nCount);
 void _gsSPApplySpellBreach(object oTarget, int nSpell);
 //make oCaster dispel area of effect oTarget by nChance
 void gsSPDispelAreaOfEffect(object oCaster, object oTarget, int nChance = 100);
+
+//handle magic surge
+void gsSPMagicSurge(object oCaster, object oTarget, location lTarget);
 
 int gsSPGetSpellID()
 {
@@ -503,5 +508,73 @@ void gsSPDispelAreaOfEffect(object oCaster, object oTarget, int nChance = 100)
     else
     {
         FloatingTextStrRefOnCreature(100930, oCaster, FALSE);
+    }
+}
+//-----------------------------------------------------------------
+int gsSPGetMetaMagicLevel(int nMetaMagic)
+{
+    switch(nMetaMagic){
+        case METAMAGIC_EMPOWER:
+            return 2;
+        break;
+        case METAMAGIC_EXTEND:
+            return 1;
+        break;
+        case METAMAGIC_MAXIMIZE:
+            return 3;
+        break;
+        case METAMAGIC_NONE:
+            return 0;
+        break;
+        case METAMAGIC_QUICKEN:
+            return 4;
+        break;
+        case METAMAGIC_SILENT:
+            return 1;
+        break;
+        case METAMAGIC_STILL:
+            return 1;
+        break;
+    }
+    return 0;
+}
+//-----------------------------------------------------------------
+void gsSPMagicSurge(object oCaster, object oTarget, location lTarget)
+{
+    string sSurgeName = "";
+    string sSurgeTarget = "";
+
+    location lCasterLocation = Location(GetArea(oCaster), GetPosition(oCaster), GetFacing(oCaster));
+    ApplyEffectAtLocation(DURATION_TYPE_INSTANT,
+                          EffectVisualEffect(VFX_FNF_MYSTICAL_EXPLOSION),
+                          lCasterLocation);
+
+    switch(d100(1)){
+        default:
+            sSurgeName = "Grease!";
+            switch(d2(1)){
+                case 1:
+                    sSurgeTarget = "Target";
+                    ApplyEffectAtLocation(DURATION_TYPE_TEMPORARY,
+                                        EffectAreaOfEffect(AOE_PER_GREASE),
+                                        lTarget,
+                                        RoundsToSeconds(5));
+                break;
+                case 2:
+                    sSurgeTarget = "Self";
+                    ApplyEffectAtLocation(DURATION_TYPE_TEMPORARY,
+                                        EffectAreaOfEffect(AOE_PER_GREASE),
+                                        lCasterLocation,
+                                        RoundsToSeconds(5));
+                break;
+            }
+        break;
+    }
+
+    if(sSurgeTarget != ""){
+                            FloatingTextStringOnCreature(
+                            "Magic Surge: " + sSurgeName + " | " + sSurgeTarget,
+                            OBJECT_SELF,
+                            TRUE);
     }
 }
