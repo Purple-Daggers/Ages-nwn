@@ -187,7 +187,7 @@ void main()
                     OBJECT_SELF,
                     FALSE);
         SetLocalInt(OBJECT_SELF, "GS_CURRENT_MANA", nResultingMana);
-        ReadySpellLevel(OBJECT_SELF, nLevel, CLASS_TYPE_INVALID, 255);
+        ReadySpellLevel(OBJECT_SELF, nLevel + gsSPGetMetaMagicLevel(nMetaMagic), CLASS_TYPE_INVALID, 255);
     }
 
     //spell information
