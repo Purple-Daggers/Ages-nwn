@@ -17,8 +17,8 @@ void gsRestMonitor(int nEffect = TRUE)
 
         if(nMaximumMana > nCurrentMana){
             int nResultingMana = nCurrentMana += 5;
-            if(nCurrentMana >= nMaximumMana){
-                nCurrentMana = nMaximumMana;
+            if(nResultingMana > nMaximumMana){
+                nResultingMana = nMaximumMana;
             }
             SetLocalInt(OBJECT_SELF, "GS_CURRENT_MANA", nResultingMana);
         }

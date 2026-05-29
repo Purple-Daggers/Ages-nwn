@@ -63,6 +63,8 @@ int gsSPGetSpellCallback(object oCaster = OBJECT_SELF);
 void gsSPResetSpellCallback(object oCaster = OBJECT_SELF);
 //return level of nSpell for nClass
 int gsSPGetSpellLevel(int nSpell, int nClass = CLASS_TYPE_INVALID);
+//return level of metamagic
+int gsSPGetMetaMagicLevel(int nMetaMagic);
 
 //remove up to nCount spells from oTarget that are affected by spell breach
 void gsSPApplySpellBreach(object oTarget, int nCount);
@@ -70,6 +72,9 @@ void gsSPApplySpellBreach(object oTarget, int nCount);
 void _gsSPApplySpellBreach(object oTarget, int nSpell);
 //make oCaster dispel area of effect oTarget by nChance
 void gsSPDispelAreaOfEffect(object oCaster, object oTarget, int nChance = 100);
+
+//handle magic surge
+void gsSPMagicSurge(object oCaster, object oTarget, location lTarget);
 
 int gsSPGetSpellID()
 {
@@ -503,5 +508,264 @@ void gsSPDispelAreaOfEffect(object oCaster, object oTarget, int nChance = 100)
     else
     {
         FloatingTextStrRefOnCreature(100930, oCaster, FALSE);
+    }
+}
+//-----------------------------------------------------------------
+int gsSPGetMetaMagicLevel(int nMetaMagic)
+{
+    switch(nMetaMagic){
+        case METAMAGIC_EMPOWER:
+            return 2;
+        break;
+        case METAMAGIC_EXTEND:
+            return 1;
+        break;
+        case METAMAGIC_MAXIMIZE:
+            return 3;
+        break;
+        case METAMAGIC_NONE:
+            return 0;
+        break;
+        case METAMAGIC_QUICKEN:
+            return 4;
+        break;
+        case METAMAGIC_SILENT:
+            return 1;
+        break;
+        case METAMAGIC_STILL:
+            return 1;
+        break;
+    }
+    return 0;
+}
+//-----------------------------------------------------------------
+void gsSPMagicSurge(object oCaster, object oTarget, location lTarget)
+{
+    string sSurgeName = "";
+    string sSurgeTarget = "";
+    object oWildMagicHelper = OBJECT_INVALID;
+
+    location lCasterLocation = Location(GetArea(oCaster), GetPosition(oCaster), GetFacing(oCaster));
+    ApplyEffectAtLocation(DURATION_TYPE_INSTANT,
+                          EffectVisualEffect(VFX_FNF_MYSTICAL_EXPLOSION),
+                          lCasterLocation);
+
+    switch(d100(1)){
+        case 1:
+        case 2:
+        case 3:
+        case 4:
+        case 5:
+        case 6:
+        case 7:
+        case 8:
+        case 9:
+        case 10:
+        case 11:
+        case 12:
+        case 13:
+        case 14:
+        case 15:
+        case 16:
+        case 17:
+        case 18:
+        case 19:
+        case 20:
+        case 21:
+        case 22:
+        case 23:
+        case 24:
+        case 25:
+        case 26:
+            sSurgeName = "Time Stop!";
+            switch(d2(1)){
+                case 1:
+                    sSurgeTarget = "Target";
+                    AssignCommand(oTarget, ActionCastSpellAtObject(  SPELL_TIME_STOP,
+                                                                                oTarget,
+                                                                                METAMAGIC_NONE,
+                                                                                TRUE,
+                                                                                0,
+                                                                                PROJECTILE_PATH_TYPE_DEFAULT,
+                                                                                TRUE));
+                    DelayCommand(RoundsToSeconds(5), DestroyObject(oWildMagicHelper));
+                break;
+                case 2:
+                    sSurgeTarget = "Self";
+                    AssignCommand(oCaster, ActionCastSpellAtObject(  SPELL_TIME_STOP,
+                                                                                oCaster,
+                                                                                METAMAGIC_NONE,
+                                                                                TRUE,
+                                                                                0,
+                                                                                PROJECTILE_PATH_TYPE_DEFAULT,
+                                                                                TRUE));
+                    DelayCommand(RoundsToSeconds(5), DestroyObject(oWildMagicHelper));
+                break;
+            }
+        break;
+        case 27:
+        case 28:
+        case 29:
+        case 30:
+        case 31:
+        case 32:
+        case 33:
+        case 34:
+        case 35:
+        case 36:
+        case 37:
+        case 38:
+        case 39:
+        case 40:
+        case 41:
+        case 42:
+        case 43:
+        case 44:
+        case 45:
+        case 46:
+        case 47:
+        case 48:
+        case 49:
+        case 50:
+            sSurgeName = "Grease!";
+            switch(d2(1)){
+                case 1:
+                    sSurgeTarget = "Target";
+                    oWildMagicHelper = CreateObject(OBJECT_TYPE_PLACEABLE, "gs_sp_wmhelper", lTarget);
+                    AssignCommand(oWildMagicHelper, ActionCastSpellAtLocation(  SPELL_GREASE,
+                                                                                lTarget,
+                                                                                METAMAGIC_NONE,
+                                                                                TRUE,
+                                                                                PROJECTILE_PATH_TYPE_DEFAULT,
+                                                                                TRUE));
+                    DelayCommand(RoundsToSeconds(5), DestroyObject(oWildMagicHelper));
+                break;
+                case 2:
+                    sSurgeTarget = "Self";
+                    oWildMagicHelper = CreateObject(OBJECT_TYPE_PLACEABLE, "gs_sp_wmhelper", lCasterLocation);
+                    AssignCommand(oWildMagicHelper, ActionCastSpellAtLocation(  SPELL_GREASE,
+                                                                                lCasterLocation,
+                                                                                METAMAGIC_NONE,
+                                                                                TRUE,
+                                                                                PROJECTILE_PATH_TYPE_DEFAULT,
+                                                                                TRUE));
+                    DelayCommand(RoundsToSeconds(5), DestroyObject(oWildMagicHelper));
+                break;
+            }
+        break;
+        case 51:
+        case 52:
+        case 53:
+        case 54:
+        case 55:
+        case 56:
+        case 57:
+        case 58:
+        case 59:
+        case 60:
+        case 61:
+        case 62:
+        case 63:
+        case 64:
+        case 65:
+        case 66:
+        case 67:
+        case 68:
+            sSurgeName = "Greater missile storm!";
+            switch(d2(1)){
+                case 1:
+                    sSurgeTarget = "Target";
+                    oWildMagicHelper = CreateObject(OBJECT_TYPE_PLACEABLE, "gs_sp_wmhelper", lTarget);
+                    AssignCommand(oWildMagicHelper, ActionCastSpellAtLocation(  SPELL_ISAACS_GREATER_MISSILE_STORM,
+                                                                                lTarget,
+                                                                                METAMAGIC_NONE,
+                                                                                TRUE,
+                                                                                PROJECTILE_PATH_TYPE_DEFAULT,
+                                                                                TRUE));
+                    DelayCommand(RoundsToSeconds(5), DestroyObject(oWildMagicHelper));
+                break;
+                case 2:
+                    sSurgeTarget = "Self";
+                    oWildMagicHelper = CreateObject(OBJECT_TYPE_PLACEABLE, "gs_sp_wmhelper", lCasterLocation);
+                    AssignCommand(oWildMagicHelper, ActionCastSpellAtLocation(  SPELL_ISAACS_GREATER_MISSILE_STORM,
+                                                                                lCasterLocation,
+                                                                                METAMAGIC_NONE,
+                                                                                TRUE,
+                                                                                PROJECTILE_PATH_TYPE_DEFAULT,
+                                                                                TRUE));
+                    DelayCommand(RoundsToSeconds(5), DestroyObject(oWildMagicHelper));
+                break;
+            }
+        break;
+        case 69:
+        case 70:
+        case 71:
+        case 72:
+        case 73:
+        case 74:
+        case 75:
+        case 76:
+        case 77:
+        case 78:
+        case 79:
+        case 80:
+        case 81:
+        case 82:
+        case 83:
+        case 84:
+        case 85:
+        case 86:
+        case 87:
+        case 88:
+        case 89:
+        case 90:
+        case 91:
+        case 92:
+        case 93:
+        case 94:
+        case 95:
+        case 96:
+        case 97:
+        case 98:
+        case 99:
+        case 100:
+            sSurgeName = "Mass blindness!";
+            switch(d2(1)){
+                case 1:
+                    sSurgeTarget = "Target";
+                    oWildMagicHelper = CreateObject(OBJECT_TYPE_PLACEABLE, "gs_sp_wmhelper", lTarget);
+                    AssignCommand(oWildMagicHelper, ActionCastSpellAtLocation(  SPELL_MASS_BLINDNESS_AND_DEAFNESS,
+                                                                                lTarget,
+                                                                                METAMAGIC_NONE,
+                                                                                TRUE,
+                                                                                PROJECTILE_PATH_TYPE_DEFAULT,
+                                                                                TRUE));
+                    DelayCommand(RoundsToSeconds(5), DestroyObject(oWildMagicHelper));
+                break;
+                case 2:
+                    sSurgeTarget = "Self";
+                    oWildMagicHelper = CreateObject(OBJECT_TYPE_PLACEABLE, "gs_sp_wmhelper", lCasterLocation);
+                    AssignCommand(oWildMagicHelper, ActionCastSpellAtLocation(  SPELL_MASS_BLINDNESS_AND_DEAFNESS,
+                                                                                lCasterLocation,
+                                                                                METAMAGIC_NONE,
+                                                                                TRUE,
+                                                                                PROJECTILE_PATH_TYPE_DEFAULT,
+                                                                                TRUE));
+                    DelayCommand(RoundsToSeconds(5), DestroyObject(oWildMagicHelper));
+                break;
+            }
+        break;
+
+        default:
+            sSurgeName = "Scripting error!";
+            sSurgeTarget = "What?";
+        break;
+    }
+
+    if(sSurgeTarget != ""){
+                            FloatingTextStringOnCreature(
+                            "Magic Surge: " + sSurgeName + " | " + sSurgeTarget,
+                            OBJECT_SELF,
+                            TRUE);
     }
 }
