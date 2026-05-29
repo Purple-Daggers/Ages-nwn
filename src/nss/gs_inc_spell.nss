@@ -543,6 +543,7 @@ void gsSPMagicSurge(object oCaster, object oTarget, location lTarget)
 {
     string sSurgeName = "";
     string sSurgeTarget = "";
+    object oWildMagicHelper = OBJECT_INVALID;
 
     location lCasterLocation = Location(GetArea(oCaster), GetPosition(oCaster), GetFacing(oCaster));
     ApplyEffectAtLocation(DURATION_TYPE_INSTANT,
@@ -552,20 +553,29 @@ void gsSPMagicSurge(object oCaster, object oTarget, location lTarget)
     switch(d100(1)){
         default:
             sSurgeName = "Grease!";
+
             switch(d2(1)){
                 case 1:
                     sSurgeTarget = "Target";
-                    ApplyEffectAtLocation(DURATION_TYPE_TEMPORARY,
-                                        EffectAreaOfEffect(AOE_PER_GREASE),
-                                        lTarget,
-                                        RoundsToSeconds(5));
+                    oWildMagicHelper = CreateObject(OBJECT_TYPE_PLACEABLE, "gs_sp_wmhelper", lTarget);
+                    AssignCommand(oWildMagicHelper, ActionCastSpellAtLocation(  SPELL_GREASE,
+                                                                                lTarget,
+                                                                                METAMAGIC_NONE,
+                                                                                TRUE,
+                                                                                PROJECTILE_PATH_TYPE_DEFAULT,
+                                                                                TRUE));
+                    DelayCommand(RoundsToSeconds(5), DestroyObject(oWildMagicHelper));
                 break;
                 case 2:
                     sSurgeTarget = "Self";
-                    ApplyEffectAtLocation(DURATION_TYPE_TEMPORARY,
-                                        EffectAreaOfEffect(AOE_PER_GREASE),
-                                        lCasterLocation,
-                                        RoundsToSeconds(5));
+                    oWildMagicHelper = CreateObject(OBJECT_TYPE_PLACEABLE, "gs_sp_wmhelper", lCasterLocation);
+                    AssignCommand(oWildMagicHelper, ActionCastSpellAtLocation(  SPELL_GREASE,
+                                                                                lCasterLocation,
+                                                                                METAMAGIC_NONE,
+                                                                                TRUE,
+                                                                                PROJECTILE_PATH_TYPE_DEFAULT,
+                                                                                TRUE));
+                    DelayCommand(RoundsToSeconds(5), DestroyObject(oWildMagicHelper));
                 break;
             }
         break;
