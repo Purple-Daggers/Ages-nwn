@@ -585,6 +585,7 @@ void gsSPMagicSurge(object oCaster, object oTarget, location lTarget)
                                                                                 oTarget,
                                                                                 METAMAGIC_NONE,
                                                                                 TRUE,
+                                                                                0,
                                                                                 PROJECTILE_PATH_TYPE_DEFAULT,
                                                                                 TRUE));
                     DelayCommand(RoundsToSeconds(5), DestroyObject(oWildMagicHelper));
@@ -595,6 +596,7 @@ void gsSPMagicSurge(object oCaster, object oTarget, location lTarget)
                                                                                 oCaster,
                                                                                 METAMAGIC_NONE,
                                                                                 TRUE,
+                                                                                0,
                                                                                 PROJECTILE_PATH_TYPE_DEFAULT,
                                                                                 TRUE));
                     DelayCommand(RoundsToSeconds(5), DestroyObject(oWildMagicHelper));
