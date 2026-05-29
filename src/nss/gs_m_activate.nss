@@ -76,7 +76,7 @@ void main()
     {
         SetLocalObject(oActivator, "GS_TARGET", oItem);
         AssignCommand(oTarget, SpeakString(GS_T_16777234));
-        AssignCommand(oActivator, ActionStartConversation(oActivator, "gs_me_write", TRUE, FALSE));
+        AssignCommand(oActivator, ActionStartConversation(oActivator, "gs_me_write2", TRUE, FALSE));
         return;
     }
 
