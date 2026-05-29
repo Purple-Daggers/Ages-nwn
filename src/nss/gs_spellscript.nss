@@ -113,7 +113,7 @@ void main()
                 nSurgeChance = 2;
             break;
             case CLASS_TYPE_SORCERER:
-                nSurgeChance = 10;
+                nSurgeChance = 20;
             break;
             default:
                 nSurgeChance = 0;
