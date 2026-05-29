@@ -6,7 +6,7 @@ int StartingConditional()
     if (sString != "")
     {
         SetCustomToken(100, sString);
-        SetCustomToken(101, sString);
+        SetCustomToken(101, sString2);
         return TRUE;
     }
 
