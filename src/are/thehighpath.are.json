@@ -34,7 +34,7 @@
   },
   "FogClipDist": {
     "type": "float",
-    "value": 45.0
+    "value": 120.0
   },
   "Height": {
     "type": "int",
@@ -96,11 +96,11 @@
   },
   "OnEnter": {
     "type": "resref",
-    "value": ""
+    "value": "gs_a_enter"
   },
   "OnExit": {
     "type": "resref",
-    "value": ""
+    "value": "gs_a_exit"
   },
   "OnHeartbeat": {
     "type": "resref",
@@ -124,7 +124,7 @@
   },
   "SkyBox": {
     "type": "byte",
-    "value": 0
+    "value": 31
   },
   "SunAmbientColor": {
     "type": "dword",

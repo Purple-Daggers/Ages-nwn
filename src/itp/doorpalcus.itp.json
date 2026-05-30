@@ -32,6 +32,17 @@
                     "__struct_id": 0,
                     "NAME": {
                       "type": "cexostring",
+                      "value": "Custom 1 002"
+                    },
+                    "RESREF": {
+                      "type": "resref",
+                      "value": "custom002"
+                    }
+                  },
+                  {
+                    "__struct_id": 0,
+                    "NAME": {
+                      "type": "cexostring",
                       "value": "Quarter"
                     },
                     "RESREF": {
@@ -189,6 +200,22 @@
               "ID": {
                 "type": "byte",
                 "value": 9
+              },
+              "LIST": {
+                "type": "list",
+                "value": [
+                  {
+                    "__struct_id": 0,
+                    "NAME": {
+                      "type": "cexostring",
+                      "value": "Other 001"
+                    },
+                    "RESREF": {
+                      "type": "resref",
+                      "value": "other001"
+                    }
+                  }
+                ]
               },
               "STRREF": {
                 "type": "dword",
