@@ -5,6 +5,7 @@ int GetStringIsIntegerNumber(string sString)
 {
     int nString=StringToInt(sString);
     if (nString!=0) return TRUE;
+    
     string sCompare=IntToString(nString);
     return sCompare==sString;
 }
