@@ -3,7 +3,7 @@
 
 int StartingConditional()
 {
-    gsLIClearLastMessage();
+    gsLIClearLastMessage(GetPCSpeaker());
     SetCustomToken(100, IntToString(gsFIGetBalance(GetPCSpeaker())));
     return TRUE;
 }

@@ -12,10 +12,10 @@ int GetStringIsIntegerNumber(string sString)
 
 void main()
 {
-    string sMessage = gsLIGetLastMessage();
+    string sMessage = gsLIGetLastMessage(GetPCSpeaker());
     if(GetStringIsIntegerNumber(sMessage))
     {
         gsFIPayIn(GetPCSpeaker(), StringToInt(sMessage));
     }
-    gsLIClearLastMessage();
+    gsLIClearLastMessage(GetPCSpeaker());
 }
