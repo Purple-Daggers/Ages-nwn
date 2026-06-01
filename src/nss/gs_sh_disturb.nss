@@ -17,7 +17,7 @@ void main()
         if (GetIsDM(oDisturbed) ||
             gsSHGetIsOwner(OBJECT_SELF, oDisturbed))
         {
-            string sMessage = gsLIGetLastMessage();
+            string sMessage = gsLIGetLastMessage(oDisturbed);
             int nPrice = StringToInt(sMessage);
             if(nPrice != 0)
             {
