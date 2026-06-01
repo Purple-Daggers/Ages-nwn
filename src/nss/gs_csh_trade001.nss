@@ -7,6 +7,9 @@ int StartingConditional()
     object oItem    = GetLocalObject(oSpeaker, "GS_SH_ITEM");
     int nSalePrice  = gsSHGetSalePrice(OBJECT_SELF);
     int nValue      = gsCMGetItemValue(oItem) * nSalePrice / 100;
+    if (GetLocalInt(oItem, "GS_CUSTOM_PRICE") != 0){
+        nValue = GetLocalInt(oItem, "GS_CUSTOM_PRICE");
+    }
     if (nValue < 1) nValue = 1;
 
     SetCustomToken(100, GetName(oItem));
