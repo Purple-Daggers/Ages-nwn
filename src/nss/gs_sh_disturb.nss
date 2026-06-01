@@ -1,5 +1,6 @@
 #include "gs_inc_shop"
 #include "gs_inc_text"
+#include "gs_inc_listener"
 
 void main()
 {
@@ -16,6 +17,13 @@ void main()
         if (GetIsDM(oDisturbed) ||
             gsSHGetIsOwner(OBJECT_SELF, oDisturbed))
         {
+            string sMessage = gsLIGetLastMessage(oDisturbed);
+            int nPrice = StringToInt(sMessage);
+            if(nPrice != 0)
+            {
+                SetLocalInt(oItem, "GS_CUSTOM_PRICE", nPrice);
+                SendMessageToPC(oDisturbed, "Set price of item " + GetName(oItem) + " to " + sMessage);
+            }
             gsSHImportItem(oItem, OBJECT_SELF);
         }
         else

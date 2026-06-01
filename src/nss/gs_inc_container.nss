@@ -24,7 +24,9 @@ void gsCOLoad(string sID, object oContainer, int nLimit = 10)
                 RetrieveCampaignObject("GS_CO_" + sID,
                                        "OBJECT_" + sNth,
                                        lLocation,
-                                       oContainer);
+                                       oContainer,
+                                       OBJECT_INVALID,
+                                       TRUE);
             }
         }
     }
@@ -43,7 +45,7 @@ void gsCOSave(string sID, object oContainer, int nLimit = 10)
                nNth < nLimit)
         {
             sNth    = IntToString(++nNth);
-            StoreCampaignObject("GS_CO_" + sID, "OBJECT_" + sNth, oObject);
+            StoreCampaignObject("GS_CO_" + sID, "OBJECT_" + sNth, oObject, OBJECT_INVALID, TRUE);
             SetCampaignInt("GS_CO_" + sID, "SLOT_" + sNth, TRUE);
             oObject = GetNextItemInInventory(oContainer);
         }

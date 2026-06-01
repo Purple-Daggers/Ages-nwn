@@ -132,7 +132,8 @@ void gsSHImportItem(object oItem, object oShop)
         object oCopy = CopyObject(oItem,
                                   GetLocation(oShop),
                                   oShop,
-                                  "GS_SH_" + sTag);
+                                  "GS_SH_" + sTag,
+                                  TRUE);
 
         if (GetIsObjectValid(oCopy))
         {
@@ -151,8 +152,9 @@ void gsSHExportItem(object oItem, object oTarget)
         object oCopy = CopyObject(oItem,
                                   GetLocation(oTarget),
                                   oTarget,
-                                  GetStringRight(sTag, GetStringLength(sTag) - 6));
-
+                                  GetStringRight(sTag, GetStringLength(sTag) - 6),
+                                  TRUE);
+        DeleteLocalInt(oCopy, "GS_CUSTOM_PRICE");
         if (GetIsObjectValid(oCopy))
         {
             DestroyObject(oItem);
