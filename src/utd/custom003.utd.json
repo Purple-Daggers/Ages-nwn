@@ -1,18 +1,14 @@
 {
-  "__data_type": "UTP ",
+  "__data_type": "UTD ",
   "AnimationState": {
     "type": "byte",
     "value": 0
   },
   "Appearance": {
     "type": "dword",
-    "value": 42
-  },
-  "AutoRemoveKey": {
-    "type": "byte",
     "value": 0
   },
-  "BodyBag": {
+  "AutoRemoveKey": {
     "type": "byte",
     "value": 0
   },
@@ -48,13 +44,13 @@
     "type": "byte",
     "value": 5
   },
+  "GenericType_New": {
+    "type": "dword",
+    "value": 690
+  },
   "Hardness": {
     "type": "byte",
     "value": 5
-  },
-  "HasInventory": {
-    "type": "byte",
-    "value": 0
   },
   "HP": {
     "type": "short",
@@ -72,6 +68,18 @@
     "type": "byte",
     "value": 0
   },
+  "LinkedTo": {
+    "type": "cexostring",
+    "value": ""
+  },
+  "LinkedToFlags": {
+    "type": "byte",
+    "value": 0
+  },
+  "LoadScreenID": {
+    "type": "word",
+    "value": 0
+  },
   "Lockable": {
     "type": "byte",
     "value": 1
@@ -83,7 +91,7 @@
   "LocName": {
     "type": "cexolocstring",
     "value": {
-      "0": "Wagon2"
+      "0": "Custom 1 003"
     }
   },
   "OnClick": {
@@ -100,17 +108,17 @@
   },
   "OnDeath": {
     "type": "resref",
-    "value": ""
+    "value": "x2_door_death"
   },
   "OnDisarm": {
     "type": "resref",
     "value": ""
   },
-  "OnHeartbeat": {
+  "OnFailToOpen": {
     "type": "resref",
     "value": ""
   },
-  "OnInvDisturbed": {
+  "OnHeartbeat": {
     "type": "resref",
     "value": ""
   },
@@ -138,10 +146,6 @@
     "type": "resref",
     "value": ""
   },
-  "OnUsed": {
-    "type": "resref",
-    "value": ""
-  },
   "OnUserDefined": {
     "type": "resref",
     "value": ""
@@ -152,7 +156,7 @@
   },
   "PaletteID": {
     "type": "byte",
-    "value": 155
+    "value": 0
   },
   "Plot": {
     "type": "byte",
@@ -160,23 +164,19 @@
   },
   "PortraitId": {
     "type": "word",
-    "value": 400
+    "value": 558
   },
   "Ref": {
     "type": "byte",
     "value": 0
   },
-  "Static": {
-    "type": "byte",
-    "value": 1
-  },
   "Tag": {
     "type": "cexostring",
-    "value": "Wagon2"
+    "value": "Custom1003"
   },
   "TemplateResRef": {
     "type": "resref",
-    "value": "blueprint171"
+    "value": "custom003"
   },
   "TrapDetectable": {
     "type": "byte",
@@ -199,14 +199,6 @@
     "value": 1
   },
   "TrapType": {
-    "type": "byte",
-    "value": 0
-  },
-  "Type": {
-    "type": "byte",
-    "value": 0
-  },
-  "Useable": {
     "type": "byte",
     "value": 0
   },
