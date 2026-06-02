@@ -2,7 +2,7 @@
 
 int StartingConditional()
 {
-    gsLIClearLastMessage();
+    gsLIClearLastMessage(GetPCSpeaker());
     return TRUE;
 }
 

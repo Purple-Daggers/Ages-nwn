@@ -2,10 +2,10 @@
 
 void main()
 {
-    string sMessage = gsLIGetLastMessage();
+    string sMessage = gsLIGetLastMessage(GetPCSpeaker());
     sMessage        = GetStringLeft(sMessage, 100);
 
-    gsLIClearLastMessage();
+    gsLIClearLastMessage(GetPCSpeaker());
     object oItem = GetFirstItemInInventory();
     if (GetIsObjectValid(oItem))
     {

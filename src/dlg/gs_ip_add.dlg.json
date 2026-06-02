@@ -60,7 +60,7 @@
               },
               "Index": {
                 "type": "dword",
-                "value": 15
+                "value": 20
               },
               "IsChild": {
                 "type": "byte",
@@ -79,7 +79,7 @@
               },
               "Index": {
                 "type": "dword",
-                "value": 14
+                "value": 19
               },
               "IsChild": {
                 "type": "byte",
@@ -98,7 +98,7 @@
               },
               "Index": {
                 "type": "dword",
-                "value": 13
+                "value": 18
               },
               "IsChild": {
                 "type": "byte",
@@ -117,7 +117,7 @@
               },
               "Index": {
                 "type": "dword",
-                "value": 12
+                "value": 17
               },
               "IsChild": {
                 "type": "byte",
@@ -136,7 +136,7 @@
               },
               "Index": {
                 "type": "dword",
-                "value": 11
+                "value": 16
               },
               "IsChild": {
                 "type": "byte",
@@ -155,7 +155,7 @@
               },
               "Index": {
                 "type": "dword",
-                "value": 10
+                "value": 15
               },
               "IsChild": {
                 "type": "byte",
@@ -174,7 +174,7 @@
               },
               "Index": {
                 "type": "dword",
-                "value": 9
+                "value": 14
               },
               "IsChild": {
                 "type": "byte",
@@ -193,7 +193,7 @@
               },
               "Index": {
                 "type": "dword",
-                "value": 8
+                "value": 13
               },
               "IsChild": {
                 "type": "byte",
@@ -212,7 +212,7 @@
               },
               "Index": {
                 "type": "dword",
-                "value": 7
+                "value": 12
               },
               "IsChild": {
                 "type": "byte",
@@ -231,7 +231,7 @@
               },
               "Index": {
                 "type": "dword",
-                "value": 6
+                "value": 11
               },
               "IsChild": {
                 "type": "byte",
@@ -250,7 +250,7 @@
               },
               "Index": {
                 "type": "dword",
-                "value": 5
+                "value": 10
               },
               "IsChild": {
                 "type": "byte",
@@ -269,7 +269,7 @@
               },
               "Index": {
                 "type": "dword",
-                "value": 4
+                "value": 9
               },
               "IsChild": {
                 "type": "byte",
@@ -288,7 +288,7 @@
               },
               "Index": {
                 "type": "dword",
-                "value": 2
+                "value": 6
               },
               "IsChild": {
                 "type": "byte",
@@ -397,7 +397,7 @@
               },
               "Index": {
                 "type": "dword",
-                "value": 3
+                "value": 5
               },
               "IsChild": {
                 "type": "byte",
@@ -416,15 +416,49 @@
               },
               "Index": {
                 "type": "dword",
-                "value": 0
+                "value": 4
               },
               "IsChild": {
                 "type": "byte",
-                "value": 1
-              },
-              "LinkComment": {
-                "type": "cexostring",
+                "value": 0
+              }
+            },
+            {
+              "__struct_id": 2,
+              "Active": {
+                "type": "resref",
                 "value": ""
+              },
+              "ConditionParams": {
+                "type": "list",
+                "value": []
+              },
+              "Index": {
+                "type": "dword",
+                "value": 3
+              },
+              "IsChild": {
+                "type": "byte",
+                "value": 0
+              }
+            },
+            {
+              "__struct_id": 3,
+              "Active": {
+                "type": "resref",
+                "value": ""
+              },
+              "ConditionParams": {
+                "type": "list",
+                "value": []
+              },
+              "Index": {
+                "type": "dword",
+                "value": 2
+              },
+              "IsChild": {
+                "type": "byte",
+                "value": 0
               }
             }
           ]
@@ -444,7 +478,7 @@
         "Text": {
           "type": "cexolocstring",
           "value": {
-            "0": "<StartHighlight>[Write the item's name, 100 characters max.]</Start>\n\nSpeak the name of the item and select 'Next'."
+            "0": "<StartHighlight>[Write your description text below (Maximum size is 10,000 characters):]</Start>\n<CUSTOM1001>\n\nSpeak the words to add to your message and select 'Insert spoken text'."
           }
         }
       },
@@ -489,7 +523,7 @@
               },
               "Index": {
                 "type": "dword",
-                "value": 17
+                "value": 8
               },
               "IsChild": {
                 "type": "byte",
@@ -508,7 +542,95 @@
               },
               "Index": {
                 "type": "dword",
-                "value": 16
+                "value": 7
+              },
+              "IsChild": {
+                "type": "byte",
+                "value": 0
+              }
+            }
+          ]
+        },
+        "Script": {
+          "type": "resref",
+          "value": ""
+        },
+        "Sound": {
+          "type": "resref",
+          "value": ""
+        },
+        "Speaker": {
+          "type": "cexostring",
+          "value": ""
+        },
+        "Text": {
+          "type": "cexolocstring",
+          "value": {
+            "0": "<StartHighlight>[Write the item's name, 100 characters max.]</Start>\n\nSpeak the name of the item and select 'Apply Name'."
+          }
+        }
+      },
+      {
+        "__struct_id": 3,
+        "ActionParams": {
+          "type": "list",
+          "value": []
+        },
+        "Animation": {
+          "type": "dword",
+          "value": 0
+        },
+        "AnimLoop": {
+          "type": "byte",
+          "value": 1
+        },
+        "Comment": {
+          "type": "cexostring",
+          "value": ""
+        },
+        "Delay": {
+          "type": "dword",
+          "value": 4294967295
+        },
+        "Quest": {
+          "type": "cexostring",
+          "value": ""
+        },
+        "RepliesList": {
+          "type": "list",
+          "value": [
+            {
+              "__struct_id": 0,
+              "Active": {
+                "type": "resref",
+                "value": ""
+              },
+              "ConditionParams": {
+                "type": "list",
+                "value": []
+              },
+              "Index": {
+                "type": "dword",
+                "value": 22
+              },
+              "IsChild": {
+                "type": "byte",
+                "value": 0
+              }
+            },
+            {
+              "__struct_id": 1,
+              "Active": {
+                "type": "resref",
+                "value": ""
+              },
+              "ConditionParams": {
+                "type": "list",
+                "value": []
+              },
+              "Index": {
+                "type": "dword",
+                "value": 21
               },
               "IsChild": {
                 "type": "byte",
@@ -562,7 +684,7 @@
         }
       },
       {
-        "__struct_id": 3,
+        "__struct_id": 4,
         "ActionParams": {
           "type": "list",
           "value": []
@@ -635,7 +757,7 @@
         }
       },
       {
-        "__struct_id": 4,
+        "__struct_id": 5,
         "ActionParams": {
           "type": "list",
           "value": []
@@ -675,7 +797,7 @@
               },
               "Index": {
                 "type": "dword",
-                "value": 24
+                "value": 29
               },
               "IsChild": {
                 "type": "byte",
@@ -694,7 +816,7 @@
               },
               "Index": {
                 "type": "dword",
-                "value": 23
+                "value": 28
               },
               "IsChild": {
                 "type": "byte",
@@ -713,7 +835,7 @@
               },
               "Index": {
                 "type": "dword",
-                "value": 22
+                "value": 27
               },
               "IsChild": {
                 "type": "byte",
@@ -732,7 +854,7 @@
               },
               "Index": {
                 "type": "dword",
-                "value": 21
+                "value": 26
               },
               "IsChild": {
                 "type": "byte",
@@ -751,7 +873,7 @@
               },
               "Index": {
                 "type": "dword",
-                "value": 20
+                "value": 25
               },
               "IsChild": {
                 "type": "byte",
@@ -770,7 +892,7 @@
               },
               "Index": {
                 "type": "dword",
-                "value": 19
+                "value": 24
               },
               "IsChild": {
                 "type": "byte",
@@ -789,7 +911,7 @@
               },
               "Index": {
                 "type": "dword",
-                "value": 18
+                "value": 23
               },
               "IsChild": {
                 "type": "byte",
@@ -808,7 +930,7 @@
               },
               "Index": {
                 "type": "dword",
-                "value": 40
+                "value": 45
               },
               "IsChild": {
                 "type": "byte",
@@ -866,7 +988,7 @@
         }
       },
       {
-        "__struct_id": 5,
+        "__struct_id": 6,
         "ActionParams": {
           "type": "list",
           "value": []
@@ -906,7 +1028,7 @@
               },
               "Index": {
                 "type": "dword",
-                "value": 31
+                "value": 36
               },
               "IsChild": {
                 "type": "byte",
@@ -925,7 +1047,7 @@
               },
               "Index": {
                 "type": "dword",
-                "value": 30
+                "value": 35
               },
               "IsChild": {
                 "type": "byte",
@@ -944,7 +1066,7 @@
               },
               "Index": {
                 "type": "dword",
-                "value": 29
+                "value": 34
               },
               "IsChild": {
                 "type": "byte",
@@ -963,7 +1085,7 @@
               },
               "Index": {
                 "type": "dword",
-                "value": 28
+                "value": 33
               },
               "IsChild": {
                 "type": "byte",
@@ -982,7 +1104,7 @@
               },
               "Index": {
                 "type": "dword",
-                "value": 27
+                "value": 32
               },
               "IsChild": {
                 "type": "byte",
@@ -1001,7 +1123,7 @@
               },
               "Index": {
                 "type": "dword",
-                "value": 26
+                "value": 31
               },
               "IsChild": {
                 "type": "byte",
@@ -1020,7 +1142,7 @@
               },
               "Index": {
                 "type": "dword",
-                "value": 25
+                "value": 30
               },
               "IsChild": {
                 "type": "byte",
@@ -1039,7 +1161,7 @@
               },
               "Index": {
                 "type": "dword",
-                "value": 40
+                "value": 45
               },
               "IsChild": {
                 "type": "byte",
@@ -1097,7 +1219,7 @@
         }
       },
       {
-        "__struct_id": 6,
+        "__struct_id": 7,
         "ActionParams": {
           "type": "list",
           "value": []
@@ -1137,7 +1259,7 @@
               },
               "Index": {
                 "type": "dword",
-                "value": 39
+                "value": 44
               },
               "IsChild": {
                 "type": "byte",
@@ -1156,7 +1278,7 @@
               },
               "Index": {
                 "type": "dword",
-                "value": 38
+                "value": 43
               },
               "IsChild": {
                 "type": "byte",
@@ -1175,7 +1297,7 @@
               },
               "Index": {
                 "type": "dword",
-                "value": 37
+                "value": 42
               },
               "IsChild": {
                 "type": "byte",
@@ -1194,7 +1316,7 @@
               },
               "Index": {
                 "type": "dword",
-                "value": 36
+                "value": 41
               },
               "IsChild": {
                 "type": "byte",
@@ -1213,7 +1335,7 @@
               },
               "Index": {
                 "type": "dword",
-                "value": 35
+                "value": 40
               },
               "IsChild": {
                 "type": "byte",
@@ -1232,7 +1354,7 @@
               },
               "Index": {
                 "type": "dword",
-                "value": 34
+                "value": 39
               },
               "IsChild": {
                 "type": "byte",
@@ -1251,7 +1373,7 @@
               },
               "Index": {
                 "type": "dword",
-                "value": 33
+                "value": 38
               },
               "IsChild": {
                 "type": "byte",
@@ -1270,7 +1392,7 @@
               },
               "Index": {
                 "type": "dword",
-                "value": 32
+                "value": 37
               },
               "IsChild": {
                 "type": "byte",
@@ -1323,7 +1445,7 @@
         }
       },
       {
-        "__struct_id": 7,
+        "__struct_id": 8,
         "ActionParams": {
           "type": "list",
           "value": []
@@ -1363,7 +1485,7 @@
               },
               "Index": {
                 "type": "dword",
-                "value": 47
+                "value": 52
               },
               "IsChild": {
                 "type": "byte",
@@ -1382,7 +1504,7 @@
               },
               "Index": {
                 "type": "dword",
-                "value": 46
+                "value": 51
               },
               "IsChild": {
                 "type": "byte",
@@ -1401,7 +1523,7 @@
               },
               "Index": {
                 "type": "dword",
-                "value": 45
+                "value": 50
               },
               "IsChild": {
                 "type": "byte",
@@ -1420,7 +1542,7 @@
               },
               "Index": {
                 "type": "dword",
-                "value": 44
+                "value": 49
               },
               "IsChild": {
                 "type": "byte",
@@ -1439,7 +1561,7 @@
               },
               "Index": {
                 "type": "dword",
-                "value": 43
+                "value": 48
               },
               "IsChild": {
                 "type": "byte",
@@ -1458,7 +1580,7 @@
               },
               "Index": {
                 "type": "dword",
-                "value": 42
+                "value": 47
               },
               "IsChild": {
                 "type": "byte",
@@ -1477,7 +1599,7 @@
               },
               "Index": {
                 "type": "dword",
-                "value": 41
+                "value": 46
               },
               "IsChild": {
                 "type": "byte",
@@ -1496,7 +1618,7 @@
               },
               "Index": {
                 "type": "dword",
-                "value": 40
+                "value": 45
               },
               "IsChild": {
                 "type": "byte",
@@ -1550,237 +1672,6 @@
         }
       },
       {
-        "__struct_id": 8,
-        "ActionParams": {
-          "type": "list",
-          "value": []
-        },
-        "Animation": {
-          "type": "dword",
-          "value": 0
-        },
-        "AnimLoop": {
-          "type": "byte",
-          "value": 1
-        },
-        "Comment": {
-          "type": "cexostring",
-          "value": ""
-        },
-        "Delay": {
-          "type": "dword",
-          "value": 4294967295
-        },
-        "Quest": {
-          "type": "cexostring",
-          "value": ""
-        },
-        "RepliesList": {
-          "type": "list",
-          "value": [
-            {
-              "__struct_id": 0,
-              "Active": {
-                "type": "resref",
-                "value": "gs_cip_add018"
-              },
-              "ConditionParams": {
-                "type": "list",
-                "value": []
-              },
-              "Index": {
-                "type": "dword",
-                "value": 54
-              },
-              "IsChild": {
-                "type": "byte",
-                "value": 0
-              }
-            },
-            {
-              "__struct_id": 1,
-              "Active": {
-                "type": "resref",
-                "value": "gs_cip_add019"
-              },
-              "ConditionParams": {
-                "type": "list",
-                "value": []
-              },
-              "Index": {
-                "type": "dword",
-                "value": 53
-              },
-              "IsChild": {
-                "type": "byte",
-                "value": 0
-              }
-            },
-            {
-              "__struct_id": 2,
-              "Active": {
-                "type": "resref",
-                "value": "gs_cip_add020"
-              },
-              "ConditionParams": {
-                "type": "list",
-                "value": []
-              },
-              "Index": {
-                "type": "dword",
-                "value": 52
-              },
-              "IsChild": {
-                "type": "byte",
-                "value": 0
-              }
-            },
-            {
-              "__struct_id": 3,
-              "Active": {
-                "type": "resref",
-                "value": "gs_cip_add021"
-              },
-              "ConditionParams": {
-                "type": "list",
-                "value": []
-              },
-              "Index": {
-                "type": "dword",
-                "value": 51
-              },
-              "IsChild": {
-                "type": "byte",
-                "value": 0
-              }
-            },
-            {
-              "__struct_id": 4,
-              "Active": {
-                "type": "resref",
-                "value": "gs_cip_add022"
-              },
-              "ConditionParams": {
-                "type": "list",
-                "value": []
-              },
-              "Index": {
-                "type": "dword",
-                "value": 50
-              },
-              "IsChild": {
-                "type": "byte",
-                "value": 0
-              }
-            },
-            {
-              "__struct_id": 5,
-              "Active": {
-                "type": "resref",
-                "value": "gs_cip_add053"
-              },
-              "ConditionParams": {
-                "type": "list",
-                "value": []
-              },
-              "Index": {
-                "type": "dword",
-                "value": 49
-              },
-              "IsChild": {
-                "type": "byte",
-                "value": 0
-              }
-            },
-            {
-              "__struct_id": 6,
-              "Active": {
-                "type": "resref",
-                "value": "gs_cip_add043"
-              },
-              "ConditionParams": {
-                "type": "list",
-                "value": []
-              },
-              "Index": {
-                "type": "dword",
-                "value": 48
-              },
-              "IsChild": {
-                "type": "byte",
-                "value": 0
-              }
-            },
-            {
-              "__struct_id": 7,
-              "Active": {
-                "type": "resref",
-                "value": ""
-              },
-              "ConditionParams": {
-                "type": "list",
-                "value": []
-              },
-              "Index": {
-                "type": "dword",
-                "value": 62
-              },
-              "IsChild": {
-                "type": "byte",
-                "value": 1
-              },
-              "LinkComment": {
-                "type": "cexostring",
-                "value": ""
-              }
-            },
-            {
-              "__struct_id": 8,
-              "Active": {
-                "type": "resref",
-                "value": ""
-              },
-              "ConditionParams": {
-                "type": "list",
-                "value": []
-              },
-              "Index": {
-                "type": "dword",
-                "value": 0
-              },
-              "IsChild": {
-                "type": "byte",
-                "value": 1
-              },
-              "LinkComment": {
-                "type": "cexostring",
-                "value": ""
-              }
-            }
-          ]
-        },
-        "Script": {
-          "type": "resref",
-          "value": ""
-        },
-        "Sound": {
-          "type": "resref",
-          "value": ""
-        },
-        "Speaker": {
-          "type": "cexostring",
-          "value": ""
-        },
-        "Text": {
-          "type": "cexolocstring",
-          "value": {
-            "0": "<CUSTOM105><CUSTOM106><StartHighlight>[Select parameter]</Start>",
-            "4": "<CUSTOM105><CUSTOM106><StartHighlight>[Parameter wählen]</Start>",
-            "5": "<CUSTOM105><CUSTOM106><StartHighlight>[Parameter wählen]</Start>"
-          }
-        }
-      },
-      {
         "__struct_id": 9,
         "ActionParams": {
           "type": "list",
@@ -1821,7 +1712,7 @@
               },
               "Index": {
                 "type": "dword",
-                "value": 61
+                "value": 59
               },
               "IsChild": {
                 "type": "byte",
@@ -1840,7 +1731,7 @@
               },
               "Index": {
                 "type": "dword",
-                "value": 60
+                "value": 58
               },
               "IsChild": {
                 "type": "byte",
@@ -1859,7 +1750,7 @@
               },
               "Index": {
                 "type": "dword",
-                "value": 59
+                "value": 57
               },
               "IsChild": {
                 "type": "byte",
@@ -1878,7 +1769,7 @@
               },
               "Index": {
                 "type": "dword",
-                "value": 58
+                "value": 56
               },
               "IsChild": {
                 "type": "byte",
@@ -1897,7 +1788,7 @@
               },
               "Index": {
                 "type": "dword",
-                "value": 57
+                "value": 55
               },
               "IsChild": {
                 "type": "byte",
@@ -1908,7 +1799,7 @@
               "__struct_id": 5,
               "Active": {
                 "type": "resref",
-                "value": "gs_cip_add046"
+                "value": "gs_cip_add053"
               },
               "ConditionParams": {
                 "type": "list",
@@ -1916,7 +1807,7 @@
               },
               "Index": {
                 "type": "dword",
-                "value": 56
+                "value": 54
               },
               "IsChild": {
                 "type": "byte",
@@ -1935,7 +1826,7 @@
               },
               "Index": {
                 "type": "dword",
-                "value": 55
+                "value": 53
               },
               "IsChild": {
                 "type": "byte",
@@ -1954,7 +1845,7 @@
               },
               "Index": {
                 "type": "dword",
-                "value": 62
+                "value": 67
               },
               "IsChild": {
                 "type": "byte",
@@ -2052,7 +1943,7 @@
               },
               "Index": {
                 "type": "dword",
-                "value": 69
+                "value": 66
               },
               "IsChild": {
                 "type": "byte",
@@ -2071,7 +1962,7 @@
               },
               "Index": {
                 "type": "dword",
-                "value": 68
+                "value": 65
               },
               "IsChild": {
                 "type": "byte",
@@ -2090,7 +1981,7 @@
               },
               "Index": {
                 "type": "dword",
-                "value": 67
+                "value": 64
               },
               "IsChild": {
                 "type": "byte",
@@ -2109,7 +2000,7 @@
               },
               "Index": {
                 "type": "dword",
-                "value": 66
+                "value": 63
               },
               "IsChild": {
                 "type": "byte",
@@ -2128,7 +2019,7 @@
               },
               "Index": {
                 "type": "dword",
-                "value": 65
+                "value": 62
               },
               "IsChild": {
                 "type": "byte",
@@ -2139,7 +2030,7 @@
               "__struct_id": 5,
               "Active": {
                 "type": "resref",
-                "value": "gs_cip_add029"
+                "value": "gs_cip_add046"
               },
               "ConditionParams": {
                 "type": "list",
@@ -2147,7 +2038,7 @@
               },
               "Index": {
                 "type": "dword",
-                "value": 64
+                "value": 61
               },
               "IsChild": {
                 "type": "byte",
@@ -2158,7 +2049,7 @@
               "__struct_id": 6,
               "Active": {
                 "type": "resref",
-                "value": "gs_cip_add040"
+                "value": "gs_cip_add043"
               },
               "ConditionParams": {
                 "type": "list",
@@ -2166,7 +2057,7 @@
               },
               "Index": {
                 "type": "dword",
-                "value": 63
+                "value": 60
               },
               "IsChild": {
                 "type": "byte",
@@ -2185,7 +2076,238 @@
               },
               "Index": {
                 "type": "dword",
-                "value": 62
+                "value": 67
+              },
+              "IsChild": {
+                "type": "byte",
+                "value": 1
+              },
+              "LinkComment": {
+                "type": "cexostring",
+                "value": ""
+              }
+            },
+            {
+              "__struct_id": 8,
+              "Active": {
+                "type": "resref",
+                "value": ""
+              },
+              "ConditionParams": {
+                "type": "list",
+                "value": []
+              },
+              "Index": {
+                "type": "dword",
+                "value": 0
+              },
+              "IsChild": {
+                "type": "byte",
+                "value": 1
+              },
+              "LinkComment": {
+                "type": "cexostring",
+                "value": ""
+              }
+            }
+          ]
+        },
+        "Script": {
+          "type": "resref",
+          "value": ""
+        },
+        "Sound": {
+          "type": "resref",
+          "value": ""
+        },
+        "Speaker": {
+          "type": "cexostring",
+          "value": ""
+        },
+        "Text": {
+          "type": "cexolocstring",
+          "value": {
+            "0": "<CUSTOM105><CUSTOM106><StartHighlight>[Select parameter]</Start>",
+            "4": "<CUSTOM105><CUSTOM106><StartHighlight>[Parameter wählen]</Start>",
+            "5": "<CUSTOM105><CUSTOM106><StartHighlight>[Parameter wählen]</Start>"
+          }
+        }
+      },
+      {
+        "__struct_id": 11,
+        "ActionParams": {
+          "type": "list",
+          "value": []
+        },
+        "Animation": {
+          "type": "dword",
+          "value": 0
+        },
+        "AnimLoop": {
+          "type": "byte",
+          "value": 1
+        },
+        "Comment": {
+          "type": "cexostring",
+          "value": ""
+        },
+        "Delay": {
+          "type": "dword",
+          "value": 4294967295
+        },
+        "Quest": {
+          "type": "cexostring",
+          "value": ""
+        },
+        "RepliesList": {
+          "type": "list",
+          "value": [
+            {
+              "__struct_id": 0,
+              "Active": {
+                "type": "resref",
+                "value": "gs_cip_add018"
+              },
+              "ConditionParams": {
+                "type": "list",
+                "value": []
+              },
+              "Index": {
+                "type": "dword",
+                "value": 74
+              },
+              "IsChild": {
+                "type": "byte",
+                "value": 0
+              }
+            },
+            {
+              "__struct_id": 1,
+              "Active": {
+                "type": "resref",
+                "value": "gs_cip_add019"
+              },
+              "ConditionParams": {
+                "type": "list",
+                "value": []
+              },
+              "Index": {
+                "type": "dword",
+                "value": 73
+              },
+              "IsChild": {
+                "type": "byte",
+                "value": 0
+              }
+            },
+            {
+              "__struct_id": 2,
+              "Active": {
+                "type": "resref",
+                "value": "gs_cip_add020"
+              },
+              "ConditionParams": {
+                "type": "list",
+                "value": []
+              },
+              "Index": {
+                "type": "dword",
+                "value": 72
+              },
+              "IsChild": {
+                "type": "byte",
+                "value": 0
+              }
+            },
+            {
+              "__struct_id": 3,
+              "Active": {
+                "type": "resref",
+                "value": "gs_cip_add021"
+              },
+              "ConditionParams": {
+                "type": "list",
+                "value": []
+              },
+              "Index": {
+                "type": "dword",
+                "value": 71
+              },
+              "IsChild": {
+                "type": "byte",
+                "value": 0
+              }
+            },
+            {
+              "__struct_id": 4,
+              "Active": {
+                "type": "resref",
+                "value": "gs_cip_add022"
+              },
+              "ConditionParams": {
+                "type": "list",
+                "value": []
+              },
+              "Index": {
+                "type": "dword",
+                "value": 70
+              },
+              "IsChild": {
+                "type": "byte",
+                "value": 0
+              }
+            },
+            {
+              "__struct_id": 5,
+              "Active": {
+                "type": "resref",
+                "value": "gs_cip_add029"
+              },
+              "ConditionParams": {
+                "type": "list",
+                "value": []
+              },
+              "Index": {
+                "type": "dword",
+                "value": 69
+              },
+              "IsChild": {
+                "type": "byte",
+                "value": 0
+              }
+            },
+            {
+              "__struct_id": 6,
+              "Active": {
+                "type": "resref",
+                "value": "gs_cip_add040"
+              },
+              "ConditionParams": {
+                "type": "list",
+                "value": []
+              },
+              "Index": {
+                "type": "dword",
+                "value": 68
+              },
+              "IsChild": {
+                "type": "byte",
+                "value": 0
+              }
+            },
+            {
+              "__struct_id": 7,
+              "Active": {
+                "type": "resref",
+                "value": ""
+              },
+              "ConditionParams": {
+                "type": "list",
+                "value": []
+              },
+              "Index": {
+                "type": "dword",
+                "value": 67
               },
               "IsChild": {
                 "type": "byte",
@@ -2239,7 +2361,7 @@
         }
       },
       {
-        "__struct_id": 11,
+        "__struct_id": 12,
         "ActionParams": {
           "type": "list",
           "value": []
@@ -2279,7 +2401,7 @@
               },
               "Index": {
                 "type": "dword",
-                "value": 76
+                "value": 81
               },
               "IsChild": {
                 "type": "byte",
@@ -2298,7 +2420,7 @@
               },
               "Index": {
                 "type": "dword",
-                "value": 75
+                "value": 80
               },
               "IsChild": {
                 "type": "byte",
@@ -2317,7 +2439,7 @@
               },
               "Index": {
                 "type": "dword",
-                "value": 74
+                "value": 79
               },
               "IsChild": {
                 "type": "byte",
@@ -2336,7 +2458,7 @@
               },
               "Index": {
                 "type": "dword",
-                "value": 73
+                "value": 78
               },
               "IsChild": {
                 "type": "byte",
@@ -2355,7 +2477,7 @@
               },
               "Index": {
                 "type": "dword",
-                "value": 72
+                "value": 77
               },
               "IsChild": {
                 "type": "byte",
@@ -2374,7 +2496,7 @@
               },
               "Index": {
                 "type": "dword",
-                "value": 71
+                "value": 76
               },
               "IsChild": {
                 "type": "byte",
@@ -2393,7 +2515,7 @@
               },
               "Index": {
                 "type": "dword",
-                "value": 70
+                "value": 75
               },
               "IsChild": {
                 "type": "byte",
@@ -2412,7 +2534,7 @@
               },
               "Index": {
                 "type": "dword",
-                "value": 77
+                "value": 82
               },
               "IsChild": {
                 "type": "byte",
@@ -2470,7 +2592,7 @@
         }
       },
       {
-        "__struct_id": 12,
+        "__struct_id": 13,
         "ActionParams": {
           "type": "list",
           "value": []
@@ -2510,7 +2632,7 @@
               },
               "Index": {
                 "type": "dword",
-                "value": 84
+                "value": 89
               },
               "IsChild": {
                 "type": "byte",
@@ -2529,7 +2651,7 @@
               },
               "Index": {
                 "type": "dword",
-                "value": 83
+                "value": 88
               },
               "IsChild": {
                 "type": "byte",
@@ -2548,7 +2670,7 @@
               },
               "Index": {
                 "type": "dword",
-                "value": 82
+                "value": 87
               },
               "IsChild": {
                 "type": "byte",
@@ -2567,7 +2689,7 @@
               },
               "Index": {
                 "type": "dword",
-                "value": 81
+                "value": 86
               },
               "IsChild": {
                 "type": "byte",
@@ -2586,7 +2708,7 @@
               },
               "Index": {
                 "type": "dword",
-                "value": 80
+                "value": 85
               },
               "IsChild": {
                 "type": "byte",
@@ -2605,7 +2727,7 @@
               },
               "Index": {
                 "type": "dword",
-                "value": 79
+                "value": 84
               },
               "IsChild": {
                 "type": "byte",
@@ -2624,7 +2746,7 @@
               },
               "Index": {
                 "type": "dword",
-                "value": 78
+                "value": 83
               },
               "IsChild": {
                 "type": "byte",
@@ -2643,7 +2765,7 @@
               },
               "Index": {
                 "type": "dword",
-                "value": 77
+                "value": 82
               },
               "IsChild": {
                 "type": "byte",
@@ -2700,7 +2822,7 @@
   },
   "NumWords": {
     "type": "dword",
-    "value": 178
+    "value": 215
   },
   "PreventZoomIn": {
     "type": "byte",
@@ -2780,7 +2902,27 @@
         },
         "EntriesList": {
           "type": "list",
-          "value": []
+          "value": [
+            {
+              "__struct_id": 0,
+              "Active": {
+                "type": "resref",
+                "value": "gs_cip_desc001"
+              },
+              "ConditionParams": {
+                "type": "list",
+                "value": []
+              },
+              "Index": {
+                "type": "dword",
+                "value": 1
+              },
+              "IsChild": {
+                "type": "byte",
+                "value": 0
+              }
+            }
+          ]
         },
         "Quest": {
           "type": "cexostring",
@@ -2830,6 +2972,210 @@
               "__struct_id": 0,
               "Active": {
                 "type": "resref",
+                "value": "gs_cip_add010"
+              },
+              "ConditionParams": {
+                "type": "list",
+                "value": []
+              },
+              "Index": {
+                "type": "dword",
+                "value": 0
+              },
+              "IsChild": {
+                "type": "byte",
+                "value": 1
+              },
+              "LinkComment": {
+                "type": "cexostring",
+                "value": ""
+              }
+            }
+          ]
+        },
+        "Quest": {
+          "type": "cexostring",
+          "value": ""
+        },
+        "Script": {
+          "type": "resref",
+          "value": "gs_cip_add048"
+        },
+        "Sound": {
+          "type": "resref",
+          "value": ""
+        },
+        "Text": {
+          "type": "cexolocstring",
+          "value": {
+            "0": "<StartAction>[Cancel]</Start>"
+          }
+        }
+      },
+      {
+        "__struct_id": 3,
+        "ActionParams": {
+          "type": "list",
+          "value": []
+        },
+        "Animation": {
+          "type": "dword",
+          "value": 0
+        },
+        "AnimLoop": {
+          "type": "byte",
+          "value": 1
+        },
+        "Comment": {
+          "type": "cexostring",
+          "value": ""
+        },
+        "Delay": {
+          "type": "dword",
+          "value": 4294967295
+        },
+        "EntriesList": {
+          "type": "list",
+          "value": []
+        },
+        "Quest": {
+          "type": "cexostring",
+          "value": ""
+        },
+        "Script": {
+          "type": "resref",
+          "value": "gs_cip_desc004"
+        },
+        "Sound": {
+          "type": "resref",
+          "value": ""
+        },
+        "Text": {
+          "type": "cexolocstring",
+          "value": {
+            "0": "<StartAction>[Finish writing description]</Start>"
+          }
+        }
+      },
+      {
+        "__struct_id": 4,
+        "ActionParams": {
+          "type": "list",
+          "value": []
+        },
+        "Animation": {
+          "type": "dword",
+          "value": 0
+        },
+        "AnimLoop": {
+          "type": "byte",
+          "value": 1
+        },
+        "Comment": {
+          "type": "cexostring",
+          "value": ""
+        },
+        "Delay": {
+          "type": "dword",
+          "value": 4294967295
+        },
+        "EntriesList": {
+          "type": "list",
+          "value": []
+        },
+        "Quest": {
+          "type": "cexostring",
+          "value": ""
+        },
+        "Script": {
+          "type": "resref",
+          "value": "gs_cip_desc003"
+        },
+        "Sound": {
+          "type": "resref",
+          "value": ""
+        },
+        "Text": {
+          "type": "cexolocstring",
+          "value": {
+            "0": "<StartAction>[Add new line]</Start>"
+          }
+        }
+      },
+      {
+        "__struct_id": 5,
+        "ActionParams": {
+          "type": "list",
+          "value": []
+        },
+        "Animation": {
+          "type": "dword",
+          "value": 0
+        },
+        "AnimLoop": {
+          "type": "byte",
+          "value": 1
+        },
+        "Comment": {
+          "type": "cexostring",
+          "value": ""
+        },
+        "Delay": {
+          "type": "dword",
+          "value": 4294967295
+        },
+        "EntriesList": {
+          "type": "list",
+          "value": []
+        },
+        "Quest": {
+          "type": "cexostring",
+          "value": ""
+        },
+        "Script": {
+          "type": "resref",
+          "value": "gs_cip_desc002"
+        },
+        "Sound": {
+          "type": "resref",
+          "value": ""
+        },
+        "Text": {
+          "type": "cexolocstring",
+          "value": {
+            "0": "<StartAction>[Insert spoken text]</Start>"
+          }
+        }
+      },
+      {
+        "__struct_id": 6,
+        "ActionParams": {
+          "type": "list",
+          "value": []
+        },
+        "Animation": {
+          "type": "dword",
+          "value": 0
+        },
+        "AnimLoop": {
+          "type": "byte",
+          "value": 1
+        },
+        "Comment": {
+          "type": "cexostring",
+          "value": ""
+        },
+        "Delay": {
+          "type": "dword",
+          "value": 4294967295
+        },
+        "EntriesList": {
+          "type": "list",
+          "value": [
+            {
+              "__struct_id": 0,
+              "Active": {
+                "type": "resref",
                 "value": "gs_cip_name001"
               },
               "ConditionParams": {
@@ -2838,7 +3184,7 @@
               },
               "Index": {
                 "type": "dword",
-                "value": 1
+                "value": 2
               },
               "IsChild": {
                 "type": "byte",
@@ -2867,7 +3213,76 @@
         }
       },
       {
-        "__struct_id": 3,
+        "__struct_id": 7,
+        "ActionParams": {
+          "type": "list",
+          "value": []
+        },
+        "Animation": {
+          "type": "dword",
+          "value": 0
+        },
+        "AnimLoop": {
+          "type": "byte",
+          "value": 1
+        },
+        "Comment": {
+          "type": "cexostring",
+          "value": ""
+        },
+        "Delay": {
+          "type": "dword",
+          "value": 4294967295
+        },
+        "EntriesList": {
+          "type": "list",
+          "value": [
+            {
+              "__struct_id": 0,
+              "Active": {
+                "type": "resref",
+                "value": "gs_cip_add010"
+              },
+              "ConditionParams": {
+                "type": "list",
+                "value": []
+              },
+              "Index": {
+                "type": "dword",
+                "value": 0
+              },
+              "IsChild": {
+                "type": "byte",
+                "value": 1
+              },
+              "LinkComment": {
+                "type": "cexostring",
+                "value": ""
+              }
+            }
+          ]
+        },
+        "Quest": {
+          "type": "cexostring",
+          "value": ""
+        },
+        "Script": {
+          "type": "resref",
+          "value": "gs_cip_add048"
+        },
+        "Sound": {
+          "type": "resref",
+          "value": ""
+        },
+        "Text": {
+          "type": "cexolocstring",
+          "value": {
+            "0": "<StartAction>[Cancel]</Start>"
+          }
+        }
+      },
+      {
+        "__struct_id": 8,
         "ActionParams": {
           "type": "list",
           "value": []
@@ -2907,12 +3322,12 @@
         "Text": {
           "type": "cexolocstring",
           "value": {
-            "0": "<StartAction>[Next]</Start>"
+            "0": "<StartAction>[Apply Name]</Start>"
           }
         }
       },
       {
-        "__struct_id": 4,
+        "__struct_id": 9,
         "ActionParams": {
           "type": "list",
           "value": []
@@ -2983,7 +3398,7 @@
         }
       },
       {
-        "__struct_id": 5,
+        "__struct_id": 10,
         "ActionParams": {
           "type": "list",
           "value": []
@@ -3054,7 +3469,7 @@
         }
       },
       {
-        "__struct_id": 6,
+        "__struct_id": 11,
         "ActionParams": {
           "type": "list",
           "value": []
@@ -3123,7 +3538,7 @@
         }
       },
       {
-        "__struct_id": 7,
+        "__struct_id": 12,
         "ActionParams": {
           "type": "list",
           "value": []
@@ -3159,7 +3574,7 @@
               },
               "Index": {
                 "type": "dword",
-                "value": 7
+                "value": 8
               },
               "IsChild": {
                 "type": "byte",
@@ -3182,7 +3597,7 @@
               },
               "Index": {
                 "type": "dword",
-                "value": 5
+                "value": 6
               },
               "IsChild": {
                 "type": "byte",
@@ -3205,7 +3620,7 @@
               },
               "Index": {
                 "type": "dword",
-                "value": 4
+                "value": 5
               },
               "IsChild": {
                 "type": "byte",
@@ -3228,7 +3643,7 @@
               },
               "Index": {
                 "type": "dword",
-                "value": 2
+                "value": 3
               },
               "IsChild": {
                 "type": "byte",
@@ -3261,7 +3676,7 @@
         }
       },
       {
-        "__struct_id": 8,
+        "__struct_id": 13,
         "ActionParams": {
           "type": "list",
           "value": []
@@ -3330,7 +3745,7 @@
         }
       },
       {
-        "__struct_id": 9,
+        "__struct_id": 14,
         "ActionParams": {
           "type": "list",
           "value": []
@@ -3366,7 +3781,7 @@
               },
               "Index": {
                 "type": "dword",
-                "value": 7
+                "value": 8
               },
               "IsChild": {
                 "type": "byte",
@@ -3389,7 +3804,7 @@
               },
               "Index": {
                 "type": "dword",
-                "value": 5
+                "value": 6
               },
               "IsChild": {
                 "type": "byte",
@@ -3412,7 +3827,7 @@
               },
               "Index": {
                 "type": "dword",
-                "value": 4
+                "value": 5
               },
               "IsChild": {
                 "type": "byte",
@@ -3435,7 +3850,7 @@
               },
               "Index": {
                 "type": "dword",
-                "value": 2
+                "value": 3
               },
               "IsChild": {
                 "type": "byte",
@@ -3468,7 +3883,7 @@
         }
       },
       {
-        "__struct_id": 10,
+        "__struct_id": 15,
         "ActionParams": {
           "type": "list",
           "value": []
@@ -3537,7 +3952,7 @@
         }
       },
       {
-        "__struct_id": 11,
+        "__struct_id": 16,
         "ActionParams": {
           "type": "list",
           "value": []
@@ -3573,7 +3988,7 @@
               },
               "Index": {
                 "type": "dword",
-                "value": 7
+                "value": 8
               },
               "IsChild": {
                 "type": "byte",
@@ -3596,7 +4011,7 @@
               },
               "Index": {
                 "type": "dword",
-                "value": 5
+                "value": 6
               },
               "IsChild": {
                 "type": "byte",
@@ -3619,7 +4034,7 @@
               },
               "Index": {
                 "type": "dword",
-                "value": 4
+                "value": 5
               },
               "IsChild": {
                 "type": "byte",
@@ -3642,7 +4057,7 @@
               },
               "Index": {
                 "type": "dword",
-                "value": 2
+                "value": 3
               },
               "IsChild": {
                 "type": "byte",
@@ -3675,7 +4090,7 @@
         }
       },
       {
-        "__struct_id": 12,
+        "__struct_id": 17,
         "ActionParams": {
           "type": "list",
           "value": []
@@ -3744,7 +4159,7 @@
         }
       },
       {
-        "__struct_id": 13,
+        "__struct_id": 18,
         "ActionParams": {
           "type": "list",
           "value": []
@@ -3780,7 +4195,7 @@
               },
               "Index": {
                 "type": "dword",
-                "value": 7
+                "value": 8
               },
               "IsChild": {
                 "type": "byte",
@@ -3803,7 +4218,7 @@
               },
               "Index": {
                 "type": "dword",
-                "value": 5
+                "value": 6
               },
               "IsChild": {
                 "type": "byte",
@@ -3826,7 +4241,7 @@
               },
               "Index": {
                 "type": "dword",
-                "value": 4
+                "value": 5
               },
               "IsChild": {
                 "type": "byte",
@@ -3849,7 +4264,7 @@
               },
               "Index": {
                 "type": "dword",
-                "value": 2
+                "value": 3
               },
               "IsChild": {
                 "type": "byte",
@@ -3882,7 +4297,7 @@
         }
       },
       {
-        "__struct_id": 14,
+        "__struct_id": 19,
         "ActionParams": {
           "type": "list",
           "value": []
@@ -3951,7 +4366,7 @@
         }
       },
       {
-        "__struct_id": 15,
+        "__struct_id": 20,
         "ActionParams": {
           "type": "list",
           "value": []
@@ -3987,7 +4402,7 @@
               },
               "Index": {
                 "type": "dword",
-                "value": 7
+                "value": 8
               },
               "IsChild": {
                 "type": "byte",
@@ -4006,7 +4421,7 @@
               },
               "Index": {
                 "type": "dword",
-                "value": 5
+                "value": 6
               },
               "IsChild": {
                 "type": "byte",
@@ -4025,7 +4440,7 @@
               },
               "Index": {
                 "type": "dword",
-                "value": 4
+                "value": 5
               },
               "IsChild": {
                 "type": "byte",
@@ -4044,7 +4459,7 @@
               },
               "Index": {
                 "type": "dword",
-                "value": 2
+                "value": 3
               },
               "IsChild": {
                 "type": "byte",
@@ -4073,7 +4488,7 @@
         }
       },
       {
-        "__struct_id": 16,
+        "__struct_id": 21,
         "ActionParams": {
           "type": "list",
           "value": []
@@ -4144,7 +4559,7 @@
         }
       },
       {
-        "__struct_id": 17,
+        "__struct_id": 22,
         "ActionParams": {
           "type": "list",
           "value": []
@@ -4180,7 +4595,7 @@
               },
               "Index": {
                 "type": "dword",
-                "value": 3
+                "value": 4
               },
               "IsChild": {
                 "type": "byte",
@@ -4211,7 +4626,7 @@
         }
       },
       {
-        "__struct_id": 18,
+        "__struct_id": 23,
         "ActionParams": {
           "type": "list",
           "value": []
@@ -4247,7 +4662,7 @@
               },
               "Index": {
                 "type": "dword",
-                "value": 4
+                "value": 5
               },
               "IsChild": {
                 "type": "byte",
@@ -4282,7 +4697,7 @@
         }
       },
       {
-        "__struct_id": 19,
+        "__struct_id": 24,
         "ActionParams": {
           "type": "list",
           "value": []
@@ -4318,7 +4733,7 @@
               },
               "Index": {
                 "type": "dword",
-                "value": 4
+                "value": 5
               },
               "IsChild": {
                 "type": "byte",
@@ -4353,7 +4768,7 @@
         }
       },
       {
-        "__struct_id": 20,
+        "__struct_id": 25,
         "ActionParams": {
           "type": "list",
           "value": []
@@ -4389,7 +4804,7 @@
               },
               "Index": {
                 "type": "dword",
-                "value": 2
+                "value": 3
               },
               "IsChild": {
                 "type": "byte",
@@ -4422,7 +4837,7 @@
         }
       },
       {
-        "__struct_id": 21,
+        "__struct_id": 26,
         "ActionParams": {
           "type": "list",
           "value": []
@@ -4458,7 +4873,7 @@
               },
               "Index": {
                 "type": "dword",
-                "value": 2
+                "value": 3
               },
               "IsChild": {
                 "type": "byte",
@@ -4491,7 +4906,7 @@
         }
       },
       {
-        "__struct_id": 22,
+        "__struct_id": 27,
         "ActionParams": {
           "type": "list",
           "value": []
@@ -4527,7 +4942,7 @@
               },
               "Index": {
                 "type": "dword",
-                "value": 2
+                "value": 3
               },
               "IsChild": {
                 "type": "byte",
@@ -4560,7 +4975,7 @@
         }
       },
       {
-        "__struct_id": 23,
+        "__struct_id": 28,
         "ActionParams": {
           "type": "list",
           "value": []
@@ -4596,7 +5011,7 @@
               },
               "Index": {
                 "type": "dword",
-                "value": 2
+                "value": 3
               },
               "IsChild": {
                 "type": "byte",
@@ -4629,7 +5044,7 @@
         }
       },
       {
-        "__struct_id": 24,
+        "__struct_id": 29,
         "ActionParams": {
           "type": "list",
           "value": []
@@ -4665,7 +5080,7 @@
               },
               "Index": {
                 "type": "dword",
-                "value": 2
+                "value": 3
               },
               "IsChild": {
                 "type": "byte",
@@ -4698,7 +5113,7 @@
         }
       },
       {
-        "__struct_id": 25,
+        "__struct_id": 30,
         "ActionParams": {
           "type": "list",
           "value": []
@@ -4734,7 +5149,7 @@
               },
               "Index": {
                 "type": "dword",
-                "value": 5
+                "value": 6
               },
               "IsChild": {
                 "type": "byte",
@@ -4769,7 +5184,7 @@
         }
       },
       {
-        "__struct_id": 26,
+        "__struct_id": 31,
         "ActionParams": {
           "type": "list",
           "value": []
@@ -4805,7 +5220,7 @@
               },
               "Index": {
                 "type": "dword",
-                "value": 5
+                "value": 6
               },
               "IsChild": {
                 "type": "byte",
@@ -4840,462 +5255,6 @@
         }
       },
       {
-        "__struct_id": 27,
-        "ActionParams": {
-          "type": "list",
-          "value": []
-        },
-        "Animation": {
-          "type": "dword",
-          "value": 0
-        },
-        "AnimLoop": {
-          "type": "byte",
-          "value": 1
-        },
-        "Comment": {
-          "type": "cexostring",
-          "value": ""
-        },
-        "Delay": {
-          "type": "dword",
-          "value": 4294967295
-        },
-        "EntriesList": {
-          "type": "list",
-          "value": [
-            {
-              "__struct_id": 0,
-              "Active": {
-                "type": "resref",
-                "value": "gs_cip_add047"
-              },
-              "ConditionParams": {
-                "type": "list",
-                "value": []
-              },
-              "Index": {
-                "type": "dword",
-                "value": 6
-              },
-              "IsChild": {
-                "type": "byte",
-                "value": 1
-              },
-              "LinkComment": {
-                "type": "cexostring",
-                "value": ""
-              }
-            },
-            {
-              "__struct_id": 1,
-              "Active": {
-                "type": "resref",
-                "value": "gs_cip_add060"
-              },
-              "ConditionParams": {
-                "type": "list",
-                "value": []
-              },
-              "Index": {
-                "type": "dword",
-                "value": 2
-              },
-              "IsChild": {
-                "type": "byte",
-                "value": 1
-              },
-              "LinkComment": {
-                "type": "cexostring",
-                "value": ""
-              }
-            }
-          ]
-        },
-        "Quest": {
-          "type": "cexostring",
-          "value": ""
-        },
-        "Script": {
-          "type": "resref",
-          "value": "gs_cip_add039"
-        },
-        "Sound": {
-          "type": "resref",
-          "value": ""
-        },
-        "Text": {
-          "type": "cexolocstring",
-          "value": {
-            "4": "<CUSTOM104>"
-          }
-        }
-      },
-      {
-        "__struct_id": 28,
-        "ActionParams": {
-          "type": "list",
-          "value": []
-        },
-        "Animation": {
-          "type": "dword",
-          "value": 0
-        },
-        "AnimLoop": {
-          "type": "byte",
-          "value": 1
-        },
-        "Comment": {
-          "type": "cexostring",
-          "value": ""
-        },
-        "Delay": {
-          "type": "dword",
-          "value": 4294967295
-        },
-        "EntriesList": {
-          "type": "list",
-          "value": [
-            {
-              "__struct_id": 0,
-              "Active": {
-                "type": "resref",
-                "value": "gs_cip_add047"
-              },
-              "ConditionParams": {
-                "type": "list",
-                "value": []
-              },
-              "Index": {
-                "type": "dword",
-                "value": 6
-              },
-              "IsChild": {
-                "type": "byte",
-                "value": 1
-              },
-              "LinkComment": {
-                "type": "cexostring",
-                "value": ""
-              }
-            },
-            {
-              "__struct_id": 1,
-              "Active": {
-                "type": "resref",
-                "value": "gs_cip_add060"
-              },
-              "ConditionParams": {
-                "type": "list",
-                "value": []
-              },
-              "Index": {
-                "type": "dword",
-                "value": 2
-              },
-              "IsChild": {
-                "type": "byte",
-                "value": 1
-              },
-              "LinkComment": {
-                "type": "cexostring",
-                "value": ""
-              }
-            }
-          ]
-        },
-        "Quest": {
-          "type": "cexostring",
-          "value": ""
-        },
-        "Script": {
-          "type": "resref",
-          "value": "gs_cip_add038"
-        },
-        "Sound": {
-          "type": "resref",
-          "value": ""
-        },
-        "Text": {
-          "type": "cexolocstring",
-          "value": {
-            "4": "<CUSTOM103>"
-          }
-        }
-      },
-      {
-        "__struct_id": 29,
-        "ActionParams": {
-          "type": "list",
-          "value": []
-        },
-        "Animation": {
-          "type": "dword",
-          "value": 0
-        },
-        "AnimLoop": {
-          "type": "byte",
-          "value": 1
-        },
-        "Comment": {
-          "type": "cexostring",
-          "value": ""
-        },
-        "Delay": {
-          "type": "dword",
-          "value": 4294967295
-        },
-        "EntriesList": {
-          "type": "list",
-          "value": [
-            {
-              "__struct_id": 0,
-              "Active": {
-                "type": "resref",
-                "value": "gs_cip_add047"
-              },
-              "ConditionParams": {
-                "type": "list",
-                "value": []
-              },
-              "Index": {
-                "type": "dword",
-                "value": 6
-              },
-              "IsChild": {
-                "type": "byte",
-                "value": 1
-              },
-              "LinkComment": {
-                "type": "cexostring",
-                "value": ""
-              }
-            },
-            {
-              "__struct_id": 1,
-              "Active": {
-                "type": "resref",
-                "value": "gs_cip_add060"
-              },
-              "ConditionParams": {
-                "type": "list",
-                "value": []
-              },
-              "Index": {
-                "type": "dword",
-                "value": 2
-              },
-              "IsChild": {
-                "type": "byte",
-                "value": 1
-              },
-              "LinkComment": {
-                "type": "cexostring",
-                "value": ""
-              }
-            }
-          ]
-        },
-        "Quest": {
-          "type": "cexostring",
-          "value": ""
-        },
-        "Script": {
-          "type": "resref",
-          "value": "gs_cip_add037"
-        },
-        "Sound": {
-          "type": "resref",
-          "value": ""
-        },
-        "Text": {
-          "type": "cexolocstring",
-          "value": {
-            "4": "<CUSTOM102>"
-          }
-        }
-      },
-      {
-        "__struct_id": 30,
-        "ActionParams": {
-          "type": "list",
-          "value": []
-        },
-        "Animation": {
-          "type": "dword",
-          "value": 0
-        },
-        "AnimLoop": {
-          "type": "byte",
-          "value": 1
-        },
-        "Comment": {
-          "type": "cexostring",
-          "value": ""
-        },
-        "Delay": {
-          "type": "dword",
-          "value": 4294967295
-        },
-        "EntriesList": {
-          "type": "list",
-          "value": [
-            {
-              "__struct_id": 0,
-              "Active": {
-                "type": "resref",
-                "value": "gs_cip_add047"
-              },
-              "ConditionParams": {
-                "type": "list",
-                "value": []
-              },
-              "Index": {
-                "type": "dword",
-                "value": 6
-              },
-              "IsChild": {
-                "type": "byte",
-                "value": 1
-              },
-              "LinkComment": {
-                "type": "cexostring",
-                "value": ""
-              }
-            },
-            {
-              "__struct_id": 1,
-              "Active": {
-                "type": "resref",
-                "value": "gs_cip_add060"
-              },
-              "ConditionParams": {
-                "type": "list",
-                "value": []
-              },
-              "Index": {
-                "type": "dword",
-                "value": 2
-              },
-              "IsChild": {
-                "type": "byte",
-                "value": 1
-              },
-              "LinkComment": {
-                "type": "cexostring",
-                "value": ""
-              }
-            }
-          ]
-        },
-        "Quest": {
-          "type": "cexostring",
-          "value": ""
-        },
-        "Script": {
-          "type": "resref",
-          "value": "gs_cip_add036"
-        },
-        "Sound": {
-          "type": "resref",
-          "value": ""
-        },
-        "Text": {
-          "type": "cexolocstring",
-          "value": {
-            "4": "<CUSTOM101>"
-          }
-        }
-      },
-      {
-        "__struct_id": 31,
-        "ActionParams": {
-          "type": "list",
-          "value": []
-        },
-        "Animation": {
-          "type": "dword",
-          "value": 0
-        },
-        "AnimLoop": {
-          "type": "byte",
-          "value": 1
-        },
-        "Comment": {
-          "type": "cexostring",
-          "value": ""
-        },
-        "Delay": {
-          "type": "dword",
-          "value": 4294967295
-        },
-        "EntriesList": {
-          "type": "list",
-          "value": [
-            {
-              "__struct_id": 0,
-              "Active": {
-                "type": "resref",
-                "value": "gs_cip_add047"
-              },
-              "ConditionParams": {
-                "type": "list",
-                "value": []
-              },
-              "Index": {
-                "type": "dword",
-                "value": 6
-              },
-              "IsChild": {
-                "type": "byte",
-                "value": 0
-              }
-            },
-            {
-              "__struct_id": 1,
-              "Active": {
-                "type": "resref",
-                "value": "gs_cip_add060"
-              },
-              "ConditionParams": {
-                "type": "list",
-                "value": []
-              },
-              "Index": {
-                "type": "dword",
-                "value": 2
-              },
-              "IsChild": {
-                "type": "byte",
-                "value": 1
-              },
-              "LinkComment": {
-                "type": "cexostring",
-                "value": ""
-              }
-            }
-          ]
-        },
-        "Quest": {
-          "type": "cexostring",
-          "value": ""
-        },
-        "Script": {
-          "type": "resref",
-          "value": "gs_cip_add035"
-        },
-        "Sound": {
-          "type": "resref",
-          "value": ""
-        },
-        "Text": {
-          "type": "cexolocstring",
-          "value": {
-            "4": "<CUSTOM100>"
-          }
-        }
-      },
-      {
         "__struct_id": 32,
         "ActionParams": {
           "type": "list",
@@ -5324,7 +5283,7 @@
               "__struct_id": 0,
               "Active": {
                 "type": "resref",
-                "value": "gs_cip_add017"
+                "value": "gs_cip_add047"
               },
               "ConditionParams": {
                 "type": "list",
@@ -5332,7 +5291,30 @@
               },
               "Index": {
                 "type": "dword",
-                "value": 5
+                "value": 7
+              },
+              "IsChild": {
+                "type": "byte",
+                "value": 1
+              },
+              "LinkComment": {
+                "type": "cexostring",
+                "value": ""
+              }
+            },
+            {
+              "__struct_id": 1,
+              "Active": {
+                "type": "resref",
+                "value": "gs_cip_add060"
+              },
+              "ConditionParams": {
+                "type": "list",
+                "value": []
+              },
+              "Index": {
+                "type": "dword",
+                "value": 3
               },
               "IsChild": {
                 "type": "byte",
@@ -5351,7 +5333,7 @@
         },
         "Script": {
           "type": "resref",
-          "value": ""
+          "value": "gs_cip_add039"
         },
         "Sound": {
           "type": "resref",
@@ -5360,9 +5342,7 @@
         "Text": {
           "type": "cexolocstring",
           "value": {
-            "0": "<StartAction>[Back]</Start>",
-            "4": "<StartAction>[Schritt zurück]</Start>",
-            "5": "<StartAction>[Schritt zurück]</Start>"
+            "4": "<CUSTOM104>"
           }
         }
       },
@@ -5403,7 +5383,30 @@
               },
               "Index": {
                 "type": "dword",
-                "value": 6
+                "value": 7
+              },
+              "IsChild": {
+                "type": "byte",
+                "value": 1
+              },
+              "LinkComment": {
+                "type": "cexostring",
+                "value": ""
+              }
+            },
+            {
+              "__struct_id": 1,
+              "Active": {
+                "type": "resref",
+                "value": "gs_cip_add060"
+              },
+              "ConditionParams": {
+                "type": "list",
+                "value": []
+              },
+              "Index": {
+                "type": "dword",
+                "value": 3
               },
               "IsChild": {
                 "type": "byte",
@@ -5422,7 +5425,7 @@
         },
         "Script": {
           "type": "resref",
-          "value": "gs_cip_add044"
+          "value": "gs_cip_add038"
         },
         "Sound": {
           "type": "resref",
@@ -5431,9 +5434,7 @@
         "Text": {
           "type": "cexolocstring",
           "value": {
-            "0": "<StartAction>[Previous page]</Start>",
-            "4": "<StartAction>[Vorige Seite]</Start>",
-            "5": "<StartAction>[Vorige Seite]</Start>"
+            "4": "<CUSTOM103>"
           }
         }
       },
@@ -5474,7 +5475,421 @@
               },
               "Index": {
                 "type": "dword",
+                "value": 7
+              },
+              "IsChild": {
+                "type": "byte",
+                "value": 1
+              },
+              "LinkComment": {
+                "type": "cexostring",
+                "value": ""
+              }
+            },
+            {
+              "__struct_id": 1,
+              "Active": {
+                "type": "resref",
+                "value": "gs_cip_add060"
+              },
+              "ConditionParams": {
+                "type": "list",
+                "value": []
+              },
+              "Index": {
+                "type": "dword",
+                "value": 3
+              },
+              "IsChild": {
+                "type": "byte",
+                "value": 1
+              },
+              "LinkComment": {
+                "type": "cexostring",
+                "value": ""
+              }
+            }
+          ]
+        },
+        "Quest": {
+          "type": "cexostring",
+          "value": ""
+        },
+        "Script": {
+          "type": "resref",
+          "value": "gs_cip_add037"
+        },
+        "Sound": {
+          "type": "resref",
+          "value": ""
+        },
+        "Text": {
+          "type": "cexolocstring",
+          "value": {
+            "4": "<CUSTOM102>"
+          }
+        }
+      },
+      {
+        "__struct_id": 35,
+        "ActionParams": {
+          "type": "list",
+          "value": []
+        },
+        "Animation": {
+          "type": "dword",
+          "value": 0
+        },
+        "AnimLoop": {
+          "type": "byte",
+          "value": 1
+        },
+        "Comment": {
+          "type": "cexostring",
+          "value": ""
+        },
+        "Delay": {
+          "type": "dword",
+          "value": 4294967295
+        },
+        "EntriesList": {
+          "type": "list",
+          "value": [
+            {
+              "__struct_id": 0,
+              "Active": {
+                "type": "resref",
+                "value": "gs_cip_add047"
+              },
+              "ConditionParams": {
+                "type": "list",
+                "value": []
+              },
+              "Index": {
+                "type": "dword",
+                "value": 7
+              },
+              "IsChild": {
+                "type": "byte",
+                "value": 1
+              },
+              "LinkComment": {
+                "type": "cexostring",
+                "value": ""
+              }
+            },
+            {
+              "__struct_id": 1,
+              "Active": {
+                "type": "resref",
+                "value": "gs_cip_add060"
+              },
+              "ConditionParams": {
+                "type": "list",
+                "value": []
+              },
+              "Index": {
+                "type": "dword",
+                "value": 3
+              },
+              "IsChild": {
+                "type": "byte",
+                "value": 1
+              },
+              "LinkComment": {
+                "type": "cexostring",
+                "value": ""
+              }
+            }
+          ]
+        },
+        "Quest": {
+          "type": "cexostring",
+          "value": ""
+        },
+        "Script": {
+          "type": "resref",
+          "value": "gs_cip_add036"
+        },
+        "Sound": {
+          "type": "resref",
+          "value": ""
+        },
+        "Text": {
+          "type": "cexolocstring",
+          "value": {
+            "4": "<CUSTOM101>"
+          }
+        }
+      },
+      {
+        "__struct_id": 36,
+        "ActionParams": {
+          "type": "list",
+          "value": []
+        },
+        "Animation": {
+          "type": "dword",
+          "value": 0
+        },
+        "AnimLoop": {
+          "type": "byte",
+          "value": 1
+        },
+        "Comment": {
+          "type": "cexostring",
+          "value": ""
+        },
+        "Delay": {
+          "type": "dword",
+          "value": 4294967295
+        },
+        "EntriesList": {
+          "type": "list",
+          "value": [
+            {
+              "__struct_id": 0,
+              "Active": {
+                "type": "resref",
+                "value": "gs_cip_add047"
+              },
+              "ConditionParams": {
+                "type": "list",
+                "value": []
+              },
+              "Index": {
+                "type": "dword",
+                "value": 7
+              },
+              "IsChild": {
+                "type": "byte",
+                "value": 0
+              }
+            },
+            {
+              "__struct_id": 1,
+              "Active": {
+                "type": "resref",
+                "value": "gs_cip_add060"
+              },
+              "ConditionParams": {
+                "type": "list",
+                "value": []
+              },
+              "Index": {
+                "type": "dword",
+                "value": 3
+              },
+              "IsChild": {
+                "type": "byte",
+                "value": 1
+              },
+              "LinkComment": {
+                "type": "cexostring",
+                "value": ""
+              }
+            }
+          ]
+        },
+        "Quest": {
+          "type": "cexostring",
+          "value": ""
+        },
+        "Script": {
+          "type": "resref",
+          "value": "gs_cip_add035"
+        },
+        "Sound": {
+          "type": "resref",
+          "value": ""
+        },
+        "Text": {
+          "type": "cexolocstring",
+          "value": {
+            "4": "<CUSTOM100>"
+          }
+        }
+      },
+      {
+        "__struct_id": 37,
+        "ActionParams": {
+          "type": "list",
+          "value": []
+        },
+        "Animation": {
+          "type": "dword",
+          "value": 0
+        },
+        "AnimLoop": {
+          "type": "byte",
+          "value": 1
+        },
+        "Comment": {
+          "type": "cexostring",
+          "value": ""
+        },
+        "Delay": {
+          "type": "dword",
+          "value": 4294967295
+        },
+        "EntriesList": {
+          "type": "list",
+          "value": [
+            {
+              "__struct_id": 0,
+              "Active": {
+                "type": "resref",
+                "value": "gs_cip_add017"
+              },
+              "ConditionParams": {
+                "type": "list",
+                "value": []
+              },
+              "Index": {
+                "type": "dword",
                 "value": 6
+              },
+              "IsChild": {
+                "type": "byte",
+                "value": 1
+              },
+              "LinkComment": {
+                "type": "cexostring",
+                "value": ""
+              }
+            }
+          ]
+        },
+        "Quest": {
+          "type": "cexostring",
+          "value": ""
+        },
+        "Script": {
+          "type": "resref",
+          "value": ""
+        },
+        "Sound": {
+          "type": "resref",
+          "value": ""
+        },
+        "Text": {
+          "type": "cexolocstring",
+          "value": {
+            "0": "<StartAction>[Back]</Start>",
+            "4": "<StartAction>[Schritt zurück]</Start>",
+            "5": "<StartAction>[Schritt zurück]</Start>"
+          }
+        }
+      },
+      {
+        "__struct_id": 38,
+        "ActionParams": {
+          "type": "list",
+          "value": []
+        },
+        "Animation": {
+          "type": "dword",
+          "value": 0
+        },
+        "AnimLoop": {
+          "type": "byte",
+          "value": 1
+        },
+        "Comment": {
+          "type": "cexostring",
+          "value": ""
+        },
+        "Delay": {
+          "type": "dword",
+          "value": 4294967295
+        },
+        "EntriesList": {
+          "type": "list",
+          "value": [
+            {
+              "__struct_id": 0,
+              "Active": {
+                "type": "resref",
+                "value": "gs_cip_add047"
+              },
+              "ConditionParams": {
+                "type": "list",
+                "value": []
+              },
+              "Index": {
+                "type": "dword",
+                "value": 7
+              },
+              "IsChild": {
+                "type": "byte",
+                "value": 1
+              },
+              "LinkComment": {
+                "type": "cexostring",
+                "value": ""
+              }
+            }
+          ]
+        },
+        "Quest": {
+          "type": "cexostring",
+          "value": ""
+        },
+        "Script": {
+          "type": "resref",
+          "value": "gs_cip_add044"
+        },
+        "Sound": {
+          "type": "resref",
+          "value": ""
+        },
+        "Text": {
+          "type": "cexolocstring",
+          "value": {
+            "0": "<StartAction>[Previous page]</Start>",
+            "4": "<StartAction>[Vorige Seite]</Start>",
+            "5": "<StartAction>[Vorige Seite]</Start>"
+          }
+        }
+      },
+      {
+        "__struct_id": 39,
+        "ActionParams": {
+          "type": "list",
+          "value": []
+        },
+        "Animation": {
+          "type": "dword",
+          "value": 0
+        },
+        "AnimLoop": {
+          "type": "byte",
+          "value": 1
+        },
+        "Comment": {
+          "type": "cexostring",
+          "value": ""
+        },
+        "Delay": {
+          "type": "dword",
+          "value": 4294967295
+        },
+        "EntriesList": {
+          "type": "list",
+          "value": [
+            {
+              "__struct_id": 0,
+              "Active": {
+                "type": "resref",
+                "value": "gs_cip_add047"
+              },
+              "ConditionParams": {
+                "type": "list",
+                "value": []
+              },
+              "Index": {
+                "type": "dword",
+                "value": 7
               },
               "IsChild": {
                 "type": "byte",
@@ -5509,7 +5924,7 @@
         }
       },
       {
-        "__struct_id": 35,
+        "__struct_id": 40,
         "ActionParams": {
           "type": "list",
           "value": []
@@ -5545,7 +5960,7 @@
               },
               "Index": {
                 "type": "dword",
-                "value": 2
+                "value": 3
               },
               "IsChild": {
                 "type": "byte",
@@ -5578,7 +5993,7 @@
         }
       },
       {
-        "__struct_id": 36,
+        "__struct_id": 41,
         "ActionParams": {
           "type": "list",
           "value": []
@@ -5614,7 +6029,7 @@
               },
               "Index": {
                 "type": "dword",
-                "value": 2
+                "value": 3
               },
               "IsChild": {
                 "type": "byte",
@@ -5647,7 +6062,7 @@
         }
       },
       {
-        "__struct_id": 37,
+        "__struct_id": 42,
         "ActionParams": {
           "type": "list",
           "value": []
@@ -5683,7 +6098,7 @@
               },
               "Index": {
                 "type": "dword",
-                "value": 2
+                "value": 3
               },
               "IsChild": {
                 "type": "byte",
@@ -5716,7 +6131,7 @@
         }
       },
       {
-        "__struct_id": 38,
+        "__struct_id": 43,
         "ActionParams": {
           "type": "list",
           "value": []
@@ -5752,7 +6167,7 @@
               },
               "Index": {
                 "type": "dword",
-                "value": 2
+                "value": 3
               },
               "IsChild": {
                 "type": "byte",
@@ -5785,7 +6200,7 @@
         }
       },
       {
-        "__struct_id": 39,
+        "__struct_id": 44,
         "ActionParams": {
           "type": "list",
           "value": []
@@ -5821,7 +6236,7 @@
               },
               "Index": {
                 "type": "dword",
-                "value": 2
+                "value": 3
               },
               "IsChild": {
                 "type": "byte",
@@ -5854,7 +6269,7 @@
         }
       },
       {
-        "__struct_id": 40,
+        "__struct_id": 45,
         "ActionParams": {
           "type": "list",
           "value": []
@@ -5925,7 +6340,7 @@
         }
       },
       {
-        "__struct_id": 41,
+        "__struct_id": 46,
         "ActionParams": {
           "type": "list",
           "value": []
@@ -5961,7 +6376,7 @@
               },
               "Index": {
                 "type": "dword",
-                "value": 7
+                "value": 8
               },
               "IsChild": {
                 "type": "byte",
@@ -5996,7 +6411,7 @@
         }
       },
       {
-        "__struct_id": 42,
+        "__struct_id": 47,
         "ActionParams": {
           "type": "list",
           "value": []
@@ -6032,7 +6447,7 @@
               },
               "Index": {
                 "type": "dword",
-                "value": 7
+                "value": 8
               },
               "IsChild": {
                 "type": "byte",
@@ -6067,7 +6482,7 @@
         }
       },
       {
-        "__struct_id": 43,
+        "__struct_id": 48,
         "ActionParams": {
           "type": "list",
           "value": []
@@ -6103,7 +6518,7 @@
               },
               "Index": {
                 "type": "dword",
-                "value": 10
+                "value": 11
               },
               "IsChild": {
                 "type": "byte",
@@ -6126,7 +6541,7 @@
               },
               "Index": {
                 "type": "dword",
-                "value": 9
+                "value": 10
               },
               "IsChild": {
                 "type": "byte",
@@ -6149,7 +6564,7 @@
               },
               "Index": {
                 "type": "dword",
-                "value": 8
+                "value": 9
               },
               "IsChild": {
                 "type": "byte",
@@ -6172,7 +6587,7 @@
               },
               "Index": {
                 "type": "dword",
-                "value": 2
+                "value": 3
               },
               "IsChild": {
                 "type": "byte",
@@ -6205,7 +6620,7 @@
         }
       },
       {
-        "__struct_id": 44,
+        "__struct_id": 49,
         "ActionParams": {
           "type": "list",
           "value": []
@@ -6241,7 +6656,7 @@
               },
               "Index": {
                 "type": "dword",
-                "value": 10
+                "value": 11
               },
               "IsChild": {
                 "type": "byte",
@@ -6264,7 +6679,7 @@
               },
               "Index": {
                 "type": "dword",
-                "value": 9
+                "value": 10
               },
               "IsChild": {
                 "type": "byte",
@@ -6287,7 +6702,7 @@
               },
               "Index": {
                 "type": "dword",
-                "value": 8
+                "value": 9
               },
               "IsChild": {
                 "type": "byte",
@@ -6310,7 +6725,7 @@
               },
               "Index": {
                 "type": "dword",
-                "value": 2
+                "value": 3
               },
               "IsChild": {
                 "type": "byte",
@@ -6343,7 +6758,7 @@
         }
       },
       {
-        "__struct_id": 45,
+        "__struct_id": 50,
         "ActionParams": {
           "type": "list",
           "value": []
@@ -6379,7 +6794,7 @@
               },
               "Index": {
                 "type": "dword",
-                "value": 10
+                "value": 11
               },
               "IsChild": {
                 "type": "byte",
@@ -6402,7 +6817,7 @@
               },
               "Index": {
                 "type": "dword",
-                "value": 9
+                "value": 10
               },
               "IsChild": {
                 "type": "byte",
@@ -6425,7 +6840,7 @@
               },
               "Index": {
                 "type": "dword",
-                "value": 8
+                "value": 9
               },
               "IsChild": {
                 "type": "byte",
@@ -6448,7 +6863,7 @@
               },
               "Index": {
                 "type": "dword",
-                "value": 2
+                "value": 3
               },
               "IsChild": {
                 "type": "byte",
@@ -6481,7 +6896,7 @@
         }
       },
       {
-        "__struct_id": 46,
+        "__struct_id": 51,
         "ActionParams": {
           "type": "list",
           "value": []
@@ -6517,7 +6932,7 @@
               },
               "Index": {
                 "type": "dword",
-                "value": 10
+                "value": 11
               },
               "IsChild": {
                 "type": "byte",
@@ -6540,7 +6955,7 @@
               },
               "Index": {
                 "type": "dword",
-                "value": 9
+                "value": 10
               },
               "IsChild": {
                 "type": "byte",
@@ -6563,7 +6978,7 @@
               },
               "Index": {
                 "type": "dword",
-                "value": 8
+                "value": 9
               },
               "IsChild": {
                 "type": "byte",
@@ -6586,7 +7001,7 @@
               },
               "Index": {
                 "type": "dword",
-                "value": 2
+                "value": 3
               },
               "IsChild": {
                 "type": "byte",
@@ -6619,7 +7034,7 @@
         }
       },
       {
-        "__struct_id": 47,
+        "__struct_id": 52,
         "ActionParams": {
           "type": "list",
           "value": []
@@ -6655,7 +7070,7 @@
               },
               "Index": {
                 "type": "dword",
-                "value": 10
+                "value": 11
               },
               "IsChild": {
                 "type": "byte",
@@ -6674,7 +7089,7 @@
               },
               "Index": {
                 "type": "dword",
-                "value": 9
+                "value": 10
               },
               "IsChild": {
                 "type": "byte",
@@ -6693,7 +7108,7 @@
               },
               "Index": {
                 "type": "dword",
-                "value": 8
+                "value": 9
               },
               "IsChild": {
                 "type": "byte",
@@ -6712,7 +7127,7 @@
               },
               "Index": {
                 "type": "dword",
-                "value": 2
+                "value": 3
               },
               "IsChild": {
                 "type": "byte",
@@ -6745,7 +7160,7 @@
         }
       },
       {
-        "__struct_id": 48,
+        "__struct_id": 53,
         "ActionParams": {
           "type": "list",
           "value": []
@@ -6781,7 +7196,7 @@
               },
               "Index": {
                 "type": "dword",
-                "value": 8
+                "value": 9
               },
               "IsChild": {
                 "type": "byte",
@@ -6812,353 +7227,6 @@
             "0": "<StartAction>[Previous page]</Start>",
             "4": "<StartAction>[Vorige Seite]</Start>",
             "5": "<StartAction>[Vorige Seite]</Start>"
-          }
-        }
-      },
-      {
-        "__struct_id": 49,
-        "ActionParams": {
-          "type": "list",
-          "value": []
-        },
-        "Animation": {
-          "type": "dword",
-          "value": 0
-        },
-        "AnimLoop": {
-          "type": "byte",
-          "value": 1
-        },
-        "Comment": {
-          "type": "cexostring",
-          "value": ""
-        },
-        "Delay": {
-          "type": "dword",
-          "value": 4294967295
-        },
-        "EntriesList": {
-          "type": "list",
-          "value": [
-            {
-              "__struct_id": 0,
-              "Active": {
-                "type": "resref",
-                "value": "gs_cip_add047"
-              },
-              "ConditionParams": {
-                "type": "list",
-                "value": []
-              },
-              "Index": {
-                "type": "dword",
-                "value": 8
-              },
-              "IsChild": {
-                "type": "byte",
-                "value": 1
-              },
-              "LinkComment": {
-                "type": "cexostring",
-                "value": ""
-              }
-            }
-          ]
-        },
-        "Quest": {
-          "type": "cexostring",
-          "value": ""
-        },
-        "Script": {
-          "type": "resref",
-          "value": "gs_cip_add042"
-        },
-        "Sound": {
-          "type": "resref",
-          "value": ""
-        },
-        "Text": {
-          "type": "cexolocstring",
-          "value": {
-            "0": "<StartAction>[Next page]</Start>",
-            "4": "<StartAction>[Nächste Seite]</Start>",
-            "5": "<StartAction>[Nächste Seite]</Start>"
-          }
-        }
-      },
-      {
-        "__struct_id": 50,
-        "ActionParams": {
-          "type": "list",
-          "value": []
-        },
-        "Animation": {
-          "type": "dword",
-          "value": 0
-        },
-        "AnimLoop": {
-          "type": "byte",
-          "value": 1
-        },
-        "Comment": {
-          "type": "cexostring",
-          "value": ""
-        },
-        "Delay": {
-          "type": "dword",
-          "value": 4294967295
-        },
-        "EntriesList": {
-          "type": "list",
-          "value": [
-            {
-              "__struct_id": 0,
-              "Active": {
-                "type": "resref",
-                "value": "gs_cip_add060"
-              },
-              "ConditionParams": {
-                "type": "list",
-                "value": []
-              },
-              "Index": {
-                "type": "dword",
-                "value": 2
-              },
-              "IsChild": {
-                "type": "byte",
-                "value": 1
-              },
-              "LinkComment": {
-                "type": "cexostring",
-                "value": ""
-              }
-            }
-          ]
-        },
-        "Quest": {
-          "type": "cexostring",
-          "value": ""
-        },
-        "Script": {
-          "type": "resref",
-          "value": "gs_cip_add058"
-        },
-        "Sound": {
-          "type": "resref",
-          "value": ""
-        },
-        "Text": {
-          "type": "cexolocstring",
-          "value": {
-            "4": "<CUSTOM104>"
-          }
-        }
-      },
-      {
-        "__struct_id": 51,
-        "ActionParams": {
-          "type": "list",
-          "value": []
-        },
-        "Animation": {
-          "type": "dword",
-          "value": 0
-        },
-        "AnimLoop": {
-          "type": "byte",
-          "value": 1
-        },
-        "Comment": {
-          "type": "cexostring",
-          "value": ""
-        },
-        "Delay": {
-          "type": "dword",
-          "value": 4294967295
-        },
-        "EntriesList": {
-          "type": "list",
-          "value": [
-            {
-              "__struct_id": 0,
-              "Active": {
-                "type": "resref",
-                "value": "gs_cip_add060"
-              },
-              "ConditionParams": {
-                "type": "list",
-                "value": []
-              },
-              "Index": {
-                "type": "dword",
-                "value": 2
-              },
-              "IsChild": {
-                "type": "byte",
-                "value": 1
-              },
-              "LinkComment": {
-                "type": "cexostring",
-                "value": ""
-              }
-            }
-          ]
-        },
-        "Quest": {
-          "type": "cexostring",
-          "value": ""
-        },
-        "Script": {
-          "type": "resref",
-          "value": "gs_cip_add057"
-        },
-        "Sound": {
-          "type": "resref",
-          "value": ""
-        },
-        "Text": {
-          "type": "cexolocstring",
-          "value": {
-            "4": "<CUSTOM103>"
-          }
-        }
-      },
-      {
-        "__struct_id": 52,
-        "ActionParams": {
-          "type": "list",
-          "value": []
-        },
-        "Animation": {
-          "type": "dword",
-          "value": 0
-        },
-        "AnimLoop": {
-          "type": "byte",
-          "value": 1
-        },
-        "Comment": {
-          "type": "cexostring",
-          "value": ""
-        },
-        "Delay": {
-          "type": "dword",
-          "value": 4294967295
-        },
-        "EntriesList": {
-          "type": "list",
-          "value": [
-            {
-              "__struct_id": 0,
-              "Active": {
-                "type": "resref",
-                "value": "gs_cip_add060"
-              },
-              "ConditionParams": {
-                "type": "list",
-                "value": []
-              },
-              "Index": {
-                "type": "dword",
-                "value": 2
-              },
-              "IsChild": {
-                "type": "byte",
-                "value": 1
-              },
-              "LinkComment": {
-                "type": "cexostring",
-                "value": ""
-              }
-            }
-          ]
-        },
-        "Quest": {
-          "type": "cexostring",
-          "value": ""
-        },
-        "Script": {
-          "type": "resref",
-          "value": "gs_cip_add056"
-        },
-        "Sound": {
-          "type": "resref",
-          "value": ""
-        },
-        "Text": {
-          "type": "cexolocstring",
-          "value": {
-            "4": "<CUSTOM102>"
-          }
-        }
-      },
-      {
-        "__struct_id": 53,
-        "ActionParams": {
-          "type": "list",
-          "value": []
-        },
-        "Animation": {
-          "type": "dword",
-          "value": 0
-        },
-        "AnimLoop": {
-          "type": "byte",
-          "value": 1
-        },
-        "Comment": {
-          "type": "cexostring",
-          "value": ""
-        },
-        "Delay": {
-          "type": "dword",
-          "value": 4294967295
-        },
-        "EntriesList": {
-          "type": "list",
-          "value": [
-            {
-              "__struct_id": 0,
-              "Active": {
-                "type": "resref",
-                "value": "gs_cip_add060"
-              },
-              "ConditionParams": {
-                "type": "list",
-                "value": []
-              },
-              "Index": {
-                "type": "dword",
-                "value": 2
-              },
-              "IsChild": {
-                "type": "byte",
-                "value": 1
-              },
-              "LinkComment": {
-                "type": "cexostring",
-                "value": ""
-              }
-            }
-          ]
-        },
-        "Quest": {
-          "type": "cexostring",
-          "value": ""
-        },
-        "Script": {
-          "type": "resref",
-          "value": "gs_cip_add055"
-        },
-        "Sound": {
-          "type": "resref",
-          "value": ""
-        },
-        "Text": {
-          "type": "cexolocstring",
-          "value": {
-            "4": "<CUSTOM101>"
           }
         }
       },
@@ -7191,147 +7259,7 @@
               "__struct_id": 0,
               "Active": {
                 "type": "resref",
-                "value": "gs_cip_add060"
-              },
-              "ConditionParams": {
-                "type": "list",
-                "value": []
-              },
-              "Index": {
-                "type": "dword",
-                "value": 2
-              },
-              "IsChild": {
-                "type": "byte",
-                "value": 1
-              },
-              "LinkComment": {
-                "type": "cexostring",
-                "value": ""
-              }
-            }
-          ]
-        },
-        "Quest": {
-          "type": "cexostring",
-          "value": ""
-        },
-        "Script": {
-          "type": "resref",
-          "value": "gs_cip_add054"
-        },
-        "Sound": {
-          "type": "resref",
-          "value": ""
-        },
-        "Text": {
-          "type": "cexolocstring",
-          "value": {
-            "4": "<CUSTOM100>"
-          }
-        }
-      },
-      {
-        "__struct_id": 55,
-        "ActionParams": {
-          "type": "list",
-          "value": []
-        },
-        "Animation": {
-          "type": "dword",
-          "value": 0
-        },
-        "AnimLoop": {
-          "type": "byte",
-          "value": 1
-        },
-        "Comment": {
-          "type": "cexostring",
-          "value": ""
-        },
-        "Delay": {
-          "type": "dword",
-          "value": 4294967295
-        },
-        "EntriesList": {
-          "type": "list",
-          "value": [
-            {
-              "__struct_id": 0,
-              "Active": {
-                "type": "resref",
-                "value": "gs_cip_add045"
-              },
-              "ConditionParams": {
-                "type": "list",
-                "value": []
-              },
-              "Index": {
-                "type": "dword",
-                "value": 9
-              },
-              "IsChild": {
-                "type": "byte",
-                "value": 1
-              },
-              "LinkComment": {
-                "type": "cexostring",
-                "value": ""
-              }
-            }
-          ]
-        },
-        "Quest": {
-          "type": "cexostring",
-          "value": ""
-        },
-        "Script": {
-          "type": "resref",
-          "value": "gs_cip_add044"
-        },
-        "Sound": {
-          "type": "resref",
-          "value": ""
-        },
-        "Text": {
-          "type": "cexolocstring",
-          "value": {
-            "0": "<StartAction>[Previous page]</Start>",
-            "4": "<StartAction>[Vorige Seite]</Start>",
-            "5": "<StartAction>[Vorige Seite]</Start>"
-          }
-        }
-      },
-      {
-        "__struct_id": 56,
-        "ActionParams": {
-          "type": "list",
-          "value": []
-        },
-        "Animation": {
-          "type": "dword",
-          "value": 0
-        },
-        "AnimLoop": {
-          "type": "byte",
-          "value": 1
-        },
-        "Comment": {
-          "type": "cexostring",
-          "value": ""
-        },
-        "Delay": {
-          "type": "dword",
-          "value": 4294967295
-        },
-        "EntriesList": {
-          "type": "list",
-          "value": [
-            {
-              "__struct_id": 0,
-              "Active": {
-                "type": "resref",
-                "value": "gs_cip_add045"
+                "value": "gs_cip_add047"
               },
               "ConditionParams": {
                 "type": "list",
@@ -7370,6 +7298,144 @@
             "0": "<StartAction>[Next page]</Start>",
             "4": "<StartAction>[Nächste Seite]</Start>",
             "5": "<StartAction>[Nächste Seite]</Start>"
+          }
+        }
+      },
+      {
+        "__struct_id": 55,
+        "ActionParams": {
+          "type": "list",
+          "value": []
+        },
+        "Animation": {
+          "type": "dword",
+          "value": 0
+        },
+        "AnimLoop": {
+          "type": "byte",
+          "value": 1
+        },
+        "Comment": {
+          "type": "cexostring",
+          "value": ""
+        },
+        "Delay": {
+          "type": "dword",
+          "value": 4294967295
+        },
+        "EntriesList": {
+          "type": "list",
+          "value": [
+            {
+              "__struct_id": 0,
+              "Active": {
+                "type": "resref",
+                "value": "gs_cip_add060"
+              },
+              "ConditionParams": {
+                "type": "list",
+                "value": []
+              },
+              "Index": {
+                "type": "dword",
+                "value": 3
+              },
+              "IsChild": {
+                "type": "byte",
+                "value": 1
+              },
+              "LinkComment": {
+                "type": "cexostring",
+                "value": ""
+              }
+            }
+          ]
+        },
+        "Quest": {
+          "type": "cexostring",
+          "value": ""
+        },
+        "Script": {
+          "type": "resref",
+          "value": "gs_cip_add058"
+        },
+        "Sound": {
+          "type": "resref",
+          "value": ""
+        },
+        "Text": {
+          "type": "cexolocstring",
+          "value": {
+            "4": "<CUSTOM104>"
+          }
+        }
+      },
+      {
+        "__struct_id": 56,
+        "ActionParams": {
+          "type": "list",
+          "value": []
+        },
+        "Animation": {
+          "type": "dword",
+          "value": 0
+        },
+        "AnimLoop": {
+          "type": "byte",
+          "value": 1
+        },
+        "Comment": {
+          "type": "cexostring",
+          "value": ""
+        },
+        "Delay": {
+          "type": "dword",
+          "value": 4294967295
+        },
+        "EntriesList": {
+          "type": "list",
+          "value": [
+            {
+              "__struct_id": 0,
+              "Active": {
+                "type": "resref",
+                "value": "gs_cip_add060"
+              },
+              "ConditionParams": {
+                "type": "list",
+                "value": []
+              },
+              "Index": {
+                "type": "dword",
+                "value": 3
+              },
+              "IsChild": {
+                "type": "byte",
+                "value": 1
+              },
+              "LinkComment": {
+                "type": "cexostring",
+                "value": ""
+              }
+            }
+          ]
+        },
+        "Quest": {
+          "type": "cexostring",
+          "value": ""
+        },
+        "Script": {
+          "type": "resref",
+          "value": "gs_cip_add057"
+        },
+        "Sound": {
+          "type": "resref",
+          "value": ""
+        },
+        "Text": {
+          "type": "cexolocstring",
+          "value": {
+            "4": "<CUSTOM103>"
           }
         }
       },
@@ -7410,7 +7476,7 @@
               },
               "Index": {
                 "type": "dword",
-                "value": 2
+                "value": 3
               },
               "IsChild": {
                 "type": "byte",
@@ -7429,7 +7495,7 @@
         },
         "Script": {
           "type": "resref",
-          "value": "gs_cip_add058"
+          "value": "gs_cip_add056"
         },
         "Sound": {
           "type": "resref",
@@ -7438,7 +7504,7 @@
         "Text": {
           "type": "cexolocstring",
           "value": {
-            "4": "<CUSTOM104>"
+            "4": "<CUSTOM102>"
           }
         }
       },
@@ -7479,7 +7545,7 @@
               },
               "Index": {
                 "type": "dword",
-                "value": 2
+                "value": 3
               },
               "IsChild": {
                 "type": "byte",
@@ -7498,7 +7564,7 @@
         },
         "Script": {
           "type": "resref",
-          "value": "gs_cip_add057"
+          "value": "gs_cip_add055"
         },
         "Sound": {
           "type": "resref",
@@ -7507,7 +7573,7 @@
         "Text": {
           "type": "cexolocstring",
           "value": {
-            "4": "<CUSTOM103>"
+            "4": "<CUSTOM101>"
           }
         }
       },
@@ -7548,145 +7614,7 @@
               },
               "Index": {
                 "type": "dword",
-                "value": 2
-              },
-              "IsChild": {
-                "type": "byte",
-                "value": 1
-              },
-              "LinkComment": {
-                "type": "cexostring",
-                "value": ""
-              }
-            }
-          ]
-        },
-        "Quest": {
-          "type": "cexostring",
-          "value": ""
-        },
-        "Script": {
-          "type": "resref",
-          "value": "gs_cip_add056"
-        },
-        "Sound": {
-          "type": "resref",
-          "value": ""
-        },
-        "Text": {
-          "type": "cexolocstring",
-          "value": {
-            "4": "<CUSTOM102>"
-          }
-        }
-      },
-      {
-        "__struct_id": 60,
-        "ActionParams": {
-          "type": "list",
-          "value": []
-        },
-        "Animation": {
-          "type": "dword",
-          "value": 0
-        },
-        "AnimLoop": {
-          "type": "byte",
-          "value": 1
-        },
-        "Comment": {
-          "type": "cexostring",
-          "value": ""
-        },
-        "Delay": {
-          "type": "dword",
-          "value": 4294967295
-        },
-        "EntriesList": {
-          "type": "list",
-          "value": [
-            {
-              "__struct_id": 0,
-              "Active": {
-                "type": "resref",
-                "value": "gs_cip_add060"
-              },
-              "ConditionParams": {
-                "type": "list",
-                "value": []
-              },
-              "Index": {
-                "type": "dword",
-                "value": 2
-              },
-              "IsChild": {
-                "type": "byte",
-                "value": 1
-              },
-              "LinkComment": {
-                "type": "cexostring",
-                "value": ""
-              }
-            }
-          ]
-        },
-        "Quest": {
-          "type": "cexostring",
-          "value": ""
-        },
-        "Script": {
-          "type": "resref",
-          "value": "gs_cip_add055"
-        },
-        "Sound": {
-          "type": "resref",
-          "value": ""
-        },
-        "Text": {
-          "type": "cexolocstring",
-          "value": {
-            "4": "<CUSTOM101>"
-          }
-        }
-      },
-      {
-        "__struct_id": 61,
-        "ActionParams": {
-          "type": "list",
-          "value": []
-        },
-        "Animation": {
-          "type": "dword",
-          "value": 0
-        },
-        "AnimLoop": {
-          "type": "byte",
-          "value": 1
-        },
-        "Comment": {
-          "type": "cexostring",
-          "value": ""
-        },
-        "Delay": {
-          "type": "dword",
-          "value": 4294967295
-        },
-        "EntriesList": {
-          "type": "list",
-          "value": [
-            {
-              "__struct_id": 0,
-              "Active": {
-                "type": "resref",
-                "value": "gs_cip_add060"
-              },
-              "ConditionParams": {
-                "type": "list",
-                "value": []
-              },
-              "Index": {
-                "type": "dword",
-                "value": 2
+                "value": 3
               },
               "IsChild": {
                 "type": "byte",
@@ -7719,7 +7647,494 @@
         }
       },
       {
+        "__struct_id": 60,
+        "ActionParams": {
+          "type": "list",
+          "value": []
+        },
+        "Animation": {
+          "type": "dword",
+          "value": 0
+        },
+        "AnimLoop": {
+          "type": "byte",
+          "value": 1
+        },
+        "Comment": {
+          "type": "cexostring",
+          "value": ""
+        },
+        "Delay": {
+          "type": "dword",
+          "value": 4294967295
+        },
+        "EntriesList": {
+          "type": "list",
+          "value": [
+            {
+              "__struct_id": 0,
+              "Active": {
+                "type": "resref",
+                "value": "gs_cip_add045"
+              },
+              "ConditionParams": {
+                "type": "list",
+                "value": []
+              },
+              "Index": {
+                "type": "dword",
+                "value": 10
+              },
+              "IsChild": {
+                "type": "byte",
+                "value": 1
+              },
+              "LinkComment": {
+                "type": "cexostring",
+                "value": ""
+              }
+            }
+          ]
+        },
+        "Quest": {
+          "type": "cexostring",
+          "value": ""
+        },
+        "Script": {
+          "type": "resref",
+          "value": "gs_cip_add044"
+        },
+        "Sound": {
+          "type": "resref",
+          "value": ""
+        },
+        "Text": {
+          "type": "cexolocstring",
+          "value": {
+            "0": "<StartAction>[Previous page]</Start>",
+            "4": "<StartAction>[Vorige Seite]</Start>",
+            "5": "<StartAction>[Vorige Seite]</Start>"
+          }
+        }
+      },
+      {
+        "__struct_id": 61,
+        "ActionParams": {
+          "type": "list",
+          "value": []
+        },
+        "Animation": {
+          "type": "dword",
+          "value": 0
+        },
+        "AnimLoop": {
+          "type": "byte",
+          "value": 1
+        },
+        "Comment": {
+          "type": "cexostring",
+          "value": ""
+        },
+        "Delay": {
+          "type": "dword",
+          "value": 4294967295
+        },
+        "EntriesList": {
+          "type": "list",
+          "value": [
+            {
+              "__struct_id": 0,
+              "Active": {
+                "type": "resref",
+                "value": "gs_cip_add045"
+              },
+              "ConditionParams": {
+                "type": "list",
+                "value": []
+              },
+              "Index": {
+                "type": "dword",
+                "value": 10
+              },
+              "IsChild": {
+                "type": "byte",
+                "value": 1
+              },
+              "LinkComment": {
+                "type": "cexostring",
+                "value": ""
+              }
+            }
+          ]
+        },
+        "Quest": {
+          "type": "cexostring",
+          "value": ""
+        },
+        "Script": {
+          "type": "resref",
+          "value": "gs_cip_add042"
+        },
+        "Sound": {
+          "type": "resref",
+          "value": ""
+        },
+        "Text": {
+          "type": "cexolocstring",
+          "value": {
+            "0": "<StartAction>[Next page]</Start>",
+            "4": "<StartAction>[Nächste Seite]</Start>",
+            "5": "<StartAction>[Nächste Seite]</Start>"
+          }
+        }
+      },
+      {
         "__struct_id": 62,
+        "ActionParams": {
+          "type": "list",
+          "value": []
+        },
+        "Animation": {
+          "type": "dword",
+          "value": 0
+        },
+        "AnimLoop": {
+          "type": "byte",
+          "value": 1
+        },
+        "Comment": {
+          "type": "cexostring",
+          "value": ""
+        },
+        "Delay": {
+          "type": "dword",
+          "value": 4294967295
+        },
+        "EntriesList": {
+          "type": "list",
+          "value": [
+            {
+              "__struct_id": 0,
+              "Active": {
+                "type": "resref",
+                "value": "gs_cip_add060"
+              },
+              "ConditionParams": {
+                "type": "list",
+                "value": []
+              },
+              "Index": {
+                "type": "dword",
+                "value": 3
+              },
+              "IsChild": {
+                "type": "byte",
+                "value": 1
+              },
+              "LinkComment": {
+                "type": "cexostring",
+                "value": ""
+              }
+            }
+          ]
+        },
+        "Quest": {
+          "type": "cexostring",
+          "value": ""
+        },
+        "Script": {
+          "type": "resref",
+          "value": "gs_cip_add058"
+        },
+        "Sound": {
+          "type": "resref",
+          "value": ""
+        },
+        "Text": {
+          "type": "cexolocstring",
+          "value": {
+            "4": "<CUSTOM104>"
+          }
+        }
+      },
+      {
+        "__struct_id": 63,
+        "ActionParams": {
+          "type": "list",
+          "value": []
+        },
+        "Animation": {
+          "type": "dword",
+          "value": 0
+        },
+        "AnimLoop": {
+          "type": "byte",
+          "value": 1
+        },
+        "Comment": {
+          "type": "cexostring",
+          "value": ""
+        },
+        "Delay": {
+          "type": "dword",
+          "value": 4294967295
+        },
+        "EntriesList": {
+          "type": "list",
+          "value": [
+            {
+              "__struct_id": 0,
+              "Active": {
+                "type": "resref",
+                "value": "gs_cip_add060"
+              },
+              "ConditionParams": {
+                "type": "list",
+                "value": []
+              },
+              "Index": {
+                "type": "dword",
+                "value": 3
+              },
+              "IsChild": {
+                "type": "byte",
+                "value": 1
+              },
+              "LinkComment": {
+                "type": "cexostring",
+                "value": ""
+              }
+            }
+          ]
+        },
+        "Quest": {
+          "type": "cexostring",
+          "value": ""
+        },
+        "Script": {
+          "type": "resref",
+          "value": "gs_cip_add057"
+        },
+        "Sound": {
+          "type": "resref",
+          "value": ""
+        },
+        "Text": {
+          "type": "cexolocstring",
+          "value": {
+            "4": "<CUSTOM103>"
+          }
+        }
+      },
+      {
+        "__struct_id": 64,
+        "ActionParams": {
+          "type": "list",
+          "value": []
+        },
+        "Animation": {
+          "type": "dword",
+          "value": 0
+        },
+        "AnimLoop": {
+          "type": "byte",
+          "value": 1
+        },
+        "Comment": {
+          "type": "cexostring",
+          "value": ""
+        },
+        "Delay": {
+          "type": "dword",
+          "value": 4294967295
+        },
+        "EntriesList": {
+          "type": "list",
+          "value": [
+            {
+              "__struct_id": 0,
+              "Active": {
+                "type": "resref",
+                "value": "gs_cip_add060"
+              },
+              "ConditionParams": {
+                "type": "list",
+                "value": []
+              },
+              "Index": {
+                "type": "dword",
+                "value": 3
+              },
+              "IsChild": {
+                "type": "byte",
+                "value": 1
+              },
+              "LinkComment": {
+                "type": "cexostring",
+                "value": ""
+              }
+            }
+          ]
+        },
+        "Quest": {
+          "type": "cexostring",
+          "value": ""
+        },
+        "Script": {
+          "type": "resref",
+          "value": "gs_cip_add056"
+        },
+        "Sound": {
+          "type": "resref",
+          "value": ""
+        },
+        "Text": {
+          "type": "cexolocstring",
+          "value": {
+            "4": "<CUSTOM102>"
+          }
+        }
+      },
+      {
+        "__struct_id": 65,
+        "ActionParams": {
+          "type": "list",
+          "value": []
+        },
+        "Animation": {
+          "type": "dword",
+          "value": 0
+        },
+        "AnimLoop": {
+          "type": "byte",
+          "value": 1
+        },
+        "Comment": {
+          "type": "cexostring",
+          "value": ""
+        },
+        "Delay": {
+          "type": "dword",
+          "value": 4294967295
+        },
+        "EntriesList": {
+          "type": "list",
+          "value": [
+            {
+              "__struct_id": 0,
+              "Active": {
+                "type": "resref",
+                "value": "gs_cip_add060"
+              },
+              "ConditionParams": {
+                "type": "list",
+                "value": []
+              },
+              "Index": {
+                "type": "dword",
+                "value": 3
+              },
+              "IsChild": {
+                "type": "byte",
+                "value": 1
+              },
+              "LinkComment": {
+                "type": "cexostring",
+                "value": ""
+              }
+            }
+          ]
+        },
+        "Quest": {
+          "type": "cexostring",
+          "value": ""
+        },
+        "Script": {
+          "type": "resref",
+          "value": "gs_cip_add055"
+        },
+        "Sound": {
+          "type": "resref",
+          "value": ""
+        },
+        "Text": {
+          "type": "cexolocstring",
+          "value": {
+            "4": "<CUSTOM101>"
+          }
+        }
+      },
+      {
+        "__struct_id": 66,
+        "ActionParams": {
+          "type": "list",
+          "value": []
+        },
+        "Animation": {
+          "type": "dword",
+          "value": 0
+        },
+        "AnimLoop": {
+          "type": "byte",
+          "value": 1
+        },
+        "Comment": {
+          "type": "cexostring",
+          "value": ""
+        },
+        "Delay": {
+          "type": "dword",
+          "value": 4294967295
+        },
+        "EntriesList": {
+          "type": "list",
+          "value": [
+            {
+              "__struct_id": 0,
+              "Active": {
+                "type": "resref",
+                "value": "gs_cip_add060"
+              },
+              "ConditionParams": {
+                "type": "list",
+                "value": []
+              },
+              "Index": {
+                "type": "dword",
+                "value": 3
+              },
+              "IsChild": {
+                "type": "byte",
+                "value": 1
+              },
+              "LinkComment": {
+                "type": "cexostring",
+                "value": ""
+              }
+            }
+          ]
+        },
+        "Quest": {
+          "type": "cexostring",
+          "value": ""
+        },
+        "Script": {
+          "type": "resref",
+          "value": "gs_cip_add054"
+        },
+        "Sound": {
+          "type": "resref",
+          "value": ""
+        },
+        "Text": {
+          "type": "cexolocstring",
+          "value": {
+            "4": "<CUSTOM100>"
+          }
+        }
+      },
+      {
+        "__struct_id": 67,
         "ActionParams": {
           "type": "list",
           "value": []
@@ -7755,7 +8170,7 @@
               },
               "Index": {
                 "type": "dword",
-                "value": 7
+                "value": 8
               },
               "IsChild": {
                 "type": "byte",
@@ -7790,7 +8205,7 @@
         }
       },
       {
-        "__struct_id": 63,
+        "__struct_id": 68,
         "ActionParams": {
           "type": "list",
           "value": []
@@ -7826,7 +8241,7 @@
               },
               "Index": {
                 "type": "dword",
-                "value": 10
+                "value": 11
               },
               "IsChild": {
                 "type": "byte",
@@ -7861,7 +8276,7 @@
         }
       },
       {
-        "__struct_id": 64,
+        "__struct_id": 69,
         "ActionParams": {
           "type": "list",
           "value": []
@@ -7897,7 +8312,7 @@
               },
               "Index": {
                 "type": "dword",
-                "value": 10
+                "value": 11
               },
               "IsChild": {
                 "type": "byte",
@@ -7932,7 +8347,7 @@
         }
       },
       {
-        "__struct_id": 65,
+        "__struct_id": 70,
         "ActionParams": {
           "type": "list",
           "value": []
@@ -7968,7 +8383,7 @@
               },
               "Index": {
                 "type": "dword",
-                "value": 12
+                "value": 13
               },
               "IsChild": {
                 "type": "byte",
@@ -7991,7 +8406,7 @@
               },
               "Index": {
                 "type": "dword",
-                "value": 11
+                "value": 12
               },
               "IsChild": {
                 "type": "byte",
@@ -8014,7 +8429,7 @@
               },
               "Index": {
                 "type": "dword",
-                "value": 2
+                "value": 3
               },
               "IsChild": {
                 "type": "byte",
@@ -8047,7 +8462,7 @@
         }
       },
       {
-        "__struct_id": 66,
+        "__struct_id": 71,
         "ActionParams": {
           "type": "list",
           "value": []
@@ -8083,7 +8498,7 @@
               },
               "Index": {
                 "type": "dword",
-                "value": 12
+                "value": 13
               },
               "IsChild": {
                 "type": "byte",
@@ -8106,7 +8521,7 @@
               },
               "Index": {
                 "type": "dword",
-                "value": 11
+                "value": 12
               },
               "IsChild": {
                 "type": "byte",
@@ -8129,7 +8544,7 @@
               },
               "Index": {
                 "type": "dword",
-                "value": 2
+                "value": 3
               },
               "IsChild": {
                 "type": "byte",
@@ -8162,7 +8577,7 @@
         }
       },
       {
-        "__struct_id": 67,
+        "__struct_id": 72,
         "ActionParams": {
           "type": "list",
           "value": []
@@ -8198,7 +8613,7 @@
               },
               "Index": {
                 "type": "dword",
-                "value": 12
+                "value": 13
               },
               "IsChild": {
                 "type": "byte",
@@ -8221,7 +8636,7 @@
               },
               "Index": {
                 "type": "dword",
-                "value": 11
+                "value": 12
               },
               "IsChild": {
                 "type": "byte",
@@ -8244,7 +8659,7 @@
               },
               "Index": {
                 "type": "dword",
-                "value": 2
+                "value": 3
               },
               "IsChild": {
                 "type": "byte",
@@ -8277,7 +8692,7 @@
         }
       },
       {
-        "__struct_id": 68,
+        "__struct_id": 73,
         "ActionParams": {
           "type": "list",
           "value": []
@@ -8313,7 +8728,7 @@
               },
               "Index": {
                 "type": "dword",
-                "value": 12
+                "value": 13
               },
               "IsChild": {
                 "type": "byte",
@@ -8336,7 +8751,7 @@
               },
               "Index": {
                 "type": "dword",
-                "value": 11
+                "value": 12
               },
               "IsChild": {
                 "type": "byte",
@@ -8359,7 +8774,7 @@
               },
               "Index": {
                 "type": "dword",
-                "value": 2
+                "value": 3
               },
               "IsChild": {
                 "type": "byte",
@@ -8392,7 +8807,7 @@
         }
       },
       {
-        "__struct_id": 69,
+        "__struct_id": 74,
         "ActionParams": {
           "type": "list",
           "value": []
@@ -8428,7 +8843,7 @@
               },
               "Index": {
                 "type": "dword",
-                "value": 12
+                "value": 13
               },
               "IsChild": {
                 "type": "byte",
@@ -8447,7 +8862,7 @@
               },
               "Index": {
                 "type": "dword",
-                "value": 11
+                "value": 12
               },
               "IsChild": {
                 "type": "byte",
@@ -8466,7 +8881,7 @@
               },
               "Index": {
                 "type": "dword",
-                "value": 2
+                "value": 3
               },
               "IsChild": {
                 "type": "byte",
@@ -8499,7 +8914,7 @@
         }
       },
       {
-        "__struct_id": 70,
+        "__struct_id": 75,
         "ActionParams": {
           "type": "list",
           "value": []
@@ -8535,7 +8950,7 @@
               },
               "Index": {
                 "type": "dword",
-                "value": 11
+                "value": 12
               },
               "IsChild": {
                 "type": "byte",
@@ -8566,353 +8981,6 @@
             "0": "<StartAction>[Previous page]</Start>",
             "4": "<StartAction>[Vorige Seite]</Start>",
             "5": "<StartAction>[Vorige Seite]</Start>"
-          }
-        }
-      },
-      {
-        "__struct_id": 71,
-        "ActionParams": {
-          "type": "list",
-          "value": []
-        },
-        "Animation": {
-          "type": "dword",
-          "value": 0
-        },
-        "AnimLoop": {
-          "type": "byte",
-          "value": 1
-        },
-        "Comment": {
-          "type": "cexostring",
-          "value": ""
-        },
-        "Delay": {
-          "type": "dword",
-          "value": 4294967295
-        },
-        "EntriesList": {
-          "type": "list",
-          "value": [
-            {
-              "__struct_id": 0,
-              "Active": {
-                "type": "resref",
-                "value": "gs_cip_add047"
-              },
-              "ConditionParams": {
-                "type": "list",
-                "value": []
-              },
-              "Index": {
-                "type": "dword",
-                "value": 11
-              },
-              "IsChild": {
-                "type": "byte",
-                "value": 1
-              },
-              "LinkComment": {
-                "type": "cexostring",
-                "value": ""
-              }
-            }
-          ]
-        },
-        "Quest": {
-          "type": "cexostring",
-          "value": ""
-        },
-        "Script": {
-          "type": "resref",
-          "value": "gs_cip_add042"
-        },
-        "Sound": {
-          "type": "resref",
-          "value": ""
-        },
-        "Text": {
-          "type": "cexolocstring",
-          "value": {
-            "0": "<StartAction>[Next page]</Start>",
-            "4": "<StartAction>[Nächste Seite]</Start>",
-            "5": "<StartAction>[Nächste Seite]</Start>"
-          }
-        }
-      },
-      {
-        "__struct_id": 72,
-        "ActionParams": {
-          "type": "list",
-          "value": []
-        },
-        "Animation": {
-          "type": "dword",
-          "value": 0
-        },
-        "AnimLoop": {
-          "type": "byte",
-          "value": 1
-        },
-        "Comment": {
-          "type": "cexostring",
-          "value": ""
-        },
-        "Delay": {
-          "type": "dword",
-          "value": 4294967295
-        },
-        "EntriesList": {
-          "type": "list",
-          "value": [
-            {
-              "__struct_id": 0,
-              "Active": {
-                "type": "resref",
-                "value": "gs_cip_add060"
-              },
-              "ConditionParams": {
-                "type": "list",
-                "value": []
-              },
-              "Index": {
-                "type": "dword",
-                "value": 2
-              },
-              "IsChild": {
-                "type": "byte",
-                "value": 1
-              },
-              "LinkComment": {
-                "type": "cexostring",
-                "value": ""
-              }
-            }
-          ]
-        },
-        "Quest": {
-          "type": "cexostring",
-          "value": ""
-        },
-        "Script": {
-          "type": "resref",
-          "value": "gs_cip_add058"
-        },
-        "Sound": {
-          "type": "resref",
-          "value": ""
-        },
-        "Text": {
-          "type": "cexolocstring",
-          "value": {
-            "4": "<CUSTOM104>"
-          }
-        }
-      },
-      {
-        "__struct_id": 73,
-        "ActionParams": {
-          "type": "list",
-          "value": []
-        },
-        "Animation": {
-          "type": "dword",
-          "value": 0
-        },
-        "AnimLoop": {
-          "type": "byte",
-          "value": 1
-        },
-        "Comment": {
-          "type": "cexostring",
-          "value": ""
-        },
-        "Delay": {
-          "type": "dword",
-          "value": 4294967295
-        },
-        "EntriesList": {
-          "type": "list",
-          "value": [
-            {
-              "__struct_id": 0,
-              "Active": {
-                "type": "resref",
-                "value": "gs_cip_add060"
-              },
-              "ConditionParams": {
-                "type": "list",
-                "value": []
-              },
-              "Index": {
-                "type": "dword",
-                "value": 2
-              },
-              "IsChild": {
-                "type": "byte",
-                "value": 1
-              },
-              "LinkComment": {
-                "type": "cexostring",
-                "value": ""
-              }
-            }
-          ]
-        },
-        "Quest": {
-          "type": "cexostring",
-          "value": ""
-        },
-        "Script": {
-          "type": "resref",
-          "value": "gs_cip_add057"
-        },
-        "Sound": {
-          "type": "resref",
-          "value": ""
-        },
-        "Text": {
-          "type": "cexolocstring",
-          "value": {
-            "4": "<CUSTOM103>"
-          }
-        }
-      },
-      {
-        "__struct_id": 74,
-        "ActionParams": {
-          "type": "list",
-          "value": []
-        },
-        "Animation": {
-          "type": "dword",
-          "value": 0
-        },
-        "AnimLoop": {
-          "type": "byte",
-          "value": 1
-        },
-        "Comment": {
-          "type": "cexostring",
-          "value": ""
-        },
-        "Delay": {
-          "type": "dword",
-          "value": 4294967295
-        },
-        "EntriesList": {
-          "type": "list",
-          "value": [
-            {
-              "__struct_id": 0,
-              "Active": {
-                "type": "resref",
-                "value": "gs_cip_add060"
-              },
-              "ConditionParams": {
-                "type": "list",
-                "value": []
-              },
-              "Index": {
-                "type": "dword",
-                "value": 2
-              },
-              "IsChild": {
-                "type": "byte",
-                "value": 1
-              },
-              "LinkComment": {
-                "type": "cexostring",
-                "value": ""
-              }
-            }
-          ]
-        },
-        "Quest": {
-          "type": "cexostring",
-          "value": ""
-        },
-        "Script": {
-          "type": "resref",
-          "value": "gs_cip_add056"
-        },
-        "Sound": {
-          "type": "resref",
-          "value": ""
-        },
-        "Text": {
-          "type": "cexolocstring",
-          "value": {
-            "4": "<CUSTOM102>"
-          }
-        }
-      },
-      {
-        "__struct_id": 75,
-        "ActionParams": {
-          "type": "list",
-          "value": []
-        },
-        "Animation": {
-          "type": "dword",
-          "value": 0
-        },
-        "AnimLoop": {
-          "type": "byte",
-          "value": 1
-        },
-        "Comment": {
-          "type": "cexostring",
-          "value": ""
-        },
-        "Delay": {
-          "type": "dword",
-          "value": 4294967295
-        },
-        "EntriesList": {
-          "type": "list",
-          "value": [
-            {
-              "__struct_id": 0,
-              "Active": {
-                "type": "resref",
-                "value": "gs_cip_add060"
-              },
-              "ConditionParams": {
-                "type": "list",
-                "value": []
-              },
-              "Index": {
-                "type": "dword",
-                "value": 2
-              },
-              "IsChild": {
-                "type": "byte",
-                "value": 1
-              },
-              "LinkComment": {
-                "type": "cexostring",
-                "value": ""
-              }
-            }
-          ]
-        },
-        "Quest": {
-          "type": "cexostring",
-          "value": ""
-        },
-        "Script": {
-          "type": "resref",
-          "value": "gs_cip_add055"
-        },
-        "Sound": {
-          "type": "resref",
-          "value": ""
-        },
-        "Text": {
-          "type": "cexolocstring",
-          "value": {
-            "4": "<CUSTOM101>"
           }
         }
       },
@@ -8945,218 +9013,7 @@
               "__struct_id": 0,
               "Active": {
                 "type": "resref",
-                "value": "gs_cip_add060"
-              },
-              "ConditionParams": {
-                "type": "list",
-                "value": []
-              },
-              "Index": {
-                "type": "dword",
-                "value": 2
-              },
-              "IsChild": {
-                "type": "byte",
-                "value": 1
-              },
-              "LinkComment": {
-                "type": "cexostring",
-                "value": ""
-              }
-            }
-          ]
-        },
-        "Quest": {
-          "type": "cexostring",
-          "value": ""
-        },
-        "Script": {
-          "type": "resref",
-          "value": "gs_cip_add054"
-        },
-        "Sound": {
-          "type": "resref",
-          "value": ""
-        },
-        "Text": {
-          "type": "cexolocstring",
-          "value": {
-            "4": "<CUSTOM100>"
-          }
-        }
-      },
-      {
-        "__struct_id": 77,
-        "ActionParams": {
-          "type": "list",
-          "value": []
-        },
-        "Animation": {
-          "type": "dword",
-          "value": 0
-        },
-        "AnimLoop": {
-          "type": "byte",
-          "value": 1
-        },
-        "Comment": {
-          "type": "cexostring",
-          "value": ""
-        },
-        "Delay": {
-          "type": "dword",
-          "value": 4294967295
-        },
-        "EntriesList": {
-          "type": "list",
-          "value": [
-            {
-              "__struct_id": 0,
-              "Active": {
-                "type": "resref",
-                "value": "gs_cip_add017"
-              },
-              "ConditionParams": {
-                "type": "list",
-                "value": []
-              },
-              "Index": {
-                "type": "dword",
-                "value": 10
-              },
-              "IsChild": {
-                "type": "byte",
-                "value": 1
-              },
-              "LinkComment": {
-                "type": "cexostring",
-                "value": ""
-              }
-            }
-          ]
-        },
-        "Quest": {
-          "type": "cexostring",
-          "value": ""
-        },
-        "Script": {
-          "type": "resref",
-          "value": ""
-        },
-        "Sound": {
-          "type": "resref",
-          "value": ""
-        },
-        "Text": {
-          "type": "cexolocstring",
-          "value": {
-            "0": "<StartAction>[Back]</Start>",
-            "4": "<StartAction>[Schritt zurück]</Start>",
-            "5": "<StartAction>[Schritt zurück]</Start>"
-          }
-        }
-      },
-      {
-        "__struct_id": 78,
-        "ActionParams": {
-          "type": "list",
-          "value": []
-        },
-        "Animation": {
-          "type": "dword",
-          "value": 0
-        },
-        "AnimLoop": {
-          "type": "byte",
-          "value": 1
-        },
-        "Comment": {
-          "type": "cexostring",
-          "value": ""
-        },
-        "Delay": {
-          "type": "dword",
-          "value": 4294967295
-        },
-        "EntriesList": {
-          "type": "list",
-          "value": [
-            {
-              "__struct_id": 0,
-              "Active": {
-                "type": "resref",
-                "value": "gs_cip_add045"
-              },
-              "ConditionParams": {
-                "type": "list",
-                "value": []
-              },
-              "Index": {
-                "type": "dword",
-                "value": 12
-              },
-              "IsChild": {
-                "type": "byte",
-                "value": 1
-              },
-              "LinkComment": {
-                "type": "cexostring",
-                "value": ""
-              }
-            }
-          ]
-        },
-        "Quest": {
-          "type": "cexostring",
-          "value": ""
-        },
-        "Script": {
-          "type": "resref",
-          "value": "gs_cip_add044"
-        },
-        "Sound": {
-          "type": "resref",
-          "value": ""
-        },
-        "Text": {
-          "type": "cexolocstring",
-          "value": {
-            "0": "<StartAction>[Previous page]</Start>",
-            "4": "<StartAction>[Vorige Seite]</Start>",
-            "5": "<StartAction>[Vorige Seite]</Start>"
-          }
-        }
-      },
-      {
-        "__struct_id": 79,
-        "ActionParams": {
-          "type": "list",
-          "value": []
-        },
-        "Animation": {
-          "type": "dword",
-          "value": 0
-        },
-        "AnimLoop": {
-          "type": "byte",
-          "value": 1
-        },
-        "Comment": {
-          "type": "cexostring",
-          "value": ""
-        },
-        "Delay": {
-          "type": "dword",
-          "value": 4294967295
-        },
-        "EntriesList": {
-          "type": "list",
-          "value": [
-            {
-              "__struct_id": 0,
-              "Active": {
-                "type": "resref",
-                "value": "gs_cip_add045"
+                "value": "gs_cip_add047"
               },
               "ConditionParams": {
                 "type": "list",
@@ -9195,6 +9052,213 @@
             "0": "<StartAction>[Next page]</Start>",
             "4": "<StartAction>[Nächste Seite]</Start>",
             "5": "<StartAction>[Nächste Seite]</Start>"
+          }
+        }
+      },
+      {
+        "__struct_id": 77,
+        "ActionParams": {
+          "type": "list",
+          "value": []
+        },
+        "Animation": {
+          "type": "dword",
+          "value": 0
+        },
+        "AnimLoop": {
+          "type": "byte",
+          "value": 1
+        },
+        "Comment": {
+          "type": "cexostring",
+          "value": ""
+        },
+        "Delay": {
+          "type": "dword",
+          "value": 4294967295
+        },
+        "EntriesList": {
+          "type": "list",
+          "value": [
+            {
+              "__struct_id": 0,
+              "Active": {
+                "type": "resref",
+                "value": "gs_cip_add060"
+              },
+              "ConditionParams": {
+                "type": "list",
+                "value": []
+              },
+              "Index": {
+                "type": "dword",
+                "value": 3
+              },
+              "IsChild": {
+                "type": "byte",
+                "value": 1
+              },
+              "LinkComment": {
+                "type": "cexostring",
+                "value": ""
+              }
+            }
+          ]
+        },
+        "Quest": {
+          "type": "cexostring",
+          "value": ""
+        },
+        "Script": {
+          "type": "resref",
+          "value": "gs_cip_add058"
+        },
+        "Sound": {
+          "type": "resref",
+          "value": ""
+        },
+        "Text": {
+          "type": "cexolocstring",
+          "value": {
+            "4": "<CUSTOM104>"
+          }
+        }
+      },
+      {
+        "__struct_id": 78,
+        "ActionParams": {
+          "type": "list",
+          "value": []
+        },
+        "Animation": {
+          "type": "dword",
+          "value": 0
+        },
+        "AnimLoop": {
+          "type": "byte",
+          "value": 1
+        },
+        "Comment": {
+          "type": "cexostring",
+          "value": ""
+        },
+        "Delay": {
+          "type": "dword",
+          "value": 4294967295
+        },
+        "EntriesList": {
+          "type": "list",
+          "value": [
+            {
+              "__struct_id": 0,
+              "Active": {
+                "type": "resref",
+                "value": "gs_cip_add060"
+              },
+              "ConditionParams": {
+                "type": "list",
+                "value": []
+              },
+              "Index": {
+                "type": "dword",
+                "value": 3
+              },
+              "IsChild": {
+                "type": "byte",
+                "value": 1
+              },
+              "LinkComment": {
+                "type": "cexostring",
+                "value": ""
+              }
+            }
+          ]
+        },
+        "Quest": {
+          "type": "cexostring",
+          "value": ""
+        },
+        "Script": {
+          "type": "resref",
+          "value": "gs_cip_add057"
+        },
+        "Sound": {
+          "type": "resref",
+          "value": ""
+        },
+        "Text": {
+          "type": "cexolocstring",
+          "value": {
+            "4": "<CUSTOM103>"
+          }
+        }
+      },
+      {
+        "__struct_id": 79,
+        "ActionParams": {
+          "type": "list",
+          "value": []
+        },
+        "Animation": {
+          "type": "dword",
+          "value": 0
+        },
+        "AnimLoop": {
+          "type": "byte",
+          "value": 1
+        },
+        "Comment": {
+          "type": "cexostring",
+          "value": ""
+        },
+        "Delay": {
+          "type": "dword",
+          "value": 4294967295
+        },
+        "EntriesList": {
+          "type": "list",
+          "value": [
+            {
+              "__struct_id": 0,
+              "Active": {
+                "type": "resref",
+                "value": "gs_cip_add060"
+              },
+              "ConditionParams": {
+                "type": "list",
+                "value": []
+              },
+              "Index": {
+                "type": "dword",
+                "value": 3
+              },
+              "IsChild": {
+                "type": "byte",
+                "value": 1
+              },
+              "LinkComment": {
+                "type": "cexostring",
+                "value": ""
+              }
+            }
+          ]
+        },
+        "Quest": {
+          "type": "cexostring",
+          "value": ""
+        },
+        "Script": {
+          "type": "resref",
+          "value": "gs_cip_add056"
+        },
+        "Sound": {
+          "type": "resref",
+          "value": ""
+        },
+        "Text": {
+          "type": "cexolocstring",
+          "value": {
+            "4": "<CUSTOM102>"
           }
         }
       },
@@ -9235,7 +9299,7 @@
               },
               "Index": {
                 "type": "dword",
-                "value": 2
+                "value": 3
               },
               "IsChild": {
                 "type": "byte",
@@ -9254,7 +9318,7 @@
         },
         "Script": {
           "type": "resref",
-          "value": "gs_cip_add058"
+          "value": "gs_cip_add055"
         },
         "Sound": {
           "type": "resref",
@@ -9263,7 +9327,7 @@
         "Text": {
           "type": "cexolocstring",
           "value": {
-            "4": "<CUSTOM104>"
+            "4": "<CUSTOM101>"
           }
         }
       },
@@ -9304,7 +9368,7 @@
               },
               "Index": {
                 "type": "dword",
-                "value": 2
+                "value": 3
               },
               "IsChild": {
                 "type": "byte",
@@ -9323,7 +9387,7 @@
         },
         "Script": {
           "type": "resref",
-          "value": "gs_cip_add057"
+          "value": "gs_cip_add054"
         },
         "Sound": {
           "type": "resref",
@@ -9332,7 +9396,7 @@
         "Text": {
           "type": "cexolocstring",
           "value": {
-            "4": "<CUSTOM103>"
+            "4": "<CUSTOM100>"
           }
         }
       },
@@ -9365,7 +9429,7 @@
               "__struct_id": 0,
               "Active": {
                 "type": "resref",
-                "value": "gs_cip_add060"
+                "value": "gs_cip_add017"
               },
               "ConditionParams": {
                 "type": "list",
@@ -9373,7 +9437,7 @@
               },
               "Index": {
                 "type": "dword",
-                "value": 2
+                "value": 11
               },
               "IsChild": {
                 "type": "byte",
@@ -9392,7 +9456,7 @@
         },
         "Script": {
           "type": "resref",
-          "value": "gs_cip_add056"
+          "value": ""
         },
         "Sound": {
           "type": "resref",
@@ -9401,7 +9465,9 @@
         "Text": {
           "type": "cexolocstring",
           "value": {
-            "4": "<CUSTOM102>"
+            "0": "<StartAction>[Back]</Start>",
+            "4": "<StartAction>[Schritt zurück]</Start>",
+            "5": "<StartAction>[Schritt zurück]</Start>"
           }
         }
       },
@@ -9434,7 +9500,7 @@
               "__struct_id": 0,
               "Active": {
                 "type": "resref",
-                "value": "gs_cip_add060"
+                "value": "gs_cip_add045"
               },
               "ConditionParams": {
                 "type": "list",
@@ -9442,7 +9508,7 @@
               },
               "Index": {
                 "type": "dword",
-                "value": 2
+                "value": 13
               },
               "IsChild": {
                 "type": "byte",
@@ -9461,7 +9527,7 @@
         },
         "Script": {
           "type": "resref",
-          "value": "gs_cip_add055"
+          "value": "gs_cip_add044"
         },
         "Sound": {
           "type": "resref",
@@ -9470,12 +9536,85 @@
         "Text": {
           "type": "cexolocstring",
           "value": {
-            "4": "<CUSTOM101>"
+            "0": "<StartAction>[Previous page]</Start>",
+            "4": "<StartAction>[Vorige Seite]</Start>",
+            "5": "<StartAction>[Vorige Seite]</Start>"
           }
         }
       },
       {
         "__struct_id": 84,
+        "ActionParams": {
+          "type": "list",
+          "value": []
+        },
+        "Animation": {
+          "type": "dword",
+          "value": 0
+        },
+        "AnimLoop": {
+          "type": "byte",
+          "value": 1
+        },
+        "Comment": {
+          "type": "cexostring",
+          "value": ""
+        },
+        "Delay": {
+          "type": "dword",
+          "value": 4294967295
+        },
+        "EntriesList": {
+          "type": "list",
+          "value": [
+            {
+              "__struct_id": 0,
+              "Active": {
+                "type": "resref",
+                "value": "gs_cip_add045"
+              },
+              "ConditionParams": {
+                "type": "list",
+                "value": []
+              },
+              "Index": {
+                "type": "dword",
+                "value": 13
+              },
+              "IsChild": {
+                "type": "byte",
+                "value": 1
+              },
+              "LinkComment": {
+                "type": "cexostring",
+                "value": ""
+              }
+            }
+          ]
+        },
+        "Quest": {
+          "type": "cexostring",
+          "value": ""
+        },
+        "Script": {
+          "type": "resref",
+          "value": "gs_cip_add042"
+        },
+        "Sound": {
+          "type": "resref",
+          "value": ""
+        },
+        "Text": {
+          "type": "cexolocstring",
+          "value": {
+            "0": "<StartAction>[Next page]</Start>",
+            "4": "<StartAction>[Nächste Seite]</Start>",
+            "5": "<StartAction>[Nächste Seite]</Start>"
+          }
+        }
+      },
+      {
+        "__struct_id": 85,
         "ActionParams": {
           "type": "list",
           "value": []
@@ -9511,7 +9650,283 @@
               },
               "Index": {
                 "type": "dword",
-                "value": 2
+                "value": 3
+              },
+              "IsChild": {
+                "type": "byte",
+                "value": 1
+              },
+              "LinkComment": {
+                "type": "cexostring",
+                "value": ""
+              }
+            }
+          ]
+        },
+        "Quest": {
+          "type": "cexostring",
+          "value": ""
+        },
+        "Script": {
+          "type": "resref",
+          "value": "gs_cip_add058"
+        },
+        "Sound": {
+          "type": "resref",
+          "value": ""
+        },
+        "Text": {
+          "type": "cexolocstring",
+          "value": {
+            "4": "<CUSTOM104>"
+          }
+        }
+      },
+      {
+        "__struct_id": 86,
+        "ActionParams": {
+          "type": "list",
+          "value": []
+        },
+        "Animation": {
+          "type": "dword",
+          "value": 0
+        },
+        "AnimLoop": {
+          "type": "byte",
+          "value": 1
+        },
+        "Comment": {
+          "type": "cexostring",
+          "value": ""
+        },
+        "Delay": {
+          "type": "dword",
+          "value": 4294967295
+        },
+        "EntriesList": {
+          "type": "list",
+          "value": [
+            {
+              "__struct_id": 0,
+              "Active": {
+                "type": "resref",
+                "value": "gs_cip_add060"
+              },
+              "ConditionParams": {
+                "type": "list",
+                "value": []
+              },
+              "Index": {
+                "type": "dword",
+                "value": 3
+              },
+              "IsChild": {
+                "type": "byte",
+                "value": 1
+              },
+              "LinkComment": {
+                "type": "cexostring",
+                "value": ""
+              }
+            }
+          ]
+        },
+        "Quest": {
+          "type": "cexostring",
+          "value": ""
+        },
+        "Script": {
+          "type": "resref",
+          "value": "gs_cip_add057"
+        },
+        "Sound": {
+          "type": "resref",
+          "value": ""
+        },
+        "Text": {
+          "type": "cexolocstring",
+          "value": {
+            "4": "<CUSTOM103>"
+          }
+        }
+      },
+      {
+        "__struct_id": 87,
+        "ActionParams": {
+          "type": "list",
+          "value": []
+        },
+        "Animation": {
+          "type": "dword",
+          "value": 0
+        },
+        "AnimLoop": {
+          "type": "byte",
+          "value": 1
+        },
+        "Comment": {
+          "type": "cexostring",
+          "value": ""
+        },
+        "Delay": {
+          "type": "dword",
+          "value": 4294967295
+        },
+        "EntriesList": {
+          "type": "list",
+          "value": [
+            {
+              "__struct_id": 0,
+              "Active": {
+                "type": "resref",
+                "value": "gs_cip_add060"
+              },
+              "ConditionParams": {
+                "type": "list",
+                "value": []
+              },
+              "Index": {
+                "type": "dword",
+                "value": 3
+              },
+              "IsChild": {
+                "type": "byte",
+                "value": 1
+              },
+              "LinkComment": {
+                "type": "cexostring",
+                "value": ""
+              }
+            }
+          ]
+        },
+        "Quest": {
+          "type": "cexostring",
+          "value": ""
+        },
+        "Script": {
+          "type": "resref",
+          "value": "gs_cip_add056"
+        },
+        "Sound": {
+          "type": "resref",
+          "value": ""
+        },
+        "Text": {
+          "type": "cexolocstring",
+          "value": {
+            "4": "<CUSTOM102>"
+          }
+        }
+      },
+      {
+        "__struct_id": 88,
+        "ActionParams": {
+          "type": "list",
+          "value": []
+        },
+        "Animation": {
+          "type": "dword",
+          "value": 0
+        },
+        "AnimLoop": {
+          "type": "byte",
+          "value": 1
+        },
+        "Comment": {
+          "type": "cexostring",
+          "value": ""
+        },
+        "Delay": {
+          "type": "dword",
+          "value": 4294967295
+        },
+        "EntriesList": {
+          "type": "list",
+          "value": [
+            {
+              "__struct_id": 0,
+              "Active": {
+                "type": "resref",
+                "value": "gs_cip_add060"
+              },
+              "ConditionParams": {
+                "type": "list",
+                "value": []
+              },
+              "Index": {
+                "type": "dword",
+                "value": 3
+              },
+              "IsChild": {
+                "type": "byte",
+                "value": 1
+              },
+              "LinkComment": {
+                "type": "cexostring",
+                "value": ""
+              }
+            }
+          ]
+        },
+        "Quest": {
+          "type": "cexostring",
+          "value": ""
+        },
+        "Script": {
+          "type": "resref",
+          "value": "gs_cip_add055"
+        },
+        "Sound": {
+          "type": "resref",
+          "value": ""
+        },
+        "Text": {
+          "type": "cexolocstring",
+          "value": {
+            "4": "<CUSTOM101>"
+          }
+        }
+      },
+      {
+        "__struct_id": 89,
+        "ActionParams": {
+          "type": "list",
+          "value": []
+        },
+        "Animation": {
+          "type": "dword",
+          "value": 0
+        },
+        "AnimLoop": {
+          "type": "byte",
+          "value": 1
+        },
+        "Comment": {
+          "type": "cexostring",
+          "value": ""
+        },
+        "Delay": {
+          "type": "dword",
+          "value": 4294967295
+        },
+        "EntriesList": {
+          "type": "list",
+          "value": [
+            {
+              "__struct_id": 0,
+              "Active": {
+                "type": "resref",
+                "value": "gs_cip_add060"
+              },
+              "ConditionParams": {
+                "type": "list",
+                "value": []
+              },
+              "Index": {
+                "type": "dword",
+                "value": 3
               },
               "IsChild": {
                 "type": "byte",
