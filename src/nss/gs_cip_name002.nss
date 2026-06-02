@@ -9,7 +9,7 @@ void main()
     object oItem = GetFirstItemInInventory();
     if (GetIsObjectValid(oItem))
     {
-        SetName(oObject, sMessage);
+        SetName(oItem, sMessage);
     }
 }
 
