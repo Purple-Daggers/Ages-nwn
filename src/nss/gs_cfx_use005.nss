@@ -6,6 +6,8 @@ void main()
     string sTag     = GetTag(OBJECT_SELF);
     sTag            = GetStringRight(sTag, GetStringLength(sTag) - 6);
     object oFixture = CreateItemOnObject(sTag, oSpeaker);
+    SetName(oFixture, GetName(OBJECT_SELF));
+    SetDescription(oFixture, GetDescription(OBJECT_SELF));
 
     if (GetIsObjectValid(oFixture))
     {
