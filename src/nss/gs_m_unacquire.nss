@@ -75,6 +75,8 @@ void main()
             location lLocation  = Location(GetArea(oLostBy), vPosition, fFacing);
             sTag                = GetStringRight(sTag, GetStringLength(sTag) - 6);
             object oFixture     = CreateObject(OBJECT_TYPE_PLACEABLE, sTag, lLocation);
+            SetName(oFixture, GetName(oItem));
+            SetDescription(oFixture, GetDescription(oItem));
 
             if (GetIsObjectValid(oFixture))
             {

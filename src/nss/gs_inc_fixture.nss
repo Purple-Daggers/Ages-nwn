@@ -16,6 +16,8 @@ void gsFXLoadFixture(string sID, int nLimit = 40)
     location lLocation;
     string sTemplate = "";
     string sNth      = "";
+    string sName = "";
+    string sDescription = "";
     int nNth         = 0;
 
     for (nNth = 1; nNth <= nLimit; nNth++)
@@ -26,8 +28,12 @@ void gsFXLoadFixture(string sID, int nLimit = 40)
         {
             sTemplate = GetCampaignString("GS_FX_" + sID, "TEMPLATE_" + sNth);
             lLocation = gsLOGetDBLocation("GS_FX_" + sID, "LOCATION_" + sNth);
+            sName = GetCampaignString("GS_FX_" + sID, "NAME_" + sNth);
+            sDescription = GetCampaignString("GS_FX_" + sID, "DESCRIPTION_" + sNth);
 
-            CreateObject(OBJECT_TYPE_PLACEABLE, sTemplate, lLocation);
+            object oFixture = CreateObject(OBJECT_TYPE_PLACEABLE, sTemplate, lLocation);
+            SetName(oFixture, sName);
+            SetDescription(oFixture, sDescription);
         }
     }
 }
@@ -45,6 +51,8 @@ int gsFXSaveFixture(string sID, object oFixture = OBJECT_SELF, int nLimit = 40)
         {
             SetCampaignInt("GS_FX_" + sID, "SLOT_" + sNth, TRUE);
             SetCampaignString("GS_FX_" + sID, "TEMPLATE_" + sNth, GetResRef(oFixture));
+            SetCampaignString("GS_FX_" + sID, "NAME_" + sNth, GetName(oFixture));
+            SetCampaignString("GS_FX_" + sID, "DESCRIPTION_" + sNth, GetDescription(oFixture));
             gsLOSetDBLocationOf("GS_FX_" + sID, "LOCATION_" + sNth, oFixture);
             return TRUE;
         }
