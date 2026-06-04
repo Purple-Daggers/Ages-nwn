@@ -1,4 +1,5 @@
 void main()
 {
-    AssignCommand(GetLastUsedBy(), ActionStartConversation(OBJECT_SELF, "gs_fo_use", TRUE));
+    object oFixture = OBJECT_SELF;
+    AssignCommand(GetLastUsedBy(), ActionStartConversation(oFixture, "gs_fo_use", TRUE));
 }
