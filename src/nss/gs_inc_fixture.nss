@@ -34,6 +34,8 @@ void gsFXLoadFixture(string sID, int nLimit = 40)
             object oFixture = CreateObject(OBJECT_TYPE_PLACEABLE, sTemplate, lLocation);
             SetName(oFixture, sName);
             SetDescription(oFixture, sDescription);
+            SetLocalString(oFixture, "GS_FX_CREATOR", GetCampaignString("GS_FX_" + sID, "OWNER_" + sNth));
+            SetLocalString(oFixture, "GS_FX_ID", GetCampaignString("GS_FX_" + sID, "ID_" + sNth));
         }
     }
 }
@@ -53,6 +55,8 @@ int gsFXSaveFixture(string sID, object oFixture = OBJECT_SELF, int nLimit = 40)
             SetCampaignString("GS_FX_" + sID, "TEMPLATE_" + sNth, GetResRef(oFixture));
             SetCampaignString("GS_FX_" + sID, "NAME_" + sNth, GetName(oFixture));
             SetCampaignString("GS_FX_" + sID, "DESCRIPTION_" + sNth, GetDescription(oFixture));
+            SetCampaignString("GS_FX_" + sID, "ID_" + sNth, GetLocalString(oFixture, "GS_FX_ID"));
+            SetCampaignString("GS_FX_" + sID, "OWNER_" + sNth, GetLocalString(oFixture, "GS_FX_CREATOR"));
             gsLOSetDBLocationOf("GS_FX_" + sID, "LOCATION_" + sNth, oFixture);
             return TRUE;
         }

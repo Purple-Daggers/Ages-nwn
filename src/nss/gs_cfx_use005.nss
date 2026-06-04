@@ -8,6 +8,7 @@ void main()
     object oFixture = CreateItemOnObject(sTag, oSpeaker);
     SetName(oFixture, GetName(OBJECT_SELF));
     SetDescription(oFixture, GetDescription(OBJECT_SELF));
+    SetLocalString(oFixture, "GS_FX_ID", GetLocalString(OBJECT_SELF, "GS_FX_ID"));
 
     if (GetIsObjectValid(oFixture))
     {

@@ -21,6 +21,10 @@
     "value": [
       {
         "__struct_id": 0,
+        "ActionParams": {
+          "type": "list",
+          "value": []
+        },
         "Animation": {
           "type": "dword",
           "value": 0
@@ -50,9 +54,13 @@
                 "type": "resref",
                 "value": "gs_cfx_use001"
               },
+              "ConditionParams": {
+                "type": "list",
+                "value": []
+              },
               "Index": {
                 "type": "dword",
-                "value": 4
+                "value": 5
               },
               "IsChild": {
                 "type": "byte",
@@ -65,9 +73,13 @@
                 "type": "resref",
                 "value": "gs_cfx_use003"
               },
+              "ConditionParams": {
+                "type": "list",
+                "value": []
+              },
               "Index": {
                 "type": "dword",
-                "value": 3
+                "value": 4
               },
               "IsChild": {
                 "type": "byte",
@@ -80,9 +92,13 @@
                 "type": "resref",
                 "value": "gs_cfx_use004"
               },
+              "ConditionParams": {
+                "type": "list",
+                "value": []
+              },
               "Index": {
                 "type": "dword",
-                "value": 2
+                "value": 3
               },
               "IsChild": {
                 "type": "byte",
@@ -93,11 +109,15 @@
               "__struct_id": 3,
               "Active": {
                 "type": "resref",
-                "value": ""
+                "value": "gs_cfx_use008"
+              },
+              "ConditionParams": {
+                "type": "list",
+                "value": []
               },
               "Index": {
                 "type": "dword",
-                "value": 1
+                "value": 2
               },
               "IsChild": {
                 "type": "byte",
@@ -109,6 +129,29 @@
               "Active": {
                 "type": "resref",
                 "value": ""
+              },
+              "ConditionParams": {
+                "type": "list",
+                "value": []
+              },
+              "Index": {
+                "type": "dword",
+                "value": 1
+              },
+              "IsChild": {
+                "type": "byte",
+                "value": 0
+              }
+            },
+            {
+              "__struct_id": 5,
+              "Active": {
+                "type": "resref",
+                "value": ""
+              },
+              "ConditionParams": {
+                "type": "list",
+                "value": []
               },
               "Index": {
                 "type": "dword",
@@ -146,7 +189,7 @@
   },
   "NumWords": {
     "type": "dword",
-    "value": 11
+    "value": 13
   },
   "PreventZoomIn": {
     "type": "byte",
@@ -157,6 +200,10 @@
     "value": [
       {
         "__struct_id": 0,
+        "ActionParams": {
+          "type": "list",
+          "value": []
+        },
         "Animation": {
           "type": "dword",
           "value": 0
@@ -200,6 +247,10 @@
       },
       {
         "__struct_id": 1,
+        "ActionParams": {
+          "type": "list",
+          "value": []
+        },
         "Animation": {
           "type": "dword",
           "value": 0
@@ -243,6 +294,55 @@
       },
       {
         "__struct_id": 2,
+        "ActionParams": {
+          "type": "list",
+          "value": []
+        },
+        "Animation": {
+          "type": "dword",
+          "value": 0
+        },
+        "AnimLoop": {
+          "type": "byte",
+          "value": 1
+        },
+        "Comment": {
+          "type": "cexostring",
+          "value": ""
+        },
+        "Delay": {
+          "type": "dword",
+          "value": 4294967295
+        },
+        "EntriesList": {
+          "type": "list",
+          "value": []
+        },
+        "Quest": {
+          "type": "cexostring",
+          "value": ""
+        },
+        "Script": {
+          "type": "resref",
+          "value": "gs_cfx_use010"
+        },
+        "Sound": {
+          "type": "resref",
+          "value": ""
+        },
+        "Text": {
+          "type": "cexolocstring",
+          "value": {
+            "0": "<StartAction>[Use object]</Start>"
+          }
+        }
+      },
+      {
+        "__struct_id": 3,
+        "ActionParams": {
+          "type": "list",
+          "value": []
+        },
         "Animation": {
           "type": "dword",
           "value": 0
@@ -285,7 +385,11 @@
         }
       },
       {
-        "__struct_id": 3,
+        "__struct_id": 4,
+        "ActionParams": {
+          "type": "list",
+          "value": []
+        },
         "Animation": {
           "type": "dword",
           "value": 0
@@ -328,7 +432,11 @@
         }
       },
       {
-        "__struct_id": 4,
+        "__struct_id": 5,
+        "ActionParams": {
+          "type": "list",
+          "value": []
+        },
         "Animation": {
           "type": "dword",
           "value": 0
@@ -380,6 +488,10 @@
         "Active": {
           "type": "resref",
           "value": ""
+        },
+        "ConditionParams": {
+          "type": "list",
+          "value": []
         },
         "Index": {
           "type": "dword",

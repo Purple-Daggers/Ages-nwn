@@ -27,7 +27,16 @@ void gsFORemoveMessage(string sMessageID, object oForum = OBJECT_SELF);
 
 void gsFOLoadContent(object oForum = OBJECT_SELF)
 {
-    string sDatabase  = "GS_FO_" + GetTag(oForum);
+    string sDatabase = "";
+    if(GetLocalString(oForum, "GS_FX_ID") == "")
+    {
+        sDatabase  = "GS_FO_" + GetTag(oForum);
+    }
+    else
+    {
+        sDatabase = "GS_FO_" + GetLocalString(oForum, "GS_FX_ID");
+    }
+
     string sMessageID = "";
     string sOwner     = "";
     string sNth       = "";
@@ -105,7 +114,16 @@ int gsFOPostMessage(string sMessageID, object oOwner, object oForum = OBJECT_SEL
         if (GetLocalString(oForum, "GS_FO_MESSAGE_" + sNth) == sMessageID) return FALSE;
     }
 
-    string sDatabase = "GS_FO_" + GetTag(oForum);
+    string sDatabase = "";
+    if(GetLocalString(oForum, "GS_FX_ID") == "")
+    {
+        sDatabase  = "GS_FO_" + GetTag(oForum);
+    }
+    else
+    {
+        sDatabase = "GS_FO_" + GetLocalString(oForum, "GS_FX_ID");
+    }
+
     string sPlayerID = gsPCGetPlayerID(oOwner);
 
     nNth             = GetLocalInt(oForum, "GS_FO_OFFSET") + 1;
@@ -124,7 +142,16 @@ int gsFOPostMessage(string sMessageID, object oOwner, object oForum = OBJECT_SEL
 //----------------------------------------------------------------
 void gsFORemoveMessage(string sMessageID, object oForum = OBJECT_SELF)
 {
-    string sDatabase = "GS_FO_" + GetTag(oForum);
+    string sDatabase = "";
+    if(GetLocalString(oForum, "GS_FX_ID") == "")
+    {
+        sDatabase  = "GS_FO_" + GetTag(oForum);
+    }
+    else
+    {
+        sDatabase = "GS_FO_" + GetLocalString(oForum, "GS_FX_ID");
+    }
+
     string sNth      = "";
     int nNth         = 1;
 
