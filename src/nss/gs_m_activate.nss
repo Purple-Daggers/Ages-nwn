@@ -104,7 +104,7 @@ void main()
         if (GetIsObjectValid(oTarget))
         {
             //post message
-            if (GetStringLeft(GetTag(oTarget), 8) == "GS_FORUM")
+            if (GetStringLeft(GetTag(oTarget), 8) == "GS_FORUM" || GetLocalInt(oTarget, "GS_FORUM"))
             {
                 if (gsFOPostMessage(GetStringRight(sTag, 16), oActivator, oTarget))
                 {

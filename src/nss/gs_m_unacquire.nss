@@ -77,6 +77,15 @@ void main()
             object oFixture     = CreateObject(OBJECT_TYPE_PLACEABLE, sTag, lLocation);
             SetName(oFixture, GetName(oItem));
             SetDescription(oFixture, GetDescription(oItem));
+            SetLocalString(oFixture, "GS_FX_CREATOR", GetName(oLostBy));
+            if(GetLocalString(oItem, "GS_FX_ID") == "")
+            {
+                SetLocalString(oFixture, "GS_FX_ID", GetRandomUUID());
+            }
+            else 
+            {
+                SetLocalString(oFixture, "GS_FX_ID", GetLocalString(oItem, "GS_FX_ID"));
+            }
 
             if (GetIsObjectValid(oFixture))
             {
