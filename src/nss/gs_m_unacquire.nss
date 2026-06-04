@@ -78,9 +78,13 @@ void main()
             SetName(oFixture, GetName(oItem));
             SetDescription(oFixture, GetDescription(oItem));
             SetLocalString(oFixture, "GS_FX_CREATOR", GetName(oLostBy));
-            if(GetLocalString(oFixture, "GS_FX_ID") == "")
+            if(GetLocalString(oItem, "GS_FX_ID") == "")
             {
                 SetLocalString(oFixture, "GS_FX_ID", GetRandomUUID());
+            }
+            else 
+            {
+                SetLocalString(oFixture, "GS_FX_ID", GetLocalString(oItem, "GS_FX_ID"));
             }
 
             if (GetIsObjectValid(oFixture))
