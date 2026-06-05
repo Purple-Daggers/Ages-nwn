@@ -39187,7 +39187,9 @@
                     },
                     "DescIdentified": {
                       "type": "cexolocstring",
-                      "value": {}
+                      "value": {
+                        "0": "A notebook that can hold finished writings.\n\nUse a finished letter on the notebook to attach it.\n\nNotebooks can hold up to 35 notes."
+                      }
                     },
                     "Description": {
                       "type": "cexolocstring",
@@ -39276,6 +39278,26 @@
                     "TemplateResRef": {
                       "type": "resref",
                       "value": "gs_item410"
+                    },
+                    "VarTable": {
+                      "type": "list",
+                      "value": [
+                        {
+                          "__struct_id": 0,
+                          "Name": {
+                            "type": "cexostring",
+                            "value": "GS_FORUM"
+                          },
+                          "Type": {
+                            "type": "dword",
+                            "value": 1
+                          },
+                          "Value": {
+                            "type": "int",
+                            "value": 1
+                          }
+                        }
+                      ]
                     },
                     "xModelPart1": {
                       "type": "word",
