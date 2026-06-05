@@ -146,6 +146,19 @@ void main()
         return;
     }
 
+    if (sTag == "GS_FO_NOTEBOOK")
+    {
+        if(GetLocalString(oItem, "GS_FX_ID") == "")
+        {
+            SetLocalString(oItem, "GS_FX_ID", GetRandomUUID());
+        }
+
+        object oNotebook = CreateObject(OBJECT_TYPE_PLACEABLE, "gs_fo_helper", GetLocation(oActivator), FALSE);
+        SetLocalString(oNotebook, "GS_FX_ID", GetLocalString(oItem, "GS_FX_ID"));
+        SetName(oNotebook, GetName(oItem));
+        AssignCommand(oActivator, ActionStartConversation(oNotebook, "gs_fo_use", TRUE, FALSE));
+    }
+
     //item property
     if (GetStringLeft(sTag, 6) == "GS_IP_")
     {
