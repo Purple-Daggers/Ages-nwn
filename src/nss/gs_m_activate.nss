@@ -106,6 +106,9 @@ void main()
             //post message
             if (GetStringLeft(GetTag(oTarget), 8) == "GS_FORUM" || GetLocalInt(oTarget, "GS_FORUM"))
             {
+                if(GetTag(oTarget) == "GS_FO_NOTEBOOK" && GetLocalString(oTarget, "GS_FX_ID") == ""){
+                    SetLocalString(oTarget, "GS_FX_ID", GetRandomUUID());
+                }
                 if (gsFOPostMessage(GetStringRight(sTag, 16), oActivator, oTarget))
                 {
                     DestroyObject(oItem);
@@ -152,11 +155,8 @@ void main()
         {
             SetLocalString(oItem, "GS_FX_ID", GetRandomUUID());
         }
-
-        object oNotebook = CreateObject(OBJECT_TYPE_PLACEABLE, "gs_fo_helper", GetLocation(oActivator), FALSE);
-        SetLocalString(oNotebook, "GS_FX_ID", GetLocalString(oItem, "GS_FX_ID"));
-        SetName(oNotebook, GetName(oItem));
-        AssignCommand(oActivator, ActionStartConversation(oNotebook, "gs_fo_use", TRUE, FALSE));
+        SetLocalString(oActivator, "GS_FX_ID", GetLocalString(oItem, "GS_FX_ID"));
+        AssignCommand(oActivator, ActionStartConversation(oActivator, "gs_fo_use", TRUE, FALSE));
     }
 
     //item property
