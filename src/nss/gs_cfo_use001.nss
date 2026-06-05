@@ -4,11 +4,11 @@
 
 int StartingConditional()
 {
-    if (! GetLocalInt(OBJECT_SELF, "GS_ENABLED"))
+    if (! GetLocalInt(OBJECT_SELF, "GS_FO_ENABLED"))
     {
         gsFOLoadContent();
         SetLocalInt(OBJECT_SELF, "GS_MESSAGE", -1);
-        SetLocalInt(OBJECT_SELF, "GS_ENABLED", TRUE);
+        SetLocalInt(OBJECT_SELF, "GS_FO_ENABLED", TRUE);
     }
 
     string sMessageID = "";
