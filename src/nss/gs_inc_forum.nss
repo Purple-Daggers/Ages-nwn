@@ -58,6 +58,41 @@ void gsFOLoadContent(object oForum = OBJECT_SELF)
         }
     }
 }
+
+void gsFODeleteContent(object oForum = OBJECT_SELF)
+{
+    string sDatabase = "";
+    if(GetLocalString(oForum, "GS_FX_ID") == "")
+    {
+        sDatabase  = "GS_FO_" + GetTag(oForum);
+    }
+    else
+    {
+        sDatabase = "GS_FO_" + GetLocalString(oForum, "GS_FX_ID");
+    }
+
+    string sMessageID = "";
+    string sNth       = "";
+    int nNth          = 1;
+
+    DeleteLocalInt(oForum, "GS_FO_OFFSET");
+
+    for (; nNth <= GS_FO_LIMIT; nNth++)
+    {
+        sNth       = IntToString(nNth);
+        sMessageID = GetCampaignString(sDatabase, "MESSAGE_" + sNth);
+
+        if (sMessageID != "")
+        {
+            DeleteLocalString(oForum, "GS_FO_MESSAGE_" + sNth);
+            DeleteLocalString(oForum, "GS_FO_" + sMessageID + "_OWNER");
+        }
+    }
+
+    DeleteLocalString(oForum, "GS_FX_ID");
+    DeleteLocalString(oForum, "GS_FO_ENABLED");
+}
+
 //----------------------------------------------------------------
 string gsFOGetMessage(int nPosition = 0, object oForum = OBJECT_SELF)
 {
