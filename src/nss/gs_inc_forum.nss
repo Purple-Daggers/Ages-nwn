@@ -4,7 +4,7 @@
 
 //void main() {};
 
-const int GS_FO_LIMIT = 100;
+const int GS_FO_LIMIT = 35;
 
 //load content of oForum from database
 void gsFOLoadContent(object oForum = OBJECT_SELF);
