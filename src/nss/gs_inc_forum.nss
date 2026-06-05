@@ -90,7 +90,7 @@ void gsFODeleteContent(object oForum = OBJECT_SELF)
     }
 
     DeleteLocalString(oForum, "GS_FX_ID");
-    DeleteLocalString(oForum, "GS_FO_ENABLED");
+    DeleteLocalInt(oForum, "GS_FO_ENABLED");
 }
 
 //----------------------------------------------------------------
