@@ -108,10 +108,6 @@ int gsBOGetPreviousBook(int nPosition = 0, object oShelf = OBJECT_SELF)
 //----------------------------------------------------------------
 int gsBOPostBook(string sBookName, string sBookDesc, object oShelf = OBJECT_SELF)
 {
-    string sNth      = "";
-    int nNth         = 1;
-    int nOpenSlot = -1;
-
     string sDatabase = "";
     if(GetLocalString(oShelf, "GS_FX_ID") == "")
     {
@@ -146,6 +142,7 @@ int gsBOPostBook(string sBookName, string sBookDesc, object oShelf = OBJECT_SELF
         SqlBindString(sqlInsertBook, "@desc", sBookDesc);
         SqlBindInt(sqlInsertBook, "@count", 1);
         SqlBindInt(sqlInsertBook, "@notebook", FALSE);
+        SqlStep(sqlInsertBook);
     }
     return TRUE;
 }
@@ -166,5 +163,4 @@ void gsBORemoveBook(string sBookID, object oShelf = OBJECT_SELF)
     sqlquery sqlDeleteBook = SqlPrepareQueryCampaign(sDatabase, "DELETE FROM books WHERE id = @id;");
     SqlBindString(sqlDeleteBook, "@id", sBookID);
     SqlStep(sqlDeleteBook);
-
 }
