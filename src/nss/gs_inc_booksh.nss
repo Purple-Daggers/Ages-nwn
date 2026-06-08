@@ -18,8 +18,6 @@ int _gsBOGetFirstBook(int nPosition, object oShelf, int nStep = 1);
 int gsBOGetNextBook(int nPosition = 0, object oShelf = OBJECT_SELF);
 //return position of Book preceding nPosition in oShelf, return -1 if at start
 int gsBOGetPreviousBook(int nPosition = 0, object oShelf = OBJECT_SELF);
-//return owner id of sBookID from oShelf
-string gsBOGetOwner(string sBookID, object oShelf = OBJECT_SELF);
 //return true on successfully posting sBookID to oShelf by oOwner
 int gsBOPostBook(string sBookName, string sBookDesc, object oShelf = OBJECT_SELF);
 //remove sBookID from oShelf
@@ -37,60 +35,35 @@ void gsBOLoadContent(object oShelf = OBJECT_SELF)
         sDatabase = "GS_BO_" + GetLocalString(oShelf, "GS_FX_ID");
     }
 
+    sqlquery sqlCreateTable = SqlPrepareQueryCampaign(sDatabase, "CREATE TABLE IF NOT EXISTS books (id TEXT PRIMARY KEY, name TEXT, description TEXT, count INTEGER, notebook INTEGER);");
+    SqlStep(sqlCreateTable);
+
     string sBookID = "";
-    string sOwner     = "";
-    string sNth       = "";
+    string sName     = "";
+    string sDesc       = "";
+    int nCount = 0;
+    int nNotebook = FALSE;
     int nNth          = 1;
 
-    SetLocalInt(oShelf, "GS_BO_OFFSET", GetCampaignInt(sDatabase, "OFFSET"));
-
-    for (; nNth <= GS_BO_LIMIT; nNth++)
+    sqlquery sqlGetBooks = SqlPrepareQueryCampaign(sDatabase, "SELECT id FROM books ORDER BY name;");
+    while(SqlStep(sqlGetBooks))
     {
-        sNth       = IntToString(nNth);
-        sBookID = GetCampaignString(sDatabase, "Book_" + sNth);
-
-        if (sBookID != "")
-        {
-            sOwner = GetCampaignString(sDatabase, sBookID + "_OWNER");
-
-            SetLocalString(oShelf, "GS_BO_Book_" + sNth, sBookID);
-            SetLocalString(oShelf, "GS_BO_" + sBookID + "_OWNER", sOwner);
-        }
+        string sNth = IntToString(nNth);
+        sBookID = SqlGetString(sqlGetBooks, 0);
+        SetLocalString(oShelf, "GS_BO_BOOK_" + sNth, sBookID);
+        SetLocalInt(oShelf, "GS_FO_OFFSET", nNth);
+        nNth++;
     }
 }
 
 void gsBODeleteContent(object oShelf = OBJECT_SELF)
 {
-    string sDatabase = "";
-    if(GetLocalString(oShelf, "GS_FX_ID") == "")
-    {
-        sDatabase  = "GS_BO_" + GetTag(oShelf);
-    }
-    else
-    {
-        sDatabase = "GS_BO_" + GetLocalString(oShelf, "GS_FX_ID");
-    }
-
-    string sBookID = "";
-    string sNth       = "";
-    int nNth          = 1;
-
-    DeleteLocalInt(oShelf, "GS_BO_OFFSET");
-
+    int nNth = 1;
     for (; nNth <= GS_BO_LIMIT; nNth++)
     {
-        sNth       = IntToString(nNth);
-        sBookID = GetCampaignString(sDatabase, "Book_" + sNth);
-
-        if (sBookID != "")
-        {
-            DeleteLocalString(oShelf, "GS_BO_Book_" + sNth);
-            DeleteLocalString(oShelf, "GS_BO_" + sBookID + "_OWNER");
-        }
+        string sNth = IntToString(nNth);
+        DeleteLocalString(oShelf, "GS_BO_BOOK" + sNth);
     }
-
-    DeleteLocalString(oShelf, "GS_FX_ID");
-    DeleteLocalInt(oShelf, "GS_BO_ENABLED");
 }
 
 //----------------------------------------------------------------
@@ -102,7 +75,7 @@ string gsBOGetBook(int nPosition = 0, object oShelf = OBJECT_SELF)
     nPosition = GetLocalInt(oShelf, "GS_BO_OFFSET") - nPosition;
     if (nPosition < 1)            nPosition += GS_BO_LIMIT;
 
-    return GetLocalString(oShelf, "GS_BO_Book_" + IntToString(nPosition));
+    return GetLocalString(oShelf, "GS_BO_BOOK_" + IntToString(nPosition));
 }
 //----------------------------------------------------------------
 int gsBOGetFirstBook(int nPosition = 0, object oShelf = OBJECT_SELF)
@@ -133,15 +106,11 @@ int gsBOGetPreviousBook(int nPosition = 0, object oShelf = OBJECT_SELF)
     return _gsBOGetFirstBook(nPosition - 1, oShelf, -1);
 }
 //----------------------------------------------------------------
-string gsBOGetOwner(string sBookID, object oShelf = OBJECT_SELF)
-{
-    return GetLocalString(oShelf, "GS_BO_" + sBookID + "_OWNER");
-}
-//----------------------------------------------------------------
 int gsBOPostBook(string sBookName, string sBookDesc, object oShelf = OBJECT_SELF)
 {
     string sNth      = "";
     int nNth         = 1;
+    int nOpenSlot = -1;
 
     string sDatabase = "";
     if(GetLocalString(oShelf, "GS_FX_ID") == "")
@@ -153,37 +122,34 @@ int gsBOPostBook(string sBookName, string sBookDesc, object oShelf = OBJECT_SELF
         sDatabase = "GS_BO_" + GetLocalString(oShelf, "GS_FX_ID");
     }
 
-    for (; nNth <= GS_BO_LIMIT; nNth++)
-    {
-        sNth = IntToString(nNth);
-        if (GetLocalString(oShelf, "GS_BO_BOOK_NAME_" + sNth) == sBookName) {
-            if (GetLocalString(oShelf, "GS_BO_BOOK_DESC_" + sNth) == sBookDesc) {
-                SetLocalInt(oShelf, "GS_BO_BOOK_COUNT_" + sNth, GetLocalInt(oShelf, "GS_BO_BOOK_COUNT_" + sNth));
-                SetCampaignInt(sDatabase, "GS_BO_BOOK_COUNT_" + sNth, GetLocalInt(oShelf, "GS_BO_BOOK_COUNT_" + sNth));
-                return TRUE;
-            }
-        }
+    sqlquery sqlCreateTable = SqlPrepareQueryCampaign(sDatabase, "CREATE TABLE IF NOT EXISTS books (id TEXT PRIMARY KEY, name TEXT, description TEXT, count INTEGER, notebook INTEGER);");
+    SqlStep(sqlCreateTable);
+
+    sqlquery sqlMatchBook = SqlPrepareQueryCampaign(sDatabase, "SELECT id FROM books WHERE name = @name AND description = @desc LIMIT 1;");
+    SqlBindString(sqlMatchBook, "@name", sBookName);
+    SqlBindString(sqlMatchBook, "@desc", sBookDesc);
+    if(SqlStep(sqlMatchBook)){
+        string sMatchedBookId = SqlGetString(sqlMatchBook, 0);
+        sqlquery sqlIncreaseCount = SqlPrepareQueryCampaign(sDatabase, "UPDATE books SET count = count + 1 WHERE id = @id;");
+        SqlBindString(sqlIncreaseCount, "@id", sMatchedBookId);
+        SqlStep(sqlIncreaseCount);
     }
+    else {
+        sqlquery sqlCountBooks = SqlPrepareQueryCampaign(sDatabase, "SELECT COUNT(*) FROM books;");
+        SqlStep(sqlCountBooks);
+        int nCount = SqlGetInt(sqlCountBooks, 0);
+        if (nCount >= GS_BO_LIMIT) return FALSE;
 
-    nNth             = GetLocalInt(oShelf, "GS_BO_OFFSET") + 1;
-    if (nNth > GS_BO_LIMIT) return FALSE;
-    sNth             = IntToString(nNth);
-
-    string sBookID = GetRandomUUID();
-
-    SetLocalInt(oShelf, "GS_BO_OFFSET", nNth);
-    SetLocalString(oShelf, "BOOK_" + sNth, sBookID);
-    SetLocalString(oShelf, "GS_BO_BOOK_NAME_" + sNth, sBookName);
-    SetLocalString(oShelf, "GS_BO_BOOK_DESC_" + sNth, sBookDesc);
-    SetLocalInt(oShelf, "GS_BO_BOOK_COUNT_" + sNth, 1);
-    SetCampaignInt(sDatabase, "OFFSET", nNth);
-    SetCampaignString(sDatabase, "BOOK_" + sNth, sBookID);
-    SetCampaignString(sDatabase, "GS_BO_BOOK_NAME_" + sNth, sBookName);
-    SetCampaignString(sDatabase, "GS_BO_BOOK_DESC_" + sNth, sBookDesc);
-    SetCampaignInt(sDatabase, "GS_BO_BOOK_COUNT_" + sNth, 1);
-
+        sqlquery sqlInsertBook = SqlPrepareQueryCampaign(sDatabase, "INSERT INTO books (id, name, description, count, notebook) VALUES (@id, @name, @desc, @count, @notebook);");
+        SqlBindString(sqlInsertBook, "@id", GetRandomUUID());
+        SqlBindString(sqlInsertBook, "@name", sBookName);
+        SqlBindString(sqlInsertBook, "@desc", sBookDesc);
+        SqlBindInt(sqlInsertBook, "@count", 1);
+        SqlBindInt(sqlInsertBook, "@notebook", FALSE);
+    }
     return TRUE;
 }
+
 //----------------------------------------------------------------
 void gsBORemoveBook(string sBookID, object oShelf = OBJECT_SELF)
 {
@@ -197,18 +163,8 @@ void gsBORemoveBook(string sBookID, object oShelf = OBJECT_SELF)
         sDatabase = "GS_BO_" + GetLocalString(oShelf, "GS_FX_ID");
     }
 
-    string sNth      = "";
-    int nNth         = 1;
+    sqlquery sqlDeleteBook = SqlPrepareQueryCampaign(sDatabase, "DELETE FROM books WHERE id = @id;");
+    SqlBindString(sqlDeleteBook, "@id", sBookID);
+    SqlStep(sqlDeleteBook);
 
-    for (; nNth <= GS_BO_LIMIT; nNth++)
-    {
-        sNth = IntToString(nNth);
-
-        if (GetLocalString(oShelf, "GS_BO_Book_" + sNth) == sBookID)
-        {
-            DeleteLocalString(oShelf, "GS_BO_Book_" + sNth);
-            SetCampaignString(sDatabase, "Book_" + sNth, "");
-            return;
-        }
-    }
 }
