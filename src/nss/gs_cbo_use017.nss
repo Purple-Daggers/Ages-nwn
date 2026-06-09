@@ -11,7 +11,7 @@ void main()
 
         for (; nNth2 < 5; nNth2++)
         {
-            nNth3 = gsBOGetPreviousMessage(nNth1);
+            nNth3 = gsBOGetPreviousBook(nNth1);
             if (nNth3 == -1) break;
             nNth1 = nNth3;
         }

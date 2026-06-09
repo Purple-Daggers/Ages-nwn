@@ -6,7 +6,7 @@ void main()
 
     if (nNth != -1)
     {
-        nNth = gsBOGetNextMessage(nNth);
+        nNth = gsBOGetNextBook(nNth);
         if (nNth != -1) SetLocalInt(OBJECT_SELF, "GS_PAGE_START", nNth);
     }
 }

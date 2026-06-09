@@ -1,9 +1,9 @@
 #include "gs_inc_forum"
 
-return FALSE;
-
-/*int StartingConditional()
+int StartingConditional()
 {
+    return FALSE;
+    /*
     int nNth = GetLocalInt(OBJECT_SELF, "GS_MESSAGE");
 
     if (nNth != -1)
@@ -20,5 +20,6 @@ return FALSE;
     }
 
     return FALSE;
-}     */
+    */
+}     
 
