@@ -3,16 +3,16 @@
 
 int StartingConditional()
 {
-    if (! GetLocalInt(OBJECT_SELF, "GS_BO_ENABLED"))
+    if (! GetLocalInt(OBJECT_SELF, "GS_BS_ENABLED"))
     {
-        gsBOLoadContent();
+        gsBSLoadContent();
         SetLocalInt(OBJECT_SELF, "GS_BOOK", -1);
-        SetLocalInt(OBJECT_SELF, "GS_BO_ENABLED", TRUE);
+        SetLocalInt(OBJECT_SELF, "GS_BS_ENABLED", TRUE);
     }
 
     string sMessageID = "";
     int nNth          = GetLocalInt(OBJECT_SELF, "GS_PAGE_START");
-    nNth              = gsBOGetFirstBook(nNth);
+    nNth              = gsBSGetFirstBook(nNth);
     int nSlot         = 1;
 
     SetLocalInt(OBJECT_SELF, "GS_PAGE_START", nNth);
@@ -23,14 +23,14 @@ int StartingConditional()
 
         if (nNth != -1)
         {
-            sMessageID = gsBOGetBook(nNth);
+            sMessageID = gsBSGetBook(nNth);
             gsTKSetToken(100 + nSlot, "<cþë¦>" + GetLocalString(OBJECT_SELF, sMessageID + "_NAME") + "<câÛÂ>");
             gsTKSetToken(105 + nSlot, "<c(”þ>" + IntToString(GetLocalInt(OBJECT_SELF, sMessageID + "_COUNT")));
         }
 
         if (++nSlot > 5) break;
 
-        if (nNth != -1)  nNth = gsBOGetNextBook(nNth);
+        if (nNth != -1)  nNth = gsBSGetNextBook(nNth);
     }
 
     SetLocalInt(OBJECT_SELF, "GS_PAGE_END", nNth);
@@ -38,8 +38,8 @@ int StartingConditional()
     nNth = GetLocalInt(OBJECT_SELF, "GS_BOOK");
     if (nNth != -1)
     {
-        sMessageID = gsBOGetBook(nNth);
-        SetCustomToken(100, gsBOGetBookDescription(sMessageID));
+        sMessageID = gsBSGetBook(nNth);
+        SetCustomToken(100, gsBSGetBookDescription(sMessageID));
         return TRUE;
     }
 

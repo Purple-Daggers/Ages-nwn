@@ -3,6 +3,6 @@
 int StartingConditional()
 {
     int nNth = GetLocalInt(OBJECT_SELF, "GS_PAGE_START");
-    return nNth > 0 && gsBOGetPreviousBook(nNth) != -1;
+    return nNth > 0 && gsBSGetPreviousBook(nNth) != -1;
 }
 
