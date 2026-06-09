@@ -1,6 +1,6 @@
 void main()
 {
     object oSelf = OBJECT_SELF;
-    AssignCommand(GetClickingObject(), ClearAllActions());
-    AssignCommand(GetClickingObject(), ActionStartConversation(oSelf, "", TRUE, FALSE));
+    AssignCommand(GetPlaceableLastClickedBy(), ClearAllActions());
+    AssignCommand(GetPlaceableLastClickedBy(), ActionStartConversation(oSelf, "", TRUE, FALSE));
 }
