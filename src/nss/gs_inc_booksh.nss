@@ -40,17 +40,21 @@ void gsBOLoadContent(object oShelf = OBJECT_SELF)
 
     string sBookID = "";
     string sName     = "";
-    string sDesc       = "";
     int nCount = 0;
     int nNotebook = FALSE;
     int nNth          = 1;
 
-    sqlquery sqlGetBooks = SqlPrepareQueryCampaign(sDatabase, "SELECT id FROM books ORDER BY name;");
+    sqlquery sqlGetBooks = SqlPrepareQueryCampaign(sDatabase, "SELECT id, name, count FROM books ORDER BY name;");
     while(SqlStep(sqlGetBooks))
     {
         string sNth = IntToString(nNth);
         sBookID = SqlGetString(sqlGetBooks, 0);
+        sName = SqlGetString(sqlGetBooks, 1);
+        nCount = SqlGetInt(sqlGetBooks, 2);
         SetLocalString(oShelf, "GS_BO_BOOK_" + sNth, sBookID);
+        SetLocalString(oShelf, sBookID + "_INDEX", sNth);
+        SetLocalInt(oShelf, sBookID + "_COUNT", nCount);
+        SetLocalString(oShelf, sBookID + "_NAME", sName);
         SetLocalInt(oShelf, "GS_FO_OFFSET", nNth);
         nNth++;
     }
@@ -104,6 +108,24 @@ int gsBOGetNextBook(int nPosition = 0, object oShelf = OBJECT_SELF)
 int gsBOGetPreviousBook(int nPosition = 0, object oShelf = OBJECT_SELF)
 {
     return _gsBOGetFirstBook(nPosition - 1, oShelf, -1);
+}
+//----------------------------------------------------------------
+string gsBOGetBookDescription(string sBookID, object oShelf = OBJECT_SELF)
+{
+    string sDatabase = "";
+    if(GetLocalString(oShelf, "GS_FX_ID") == "")
+    {
+        sDatabase  = "GS_BO_" + GetTag(oShelf);
+    }
+    else
+    {
+        sDatabase = "GS_BO_" + GetLocalString(oShelf, "GS_FX_ID");
+    }
+
+    sqlquery sqlGetDescription = SqlPrepareQueryCampaign(sDatabase, "SELECT description FROM books WHERE id = @id;");
+    SqlBindString(sqlGetDescription, "@id", sBookID);
+    SqlStep(sqlGetDescription);
+    return SqlGetString(sqlGetDescription, 0);
 }
 //----------------------------------------------------------------
 int gsBOPostBook(string sBookName, string sBookDesc, object oShelf = OBJECT_SELF)
