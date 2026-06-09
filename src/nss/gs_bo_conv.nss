@@ -1,6 +1,6 @@
 void main()
 {
     object oSelf = OBJECT_SELF;
-
-    AssignCommand(GetLastUsedBy(), ActionStartConversation(oSelf, "", TRUE, FALSE));
+    AssignCommand(GetClickingObject(), ClearAllActions());
+    AssignCommand(GetClickingObject(), ActionStartConversation(oSelf, "", TRUE, FALSE));
 }
