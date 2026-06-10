@@ -60,14 +60,21 @@ void gsBSLoadContent(object oShelf = OBJECT_SELF)
     }
 }
 
-void gsBSDeleteContent(object oShelf = OBJECT_SELF)
+void gsBSUnloadContent(object oShelf = OBJECT_SELF)
 {
     int nNth = 1;
     for (; nNth <= GS_BS_LIMIT; nNth++)
     {
         string sNth = IntToString(nNth);
+        string sBookID = GetLocalString(oShelf, "GS_BS_BOOK" + sNth);
         DeleteLocalString(oShelf, "GS_BS_BOOK" + sNth);
+        DeleteLocalString(oShelf, sBookID + "_INDEX");
+        DeleteLocalInt(oShelf, sBookID + "_COUNT");
+        DeleteLocalString(oShelf, sBookID + "_NAME");
     }
+    DeleteLocalInt(oShelf, "GS_BS_OFFSET");
+    DeleteLocalInt(oShelf, "GS_BOOK");
+    DeleteLocalInt(oShelf, "GS_BS_ENABLED");
 }
 
 //----------------------------------------------------------------

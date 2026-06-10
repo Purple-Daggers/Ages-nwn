@@ -25,7 +25,7 @@ int StartingConditional()
         {
             sMessageID = gsBSGetBook(nNth);
             gsTKSetToken(100 + nSlot, "<cþë¦>" + GetLocalString(OBJECT_SELF, sMessageID + "_NAME") + "<câÛÂ>");
-            gsTKSetToken(105 + nSlot, "<c(”þ>" + IntToString(GetLocalInt(OBJECT_SELF, sMessageID + "_COUNT")));
+            gsTKSetToken(105 + nSlot, IntToString(GetLocalInt(OBJECT_SELF, sMessageID + "_COUNT")));
         }
 
         if (++nSlot > 5) break;
