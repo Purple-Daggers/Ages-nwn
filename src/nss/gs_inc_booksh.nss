@@ -135,6 +135,24 @@ string gsBSGetBookDescription(string sBookID, object oShelf = OBJECT_SELF)
     return SqlGetString(sqlGetDescription, 0);
 }
 //----------------------------------------------------------------
+string gsBSGetBookName(string sBookID, object oShelf = OBJECT_SELF)
+{
+    string sDatabase = "";
+    if(GetLocalString(oShelf, "GS_FX_ID") == "")
+    {
+        sDatabase  = "GS_BS_" + GetTag(oShelf);
+    }
+    else
+    {
+        sDatabase = "GS_BS_" + GetLocalString(oShelf, "GS_FX_ID");
+    }
+
+    sqlquery sqlGetName = SqlPrepareQueryCampaign(sDatabase, "SELECT name FROM books WHERE id = @id;");
+    SqlBindString(sqlGetName, "@id", sBookID);
+    SqlStep(sqlGetName);
+    return SqlGetString(sqlGetName, 0);
+}
+//----------------------------------------------------------------
 int gsBSPostBook(string sBookName, string sBookDesc, object oShelf = OBJECT_SELF)
 {
     string sDatabase = "";
@@ -189,7 +207,30 @@ void gsBSRemoveBook(string sBookID, object oShelf = OBJECT_SELF)
         sDatabase = "GS_BS_" + GetLocalString(oShelf, "GS_FX_ID");
     }
 
-    sqlquery sqlDeleteBook = SqlPrepareQueryCampaign(sDatabase, "DELETE FROM books WHERE id = @id;");
-    SqlBindString(sqlDeleteBook, "@id", sBookID);
-    SqlStep(sqlDeleteBook);
+    sqlquery sqlMatchBook = SqlPrepareQueryCampaign(sDatabase, "SELECT count FROM books WHERE id = @id LIMIT 1;");
+    SqlBindString(sqlMatchBook, "@id", sBookID);
+    if(SqlStep(sqlMatchBook)){
+        int sMatchedBookCount = SqlGetInt(sqlMatchBook, 0);
+        if (sMatchedBookCount <= 1){
+            sqlquery sqlDeleteBook = SqlPrepareQueryCampaign(sDatabase, "DELETE FROM books WHERE id = @id;");
+            SqlBindString(sqlDeleteBook, "@id", sBookID);
+            SqlStep(sqlDeleteBook);
+            DeleteLocalString(oShelf, "GS_BS_BOOK_" + GetLocalString(oShelf, sBookID + "_INDEX"));
+            DeleteLocalString(oShelf, sBookID + "_INDEX");
+            DeleteLocalInt(oShelf, sBookID + "_COUNT");
+            DeleteLocalString(oShelf, sBookID + "_NAME");
+            return;
+        }
+        else
+        {
+        sqlquery sqlDecreaseCount = SqlPrepareQueryCampaign(sDatabase, "UPDATE books SET count = count - 1 WHERE id = @id;");
+        SqlBindString(sqlDecreaseCount, "@id", sBookID);
+        SqlStep(sqlDecreaseCount);
+        SetLocalInt(oShelf, sBookID + "_COUNT", sMatchedBookCount - 1);
+        }
+    }
+    else
+    {
+        return;
+    }
 }

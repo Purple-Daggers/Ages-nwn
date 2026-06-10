@@ -1,40 +1,37 @@
-#include "gs_inc_forum"
-#include "gs_inc_message"
+#include "gs_inc_booksh"
 
-const string GS_TEMPLATE_LETTER = "gs_item370";
+const string GS_TEMPLATE_BOOK = "book";
 
 void main()
 {
-/*
-    int nNth = GetLocalInt(OBJECT_SELF, "GS_MESSAGE");
+    int nNth = GetLocalInt(OBJECT_SELF, "GS_BOOK");
 
     if (nNth != -1)
     {
-        string sMessageID = gsFOGetMessage(nNth);
+        string sBookID = gsBSGetBook(nNth);
 
-        if (sMessageID != "")
+        if (sBookID != "")
         {
             object oSpeaker = GetPCSpeaker();
 
-            if (GetIsDM(oSpeaker) ||
-                gsFOGetOwner(sMessageID) == gsPCGetPlayerID(oSpeaker))
+            if (GetIsDM(oSpeaker)||
+                TRUE/*gsFOGetOwner(sBookID) == gsPCGetPlayerID(oSpeaker)*/)
             {
-                object oObject = CreateItemOnObject(GS_TEMPLATE_LETTER,
+                object oObject = CreateItemOnObject(GS_TEMPLATE_BOOK,
                                                     oSpeaker,
-                                                    1,
-                                                    "GS_ME_" + sMessageID);
+                                                    1);
 
                 if (GetIsObjectValid(oObject))
                 {
                     string sDoubleQuote = GetLocalString(GetModule(), "GS_DOUBLE_QUOTE");
 
-                    SetName(oObject, sDoubleQuote + gsMEGetTitle(sMessageID) + sDoubleQuote);
-                    gsFORemoveMessage(sMessageID);
-                    DeleteLocalInt(OBJECT_SELF, "GS_MESSAGE");
+                    SetName(oObject, gsBSGetBookName(sBookID));
+                    SetDescription(oObject, gsBSGetBookDescription(sBookID));
+                    gsBSRemoveBook(sBookID);
+                    DeleteLocalInt(OBJECT_SELF, "GS_BOOK");
                 }
             }
         }
     }
-    */
 }
 
