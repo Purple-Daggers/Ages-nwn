@@ -9,7 +9,7 @@ void main()
         int nNth2 = 0;
         int nNth3 = 0;
 
-        for (; nNth2 < 5; nNth2++)
+        for (; nNth2 < 10; nNth2++)
         {
             nNth3 = gsBSGetPreviousBook(nNth1);
             if (nNth3 == -1) break;

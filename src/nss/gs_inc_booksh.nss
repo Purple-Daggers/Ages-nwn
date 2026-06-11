@@ -44,7 +44,7 @@ void gsBSLoadContent(object oShelf = OBJECT_SELF)
     int nNotebook = FALSE;
     int nNth          = 1;
 
-    sqlquery sqlGetBooks = SqlPrepareQueryCampaign(sDatabase, "SELECT id, name, count FROM books ORDER BY name;");
+    sqlquery sqlGetBooks = SqlPrepareQueryCampaign(sDatabase, "SELECT id, name, count FROM books ORDER BY name COLLATE NOCASE DESC;");
     while(SqlStep(sqlGetBooks))
     {
         string sNth = IntToString(nNth);

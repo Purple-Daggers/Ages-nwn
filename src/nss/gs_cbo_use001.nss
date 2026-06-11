@@ -25,23 +25,15 @@ int StartingConditional()
         {
             sMessageID = gsBSGetBook(nNth);
             gsTKSetToken(100 + nSlot, "<cþë¦>" + GetLocalString(OBJECT_SELF, sMessageID + "_NAME") + "<câÛÂ>");
-            gsTKSetToken(105 + nSlot, IntToString(GetLocalInt(OBJECT_SELF, sMessageID + "_COUNT")));
+            gsTKSetToken(110 + nSlot, IntToString(GetLocalInt(OBJECT_SELF, sMessageID + "_COUNT")));
         }
 
-        if (++nSlot > 5) break;
+        if (++nSlot > 10) break;
 
         if (nNth != -1)  nNth = gsBSGetNextBook(nNth);
     }
 
     SetLocalInt(OBJECT_SELF, "GS_PAGE_END", nNth);
 
-    nNth = GetLocalInt(OBJECT_SELF, "GS_BOOK");
-    if (nNth != -1)
-    {
-        sMessageID = gsBSGetBook(nNth);
-        SetCustomToken(100, gsBSGetBookDescription(sMessageID));
-        return TRUE;
-    }
-
-    return FALSE;
+    return TRUE;
 }

@@ -39,7 +39,7 @@
         },
         "Delay": {
           "type": "dword",
-          "value": 4294967295
+          "value": 0
         },
         "Quest": {
           "type": "cexostring",
@@ -52,7 +52,83 @@
               "__struct_id": 0,
               "Active": {
                 "type": "resref",
+                "value": ""
+              },
+              "ConditionParams": {
+                "type": "list",
+                "value": []
+              },
+              "Index": {
+                "type": "dword",
+                "value": 15
+              },
+              "IsChild": {
+                "type": "byte",
+                "value": 0
+              }
+            },
+            {
+              "__struct_id": 1,
+              "Active": {
+                "type": "resref",
                 "value": "gs_cbo_use002"
+              },
+              "ConditionParams": {
+                "type": "list",
+                "value": []
+              },
+              "Index": {
+                "type": "dword",
+                "value": 12
+              },
+              "IsChild": {
+                "type": "byte",
+                "value": 0
+              }
+            },
+            {
+              "__struct_id": 2,
+              "Active": {
+                "type": "resref",
+                "value": "gs_cbo_use003"
+              },
+              "ConditionParams": {
+                "type": "list",
+                "value": []
+              },
+              "Index": {
+                "type": "dword",
+                "value": 11
+              },
+              "IsChild": {
+                "type": "byte",
+                "value": 0
+              }
+            },
+            {
+              "__struct_id": 3,
+              "Active": {
+                "type": "resref",
+                "value": "gs_cbo_use004"
+              },
+              "ConditionParams": {
+                "type": "list",
+                "value": []
+              },
+              "Index": {
+                "type": "dword",
+                "value": 10
+              },
+              "IsChild": {
+                "type": "byte",
+                "value": 0
+              }
+            },
+            {
+              "__struct_id": 4,
+              "Active": {
+                "type": "resref",
+                "value": "gs_cbo_use005"
               },
               "ConditionParams": {
                 "type": "list",
@@ -64,18 +140,14 @@
               },
               "IsChild": {
                 "type": "byte",
-                "value": 1
-              },
-              "LinkComment": {
-                "type": "cexostring",
-                "value": ""
+                "value": 0
               }
             },
             {
-              "__struct_id": 1,
+              "__struct_id": 5,
               "Active": {
                 "type": "resref",
-                "value": "gs_cbo_use003"
+                "value": "gs_cbo_use006"
               },
               "ConditionParams": {
                 "type": "list",
@@ -87,18 +159,14 @@
               },
               "IsChild": {
                 "type": "byte",
-                "value": 1
-              },
-              "LinkComment": {
-                "type": "cexostring",
-                "value": ""
+                "value": 0
               }
             },
             {
-              "__struct_id": 2,
+              "__struct_id": 6,
               "Active": {
                 "type": "resref",
-                "value": "gs_cbo_use004"
+                "value": "gs_cbo_use021"
               },
               "ConditionParams": {
                 "type": "list",
@@ -110,18 +178,14 @@
               },
               "IsChild": {
                 "type": "byte",
-                "value": 1
-              },
-              "LinkComment": {
-                "type": "cexostring",
-                "value": ""
+                "value": 0
               }
             },
             {
-              "__struct_id": 3,
+              "__struct_id": 7,
               "Active": {
                 "type": "resref",
-                "value": "gs_cbo_use005"
+                "value": "gs_cbo_use022"
               },
               "ConditionParams": {
                 "type": "list",
@@ -133,18 +197,14 @@
               },
               "IsChild": {
                 "type": "byte",
-                "value": 1
-              },
-              "LinkComment": {
-                "type": "cexostring",
-                "value": ""
+                "value": 0
               }
             },
             {
-              "__struct_id": 4,
+              "__struct_id": 8,
               "Active": {
                 "type": "resref",
-                "value": "gs_cbo_use006"
+                "value": "gs_cbo_use023"
               },
               "ConditionParams": {
                 "type": "list",
@@ -156,18 +216,14 @@
               },
               "IsChild": {
                 "type": "byte",
-                "value": 1
-              },
-              "LinkComment": {
-                "type": "cexostring",
-                "value": ""
+                "value": 0
               }
             },
             {
-              "__struct_id": 5,
+              "__struct_id": 9,
               "Active": {
                 "type": "resref",
-                "value": "gs_cbo_use014"
+                "value": "gs_cbo_use024"
               },
               "ConditionParams": {
                 "type": "list",
@@ -179,18 +235,14 @@
               },
               "IsChild": {
                 "type": "byte",
-                "value": 1
-              },
-              "LinkComment": {
-                "type": "cexostring",
-                "value": ""
+                "value": 0
               }
             },
             {
-              "__struct_id": 6,
+              "__struct_id": 10,
               "Active": {
                 "type": "resref",
-                "value": "gs_cbo_use016"
+                "value": "gs_cbo_use025"
               },
               "ConditionParams": {
                 "type": "list",
@@ -202,18 +254,33 @@
               },
               "IsChild": {
                 "type": "byte",
-                "value": 1
-              },
-              "LinkComment": {
-                "type": "cexostring",
-                "value": ""
+                "value": 0
               }
             },
             {
-              "__struct_id": 7,
+              "__struct_id": 11,
               "Active": {
                 "type": "resref",
-                "value": ""
+                "value": "gs_cbo_use014"
+              },
+              "ConditionParams": {
+                "type": "list",
+                "value": []
+              },
+              "Index": {
+                "type": "dword",
+                "value": 2
+              },
+              "IsChild": {
+                "type": "byte",
+                "value": 0
+              }
+            },
+            {
+              "__struct_id": 12,
+              "Active": {
+                "type": "resref",
+                "value": "gs_cbo_use016"
               },
               "ConditionParams": {
                 "type": "list",
@@ -225,15 +292,11 @@
               },
               "IsChild": {
                 "type": "byte",
-                "value": 1
-              },
-              "LinkComment": {
-                "type": "cexostring",
-                "value": ""
+                "value": 0
               }
             },
             {
-              "__struct_id": 8,
+              "__struct_id": 13,
               "Active": {
                 "type": "resref",
                 "value": ""
@@ -248,11 +311,7 @@
               },
               "IsChild": {
                 "type": "byte",
-                "value": 1
-              },
-              "LinkComment": {
-                "type": "cexostring",
-                "value": ""
+                "value": 0
               }
             }
           ]
@@ -273,8 +332,7 @@
           "type": "cexolocstring",
           "value": {
             "0": "Select the book you want to read.\n\nTo place a book on this bookshelf, open the shelf and deposit the book.",
-            "4": "Wählt eine Mitteilung, die Ihr lesen möchtet.\n\nWollt Ihr eine Botschaft hinzufügen, wendet ein Schreiben, welches Ihr mit Hilfe von Schreibpapier erstellen könnt, auf die Nachrichtentafel an.",
-            "5": "Wählt eine Mitteilung, die Ihr lesen möchtet.\n\nWollt Ihr eine Botschaft hinzufügen, wendet ein Schreiben, welches Ihr mit Hilfe von Schreibpapier erstellen könnt, auf die Nachrichtentafel an."
+            "4": "<CUSTOM100>"
           }
         }
       },
@@ -298,7 +356,7 @@
         },
         "Delay": {
           "type": "dword",
-          "value": 0
+          "value": 4294967295
         },
         "Quest": {
           "type": "cexostring",
@@ -311,7 +369,7 @@
               "__struct_id": 0,
               "Active": {
                 "type": "resref",
-                "value": "gs_cbo_use002"
+                "value": ""
               },
               "ConditionParams": {
                 "type": "list",
@@ -319,7 +377,7 @@
               },
               "Index": {
                 "type": "dword",
-                "value": 9
+                "value": 14
               },
               "IsChild": {
                 "type": "byte",
@@ -330,120 +388,6 @@
               "__struct_id": 1,
               "Active": {
                 "type": "resref",
-                "value": "gs_cbo_use003"
-              },
-              "ConditionParams": {
-                "type": "list",
-                "value": []
-              },
-              "Index": {
-                "type": "dword",
-                "value": 8
-              },
-              "IsChild": {
-                "type": "byte",
-                "value": 0
-              }
-            },
-            {
-              "__struct_id": 2,
-              "Active": {
-                "type": "resref",
-                "value": "gs_cbo_use004"
-              },
-              "ConditionParams": {
-                "type": "list",
-                "value": []
-              },
-              "Index": {
-                "type": "dword",
-                "value": 7
-              },
-              "IsChild": {
-                "type": "byte",
-                "value": 0
-              }
-            },
-            {
-              "__struct_id": 3,
-              "Active": {
-                "type": "resref",
-                "value": "gs_cbo_use005"
-              },
-              "ConditionParams": {
-                "type": "list",
-                "value": []
-              },
-              "Index": {
-                "type": "dword",
-                "value": 6
-              },
-              "IsChild": {
-                "type": "byte",
-                "value": 0
-              }
-            },
-            {
-              "__struct_id": 4,
-              "Active": {
-                "type": "resref",
-                "value": "gs_cbo_use006"
-              },
-              "ConditionParams": {
-                "type": "list",
-                "value": []
-              },
-              "Index": {
-                "type": "dword",
-                "value": 5
-              },
-              "IsChild": {
-                "type": "byte",
-                "value": 0
-              }
-            },
-            {
-              "__struct_id": 5,
-              "Active": {
-                "type": "resref",
-                "value": "gs_cbo_use014"
-              },
-              "ConditionParams": {
-                "type": "list",
-                "value": []
-              },
-              "Index": {
-                "type": "dword",
-                "value": 4
-              },
-              "IsChild": {
-                "type": "byte",
-                "value": 0
-              }
-            },
-            {
-              "__struct_id": 6,
-              "Active": {
-                "type": "resref",
-                "value": "gs_cbo_use016"
-              },
-              "ConditionParams": {
-                "type": "list",
-                "value": []
-              },
-              "Index": {
-                "type": "dword",
-                "value": 3
-              },
-              "IsChild": {
-                "type": "byte",
-                "value": 0
-              }
-            },
-            {
-              "__struct_id": 7,
-              "Active": {
-                "type": "resref",
                 "value": "gs_cbo_use012"
               },
               "ConditionParams": {
@@ -452,45 +396,7 @@
               },
               "Index": {
                 "type": "dword",
-                "value": 2
-              },
-              "IsChild": {
-                "type": "byte",
-                "value": 0
-              }
-            },
-            {
-              "__struct_id": 8,
-              "Active": {
-                "type": "resref",
-                "value": ""
-              },
-              "ConditionParams": {
-                "type": "list",
-                "value": []
-              },
-              "Index": {
-                "type": "dword",
-                "value": 1
-              },
-              "IsChild": {
-                "type": "byte",
-                "value": 0
-              }
-            },
-            {
-              "__struct_id": 9,
-              "Active": {
-                "type": "resref",
-                "value": ""
-              },
-              "ConditionParams": {
-                "type": "list",
-                "value": []
-              },
-              "Index": {
-                "type": "dword",
-                "value": 0
+                "value": 13
               },
               "IsChild": {
                 "type": "byte",
@@ -514,7 +420,7 @@
         "Text": {
           "type": "cexolocstring",
           "value": {
-            "4": "<CUSTOM100>"
+            "0": "<CUSTOM1000>\n\n<CUSTOM100>"
           }
         }
       }
@@ -522,7 +428,7 @@
   },
   "NumWords": {
     "type": "dword",
-    "value": 41
+    "value": 53
   },
   "PreventZoomIn": {
     "type": "byte",
@@ -602,127 +508,12 @@
         },
         "EntriesList": {
           "type": "list",
-          "value": []
-        },
-        "Quest": {
-          "type": "cexostring",
-          "value": ""
-        },
-        "Script": {
-          "type": "resref",
-          "value": "gs_cbo_use019"
-        },
-        "Sound": {
-          "type": "resref",
-          "value": ""
-        },
-        "Text": {
-          "type": "cexolocstring",
-          "value": {
-            "0": "<StartAction>[Open Bookshelf]</Start>"
-          }
-        }
-      },
-      {
-        "__struct_id": 2,
-        "ActionParams": {
-          "type": "list",
-          "value": []
-        },
-        "Animation": {
-          "type": "dword",
-          "value": 0
-        },
-        "AnimLoop": {
-          "type": "byte",
-          "value": 1
-        },
-        "Comment": {
-          "type": "cexostring",
-          "value": ""
-        },
-        "Delay": {
-          "type": "dword",
-          "value": 4294967295
-        },
-        "EntriesList": {
-          "type": "list",
-          "value": []
-        },
-        "Quest": {
-          "type": "cexostring",
-          "value": ""
-        },
-        "Script": {
-          "type": "resref",
-          "value": "gs_cbo_use013"
-        },
-        "Sound": {
-          "type": "resref",
-          "value": ""
-        },
-        "Text": {
-          "type": "cexolocstring",
-          "value": {
-            "0": "<StartAction>[Remove book]</Start>",
-            "4": "<StartAction>[Nachricht entfernen]</Start>",
-            "5": "<StartAction>[Nachricht entfernen]</Start>"
-          }
-        }
-      },
-      {
-        "__struct_id": 3,
-        "ActionParams": {
-          "type": "list",
-          "value": []
-        },
-        "Animation": {
-          "type": "dword",
-          "value": 0
-        },
-        "AnimLoop": {
-          "type": "byte",
-          "value": 1
-        },
-        "Comment": {
-          "type": "cexostring",
-          "value": ""
-        },
-        "Delay": {
-          "type": "dword",
-          "value": 4294967295
-        },
-        "EntriesList": {
-          "type": "list",
           "value": [
             {
               "__struct_id": 0,
               "Active": {
                 "type": "resref",
                 "value": "gs_cbo_use001"
-              },
-              "ConditionParams": {
-                "type": "list",
-                "value": []
-              },
-              "Index": {
-                "type": "dword",
-                "value": 1
-              },
-              "IsChild": {
-                "type": "byte",
-                "value": 1
-              },
-              "LinkComment": {
-                "type": "cexostring",
-                "value": ""
-              }
-            },
-            {
-              "__struct_id": 1,
-              "Active": {
-                "type": "resref",
-                "value": ""
               },
               "ConditionParams": {
                 "type": "list",
@@ -765,7 +556,7 @@
         }
       },
       {
-        "__struct_id": 4,
+        "__struct_id": 2,
         "ActionParams": {
           "type": "list",
           "value": []
@@ -794,29 +585,6 @@
               "Active": {
                 "type": "resref",
                 "value": "gs_cbo_use001"
-              },
-              "ConditionParams": {
-                "type": "list",
-                "value": []
-              },
-              "Index": {
-                "type": "dword",
-                "value": 1
-              },
-              "IsChild": {
-                "type": "byte",
-                "value": 1
-              },
-              "LinkComment": {
-                "type": "cexostring",
-                "value": ""
-              }
-            },
-            {
-              "__struct_id": 1,
-              "Active": {
-                "type": "resref",
-                "value": ""
               },
               "ConditionParams": {
                 "type": "list",
@@ -859,6 +627,148 @@
         }
       },
       {
+        "__struct_id": 3,
+        "ActionParams": {
+          "type": "list",
+          "value": []
+        },
+        "Animation": {
+          "type": "dword",
+          "value": 0
+        },
+        "AnimLoop": {
+          "type": "byte",
+          "value": 1
+        },
+        "Comment": {
+          "type": "cexostring",
+          "value": ""
+        },
+        "Delay": {
+          "type": "dword",
+          "value": 4294967295
+        },
+        "EntriesList": {
+          "type": "list",
+          "value": [
+            {
+              "__struct_id": 0,
+              "Active": {
+                "type": "resref",
+                "value": "gs_cbo_use020"
+              },
+              "ConditionParams": {
+                "type": "list",
+                "value": []
+              },
+              "Index": {
+                "type": "dword",
+                "value": 1
+              },
+              "IsChild": {
+                "type": "byte",
+                "value": 1
+              },
+              "LinkComment": {
+                "type": "cexostring",
+                "value": ""
+              }
+            }
+          ]
+        },
+        "Quest": {
+          "type": "cexostring",
+          "value": ""
+        },
+        "Script": {
+          "type": "resref",
+          "value": "gs_cbo_use030"
+        },
+        "Sound": {
+          "type": "resref",
+          "value": ""
+        },
+        "Text": {
+          "type": "cexolocstring",
+          "value": {
+            "0": "<CUSTOM110> (<CUSTOM120>)",
+            "4": "<CUSTOM105> von <CUSTOM110>",
+            "5": "<CUSTOM105> von <CUSTOM110>"
+          }
+        }
+      },
+      {
+        "__struct_id": 4,
+        "ActionParams": {
+          "type": "list",
+          "value": []
+        },
+        "Animation": {
+          "type": "dword",
+          "value": 0
+        },
+        "AnimLoop": {
+          "type": "byte",
+          "value": 1
+        },
+        "Comment": {
+          "type": "cexostring",
+          "value": ""
+        },
+        "Delay": {
+          "type": "dword",
+          "value": 4294967295
+        },
+        "EntriesList": {
+          "type": "list",
+          "value": [
+            {
+              "__struct_id": 0,
+              "Active": {
+                "type": "resref",
+                "value": "gs_cbo_use020"
+              },
+              "ConditionParams": {
+                "type": "list",
+                "value": []
+              },
+              "Index": {
+                "type": "dword",
+                "value": 1
+              },
+              "IsChild": {
+                "type": "byte",
+                "value": 1
+              },
+              "LinkComment": {
+                "type": "cexostring",
+                "value": ""
+              }
+            }
+          ]
+        },
+        "Quest": {
+          "type": "cexostring",
+          "value": ""
+        },
+        "Script": {
+          "type": "resref",
+          "value": "gs_cbo_use029"
+        },
+        "Sound": {
+          "type": "resref",
+          "value": ""
+        },
+        "Text": {
+          "type": "cexolocstring",
+          "value": {
+            "0": "<CUSTOM109> (<CUSTOM119>)",
+            "4": "<CUSTOM105> von <CUSTOM110>",
+            "5": "<CUSTOM105> von <CUSTOM110>"
+          }
+        }
+      },
+      {
         "__struct_id": 5,
         "ActionParams": {
           "type": "list",
@@ -887,7 +797,220 @@
               "__struct_id": 0,
               "Active": {
                 "type": "resref",
-                "value": "gs_cbo_use001"
+                "value": "gs_cbo_use020"
+              },
+              "ConditionParams": {
+                "type": "list",
+                "value": []
+              },
+              "Index": {
+                "type": "dword",
+                "value": 1
+              },
+              "IsChild": {
+                "type": "byte",
+                "value": 1
+              },
+              "LinkComment": {
+                "type": "cexostring",
+                "value": ""
+              }
+            }
+          ]
+        },
+        "Quest": {
+          "type": "cexostring",
+          "value": ""
+        },
+        "Script": {
+          "type": "resref",
+          "value": "gs_cbo_use028"
+        },
+        "Sound": {
+          "type": "resref",
+          "value": ""
+        },
+        "Text": {
+          "type": "cexolocstring",
+          "value": {
+            "0": "<CUSTOM108> (<CUSTOM118>)",
+            "4": "<CUSTOM105> von <CUSTOM110>",
+            "5": "<CUSTOM105> von <CUSTOM110>"
+          }
+        }
+      },
+      {
+        "__struct_id": 6,
+        "ActionParams": {
+          "type": "list",
+          "value": []
+        },
+        "Animation": {
+          "type": "dword",
+          "value": 0
+        },
+        "AnimLoop": {
+          "type": "byte",
+          "value": 1
+        },
+        "Comment": {
+          "type": "cexostring",
+          "value": ""
+        },
+        "Delay": {
+          "type": "dword",
+          "value": 4294967295
+        },
+        "EntriesList": {
+          "type": "list",
+          "value": [
+            {
+              "__struct_id": 0,
+              "Active": {
+                "type": "resref",
+                "value": "gs_cbo_use020"
+              },
+              "ConditionParams": {
+                "type": "list",
+                "value": []
+              },
+              "Index": {
+                "type": "dword",
+                "value": 1
+              },
+              "IsChild": {
+                "type": "byte",
+                "value": 1
+              },
+              "LinkComment": {
+                "type": "cexostring",
+                "value": ""
+              }
+            }
+          ]
+        },
+        "Quest": {
+          "type": "cexostring",
+          "value": ""
+        },
+        "Script": {
+          "type": "resref",
+          "value": "gs_cbo_use027"
+        },
+        "Sound": {
+          "type": "resref",
+          "value": ""
+        },
+        "Text": {
+          "type": "cexolocstring",
+          "value": {
+            "0": "<CUSTOM107> (<CUSTOM117>)",
+            "4": "<CUSTOM105> von <CUSTOM110>",
+            "5": "<CUSTOM105> von <CUSTOM110>"
+          }
+        }
+      },
+      {
+        "__struct_id": 7,
+        "ActionParams": {
+          "type": "list",
+          "value": []
+        },
+        "Animation": {
+          "type": "dword",
+          "value": 0
+        },
+        "AnimLoop": {
+          "type": "byte",
+          "value": 1
+        },
+        "Comment": {
+          "type": "cexostring",
+          "value": ""
+        },
+        "Delay": {
+          "type": "dword",
+          "value": 4294967295
+        },
+        "EntriesList": {
+          "type": "list",
+          "value": [
+            {
+              "__struct_id": 0,
+              "Active": {
+                "type": "resref",
+                "value": "gs_cbo_use020"
+              },
+              "ConditionParams": {
+                "type": "list",
+                "value": []
+              },
+              "Index": {
+                "type": "dword",
+                "value": 1
+              },
+              "IsChild": {
+                "type": "byte",
+                "value": 1
+              },
+              "LinkComment": {
+                "type": "cexostring",
+                "value": ""
+              }
+            }
+          ]
+        },
+        "Quest": {
+          "type": "cexostring",
+          "value": ""
+        },
+        "Script": {
+          "type": "resref",
+          "value": "gs_cbo_use026"
+        },
+        "Sound": {
+          "type": "resref",
+          "value": ""
+        },
+        "Text": {
+          "type": "cexolocstring",
+          "value": {
+            "0": "<CUSTOM106> (<CUSTOM116>)",
+            "4": "<CUSTOM105> von <CUSTOM110>",
+            "5": "<CUSTOM105> von <CUSTOM110>"
+          }
+        }
+      },
+      {
+        "__struct_id": 8,
+        "ActionParams": {
+          "type": "list",
+          "value": []
+        },
+        "Animation": {
+          "type": "dword",
+          "value": 0
+        },
+        "AnimLoop": {
+          "type": "byte",
+          "value": 1
+        },
+        "Comment": {
+          "type": "cexostring",
+          "value": ""
+        },
+        "Delay": {
+          "type": "dword",
+          "value": 4294967295
+        },
+        "EntriesList": {
+          "type": "list",
+          "value": [
+            {
+              "__struct_id": 0,
+              "Active": {
+                "type": "resref",
+                "value": "gs_cbo_use020"
               },
               "ConditionParams": {
                 "type": "list",
@@ -923,14 +1046,14 @@
         "Text": {
           "type": "cexolocstring",
           "value": {
-            "0": "<CUSTOM105> (<CUSTOM110>)",
+            "0": "<CUSTOM105> (<CUSTOM115>)",
             "4": "<CUSTOM105> von <CUSTOM110>",
             "5": "<CUSTOM105> von <CUSTOM110>"
           }
         }
       },
       {
-        "__struct_id": 6,
+        "__struct_id": 9,
         "ActionParams": {
           "type": "list",
           "value": []
@@ -958,7 +1081,7 @@
               "__struct_id": 0,
               "Active": {
                 "type": "resref",
-                "value": "gs_cbo_use001"
+                "value": "gs_cbo_use020"
               },
               "ConditionParams": {
                 "type": "list",
@@ -994,14 +1117,14 @@
         "Text": {
           "type": "cexolocstring",
           "value": {
-            "0": "<CUSTOM104> (<CUSTOM109>)",
+            "0": "<CUSTOM104> (<CUSTOM114>)",
             "4": "<CUSTOM104> von <CUSTOM109>",
             "5": "<CUSTOM104> von <CUSTOM109>"
           }
         }
       },
       {
-        "__struct_id": 7,
+        "__struct_id": 10,
         "ActionParams": {
           "type": "list",
           "value": []
@@ -1029,7 +1152,7 @@
               "__struct_id": 0,
               "Active": {
                 "type": "resref",
-                "value": "gs_cbo_use001"
+                "value": "gs_cbo_use020"
               },
               "ConditionParams": {
                 "type": "list",
@@ -1065,14 +1188,14 @@
         "Text": {
           "type": "cexolocstring",
           "value": {
-            "0": "<CUSTOM103> (<CUSTOM108>)",
+            "0": "<CUSTOM103> (<CUSTOM113>)",
             "4": "<CUSTOM103> von <CUSTOM108>",
             "5": "<CUSTOM103> von <CUSTOM108>"
           }
         }
       },
       {
-        "__struct_id": 8,
+        "__struct_id": 11,
         "ActionParams": {
           "type": "list",
           "value": []
@@ -1100,7 +1223,7 @@
               "__struct_id": 0,
               "Active": {
                 "type": "resref",
-                "value": "gs_cbo_use001"
+                "value": "gs_cbo_use020"
               },
               "ConditionParams": {
                 "type": "list",
@@ -1136,14 +1259,81 @@
         "Text": {
           "type": "cexolocstring",
           "value": {
-            "0": "<CUSTOM102> (<CUSTOM107>)",
+            "0": "<CUSTOM102> (<CUSTOM112>)",
             "4": "<CUSTOM102> von <CUSTOM107>",
             "5": "<CUSTOM102> von <CUSTOM107>"
           }
         }
       },
       {
-        "__struct_id": 9,
+        "__struct_id": 12,
+        "ActionParams": {
+          "type": "list",
+          "value": []
+        },
+        "Animation": {
+          "type": "dword",
+          "value": 0
+        },
+        "AnimLoop": {
+          "type": "byte",
+          "value": 1
+        },
+        "Comment": {
+          "type": "cexostring",
+          "value": ""
+        },
+        "Delay": {
+          "type": "dword",
+          "value": 4294967295
+        },
+        "EntriesList": {
+          "type": "list",
+          "value": [
+            {
+              "__struct_id": 0,
+              "Active": {
+                "type": "resref",
+                "value": "gs_cbo_use020"
+              },
+              "ConditionParams": {
+                "type": "list",
+                "value": []
+              },
+              "Index": {
+                "type": "dword",
+                "value": 1
+              },
+              "IsChild": {
+                "type": "byte",
+                "value": 0
+              }
+            }
+          ]
+        },
+        "Quest": {
+          "type": "cexostring",
+          "value": ""
+        },
+        "Script": {
+          "type": "resref",
+          "value": "gs_cbo_use007"
+        },
+        "Sound": {
+          "type": "resref",
+          "value": ""
+        },
+        "Text": {
+          "type": "cexolocstring",
+          "value": {
+            "0": "<CUSTOM101> (<CUSTOM111>)",
+            "4": "<CUSTOM101> von <CUSTOM106>",
+            "5": "<CUSTOM101> von <CUSTOM106>"
+          }
+        }
+      },
+      {
+        "__struct_id": 13,
         "ActionParams": {
           "type": "list",
           "value": []
@@ -1179,7 +1369,7 @@
               },
               "Index": {
                 "type": "dword",
-                "value": 1
+                "value": 0
               },
               "IsChild": {
                 "type": "byte",
@@ -1198,7 +1388,7 @@
         },
         "Script": {
           "type": "resref",
-          "value": "gs_cbo_use007"
+          "value": "gs_cbo_use013"
         },
         "Sound": {
           "type": "resref",
@@ -1207,9 +1397,123 @@
         "Text": {
           "type": "cexolocstring",
           "value": {
-            "0": "<CUSTOM101> (<CUSTOM106>)",
-            "4": "<CUSTOM101> von <CUSTOM106>",
-            "5": "<CUSTOM101> von <CUSTOM106>"
+            "0": "<StartAction>[Remove book]</Start>",
+            "4": "<StartAction>[Nachricht entfernen]</Start>",
+            "5": "<StartAction>[Nachricht entfernen]</Start>"
+          }
+        }
+      },
+      {
+        "__struct_id": 14,
+        "ActionParams": {
+          "type": "list",
+          "value": []
+        },
+        "Animation": {
+          "type": "dword",
+          "value": 0
+        },
+        "AnimLoop": {
+          "type": "byte",
+          "value": 1
+        },
+        "Comment": {
+          "type": "cexostring",
+          "value": ""
+        },
+        "Delay": {
+          "type": "dword",
+          "value": 4294967295
+        },
+        "EntriesList": {
+          "type": "list",
+          "value": [
+            {
+              "__struct_id": 0,
+              "Active": {
+                "type": "resref",
+                "value": "gs_cbo_use001"
+              },
+              "ConditionParams": {
+                "type": "list",
+                "value": []
+              },
+              "Index": {
+                "type": "dword",
+                "value": 0
+              },
+              "IsChild": {
+                "type": "byte",
+                "value": 1
+              },
+              "LinkComment": {
+                "type": "cexostring",
+                "value": ""
+              }
+            }
+          ]
+        },
+        "Quest": {
+          "type": "cexostring",
+          "value": ""
+        },
+        "Script": {
+          "type": "resref",
+          "value": ""
+        },
+        "Sound": {
+          "type": "resref",
+          "value": ""
+        },
+        "Text": {
+          "type": "cexolocstring",
+          "value": {
+            "0": "<StartAction>[Back]</Start>"
+          }
+        }
+      },
+      {
+        "__struct_id": 15,
+        "ActionParams": {
+          "type": "list",
+          "value": []
+        },
+        "Animation": {
+          "type": "dword",
+          "value": 0
+        },
+        "AnimLoop": {
+          "type": "byte",
+          "value": 1
+        },
+        "Comment": {
+          "type": "cexostring",
+          "value": ""
+        },
+        "Delay": {
+          "type": "dword",
+          "value": 4294967295
+        },
+        "EntriesList": {
+          "type": "list",
+          "value": []
+        },
+        "Quest": {
+          "type": "cexostring",
+          "value": ""
+        },
+        "Script": {
+          "type": "resref",
+          "value": "gs_cbo_use019"
+        },
+        "Sound": {
+          "type": "resref",
+          "value": ""
+        },
+        "Text": {
+          "type": "cexolocstring",
+          "value": {
+            "0": "<StartAction>[Open Bookshelf]</Start>"
           }
         }
       }
@@ -1223,21 +1527,6 @@
         "Active": {
           "type": "resref",
           "value": "gs_cbo_use001"
-        },
-        "ConditionParams": {
-          "type": "list",
-          "value": []
-        },
-        "Index": {
-          "type": "dword",
-          "value": 1
-        }
-      },
-      {
-        "__struct_id": 1,
-        "Active": {
-          "type": "resref",
-          "value": ""
         },
         "ConditionParams": {
           "type": "list",
