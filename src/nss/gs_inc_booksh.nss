@@ -1,9 +1,5 @@
 /* BOOKSHELF Library by Jamesfelicia, modified from Gigaschatten's forum library. */
 
-#include "gs_inc_pc"
-
-//void main() {};
-
 const int GS_BS_LIMIT = 100;
 
 //load content of oShelf from database
