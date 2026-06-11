@@ -1,4 +1,4 @@
-/* FORUM Library by Gigaschatten */
+/* FORUM Library by Jamesfelicia, modified from Gigaschatten's forum library.*/
 
 #include "gs_inc_pc"
 #include "gs_inc_time"
@@ -207,8 +207,5 @@ void gsFORemoveMessage(string sMessageID, object oForum = OBJECT_SELF)
     SqlBindString(sqlDeleteMessage, "@forum_id", sForumID);
     SqlBindString(sqlDeleteMessage, "@message_id", sMessageID);
     SqlStep(sqlDeleteMessage);
-
-    DeleteLocalString(oForum, "GS_FO_MESSAGE_" + GetLocalString(oForum, "GS_FO_" + sMessageID + "_INDEX"));
-    DeleteLocalString(oForum, "GS_FO_" + sMessageID + "_OWNER");
-    DeleteLocalString(oForum, "GS_FO_" + sMessageID + "_INDEX");
+    gsFODeleteContent(oForum);
 }
