@@ -62,6 +62,7 @@ void gsFOLoadContent(object oForum = OBJECT_SELF)
         SetLocalString(oForum, "GS_FO_" + sMessageID + "_OWNER", sOwner);
         SetLocalString(oForum, "GS_FO_" + sMessageID + "_INDEX", sNth);
         SetLocalInt(oForum, "GS_FO_OFFSET", nNth);
+        nNth++;
     }
 }
 
