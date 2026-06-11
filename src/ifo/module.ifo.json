@@ -158,6 +158,13 @@
         "__struct_id": 6,
         "Area_Name": {
           "type": "resref",
+          "value": "area020"
+        }
+      },
+      {
+        "__struct_id": 6,
+        "Area_Name": {
+          "type": "resref",
           "value": "bankofprasinos"
         }
       },
@@ -307,13 +314,6 @@
           "type": "resref",
           "value": "thehighpath"
         }
-      },
-      {
-        "__struct_id": 6,
-        "Area_Name": {
-          "type": "resref",
-          "value": "area020"
-        }
       }
     ]
   },
@@ -340,8 +340,7 @@
   "Mod_Description": {
     "type": "cexolocstring",
     "value": {
-      "0": "",
-      "4": "Khaarsis ist anders.\n\nHomepage: http://khaarsis.de.vu"
+      "0": ""
     }
   },
   "Mod_DuskHour": {
@@ -362,11 +361,11 @@
   },
   "Mod_Entry_X": {
     "type": "float",
-    "value": 65.4111
+    "value": 65.0
   },
   "Mod_Entry_Y": {
     "type": "float",
-    "value": 84.54819999999999
+    "value": 84.0
   },
   "Mod_Entry_Z": {
     "type": "float",
@@ -645,7 +644,7 @@
   },
   "Mod_StartDay": {
     "type": "byte",
-    "value": 1
+    "value": 10
   },
   "Mod_StartHour": {
     "type": "byte",
@@ -653,7 +652,7 @@
   },
   "Mod_StartMonth": {
     "type": "byte",
-    "value": 1
+    "value": 3
   },
   "Mod_StartMovie": {
     "type": "resref",
@@ -661,7 +660,7 @@
   },
   "Mod_StartYear": {
     "type": "dword",
-    "value": 0
+    "value": 310
   },
   "Mod_Tag": {
     "type": "cexostring",
