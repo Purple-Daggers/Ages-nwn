@@ -34,7 +34,7 @@ void gsMESetMessage(string sMessageID, string sTitle, string sText, object oAuth
 //----------------------------------------------------------------
 int gsMEGetTimestamp(string sMessageID)
 {
-    return GetCampaignInt("GS_MESSAGE", sMessageID + "_TIME");
+    return GetCampaignInt("GS_MESSAGE", sMessageID + "_TIMESTAMP");
 }
 //----------------------------------------------------------------
 string gsMEGetTitle(string sMessageID)
