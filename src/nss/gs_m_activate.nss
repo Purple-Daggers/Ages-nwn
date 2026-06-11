@@ -106,8 +106,8 @@ void main()
             //post message
             if (GetStringLeft(GetTag(oTarget), 8) == "GS_FORUM" || GetLocalInt(oTarget, "GS_FORUM"))
             {
-                if(GetTag(oTarget) == "GS_FO_NOTEBOOK" && GetLocalString(oTarget, "GS_FX_ID") == ""){
-                    SetLocalString(oTarget, "GS_FX_ID", GetRandomUUID());
+                if(GetTag(oTarget) == "GS_FO_NOTEBOOK" && GetLocalString(oTarget, "GS_NB_ID") == ""){
+                    SetLocalString(oTarget, "GS_NB_ID", GetRandomUUID());
                 }
                 if (gsFOPostMessage(GetStringRight(sTag, 16), oActivator, oTarget))
                 {
@@ -151,11 +151,11 @@ void main()
 
     if (sTag == "GS_FO_NOTEBOOK")
     {
-        if(GetLocalString(oItem, "GS_FX_ID") == "")
+        if(GetLocalString(oItem, "GS_NB_ID") == "")
         {
-            SetLocalString(oItem, "GS_FX_ID", GetRandomUUID());
+            SetLocalString(oItem, "GS_NB_ID", GetRandomUUID());
         }
-        SetLocalString(oActivator, "GS_FX_ID", GetLocalString(oItem, "GS_FX_ID"));
+        SetLocalString(oActivator, "GS_NB_ID", GetLocalString(oItem, "GS_NB_ID"));
         AssignCommand(oActivator, ActionStartConversation(oActivator, "gs_fo_use", TRUE, FALSE));
     }
 

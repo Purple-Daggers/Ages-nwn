@@ -1,9 +1,5 @@
 /* BOOKSHELF Library by Jamesfelicia, modified from Gigaschatten's forum library. */
 
-#include "gs_inc_pc"
-
-//void main() {};
-
 const int GS_BS_LIMIT = 100;
 
 //load content of oShelf from database
@@ -25,17 +21,18 @@ void gsBSRemoveBook(string sBookID, object oShelf = OBJECT_SELF);
 
 void gsBSLoadContent(object oShelf = OBJECT_SELF)
 {
-    string sDatabase = "";
+    string sDatabase = "GS_BS_BOOKSHELVES";
+    string sShelfID = "";
     if(GetLocalString(oShelf, "GS_FX_ID") == "")
     {
-        sDatabase  = "GS_BS_" + GetTag(oShelf);
+        sShelfID  = "GS_BS_" + GetTag(oShelf);
     }
     else
     {
-        sDatabase = "GS_BS_" + GetLocalString(oShelf, "GS_FX_ID");
+        sShelfID = "GS_BS_" + GetLocalString(oShelf, "GS_FX_ID");
     }
 
-    sqlquery sqlCreateTable = SqlPrepareQueryCampaign(sDatabase, "CREATE TABLE IF NOT EXISTS books (id TEXT PRIMARY KEY, name TEXT, description TEXT, count INTEGER, notebook INTEGER);");
+    sqlquery sqlCreateTable = SqlPrepareQueryCampaign(sDatabase, "CREATE TABLE IF NOT EXISTS books (id TEXT PRIMARY KEY, shelf_id TEXT, name TEXT, description TEXT, count INTEGER, notebook TEXT);");
     SqlStep(sqlCreateTable);
 
     string sBookID = "";
@@ -44,7 +41,8 @@ void gsBSLoadContent(object oShelf = OBJECT_SELF)
     int nNotebook = FALSE;
     int nNth          = 1;
 
-    sqlquery sqlGetBooks = SqlPrepareQueryCampaign(sDatabase, "SELECT id, name, count FROM books ORDER BY name COLLATE NOCASE DESC;");
+    sqlquery sqlGetBooks = SqlPrepareQueryCampaign(sDatabase, "SELECT id, name, count FROM books WHERE shelf_id = @shelf_id ORDER BY name COLLATE NOCASE DESC;");
+    SqlBindString(sqlGetBooks, "@shelf_id", sShelfID);
     while(SqlStep(sqlGetBooks))
     {
         string sNth = IntToString(nNth);
@@ -119,14 +117,15 @@ int gsBSGetPreviousBook(int nPosition = 0, object oShelf = OBJECT_SELF)
 //----------------------------------------------------------------
 string gsBSGetBookDescription(string sBookID, object oShelf = OBJECT_SELF)
 {
-    string sDatabase = "";
+    string sDatabase = "GS_BS_BOOKSHELVES";
+    string sShelfID = "";
     if(GetLocalString(oShelf, "GS_FX_ID") == "")
     {
-        sDatabase  = "GS_BS_" + GetTag(oShelf);
+        sShelfID  = "GS_BS_" + GetTag(oShelf);
     }
     else
     {
-        sDatabase = "GS_BS_" + GetLocalString(oShelf, "GS_FX_ID");
+        sShelfID = "GS_BS_" + GetLocalString(oShelf, "GS_FX_ID");
     }
 
     sqlquery sqlGetDescription = SqlPrepareQueryCampaign(sDatabase, "SELECT description FROM books WHERE id = @id;");
@@ -137,14 +136,15 @@ string gsBSGetBookDescription(string sBookID, object oShelf = OBJECT_SELF)
 //----------------------------------------------------------------
 string gsBSGetBookName(string sBookID, object oShelf = OBJECT_SELF)
 {
-    string sDatabase = "";
+    string sDatabase = "GS_BS_BOOKSHELVES";
+    string sShelfID = "";
     if(GetLocalString(oShelf, "GS_FX_ID") == "")
     {
-        sDatabase  = "GS_BS_" + GetTag(oShelf);
+        sShelfID  = "GS_BS_" + GetTag(oShelf);
     }
     else
     {
-        sDatabase = "GS_BS_" + GetLocalString(oShelf, "GS_FX_ID");
+        sShelfID = "GS_BS_" + GetLocalString(oShelf, "GS_FX_ID");
     }
 
     sqlquery sqlGetName = SqlPrepareQueryCampaign(sDatabase, "SELECT name FROM books WHERE id = @id;");
@@ -155,20 +155,22 @@ string gsBSGetBookName(string sBookID, object oShelf = OBJECT_SELF)
 //----------------------------------------------------------------
 int gsBSPostBook(string sBookName, string sBookDesc, object oShelf = OBJECT_SELF)
 {
-    string sDatabase = "";
+    string sDatabase = "GS_BS_BOOKSHELVES";
+    string sShelfID = "";
     if(GetLocalString(oShelf, "GS_FX_ID") == "")
     {
-        sDatabase  = "GS_BS_" + GetTag(oShelf);
+        sShelfID  = "GS_BS_" + GetTag(oShelf);
     }
     else
     {
-        sDatabase = "GS_BS_" + GetLocalString(oShelf, "GS_FX_ID");
+        sShelfID = "GS_BS_" + GetLocalString(oShelf, "GS_FX_ID");
     }
 
-    sqlquery sqlCreateTable = SqlPrepareQueryCampaign(sDatabase, "CREATE TABLE IF NOT EXISTS books (id TEXT PRIMARY KEY, name TEXT, description TEXT, count INTEGER, notebook INTEGER);");
+    sqlquery sqlCreateTable = SqlPrepareQueryCampaign(sDatabase, "CREATE TABLE IF NOT EXISTS books (id TEXT PRIMARY KEY, shelf_id TEXT, name TEXT, description TEXT, count INTEGER, notebook TEXT);");
     SqlStep(sqlCreateTable);
 
-    sqlquery sqlMatchBook = SqlPrepareQueryCampaign(sDatabase, "SELECT id FROM books WHERE name = @name AND description = @desc LIMIT 1;");
+    sqlquery sqlMatchBook = SqlPrepareQueryCampaign(sDatabase, "SELECT id FROM books WHERE shelf_id = @shelf_id AND name = @name AND description = @desc LIMIT 1;");
+    SqlBindString(sqlMatchBook, "@shelf_id", sShelfID);
     SqlBindString(sqlMatchBook, "@name", sBookName);
     SqlBindString(sqlMatchBook, "@desc", sBookDesc);
     if(SqlStep(sqlMatchBook)){
@@ -178,17 +180,19 @@ int gsBSPostBook(string sBookName, string sBookDesc, object oShelf = OBJECT_SELF
         SqlStep(sqlIncreaseCount);
     }
     else {
-        sqlquery sqlCountBooks = SqlPrepareQueryCampaign(sDatabase, "SELECT COUNT(*) FROM books;");
+        sqlquery sqlCountBooks = SqlPrepareQueryCampaign(sDatabase, "SELECT COUNT(*) FROM books WHERE shelf_id = @shelf_id;");
+        SqlBindString(sqlCountBooks, "@shelf_id", sShelfID);
         SqlStep(sqlCountBooks);
         int nCount = SqlGetInt(sqlCountBooks, 0);
         if (nCount >= GS_BS_LIMIT) return FALSE;
 
-        sqlquery sqlInsertBook = SqlPrepareQueryCampaign(sDatabase, "INSERT INTO books (id, name, description, count, notebook) VALUES (@id, @name, @desc, @count, @notebook);");
+        sqlquery sqlInsertBook = SqlPrepareQueryCampaign(sDatabase, "INSERT INTO books (id, shelf_id, name, description, count, notebook) VALUES (@id, @shelf_id, @name, @desc, @count, @notebook);");
         SqlBindString(sqlInsertBook, "@id", GetRandomUUID());
+        SqlBindString(sqlInsertBook, "@shelf_id", sShelfID);
         SqlBindString(sqlInsertBook, "@name", sBookName);
         SqlBindString(sqlInsertBook, "@desc", sBookDesc);
         SqlBindInt(sqlInsertBook, "@count", 1);
-        SqlBindInt(sqlInsertBook, "@notebook", FALSE);
+        SqlBindString(sqlInsertBook, "@notebook", "");
         SqlStep(sqlInsertBook);
     }
     return TRUE;
@@ -197,14 +201,15 @@ int gsBSPostBook(string sBookName, string sBookDesc, object oShelf = OBJECT_SELF
 //----------------------------------------------------------------
 void gsBSRemoveBook(string sBookID, object oShelf = OBJECT_SELF)
 {
-    string sDatabase = "";
+    string sDatabase = "GS_BS_BOOKSHELVES";
+    string sShelfID = "";
     if(GetLocalString(oShelf, "GS_FX_ID") == "")
     {
-        sDatabase  = "GS_BS_" + GetTag(oShelf);
+        sShelfID  = "GS_BS_" + GetTag(oShelf);
     }
     else
     {
-        sDatabase = "GS_BS_" + GetLocalString(oShelf, "GS_FX_ID");
+        sShelfID = "GS_BS_" + GetLocalString(oShelf, "GS_FX_ID");
     }
 
     sqlquery sqlMatchBook = SqlPrepareQueryCampaign(sDatabase, "SELECT count FROM books WHERE id = @id LIMIT 1;");

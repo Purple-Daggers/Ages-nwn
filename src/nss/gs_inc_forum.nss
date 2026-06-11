@@ -1,10 +1,12 @@
-/* FORUM Library by Gigaschatten */
+/* FORUM Library by Jamesfelicia, modified from Gigaschatten's forum library.*/
 
 #include "gs_inc_pc"
+#include "gs_inc_time"
 
 //void main() {};
 
 const int GS_FO_LIMIT = 35;
+const int GS_FO_TRUELIMIT = 100;
 
 //load content of oForum from database
 void gsFOLoadContent(object oForum = OBJECT_SELF);
@@ -27,69 +29,64 @@ void gsFORemoveMessage(string sMessageID, object oForum = OBJECT_SELF);
 
 void gsFOLoadContent(object oForum = OBJECT_SELF)
 {
-    string sDatabase = "";
-    if(GetLocalString(oForum, "GS_FX_ID") == "")
+    string sDatabase = "GS_FO_FORUMS";
+    string sForumID = "";
+    if(GetLocalString(oForum, "GS_FX_ID") == "" && GetLocalString(oForum, "GS_NB_ID") == "")
     {
-        sDatabase  = "GS_FO_" + GetTag(oForum);
+        sForumID  = "GS_FO_" + GetTag(oForum);
+    }
+    else if(GetLocalString(oForum, "GS_NB_ID") == "")
+    {
+        sForumID = "GS_FO_" + GetLocalString(oForum, "GS_FX_ID");
     }
     else
     {
-        sDatabase = "GS_FO_" + GetLocalString(oForum, "GS_FX_ID");
-    }
+        sForumID = "GS_FO_" + GetLocalString(oForum, "GS_NB_ID");
+    } 
 
     string sMessageID = "";
     string sOwner     = "";
     string sNth       = "";
     int nNth          = 1;
+    sqlquery sqlCreateForumMessageTable = SqlPrepareQueryCampaign(sDatabase, "CREATE TABLE IF NOT EXISTS forum_messages (forum_id TEXT, message_id TEXT, timestamp INTEGER, message_poster TEXT, message_owner TEXT, PRIMARY KEY (forum_id, message_id, timestamp));");
+    SqlStep(sqlCreateForumMessageTable);
 
-    SetLocalInt(oForum, "GS_FO_OFFSET", GetCampaignInt(sDatabase, "OFFSET"));
-
-    for (; nNth <= GS_FO_LIMIT; nNth++)
+    sqlquery sqlGetNotes = SqlPrepareQueryCampaign(sDatabase, "SELECT message_id, message_poster, message_owner FROM forum_messages WHERE forum_id = @forum_id ORDER BY timestamp LIMIT " + IntToString(GS_FO_LIMIT) + ";");
+    SqlBindString(sqlGetNotes, "@forum_id", sForumID);
+    while(SqlStep(sqlGetNotes))
     {
-        sNth       = IntToString(nNth);
-        sMessageID = GetCampaignString(sDatabase, "MESSAGE_" + sNth);
-
-        if (sMessageID != "")
-        {
-            sOwner = GetCampaignString(sDatabase, sMessageID + "_OWNER");
-
-            SetLocalString(oForum, "GS_FO_MESSAGE_" + sNth, sMessageID);
-            SetLocalString(oForum, "GS_FO_" + sMessageID + "_OWNER", sOwner);
-        }
+        string sNth = IntToString(nNth);
+        sMessageID = SqlGetString(sqlGetNotes, 0);
+        sOwner = SqlGetString(sqlGetNotes, 1);
+        SetLocalString(oForum, "GS_FO_MESSAGE_" + sNth, sMessageID);
+        SetLocalString(oForum, "GS_FO_" + sMessageID + "_OWNER", sOwner);
+        SetLocalString(oForum, "GS_FO_" + sMessageID + "_INDEX", sNth);
+        SetLocalInt(oForum, "GS_FO_OFFSET", nNth);
+        nNth++;
     }
 }
 
 void gsFODeleteContent(object oForum = OBJECT_SELF)
 {
-    string sDatabase = "";
-    if(GetLocalString(oForum, "GS_FX_ID") == "")
-    {
-        sDatabase  = "GS_FO_" + GetTag(oForum);
-    }
-    else
-    {
-        sDatabase = "GS_FO_" + GetLocalString(oForum, "GS_FX_ID");
-    }
-
     string sMessageID = "";
     string sNth       = "";
     int nNth          = 1;
 
-    DeleteLocalInt(oForum, "GS_FO_OFFSET");
-
-    for (; nNth <= GS_FO_LIMIT; nNth++)
+    for (; nNth <= GS_FO_TRUELIMIT; nNth++)
     {
         sNth       = IntToString(nNth);
-        sMessageID = GetCampaignString(sDatabase, "MESSAGE_" + sNth);
+        sMessageID = GetLocalString(oForum, "GS_FO_MESSAGE_" + sNth);
 
         if (sMessageID != "")
         {
             DeleteLocalString(oForum, "GS_FO_MESSAGE_" + sNth);
             DeleteLocalString(oForum, "GS_FO_" + sMessageID + "_OWNER");
+            DeleteLocalString(oForum, "GS_FO_" + sMessageID + "_INDEX");
         }
     }
 
-    DeleteLocalString(oForum, "GS_FX_ID");
+    DeleteLocalInt(oForum, "GS_FO_OFFSET");
+    //DeleteLocalString(oForum, "GS_FX_ID");
     DeleteLocalInt(oForum, "GS_FO_ENABLED");
 }
 
@@ -149,56 +146,67 @@ int gsFOPostMessage(string sMessageID, object oOwner, object oForum = OBJECT_SEL
         if (GetLocalString(oForum, "GS_FO_MESSAGE_" + sNth) == sMessageID) return FALSE;
     }
 
-    string sDatabase = "";
-    if(GetLocalString(oForum, "GS_FX_ID") == "")
+    string sDatabase = "GS_FO_FORUMS";
+    string sForumID = "";
+    if(GetLocalString(oForum, "GS_FX_ID") == "" && GetLocalString(oForum, "GS_NB_ID") == "")
     {
-        sDatabase  = "GS_FO_" + GetTag(oForum);
+        sForumID  = "GS_FO_" + GetTag(oForum);
+    }
+    else if(GetLocalString(oForum, "GS_NB_ID") == "")
+    {
+        sForumID = "GS_FO_" + GetLocalString(oForum, "GS_FX_ID");
     }
     else
     {
-        sDatabase = "GS_FO_" + GetLocalString(oForum, "GS_FX_ID");
-    }
+        sForumID = "GS_FO_" + GetLocalString(oForum, "GS_NB_ID");
+    } 
 
     string sPlayerID = gsPCGetPlayerID(oOwner);
 
     nNth             = GetLocalInt(oForum, "GS_FO_OFFSET") + 1;
-    if (nNth > GS_FO_LIMIT) nNth -= GS_FO_LIMIT;
+    if (nNth > GS_FO_TRUELIMIT) return FALSE;
     sNth             = IntToString(nNth);
 
     SetLocalInt(oForum, "GS_FO_OFFSET", nNth);
     SetLocalString(oForum, "GS_FO_MESSAGE_" + sNth, sMessageID);
     SetLocalString(oForum, "GS_FO_" + sMessageID + "_OWNER", sPlayerID);
-    SetCampaignInt(sDatabase, "OFFSET", nNth);
-    SetCampaignString(sDatabase, "MESSAGE_" + sNth, sMessageID);
-    SetCampaignString(sDatabase, sMessageID + "_OWNER", sPlayerID);
 
+    sqlquery sqlCreateForumMessageTable = SqlPrepareQueryCampaign(sDatabase, "CREATE TABLE IF NOT EXISTS forum_messages (forum_id TEXT, message_id TEXT, timestamp INTEGER, message_poster TEXT, message_owner TEXT, PRIMARY KEY (forum_id, message_id, timestamp));");
+    SqlStep(sqlCreateForumMessageTable);
+
+    sqlquery sqlInsertMessage = SqlPrepareQueryCampaign(sDatabase, "INSERT INTO forum_messages (forum_id, message_id, timestamp, message_poster, message_owner) VALUES (@forum_id, @message_id, @timestamp, @message_poster, @message_owner);");
+    SqlBindString(sqlInsertMessage, "@forum_id", sForumID);
+    SqlBindString(sqlInsertMessage, "@message_id", sMessageID);
+    SqlBindInt(sqlInsertMessage, "@timestamp", gsTIGetActualTimestamp());
+    SqlBindString(sqlInsertMessage, "@message_poster", sPlayerID);
+    SqlBindString(sqlInsertMessage, "@message_owner", sPlayerID);
+    SqlStep(sqlInsertMessage);
     return TRUE;
 }
 //----------------------------------------------------------------
 void gsFORemoveMessage(string sMessageID, object oForum = OBJECT_SELF)
 {
-    string sDatabase = "";
-    if(GetLocalString(oForum, "GS_FX_ID") == "")
+    string sDatabase = "GS_FO_FORUMS";
+    string sForumID = "";
+    if(GetLocalString(oForum, "GS_FX_ID") == "" && GetLocalString(oForum, "GS_NB_ID") == "")
     {
-        sDatabase  = "GS_FO_" + GetTag(oForum);
+        sForumID  = "GS_FO_" + GetTag(oForum);
+    }
+    else if(GetLocalString(oForum, "GS_NB_ID") == "")
+    {
+        sForumID = "GS_FO_" + GetLocalString(oForum, "GS_FX_ID");
     }
     else
     {
-        sDatabase = "GS_FO_" + GetLocalString(oForum, "GS_FX_ID");
-    }
+        sForumID = "GS_FO_" + GetLocalString(oForum, "GS_NB_ID");
+    } 
 
     string sNth      = "";
     int nNth         = 1;
 
-    for (; nNth <= GS_FO_LIMIT; nNth++)
-    {
-        sNth = IntToString(nNth);
-
-        if (GetLocalString(oForum, "GS_FO_MESSAGE_" + sNth) == sMessageID)
-        {
-            DeleteLocalString(oForum, "GS_FO_MESSAGE_" + sNth);
-            SetCampaignString(sDatabase, "MESSAGE_" + sNth, "");
-            return;
-        }
-    }
+    sqlquery sqlDeleteMessage = SqlPrepareQueryCampaign(sDatabase, "DELETE FROM forum_messages WHERE forum_id = @forum_id AND message_id = @message_id;");
+    SqlBindString(sqlDeleteMessage, "@forum_id", sForumID);
+    SqlBindString(sqlDeleteMessage, "@message_id", sMessageID);
+    SqlStep(sqlDeleteMessage);
+    gsFODeleteContent(oForum);
 }
