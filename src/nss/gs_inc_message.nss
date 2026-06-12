@@ -27,7 +27,7 @@ void gsMESetMessage(string sMessageID, string sTitle, string sText, object oAuth
     SqlStep(sqlCreateTable);
 
     sqlquery sqlInsertMessage = SqlPrepareQueryCampaign("GS_MESSAGE", "INSERT INTO messages (id, timestamp, title, text, author, author_id) VALUES (@id, @timestamp, @title, @text, @author, @author_id);");
-    SqlBindString(sqlInsertMessage, "@id", sMessageID);
+    SqlBindString(sqlInsertMessage, "@id", GetStringRight(sMessageID, 26));
     SqlBindInt(sqlInsertMessage, "@timestamp", gsTIGetActualTimestamp());
     SqlBindString(sqlInsertMessage, "@title", sTitle);
     SqlBindString(sqlInsertMessage, "@text", sText);
