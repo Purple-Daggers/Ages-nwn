@@ -3,7 +3,7 @@ void main()
 {
     SetLocalInt(OBJECT_SELF, "GS_FO_MESSAGE", -1);
     DeleteLocalInt(OBJECT_SELF, "GS_FO_PAGE_START");
-    if(GetIsPC(OBJECT_SELF)){
+    if(GetLocalString(OBJECT_SELF, "GS_NB_ID") != ""){
         gsFODeleteContent();
     }
 }

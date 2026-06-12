@@ -15,7 +15,7 @@ int gsBSGetNextBook(int nPosition = 0, object oShelf = OBJECT_SELF);
 //return position of Book preceding nPosition in oShelf, return -1 if at start
 int gsBSGetPreviousBook(int nPosition = 0, object oShelf = OBJECT_SELF);
 //return true on successfully posting sBookID to oShelf by oOwner
-int gsBSPostBook(string sBookName, string sBookDesc, object oShelf = OBJECT_SELF);
+int gsBSPostBook(string sBookName, string sBookDesc, string sNotebookID = "", object oShelf = OBJECT_SELF);
 //remove sBookID from oShelf
 void gsBSRemoveBook(string sBookID, object oShelf = OBJECT_SELF);
 
@@ -38,10 +38,10 @@ void gsBSLoadContent(object oShelf = OBJECT_SELF)
     string sBookID = "";
     string sName     = "";
     int nCount = 0;
-    int nNotebook = FALSE;
+    string sNotebookID = "";
     int nNth          = 1;
 
-    sqlquery sqlGetBooks = SqlPrepareQueryCampaign(sDatabase, "SELECT id, name, count FROM books WHERE shelf_id = @shelf_id ORDER BY name COLLATE NOCASE DESC;");
+    sqlquery sqlGetBooks = SqlPrepareQueryCampaign(sDatabase, "SELECT id, name, count, notebook FROM books WHERE shelf_id = @shelf_id ORDER BY name COLLATE NOCASE DESC;");
     SqlBindString(sqlGetBooks, "@shelf_id", sShelfID);
     while(SqlStep(sqlGetBooks))
     {
@@ -49,11 +49,13 @@ void gsBSLoadContent(object oShelf = OBJECT_SELF)
         sBookID = SqlGetString(sqlGetBooks, 0);
         sName = SqlGetString(sqlGetBooks, 1);
         nCount = SqlGetInt(sqlGetBooks, 2);
+        sNotebookID = SqlGetString(sqlGetBooks, 3);
         SetLocalString(oShelf, "GS_BS_BOOK_" + sNth, sBookID);
         SetLocalString(oShelf, sBookID + "_INDEX", sNth);
         SetLocalInt(oShelf, sBookID + "_COUNT", nCount);
         SetLocalString(oShelf, sBookID + "_NAME", sName);
         SetLocalInt(oShelf, "GS_BS_OFFSET", nNth);
+        SetLocalString(oShelf, sBookID + "_NOTEBOOK", sNotebookID);
         nNth++;
     }
 }
@@ -69,6 +71,7 @@ void gsBSUnloadContent(object oShelf = OBJECT_SELF)
         DeleteLocalString(oShelf, sBookID + "_INDEX");
         DeleteLocalInt(oShelf, sBookID + "_COUNT");
         DeleteLocalString(oShelf, sBookID + "_NAME");
+        DeleteLocalString(oShelf, sBookID + "_NOTEBOOK");
     }
     DeleteLocalInt(oShelf, "GS_BS_OFFSET");
     DeleteLocalInt(oShelf, "GS_BOOK");
@@ -153,7 +156,26 @@ string gsBSGetBookName(string sBookID, object oShelf = OBJECT_SELF)
     return SqlGetString(sqlGetName, 0);
 }
 //----------------------------------------------------------------
-int gsBSPostBook(string sBookName, string sBookDesc, object oShelf = OBJECT_SELF)
+string gsBSGetBookNotebook(string sBookID, object oShelf = OBJECT_SELF)
+{
+    string sDatabase = "GS_BS_BOOKSHELVES";
+    string sShelfID = "";
+    if(GetLocalString(oShelf, "GS_FX_ID") == "")
+    {
+        sShelfID  = "GS_BS_" + GetTag(oShelf);
+    }
+    else
+    {
+        sShelfID = "GS_BS_" + GetLocalString(oShelf, "GS_FX_ID");
+    }
+
+    sqlquery sqlGetNotebook = SqlPrepareQueryCampaign(sDatabase, "SELECT notebook FROM books WHERE id = @id;");
+    SqlBindString(sqlGetNotebook, "@id", sBookID);
+    SqlStep(sqlGetNotebook);
+    return SqlGetString(sqlGetNotebook, 0);
+}
+//----------------------------------------------------------------
+int gsBSPostBook(string sBookName, string sBookDesc, string sNotebookID, object oShelf = OBJECT_SELF)
 {
     string sDatabase = "GS_BS_BOOKSHELVES";
     string sShelfID = "";
@@ -173,7 +195,7 @@ int gsBSPostBook(string sBookName, string sBookDesc, object oShelf = OBJECT_SELF
     SqlBindString(sqlMatchBook, "@shelf_id", sShelfID);
     SqlBindString(sqlMatchBook, "@name", sBookName);
     SqlBindString(sqlMatchBook, "@desc", sBookDesc);
-    if(SqlStep(sqlMatchBook)){
+    if(SqlStep(sqlMatchBook) && sNotebookID == ""){
         string sMatchedBookId = SqlGetString(sqlMatchBook, 0);
         sqlquery sqlIncreaseCount = SqlPrepareQueryCampaign(sDatabase, "UPDATE books SET count = count + 1 WHERE id = @id;");
         SqlBindString(sqlIncreaseCount, "@id", sMatchedBookId);
@@ -192,7 +214,7 @@ int gsBSPostBook(string sBookName, string sBookDesc, object oShelf = OBJECT_SELF
         SqlBindString(sqlInsertBook, "@name", sBookName);
         SqlBindString(sqlInsertBook, "@desc", sBookDesc);
         SqlBindInt(sqlInsertBook, "@count", 1);
-        SqlBindString(sqlInsertBook, "@notebook", "");
+        SqlBindString(sqlInsertBook, "@notebook", sNotebookID);
         SqlStep(sqlInsertBook);
     }
     return TRUE;
@@ -224,6 +246,7 @@ void gsBSRemoveBook(string sBookID, object oShelf = OBJECT_SELF)
             DeleteLocalString(oShelf, sBookID + "_INDEX");
             DeleteLocalInt(oShelf, sBookID + "_COUNT");
             DeleteLocalString(oShelf, sBookID + "_NAME");
+            DeleteLocalString(oShelf, sBookID + "_NOTEBOOK");
             return;
         }
         else
