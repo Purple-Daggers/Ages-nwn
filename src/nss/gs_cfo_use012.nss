@@ -2,7 +2,7 @@
 
 int StartingConditional()
 {
-    int nNth = GetLocalInt(OBJECT_SELF, "GS_MESSAGE");
+    int nNth = GetLocalInt(OBJECT_SELF, "GS_FO_MESSAGE");
 
     if (nNth != -1)
     {

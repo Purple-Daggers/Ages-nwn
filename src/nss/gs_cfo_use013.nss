@@ -5,7 +5,7 @@ const string GS_TEMPLATE_LETTER = "gs_item370";
 
 void main()
 {
-    int nNth = GetLocalInt(OBJECT_SELF, "GS_MESSAGE");
+    int nNth = GetLocalInt(OBJECT_SELF, "GS_FO_MESSAGE");
 
     if (nNth != -1)
     {
@@ -29,7 +29,7 @@ void main()
 
                     SetName(oObject, sDoubleQuote + gsMEGetTitle(sMessageID) + sDoubleQuote);
                     gsFORemoveMessage(sMessageID);
-                    DeleteLocalInt(OBJECT_SELF, "GS_MESSAGE");
+                    DeleteLocalInt(OBJECT_SELF, "GS_FO_MESSAGE");
                 }
             }
         }

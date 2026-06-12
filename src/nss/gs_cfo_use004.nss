@@ -4,10 +4,10 @@ int StartingConditional()
 {
     //slot 3
 
-    if (GetLocalInt(OBJECT_SELF, "GS_SLOT_3") != -1)
+    if (GetLocalInt(OBJECT_SELF, "GS_FO_SLOT_3") != -1)
     {
         gsTKRecallToken(103);
-        gsTKRecallToken(108);
+        gsTKRecallToken(113);
 
         return TRUE;
     }
