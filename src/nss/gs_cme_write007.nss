@@ -27,18 +27,18 @@ void main()
             }
         }
 
-        string sMessageID = gsCMCreateRandomID();
+        string sMessageID = GetRandomUUID();
         object oObject    = CreateItemOnObject(GS_TEMPLATE_LETTER,
                                                OBJECT_SELF,
                                                1,
-                                               "GS_ME_" + sMessageID);
+                                               GetStringUpperCase(GetStringLeft("GS_ME_" + sMessageID, 32)));
 
         if (GetIsObjectValid(oObject))
         {
+            SetTag(oObject, GetStringUpperCase(GetStringLeft("GS_ME_" + sMessageID, 32)));
             string sDoubleQuote = GetLocalString(GetModule(), "GS_DOUBLE_QUOTE");
-
             SetName(oObject, sDoubleQuote + sTitle + sDoubleQuote);
-            gsMESetMessage(sMessageID, sTitle, sText);
+            gsMESetMessage(GetTag(oObject), sTitle, sText);
             DestroyObject(oTarget);
         }
     }
