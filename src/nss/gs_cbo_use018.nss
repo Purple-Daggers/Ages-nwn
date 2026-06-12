@@ -1,4 +1,5 @@
 #include "gs_inc_booksh"
+#include "gs_inc_forum"
 void main()
 {
     SetLocalInt(OBJECT_SELF, "GS_BOOK", -1);

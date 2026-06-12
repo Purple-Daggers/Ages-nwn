@@ -10,7 +10,7 @@ void main()
     if (nNth != -1)
     {
         string sBookID = gsBSGetBook(nNth);
-        string sNotebookID = gsBSGetBookNotebook(nNth);
+        string sNotebookID = gsBSGetBookNotebook(sBookID);
 
         if (sBookID != "")
         {
@@ -19,6 +19,9 @@ void main()
             if (GetIsDM(oSpeaker)||
                 TRUE/*gsFOGetOwner(sBookID) == gsPCGetPlayerID(oSpeaker)*/)
             {
+
+                object oObject = OBJECT_INVALID;
+                
                 if (sNotebookID == "")
                 {
                      object oObject = CreateItemOnObject(GS_TEMPLATE_BOOK,
