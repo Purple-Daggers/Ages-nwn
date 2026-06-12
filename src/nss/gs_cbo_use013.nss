@@ -21,15 +21,10 @@ void main()
                 object oObject = CreateItemOnObject(GS_TEMPLATE_BOOK,
                                                     oSpeaker,
                                                     1);
-
+                SetName(oObject, gsBSGetBookName(sBookID));
+                SetDescription(oObject, gsBSGetBookDescription(sBookID));
                 if (GetIsObjectValid(oObject))
                 {
-                    SetName(oObject, gsBSGetBookName(sBookID));
-                    SetDescription(oObject, gsBSGetBookDescription(sBookID));
-                    if (sNotebookID != "")
-                    {
-                        SetLocalString(oObject, "GS_NB_ID", sNotebookID);
-                    }
                     gsBSRemoveBook(sBookID);
                     DeleteLocalInt(OBJECT_SELF, "GS_BOOK");
                 }
@@ -39,18 +34,17 @@ void main()
                 object oObject = CreateItemOnObject(GS_TEMPLATE_NOTEBOOK,
                                                     oSpeaker,
                                                     1);
-
+                SetName(oObject, gsBSGetBookName(sBookID));
+                SetDescription(oObject, gsBSGetBookDescription(sBookID));
+                SetLocalString(oObject, "GS_NB_ID", sNotebookID);
                 if (GetIsObjectValid(oObject))
                 {
-                    SetName(oObject, gsBSGetBookName(sBookID));
-                    SetDescription(oObject, gsBSGetBookDescription(sBookID));
-                    if (sNotebookID != "")
-                    {
-                        //Freshly created objects need time to fully instantiate, so we add it to the action queue.
-                        AssignCommand(oSpeaker, ActionDoCommand(SetLocalString(oObject, "GS_NB_ID", sNotebookID)));
+                    if(GetLocalString(oObject, "GS_NB_ID") != ""){
+                        gsBSRemoveBook(sBookID);
+                        DeleteLocalInt(OBJECT_SELF, "GS_BOOK");
+                    } else {
+                        DestroyObject(oObject);
                     }
-                    gsBSRemoveBook(sBookID);
-                    DeleteLocalInt(OBJECT_SELF, "GS_BOOK");
                 }
             }
         }
