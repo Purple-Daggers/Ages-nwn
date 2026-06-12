@@ -87,7 +87,7 @@ void main()
                 SetLocalString(oFixture, "GS_FX_ID", GetLocalString(oItem, "GS_FX_ID"));
             }
 
-            if (GetIsObjectValid(oFixture) && (GetLocalString(oItem, "GS_FX_ID") != ""))
+            if (GetIsObjectValid(oFixture) && (GetLocalString(oFixture, "GS_FX_ID") != ""))
             {
                 gsFXSaveFixture(GetTag(GetArea(oFixture)), oFixture);
                 DestroyObject(oItem);
