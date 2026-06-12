@@ -1,4 +1,4 @@
-#include gs_inc_booksh
+#include "gs_inc_booksh"
 void main()
 {
     int nNth = GetLocalInt(OBJECT_SELF, "GS_BOOK");
