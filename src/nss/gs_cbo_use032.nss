@@ -1,13 +1,9 @@
-#include "gs_inc_booksh"
-void main()
+int StartingConditional()
 {
-    int nNth = GetLocalInt(OBJECT_SELF, "GS_BOOK");
-    if (nNth != -1)
+    if(GetLocalString(OBJECT_SELF, "GS_FX_ID") != "")
     {
-         string sMessageID = gsBSGetBook(nNth);
-        string sNotebookID = GetLocalString(OBJECT_SELF, sMessageID + "_NOTEBOOK");
-        if (sNotebookID != ""){
-            SetLocalString(OBJECT_SELF, "GS_NB_ID", sNotebookID);
-        }
+        return TRUE;
     }
+    return FALSE;
 }
+
