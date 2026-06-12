@@ -15,35 +15,39 @@ void main()
         if (sBookID != "")
         {
             object oSpeaker = GetPCSpeaker();
-
-            if (GetIsDM(oSpeaker)||
-                TRUE/*gsFOGetOwner(sBookID) == gsPCGetPlayerID(oSpeaker)*/)
-            {
-
-                object oObject = OBJECT_INVALID;
-                
-                if (sNotebookID == "")
-                {
-                     object oObject = CreateItemOnObject(GS_TEMPLATE_BOOK,
-                                                         oSpeaker,
-                                                         1);
-                }
-                else
-                {
-                     object oObject = CreateItemOnObject(GS_TEMPLATE_NOTEBOOK,
-                                                         oSpeaker,
-                                                         1);
-                }
+            //removed get owner stuff here
+            if (sNotebookID == "")
+            {  
+                object oObject = CreateItemOnObject(GS_TEMPLATE_BOOK,
+                                                    oSpeaker,
+                                                    1);
 
                 if (GetIsObjectValid(oObject))
                 {
-                    string sDoubleQuote = GetLocalString(GetModule(), "GS_DOUBLE_QUOTE");
-
                     SetName(oObject, gsBSGetBookName(sBookID));
                     SetDescription(oObject, gsBSGetBookDescription(sBookID));
                     if (sNotebookID != "")
                     {
                         SetLocalString(oObject, "GS_NB_ID", sNotebookID);
+                    }
+                    gsBSRemoveBook(sBookID);
+                    DeleteLocalInt(OBJECT_SELF, "GS_BOOK");
+                }
+            }
+            else
+            {
+                object oObject = CreateItemOnObject(GS_TEMPLATE_NOTEBOOK,
+                                                    oSpeaker,
+                                                    1);
+
+                if (GetIsObjectValid(oObject))
+                {
+                    SetName(oObject, gsBSGetBookName(sBookID));
+                    SetDescription(oObject, gsBSGetBookDescription(sBookID));
+                    if (sNotebookID != "")
+                    {
+                        //Freshly created objects need time to fully instantiate, so we add it to the action queue.
+                        AssignCommand(oSpeaker, ActionDoCommand(SetLocalString(oObject, "GS_NB_ID", sNotebookID)));
                     }
                     gsBSRemoveBook(sBookID);
                     DeleteLocalInt(OBJECT_SELF, "GS_BOOK");
