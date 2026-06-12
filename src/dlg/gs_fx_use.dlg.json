@@ -60,7 +60,7 @@
               },
               "Index": {
                 "type": "dword",
-                "value": 6
+                "value": 5
               },
               "IsChild": {
                 "type": "byte",
@@ -79,7 +79,7 @@
               },
               "Index": {
                 "type": "dword",
-                "value": 5
+                "value": 4
               },
               "IsChild": {
                 "type": "byte",
@@ -98,7 +98,7 @@
               },
               "Index": {
                 "type": "dword",
-                "value": 4
+                "value": 3
               },
               "IsChild": {
                 "type": "byte",
@@ -117,25 +117,6 @@
               },
               "Index": {
                 "type": "dword",
-                "value": 3
-              },
-              "IsChild": {
-                "type": "byte",
-                "value": 0
-              }
-            },
-            {
-              "__struct_id": 4,
-              "Active": {
-                "type": "resref",
-                "value": "gs_cfx_use011"
-              },
-              "ConditionParams": {
-                "type": "list",
-                "value": []
-              },
-              "Index": {
-                "type": "dword",
                 "value": 2
               },
               "IsChild": {
@@ -144,7 +125,7 @@
               }
             },
             {
-              "__struct_id": 5,
+              "__struct_id": 4,
               "Active": {
                 "type": "resref",
                 "value": ""
@@ -163,7 +144,7 @@
               }
             },
             {
-              "__struct_id": 6,
+              "__struct_id": 5,
               "Active": {
                 "type": "resref",
                 "value": ""
@@ -208,7 +189,7 @@
   },
   "NumWords": {
     "type": "dword",
-    "value": 15
+    "value": 13
   },
   "PreventZoomIn": {
     "type": "byte",
@@ -343,51 +324,6 @@
         },
         "Script": {
           "type": "resref",
-          "value": "gs_cfx_use012"
-        },
-        "Sound": {
-          "type": "resref",
-          "value": ""
-        },
-        "Text": {
-          "type": "cexolocstring",
-          "value": {
-            "0": "<StartAction>[Use object]</Start>"
-          }
-        }
-      },
-      {
-        "__struct_id": 3,
-        "ActionParams": {
-          "type": "list",
-          "value": []
-        },
-        "Animation": {
-          "type": "dword",
-          "value": 0
-        },
-        "AnimLoop": {
-          "type": "byte",
-          "value": 1
-        },
-        "Comment": {
-          "type": "cexostring",
-          "value": ""
-        },
-        "Delay": {
-          "type": "dword",
-          "value": 4294967295
-        },
-        "EntriesList": {
-          "type": "list",
-          "value": []
-        },
-        "Quest": {
-          "type": "cexostring",
-          "value": ""
-        },
-        "Script": {
-          "type": "resref",
           "value": "gs_cfx_use010"
         },
         "Sound": {
@@ -402,7 +338,7 @@
         }
       },
       {
-        "__struct_id": 4,
+        "__struct_id": 3,
         "ActionParams": {
           "type": "list",
           "value": []
@@ -449,7 +385,7 @@
         }
       },
       {
-        "__struct_id": 5,
+        "__struct_id": 4,
         "ActionParams": {
           "type": "list",
           "value": []
@@ -496,7 +432,7 @@
         }
       },
       {
-        "__struct_id": 6,
+        "__struct_id": 5,
         "ActionParams": {
           "type": "list",
           "value": []
