@@ -1,5 +1,6 @@
 void main()
 {
-    ExecuteScript("gs_ia_bookshelf", OBJECT_SELF);
+    object oFixture = OBJECT_SELF;
+    AssignCommand(GetLastSpeaker(), ActionStartConversation(oFixture, "gs_bs_use", TRUE));
 }
 
