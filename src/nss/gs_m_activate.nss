@@ -109,7 +109,7 @@ void main()
                 if(GetTag(oTarget) == "GS_FO_NOTEBOOK" && GetLocalString(oTarget, "GS_NB_ID") == ""){
                     SetLocalString(oTarget, "GS_NB_ID", GetRandomUUID());
                 }
-                if (gsFOPostMessage(GetStringRight(sTag, 16), oActivator, oTarget))
+                if (gsFOPostMessage(GetSubString(sTag, 6, -1), oActivator, oTarget))
                 {
                     DestroyObject(oItem);
                 }

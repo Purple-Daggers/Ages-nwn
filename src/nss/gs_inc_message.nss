@@ -23,33 +23,65 @@ string gsMEGetMessage(string sMessageID);
 void gsMESetMessage(string sMessageID, string sTitle, string sText, object oAuthor = OBJECT_SELF)
 {
     if (! GetIsPC(oAuthor)) return;
+    sqlquery sqlCreateTable = SqlPrepareQueryCampaign("GS_MESSAGE", "CREATE TABLE IF NOT EXISTS messages (id TEXT PRIMARY KEY, timestamp INTEGER, title TEXT, text TEXT, author TEXT, author_id TEXT);");
+    SqlStep(sqlCreateTable);
 
-    sMessageID = GetStringLeft(sMessageID, 16);
-
-    SetCampaignInt("GS_MESSAGE", sMessageID + "_TIMESTAMP", gsTIGetActualTimestamp());
-    SetCampaignString("GS_MESSAGE", sMessageID + "_TITLE", sTitle);
-    SetCampaignString("GS_MESSAGE", sMessageID + "_TEXT", sText);
-    SetCampaignString("GS_MESSAGE", sMessageID + "_AUTHOR", GetName(oAuthor));
+    sqlquery sqlInsertMessage = SqlPrepareQueryCampaign("GS_MESSAGE", "INSERT INTO messages (id, timestamp, title, text, author, author_id) VALUES (@id, @timestamp, @title, @text, @author, @author_id);");
+    SqlBindString(sqlInsertMessage, "@id", GetSubString(sMessageID, 6, -1));
+    SqlBindInt(sqlInsertMessage, "@timestamp", gsTIGetActualTimestamp());
+    SqlBindString(sqlInsertMessage, "@title", sTitle);
+    SqlBindString(sqlInsertMessage, "@text", sText);
+    SqlBindString(sqlInsertMessage, "@author", GetName(oAuthor));
+    SqlBindString(sqlInsertMessage, "@author_id", gsPCGetPlayerID(oAuthor));
+    SqlStep(sqlInsertMessage);
 }
 //----------------------------------------------------------------
 int gsMEGetTimestamp(string sMessageID)
 {
-    return GetCampaignInt("GS_MESSAGE", sMessageID + "_TIME");
+    sqlquery sqlGetTimestamp = SqlPrepareQueryCampaign("GS_MESSAGE", "SELECT timestamp FROM messages WHERE id = @id;");
+    SqlBindString(sqlGetTimestamp, "@id", sMessageID);
+    if(SqlStep(sqlGetTimestamp)){
+        return SqlGetInt(sqlGetTimestamp, 0);
+    }
+    else {
+        return 0;
+    }
 }
 //----------------------------------------------------------------
 string gsMEGetTitle(string sMessageID)
 {
-    return GetCampaignString("GS_MESSAGE", sMessageID + "_TITLE");
+    sqlquery sqlGetTitle = SqlPrepareQueryCampaign("GS_MESSAGE", "SELECT title FROM messages WHERE id = @id;");
+    SqlBindString(sqlGetTitle, "@id", sMessageID);
+    if(SqlStep(sqlGetTitle)){
+        return SqlGetString(sqlGetTitle, 0);
+    }
+    else {
+        return "";
+    }
 }
 //----------------------------------------------------------------
 string gsMEGetText(string sMessageID)
 {
-    return GetCampaignString("GS_MESSAGE", sMessageID + "_TEXT");
+    sqlquery sqlGetText = SqlPrepareQueryCampaign("GS_MESSAGE", "SELECT text FROM messages WHERE id = @id;");
+    SqlBindString(sqlGetText, "@id", sMessageID);
+    if(SqlStep(sqlGetText)){
+        return SqlGetString(sqlGetText, 0);
+    }
+    else {
+        return "";
+    }
 }
 //----------------------------------------------------------------
 string gsMEGetAuthor(string sMessageID)
 {
-    return GetCampaignString("GS_MESSAGE", sMessageID + "_AUTHOR");
+    sqlquery sqlGetAuthor = SqlPrepareQueryCampaign("GS_MESSAGE", "SELECT author FROM messages WHERE id = @id;");
+    SqlBindString(sqlGetAuthor, "@id", sMessageID);
+    if(SqlStep(sqlGetAuthor)){
+        return SqlGetString(sqlGetAuthor, 0);
+    }
+    else {
+        return "";
+    }
 }
 //----------------------------------------------------------------
 string gsMEGetMessage(string sMessageID)
