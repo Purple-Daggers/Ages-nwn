@@ -31,13 +31,14 @@ void main()
         object oObject    = CreateItemOnObject(GS_TEMPLATE_LETTER,
                                                OBJECT_SELF,
                                                1,
-                                               "GS_ME_" + sMessageID);
+                                               GetStringLeft("GS_ME_" + sMessageID, 32));
 
         if (GetIsObjectValid(oObject))
         {
+            SetTag(oObject, GetStringLeft("GS_ME_" + sMessageID, 32));
             string sDoubleQuote = GetLocalString(GetModule(), "GS_DOUBLE_QUOTE");
             SetName(oObject, sDoubleQuote + sTitle + sDoubleQuote);
-            gsMESetMessage(GetStringLeft(sMessageID, 32), sTitle, sText);
+            gsMESetMessage(GetTag(oObject), sTitle, sText);
             DestroyObject(oTarget);
         }
     }
