@@ -10,10 +10,14 @@ void main()
     SetDescription(oFixture, GetDescription(OBJECT_SELF));
     SetLocalString(oFixture, "GS_FX_ID", GetLocalString(OBJECT_SELF, "GS_FX_ID"));
 
-    if (GetIsObjectValid(oFixture))
+    if (GetIsObjectValid(oFixture) && (GetLocalString(oFixture, "GS_FX_ID") != ""))
     {
         AssignCommand(oSpeaker, ActionPlayAnimation(ANIMATION_LOOPING_GET_LOW, 1.0, 1.0));
         gsFXDeleteFixture(GetTag(GetArea(OBJECT_SELF)));
         DestroyObject(OBJECT_SELF);
+    }
+    else
+    {
+        DestroyObject(oFixture);
     }
 }
