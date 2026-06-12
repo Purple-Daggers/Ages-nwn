@@ -27,7 +27,7 @@ void main()
             }
         }
 
-        string sMessageID = GetRandomUUID();
+        string sMessageID = gsCMCreateRandomID();
         object oObject    = CreateItemOnObject(GS_TEMPLATE_LETTER,
                                                OBJECT_SELF,
                                                1,
@@ -36,8 +36,6 @@ void main()
         if (GetIsObjectValid(oObject))
         {
             string sDoubleQuote = GetLocalString(GetModule(), "GS_DOUBLE_QUOTE");
-            sMessageID = GetTag(oObject);
-
             SetName(oObject, sDoubleQuote + sTitle + sDoubleQuote);
             gsMESetMessage(GetStringRight(sMessageID, 6), sTitle, sText);
             DestroyObject(oTarget);
