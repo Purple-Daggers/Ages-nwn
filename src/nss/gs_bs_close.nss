@@ -9,7 +9,7 @@ void main()
     {
         if(GetBaseItemType(oItem) == BASE_ITEM_BOOK)
         {
-            if(gsBSPostBook(GetName(oItem), GetDescription(oItem), oShelf))
+            if(gsBSPostBook(GetName(oItem), GetDescription(oItem), GetLocalString(oItem, "GS_NB_ID"), oShelf))
             {
                 nChanged = TRUE;
                 DestroyObject(oItem);

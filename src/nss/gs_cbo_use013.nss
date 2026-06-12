@@ -1,6 +1,7 @@
 #include "gs_inc_booksh"
 
 const string GS_TEMPLATE_BOOK = "book";
+const string GS_TEMPLATE_NOTEBOOK = "gs_item410";
 
 void main()
 {
@@ -9,6 +10,7 @@ void main()
     if (nNth != -1)
     {
         string sBookID = gsBSGetBook(nNth);
+        string sNotebookID = gsBSGetBookNotebook(nNth);
 
         if (sBookID != "")
         {
@@ -17,9 +19,18 @@ void main()
             if (GetIsDM(oSpeaker)||
                 TRUE/*gsFOGetOwner(sBookID) == gsPCGetPlayerID(oSpeaker)*/)
             {
-                object oObject = CreateItemOnObject(GS_TEMPLATE_BOOK,
-                                                    oSpeaker,
-                                                    1);
+                if (sNotebookID == "")
+                {
+                     object oObject = CreateItemOnObject(GS_TEMPLATE_BOOK,
+                                                         oSpeaker,
+                                                         1);
+                }
+                else
+                {
+                     object oObject = CreateItemOnObject(GS_TEMPLATE_NOTEBOOK,
+                                                         oSpeaker,
+                                                         1);
+                }
 
                 if (GetIsObjectValid(oObject))
                 {
@@ -27,6 +38,10 @@ void main()
 
                     SetName(oObject, gsBSGetBookName(sBookID));
                     SetDescription(oObject, gsBSGetBookDescription(sBookID));
+                    if (sNotebookID != "")
+                    {
+                        SetLocalString(oObject, "GS_NB_ID", sNotebookID);
+                    }
                     gsBSRemoveBook(sBookID);
                     DeleteLocalInt(OBJECT_SELF, "GS_BOOK");
                 }
