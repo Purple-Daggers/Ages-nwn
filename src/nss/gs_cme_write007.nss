@@ -31,11 +31,11 @@ void main()
         object oObject    = CreateItemOnObject(GS_TEMPLATE_LETTER,
                                                OBJECT_SELF,
                                                1,
-                                               GetStringLeft("GS_ME_" + sMessageID, 32));
+                                               GetStringUpperCase(GetStringLeft("GS_ME_" + sMessageID, 32)));
 
         if (GetIsObjectValid(oObject))
         {
-            SetTag(oObject, GetStringLeft("GS_ME_" + sMessageID, 32));
+            SetTag(oObject, GetStringUpperCase(GetStringLeft("GS_ME_" + sMessageID, 32)));
             string sDoubleQuote = GetLocalString(GetModule(), "GS_DOUBLE_QUOTE");
             SetName(oObject, sDoubleQuote + sTitle + sDoubleQuote);
             gsMESetMessage(GetTag(oObject), sTitle, sText);

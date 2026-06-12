@@ -3,7 +3,7 @@
 int StartingConditional()
 {
     object oTarget    = GetLocalObject(OBJECT_SELF, "GS_TARGET");
-    string sMessageID = GetStringRight(GetTag(oTarget), 26);
+    string sMessageID = GetSubString(GetTag(oTarget), 6, -1);
     string sMessage   = gsMEGetMessage(sMessageID);
 
     if (sMessage != "")
