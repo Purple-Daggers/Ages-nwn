@@ -7,36 +7,36 @@ int StartingConditional()
     if (! GetLocalInt(OBJECT_SELF, "GS_FO_ENABLED"))
     {
         gsFOLoadContent();
-        SetLocalInt(OBJECT_SELF, "GS_MESSAGE", -1);
+        SetLocalInt(OBJECT_SELF, "GS_FO_MESSAGE", -1);
         SetLocalInt(OBJECT_SELF, "GS_FO_ENABLED", TRUE);
     }
 
     string sMessageID = "";
-    int nNth          = GetLocalInt(OBJECT_SELF, "GS_PAGE_START");
+    int nNth          = GetLocalInt(OBJECT_SELF, "GS_FO_PAGE_START");
     nNth              = gsFOGetFirstMessage(nNth);
     int nSlot         = 1;
 
-    SetLocalInt(OBJECT_SELF, "GS_PAGE_START", nNth);
+    SetLocalInt(OBJECT_SELF, "GS_FO_PAGE_START", nNth);
 
     while (TRUE)
     {
-        SetLocalInt(OBJECT_SELF, "GS_SLOT_" + IntToString(nSlot), nNth);
+        SetLocalInt(OBJECT_SELF, "GS_FO_SLOT_" + IntToString(nSlot), nNth);
 
         if (nNth != -1)
         {
             sMessageID = gsFOGetMessage(nNth);
             gsTKSetToken(100 + nSlot, "<cþë¦>" + gsMEGetTitle(sMessageID) + "<câÛÂ>");
-            gsTKSetToken(105 + nSlot, "<c(”þ>" + gsMEGetAuthor(sMessageID));
+            gsTKSetToken(110 + nSlot, "<c(”þ>" + gsMEGetAuthor(sMessageID));
         }
 
-        if (++nSlot > 5) break;
+        if (++nSlot > 10) break;
 
         if (nNth != -1)  nNth = gsFOGetNextMessage(nNth);
     }
 
-    SetLocalInt(OBJECT_SELF, "GS_PAGE_END", nNth);
+    SetLocalInt(OBJECT_SELF, "GS_FO_PAGE_END", nNth);
 
-    nNth = GetLocalInt(OBJECT_SELF, "GS_MESSAGE");
+    nNth = GetLocalInt(OBJECT_SELF, "GS_FO_MESSAGE");
     if (nNth != -1)
     {
         sMessageID = gsFOGetMessage(nNth);

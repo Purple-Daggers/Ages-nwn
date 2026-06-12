@@ -60,7 +60,7 @@
               },
               "Index": {
                 "type": "dword",
-                "value": 8
+                "value": 13
               },
               "IsChild": {
                 "type": "byte",
@@ -83,7 +83,7 @@
               },
               "Index": {
                 "type": "dword",
-                "value": 7
+                "value": 12
               },
               "IsChild": {
                 "type": "byte",
@@ -106,7 +106,7 @@
               },
               "Index": {
                 "type": "dword",
-                "value": 6
+                "value": 11
               },
               "IsChild": {
                 "type": "byte",
@@ -129,7 +129,7 @@
               },
               "Index": {
                 "type": "dword",
-                "value": 5
+                "value": 10
               },
               "IsChild": {
                 "type": "byte",
@@ -152,7 +152,7 @@
               },
               "Index": {
                 "type": "dword",
-                "value": 4
+                "value": 9
               },
               "IsChild": {
                 "type": "byte",
@@ -165,6 +165,121 @@
             },
             {
               "__struct_id": 5,
+              "Active": {
+                "type": "resref",
+                "value": "gs_cfo_use020"
+              },
+              "ConditionParams": {
+                "type": "list",
+                "value": []
+              },
+              "Index": {
+                "type": "dword",
+                "value": 8
+              },
+              "IsChild": {
+                "type": "byte",
+                "value": 1
+              },
+              "LinkComment": {
+                "type": "cexostring",
+                "value": ""
+              }
+            },
+            {
+              "__struct_id": 6,
+              "Active": {
+                "type": "resref",
+                "value": "gs_cfo_use021"
+              },
+              "ConditionParams": {
+                "type": "list",
+                "value": []
+              },
+              "Index": {
+                "type": "dword",
+                "value": 7
+              },
+              "IsChild": {
+                "type": "byte",
+                "value": 1
+              },
+              "LinkComment": {
+                "type": "cexostring",
+                "value": ""
+              }
+            },
+            {
+              "__struct_id": 7,
+              "Active": {
+                "type": "resref",
+                "value": "gs_cfo_use022"
+              },
+              "ConditionParams": {
+                "type": "list",
+                "value": []
+              },
+              "Index": {
+                "type": "dword",
+                "value": 6
+              },
+              "IsChild": {
+                "type": "byte",
+                "value": 1
+              },
+              "LinkComment": {
+                "type": "cexostring",
+                "value": ""
+              }
+            },
+            {
+              "__struct_id": 8,
+              "Active": {
+                "type": "resref",
+                "value": "gs_cfo_use023"
+              },
+              "ConditionParams": {
+                "type": "list",
+                "value": []
+              },
+              "Index": {
+                "type": "dword",
+                "value": 5
+              },
+              "IsChild": {
+                "type": "byte",
+                "value": 1
+              },
+              "LinkComment": {
+                "type": "cexostring",
+                "value": ""
+              }
+            },
+            {
+              "__struct_id": 9,
+              "Active": {
+                "type": "resref",
+                "value": "gs_cfo_use024"
+              },
+              "ConditionParams": {
+                "type": "list",
+                "value": []
+              },
+              "Index": {
+                "type": "dword",
+                "value": 4
+              },
+              "IsChild": {
+                "type": "byte",
+                "value": 1
+              },
+              "LinkComment": {
+                "type": "cexostring",
+                "value": ""
+              }
+            },
+            {
+              "__struct_id": 10,
               "Active": {
                 "type": "resref",
                 "value": "gs_cfo_use014"
@@ -187,7 +302,7 @@
               }
             },
             {
-              "__struct_id": 6,
+              "__struct_id": 11,
               "Active": {
                 "type": "resref",
                 "value": "gs_cfo_use016"
@@ -210,7 +325,7 @@
               }
             },
             {
-              "__struct_id": 7,
+              "__struct_id": 12,
               "Active": {
                 "type": "resref",
                 "value": ""
@@ -275,6 +390,357 @@
         },
         "Delay": {
           "type": "dword",
+          "value": 4294967295
+        },
+        "Quest": {
+          "type": "cexostring",
+          "value": ""
+        },
+        "RepliesList": {
+          "type": "list",
+          "value": [
+            {
+              "__struct_id": 0,
+              "Active": {
+                "type": "resref",
+                "value": "gs_cfo_use002"
+              },
+              "ConditionParams": {
+                "type": "list",
+                "value": []
+              },
+              "Index": {
+                "type": "dword",
+                "value": 13
+              },
+              "IsChild": {
+                "type": "byte",
+                "value": 1
+              },
+              "LinkComment": {
+                "type": "cexostring",
+                "value": ""
+              }
+            },
+            {
+              "__struct_id": 1,
+              "Active": {
+                "type": "resref",
+                "value": "gs_cfo_use003"
+              },
+              "ConditionParams": {
+                "type": "list",
+                "value": []
+              },
+              "Index": {
+                "type": "dword",
+                "value": 12
+              },
+              "IsChild": {
+                "type": "byte",
+                "value": 1
+              },
+              "LinkComment": {
+                "type": "cexostring",
+                "value": ""
+              }
+            },
+            {
+              "__struct_id": 2,
+              "Active": {
+                "type": "resref",
+                "value": "gs_cfo_use004"
+              },
+              "ConditionParams": {
+                "type": "list",
+                "value": []
+              },
+              "Index": {
+                "type": "dword",
+                "value": 11
+              },
+              "IsChild": {
+                "type": "byte",
+                "value": 1
+              },
+              "LinkComment": {
+                "type": "cexostring",
+                "value": ""
+              }
+            },
+            {
+              "__struct_id": 3,
+              "Active": {
+                "type": "resref",
+                "value": "gs_cfo_use005"
+              },
+              "ConditionParams": {
+                "type": "list",
+                "value": []
+              },
+              "Index": {
+                "type": "dword",
+                "value": 10
+              },
+              "IsChild": {
+                "type": "byte",
+                "value": 1
+              },
+              "LinkComment": {
+                "type": "cexostring",
+                "value": ""
+              }
+            },
+            {
+              "__struct_id": 4,
+              "Active": {
+                "type": "resref",
+                "value": "gs_cfo_use006"
+              },
+              "ConditionParams": {
+                "type": "list",
+                "value": []
+              },
+              "Index": {
+                "type": "dword",
+                "value": 9
+              },
+              "IsChild": {
+                "type": "byte",
+                "value": 1
+              },
+              "LinkComment": {
+                "type": "cexostring",
+                "value": ""
+              }
+            },
+            {
+              "__struct_id": 5,
+              "Active": {
+                "type": "resref",
+                "value": "gs_cfo_use020"
+              },
+              "ConditionParams": {
+                "type": "list",
+                "value": []
+              },
+              "Index": {
+                "type": "dword",
+                "value": 8
+              },
+              "IsChild": {
+                "type": "byte",
+                "value": 1
+              },
+              "LinkComment": {
+                "type": "cexostring",
+                "value": ""
+              }
+            },
+            {
+              "__struct_id": 6,
+              "Active": {
+                "type": "resref",
+                "value": "gs_cfo_use021"
+              },
+              "ConditionParams": {
+                "type": "list",
+                "value": []
+              },
+              "Index": {
+                "type": "dword",
+                "value": 7
+              },
+              "IsChild": {
+                "type": "byte",
+                "value": 1
+              },
+              "LinkComment": {
+                "type": "cexostring",
+                "value": ""
+              }
+            },
+            {
+              "__struct_id": 7,
+              "Active": {
+                "type": "resref",
+                "value": "gs_cfo_use022"
+              },
+              "ConditionParams": {
+                "type": "list",
+                "value": []
+              },
+              "Index": {
+                "type": "dword",
+                "value": 6
+              },
+              "IsChild": {
+                "type": "byte",
+                "value": 1
+              },
+              "LinkComment": {
+                "type": "cexostring",
+                "value": ""
+              }
+            },
+            {
+              "__struct_id": 8,
+              "Active": {
+                "type": "resref",
+                "value": "gs_cfo_use023"
+              },
+              "ConditionParams": {
+                "type": "list",
+                "value": []
+              },
+              "Index": {
+                "type": "dword",
+                "value": 5
+              },
+              "IsChild": {
+                "type": "byte",
+                "value": 1
+              },
+              "LinkComment": {
+                "type": "cexostring",
+                "value": ""
+              }
+            },
+            {
+              "__struct_id": 9,
+              "Active": {
+                "type": "resref",
+                "value": "gs_cfo_use024"
+              },
+              "ConditionParams": {
+                "type": "list",
+                "value": []
+              },
+              "Index": {
+                "type": "dword",
+                "value": 4
+              },
+              "IsChild": {
+                "type": "byte",
+                "value": 1
+              },
+              "LinkComment": {
+                "type": "cexostring",
+                "value": ""
+              }
+            },
+            {
+              "__struct_id": 10,
+              "Active": {
+                "type": "resref",
+                "value": "gs_cfo_use014"
+              },
+              "ConditionParams": {
+                "type": "list",
+                "value": []
+              },
+              "Index": {
+                "type": "dword",
+                "value": 3
+              },
+              "IsChild": {
+                "type": "byte",
+                "value": 1
+              },
+              "LinkComment": {
+                "type": "cexostring",
+                "value": ""
+              }
+            },
+            {
+              "__struct_id": 11,
+              "Active": {
+                "type": "resref",
+                "value": "gs_cfo_use016"
+              },
+              "ConditionParams": {
+                "type": "list",
+                "value": []
+              },
+              "Index": {
+                "type": "dword",
+                "value": 2
+              },
+              "IsChild": {
+                "type": "byte",
+                "value": 1
+              },
+              "LinkComment": {
+                "type": "cexostring",
+                "value": ""
+              }
+            },
+            {
+              "__struct_id": 12,
+              "Active": {
+                "type": "resref",
+                "value": ""
+              },
+              "ConditionParams": {
+                "type": "list",
+                "value": []
+              },
+              "Index": {
+                "type": "dword",
+                "value": 0
+              },
+              "IsChild": {
+                "type": "byte",
+                "value": 1
+              },
+              "LinkComment": {
+                "type": "cexostring",
+                "value": ""
+              }
+            }
+          ]
+        },
+        "Script": {
+          "type": "resref",
+          "value": ""
+        },
+        "Sound": {
+          "type": "resref",
+          "value": ""
+        },
+        "Speaker": {
+          "type": "cexostring",
+          "value": ""
+        },
+        "Text": {
+          "type": "cexolocstring",
+          "value": {
+            "0": "Select the note you want to read.\n\nTo add a note use a writing on the notebook. You can create writings by using writing paper.",
+            "4": "Wählt eine Mitteilung, die Ihr lesen möchtet.\n\nWollt Ihr eine Botschaft hinzufügen, wendet ein Schreiben, welches Ihr mit Hilfe von Schreibpapier erstellen könnt, auf die Nachrichtentafel an.",
+            "5": "Wählt eine Mitteilung, die Ihr lesen möchtet.\n\nWollt Ihr eine Botschaft hinzufügen, wendet ein Schreiben, welches Ihr mit Hilfe von Schreibpapier erstellen könnt, auf die Nachrichtentafel an."
+          }
+        }
+      },
+      {
+        "__struct_id": 2,
+        "ActionParams": {
+          "type": "list",
+          "value": []
+        },
+        "Animation": {
+          "type": "dword",
+          "value": 0
+        },
+        "AnimLoop": {
+          "type": "byte",
+          "value": 1
+        },
+        "Comment": {
+          "type": "cexostring",
+          "value": ""
+        },
+        "Delay": {
+          "type": "dword",
           "value": 0
         },
         "Quest": {
@@ -296,7 +762,7 @@
               },
               "Index": {
                 "type": "dword",
-                "value": 8
+                "value": 13
               },
               "IsChild": {
                 "type": "byte",
@@ -315,7 +781,7 @@
               },
               "Index": {
                 "type": "dword",
-                "value": 7
+                "value": 12
               },
               "IsChild": {
                 "type": "byte",
@@ -334,7 +800,7 @@
               },
               "Index": {
                 "type": "dword",
-                "value": 6
+                "value": 11
               },
               "IsChild": {
                 "type": "byte",
@@ -353,7 +819,7 @@
               },
               "Index": {
                 "type": "dword",
-                "value": 5
+                "value": 10
               },
               "IsChild": {
                 "type": "byte",
@@ -372,7 +838,7 @@
               },
               "Index": {
                 "type": "dword",
-                "value": 4
+                "value": 9
               },
               "IsChild": {
                 "type": "byte",
@@ -381,6 +847,101 @@
             },
             {
               "__struct_id": 5,
+              "Active": {
+                "type": "resref",
+                "value": "gs_cfo_use020"
+              },
+              "ConditionParams": {
+                "type": "list",
+                "value": []
+              },
+              "Index": {
+                "type": "dword",
+                "value": 8
+              },
+              "IsChild": {
+                "type": "byte",
+                "value": 0
+              }
+            },
+            {
+              "__struct_id": 6,
+              "Active": {
+                "type": "resref",
+                "value": "gs_cfo_use021"
+              },
+              "ConditionParams": {
+                "type": "list",
+                "value": []
+              },
+              "Index": {
+                "type": "dword",
+                "value": 7
+              },
+              "IsChild": {
+                "type": "byte",
+                "value": 0
+              }
+            },
+            {
+              "__struct_id": 7,
+              "Active": {
+                "type": "resref",
+                "value": "gs_cfo_use022"
+              },
+              "ConditionParams": {
+                "type": "list",
+                "value": []
+              },
+              "Index": {
+                "type": "dword",
+                "value": 6
+              },
+              "IsChild": {
+                "type": "byte",
+                "value": 0
+              }
+            },
+            {
+              "__struct_id": 8,
+              "Active": {
+                "type": "resref",
+                "value": "gs_cfo_use023"
+              },
+              "ConditionParams": {
+                "type": "list",
+                "value": []
+              },
+              "Index": {
+                "type": "dword",
+                "value": 5
+              },
+              "IsChild": {
+                "type": "byte",
+                "value": 0
+              }
+            },
+            {
+              "__struct_id": 9,
+              "Active": {
+                "type": "resref",
+                "value": "gs_cfo_use024"
+              },
+              "ConditionParams": {
+                "type": "list",
+                "value": []
+              },
+              "Index": {
+                "type": "dword",
+                "value": 4
+              },
+              "IsChild": {
+                "type": "byte",
+                "value": 0
+              }
+            },
+            {
+              "__struct_id": 10,
               "Active": {
                 "type": "resref",
                 "value": "gs_cfo_use014"
@@ -399,7 +960,7 @@
               }
             },
             {
-              "__struct_id": 6,
+              "__struct_id": 11,
               "Active": {
                 "type": "resref",
                 "value": "gs_cfo_use016"
@@ -418,7 +979,7 @@
               }
             },
             {
-              "__struct_id": 7,
+              "__struct_id": 12,
               "Active": {
                 "type": "resref",
                 "value": "gs_cfo_use012"
@@ -437,7 +998,7 @@
               }
             },
             {
-              "__struct_id": 8,
+              "__struct_id": 13,
               "Active": {
                 "type": "resref",
                 "value": ""
@@ -480,7 +1041,7 @@
   },
   "NumWords": {
     "type": "dword",
-    "value": 48
+    "value": 88
   },
   "PreventZoomIn": {
     "type": "byte",
@@ -620,7 +1181,7 @@
               },
               "Index": {
                 "type": "dword",
-                "value": 1
+                "value": 2
               },
               "IsChild": {
                 "type": "byte",
@@ -635,7 +1196,7 @@
               "__struct_id": 1,
               "Active": {
                 "type": "resref",
-                "value": ""
+                "value": "gs_cfo_use019"
               },
               "ConditionParams": {
                 "type": "list",
@@ -643,7 +1204,7 @@
               },
               "Index": {
                 "type": "dword",
-                "value": 0
+                "value": 1
               },
               "IsChild": {
                 "type": "byte",
@@ -714,7 +1275,7 @@
               },
               "Index": {
                 "type": "dword",
-                "value": 1
+                "value": 2
               },
               "IsChild": {
                 "type": "byte",
@@ -729,7 +1290,7 @@
               "__struct_id": 1,
               "Active": {
                 "type": "resref",
-                "value": ""
+                "value": "gs_cfo_use019"
               },
               "ConditionParams": {
                 "type": "list",
@@ -737,7 +1298,7 @@
               },
               "Index": {
                 "type": "dword",
-                "value": 0
+                "value": 1
               },
               "IsChild": {
                 "type": "byte",
@@ -808,7 +1369,7 @@
               },
               "Index": {
                 "type": "dword",
-                "value": 1
+                "value": 2
               },
               "IsChild": {
                 "type": "byte",
@@ -827,7 +1388,7 @@
         },
         "Script": {
           "type": "resref",
-          "value": "gs_cfo_use011"
+          "value": "gs_cfo_use029"
         },
         "Sound": {
           "type": "resref",
@@ -836,7 +1397,7 @@
         "Text": {
           "type": "cexolocstring",
           "value": {
-            "0": "<CUSTOM105> by <CUSTOM110>",
+            "0": "<CUSTOM110> by <CUSTOM120>",
             "4": "<CUSTOM105> von <CUSTOM110>",
             "5": "<CUSTOM105> von <CUSTOM110>"
           }
@@ -879,7 +1440,7 @@
               },
               "Index": {
                 "type": "dword",
-                "value": 1
+                "value": 2
               },
               "IsChild": {
                 "type": "byte",
@@ -898,7 +1459,7 @@
         },
         "Script": {
           "type": "resref",
-          "value": "gs_cfo_use010"
+          "value": "gs_cfo_use028"
         },
         "Sound": {
           "type": "resref",
@@ -907,9 +1468,9 @@
         "Text": {
           "type": "cexolocstring",
           "value": {
-            "0": "<CUSTOM104> by <CUSTOM109>",
-            "4": "<CUSTOM104> von <CUSTOM109>",
-            "5": "<CUSTOM104> von <CUSTOM109>"
+            "0": "<CUSTOM109> by <CUSTOM119>",
+            "4": "<CUSTOM105> von <CUSTOM110>",
+            "5": "<CUSTOM105> von <CUSTOM110>"
           }
         }
       },
@@ -950,7 +1511,7 @@
               },
               "Index": {
                 "type": "dword",
-                "value": 1
+                "value": 2
               },
               "IsChild": {
                 "type": "byte",
@@ -969,7 +1530,7 @@
         },
         "Script": {
           "type": "resref",
-          "value": "gs_cfo_use009"
+          "value": "gs_cfo_use027"
         },
         "Sound": {
           "type": "resref",
@@ -978,9 +1539,9 @@
         "Text": {
           "type": "cexolocstring",
           "value": {
-            "0": "<CUSTOM103> by <CUSTOM108>",
-            "4": "<CUSTOM103> von <CUSTOM108>",
-            "5": "<CUSTOM103> von <CUSTOM108>"
+            "0": "<CUSTOM108> by <CUSTOM118>",
+            "4": "<CUSTOM105> von <CUSTOM110>",
+            "5": "<CUSTOM105> von <CUSTOM110>"
           }
         }
       },
@@ -1021,7 +1582,7 @@
               },
               "Index": {
                 "type": "dword",
-                "value": 1
+                "value": 2
               },
               "IsChild": {
                 "type": "byte",
@@ -1040,7 +1601,7 @@
         },
         "Script": {
           "type": "resref",
-          "value": "gs_cfo_use008"
+          "value": "gs_cfo_use026"
         },
         "Sound": {
           "type": "resref",
@@ -1049,9 +1610,9 @@
         "Text": {
           "type": "cexolocstring",
           "value": {
-            "0": "<CUSTOM102> by <CUSTOM107>",
-            "4": "<CUSTOM102> von <CUSTOM107>",
-            "5": "<CUSTOM102> von <CUSTOM107>"
+            "0": "<CUSTOM107> by <CUSTOM117>",
+            "4": "<CUSTOM105> von <CUSTOM110>",
+            "5": "<CUSTOM105> von <CUSTOM110>"
           }
         }
       },
@@ -1092,7 +1653,362 @@
               },
               "Index": {
                 "type": "dword",
+                "value": 2
+              },
+              "IsChild": {
+                "type": "byte",
                 "value": 1
+              },
+              "LinkComment": {
+                "type": "cexostring",
+                "value": ""
+              }
+            }
+          ]
+        },
+        "Quest": {
+          "type": "cexostring",
+          "value": ""
+        },
+        "Script": {
+          "type": "resref",
+          "value": "gs_cfo_use025"
+        },
+        "Sound": {
+          "type": "resref",
+          "value": ""
+        },
+        "Text": {
+          "type": "cexolocstring",
+          "value": {
+            "0": "<CUSTOM106> by <CUSTOM116>",
+            "4": "<CUSTOM105> von <CUSTOM110>",
+            "5": "<CUSTOM105> von <CUSTOM110>"
+          }
+        }
+      },
+      {
+        "__struct_id": 9,
+        "ActionParams": {
+          "type": "list",
+          "value": []
+        },
+        "Animation": {
+          "type": "dword",
+          "value": 0
+        },
+        "AnimLoop": {
+          "type": "byte",
+          "value": 1
+        },
+        "Comment": {
+          "type": "cexostring",
+          "value": ""
+        },
+        "Delay": {
+          "type": "dword",
+          "value": 4294967295
+        },
+        "EntriesList": {
+          "type": "list",
+          "value": [
+            {
+              "__struct_id": 0,
+              "Active": {
+                "type": "resref",
+                "value": "gs_cfo_use001"
+              },
+              "ConditionParams": {
+                "type": "list",
+                "value": []
+              },
+              "Index": {
+                "type": "dword",
+                "value": 2
+              },
+              "IsChild": {
+                "type": "byte",
+                "value": 1
+              },
+              "LinkComment": {
+                "type": "cexostring",
+                "value": ""
+              }
+            }
+          ]
+        },
+        "Quest": {
+          "type": "cexostring",
+          "value": ""
+        },
+        "Script": {
+          "type": "resref",
+          "value": "gs_cfo_use011"
+        },
+        "Sound": {
+          "type": "resref",
+          "value": ""
+        },
+        "Text": {
+          "type": "cexolocstring",
+          "value": {
+            "0": "<CUSTOM105> by <CUSTOM115>",
+            "4": "<CUSTOM105> von <CUSTOM110>",
+            "5": "<CUSTOM105> von <CUSTOM110>"
+          }
+        }
+      },
+      {
+        "__struct_id": 10,
+        "ActionParams": {
+          "type": "list",
+          "value": []
+        },
+        "Animation": {
+          "type": "dword",
+          "value": 0
+        },
+        "AnimLoop": {
+          "type": "byte",
+          "value": 1
+        },
+        "Comment": {
+          "type": "cexostring",
+          "value": ""
+        },
+        "Delay": {
+          "type": "dword",
+          "value": 4294967295
+        },
+        "EntriesList": {
+          "type": "list",
+          "value": [
+            {
+              "__struct_id": 0,
+              "Active": {
+                "type": "resref",
+                "value": "gs_cfo_use001"
+              },
+              "ConditionParams": {
+                "type": "list",
+                "value": []
+              },
+              "Index": {
+                "type": "dword",
+                "value": 2
+              },
+              "IsChild": {
+                "type": "byte",
+                "value": 1
+              },
+              "LinkComment": {
+                "type": "cexostring",
+                "value": ""
+              }
+            }
+          ]
+        },
+        "Quest": {
+          "type": "cexostring",
+          "value": ""
+        },
+        "Script": {
+          "type": "resref",
+          "value": "gs_cfo_use010"
+        },
+        "Sound": {
+          "type": "resref",
+          "value": ""
+        },
+        "Text": {
+          "type": "cexolocstring",
+          "value": {
+            "0": "<CUSTOM104> by <CUSTOM114>",
+            "4": "<CUSTOM104> von <CUSTOM109>",
+            "5": "<CUSTOM104> von <CUSTOM109>"
+          }
+        }
+      },
+      {
+        "__struct_id": 11,
+        "ActionParams": {
+          "type": "list",
+          "value": []
+        },
+        "Animation": {
+          "type": "dword",
+          "value": 0
+        },
+        "AnimLoop": {
+          "type": "byte",
+          "value": 1
+        },
+        "Comment": {
+          "type": "cexostring",
+          "value": ""
+        },
+        "Delay": {
+          "type": "dword",
+          "value": 4294967295
+        },
+        "EntriesList": {
+          "type": "list",
+          "value": [
+            {
+              "__struct_id": 0,
+              "Active": {
+                "type": "resref",
+                "value": "gs_cfo_use001"
+              },
+              "ConditionParams": {
+                "type": "list",
+                "value": []
+              },
+              "Index": {
+                "type": "dword",
+                "value": 2
+              },
+              "IsChild": {
+                "type": "byte",
+                "value": 1
+              },
+              "LinkComment": {
+                "type": "cexostring",
+                "value": ""
+              }
+            }
+          ]
+        },
+        "Quest": {
+          "type": "cexostring",
+          "value": ""
+        },
+        "Script": {
+          "type": "resref",
+          "value": "gs_cfo_use009"
+        },
+        "Sound": {
+          "type": "resref",
+          "value": ""
+        },
+        "Text": {
+          "type": "cexolocstring",
+          "value": {
+            "0": "<CUSTOM103> by <CUSTOM113>",
+            "4": "<CUSTOM103> von <CUSTOM108>",
+            "5": "<CUSTOM103> von <CUSTOM108>"
+          }
+        }
+      },
+      {
+        "__struct_id": 12,
+        "ActionParams": {
+          "type": "list",
+          "value": []
+        },
+        "Animation": {
+          "type": "dword",
+          "value": 0
+        },
+        "AnimLoop": {
+          "type": "byte",
+          "value": 1
+        },
+        "Comment": {
+          "type": "cexostring",
+          "value": ""
+        },
+        "Delay": {
+          "type": "dword",
+          "value": 4294967295
+        },
+        "EntriesList": {
+          "type": "list",
+          "value": [
+            {
+              "__struct_id": 0,
+              "Active": {
+                "type": "resref",
+                "value": "gs_cfo_use001"
+              },
+              "ConditionParams": {
+                "type": "list",
+                "value": []
+              },
+              "Index": {
+                "type": "dword",
+                "value": 2
+              },
+              "IsChild": {
+                "type": "byte",
+                "value": 1
+              },
+              "LinkComment": {
+                "type": "cexostring",
+                "value": ""
+              }
+            }
+          ]
+        },
+        "Quest": {
+          "type": "cexostring",
+          "value": ""
+        },
+        "Script": {
+          "type": "resref",
+          "value": "gs_cfo_use008"
+        },
+        "Sound": {
+          "type": "resref",
+          "value": ""
+        },
+        "Text": {
+          "type": "cexolocstring",
+          "value": {
+            "0": "<CUSTOM102> by <CUSTOM112>",
+            "4": "<CUSTOM102> von <CUSTOM107>",
+            "5": "<CUSTOM102> von <CUSTOM107>"
+          }
+        }
+      },
+      {
+        "__struct_id": 13,
+        "ActionParams": {
+          "type": "list",
+          "value": []
+        },
+        "Animation": {
+          "type": "dword",
+          "value": 0
+        },
+        "AnimLoop": {
+          "type": "byte",
+          "value": 1
+        },
+        "Comment": {
+          "type": "cexostring",
+          "value": ""
+        },
+        "Delay": {
+          "type": "dword",
+          "value": 4294967295
+        },
+        "EntriesList": {
+          "type": "list",
+          "value": [
+            {
+              "__struct_id": 0,
+              "Active": {
+                "type": "resref",
+                "value": "gs_cfo_use001"
+              },
+              "ConditionParams": {
+                "type": "list",
+                "value": []
+              },
+              "Index": {
+                "type": "dword",
+                "value": 2
               },
               "IsChild": {
                 "type": "byte",
@@ -1120,7 +2036,7 @@
         "Text": {
           "type": "cexolocstring",
           "value": {
-            "0": "<CUSTOM101> by <CUSTOM106>",
+            "0": "<CUSTOM101> by <CUSTOM111>",
             "4": "<CUSTOM101> von <CUSTOM106>",
             "5": "<CUSTOM101> von <CUSTOM106>"
           }
@@ -1143,11 +2059,26 @@
         },
         "Index": {
           "type": "dword",
-          "value": 1
+          "value": 2
         }
       },
       {
         "__struct_id": 1,
+        "Active": {
+          "type": "resref",
+          "value": "gs_cfo_use019"
+        },
+        "ConditionParams": {
+          "type": "list",
+          "value": []
+        },
+        "Index": {
+          "type": "dword",
+          "value": 1
+        }
+      },
+      {
+        "__struct_id": 2,
         "Active": {
           "type": "resref",
           "value": ""

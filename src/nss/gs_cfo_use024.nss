@@ -2,15 +2,16 @@
 
 int StartingConditional()
 {
-    //slot 1
+    //slot 10
 
-    if (GetLocalInt(OBJECT_SELF, "GS_FO_SLOT_1") != -1)
+    if (GetLocalInt(OBJECT_SELF, "GS_FO_SLOT_10") != -1)
     {
-        gsTKRecallToken(101);
         gsTKRecallToken(110);
+        gsTKRecallToken(120);
 
         return TRUE;
     }
 
     return FALSE;
 }
+

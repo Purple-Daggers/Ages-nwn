@@ -2,7 +2,7 @@
 
 void main()
 {
-    int nNth1 = GetLocalInt(OBJECT_SELF, "GS_PAGE_START");
+    int nNth1 = GetLocalInt(OBJECT_SELF, "GS_FO_PAGE_START");
 
     if (nNth1 > 0)
     {
@@ -16,6 +16,6 @@ void main()
             nNth1 = nNth3;
         }
 
-        SetLocalInt(OBJECT_SELF, "GS_PAGE_START", nNth1);
+        SetLocalInt(OBJECT_SELF, "GS_FO_PAGE_START", nNth1);
     }
 }
