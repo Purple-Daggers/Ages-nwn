@@ -655,6 +655,7 @@ void gsSPMagicSurge(object oCaster, object oTarget, location lTarget)
                     DelayCommand(RoundsToSeconds(5), DestroyObject(oWildMagicHelper));
                 break;
             }
+        break;
         case 21:
         case 22:
         case 23:
@@ -672,7 +673,7 @@ void gsSPMagicSurge(object oCaster, object oTarget, location lTarget)
                                                                     PROJECTILE_PATH_TYPE_DEFAULT,
                                                                     TRUE));
             DelayCommand(RoundsToSeconds(5), DestroyObject(oWildMagicHelper));
-            break;
+        break;
         case 27:
         case 28:
         case 29:
@@ -962,6 +963,7 @@ void gsSPMagicSurge(object oCaster, object oTarget, location lTarget)
                     DelayCommand(RoundsToSeconds(5), DestroyObject(oWildMagicHelper));
                 break;
             }
+        break;
         case 91:
         case 92:
         case 93:
