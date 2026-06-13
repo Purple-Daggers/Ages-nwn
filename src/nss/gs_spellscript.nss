@@ -64,7 +64,7 @@ void main()
         int nClass = GetLastSpellCastClass();
         int nLevel = gsSPGetSpellLevel(nSpell, nClass);
         int nCurrentMana = GetLocalInt(OBJECT_SELF, "GS_CURRENT_MANA");
-        int nResultingMana = nCurrentMana - (nLevel * 2);
+        int nResultingMana = nCurrentMana - (nLevel * 2) - (gsSPGetMetaMagicLevel(nMetaMagic) * 2);
 
         if (nResultingMana < 0){
                 FloatingTextStringOnCreature(
