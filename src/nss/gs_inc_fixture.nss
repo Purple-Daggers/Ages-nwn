@@ -30,10 +30,6 @@ void gsFXLoadFixture(string sAreaID, int nLimit = 40)
     SqlBindString(sqlGetFixtures, "@area", sAreaID);
     while(SqlStep(sqlGetFixtures))
     {
-
-    }
-    for (nNth = 1; nNth <= nLimit; nNth++)
-    {
         sID = SqlGetString(sqlGetFixtures, 0);
         sTemplate = SqlGetString(sqlGetFixtures, 1);
         sName = SqlGetString(sqlGetFixtures, 2);
