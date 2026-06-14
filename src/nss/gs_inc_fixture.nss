@@ -1,85 +1,89 @@
-/* FIXTURE library by Gigaschatten */
+/* FIXTURE library by Jamesfelicia, modified from Gigaschatten's fixture library*/
 
 #include "gs_inc_location"
 
 //void main() {}
 
-//load nLimit objects from database sID
-void gsFXLoadFixture(string sID, int nLimit = 40);
-//save oFixture to database sID containing a maximum of nLimit objects and return TRUE on success
-int gsFXSaveFixture(string sID, object oFixture = OBJECT_SELF, int nLimit = 40);
-//delete oFixture from database sID containing a maximum of nLimit objects
-void gsFXDeleteFixture(string sID, object oFixture = OBJECT_SELF, int nLimit = 40);
+//load nLimit objects from database sAreaID
+void gsFXLoadFixture(string sAreaID, int nLimit = 40);
+//save oFixture to database sAreaID containing a maximum of nLimit objects and return TRUE on success
+int gsFXSaveFixture(string sAreaID, object oFixture = OBJECT_SELF, int nLimit = 40);
+//delete oFixture from database sAreaID containing a maximum of nLimit objects
+void gsFXDeleteFixture(string sFixtureID);
 
-void gsFXLoadFixture(string sID, int nLimit = 40)
+void gsFXLoadFixture(string sAreaID, int nLimit = 40)
 {
     location lLocation;
+    string sID = "";
+    string sOwner = "";
     string sTemplate = "";
     string sNth      = "";
     string sName = "";
     string sDescription = "";
     int nNth         = 0;
+    string sDatabase = "GS_FIXTURES";
 
-    for (nNth = 1; nNth <= nLimit; nNth++)
+    sqlquery sqlCreateTable = SqlPrepareQueryCampaign(sDatabase, "CREATE TABLE IF NOT EXISTS fixtures (id TEXT PRIMARY KEY, template TEXT, name TEXT, description TEXT, owner TEXT, area TEXT, position BLOB, direction REAL, broken INTEGER);");
+    SqlStep(sqlCreateTable);
+
+    sqlquery sqlGetFixtures = SqlPrepareQueryCampaign(sDatabase, "SELECT id, template, name, description, owner, area, position, direction, broken from fixtures WHERE area = @area;");
+    SqlBindString(sqlGetFixtures, "@area", sAreaID);
+    while(SqlStep(sqlGetFixtures))
     {
-        sNth = IntToString(nNth);
+        sID = SqlGetString(sqlGetFixtures, 0);
+        sTemplate = SqlGetString(sqlGetFixtures, 1);
+        sName = SqlGetString(sqlGetFixtures, 2);
+        sDescription = SqlGetString(sqlGetFixtures, 3);
+        sOwner = SqlGetString(sqlGetFixtures, 4);
+        lLocation = gsLOConstructLocation(SqlGetString(sqlGetFixtures, 5), SqlGetVector(sqlGetFixtures, 6), SqlGetFloat(sqlGetFixtures, 7));
 
-        if (GetCampaignInt("GS_FX_" + sID, "SLOT_" + sNth))
-        {
-            sTemplate = GetCampaignString("GS_FX_" + sID, "TEMPLATE_" + sNth);
-            lLocation = gsLOGetDBLocation("GS_FX_" + sID, "LOCATION_" + sNth);
-            sName = GetCampaignString("GS_FX_" + sID, "NAME_" + sNth);
-            sDescription = GetCampaignString("GS_FX_" + sID, "DESCRIPTION_" + sNth);
-
-            object oFixture = CreateObject(OBJECT_TYPE_PLACEABLE, sTemplate, lLocation);
-            SetName(oFixture, sName);
-            SetDescription(oFixture, sDescription);
-            SetLocalString(oFixture, "GS_FX_CREATOR", GetCampaignString("GS_FX_" + sID, "OWNER_" + sNth));
-            SetLocalString(oFixture, "GS_FX_ID", GetCampaignString("GS_FX_" + sID, "ID_" + sNth));
-        }
+        object oFixture = CreateObject(OBJECT_TYPE_PLACEABLE, sTemplate, lLocation);
+        SetName(oFixture, sName);
+        SetDescription(oFixture, sDescription);
+        SetLocalString(oFixture, "GS_FX_CREATOR", sOwner);
+        SetLocalString(oFixture, "GS_FX_ID", sID);
     }
 }
 //----------------------------------------------------------------
-int gsFXSaveFixture(string sID, object oFixture = OBJECT_SELF, int nLimit = 40)
+int gsFXSaveFixture(string sAreaID, object oFixture = OBJECT_SELF, int nLimit = 40)
 {
-    string sNth = "";
-    int nNth    = 0;
+    string sDatabase = "GS_FIXTURES";
 
-    for (nNth = 1; nNth <= nLimit; nNth++)
-    {
-        sNth = IntToString(nNth);
+    sqlquery sqlCreateTable = SqlPrepareQueryCampaign(sDatabase, "CREATE TABLE IF NOT EXISTS fixtures (id TEXT PRIMARY KEY, template TEXT, name TEXT, description TEXT, owner TEXT, area TEXT, position BLOB, direction REAL, broken INTEGER);");
+    SqlStep(sqlCreateTable);
 
-        if (! GetCampaignInt("GS_FX_" + sID, "SLOT_" + sNth))
-        {
-            SetCampaignInt("GS_FX_" + sID, "SLOT_" + sNth, TRUE);
-            SetCampaignString("GS_FX_" + sID, "TEMPLATE_" + sNth, GetResRef(oFixture));
-            SetCampaignString("GS_FX_" + sID, "NAME_" + sNth, GetName(oFixture));
-            SetCampaignString("GS_FX_" + sID, "DESCRIPTION_" + sNth, GetDescription(oFixture));
-            SetCampaignString("GS_FX_" + sID, "ID_" + sNth, GetLocalString(oFixture, "GS_FX_ID"));
-            SetCampaignString("GS_FX_" + sID, "OWNER_" + sNth, GetLocalString(oFixture, "GS_FX_CREATOR"));
-            gsLOSetDBLocationOf("GS_FX_" + sID, "LOCATION_" + sNth, oFixture);
-            return TRUE;
+    sqlquery sqlGetFixtureCount = SqlPrepareQueryCampaign(sDatabase, "SELECT COUNT(*) from fixtures WHERE area = @area;");
+    SqlBindString(sqlGetFixtureCount, "@area", sAreaID);
+    if(SqlStep(sqlGetFixtureCount)){
+        if(SqlGetInt(sqlGetFixtureCount, 0) > nLimit){
+            return FALSE;
         }
     }
 
-    return FALSE;
+    sqlquery sqlSaveFixture = SqlPrepareQueryCampaign(sDatabase, "INSERT INTO fixtures (id, template, name, description, owner, area, position, direction, broken) VALUES (@id, @template, @name, @description, @owner, @area, @position, @direction, @broken)");
+    SqlBindString(sqlSaveFixture, "@id", GetLocalString(oFixture, "GS_FX_ID"));
+    SqlBindString(sqlSaveFixture, "@template", GetResRef(oFixture));
+    SqlBindString(sqlSaveFixture, "@name", GetName(oFixture));
+    SqlBindString(sqlSaveFixture, "@description", GetDescription(oFixture));
+    SqlBindString(sqlSaveFixture, "@owner", GetLocalString(oFixture, "GS_FX_CREATOR"));
+    SqlBindString(sqlSaveFixture, "@area", sAreaID);
+    SqlBindVector(sqlSaveFixture, "@position", GetPosition(oFixture));
+    SqlBindFloat(sqlSaveFixture, "@direction", GetFacing(oFixture));
+    SqlBindInt(sqlSaveFixture, "@broken", FALSE);
+    if(SqlStep(sqlSaveFixture))
+    {
+        return TRUE;
+    }
+    else
+    {
+        return FALSE;
+    }
 }
 //----------------------------------------------------------------
-void gsFXDeleteFixture(string sID, object oFixture = OBJECT_SELF, int nLimit = 40)
+void gsFXDeleteFixture(string sFixtureID)
 {
-    struct gsLOLocation gsLocation = gsLOGetLocationX(oFixture);
-    string sNth                    = "";
-    int nNth                       = 0;
-
-    for (nNth = 1; nNth <= nLimit; nNth++)
-    {
-        sNth      = IntToString(nNth);
-
-        if (GetCampaignInt("GS_FX_" + sID, "SLOT_" + sNth) &&
-            gsLOGetDBLocationX("GS_FX_" + sID, "LOCATION_" + sNth) == gsLocation)
-        {
-            SetCampaignInt("GS_FX_" + sID, "SLOT_" + sNth, FALSE);
-            return;
-        }
-    }
+    string sDatabase = "GS_FIXTURES";
+    sqlquery sqlDeleteFixture = SqlPrepareQueryCampaign(sDatabase, "DELETE FROM fixtures WHERE id = @id;");
+    SqlBindString(sqlDeleteFixture, "@id", sFixtureID);
+    SqlStep(sqlDeleteFixture);
 }

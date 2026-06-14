@@ -2,5 +2,5 @@
 
 void main()
 {
-    gsFXDeleteFixture(GetTag(GetArea(OBJECT_SELF)));
+    gsFXDeleteFixture(GetLocalString(OBJECT_SELF, "GS_FX_ID"));
 }

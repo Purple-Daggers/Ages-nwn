@@ -86,3 +86,18 @@ location gsLOGetDBLocation(string sDB, string sID)
 
     return Location(OBJECT_INVALID, Vector(), 0.0);
 }
+//----------------------------------------------------------------
+location gsLOConstructLocation(string sArea, vector vPosition, float fDirection)
+{
+    if (sArea != "")
+    {
+        object oArea = GetObjectByTag(sArea);
+
+        if (GetIsObjectValid(oArea))
+        {
+            return Location(oArea, vPosition, fDirection);
+        }
+    }
+
+    return Location(OBJECT_INVALID, Vector(), 0.0);
+}
