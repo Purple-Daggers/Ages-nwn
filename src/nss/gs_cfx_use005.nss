@@ -13,7 +13,7 @@ void main()
     if (GetIsObjectValid(oFixture) && (GetLocalString(oFixture, "GS_FX_ID") != ""))
     {
         AssignCommand(oSpeaker, ActionPlayAnimation(ANIMATION_LOOPING_GET_LOW, 1.0, 1.0));
-        gsFXDeleteFixture(GetTag(GetArea(OBJECT_SELF)));
+        gsFXDeleteFixture(GetLocalString(OBJECT_SELF, "GS_FX_ID"));
         DestroyObject(OBJECT_SELF);
     }
     else
