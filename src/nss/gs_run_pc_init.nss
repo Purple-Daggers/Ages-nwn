@@ -115,7 +115,7 @@ void gsInitialize()
     }
 
     //listener
-    gsLICreateListener(OBJECT_SELF);
+    //gsLICreateListener(OBJECT_SELF);
 
     SendMessageToPC(OBJECT_SELF, GS_T_16777216);
 
