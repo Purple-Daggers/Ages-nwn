@@ -2,10 +2,6 @@
 
 //void main() {}
 
-//return target of oListener
-object gsLIGetTarget(object oListener = OBJECT_SELF);
-//destroy listener of oPC
-void gsLIDestroyListener(object oPC);
 //set last sMessage of oPC
 void gsLISetLastMessage(string sMessage, object oPC = OBJECT_SELF);
 //return last message of oPC
