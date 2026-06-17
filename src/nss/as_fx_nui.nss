@@ -66,6 +66,7 @@ void asFXMoveObjectNui(object oPlayer)
 
     jRow3       = JsonArrayInsert(jRow3, jSelectObjectButton);
     jRow3       = JsonArrayInsert(jRow3, jCurrentObjectLabel);
+    jRow3       = NuiRow(jRow3);
 
 	jRoot		= JsonArrayInsert(jRoot, jRow1);
     jRoot       = JsonArrayInsert(jRoot, jRow2);
