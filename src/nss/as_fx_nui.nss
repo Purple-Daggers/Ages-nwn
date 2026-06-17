@@ -80,6 +80,7 @@ void asFXMoveObjectNui(object oPlayer)
     jRow5       = JsonArrayInsert(jRow5, NuiSpacer());
     jRow5       = JsonArrayInsert(jRow5, jCurrentObjectNameLabel);
     jRow5       = JsonArrayInsert(jRow5, NuiSpacer());
+    jRow5       = NuiRow(jRow5);
 
 	jRoot		= JsonArrayInsert(jRoot, jRow1);
     jRoot       = JsonArrayInsert(jRoot, jRow2);
