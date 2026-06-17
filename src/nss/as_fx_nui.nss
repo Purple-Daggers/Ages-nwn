@@ -72,14 +72,10 @@ void asFXMoveObjectNui(object oPlayer)
     jRow3       = JsonArrayInsert(jRow3, NuiSpacer());
     jRow3       = NuiRow(jRow3);
 
-    jRow4       = JsonArrayInsert(jRow4, NuiSpacer());
     jRow4       = JsonArrayInsert(jRow4, jCurrentObjectLabel);
-    jRow4       = JsonArrayInsert(jRow4, NuiSpacer());
     jRow4       = NuiRow(jRow4);
 
-    jRow5       = JsonArrayInsert(jRow5, NuiSpacer());
     jRow5       = JsonArrayInsert(jRow5, jCurrentObjectNameLabel);
-    jRow5       = JsonArrayInsert(jRow5, NuiSpacer());
     jRow5       = NuiRow(jRow5);
 
 	jRoot		= JsonArrayInsert(jRoot, jRow1);
@@ -94,7 +90,7 @@ void asFXMoveObjectNui(object oPlayer)
 
 	int nToken = NuiCreate(oPlayer, nui, NUI_MOVE_FIXTURE_WINDOW);
 
-	NuiSetBind(oPlayer, nToken, "geometry", NuiRect(-1.0f, -1.0f, 180.0f, 160.0f));
+	NuiSetBind(oPlayer, nToken, "geometry", NuiRect(-1.0f, -1.0f, 220.0f, 240.0f));
 	NuiSetBind(oPlayer, nToken, "collapsed", JsonBool(FALSE));
 	NuiSetBind(oPlayer, nToken, "resizable", JsonBool(TRUE));
 	NuiSetBind(oPlayer, nToken, "closable", JsonBool(TRUE));
