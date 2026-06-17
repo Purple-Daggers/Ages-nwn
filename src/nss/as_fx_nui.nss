@@ -17,6 +17,7 @@ void asFXMoveObjectNui(object oPlayer)
     json jRow2 = JsonArray();
     json jRow3 = JsonArray();
     json jRow4 = JsonArray();
+    json jRow5 = JsonArray();
 
     json jPosXButton = NuiButton(JsonString("+X"));
     jPosXButton = NuiId(jPosXButton, "nui_fx_pos_x");
@@ -49,7 +50,8 @@ void asFXMoveObjectNui(object oPlayer)
     jSelectObjectButton = NuiWidth(jSelectObjectButton, 175.0f);
     jSelectObjectButton = NuiHeight(jSelectObjectButton, 32.0f);
 
-    json jCurrentObjectLabel = NuiLabel(NuiBind("object"), JsonInt(NUI_HALIGN_CENTER), JsonInt(NUI_VALIGN_MIDDLE));
+    json jCurrentObjectLabel = NuiLabel(JsonString("Current Object:"), JsonInt(NUI_HALIGN_CENTER), JsonInt(NUI_VALIGN_MIDDLE));
+    json jCurrentObjectNameLabel = NuiLabel(NuiBind("object"), JsonInt(NUI_HALIGN_CENTER), JsonInt(NUI_VALIGN_MIDDLE));
 
     jRow1       = JsonArrayInsert(jRow1, NuiSpacer());
     jRow1		= JsonArrayInsert(jRow1, jPosXButton);
@@ -75,10 +77,15 @@ void asFXMoveObjectNui(object oPlayer)
     jRow4       = JsonArrayInsert(jRow4, NuiSpacer());
     jRow4       = NuiRow(jRow4);
 
+    jRow5       = JsonArrayInsert(jRow5, NuiSpacer());
+    jRow5       = JsonArrayInsert(jRow5, jCurrentObjectNameLabel);
+    jRow5       = JsonArrayInsert(jRow5, NuiSpacer());
+
 	jRoot		= JsonArrayInsert(jRoot, jRow1);
     jRoot       = JsonArrayInsert(jRoot, jRow2);
     jRoot       = JsonArrayInsert(jRoot, jRow3);
     jRoot       = JsonArrayInsert(jRoot, jRow4);
+    jRoot       = JsonArrayInsert(jRoot, jRow5);
 
 	jRoot = NuiCol(jRoot);
 
@@ -86,11 +93,11 @@ void asFXMoveObjectNui(object oPlayer)
 
 	int nToken = NuiCreate(oPlayer, nui, NUI_MOVE_FIXTURE_WINDOW);
 
-	NuiSetBind(oPlayer, nToken, "geometry", NuiRect(-1.0f, -1.0f, 250.0f, 300.0f));
+	NuiSetBind(oPlayer, nToken, "geometry", NuiRect(-1.0f, -1.0f, 180.0f, 160.0f));
 	NuiSetBind(oPlayer, nToken, "collapsed", JsonBool(FALSE));
 	NuiSetBind(oPlayer, nToken, "resizable", JsonBool(TRUE));
 	NuiSetBind(oPlayer, nToken, "closable", JsonBool(TRUE));
 	NuiSetBind(oPlayer, nToken, "transparent", JsonBool(FALSE));
 	NuiSetBind(oPlayer, nToken, "border", JsonBool(TRUE));
-    NuiSetBind(oPlayer, nToken, "object", JsonString("Selected object:\nNONE"));
+    NuiSetBind(oPlayer, nToken, "object", JsonString("NONE"));
 }
