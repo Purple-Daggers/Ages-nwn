@@ -93,6 +93,7 @@ object gsFXMoveFixture(object oFixture, vector vPosition, float fDirection)
     string sDatabase = "GS_FIXTURES";
     object oNewFixture = CopyObject(oFixture, Location(GetArea(oFixture), vPosition, fDirection), OBJECT_INVALID, GetTag(oFixture), TRUE);
     if (!GetIsObjectValid(oNewFixture)){
+        DestroyObject(oNewFixture);
         return OBJECT_INVALID;
     }
     fDirection = GetFacing(oNewFixture);
@@ -101,12 +102,8 @@ object gsFXMoveFixture(object oFixture, vector vPosition, float fDirection)
     SqlBindVector(sqlMoveFixture, "@position", vPosition);
     SqlBindFloat(sqlMoveFixture, "@direction", fDirection);
     SqlBindString(sqlMoveFixture, "@id", GetLocalString(oFixture, "GS_FX_ID"));
-    if (SqlStep(sqlMoveFixture))
-    {
-        DestroyObject(oFixture);
-        return oNewFixture;
-    }
-    DestroyObject(oNewFixture);
-    return OBJECT_INVALID;
+    SqlStep(sqlMoveFixture);
+    DestroyObject(oFixture);
+    return oNewFixture;
 }
 

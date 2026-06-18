@@ -143,11 +143,11 @@ void asFXProcessEvent(object oPlayer, int nToken, string sEvent, string sElement
     }
     if(sEvent == "blur"){
         float fMagnitude = StringToFloat(JsonGetString(NuiGetBind(oPlayer, nToken, "magnitude")));
-        if(fMagnitude > 20.0f){
-            fMagnitude = 20.0f;
+        if(fMagnitude > 5.0f){
+            fMagnitude = 5.0f;
         }
-        if(fMagnitude < 20.0f){
-            fMagnitude = -20.0f;
+        if(fMagnitude < -5.0f){
+            fMagnitude = -5.0f;
         }
         SendMessageToPC(oPlayer, "Set magnitude to: " + FloatToString(fMagnitude));
         SetLocalFloat(oPlayer, "AS_FX_MAGNITUDE", fMagnitude);
