@@ -5,7 +5,7 @@
 
 const string NUI_MOVE_FIXTURE_WINDOW = "nui_fx_move_fixture_window";
 
-void asFXMoveObject(object oPlayer)
+void asFXMoveObjectNUI(object oPlayer)
 {
 
 	int nPreviousToken = NuiFindWindow(oPlayer, NUI_MOVE_FIXTURE_WINDOW);

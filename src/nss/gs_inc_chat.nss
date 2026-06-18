@@ -31,7 +31,7 @@ void gsCTProcessCommand(object oSpeaker, int nCommand, string sParams){
             SendMessageToPC(oSpeaker, "Save command not yet implemented. Captured params:" + sParams);
         break;
         case CHAT_COMMAND_MOVE_FIXTURE:
-            asNUIMoveObject(oSpeaker);
+            asFXMoveObjectNUI(oSpeaker);
         break;
         case CHAT_COMMAND_LANGUAGE:
             SendMessageToPC(
