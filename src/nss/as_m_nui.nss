@@ -1,4 +1,5 @@
 #include "nw_inc_nui"
+#include "as_inc_fxnui"
 
 void main() {
 	
@@ -11,7 +12,7 @@ void main() {
 
 	if (sWindowId == "nui_fx_move_fixture_window") 
 	{
-        SendMessageToPC(oPlayer, "Move fixture window: " + sElement);
+		asFXProcessEvent(oPlayer, nToken, sEvent, sElement, nIndex, sWindowId);
 		return;
 	}
 

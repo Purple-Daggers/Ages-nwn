@@ -91,19 +91,19 @@ void gsFXDeleteFixture(string sFixtureID)
 object gsFXMoveFixture(object oFixture, vector vPosition, float fDirection)
 {
     string sDatabase = "GS_FIXTURES";
+    object oNewFixture = CopyObject(oFixture, Location(GetArea(oFixture), vPosition, fDirection), OBJECT_INVALID, GetTag(oFixture), TRUE);
+    if (!GetIsObjectValid(oNewFixture)){
+        DestroyObject(oNewFixture);
+        return OBJECT_INVALID;
+    }
+    fDirection = GetFacing(oNewFixture);
+
     sqlquery sqlMoveFixture = SqlPrepareQueryCampaign(sDatabase, "UPDATE fixtures SET position = @position, direction = @direction WHERE id = @id;");
     SqlBindVector(sqlMoveFixture, "@position", vPosition);
     SqlBindFloat(sqlMoveFixture, "@direction", fDirection);
     SqlBindString(sqlMoveFixture, "@id", GetLocalString(oFixture, "GS_FX_ID"));
-    if (SqlStep(sqlMoveFixture))
-    {
-        object newFixture = CopyObject(oFixture, Location(GetArea(oFixture), vPosition, fDirection), OBJECT_INVALID, GetTag(oFixture), TRUE);
-        DestroyObject(oFixture);
-        return newFixture;
-    }
-    else
-    {
-        return OBJECT_INVALID;
-    }
+    SqlStep(sqlMoveFixture);
+    DestroyObject(oFixture);
+    return oNewFixture;
 }
 
