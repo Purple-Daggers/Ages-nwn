@@ -13,11 +13,7 @@ void asFXMoveObjectNui(object oPlayer)
 	}
 
 	json jRoot = JsonArray();
-	json jRow1 = JsonArray();
-    json jRow2 = JsonArray();
-    json jRow3 = JsonArray();
-    json jRow4 = JsonArray();
-    json jRow5 = JsonArray();
+	json jRow = JsonArray();
 
     json jPosXButton = NuiButton(JsonString("+X"));
     jPosXButton = NuiId(jPosXButton, "nui_fx_pos_x");
@@ -31,6 +27,10 @@ void asFXMoveObjectNui(object oPlayer)
     jPosZButton = NuiId(jPosZButton, "nui_fx_pos_z");
     jPosZButton = NuiWidth(jPosZButton, 32.0f);
     jPosZButton = NuiHeight(jPosZButton, 32.0f);
+    json jPosRButton = NuiButton(JsonString("+R"));
+    jPosRButton = NuiId(jPosRButton, "nui_fx_pos_r");
+    jPosRButton = NuiWidth(jPosRButton, 32.0f);
+    jPosRButton = NuiHeight(jPosRButton, 32.0f);
 
     json jNegXButton = NuiButton(JsonString("-X"));
     jNegXButton = NuiId(jNegXButton, "nui_fx_neg_x");
@@ -44,6 +44,20 @@ void asFXMoveObjectNui(object oPlayer)
     jNegZButton = NuiId(jNegZButton, "nui_fx_neg_z");
     jNegZButton = NuiWidth(jNegZButton, 32.0f);
     jNegZButton = NuiHeight(jNegZButton, 32.0f);
+    json jNegRButton = NuiButton(JsonString("-R"));
+    jNegRButton = NuiId(jNegRButton, "nui_fx_neg_r");
+    jNegRButton = NuiWidth(jNegRButton, 32.0f);
+    jNegRButton = NuiHeight(jNegRButton, 32.0f);
+
+    json jMagnitudeInput = NuiTextEdit(JsonString("Magnitude"), NuiBind("magnitude"), 10, FALSE);
+    jMagnitudeInput = NuiId(jMagnitudeInput, "nui_fx_magnitude");
+    jMagnitudeInput = NuiWidth(jMagnitudeInput, 175.0f);
+    jMagnitudeInput = NuiHeight(jMagnitudeInput, 32.0f);
+
+    json jPickupObjectButton = NuiButton(JsonString("Pickup Object"));
+    jPickupObjectButton = NuiId(jPickupObjectButton, "nui_fx_pickup_object");
+    jPickupObjectButton = NuiWidth(jPickupObjectButton, 175.0f);
+    jPickupObjectButton = NuiHeight(jPickupObjectButton, 32.0f);
 
     json jSelectObjectButton = NuiButton(JsonString("Select Object"));
     jSelectObjectButton = NuiId(jSelectObjectButton, "nui_fx_select_object");
@@ -53,36 +67,54 @@ void asFXMoveObjectNui(object oPlayer)
     json jCurrentObjectLabel = NuiLabel(JsonString("Current Object:"), JsonInt(NUI_HALIGN_CENTER), JsonInt(NUI_VALIGN_MIDDLE));
     json jCurrentObjectNameLabel = NuiLabel(NuiBind("object"), JsonInt(NUI_HALIGN_CENTER), JsonInt(NUI_VALIGN_MIDDLE));
 
-    jRow1       = JsonArrayInsert(jRow1, NuiSpacer());
-    jRow1		= JsonArrayInsert(jRow1, jPosXButton);
-    jRow1		= JsonArrayInsert(jRow1, jPosYButton);
-    jRow1		= JsonArrayInsert(jRow1, jPosZButton);
-    jRow1       = JsonArrayInsert(jRow1, NuiSpacer());
-    jRow1		= NuiRow(jRow1);
+    jRow       = JsonArrayInsert(jRow, NuiSpacer());
+    jRow		= JsonArrayInsert(jRow, jPosXButton);
+    jRow		= JsonArrayInsert(jRow, jPosYButton);
+    jRow		= JsonArrayInsert(jRow, jPosZButton);
+    jRow		= JsonArrayInsert(jRow, jPosRButton);
+    jRow       = JsonArrayInsert(jRow, NuiSpacer());
+    jRow		= NuiRow(jRow);
+    jRoot		= JsonArrayInsert(jRoot, jRow);
+    jRow        = JsonArray();
 
-    jRow2       = JsonArrayInsert(jRow2, NuiSpacer());
-    jRow2       = JsonArrayInsert(jRow2, jNegXButton);
-    jRow2       = JsonArrayInsert(jRow2, jNegYButton);
-    jRow2       = JsonArrayInsert(jRow2, jNegZButton);
-    jRow2       = JsonArrayInsert(jRow2, NuiSpacer());
-    jRow2		= NuiRow(jRow2);
+    jRow       = JsonArrayInsert(jRow, NuiSpacer());
+    jRow       = JsonArrayInsert(jRow, jNegXButton);
+    jRow       = JsonArrayInsert(jRow, jNegYButton);
+    jRow       = JsonArrayInsert(jRow, jNegZButton);
+    jRow		= JsonArrayInsert(jRow, jNegRButton);
+    jRow       = JsonArrayInsert(jRow, NuiSpacer());
+    jRow		= NuiRow(jRow);
+    jRoot		= JsonArrayInsert(jRoot, jRow);
+    jRow        = JsonArray();
 
-    jRow3       = JsonArrayInsert(jRow3, NuiSpacer());
-    jRow3       = JsonArrayInsert(jRow3, jSelectObjectButton);
-    jRow3       = JsonArrayInsert(jRow3, NuiSpacer());
-    jRow3       = NuiRow(jRow3);
+    jRow        = JsonArrayInsert(jRow, jMagnitudeInput);
+    jRow        = NuiRow(jRow);
+    jRoot       = JsonArrayInsert(jRoot, jRow);
+    jRow        = JsonArray();
 
-    jRow4       = JsonArrayInsert(jRow4, jCurrentObjectLabel);
-    jRow4       = NuiRow(jRow4);
+    jRow       = JsonArrayInsert(jRow, NuiSpacer());
+    jRow       = JsonArrayInsert(jRow, jSelectObjectButton);
+    jRow       = JsonArrayInsert(jRow, NuiSpacer());
+    jRow       = NuiRow(jRow);
+    jRoot		= JsonArrayInsert(jRoot, jRow);
+    jRow        = JsonArray();
 
-    jRow5       = JsonArrayInsert(jRow5, jCurrentObjectNameLabel);
-    jRow5       = NuiRow(jRow5);
+    jRow       = JsonArrayInsert(jRow, jCurrentObjectLabel);
+    jRow       = NuiRow(jRow);
+    jRoot		= JsonArrayInsert(jRoot, jRow);
+    jRow        = JsonArray();
 
-	jRoot		= JsonArrayInsert(jRoot, jRow1);
-    jRoot       = JsonArrayInsert(jRoot, jRow2);
-    jRoot       = JsonArrayInsert(jRoot, jRow3);
-    jRoot       = JsonArrayInsert(jRoot, jRow4);
-    jRoot       = JsonArrayInsert(jRoot, jRow5);
+    jRow       = JsonArrayInsert(jRow, jCurrentObjectNameLabel);
+    jRow       = NuiRow(jRow);
+	jRoot		= JsonArrayInsert(jRoot, jRow);
+    jRow        = JsonArray();
+
+    jRow       = JsonArrayInsert(jRow, NuiSpacer());
+    jRow       = JsonArrayInsert(jRow, jPickupObjectButton);
+    jRow       = JsonArrayInsert(jRow, NuiSpacer());
+    jRow       = NuiRow(jRow);
+	jRoot		= JsonArrayInsert(jRoot, jRow);
+    jRow        = JsonArray();
 
 	jRoot = NuiCol(jRoot);
 
@@ -90,11 +122,12 @@ void asFXMoveObjectNui(object oPlayer)
 
 	int nToken = NuiCreate(oPlayer, nui, NUI_MOVE_FIXTURE_WINDOW);
 
-	NuiSetBind(oPlayer, nToken, "geometry", NuiRect(-1.0f, -1.0f, 220.0f, 240.0f));
+	NuiSetBind(oPlayer, nToken, "geometry", NuiRect(-1.0f, -1.0f, 220.0f, 340.0f));
 	NuiSetBind(oPlayer, nToken, "collapsed", JsonBool(FALSE));
 	NuiSetBind(oPlayer, nToken, "resizable", JsonBool(TRUE));
 	NuiSetBind(oPlayer, nToken, "closable", JsonBool(TRUE));
 	NuiSetBind(oPlayer, nToken, "transparent", JsonBool(FALSE));
 	NuiSetBind(oPlayer, nToken, "border", JsonBool(TRUE));
     NuiSetBind(oPlayer, nToken, "object", JsonString("NONE"));
+    NuiSetBind(oPlayer, nToken, "magnitude", JsonString(""));
 }
