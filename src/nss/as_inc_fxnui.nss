@@ -136,19 +136,72 @@ void asFXMoveObjectNUI(object oPlayer)
 
 void asFXProcessEvent(object oPlayer, int nToken, string sEvent, string sElement, int nIndex, string sWindowId){
     SendMessageToPC(oPlayer, "Move fixture window: " + sElement + " Event type: " + sEvent);
+    if(sEvent == "open" || sEvent == "close"){
+        DeleteLocalObject(oPlayer, "AS_FX_TARGET_OBJECT");
+        DeleteLocalObject(oPlayer, "AS_FX_MAGNITUDE");
+        return;
+    }
+    if(sEvent == "blur"){
+        float fMagnitude = StringToFloat(JsonGetString(NuiGetBind(oPlayer, nToken, "magnitude")));
+        if(fMagnitude > 20.0f){
+            fMagnitude = 20.0f;
+        }
+        if(fMagnitude < 20.0f){
+            fMagnitude = -20.0f;
+        }
+        SetLocalFloat(oPlayer, "AS_FX_MAGNITUDE", fMagnitude);
+        return;
+    }
     if(sEvent == "mouseup")
     {
         if(sElement == "nui_fx_select_object")
         {
             SetLocalInt(oPlayer, "AS_TARGET_MODE_ID", TARGETING_MODE_MOVE_FIXTURE);
             EnterTargetingMode(oPlayer, OBJECT_TYPE_PLACEABLE);
+            return;
+        }
+        if(sElement == "nui_fx_pickup_object")
+        {
+            return;
+        }
+        float fMagnitude = GetLocalFloat(oPlayer, "AS_FX_MAGNITUDE");
+        object oFixture = GetLocalObject(oPlayer, "AS_FX_TARGET_OBJECT");
+        if(GetIsObjectValid(oFixture)){
+            vector vPosition = GetPosition(oFixture);
+            float fDirection = GetFacing(oFixture);
+            if(sElement == "nui_fx_pos_x"){
+                vPosition.x = vPosition.x + fMagnitude;
+            }
+            if(sElement == "nui_fx_pos_y"){
+                vPosition.y = vPosition.y + fMagnitude;
+            }
+            if(sElement == "nui_fx_pos_z"){
+                vPosition.z = vPosition.z + fMagnitude;
+            }
+            if(sElement == "nui_fx_pos_r"){
+                fDirection = fDirection + fMagnitude;
+            }
+            if(sElement == "nui_fx_neg_x"){
+                vPosition.x = vPosition.x - fMagnitude;
+            }
+            if(sElement == "nui_fx_neg_y"){
+                vPosition.y = vPosition.y - fMagnitude;
+            }
+            if(sElement == "nui_fx_neg_z"){
+                vPosition.z = vPosition.z - fMagnitude;
+            }
+            if(sElement == "nui_fx_neg_r"){
+                fDirection = fDirection - fMagnitude;
+            }
+            object oNewFixture = gsFXMoveFixture(oFixture, vPosition, fDirection);
+            SetLocalObject(oPlayer, "AS_FX_TARGET_OBJECT", oNewFixture);
         }
     }
 }
 
 void asFXSetObjectSelection(object oPlayer, object oSelection){
-    int nPreviousToken = NuiFindWindow(oPlayer, NUI_MOVE_FIXTURE_WINDOW);
-    if (nPreviousToken == 0)
+    int nToken = NuiFindWindow(oPlayer, NUI_MOVE_FIXTURE_WINDOW);
+    if (nToken == 0)
 	{
 		return;
 	}
@@ -158,5 +211,5 @@ void asFXSetObjectSelection(object oPlayer, object oSelection){
         return;
     }
     SetLocalObject(oPlayer, "AS_FX_TARGET_OBJECT", oSelection);
-    NuiSetBind(oPlayer, nPreviousToken, "object", JsonString(GetName(oSelection)));
+    NuiSetBind(oPlayer, nToken, "object", JsonString(GetName(oSelection)));
 }
