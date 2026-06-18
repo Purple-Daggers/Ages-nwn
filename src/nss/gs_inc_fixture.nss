@@ -106,10 +106,7 @@ object gsFXMoveFixture(object oFixture, vector vPosition, float fDirection)
         DestroyObject(oFixture);
         return oNewFixture;
     }
-    else
-    {
-        DestroyObject(oNewFixture);
-        return OBJECT_INVALID;
-    }
+    DestroyObject(oNewFixture);
+    return OBJECT_INVALID;
 }
 
