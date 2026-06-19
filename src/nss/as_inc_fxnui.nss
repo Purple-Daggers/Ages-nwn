@@ -4,6 +4,9 @@
 #include "gs_inc_fixture"
 
 const string NUI_MOVE_FIXTURE_WINDOW = "nui_fx_move_fixture_window";
+const float FIXTURE_MANIPULATION_DISTANCE = 6.0f;
+const float FIXTURE_MAXIMUM_MAGNITUDE = 3.0f;
+const float FIXTURE_MINIMUM_MAGNITUDE = -3.0f;
 
 void asFXMoveObjectNUI(object oPlayer)
 {
@@ -135,21 +138,15 @@ void asFXMoveObjectNUI(object oPlayer)
 }
 
 void asFXProcessEvent(object oPlayer, int nToken, string sEvent, string sElement, int nIndex, string sWindowId){
-    SendMessageToPC(oPlayer, "Move fixture window: " + sElement + " Event type: " + sEvent);
+    //SendMessageToPC(oPlayer, "Move fixture window: " + sElement + " Event type: " + sEvent);
     if(sEvent == "open" || sEvent == "close"){
         DeleteLocalObject(oPlayer, "AS_FX_TARGET_OBJECT");
         DeleteLocalObject(oPlayer, "AS_FX_MAGNITUDE");
         return;
     }
     if(sEvent == "blur"){
-        float fMagnitude = StringToFloat(JsonGetString(NuiGetBind(oPlayer, nToken, "magnitude")));
-        if(fMagnitude > 5.0f){
-            fMagnitude = 5.0f;
-        }
-        if(fMagnitude < -5.0f){
-            fMagnitude = -5.0f;
-        }
-        SendMessageToPC(oPlayer, "Set magnitude to: " + FloatToString(fMagnitude));
+        float fMagnitude = StringToFloat(JsonGetString(NuiGetBind(oPlayer, nToken, "magnitude"))) / 10;
+        //SendMessageToPC(oPlayer, "Set magnitude to: " + FloatToString(fMagnitude));
         SetLocalFloat(oPlayer, "AS_FX_MAGNITUDE", fMagnitude);
         return;
     }
@@ -163,14 +160,44 @@ void asFXProcessEvent(object oPlayer, int nToken, string sEvent, string sElement
         }
         if(sElement == "nui_fx_pickup_object")
         {
+            object oFixture = GetLocalObject(oPlayer, "AS_FX_TARGET_OBJECT");
+            if(!GetIsObjectValid(oFixture)){
+                SendMessageToPC(oPlayer, "No fixture selected.");
+            } else if(GetIsObjectValid(oFixture) && (GetDistanceBetween(oPlayer, oFixture) <= FIXTURE_MANIPULATION_DISTANCE)){
+                gsFXPickupFixture(oPlayer, oFixture);
+            } else {
+                SendMessageToPC(oPlayer, "Selected fixture too far away to pick up.");
+            }
             return;
         }
         float fMagnitude = GetLocalFloat(oPlayer, "AS_FX_MAGNITUDE");
+        
         object oFixture = GetLocalObject(oPlayer, "AS_FX_TARGET_OBJECT");
         if(GetIsObjectValid(oFixture)){
 
+            if(GetDistanceBetween(oPlayer, oFixture) > FIXTURE_MANIPULATION_DISTANCE) {
+                SendMessageToPC(oPlayer, "Selected fixture too far away to move.");
+                return;
+            }
+
             vector vPosition = GetPosition(oFixture);
             float fDirection = GetFacing(oFixture);
+
+
+            if(sElement == "nui_fx_pos_r"){
+                fDirection = fDirection + (fMagnitude * 10);
+            }
+            if(sElement == "nui_fx_neg_r"){
+                fDirection = fDirection - (fMagnitude * 10);
+            }
+
+            if(fMagnitude > FIXTURE_MAXIMUM_MAGNITUDE){
+                fMagnitude = FIXTURE_MAXIMUM_MAGNITUDE;
+            }
+            if(fMagnitude < FIXTURE_MINIMUM_MAGNITUDE){
+                fMagnitude = FIXTURE_MINIMUM_MAGNITUDE;
+            }
+
             if(sElement == "nui_fx_pos_x"){
                 vPosition.x = vPosition.x + fMagnitude;
             }
@@ -179,9 +206,6 @@ void asFXProcessEvent(object oPlayer, int nToken, string sEvent, string sElement
             }
             if(sElement == "nui_fx_pos_z"){
                 vPosition.z = vPosition.z + fMagnitude;
-            }
-            if(sElement == "nui_fx_pos_r"){
-                fDirection = fDirection + fMagnitude;
             }
             if(sElement == "nui_fx_neg_x"){
                 vPosition.x = vPosition.x - fMagnitude;
@@ -192,15 +216,13 @@ void asFXProcessEvent(object oPlayer, int nToken, string sEvent, string sElement
             if(sElement == "nui_fx_neg_z"){
                 vPosition.z = vPosition.z - fMagnitude;
             }
-            if(sElement == "nui_fx_neg_r"){
-                fDirection = fDirection - fMagnitude;
-            }
-            object oNewFixture = gsFXMoveFixture(oFixture, vPosition, fDirection);
-            SendMessageToPC(oPlayer, "Attempting to update fixture: " + GetName(oFixture));
+
+            object oNewFixture = gsFXMoveFixture(oPlayer, oFixture, vPosition, fDirection);
+            //SendMessageToPC(oPlayer, "Attempting to update fixture: " + GetName(oFixture));
             SetLocalObject(oPlayer, "AS_FX_TARGET_OBJECT", oNewFixture);
 
             if(oNewFixture == OBJECT_INVALID){
-                SendMessageToPC(oPlayer, "Move fixture returned invalid.");
+                SendMessageToPC(oPlayer, "Move fixture returned an invalid fixture.");
             }
         } else {
             SendMessageToPC(oPlayer, "Selected fixture is not valid.");
@@ -217,6 +239,10 @@ void asFXSetObjectSelection(object oPlayer, object oSelection){
     if(GetLocalString(oSelection, "GS_FX_ID") == "")
     {
         SendMessageToPC(oPlayer, "Selected object is not a fixture.");
+        return;
+    }
+    if(GetDistanceBetween(oPlayer, oSelection) > FIXTURE_MANIPULATION_DISTANCE){
+        SendMessageToPC(oPlayer, "Selected fixture is too far away.");
         return;
     }
     SetLocalObject(oPlayer, "AS_FX_TARGET_OBJECT", oSelection);
