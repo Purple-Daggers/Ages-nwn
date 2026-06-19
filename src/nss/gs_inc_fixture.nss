@@ -88,10 +88,14 @@ void gsFXDeleteFixture(string sFixtureID)
     SqlStep(sqlDeleteFixture);
 }
 //----------------------------------------------------------------
-object gsFXMoveFixture(object oFixture, vector vPosition, float fDirection)
+object gsFXMoveFixture(object oPlayer, object oFixture, vector vPosition, float fDirection)
 {
     string sDatabase = "GS_FIXTURES";
     object oNewFixture = CopyObject(oFixture, Location(GetArea(oFixture), vPosition, fDirection), OBJECT_INVALID, GetTag(oFixture), TRUE);
+    if(!LineOfSightObject(oPlayer, oNewFixture)){
+        DestroyObject(oNewFixture);
+        return OBJECT_INVALID;
+    }
     if (!GetIsObjectValid(oNewFixture)){
         DestroyObject(oNewFixture);
         return OBJECT_INVALID;
@@ -105,5 +109,25 @@ object gsFXMoveFixture(object oFixture, vector vPosition, float fDirection)
     SqlStep(sqlMoveFixture);
     DestroyObject(oFixture);
     return oNewFixture;
+}
+void gsFXPickupFixture(object oPlayer, object oFixture = OBJECT_SELF)
+{
+    string sTag = GetTag(oFixture);
+    sTag            = GetStringRight(sTag, GetStringLength(sTag) - 6);
+    object oFixtureItem = CreateItemOnObject(sTag, oPlayer);
+    SetName(oFixtureItem, GetName(oFixture));
+    SetDescription(oFixtureItem, GetDescription(oFixture));
+    SetLocalString(oFixtureItem, "GS_FX_ID", GetLocalString(oFixture, "GS_FX_ID"));
+
+    if (GetIsObjectValid(oFixtureItem) && (GetLocalString(oFixtureItem, "GS_FX_ID") != ""))
+    {
+        AssignCommand(oPlayer, ActionPlayAnimation(ANIMATION_LOOPING_GET_LOW, 1.0, 1.0));
+        gsFXDeleteFixture(GetLocalString(oFixture, "GS_FX_ID"));
+        DestroyObject(oFixture);
+    }
+    else
+    {
+        DestroyObject(oFixtureItem);
+    }
 }
 
