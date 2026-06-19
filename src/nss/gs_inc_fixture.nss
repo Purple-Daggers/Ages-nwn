@@ -94,11 +94,11 @@ object gsFXMoveFixture(object oPlayer, object oFixture, vector vPosition, float 
     object oNewFixture = CopyObject(oFixture, Location(GetArea(oFixture), vPosition, fDirection), OBJECT_INVALID, GetTag(oFixture), TRUE);
     if(!LineOfSightObject(oPlayer, oNewFixture)){
         DestroyObject(oNewFixture);
-        return OBJECT_INVALID;
+        return oFixture;
     }
     if (!GetIsObjectValid(oNewFixture)){
         DestroyObject(oNewFixture);
-        return OBJECT_INVALID;
+        return oFixture;
     }
     fDirection = GetFacing(oNewFixture);
 

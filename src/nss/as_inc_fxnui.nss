@@ -138,7 +138,7 @@ void asFXMoveObjectNUI(object oPlayer)
 }
 
 void asFXProcessEvent(object oPlayer, int nToken, string sEvent, string sElement, int nIndex, string sWindowId){
-    SendMessageToPC(oPlayer, "Move fixture window: " + sElement + " Event type: " + sEvent);
+    //SendMessageToPC(oPlayer, "Move fixture window: " + sElement + " Event type: " + sEvent);
     if(sEvent == "open" || sEvent == "close"){
         DeleteLocalObject(oPlayer, "AS_FX_TARGET_OBJECT");
         DeleteLocalObject(oPlayer, "AS_FX_MAGNITUDE");
@@ -146,7 +146,7 @@ void asFXProcessEvent(object oPlayer, int nToken, string sEvent, string sElement
     }
     if(sEvent == "blur"){
         float fMagnitude = StringToFloat(JsonGetString(NuiGetBind(oPlayer, nToken, "magnitude"))) / 10;
-        SendMessageToPC(oPlayer, "Set magnitude to: " + FloatToString(fMagnitude));
+        //SendMessageToPC(oPlayer, "Set magnitude to: " + FloatToString(fMagnitude));
         SetLocalFloat(oPlayer, "AS_FX_MAGNITUDE", fMagnitude);
         return;
     }
@@ -218,11 +218,11 @@ void asFXProcessEvent(object oPlayer, int nToken, string sEvent, string sElement
             }
 
             object oNewFixture = gsFXMoveFixture(oPlayer, oFixture, vPosition, fDirection);
-            SendMessageToPC(oPlayer, "Attempting to update fixture: " + GetName(oFixture));
+            //SendMessageToPC(oPlayer, "Attempting to update fixture: " + GetName(oFixture));
             SetLocalObject(oPlayer, "AS_FX_TARGET_OBJECT", oNewFixture);
 
             if(oNewFixture == OBJECT_INVALID){
-                SendMessageToPC(oPlayer, "Move fixture returned invalid.");
+                SendMessageToPC(oPlayer, "Move fixture returned an invalid fixture.");
             }
         } else {
             SendMessageToPC(oPlayer, "Selected fixture is not valid.");
