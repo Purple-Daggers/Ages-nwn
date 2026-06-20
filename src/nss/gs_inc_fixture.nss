@@ -128,11 +128,7 @@ void gsFXPickupFixture(object oPlayer, object oFixture = OBJECT_SELF)
     SetName(oFixtureItem, GetName(oFixture));
     SetDescription(oFixtureItem, GetDescription(oFixture));
     SetLocalString(oFixtureItem, "GS_FX_ID", GetLocalString(oFixture, "GS_FX_ID"));
-
-    string sOriginalTemplate = GetLocalString(oFixture, "GS_FX_ORIGINAL_TEMPLATE");
-    if(sOriginalTemplate != ""){
-        SetLocalString(oFixtureItem, "GS_FX_ORIGINAL_TEMPLATE", sOriginalTemplate);
-    }
+    SetLocalString(oFixtureItem, "GS_FX_ORIGINAL_TEMPLATE", GetLocalString(oFixture, "GS_FX_ORIGINAL_TEMPLATE"));
 
     if (GetIsObjectValid(oFixtureItem) && (GetLocalString(oFixtureItem, "GS_FX_ID") != ""))
     {
