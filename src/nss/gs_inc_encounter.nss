@@ -484,7 +484,7 @@ void gsENSaveArea(object oArea = OBJECT_SELF)
         SqlBindInt(sqlGetCreature, "@slot", nNth);
         if(SqlStep(sqlGetCreature)){
             //update
-            sqlquery sqlUpdateCreature = SqlPrepareQueryCampaign(sDatabase, "UPDATE creatures SET name = @name, resref = @resref, rating = @rating, chance = @chance, timeflag = @timeflag WHERE area = @area, slot = @slot");
+            sqlquery sqlUpdateCreature = SqlPrepareQueryCampaign(sDatabase, "UPDATE creatures SET name = @name, resref = @resref, rating = @rating, chance = @chance, timeflag = @timeflag WHERE area = @area AND slot = @slot");
             SqlBindString(sqlUpdateCreature, "@area", GetTag(oArea));
             SqlBindInt(sqlUpdateCreature, "@slot", nNth);
             SqlBindString(sqlUpdateCreature, "@name", gsENGetCreatureName(nNth, oArea));
