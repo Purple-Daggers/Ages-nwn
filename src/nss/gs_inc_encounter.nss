@@ -479,7 +479,7 @@ void gsENSaveArea(object oArea = OBJECT_SELF)
     {
         sNth = IntToString(nNth);
 
-        sqlquery sqlGetCreature = SqlPrepareQueryCampaign(sDatabase, "SELECT * FROM creatures WHERE area = @area, slot = @slot");
+        sqlquery sqlGetCreature = SqlPrepareQueryCampaign(sDatabase, "SELECT * FROM creatures WHERE area = @area AND slot = @slot");
         SqlBindString(sqlGetCreature, "@area", GetTag(oArea));
         SqlBindInt(sqlGetCreature, "@slot", nNth);
         if(SqlStep(sqlGetCreature)){
