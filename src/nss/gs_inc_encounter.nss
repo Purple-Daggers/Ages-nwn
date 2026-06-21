@@ -466,58 +466,110 @@ int gsENGetIsEncounterCreature(object oCreature = OBJECT_SELF)
 //----------------------------------------------------------------
 void gsENSaveArea(object oArea = OBJECT_SELF)
 {
-    string sDatabase = "GS_EN_" + GetTag(oArea);
+    string sDatabase = "GS_ENCOUNTERS";// + GetTag(oArea);
     string sNth      = "";
     int nNth         = 0;
+
+    sqlquery sqlCreateCreatureTable = SqlPrepareQueryCampaign(sDatabase, "CREATE TABLE IF NOT EXISTS creatures (area TEXT, slot INTEGER, name TEXT, resref TEXT, rating REAL, chance INTEGER, timeflag INTEGER, PRIMARY KEY (area, slot));");
+    SqlStep(sqlCreateCreatureTable);
+    sqlquery sqlCreateEncounterTable = SqlPrepareQueryCampaign(sDatabase, "CREATE TABLE IF NOT EXISTS encounters (area TEXT PRIMARY KEY, chance INTEGER, rating REAL);");
+    SqlStep(sqlCreateEncounterTable);
 
     for (nNth = 1; nNth <= GS_EN_LIMIT_SLOT; nNth++)
     {
         sNth = IntToString(nNth);
 
-        SetCampaignString(sDatabase,
-                          "NAME_" + sNth,
-                          gsENGetCreatureName(nNth, oArea));
-        SetCampaignString(sDatabase,
-                          "RESREF_" + sNth,
-                          gsENGetCreatureTemplate(nNth, oArea));
-        SetCampaignFloat(sDatabase,
-                         "RATING_" + sNth,
-                         gsENGetCreatureRating(nNth, oArea));
-        SetCampaignInt(sDatabase,
-                       "CHANCE_" + sNth,
-                       gsENGetCreatureChance(nNth, oArea));
+        sqlquery sqlGetCreature = SqlPrepareQueryCampaign(sDatabase, "SELECT * FROM creatures WHERE area = @area, slot = @slot");
+        SqlBindString(sqlGetCreature, "@area", GetTag(oArea));
+        SqlBindInt(sqlGetCreature, "@slot", nNth);
+        if(SqlStep(sqlGetCreature)){
+            //update
+            sqlquery sqlUpdateCreature = SqlPrepareQueryCampaign(sDatabase, "UPDATE creatures SET name = @name, resref = @resref, rating = @rating, chance = @chance, timeflag = @timeflag WHERE area = @area, slot = @slot");
+            SqlBindString(sqlUpdateCreature, "@area", GetTag(oArea));
+            SqlBindInt(sqlUpdateCreature, "@slot", nNth);
+            SqlBindString(sqlUpdateCreature, "@name", gsENGetCreatureName(nNth, oArea));
+            SqlBindString(sqlUpdateCreature, "@resref", gsENGetCreatureTemplate(nNth, oArea));
+            SqlBindFloat(sqlUpdateCreature, "@rating", gsENGetCreatureRating(nNth, oArea));
+            SqlBindInt(sqlUpdateCreature, "@chance", gsENGetCreatureChance(nNth, oArea));
+            SqlBindInt(sqlUpdateCreature, "@timeflag", 0);
+            SqlStep(sqlUpdateCreature);
+        } else {
+            //insert
+            sqlquery sqlCreateCreature = SqlPrepareQueryCampaign(sDatabase, "INSERT INTO creatures (area, slot, name, resref, rating, chance, timeflag) VALUES (@area, @slot, @name, @resref, @rating, @chance, @timeflag)");
+            SqlBindString(sqlCreateCreature, "@area", GetTag(oArea));
+            SqlBindInt(sqlCreateCreature, "@slot", nNth);
+            SqlBindString(sqlCreateCreature, "@name", gsENGetCreatureName(nNth, oArea));
+            SqlBindString(sqlCreateCreature, "@resref", gsENGetCreatureTemplate(nNth, oArea));
+            SqlBindFloat(sqlCreateCreature, "@rating", gsENGetCreatureRating(nNth, oArea));
+            SqlBindInt(sqlCreateCreature, "@chance", gsENGetCreatureChance(nNth, oArea));
+            SqlBindInt(sqlCreateCreature, "@timeflag", 0);
+            SqlStep(sqlCreateCreature);
+        }
     }
 
-    SetCampaignInt(sDatabase, "CHANCE", gsENGetEncounterChance(oArea));
-    SetCampaignFloat(sDatabase, "RATING", gsENGetMinimumRating(oArea));
+    sqlquery sqlGetEncounter = SqlPrepareQueryCampaign(sDatabase, "SELECT * FROM encounters WHERE area = @area");
+    SqlBindString(sqlGetEncounter, "@area", GetTag(oArea));
+    if(SqlStep(sqlGetEncounter)){
+        //update
+        sqlquery sqlUpdateEncounter = SqlPrepareQueryCampaign(sDatabase, "UPDATE encounters SET chance = @chance, rating = @rating WHERE area = @area");
+        SqlBindString(sqlUpdateEncounter, "@area", GetTag(oArea));
+        SqlBindInt(sqlUpdateEncounter, "@chance", gsENGetEncounterChance(oArea));
+        SqlBindFloat(sqlUpdateEncounter, "@rating", gsENGetMinimumRating(oArea));
+        SqlStep(sqlUpdateEncounter);
+    } else {
+        //insert
+        sqlquery sqlInsertEncounter = SqlPrepareQueryCampaign(sDatabase, "INSERT INTO encounters (area, chance, rating) VALUES (@area, @chance, @rating)");
+        SqlBindString(sqlInsertEncounter, "@area", GetTag(oArea));
+        SqlBindInt(sqlInsertEncounter, "@chance", gsENGetEncounterChance(oArea));
+        SqlBindFloat(sqlInsertEncounter, "@rating", gsENGetMinimumRating(oArea));
+        SqlStep(sqlInsertEncounter);
+    }
 }
 //----------------------------------------------------------------
 void gsENLoadArea(object oArea = OBJECT_SELF)
 {
-    string sDatabase = "GS_EN_" + GetTag(oArea);
+    string sDatabase = "GS_ENCOUNTERS";// + GetTag(oArea);
     string sNth      = "";
     int nNth         = 0;
 
-    for (nNth = 1; nNth <= GS_EN_LIMIT_SLOT; nNth++)
-    {
+    sqlquery sqlCreateCreatureTable = SqlPrepareQueryCampaign(sDatabase, "CREATE TABLE IF NOT EXISTS creatures (area TEXT, slot INTEGER, name TEXT, resref TEXT, rating REAL, chance INTEGER, timeflag INTEGER, PRIMARY KEY (area, slot));");
+    SqlStep(sqlCreateCreatureTable);
+    sqlquery sqlCreateEncounterTable = SqlPrepareQueryCampaign(sDatabase, "CREATE TABLE IF NOT EXISTS encounters (area TEXT PRIMARY KEY, chance INTEGER, rating REAL);");
+    SqlStep(sqlCreateEncounterTable);
+
+    sqlquery sqlGetCreatures = SqlPrepareQueryCampaign(sDatabase, "SELECT slot, name, resref, rating, chance, timeflag FROM creatures WHERE area = @area");
+    SqlBindString(sqlGetCreatures, "@area", GetTag(oArea));
+    while(SqlStep(sqlGetCreatures)){
+        nNth = SqlGetInt(sqlGetCreatures, 0);
         sNth = IntToString(nNth);
 
         SetLocalString(oArea,
                        "GS_EN_NAME_" + sNth,
-                       GetCampaignString(sDatabase, "NAME_" + sNth));
+                       SqlGetString(sqlGetCreatures, 1));
         SetLocalString(oArea,
                        "GS_EN_RESREF_" + sNth,
-                       GetCampaignString(sDatabase, "RESREF_" + sNth));
+                       SqlGetString(sqlGetCreatures, 2));
         SetLocalFloat(oArea,
                       "GS_EN_RATING_" + sNth,
-                      GetCampaignFloat(sDatabase, "RATING_" + sNth));
+                      SqlGetFloat(sqlGetCreatures, 3));
         SetLocalInt(oArea,
                     "GS_EN_CHANCE_" + sNth,
-                    GetCampaignInt(sDatabase, "CHANCE_" + sNth));
+                    SqlGetInt(sqlGetCreatures, 4));
+        SetLocalInt(oArea,
+                    "GS_EN_TIMEFLAG_" + sNth,
+                    SqlGetInt(sqlGetCreatures, 5));
+
     }
 
-    gsENSetEncounterChance(GetCampaignInt(sDatabase, "CHANCE"), oArea);
-    gsENSetMinimumRating(GetCampaignFloat(sDatabase, "RATING"), oArea);
+    sqlquery sqlGetEncounter = SqlPrepareQueryCampaign(sDatabase, "SELECT chance, rating FROM encounters WHERE area = @area");
+    SqlBindString(sqlGetEncounter, "@area", GetTag(oArea));
+    if(SqlStep(sqlGetEncounter)){
+        gsENSetEncounterChance(SqlGetInt(sqlGetEncounter, 0), oArea);
+        gsENSetMinimumRating(SqlGetFloat(sqlGetEncounter, 1), oArea);
+    } else {
+        gsENSetEncounterChance(0, oArea);
+        gsENSetMinimumRating(0.0f, oArea);
+    }
 }
 //----------------------------------------------------------------
 void gsENCopyArea(object oSource, object oTarget = OBJECT_SELF)
