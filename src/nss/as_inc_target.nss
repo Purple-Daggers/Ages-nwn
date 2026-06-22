@@ -1,1 +1,0 @@
-const int TARGETING_MODE_MOVE_FIXTURE = 1;

@@ -6,7 +6,7 @@
   },
   "Appearance": {
     "type": "dword",
-    "value": 174
+    "value": 3
   },
   "AutoRemoveKey": {
     "type": "byte",
@@ -26,17 +26,15 @@
   },
   "Conversation": {
     "type": "resref",
-    "value": "gs_fx_use"
+    "value": ""
   },
   "CurrentHP": {
     "type": "short",
-    "value": 15
+    "value": 10
   },
   "Description": {
     "type": "cexolocstring",
-    "value": {
-      "0": "Fixture objects can be placed on the floor by dragging them from the inventory to a desired location. A maximum of 40 fixture objects are permanently stored per area. This way you can for example customize the interior furnishings of a house individually. The inventory of a fixture object is NOT saved."
-    }
+    "value": {}
   },
   "DisarmDC": {
     "type": "byte",
@@ -48,7 +46,7 @@
   },
   "Fort": {
     "type": "byte",
-    "value": 15
+    "value": 5
   },
   "Hardness": {
     "type": "byte",
@@ -60,11 +58,11 @@
   },
   "HP": {
     "type": "short",
-    "value": 15
+    "value": 10
   },
   "Interruptable": {
     "type": "byte",
-    "value": 0
+    "value": 1
   },
   "KeyName": {
     "type": "cexostring",
@@ -76,7 +74,7 @@
   },
   "Lockable": {
     "type": "byte",
-    "value": 0
+    "value": 1
   },
   "Locked": {
     "type": "byte",
@@ -85,7 +83,7 @@
   "LocName": {
     "type": "cexolocstring",
     "value": {
-      "0": "Fixture Rubble"
+      "0": "Item_Crate01"
     }
   },
   "OnClick": {
@@ -94,7 +92,7 @@
   },
   "OnClosed": {
     "type": "resref",
-    "value": "gs_fx_close"
+    "value": ""
   },
   "OnDamaged": {
     "type": "resref",
@@ -142,7 +140,7 @@
   },
   "OnUsed": {
     "type": "resref",
-    "value": "gs_fx_used"
+    "value": ""
   },
   "OnUserDefined": {
     "type": "resref",
@@ -154,15 +152,15 @@
   },
   "PaletteID": {
     "type": "byte",
-    "value": 3
+    "value": 155
   },
   "Plot": {
     "type": "byte",
-    "value": 1
+    "value": 0
   },
   "PortraitId": {
     "type": "word",
-    "value": 532
+    "value": 361
   },
   "Ref": {
     "type": "byte",
@@ -170,15 +168,15 @@
   },
   "Static": {
     "type": "byte",
-    "value": 0
+    "value": 1
   },
   "Tag": {
     "type": "cexostring",
-    "value": "GS_FX_gs_item352"
+    "value": "Item_Crate01"
   },
   "TemplateResRef": {
     "type": "resref",
-    "value": "gs_placeable392"
+    "value": "item_crate01"
   },
   "TrapDetectable": {
     "type": "byte",
@@ -210,42 +208,7 @@
   },
   "Useable": {
     "type": "byte",
-    "value": 1
-  },
-  "VarTable": {
-    "type": "list",
-    "value": [
-      {
-        "__struct_id": 0,
-        "Name": {
-          "type": "cexostring",
-          "value": "GS_STATIC"
-        },
-        "Type": {
-          "type": "dword",
-          "value": 1
-        },
-        "Value": {
-          "type": "int",
-          "value": 1
-        }
-      },
-      {
-        "__struct_id": 0,
-        "Name": {
-          "type": "cexostring",
-          "value": "GS_FX_BROKEN"
-        },
-        "Type": {
-          "type": "dword",
-          "value": 1
-        },
-        "Value": {
-          "type": "int",
-          "value": 1
-        }
-      }
-    ]
+    "value": 0
   },
   "Will": {
     "type": "byte",
