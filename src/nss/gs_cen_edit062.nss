@@ -25,9 +25,9 @@ int StartingConditional()
 
     SetLocalInt(OBJECT_SELF, "GS_EN_OFFSET", nOffset);
     SetLocalInt(OBJECT_SELF, "GS_EN_COUNT", nSlot);
-    SetCustomToken(100, IntToString(gsENGetEncounterChance(oArea)));
-    SetCustomToken(101, FloatToString(gsENGetMinimumRating(oArea), 0, 1));
-    SetCustomToken(102, IntToString(nOffset / 10 + 1));
-    SetCustomToken(103, IntToString(nSlot ? (nSlot - 1) / 10 + 1 : 1));
+    SetCustomToken(1000, IntToString(gsENGetEncounterChance(oArea)));
+    SetCustomToken(1001, FloatToString(gsENGetMinimumRating(oArea), 0, 1));
+    SetCustomToken(1002, IntToString(nOffset / 10 + 1));
+    SetCustomToken(1003, IntToString(nSlot ? (nSlot - 1) / 10 + 1 : 1));
     return TRUE;
 }
