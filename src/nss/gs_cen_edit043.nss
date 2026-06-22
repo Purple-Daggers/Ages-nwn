@@ -13,7 +13,8 @@ int StartingConditional()
             GS_T_16777442,
             gsENGetCreatureName(nSlot, oArea),
             FloatToString(gsENGetCreatureRating(nSlot, oArea), 0, 1),
-            IntToString(gsENGetCreatureChance(nSlot, oArea))));
+            IntToString(gsENGetCreatureChance(nSlot, oArea)),
+            IntToString(gsENGetCreatureTimeflag(nSlot, oArea))));
 
     return TRUE;
 }

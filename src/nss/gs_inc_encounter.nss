@@ -16,6 +16,10 @@ const int GS_EN_LIMIT_SLOT          = 30;
 const int GS_EN_LIMIT_ENCOUNTER     = 25;
 const int GS_EN_LIMIT_SPAWN         =  6;
 
+const int GS_EN_TIMEFLAG_DAY_OR_NIGHT = 0;
+const int GS_EN_TIMEFLAG_NIGHT_ONLY = 1;
+const int GS_EN_TIMEFLAG_NOT_NIGHT = 2;
+
 //create encounter spawn positions in oArea
 void gsENSetUpArea(object oArea = OBJECT_SELF);
 //spawn creatures near oPC
@@ -42,6 +46,8 @@ float gsENGetMinimumRating(object oArea = OBJECT_SELF);
 void gsENSetCreature(object oCreature, int nChance = 5, object oArea = OBJECT_SELF);
 //set appearance nChance of creature in nSlot of oArea
 void gsENSetCreatureChance(int nSlot, int nChance, object oArea = OBJECT_SELF);
+//set timeflag of creature 0 = always, 1 = when night only, 2 = when not night
+void gsENSetCreatureTimeflag(int nSlot, int nTimeflag, object oArea = OBJECT_SELF);
 //return name of creature in nSlot of oArea
 string gsENGetCreatureName(int nSlot, object oArea = OBJECT_SELF);
 //return template of creature in nSlot of oArea
@@ -50,6 +56,10 @@ string gsENGetCreatureTemplate(int nSlot, object oArea = OBJECT_SELF);
 float gsENGetCreatureRating(int nSlot, object oArea = OBJECT_SELF);
 //return appearance chance of creature in nSlot of oArea
 int gsENGetCreatureChance(int nSlot, object oArea = OBJECT_SELF);
+//return timeflag of creature 0 = day or night, 1 = when night only, 2 = when not night
+int gsENGetCreatureTimeflag(int nSlot, object oArea = OBJECT_SELF);
+//return if creature can spawn according to set timeflag
+int gsENGetCreatureSpawnableTime(int nSlot, object oArea = OBJECT_SELF);
 //remove creature in nSlot from oArea
 void gsENRemoveCreature(int nSlot, object oArea = OBJECT_SELF);
 //return TRUE if oCreature is an encounter
@@ -146,7 +156,8 @@ void gsENSpawnAtLocation(float fChallenge, int nCount, location lLocation, float
             fRating > 0.0 &&
             _nChance > 0 &&
             (fRating <= fChallenge ||
-             Random(100) == 99))
+             Random(100) == 99) &&
+             gsENGetCreatureSpawnableTime(nNth1, oArea))
         {
             _nChance = fRating > fChallenge ?
                        FloatToInt(IntToFloat(_nChance) * _fChallenge / fRating) :
@@ -427,6 +438,11 @@ void gsENSetCreatureChance(int nSlot, int nChance, object oArea = OBJECT_SELF)
     SetLocalInt(oArea, "GS_EN_CHANCE_" + IntToString(nSlot), nChance);
 }
 //----------------------------------------------------------------
+void gsENSetCreatureTimeflag(int nSlot, int nTimeflag, object oArea = OBJECT_SELF)
+{
+    SetLocalInt(oArea, "GS_EN_TIMEFLAG_" + IntToString(nSlot), nTimeflag);
+}
+//----------------------------------------------------------------
 string gsENGetCreatureName(int nSlot, object oArea = OBJECT_SELF)
 {
     return GetLocalString(oArea, "GS_EN_NAME_" + IntToString(nSlot));
@@ -447,6 +463,31 @@ int gsENGetCreatureChance(int nSlot, object oArea = OBJECT_SELF)
     return GetLocalInt(oArea, "GS_EN_CHANCE_" + IntToString(nSlot));
 }
 //----------------------------------------------------------------
+int gsENGetCreatureTimeflag(int nSlot, object oArea = OBJECT_SELF)
+{
+    return GetLocalInt(oArea, "GS_EN_TIMEFLAG_" + IntToString(nSlot));
+}
+//----------------------------------------------------------------
+int gsENGetCreatureSpawnableTime(int nSlot, object oArea = OBJECT_SELF)
+{
+    switch(gsENGetCreatureTimeflag(nSlot, oArea))
+    {
+        case GS_EN_TIMEFLAG_DAY_OR_NIGHT:
+            return TRUE;
+        break;
+        case GS_EN_TIMEFLAG_NIGHT_ONLY:
+            return GetIsNight();
+        break;
+        case GS_EN_TIMEFLAG_NOT_NIGHT:
+            return !GetIsNight();
+        break;
+        default:
+            return TRUE;
+        break;
+    }
+    return TRUE;
+}
+//----------------------------------------------------------------
 void gsENRemoveCreature(int nSlot, object oArea = OBJECT_SELF)
 {
     string sNth = IntToString(nSlot);
@@ -455,6 +496,7 @@ void gsENRemoveCreature(int nSlot, object oArea = OBJECT_SELF)
     DeleteLocalString(oArea, "GS_EN_RESREF_" + sNth);
     DeleteLocalFloat(oArea, "GS_EN_RATING_" + sNth);
     DeleteLocalInt(oArea, "GS_EN_CHANCE_" + sNth);
+    DeleteLocalInt(oArea, "GS_EN_TIMEFLAG_" + sNth);
 }
 //----------------------------------------------------------------
 int gsENGetIsEncounterCreature(object oCreature = OBJECT_SELF)
