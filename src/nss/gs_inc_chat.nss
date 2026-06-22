@@ -1,6 +1,7 @@
 /* CHAT Library by Jamesfelicia */
 
 #include "gs_inc_language"
+#include "as_inc_fxnui"
 
 const int CHAT_COMMAND_INVALID = -1;
 const int CHAT_COMMAND_SAVE = 0;
@@ -30,7 +31,7 @@ void gsCTProcessCommand(object oSpeaker, int nCommand, string sParams){
             SendMessageToPC(oSpeaker, "Save command not yet implemented. Captured params:" + sParams);
         break;
         case CHAT_COMMAND_MOVE_FIXTURE:
-            SendMessageToPC(oSpeaker, "Move fixture command not yet implemented. Captured params:" + sParams);
+            asFXMoveObjectNUI(oSpeaker);
         break;
         case CHAT_COMMAND_LANGUAGE:
             SendMessageToPC(

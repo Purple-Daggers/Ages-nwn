@@ -2,5 +2,6 @@
 
 void main()
 {
-    gsFXBreakFixture(OBJECT_SELF);
+    gsFXRepairFixture(OBJECT_SELF);
 }
+
