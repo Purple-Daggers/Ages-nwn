@@ -1238,6 +1238,30 @@
                       "type": "byte",
                       "value": 204
                     },
+                    "LIST": {
+                      "type": "list",
+                      "value": [
+                        {
+                          "__struct_id": 0,
+                          "CR": {
+                            "type": "float",
+                            "value": 1.0
+                          },
+                          "FACTION": {
+                            "type": "cexostring",
+                            "value": "Commoner"
+                          },
+                          "NAME": {
+                            "type": "cexostring",
+                            "value": "Base Wizard"
+                          },
+                          "RESREF": {
+                            "type": "resref",
+                            "value": "basewizard"
+                          }
+                        }
+                      ]
+                    },
                     "STRREF": {
                       "type": "dword",
                       "value": 6690
