@@ -226,7 +226,7 @@ const string GS_T_16777438 = "You lose consciousness.";
 const string GS_T_16777439 = "un";
 const string GS_T_16777440 = "Undercommon";
 const string GS_T_16777441 = "<c°°°>Player: %1, CD key: %2, IP: %3, PC: %4 ... connected.";
-const string GS_T_16777442 = "%1 (CR=%2, RF=%3)";
+const string GS_T_16777442 = "%1 (CR=%2, RF=%3, TF = %4)";
 const string GS_T_16777443 = "%1 (CR=%2)";
 const string GS_T_16777444 = "Transfer";
 const string GS_T_16777445 = "You cannot use magic in this area.";
