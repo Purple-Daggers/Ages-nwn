@@ -533,7 +533,7 @@ void gsENSaveArea(object oArea = OBJECT_SELF)
             SqlBindString(sqlUpdateCreature, "@resref", gsENGetCreatureTemplate(nNth, oArea));
             SqlBindFloat(sqlUpdateCreature, "@rating", gsENGetCreatureRating(nNth, oArea));
             SqlBindInt(sqlUpdateCreature, "@chance", gsENGetCreatureChance(nNth, oArea));
-            SqlBindInt(sqlUpdateCreature, "@timeflag", 0);
+            SqlBindInt(sqlUpdateCreature, "@timeflag", gsENGetCreatureTimeflag(nNth, oArea));
             SqlStep(sqlUpdateCreature);
         } else {
             //insert
@@ -544,7 +544,7 @@ void gsENSaveArea(object oArea = OBJECT_SELF)
             SqlBindString(sqlCreateCreature, "@resref", gsENGetCreatureTemplate(nNth, oArea));
             SqlBindFloat(sqlCreateCreature, "@rating", gsENGetCreatureRating(nNth, oArea));
             SqlBindInt(sqlCreateCreature, "@chance", gsENGetCreatureChance(nNth, oArea));
-            SqlBindInt(sqlCreateCreature, "@timeflag", 0);
+            SqlBindInt(sqlCreateCreature, "@timeflag", gsENGetCreatureTimeflag(nNth, oArea));
             SqlStep(sqlCreateCreature);
         }
     }
