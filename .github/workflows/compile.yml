@@ -27,10 +27,12 @@ jobs:
         shell: pwsh
         run: |
           .\tools\nwn_script_comp.exe `
+            --root .\basescripts `
             --dirs .\basescripts `
             --no-keys `
             -s `
             -c .\src\nss `
+            -y `
             --max-include-depth=30 
             
 
