@@ -26,7 +26,7 @@ jobs:
       - name: Compile scripts
         shell: pwsh
         run: |
-          .\tools\nwn_script_comp.exe 
+          .\tools\nwn_script_comp.exe `
             --dirs .\basescripts `
             --no-keys `
             -s `
