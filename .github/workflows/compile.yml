@@ -29,6 +29,7 @@ jobs:
           .\tools\nwn_script_comp.exe `
             --root .\basescripts `
             --dirs .\basescripts `
+            --userdirectory .\basescripts `
             --no-keys `
             -s `
             -c .\src\nss `
