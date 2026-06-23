@@ -1,4 +1,4 @@
-# Ages Persistent World
+# Ages Persistent World ![Build](https://github.com/Purple-Daggers/Ages-nwn/actions/workflows/compile.yml/badge.svg)
 A persistent world inspired by Ricktastrophe's Ages campaign world supported by Neverwinter Nights.
 
 # Build Requirements
