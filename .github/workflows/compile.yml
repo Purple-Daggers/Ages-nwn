@@ -26,10 +26,13 @@ jobs:
       - name: Compile scripts
         shell: pwsh
         run: |
-          .\tools\nwn_script_comp.exe `
+          .\tools\nwn_script_comp.exe 
+            --dirs .\basescripts `
+            --no-keys `
+            -s `
             -c .\src\nss `
-            --max-include-depth=30 `
-            -s 
+            --max-include-depth=30 
+            
 
           if ($LASTEXITCODE -ne 0) {
             throw "Compilation failed."
