@@ -314,4 +314,10 @@ void main()
         AssignCommand(oActivator, ActionStartConversation(oActivator, "gs_pl_edit", TRUE, FALSE));
         return;
     }
+
+    //edit player reputations
+    if (sTag == "AS_RP_EDIT")
+    {
+      return;  
+    }
 }

@@ -5,7 +5,7 @@
 #include "gs_inc_text"
 #include "gs_inc_time"
 #include "gs_inc_worship"
-#include "gs_inc_chat"
+#include "as_inc_chat"
 
 string gsRateValue(int nValue, int nInaccuracy = 0)
 {
