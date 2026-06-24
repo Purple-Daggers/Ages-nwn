@@ -6,19 +6,19 @@
   },
   "ArmorPart_Belt": {
     "type": "byte",
-    "value": 15
+    "value": 0
   },
   "ArmorPart_LBicep": {
     "type": "byte",
-    "value": 8
+    "value": 1
   },
   "ArmorPart_LFArm": {
     "type": "byte",
-    "value": 10
+    "value": 1
   },
   "ArmorPart_LFoot": {
     "type": "byte",
-    "value": 17
+    "value": 12
   },
   "ArmorPart_LHand": {
     "type": "byte",
@@ -26,7 +26,7 @@
   },
   "ArmorPart_LShin": {
     "type": "byte",
-    "value": 15
+    "value": 1
   },
   "ArmorPart_LShoul": {
     "type": "byte",
@@ -34,7 +34,7 @@
   },
   "ArmorPart_LThigh": {
     "type": "byte",
-    "value": 4
+    "value": 1
   },
   "ArmorPart_Neck": {
     "type": "byte",
@@ -42,19 +42,19 @@
   },
   "ArmorPart_Pelvis": {
     "type": "byte",
-    "value": 3
+    "value": 1
   },
   "ArmorPart_RBicep": {
     "type": "byte",
-    "value": 8
+    "value": 1
   },
   "ArmorPart_RFArm": {
     "type": "byte",
-    "value": 10
+    "value": 1
   },
   "ArmorPart_RFoot": {
     "type": "byte",
-    "value": 17
+    "value": 12
   },
   "ArmorPart_RHand": {
     "type": "byte",
@@ -62,11 +62,11 @@
   },
   "ArmorPart_Robe": {
     "type": "byte",
-    "value": 3
+    "value": 187
   },
   "ArmorPart_RShin": {
     "type": "byte",
-    "value": 15
+    "value": 1
   },
   "ArmorPart_RShoul": {
     "type": "byte",
@@ -74,11 +74,11 @@
   },
   "ArmorPart_RThigh": {
     "type": "byte",
-    "value": 4
+    "value": 1
   },
   "ArmorPart_Torso": {
     "type": "byte",
-    "value": 39
+    "value": 1
   },
   "BaseItem": {
     "type": "int",
@@ -90,11 +90,11 @@
   },
   "Cloth1Color": {
     "type": "byte",
-    "value": 20
+    "value": 120
   },
   "Cloth2Color": {
     "type": "byte",
-    "value": 58
+    "value": 0
   },
   "Comment": {
     "type": "cexostring",
@@ -110,12 +110,14 @@
   },
   "DescIdentified": {
     "type": "cexolocstring",
-    "value": {}
+    "value": {
+      "0": "A set of clothes that consist of loose shirt, breeches, and a pair of cheap leather shoes."
+    }
   },
   "Description": {
     "type": "cexolocstring",
     "value": {
-      "0": ""
+      "0": "A set of clothes that consist of loose shirt, breeches, and a pair of cheap leather shoes."
     }
   },
   "Identified": {
@@ -124,25 +126,25 @@
   },
   "Leather1Color": {
     "type": "byte",
-    "value": 10
+    "value": 7
   },
   "Leather2Color": {
     "type": "byte",
-    "value": 11
+    "value": 115
   },
   "LocalizedName": {
     "type": "cexolocstring",
     "value": {
-      "0": "Vesture"
+      "0": "Common Clothes"
     }
   },
   "Metal1Color": {
     "type": "byte",
-    "value": 15
+    "value": 0
   },
   "Metal2Color": {
     "type": "byte",
-    "value": 14
+    "value": 0
   },
   "PaletteID": {
     "type": "byte",
@@ -166,27 +168,27 @@
   },
   "Tag": {
     "type": "cexostring",
-    "value": "GS_ITEM"
+    "value": "CommonClothes"
   },
   "TemplateResRef": {
     "type": "resref",
-    "value": "gs_item005"
+    "value": "commonclothes"
   },
   "xArmorPart_Belt": {
     "type": "word",
-    "value": 15
+    "value": 0
   },
   "xArmorPart_LBice": {
     "type": "word",
-    "value": 8
+    "value": 1
   },
   "xArmorPart_LFArm": {
     "type": "word",
-    "value": 10
+    "value": 1
   },
   "xArmorPart_LFoot": {
     "type": "word",
-    "value": 17
+    "value": 12
   },
   "xArmorPart_LHand": {
     "type": "word",
@@ -194,7 +196,7 @@
   },
   "xArmorPart_LShin": {
     "type": "word",
-    "value": 15
+    "value": 1
   },
   "xArmorPart_LShou": {
     "type": "word",
@@ -202,7 +204,7 @@
   },
   "xArmorPart_LThig": {
     "type": "word",
-    "value": 4
+    "value": 1
   },
   "xArmorPart_Neck": {
     "type": "word",
@@ -210,19 +212,19 @@
   },
   "xArmorPart_Pelvi": {
     "type": "word",
-    "value": 3
+    "value": 1
   },
   "xArmorPart_RBice": {
     "type": "word",
-    "value": 8
+    "value": 1
   },
   "xArmorPart_RFArm": {
     "type": "word",
-    "value": 10
+    "value": 1
   },
   "xArmorPart_RFoot": {
     "type": "word",
-    "value": 17
+    "value": 12
   },
   "xArmorPart_RHand": {
     "type": "word",
@@ -230,11 +232,11 @@
   },
   "xArmorPart_Robe": {
     "type": "word",
-    "value": 3
+    "value": 187
   },
   "xArmorPart_RShin": {
     "type": "word",
-    "value": 15
+    "value": 1
   },
   "xArmorPart_RShou": {
     "type": "word",
@@ -242,10 +244,10 @@
   },
   "xArmorPart_RThig": {
     "type": "word",
-    "value": 4
+    "value": 1
   },
   "xArmorPart_Torso": {
     "type": "word",
-    "value": 39
+    "value": 1
   }
 }
