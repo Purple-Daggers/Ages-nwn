@@ -2,7 +2,7 @@
   "__data_type": "UTC ",
   "Appearance_Type": {
     "type": "word",
-    "value": 6627
+    "value": 204
   },
   "BodyBag": {
     "type": "byte",
@@ -14,7 +14,7 @@
   },
   "ChallengeRating": {
     "type": "float",
-    "value": 0.125
+    "value": 0.25
   },
   "ClassList": {
     "type": "list",
@@ -38,7 +38,7 @@
   },
   "Con": {
     "type": "byte",
-    "value": 10
+    "value": 15
   },
   "Conversation": {
     "type": "resref",
@@ -50,7 +50,7 @@
   },
   "CurrentHitPoints": {
     "type": "short",
-    "value": 1
+    "value": 4
   },
   "DecayTime": {
     "type": "dword",
@@ -74,15 +74,7 @@
   },
   "Equip_ItemList": {
     "type": "list",
-    "value": [
-      {
-        "__struct_id": 65536,
-        "EquippedRes": {
-          "type": "resref",
-          "value": "gs_item356"
-        }
-      }
-    ]
+    "value": []
   },
   "FactionID": {
     "type": "word",
@@ -90,28 +82,12 @@
   },
   "FeatList": {
     "type": "list",
-    "value": [
-      {
-        "__struct_id": 1,
-        "Feat": {
-          "type": "word",
-          "value": 0
-        }
-      },
-      {
-        "__struct_id": 1,
-        "Feat": {
-          "type": "word",
-          "value": 289
-        }
-      }
-    ]
+    "value": []
   },
   "FirstName": {
     "type": "cexolocstring",
     "value": {
-      "0": "Squirrel",
-      "4": "Schatzratte"
+      "0": "Brown Bear"
     }
   },
   "fortbonus": {
@@ -128,15 +104,15 @@
   },
   "HitPoints": {
     "type": "short",
-    "value": 1
+    "value": 4
   },
   "Int": {
     "type": "byte",
-    "value": 3
+    "value": 2
   },
   "Interruptable": {
     "type": "byte",
-    "value": 0
+    "value": 1
   },
   "IsImmortal": {
     "type": "byte",
@@ -162,7 +138,7 @@
   },
   "MaxHitPoints": {
     "type": "short",
-    "value": 1
+    "value": 6
   },
   "NaturalAC": {
     "type": "byte",
@@ -170,11 +146,11 @@
   },
   "NoPermDeath": {
     "type": "byte",
-    "value": 0
+    "value": 1
   },
   "PaletteID": {
     "type": "byte",
-    "value": 9
+    "value": 5
   },
   "PerceptionRange": {
     "type": "byte",
@@ -190,7 +166,7 @@
   },
   "PortraitId": {
     "type": "word",
-    "value": 602
+    "value": 148
   },
   "Race": {
     "type": "byte",
@@ -202,55 +178,55 @@
   },
   "ScriptAttacked": {
     "type": "resref",
-    "value": "gs_ai_attacked"
+    "value": "x2_def_attacked"
   },
   "ScriptDamaged": {
     "type": "resref",
-    "value": "gs_ai_damaged"
+    "value": "x2_def_ondamage"
   },
   "ScriptDeath": {
     "type": "resref",
-    "value": "gs_ai_death"
+    "value": "x2_def_ondeath"
   },
   "ScriptDialogue": {
     "type": "resref",
-    "value": "gs_ai_conv"
+    "value": "x2_def_onconv"
   },
   "ScriptDisturbed": {
     "type": "resref",
-    "value": "gs_ai_disturbed"
+    "value": "x2_def_ondisturb"
   },
   "ScriptEndRound": {
     "type": "resref",
-    "value": "gs_ai_combat_end"
+    "value": "x2_def_endcombat"
   },
   "ScriptHeartbeat": {
     "type": "resref",
-    "value": "gs_ai_heartbeat"
+    "value": "x2_def_heartbeat"
   },
   "ScriptOnBlocked": {
     "type": "resref",
-    "value": "gs_ai_blocked"
+    "value": "x2_def_onblocked"
   },
   "ScriptOnNotice": {
     "type": "resref",
-    "value": "gs_ai_perception"
+    "value": "x2_def_percept"
   },
   "ScriptRested": {
     "type": "resref",
-    "value": "gs_ai_rested"
+    "value": "x2_def_rested"
   },
   "ScriptSpawn": {
     "type": "resref",
-    "value": "gs_ai_spawn"
+    "value": "x2_def_spawn"
   },
   "ScriptSpellAt": {
     "type": "resref",
-    "value": "gs_ai_spell"
+    "value": "x2_def_spellcast"
   },
   "ScriptUserDefine": {
     "type": "resref",
-    "value": "gs_ai_treasure"
+    "value": "x2_def_userdef"
   },
   "SkillList": {
     "type": "list",
@@ -294,34 +270,6 @@
         "__struct_id": 0,
         "Rank": {
           "type": "byte",
-          "value": 2
-        }
-      },
-      {
-        "__struct_id": 0,
-        "Rank": {
-          "type": "byte",
-          "value": 0
-        }
-      },
-      {
-        "__struct_id": 0,
-        "Rank": {
-          "type": "byte",
-          "value": 0
-        }
-      },
-      {
-        "__struct_id": 0,
-        "Rank": {
-          "type": "byte",
-          "value": 2
-        }
-      },
-      {
-        "__struct_id": 0,
-        "Rank": {
-          "type": "byte",
           "value": 0
         }
       },
@@ -357,6 +305,27 @@
         "__struct_id": 0,
         "Rank": {
           "type": "byte",
+          "value": 4
+        }
+      },
+      {
+        "__struct_id": 0,
+        "Rank": {
+          "type": "byte",
+          "value": 0
+        }
+      },
+      {
+        "__struct_id": 0,
+        "Rank": {
+          "type": "byte",
+          "value": 0
+        }
+      },
+      {
+        "__struct_id": 0,
+        "Rank": {
+          "type": "byte",
           "value": 0
         }
       },
@@ -378,7 +347,14 @@
         "__struct_id": 0,
         "Rank": {
           "type": "byte",
-          "value": 2
+          "value": 0
+        }
+      },
+      {
+        "__struct_id": 0,
+        "Rank": {
+          "type": "byte",
+          "value": 0
         }
       },
       {
@@ -455,7 +431,7 @@
   },
   "SoundSetFile": {
     "type": "word",
-    "value": 250
+    "value": 65535
   },
   "SpecAbilityList": {
     "type": "list",
@@ -467,7 +443,7 @@
   },
   "Str": {
     "type": "byte",
-    "value": 3
+    "value": 13
   },
   "Subrace": {
     "type": "cexostring",
@@ -475,7 +451,7 @@
   },
   "Tag": {
     "type": "cexostring",
-    "value": "Squirrel"
+    "value": "BrownBear"
   },
   "Tail_New": {
     "type": "dword",
@@ -487,7 +463,7 @@
   },
   "TemplateResRef": {
     "type": "resref",
-    "value": "gs_creature005"
+    "value": "brownbear"
   },
   "WalkRate": {
     "type": "int",
