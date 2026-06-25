@@ -1,3 +1,4 @@
+
 int StartingConditional()
 {
    int nMyNum = GetLocalInt(OBJECT_SELF, "dmfi_dmwOffset");

@@ -10,8 +10,8 @@
 //:://////////////////////////////////////////////
 //:: Created By: Preston Watamaniuk
 //:: Created On: Dec 19, 2001
-//:: Updated by Mithreas 25.03.07 to add DMFI.
 //:://////////////////////////////////////////////
+//:: Modified by The DMFI Team to handle activation of DMFI Wands & Widgets
 
 void main()
 {

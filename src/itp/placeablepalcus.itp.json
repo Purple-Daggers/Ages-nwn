@@ -998,6 +998,17 @@
                     "__struct_id": 0,
                     "NAME": {
                       "type": "cexostring",
+                      "value": "Gollden Sun Banner"
+                    },
+                    "RESREF": {
+                      "type": "resref",
+                      "value": "blueprint001"
+                    }
+                  },
+                  {
+                    "__struct_id": 0,
+                    "NAME": {
+                      "type": "cexostring",
                       "value": "Graffiti1"
                     },
                     "RESREF": {
@@ -1746,6 +1757,17 @@
                     "__struct_id": 0,
                     "NAME": {
                       "type": "cexostring",
+                      "value": "Module Specific* 004"
+                    },
+                    "RESREF": {
+                      "type": "resref",
+                      "value": "blueprint004"
+                    }
+                  },
+                  {
+                    "__struct_id": 0,
+                    "NAME": {
+                      "type": "cexostring",
                       "value": "Painting01"
                     },
                     "RESREF": {
@@ -1905,6 +1927,17 @@
                     "RESREF": {
                       "type": "resref",
                       "value": "blueprint016"
+                    }
+                  },
+                  {
+                    "__struct_id": 0,
+                    "NAME": {
+                      "type": "cexostring",
+                      "value": "Prasinos Banner 2"
+                    },
+                    "RESREF": {
+                      "type": "resref",
+                      "value": "blueprint002"
                     }
                   },
                   {
@@ -2345,6 +2378,17 @@
                     "RESREF": {
                       "type": "resref",
                       "value": "blueprint175"
+                    }
+                  },
+                  {
+                    "__struct_id": 0,
+                    "NAME": {
+                      "type": "cexostring",
+                      "value": "Stone Bench"
+                    },
+                    "RESREF": {
+                      "type": "resref",
+                      "value": "blueprint003"
                     }
                   },
                   {
@@ -5364,6 +5408,77 @@
               "ID": {
                 "type": "byte",
                 "value": 4
+              },
+              "LIST": {
+                "type": "list",
+                "value": [
+                  {
+                    "__struct_id": 0,
+                    "NAME": {
+                      "type": "cexostring",
+                      "value": "<cÿÿÿ><cÿÿ ><cÿ ÿ><c ÿÿ><cÿ  ><c ÿ ><c  ÿ><cÿÿÿ>Color Tag Generator"
+                    },
+                    "RESREF": {
+                      "type": "resref",
+                      "value": "dem_color_text"
+                    }
+                  },
+                  {
+                    "__struct_id": 0,
+                    "NAME": {
+                      "type": "cexostring",
+                      "value": "DMFI Bed Roll"
+                    },
+                    "RESREF": {
+                      "type": "resref",
+                      "value": "dmfi_rest002"
+                    }
+                  },
+                  {
+                    "__struct_id": 0,
+                    "NAME": {
+                      "type": "cexostring",
+                      "value": "DMFI Campfire"
+                    },
+                    "RESREF": {
+                      "type": "resref",
+                      "value": "dmfi_rest001"
+                    }
+                  },
+                  {
+                    "__struct_id": 0,
+                    "NAME": {
+                      "type": "cexostring",
+                      "value": "DMFI Invisible Rest Object"
+                    },
+                    "RESREF": {
+                      "type": "resref",
+                      "value": "dmfi_rest"
+                    }
+                  },
+                  {
+                    "__struct_id": 0,
+                    "NAME": {
+                      "type": "cexostring",
+                      "value": "DMFI Rest VFX Applier"
+                    },
+                    "RESREF": {
+                      "type": "resref",
+                      "value": "dmfi_restvfxobje"
+                    }
+                  },
+                  {
+                    "__struct_id": 0,
+                    "NAME": {
+                      "type": "cexostring",
+                      "value": "DMFI Tent"
+                    },
+                    "RESREF": {
+                      "type": "resref",
+                      "value": "dmfi_rest003"
+                    }
+                  }
+                ]
               },
               "STRREF": {
                 "type": "dword",
