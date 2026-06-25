@@ -14,9 +14,7 @@
 //:: 2008.07.10 tsunami282 - implemented alternate database support, initially
 //::                         for Knat's NBDE
 
-#include "dmfi_db_inc"
-
-const int DMFI_DB_TYPE = DMFI_DB_TYPE_BIOWARE;
+const int DMFI_DB_TYPE = 1;
 
 void FlushDMFIPersistentData(string sDBName)
 {
