@@ -3747,7 +3747,7 @@ void main()
             // check for target selection
             if (s2ndChar != sLeadChar) // doubled leadins should be ignored
             {
-                if (sLeadChar == ":")
+                /*if (sLeadChar == ":")
                 {
                     if (GetIsDM(oShouter) || GetIsDMPossessed(oShouter))
                     {
@@ -3761,8 +3761,8 @@ void main()
                         iTargetType = -1;
                         oTarget = OBJECT_INVALID;
                     }
-                }
-                else if (sLeadChar == ";")
+                }*/
+                if (sLeadChar == ";")
                 {
                     // master / animal companion / familiar / henchman / summon
                     iTargetType = 2;
