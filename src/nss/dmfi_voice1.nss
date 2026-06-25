@@ -11,7 +11,7 @@
 //:: Created By: Preston Watamaniuk
 //:: Created On: Nov 23, 2001
 //:://////////////////////////////////////////////
-#include "NW_I0_GENERIC"
+#include "dmfi_db_inc"
 
 void main()
 {
@@ -21,7 +21,7 @@ void main()
     // Will fire ONE time only - makes the thing hard to see
     if (!GetLocalInt(OBJECT_SELF, "hls_invis"))
     {
-        SetListenPattern(OBJECT_SELF, "**", 20600); //listen to all text
+        SetListenPattern(OBJECT_SELF, "**", LISTEN_PATTERN); //listen to all text
         SetLocalInt(OBJECT_SELF, "hls_Listening", 1); //listen to all text
         SetListening(OBJECT_SELF, TRUE);      //be sure NPC is listening
 

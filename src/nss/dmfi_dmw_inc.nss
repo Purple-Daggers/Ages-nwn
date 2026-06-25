@@ -75,7 +75,7 @@ string ColorText(string sText, string sColor)
     else if (sTest == "c") sApply = DST_COLOR_CYAN;
     else if (sTest == "r") sApply = DST_COLOR_RED;
     else if (sTest == "g") sApply = DST_COLOR_GREEN;
-    else if (sTest == "r") sApply = DST_COLOR_BLUE;
+    else if (sTest == "b") sApply = DST_COLOR_BLUE;
 
     string sFinal = sApply + sText + DST_COLOR_NORMAL;
     return sFinal;
@@ -253,32 +253,61 @@ int dmw_conv_Start(int nCurrent, int nChoice, string sParams = "")
 
 void DMFI_untoad(object oTarget, object oUser)
 {
-if (GetLocalInt(oTarget, "toaded")==1)
+    if (GetLocalInt(oTarget, "toaded")==1)
     {
-    effect eMyEffect = GetFirstEffect(oTarget);
-    while(GetIsEffectValid(eMyEffect))
-             {
-             if(GetEffectType(eMyEffect) == EFFECT_TYPE_POLYMORPH ||
-                GetEffectType(eMyEffect) == EFFECT_TYPE_PARALYZE)
-                                 RemoveEffect(oTarget, eMyEffect);
+        effect eMyEffect = GetFirstEffect(oTarget);
+        while(GetIsEffectValid(eMyEffect))
+        {
+            if(GetEffectType(eMyEffect) == EFFECT_TYPE_POLYMORPH || GetEffectType(eMyEffect) == EFFECT_TYPE_CUTSCENE_PARALYZE)
+                RemoveEffect(oTarget, eMyEffect);
 
-             eMyEffect = GetNextEffect(oTarget);
-             }
-     }
-else
-               {
-               FloatingTextStringOnCreature("Dude, he is no toad!", oUser);
-               }
+            eMyEffect = GetNextEffect(oTarget);
+        }
+    }
+    else
+    {
+        FloatingTextStringOnCreature("Dude, he is no toad!", oUser);
+    }
 }
 
 void DMFI_toad(object oTarget, object oUser)
 {
-              effect ePenguin = EffectPolymorph(POLYMORPH_TYPE_PENGUIN);
-              effect eParalyze = EffectParalyze();
-              SendMessageToPC(oUser, "Penguin?  Don't you mean toad?");
-              AssignCommand(oTarget, ApplyEffectToObject(DURATION_TYPE_PERMANENT, ePenguin, oTarget));
-              AssignCommand(oTarget, ApplyEffectToObject(DURATION_TYPE_PERMANENT, eParalyze, oTarget));
-              SetLocalInt(oTarget, "toaded", 1);
+    //This function now toggles the toad status   hahnsoo: DMFI 1.08
+    if (GetLocalInt(oTarget, "toaded") == 1)
+    {
+        effect eMyEffect = GetFirstEffect(oTarget);
+        while(GetIsEffectValid(eMyEffect))
+        {
+            if(GetEffectType(eMyEffect) == EFFECT_TYPE_POLYMORPH || GetEffectType(eMyEffect) == EFFECT_TYPE_CUTSCENE_PARALYZE)
+                RemoveEffect(oTarget, eMyEffect);
+
+            eMyEffect = GetNextEffect(oTarget);
+        }
+        FloatingTextStringOnCreature("Removed Penguin status from " + GetName(oTarget), oUser, FALSE);
+        SetLocalInt(oTarget, "toaded", 0);
+    }
+    else
+    {
+        effect ePenguin = EffectPolymorph(POLYMORPH_TYPE_PENGUIN);
+        effect eParalyze = EffectCutsceneParalyze();
+        AssignCommand(oTarget, ApplyEffectToObject(DURATION_TYPE_PERMANENT, ePenguin, oTarget));
+        AssignCommand(oTarget, ApplyEffectToObject(DURATION_TYPE_PERMANENT, eParalyze, oTarget));
+        SetLocalInt(oTarget, "toaded", 1);
+        FloatingTextStringOnCreature("Added Penguin status to " + GetName(oTarget), oUser, FALSE);
+    }
+}
+
+void DMFI_jail(object oOther, object oUser)
+{
+    if (GetIsObjectValid(oOther) && !GetIsDM(oOther) && oOther != oUser)
+    {
+        object oJail = GetObjectByTag("dmfi_jail");
+        if (!GetIsObjectValid(oJail))
+            oJail = GetObjectByTag("dmfi_jail_default");
+        AssignCommand(oOther, ClearAllActions());
+        AssignCommand(oOther, JumpToObject(oJail));
+        SendMessageToPC(oUser, GetName(oOther) + " (" + GetPCPublicCDKey(oOther) + ")/IP: " + GetPCIPAddress(oOther) + " - has been sent to Jail.");
+    }
 }
 
 void dmwand_KickPC(object oTarget, object oUser)
@@ -608,4 +637,562 @@ void dmwand_DoDialogChoice(int nChoice)
          return;
       }
    }
+}
+
+//Smoking Function by Jason Robinson
+location GetLocationAboveAndInFrontOf(object oPC, float fDist, float fHeight)
+{
+    float fDistance = -fDist;
+    object oTarget = (oPC);
+    object oArea = GetArea(oTarget);
+    vector vPosition = GetPosition(oTarget);
+    vPosition.z += fHeight;
+    float fOrientation = GetFacing(oTarget);
+    vector vNewPos = AngleToVector(fOrientation);
+    float vZ = vPosition.z;
+    float vX = vPosition.x - fDistance * vNewPos.x;
+    float vY = vPosition.y - fDistance * vNewPos.y;
+    fOrientation = GetFacing(oTarget);
+    vX = vPosition.x - fDistance * vNewPos.x;
+    vY = vPosition.y - fDistance * vNewPos.y;
+    vNewPos = AngleToVector(fOrientation);
+    vZ = vPosition.z;
+    vNewPos = Vector(vX, vY, vZ);
+    return Location(oArea, vNewPos, fOrientation);
+}
+
+//Smoking Function by Jason Robinson
+void SmokePipe(object oActivator)
+{
+    string sEmote1 = "*puffs on a pipe*";
+    string sEmote2 = "*inhales from a pipe*";
+    string sEmote3 = "*pulls a mouthful of smoke from a pipe*";
+    float fHeight = 1.7;
+    float fDistance = 0.1;
+    // Set height based on race and gender
+    if (GetGender(oActivator) == GENDER_MALE)
+    {
+        switch (GetRacialType(oActivator))
+        {
+            case RACIAL_TYPE_HUMAN:
+            case RACIAL_TYPE_HALFELF: fHeight = 1.7; fDistance = 0.12; break;
+            case RACIAL_TYPE_ELF: fHeight = 1.55; fDistance = 0.08; break;
+            case RACIAL_TYPE_GNOME:
+            case RACIAL_TYPE_HALFLING: fHeight = 1.15; fDistance = 0.12; break;
+            case RACIAL_TYPE_DWARF: fHeight = 1.2; fDistance = 0.12; break;
+            case RACIAL_TYPE_HALFORC: fHeight = 1.9; fDistance = 0.2; break;
+        }
+    }
+    else
+    {
+        // FEMALES
+        switch (GetRacialType(oActivator))
+        {
+            case RACIAL_TYPE_HUMAN:
+            case RACIAL_TYPE_HALFELF: fHeight = 1.6; fDistance = 0.12; break;
+            case RACIAL_TYPE_ELF: fHeight = 1.45; fDistance = 0.12; break;
+            case RACIAL_TYPE_GNOME:
+            case RACIAL_TYPE_HALFLING: fHeight = 1.1; fDistance = 0.075; break;
+            case RACIAL_TYPE_DWARF: fHeight = 1.2; fDistance = 0.1; break;
+            case RACIAL_TYPE_HALFORC: fHeight = 1.8; fDistance = 0.13; break;
+        }
+    }
+    location lAboveHead = GetLocationAboveAndInFrontOf(oActivator, fDistance, fHeight);
+    // emotes
+    switch (d3())
+    {
+        case 1: AssignCommand(oActivator, ActionSpeakString(sEmote1)); break;
+        case 2: AssignCommand(oActivator, ActionSpeakString(sEmote2)); break;
+        case 3: AssignCommand(oActivator, ActionSpeakString(sEmote3));break;
+    }
+    // glow red
+    AssignCommand(oActivator, ActionDoCommand(ApplyEffectToObject(DURATION_TYPE_TEMPORARY, EffectVisualEffect(VFX_DUR_LIGHT_RED_5), oActivator, 0.15)));
+    // wait a moment
+    AssignCommand(oActivator, ActionWait(3.0));
+    // puff of smoke above and in front of head
+    AssignCommand(oActivator, ActionDoCommand(ApplyEffectAtLocation(DURATION_TYPE_INSTANT, EffectVisualEffect(VFX_FNF_SMOKE_PUFF), lAboveHead)));
+    // if female, turn head to left
+    if ((GetGender(oActivator) == GENDER_FEMALE) && (GetRacialType(oActivator) != RACIAL_TYPE_DWARF))
+        AssignCommand(oActivator, ActionPlayAnimation(ANIMATION_FIREFORGET_HEAD_TURN_LEFT, 1.0, 5.0));
+}
+
+void EmoteDance(object oPC)
+{
+    object oRightHand = GetItemInSlot(INVENTORY_SLOT_RIGHTHAND,oPC);
+    object oLeftHand =  GetItemInSlot(INVENTORY_SLOT_LEFTHAND,oPC);
+
+    AssignCommand(oPC,ActionUnequipItem(oRightHand));
+    AssignCommand(oPC,ActionUnequipItem(oLeftHand));
+
+    AssignCommand(oPC,ActionPlayAnimation( ANIMATION_FIREFORGET_VICTORY2,1.0));
+    AssignCommand(oPC,ActionDoCommand(PlayVoiceChat(VOICE_CHAT_LAUGH,oPC)));
+    AssignCommand(oPC,ActionPlayAnimation( ANIMATION_LOOPING_TALK_LAUGHING, 2.0, 2.0));
+    AssignCommand(oPC,ActionPlayAnimation( ANIMATION_FIREFORGET_VICTORY1,1.0));
+    AssignCommand(oPC,ActionPlayAnimation( ANIMATION_FIREFORGET_VICTORY3,2.0));
+    AssignCommand(oPC,ActionPlayAnimation( ANIMATION_LOOPING_GET_MID, 3.0, 1.0));
+    AssignCommand(oPC,ActionPlayAnimation( ANIMATION_LOOPING_TALK_FORCEFUL,1.0));
+    AssignCommand(oPC,ActionPlayAnimation( ANIMATION_FIREFORGET_VICTORY2,1.0));
+    AssignCommand(oPC,ActionDoCommand(PlayVoiceChat(VOICE_CHAT_LAUGH,oPC)));
+    AssignCommand(oPC,ActionPlayAnimation( ANIMATION_LOOPING_TALK_LAUGHING, 2.0, 2.0));
+    AssignCommand(oPC,ActionPlayAnimation( ANIMATION_FIREFORGET_VICTORY1,1.0));
+    AssignCommand(oPC,ActionPlayAnimation( ANIMATION_FIREFORGET_VICTORY3,2.0));
+    AssignCommand(oPC,ActionDoCommand(PlayVoiceChat(VOICE_CHAT_LAUGH,oPC)));
+    AssignCommand(oPC,ActionPlayAnimation( ANIMATION_LOOPING_GET_MID, 3.0, 1.0));
+    AssignCommand(oPC,ActionPlayAnimation( ANIMATION_FIREFORGET_VICTORY2,1.0));
+
+    AssignCommand(oPC,ActionDoCommand(ActionEquipItem(oLeftHand,INVENTORY_SLOT_LEFTHAND)));
+    AssignCommand(oPC,ActionDoCommand(ActionEquipItem(oRightHand,INVENTORY_SLOT_RIGHTHAND)));
+}
+
+void SitInNearestChair(object oPC)
+{
+    object oSit,oRightHand,oLeftHand,oChair,oCouch,oBenchPew,oStool;
+    float fDistSit;int nth;
+    // get the closest chair, couch bench or stool
+   nth = 1;oChair = GetNearestObjectByTag("Chair", oPC,nth);
+   while(oChair != OBJECT_INVALID &&  GetSittingCreature(oChair) != OBJECT_INVALID)
+   {nth++;oChair = GetNearestObjectByTag("Chair", oPC,nth);}
+
+   nth = 1;oCouch = GetNearestObjectByTag("Couch", oPC,nth);
+   while(oCouch != OBJECT_INVALID && GetSittingCreature(oCouch) != OBJECT_INVALID)
+      {nth++;oChair = GetNearestObjectByTag("Couch", oPC,nth);}
+
+   nth = 1;oBenchPew = GetNearestObjectByTag("BenchPew", oPC,nth);
+   while(oBenchPew != OBJECT_INVALID && GetSittingCreature(oBenchPew) != OBJECT_INVALID)
+      {nth++;oChair = GetNearestObjectByTag("BenchPew", oPC,nth);}
+    /* 1.27 bug
+       nth = 1;oStool = GetNearestObjectByTag("Stool", oPC,nth);
+       while(oStool != OBJECT_INVALID && GetSittingCreature(oStool) != OBJECT_INVALID)
+          {nth++;oStool = GetNearestObjectByTag("Stool", oPC,nth);}
+    */
+    // get the distance between the user and each object (-1.0 is the result if no
+    // object is found
+    float fDistanceChair = GetDistanceToObject(oChair);
+    float fDistanceBench = GetDistanceToObject(oBenchPew);
+    float fDistanceCouch = GetDistanceToObject(oCouch);
+    float fDistanceStool = GetDistanceToObject(oStool);
+
+    // if any of the objects are invalid (not there), change the return value
+    // to a high number so the distance math can work
+    if (fDistanceChair == -1.0)
+    {fDistanceChair =1000.0;}
+
+    if (fDistanceBench == -1.0)
+    {fDistanceBench = 1000.0;}
+
+    if (fDistanceCouch == -1.0)
+    {fDistanceCouch = 1000.0;}
+
+    if (fDistanceStool == -1.0)
+        {fDistanceStool = 1000.0;}
+
+    // find out which object is closest to the PC
+    if (fDistanceChair<fDistanceBench && fDistanceChair<fDistanceCouch && fDistanceChair<fDistanceStool)
+        {oSit=oChair;fDistSit=fDistanceChair;}
+    else if (fDistanceBench<fDistanceChair && fDistanceBench<fDistanceCouch && fDistanceBench<fDistanceStool)
+        {oSit=oBenchPew;fDistSit=fDistanceBench;}
+    else if (fDistanceCouch<fDistanceChair && fDistanceCouch<fDistanceBench && fDistanceCouch<fDistanceStool)
+        {oSit=oCouch;fDistSit=fDistanceCouch;}
+    else
+//if (fDistanceStool<fDistanceChair && fDistanceStool<fDistanceBench && fDistanceStool<fDistanceCouch)
+{oSit=oStool;fDistSit=fDistanceStool;}
+
+ if(oSit !=  OBJECT_INVALID && fDistSit < 12.0)
+    {
+     // if no one is sitting in the object the PC is closest to, have him sit in it
+     if (GetSittingCreature(oSit) == OBJECT_INVALID)
+         {
+           oRightHand = GetItemInSlot(INVENTORY_SLOT_RIGHTHAND,oPC);
+           oLeftHand =  GetItemInSlot(INVENTORY_SLOT_LEFTHAND,oPC);
+           AssignCommand(oPC,ActionMoveToObject(oSit,FALSE,2.0)); //:: Presumably this will be fixed in a patch so that Plares will not run to chair
+           ActionUnequipItem(oRightHand); //:: Added to resolve clipping issues when seated
+           ActionUnequipItem(oLeftHand);  //:: Added to resolve clipping issues when seated
+           ActionDoCommand(AssignCommand(oPC,ActionSit(oSit)));
+
+        }
+      else
+        {SendMessageToPC(oPC,"The nearest chair is already taken ");}
+    }
+  else
+    {SendMessageToPC(oPC,"There are no chairs nearby");}
+}
+
+
+string dmwand_Alignment(object oEntity)
+{
+   string sReturnString;
+
+   switch (GetAlignmentLawChaos(oEntity))
+   {
+      case ALIGNMENT_LAWFUL:   sReturnString = "Lawful "; break;
+      case ALIGNMENT_NEUTRAL: sReturnString = "Neutral "; break;
+      case ALIGNMENT_CHAOTIC:   sReturnString = "Chaotic ";  break;
+   }
+
+   switch (GetAlignmentGoodEvil(oEntity))
+   {
+      case ALIGNMENT_GOOD:   sReturnString = sReturnString + "Good"; break;
+      case ALIGNMENT_NEUTRAL: sReturnString = sReturnString +  "Neutral"; break;
+      case ALIGNMENT_EVIL:   sReturnString = sReturnString +  "Evil";  break;
+   }
+
+   if (sReturnString == "Neutral Neutral"){sReturnString = "True Neutral";}
+
+   return sReturnString;
+}
+
+string dmwand_ClassLevel(object oEntity)
+{
+   string sReturnString;
+   string sClass;
+   string sClassOne;
+   string sClassTwo;
+   string sClassThree;
+   int nLevelOne;
+   int nLevelTwo;
+   int nLevelThree;
+   int iIndex;
+
+   // Loop through all three classes and pull out info
+   for(iIndex == 1;iIndex < 4;iIndex++)
+   {
+      switch (GetClassByPosition(iIndex,oEntity))
+      {
+         case CLASS_TYPE_ABERRATION:           sClass ="Aberration";break;
+         case CLASS_TYPE_ANIMAL:               sClass ="Animal"; break;
+         case CLASS_TYPE_ARCANE_ARCHER:        sClass ="Arcane Archer";break;
+         case CLASS_TYPE_ASSASSIN:             sClass ="Assassin"; break;
+         case CLASS_TYPE_BARBARIAN:            sClass ="Barbarian";break;
+         case CLASS_TYPE_BARD:                 sClass ="Bard"; break;
+         case CLASS_TYPE_BEAST:                sClass ="Beast"; break;
+         case CLASS_TYPE_BLACKGUARD:           sClass ="Blackguard"; break;
+         case CLASS_TYPE_CLERIC:               sClass ="Cleric"; break;
+         case CLASS_TYPE_COMMONER:             sClass ="Commoner";break;
+         case CLASS_TYPE_CONSTRUCT:            sClass ="Construct"; break;
+         case CLASS_TYPE_DIVINECHAMPION:       sClass ="Divine Champion"; break;
+         case CLASS_TYPE_DRAGON:               sClass ="Dragon"; break;
+         case CLASS_TYPE_DRAGONDISCIPLE:       sClass ="Dragon Disciple"; break;
+         case CLASS_TYPE_DRUID:                sClass ="Druid";break;
+         case CLASS_TYPE_DWARVENDEFENDER:      sClass ="Dwarven Defender"; break;
+         case CLASS_TYPE_ELEMENTAL:            sClass ="Elemental"; break;
+         case CLASS_TYPE_FEY:                  sClass ="Fey";break;
+         case CLASS_TYPE_FIGHTER:              sClass ="Fighter";  break;
+         case CLASS_TYPE_GIANT:                sClass ="Giant";  break;
+         case CLASS_TYPE_HARPER:               sClass ="Harper"; break;
+         case CLASS_TYPE_HUMANOID:             sClass ="Humanoid"; break;
+         case CLASS_TYPE_INVALID:              sClass ="";break;
+         case CLASS_TYPE_MAGICAL_BEAST:        sClass ="Magical Beast"; break;
+         case CLASS_TYPE_MONK:                 sClass ="Monk";   break;
+         case CLASS_TYPE_OUTSIDER:             sClass ="Outsider"; break;
+         case CLASS_TYPE_MONSTROUS:            sClass ="Monstrous"; break;
+         case CLASS_TYPE_PALADIN:              sClass ="Paladin";break;
+         case CLASS_TYPE_PALEMASTER:           sClass ="Palemaster"; break;
+         case CLASS_TYPE_PURPLE_DRAGON_KNIGHT: sClass="Purple Dragon Knight"; break;
+         case CLASS_TYPE_RANGER:               sClass ="Ranger";break;
+         case CLASS_TYPE_ROGUE:                sClass ="Rogue";break;
+         case CLASS_TYPE_SHADOWDANCER:         sClass ="Shadowdancer"; break;
+         case CLASS_TYPE_SHAPECHANGER:         sClass ="Shapechanger";break;
+         case CLASS_TYPE_SHIFTER:              sClass ="Shifter"; break;
+         case CLASS_TYPE_SORCERER:             sClass ="Sorcerer";break;
+         case CLASS_TYPE_UNDEAD:               sClass ="Undead";break;
+         case CLASS_TYPE_VERMIN:               sClass ="Vermin"; break;
+         case CLASS_TYPE_WEAPON_MASTER:        sClass ="Weapon Master"; break;
+         case CLASS_TYPE_WIZARD:               sClass ="Wizard"; break;
+      }
+
+      // Now depending on which iteration we just went through
+      // assign it to the proper class
+      switch (iIndex)
+      {
+         case 1: sClassOne =   sClass;  break;
+         case 2: sClassTwo =   sClass;  break;
+         case 3: sClassThree = sClass;  break;
+      }
+   };
+
+   // Now get all three class levels.  Wil be 0 if does class pos
+   //does not exists
+   nLevelOne =   GetLevelByPosition(1,oEntity);
+   nLevelTwo =   GetLevelByPosition(2,oEntity);
+   nLevelThree = GetLevelByPosition(3,oEntity);
+
+   //Start building return string
+   sReturnString = sClassOne + "(" + IntToString(nLevelOne) + ")" ;
+
+   //If second class exists append to return string
+   if(nLevelTwo > 0)
+   {
+      sReturnString =sReturnString + "/" + sClassTwo + "(" + IntToString(nLevelTwo) + ")";
+   }
+
+   //If third class exists append to return string
+   if(nLevelThree > 0)
+   {
+      sReturnString =sReturnString + "/" + sClassThree + "(" + IntToString(nLevelThree) + ")";
+   }
+
+   return sReturnString;
+}
+
+string dmwand_Gender(object oEntity)
+{
+   switch (GetGender(oEntity))
+   {
+      case GENDER_MALE:   return "Male"; break;
+      case GENDER_FEMALE: return "Female"; break;
+      case GENDER_BOTH:   return "Both";  break;
+      case GENDER_NONE:   return "None";  break;
+      case GENDER_OTHER:  return "Other";  break;
+   }
+
+   return "Weirdo";
+}
+
+string dmwand_ItemInfo(object oItem, int iInt)
+{
+   string sReturnString = "";
+   string sBaseType = "";
+   string sStacked = "";
+   string sIdentified = "";
+   string sGPValue = "";
+   string sACValue = "";
+   string sProperties = "";
+
+   switch(GetBaseItemType(oItem))
+   {
+      case BASE_ITEM_AMULET: sBaseType ="Amulet";break;
+      case BASE_ITEM_ARMOR: sBaseType ="Armor";break;
+      case BASE_ITEM_ARROW: sBaseType ="Arrow";break;
+      case BASE_ITEM_BASTARDSWORD: sBaseType ="Bastard Sword";break;
+      case BASE_ITEM_BATTLEAXE: sBaseType ="Battle Axe";break;
+      case BASE_ITEM_BELT: sBaseType ="Belt";break;
+      case BASE_ITEM_BLANK_POTION : sBaseType ="Blank Potion";break;
+      case BASE_ITEM_BLANK_SCROLL : sBaseType ="Blank Scroll";break;
+      case BASE_ITEM_BLANK_WAND : sBaseType ="Blank Wand";break;
+      case BASE_ITEM_BOLT : sBaseType ="Bolt";break;
+      case BASE_ITEM_BOOK: sBaseType ="Book";break;
+      case BASE_ITEM_BOOTS: sBaseType ="Boots";break;
+      case BASE_ITEM_BRACER: sBaseType ="Bracer";break;
+      case BASE_ITEM_BULLET: sBaseType ="Bullet";break;
+      case BASE_ITEM_CBLUDGWEAPON: sBaseType ="Bludgeoning Weap.";break;
+      case BASE_ITEM_CLOAK: sBaseType ="Cloak";break;
+      case BASE_ITEM_CLUB: sBaseType ="Club";break;
+      case BASE_ITEM_CPIERCWEAPON: sBaseType ="Pierceing Weap.";break;
+      case BASE_ITEM_CREATUREITEM: sBaseType ="Creature Item";break;
+      case BASE_ITEM_CSLASHWEAPON: sBaseType ="Slash Weap.";break;
+      case BASE_ITEM_CSLSHPRCWEAP: sBaseType ="Slash/Pierce Weap.";break;
+      case BASE_ITEM_DAGGER: sBaseType ="Dagger";break;
+      case BASE_ITEM_DART: sBaseType ="Dart";break;
+      case BASE_ITEM_DIREMACE: sBaseType ="Mace";break;
+      case BASE_ITEM_DOUBLEAXE: sBaseType ="Double Axe";break;
+      case BASE_ITEM_DWARVENWARAXE : sBaseType ="Dwarven War Axe";break;
+      case BASE_ITEM_ENCHANTED_POTION : sBaseType ="Enchanted Potion";break;
+      case BASE_ITEM_ENCHANTED_SCROLL : sBaseType ="Enchanted Scroll";break;
+      case BASE_ITEM_ENCHANTED_WAND : sBaseType ="Enchanted Wand";break;
+      case BASE_ITEM_GEM: sBaseType ="Gem";break;
+      case BASE_ITEM_GLOVES: sBaseType ="Gloves";break;
+      case BASE_ITEM_GOLD: sBaseType ="Gold";break;
+      case BASE_ITEM_GREATAXE: sBaseType ="Great Axe";break;
+      case BASE_ITEM_GREATSWORD: sBaseType ="Great Sword";break;
+      case BASE_ITEM_GRENADE : sBaseType ="Grenade";break;
+      case BASE_ITEM_HALBERD: sBaseType ="Halberd";break;
+      case BASE_ITEM_HANDAXE: sBaseType ="Hand Axe";break;
+      case BASE_ITEM_HEALERSKIT: sBaseType ="Healers Kit";break;
+      case BASE_ITEM_HEAVYCROSSBOW: sBaseType ="Heavy Xbow";break;
+      case BASE_ITEM_HEAVYFLAIL: sBaseType ="Heavy Flail";break;
+      case BASE_ITEM_HELMET: sBaseType ="Helmet";break;
+      case BASE_ITEM_INVALID: sBaseType ="";break;
+      case BASE_ITEM_KAMA: sBaseType ="Kama";break;
+      case BASE_ITEM_KATANA: sBaseType ="Katana";break;
+      case BASE_ITEM_KEY: sBaseType ="Key";break;
+      case BASE_ITEM_KUKRI: sBaseType ="Kukri";break;
+      case BASE_ITEM_LARGEBOX: sBaseType ="Large Box";break;
+      case BASE_ITEM_LARGESHIELD: sBaseType ="Large Shield";break;
+      case BASE_ITEM_LIGHTCROSSBOW: sBaseType ="Light Xbow";break;
+      case BASE_ITEM_LIGHTFLAIL: sBaseType ="Light Flail";break;
+      case BASE_ITEM_LIGHTHAMMER: sBaseType ="Light Hammer";break;
+      case BASE_ITEM_LIGHTMACE: sBaseType ="Light Mace";break;
+      case BASE_ITEM_LONGBOW: sBaseType ="Long Bow";break;
+      case BASE_ITEM_LONGSWORD: sBaseType ="Long Sword";break;
+      case BASE_ITEM_MAGICROD: sBaseType ="Magic Rod";break;
+      case BASE_ITEM_MAGICSTAFF: sBaseType ="Magic Staff";break;
+      case BASE_ITEM_MAGICWAND: sBaseType ="Magic Wand";break;
+      case BASE_ITEM_MISCLARGE: sBaseType ="Misc. Large";break;
+      case BASE_ITEM_MISCMEDIUM: sBaseType ="Misc. Medium";break;
+      case BASE_ITEM_MISCSMALL: sBaseType ="Misc. Small";break;
+      case BASE_ITEM_MISCTALL: sBaseType ="Misc. Small";break;
+      case BASE_ITEM_MISCTHIN: sBaseType ="Misc. Thin";break;
+      case BASE_ITEM_MISCWIDE: sBaseType ="Misc. Wide";break;
+      case BASE_ITEM_MORNINGSTAR: sBaseType ="Morningstar";break;
+      case BASE_ITEM_POTIONS: sBaseType ="Potion";break;
+      case BASE_ITEM_QUARTERSTAFF: sBaseType ="Quarterstaff";break;
+      case BASE_ITEM_RAPIER: sBaseType ="Rapier";break;
+      case BASE_ITEM_RING: sBaseType ="Ring";break;
+      case BASE_ITEM_SCIMITAR: sBaseType ="Scimitar";break;
+      case BASE_ITEM_SCROLL: sBaseType ="Scroll";break;
+      case BASE_ITEM_SCYTHE: sBaseType ="Scythe";break;
+      case BASE_ITEM_SHORTBOW: sBaseType ="Shortbow";break;
+      case BASE_ITEM_SHORTSPEAR: sBaseType ="Short Spear";break;
+      case BASE_ITEM_SHORTSWORD: sBaseType ="Short Sword";break;
+      case BASE_ITEM_SHURIKEN: sBaseType ="Shuriken";break;
+      case BASE_ITEM_SICKLE: sBaseType ="Sickle";break;
+      case BASE_ITEM_SLING: sBaseType ="Sling";break;
+      case BASE_ITEM_SMALLSHIELD: sBaseType ="Small Shield";break;
+      case BASE_ITEM_SPELLSCROLL: sBaseType ="Spell Scroll";break;
+      case BASE_ITEM_THIEVESTOOLS: sBaseType ="Thieves Tools";break;
+      case BASE_ITEM_THROWINGAXE: sBaseType ="Throwing Axe";break;
+      case BASE_ITEM_TORCH: sBaseType ="Torch";break;
+      case BASE_ITEM_TOWERSHIELD: sBaseType ="Tower Shield";break;
+      case BASE_ITEM_TRAPKIT: sBaseType ="Trap Kit";break;
+      case BASE_ITEM_TRIDENT: sBaseType ="Trident";break;
+      case BASE_ITEM_TWOBLADEDSWORD: sBaseType ="2 Bladed Sword";break;
+      case BASE_ITEM_WARHAMMER: sBaseType ="Warhammer";break;
+      case BASE_ITEM_WHIP : sBaseType ="Whip";break;
+  }
+
+   sReturnString = sStacked + GetName(oItem) + " (" + sBaseType + ")";
+   return sReturnString;
+}
+
+string dmwand_Inventory(object oEntity)
+{
+
+   string sBaseType;
+   string sReturnString;
+
+   sReturnString = sReturnString + "\nEquipped:\n";
+   if(GetIsObjectValid(GetItemInSlot(INVENTORY_SLOT_ARMS, oMyTarget))){ sReturnString = sReturnString + "Arms: " + dmwand_ItemInfo(GetItemInSlot(INVENTORY_SLOT_ARMS, oMyTarget),0) + "\n"; }
+   if(GetIsObjectValid(GetItemInSlot(INVENTORY_SLOT_BELT, oMyTarget))){ sReturnString = sReturnString + "Belt: " + dmwand_ItemInfo(GetItemInSlot(INVENTORY_SLOT_BELT, oMyTarget),0) + "\n"; }
+   if(GetIsObjectValid(GetItemInSlot(INVENTORY_SLOT_BOOTS, oMyTarget))){ sReturnString = sReturnString + "Boots: " + dmwand_ItemInfo(GetItemInSlot(INVENTORY_SLOT_BOOTS, oMyTarget),0) + "\n"; }
+   if(GetIsObjectValid(GetItemInSlot(INVENTORY_SLOT_CHEST, oMyTarget))){ sReturnString = sReturnString + "Chest: " + dmwand_ItemInfo(GetItemInSlot(INVENTORY_SLOT_CHEST, oMyTarget),0) + "\n"; }
+   if(GetIsObjectValid(GetItemInSlot(INVENTORY_SLOT_CLOAK, oMyTarget))){ sReturnString = sReturnString + "Cloak: " + dmwand_ItemInfo(GetItemInSlot(INVENTORY_SLOT_CLOAK, oMyTarget),0) + "\n"; }
+   if(GetIsObjectValid(GetItemInSlot(INVENTORY_SLOT_HEAD, oMyTarget))){ sReturnString = sReturnString + "Head: " + dmwand_ItemInfo(GetItemInSlot(INVENTORY_SLOT_HEAD, oMyTarget),0) + "\n"; }
+   if(GetIsObjectValid(GetItemInSlot(INVENTORY_SLOT_LEFTHAND, oMyTarget))){ sReturnString = sReturnString + "Left Hand: " + dmwand_ItemInfo(GetItemInSlot(INVENTORY_SLOT_LEFTHAND, oMyTarget),0) + "\n"; }
+   if(GetIsObjectValid(GetItemInSlot(INVENTORY_SLOT_LEFTRING, oMyTarget))){ sReturnString = sReturnString + "Left Ring: " + dmwand_ItemInfo(GetItemInSlot(INVENTORY_SLOT_LEFTRING, oMyTarget),0) + "\n"; }
+   if(GetIsObjectValid(GetItemInSlot(INVENTORY_SLOT_NECK, oMyTarget))){ sReturnString = sReturnString + "Neck: " + dmwand_ItemInfo(GetItemInSlot(INVENTORY_SLOT_NECK, oMyTarget),0) + "\n"; }
+   if(GetIsObjectValid(GetItemInSlot(INVENTORY_SLOT_RIGHTHAND, oMyTarget))){ sReturnString = sReturnString + "Right Hand: " + dmwand_ItemInfo(GetItemInSlot(INVENTORY_SLOT_RIGHTHAND, oMyTarget),0) + "\n"; }
+   if(GetIsObjectValid(GetItemInSlot(INVENTORY_SLOT_RIGHTRING, oMyTarget))){ sReturnString = sReturnString + "Right Ring: " + dmwand_ItemInfo(GetItemInSlot(INVENTORY_SLOT_RIGHTRING, oMyTarget),0) + "\n"; }
+   if(GetIsObjectValid(GetItemInSlot(INVENTORY_SLOT_ARROWS, oMyTarget))){ sReturnString = sReturnString + "Arrows: " + dmwand_ItemInfo(GetItemInSlot(INVENTORY_SLOT_ARROWS, oMyTarget),0) + "\n"; }
+   if(GetIsObjectValid(GetItemInSlot(INVENTORY_SLOT_BOLTS, oMyTarget))){ sReturnString = sReturnString + "Bolts: " + dmwand_ItemInfo(GetItemInSlot(INVENTORY_SLOT_BOLTS, oMyTarget),0) + "\n"; }
+   if(GetIsObjectValid(GetItemInSlot(INVENTORY_SLOT_BULLETS, oMyTarget))){ sReturnString = sReturnString + "Bullets: " + dmwand_ItemInfo(GetItemInSlot(INVENTORY_SLOT_BULLETS, oMyTarget),0) + "\n"; }
+   if(GetIsObjectValid(GetItemInSlot(INVENTORY_SLOT_CARMOUR, oMyTarget))){ sReturnString = sReturnString + "Creature Armor: " + dmwand_ItemInfo(GetItemInSlot(INVENTORY_SLOT_CARMOUR, oMyTarget),0) + "\n"; }
+   if(GetIsObjectValid(GetItemInSlot(INVENTORY_SLOT_CWEAPON_B, oMyTarget))){ sReturnString = sReturnString + "Creature Bite: " + dmwand_ItemInfo(GetItemInSlot(INVENTORY_SLOT_CWEAPON_B, oMyTarget),0) + "\n"; }
+   if(GetIsObjectValid(GetItemInSlot(INVENTORY_SLOT_CWEAPON_L, oMyTarget))){ sReturnString = sReturnString + "Creature Left: " + dmwand_ItemInfo(GetItemInSlot(INVENTORY_SLOT_CWEAPON_L, oMyTarget),0) + "\n"; }
+   if(GetIsObjectValid(GetItemInSlot(INVENTORY_SLOT_CWEAPON_R, oMyTarget))){ sReturnString = sReturnString + "Creature Right: " + dmwand_ItemInfo(GetItemInSlot(INVENTORY_SLOT_CWEAPON_R, oMyTarget),0) + "\n"; }
+
+   object oItem = GetFirstItemInInventory(oEntity);
+
+   while(oItem != OBJECT_INVALID)
+   {
+      sReturnString = sReturnString + "\n" + dmwand_ItemInfo(oItem, 0);
+      oItem = GetNextItemInInventory(oEntity);
+   };
+
+   return sReturnString;
+}
+
+string dmwand_Race(object oEntity)
+{
+   switch (GetRacialType(oEntity))
+   {
+      case RACIAL_TYPE_ABERRATION: return "Aberration"; break;
+      case RACIAL_TYPE_ALL:   return "All"; break;
+      case RACIAL_TYPE_ANIMAL:   return "Animal"; break;
+      case RACIAL_TYPE_BEAST:   return "Beast"; break;
+      case RACIAL_TYPE_CONSTRUCT:   return "Construct"; break;
+      case RACIAL_TYPE_DRAGON:   return "Dragon"; break;
+      case RACIAL_TYPE_DWARF:   return "Dwarf"; break;
+      case RACIAL_TYPE_ELEMENTAL:   return "Elemental"; break;
+      case RACIAL_TYPE_ELF:   return "Elf"; break;
+      case RACIAL_TYPE_FEY:   return "Fey"; break;
+      case RACIAL_TYPE_GIANT:   return "Giant"; break;
+      case RACIAL_TYPE_GNOME:   return "Gnome"; break;
+      case RACIAL_TYPE_HALFELF:   return "Half Elf"; break;
+      case RACIAL_TYPE_HALFLING:   return "Halfling"; break;
+      case RACIAL_TYPE_HALFORC:   return "Half Orc"; break;
+      case RACIAL_TYPE_HUMAN:   return "Human"; break;
+      case RACIAL_TYPE_HUMANOID_GOBLINOID:   return "Goblinoid"; break;
+      case RACIAL_TYPE_HUMANOID_MONSTROUS:   return "Monstrous"; break;
+      case RACIAL_TYPE_HUMANOID_ORC:   return "Orc"; break;
+      case RACIAL_TYPE_HUMANOID_REPTILIAN:   return "Reptillian"; break;
+      case RACIAL_TYPE_MAGICAL_BEAST:   return "Magical Beast"; break;
+      case RACIAL_TYPE_OOZE: return "Ooze"; break;
+      case RACIAL_TYPE_OUTSIDER:   return "Outsider"; break;
+      case RACIAL_TYPE_SHAPECHANGER:   return "Shapechanger"; break;
+      case RACIAL_TYPE_UNDEAD:   return "Undead"; break;
+      case RACIAL_TYPE_VERMIN:   return "Vermin"; break;
+   }
+
+   return "Unknown";
+}
+int DMFI_GetNetWorth(object oTarget)
+{
+    int n;
+    object oItem = GetFirstItemInInventory(oTarget);
+    while(GetIsObjectValid(oItem))
+    {
+        n= n + GetGoldPieceValue(oItem);
+        oItem = GetNextItemInInventory(oTarget);
+    }
+
+
+         n = n + GetGoldPieceValue(GetItemInSlot(INVENTORY_SLOT_ARMS, oTarget));
+         n = n + GetGoldPieceValue(GetItemInSlot(INVENTORY_SLOT_ARROWS, oTarget));
+         n = n + GetGoldPieceValue(GetItemInSlot(INVENTORY_SLOT_BELT, oTarget));
+         n = n + GetGoldPieceValue(GetItemInSlot(INVENTORY_SLOT_BOLTS, oTarget));
+         n = n + GetGoldPieceValue(GetItemInSlot(INVENTORY_SLOT_BOOTS, oTarget));
+         n = n + GetGoldPieceValue(GetItemInSlot(INVENTORY_SLOT_BULLETS, oTarget));
+         n = n + GetGoldPieceValue(GetItemInSlot(INVENTORY_SLOT_CARMOUR, oTarget));
+         n = n + GetGoldPieceValue(GetItemInSlot(INVENTORY_SLOT_CHEST, oTarget));
+         n = n + GetGoldPieceValue(GetItemInSlot(INVENTORY_SLOT_CLOAK, oTarget));
+         n = n + GetGoldPieceValue(GetItemInSlot(INVENTORY_SLOT_CWEAPON_B, oTarget));
+         n = n + GetGoldPieceValue(GetItemInSlot(INVENTORY_SLOT_CWEAPON_L, oTarget));
+         n = n + GetGoldPieceValue(GetItemInSlot(INVENTORY_SLOT_CWEAPON_R, oTarget));
+         n = n + GetGoldPieceValue(GetItemInSlot(INVENTORY_SLOT_HEAD, oTarget));
+         n = n + GetGoldPieceValue(GetItemInSlot(INVENTORY_SLOT_LEFTHAND, oTarget));
+         n = n + GetGoldPieceValue(GetItemInSlot(INVENTORY_SLOT_LEFTRING, oTarget));
+         n = n + GetGoldPieceValue(GetItemInSlot(INVENTORY_SLOT_NECK, oTarget));
+         n = n + GetGoldPieceValue(GetItemInSlot(INVENTORY_SLOT_RIGHTHAND, oTarget));
+         n = n + GetGoldPieceValue(GetItemInSlot(INVENTORY_SLOT_RIGHTRING, oTarget));
+    return n;
+}
+
+void DMFI_report(object oTarget, object oUser)
+{
+   string sSTR = IntToString(GetAbilityScore(oMyTarget,ABILITY_STRENGTH));
+   string sINT = IntToString(GetAbilityScore(oMyTarget,ABILITY_INTELLIGENCE));
+   string sDEX = IntToString(GetAbilityScore(oMyTarget,ABILITY_DEXTERITY));
+   string sWIS = IntToString(GetAbilityScore(oMyTarget,ABILITY_WISDOM));
+   string sCON = IntToString(GetAbilityScore(oMyTarget,ABILITY_CONSTITUTION));
+   string sCHA = IntToString(GetAbilityScore(oMyTarget,ABILITY_CHARISMA));
+   string sReport = "\n-------------------------------------------" +
+                    "\nReported: " + IntToString(GetTimeHour()) + ":" + IntToString(GetTimeMinute()) +
+                    "\nPlayer Name: " + GetPCPlayerName(oMyTarget) +
+                    "\nPublic CDKey: " + GetPCPublicCDKey(oMyTarget) +
+                    "\nChar Name:   " + GetName(oMyTarget) +
+                    "\n-------------------------------------------" +
+                    "\nRace:    " + dmwand_Race(oMyTarget) +
+                    "\nClass:    " + dmwand_ClassLevel(oMyTarget) +
+                    "\nXP:     " + IntToString(GetXP(oMyTarget)) +
+                    "\nGender: " + dmwand_Gender(oMyTarget) +
+                    "\nAlign:    " + dmwand_Alignment(oMyTarget) +
+                    "\nDeity:  " + GetDeity(oMyTarget) +
+                    "\n" +
+                    "\nSTR:  " + sSTR +
+                    "\nINT:   " + sINT +
+                    "\nWIS:  " + sWIS +
+                    "\nDEX:  " + sDEX +
+                    "\nCON: " + sCON +
+                    "\nCHA:  " + sCHA +
+                    "\n" +
+                    "\nHP:  " + IntToString(GetCurrentHitPoints(oMyTarget)) +
+                    " of " + IntToString(GetMaxHitPoints(oMyTarget)) +
+                    "\nAC:  " + IntToString(GetAC(oMyTarget)) +
+                    "\nGold:  " + IntToString(GetGold(oMyTarget)) +
+                    "\nNet Worth:  " + IntToString(DMFI_GetNetWorth(oMyTarget) + GetGold(oMyTarget)) +
+                    "\nInventory:\n  " + dmwand_Inventory(oMyTarget) +
+                    "\n-------------------------------------------";
+
+    SendMessageToPC(oUser, sReport);
+    SendMessageToAllDMs(sReport);
 }

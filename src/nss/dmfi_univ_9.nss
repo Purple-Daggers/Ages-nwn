@@ -14,7 +14,7 @@ void main()
     }
     else
     {
-        if(sConv == "server" || sConv == "voice" || sConv == "faction")
+        if(sConv == "server" || sConv == "voice" || sConv == "faction" || sConv == "rest")
         {
             SetLocalInt(oPC, "dmfi_univ_int", 9);
             ExecuteScript("dmfi_execute", oPC);

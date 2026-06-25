@@ -6,7 +6,6 @@ object oMySpeaker = GetLastSpeaker();
 object oMyTarget = GetLocalObject(oMySpeaker, "dmfi_univ_target");
 location lMyLoc = GetLocalLocation(oMySpeaker, "dmfi_univ_location");
 
-
 int dmwand_isnearbydestroyable()
 {
    object oMyTest = GetFirstObjectInShape(SHAPE_CUBE, 0.6, lMyLoc, FALSE, OBJECT_TYPE_ALL);

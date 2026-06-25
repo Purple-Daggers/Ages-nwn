@@ -14,7 +14,7 @@ void main()
     }
     else
     {
-        if(sConv == "pc_emote" || sConv == "emote" || sConv == "server" || sConv == "onering")
+        if(sConv == "pc_emote" || sConv == "emote" || sConv == "server" || sConv == "onering" || sConv == "rest")
         {
             SetLocalInt(oPC, "dmfi_univ_int", 7);
             ExecuteScript("dmfi_execute", oPC);
