@@ -189,6 +189,12 @@ void main()
         SetLocalInt(OBJECT_SELF, "GS_CURRENT_MANA", nResultingMana);
         ReadySpellLevel(OBJECT_SELF, nLevel + gsSPGetMetaMagicLevel(nMetaMagic), CLASS_TYPE_INVALID, 255);
     }
+    else if(GetBaseItemType(GetSpellCastItem()) == BASE_ITEM_POTIONS || GetBaseItemType(GetSpellCastItem()) == BASE_ITEM_ENCHANTED_POTION)
+    {
+        float fConstitution = IntToFloat(GetAbilityScore(OBJECT_SELF, ABILITY_CONSTITUTION));
+        float fSobriety = -250.0f / fConstitution;
+        gsSTAdjustState(GS_ST_SOBRIETY,  fSobriety);
+    }
 
     //spell information
     gsSPSetLastSpellHarmful(OBJECT_SELF, nHarmful);
