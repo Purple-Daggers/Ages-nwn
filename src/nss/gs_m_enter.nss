@@ -71,5 +71,5 @@ void main()
     SetLocalInt(oEntering, "GS_ACTIVE", TRUE);
 
     //DMFI
-    dmfiInitialize(oUser);
+    dmfiInitialize(oEntering);
 }
