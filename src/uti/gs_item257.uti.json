@@ -14,11 +14,11 @@
   },
   "Comment": {
     "type": "cexostring",
-    "value": ""
+    "value": "+10 Craft"
   },
   "Cost": {
     "type": "dword",
-    "value": 10
+    "value": 1449
   },
   "Cursed": {
     "type": "byte",
@@ -34,17 +34,17 @@
   },
   "Identified": {
     "type": "byte",
-    "value": 1
+    "value": 0
   },
   "LocalizedName": {
     "type": "cexolocstring",
     "value": {
-      "0": "Belt"
+      "0": "Belt of Jack of Trades"
     }
   },
   "ModelPart1": {
     "type": "byte",
-    "value": 4
+    "value": 6
   },
   "PaletteID": {
     "type": "byte",
@@ -56,7 +56,39 @@
   },
   "PropertiesList": {
     "type": "list",
-    "value": []
+    "value": [
+      {
+        "__struct_id": 0,
+        "ChanceAppear": {
+          "type": "byte",
+          "value": 100
+        },
+        "CostTable": {
+          "type": "byte",
+          "value": 25
+        },
+        "CostValue": {
+          "type": "word",
+          "value": 10
+        },
+        "Param1": {
+          "type": "byte",
+          "value": 255
+        },
+        "Param1Value": {
+          "type": "byte",
+          "value": 0
+        },
+        "PropertyName": {
+          "type": "word",
+          "value": 52
+        },
+        "Subtype": {
+          "type": "word",
+          "value": 25
+        }
+      }
+    ]
   },
   "StackSize": {
     "type": "word",
@@ -76,6 +108,6 @@
   },
   "xModelPart1": {
     "type": "word",
-    "value": 4
+    "value": 6
   }
 }

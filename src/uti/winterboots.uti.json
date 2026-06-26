@@ -2,11 +2,11 @@
   "__data_type": "UTI ",
   "AddCost": {
     "type": "dword",
-    "value": 9
+    "value": 0
   },
   "BaseItem": {
     "type": "int",
-    "value": 21
+    "value": 26
   },
   "Charges": {
     "type": "byte",
@@ -18,7 +18,7 @@
   },
   "Cost": {
     "type": "dword",
-    "value": 1450
+    "value": 361
   },
   "Cursed": {
     "type": "byte",
@@ -39,16 +39,24 @@
   "LocalizedName": {
     "type": "cexolocstring",
     "value": {
-      "0": "Belt of the Eagle"
+      "0": "Winter Boots"
     }
   },
   "ModelPart1": {
     "type": "byte",
-    "value": 110
+    "value": 21
+  },
+  "ModelPart2": {
+    "type": "byte",
+    "value": 41
+  },
+  "ModelPart3": {
+    "type": "byte",
+    "value": 83
   },
   "PaletteID": {
     "type": "byte",
-    "value": 16
+    "value": 15
   },
   "Plot": {
     "type": "byte",
@@ -65,11 +73,11 @@
         },
         "CostTable": {
           "type": "byte",
-          "value": 1
+          "value": 7
         },
         "CostValue": {
           "type": "word",
-          "value": 1
+          "value": 2
         },
         "Param1": {
           "type": "byte",
@@ -81,11 +89,11 @@
         },
         "PropertyName": {
           "type": "word",
-          "value": 0
+          "value": 23
         },
         "Subtype": {
           "type": "word",
-          "value": 5
+          "value": 7
         }
       }
     ]
@@ -100,14 +108,22 @@
   },
   "Tag": {
     "type": "cexostring",
-    "value": "GS_ITEM"
+    "value": "WinterBoots"
   },
   "TemplateResRef": {
     "type": "resref",
-    "value": "gs_item261"
+    "value": "winterboots"
   },
   "xModelPart1": {
     "type": "word",
-    "value": 110
+    "value": 21
+  },
+  "xModelPart2": {
+    "type": "word",
+    "value": 41
+  },
+  "xModelPart3": {
+    "type": "word",
+    "value": 83
   }
 }

@@ -18,7 +18,7 @@
   },
   "Cost": {
     "type": "dword",
-    "value": 1450
+    "value": 4050
   },
   "Cursed": {
     "type": "byte",
@@ -39,12 +39,12 @@
   "LocalizedName": {
     "type": "cexolocstring",
     "value": {
-      "0": "Belt of the Eagle"
+      "0": "Brawler's Belt"
     }
   },
   "ModelPart1": {
     "type": "byte",
-    "value": 110
+    "value": 222
   },
   "PaletteID": {
     "type": "byte",
@@ -85,7 +85,38 @@
         },
         "Subtype": {
           "type": "word",
-          "value": 5
+          "value": 0
+        }
+      },
+      {
+        "__struct_id": 0,
+        "ChanceAppear": {
+          "type": "byte",
+          "value": 100
+        },
+        "CostTable": {
+          "type": "byte",
+          "value": 2
+        },
+        "CostValue": {
+          "type": "word",
+          "value": 1
+        },
+        "Param1": {
+          "type": "byte",
+          "value": 255
+        },
+        "Param1Value": {
+          "type": "byte",
+          "value": 0
+        },
+        "PropertyName": {
+          "type": "word",
+          "value": 1
+        },
+        "Subtype": {
+          "type": "word",
+          "value": 0
         }
       }
     ]
@@ -104,10 +135,10 @@
   },
   "TemplateResRef": {
     "type": "resref",
-    "value": "gs_item261"
+    "value": "gs_item423"
   },
   "xModelPart1": {
     "type": "word",
-    "value": 110
+    "value": 222
   }
 }
