@@ -138,7 +138,7 @@ void RollDemBones(object oUser, int iBroadcast, int iMod = 0, string sAbility = 
     switch (iBroadcast)
     {
     case 3: break;                             //dm only
-    case 1: AssignCommand(oUser, SpeakString(sString , TALKVOLUME_SHOUT)); break;
+    case 1: AssignCommand(oUser, SpeakString(sString)); break; //Was TALKVOLUME_SHOUT but now disabled.
     case 2: AssignCommand(oUser, SpeakString(sString)); break;
     default: if (GetIsPC(oUser)) SendMessageToPC(oUser, sString);break;
     }
