@@ -110,7 +110,7 @@ void RollDemBones(object oUser, int iBroadcast, int iMod = 0, string sAbility = 
     sString = sString + " = Total: " + IntToString(iTotal);
 
     //Perform appropriate animation
-    if (GetLocalInt(oUser, "dmfi_dice_no_animate")!=1)
+    /*if (GetLocalInt(oUser, "dmfi_dice_no_animate")!=1)
     {
         switch (GetLocalInt(oUser, "dmfi_univ_int"))
         {
@@ -131,14 +131,14 @@ void RollDemBones(object oUser, int iBroadcast, int iMod = 0, string sAbility = 
         case 98: AssignCommand(oUser, PlayAnimation(ANIMATION_FIREFORGET_DODGE_DUCK, 1.0)); break;
         default: AssignCommand(oUser, PlayAnimation (ANIMATION_LOOPING_GET_MID, 1.0, 3.0)); break;
         }
-    }
+    }*/
 
     sString = ColorText(sString, "cyan");
     //--------------------------------------------------------
     switch (iBroadcast)
     {
     case 3: break;                             //dm only
-    case 1: AssignCommand(oUser, SpeakString(sString , TALKVOLUME_SHOUT)); break;
+    case 1: AssignCommand(oUser, SpeakString(sString)); break; //Was TALKVOLUME_SHOUT but now disabled.
     case 2: AssignCommand(oUser, SpeakString(sString)); break;
     default: if (GetIsPC(oUser)) SendMessageToPC(oUser, sString);break;
     }

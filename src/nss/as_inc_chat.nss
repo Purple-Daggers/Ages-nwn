@@ -7,6 +7,7 @@ const int CHAT_COMMAND_INVALID = -1;
 const int CHAT_COMMAND_SAVE = 0;
 const int CHAT_COMMAND_LANGUAGE = 1;
 const int CHAT_COMMAND_MOVE_FIXTURE = 2;
+const int CHAT_COMMAND_ROLL_DICE = 3;
 
 //return matching integer if tag matches a chat command
 int gsCTGetChatCommand(string sTag);
@@ -19,6 +20,7 @@ int gsCTGetChatCommand(string sTag)
     if(sTag == "save") return CHAT_COMMAND_SAVE;
     if(sTag == "language") return CHAT_COMMAND_LANGUAGE;
     if(sTag == "move") return CHAT_COMMAND_MOVE_FIXTURE;
+    if(sTag == "roll") return CHAT_COMMAND_ROLL_DICE;
     return CHAT_COMMAND_INVALID;
 }
 
@@ -32,6 +34,11 @@ void gsCTProcessCommand(object oSpeaker, int nCommand, string sParams){
         break;
         case CHAT_COMMAND_MOVE_FIXTURE:
             asFXMoveObjectNUI(oSpeaker);
+        break;
+        case CHAT_COMMAND_ROLL_DICE:
+            SetLocalString(oSpeaker, "dmfi_univ_conv", "pc_dicebag");
+            AssignCommand(oSpeaker, ClearAllActions());
+            AssignCommand(oSpeaker, ActionStartConversation(OBJECT_SELF, "dmfi_universal", TRUE)); break;
         break;
         case CHAT_COMMAND_LANGUAGE:
             SendMessageToPC(
