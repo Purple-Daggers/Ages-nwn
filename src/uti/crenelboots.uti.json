@@ -2,11 +2,11 @@
   "__data_type": "UTI ",
   "AddCost": {
     "type": "dword",
-    "value": 9
+    "value": 0
   },
   "BaseItem": {
     "type": "int",
-    "value": 21
+    "value": 26
   },
   "Charges": {
     "type": "byte",
@@ -14,11 +14,11 @@
   },
   "Comment": {
     "type": "cexostring",
-    "value": ""
+    "value": "Climb +2"
   },
   "Cost": {
     "type": "dword",
-    "value": 10
+    "value": 1
   },
   "Cursed": {
     "type": "byte",
@@ -39,16 +39,24 @@
   "LocalizedName": {
     "type": "cexolocstring",
     "value": {
-      "0": "Commoner's Belt"
+      "0": "Crenel Boots"
     }
   },
   "ModelPart1": {
     "type": "byte",
-    "value": 1
+    "value": 13
+  },
+  "ModelPart2": {
+    "type": "byte",
+    "value": 41
+  },
+  "ModelPart3": {
+    "type": "byte",
+    "value": 81
   },
   "PaletteID": {
     "type": "byte",
-    "value": 16
+    "value": 15
   },
   "Plot": {
     "type": "byte",
@@ -68,14 +76,22 @@
   },
   "Tag": {
     "type": "cexostring",
-    "value": "GS_ITEM"
+    "value": "CrenelBoots"
   },
   "TemplateResRef": {
     "type": "resref",
-    "value": "gs_item254"
+    "value": "crenelboots"
   },
   "xModelPart1": {
     "type": "word",
-    "value": 1
+    "value": 13
+  },
+  "xModelPart2": {
+    "type": "word",
+    "value": 41
+  },
+  "xModelPart3": {
+    "type": "word",
+    "value": 81
   }
 }

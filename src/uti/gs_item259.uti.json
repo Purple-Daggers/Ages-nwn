@@ -18,7 +18,7 @@
   },
   "Cost": {
     "type": "dword",
-    "value": 10
+    "value": 9010
   },
   "Cursed": {
     "type": "byte",
@@ -30,21 +30,23 @@
   },
   "Description": {
     "type": "cexolocstring",
-    "value": {}
+    "value": {
+      "0": ""
+    }
   },
   "Identified": {
     "type": "byte",
-    "value": 1
+    "value": 0
   },
   "LocalizedName": {
     "type": "cexolocstring",
     "value": {
-      "0": "Belt"
+      "0": "Belt of Free Motion"
     }
   },
   "ModelPart1": {
     "type": "byte",
-    "value": 6
+    "value": 157
   },
   "PaletteID": {
     "type": "byte",
@@ -56,7 +58,39 @@
   },
   "PropertiesList": {
     "type": "list",
-    "value": []
+    "value": [
+      {
+        "__struct_id": 0,
+        "ChanceAppear": {
+          "type": "byte",
+          "value": 100
+        },
+        "CostTable": {
+          "type": "byte",
+          "value": 0
+        },
+        "CostValue": {
+          "type": "word",
+          "value": 0
+        },
+        "Param1": {
+          "type": "byte",
+          "value": 255
+        },
+        "Param1Value": {
+          "type": "byte",
+          "value": 0
+        },
+        "PropertyName": {
+          "type": "word",
+          "value": 37
+        },
+        "Subtype": {
+          "type": "word",
+          "value": 7
+        }
+      }
+    ]
   },
   "StackSize": {
     "type": "word",
@@ -76,6 +110,6 @@
   },
   "xModelPart1": {
     "type": "word",
-    "value": 6
+    "value": 157
   }
 }

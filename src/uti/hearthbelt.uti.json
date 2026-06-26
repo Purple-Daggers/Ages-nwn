@@ -2,7 +2,7 @@
   "__data_type": "UTI ",
   "AddCost": {
     "type": "dword",
-    "value": 9
+    "value": 0
   },
   "BaseItem": {
     "type": "int",
@@ -18,7 +18,7 @@
   },
   "Cost": {
     "type": "dword",
-    "value": 1450
+    "value": 920
   },
   "Cursed": {
     "type": "byte",
@@ -39,12 +39,12 @@
   "LocalizedName": {
     "type": "cexolocstring",
     "value": {
-      "0": "Belt of the Eagle"
+      "0": "Hearth Belt"
     }
   },
   "ModelPart1": {
     "type": "byte",
-    "value": 110
+    "value": 230
   },
   "PaletteID": {
     "type": "byte",
@@ -65,11 +65,11 @@
         },
         "CostTable": {
           "type": "byte",
-          "value": 1
+          "value": 3
         },
         "CostValue": {
           "type": "word",
-          "value": 1
+          "value": 10
         },
         "Param1": {
           "type": "byte",
@@ -81,11 +81,42 @@
         },
         "PropertyName": {
           "type": "word",
-          "value": 0
+          "value": 15
         },
         "Subtype": {
           "type": "word",
-          "value": 5
+          "value": 66
+        }
+      },
+      {
+        "__struct_id": 0,
+        "ChanceAppear": {
+          "type": "byte",
+          "value": 100
+        },
+        "CostTable": {
+          "type": "byte",
+          "value": 25
+        },
+        "CostValue": {
+          "type": "word",
+          "value": 2
+        },
+        "Param1": {
+          "type": "byte",
+          "value": 255
+        },
+        "Param1Value": {
+          "type": "byte",
+          "value": 0
+        },
+        "PropertyName": {
+          "type": "word",
+          "value": 52
+        },
+        "Subtype": {
+          "type": "word",
+          "value": 4
         }
       }
     ]
@@ -100,14 +131,14 @@
   },
   "Tag": {
     "type": "cexostring",
-    "value": "GS_ITEM"
+    "value": "HearthBelt"
   },
   "TemplateResRef": {
     "type": "resref",
-    "value": "gs_item261"
+    "value": "hearthbelt"
   },
   "xModelPart1": {
     "type": "word",
-    "value": 110
+    "value": 230
   }
 }

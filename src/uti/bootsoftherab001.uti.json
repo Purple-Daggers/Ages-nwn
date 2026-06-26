@@ -2,11 +2,11 @@
   "__data_type": "UTI ",
   "AddCost": {
     "type": "dword",
-    "value": 9
+    "value": 0
   },
   "BaseItem": {
     "type": "int",
-    "value": 21
+    "value": 26
   },
   "Charges": {
     "type": "byte",
@@ -18,7 +18,7 @@
   },
   "Cost": {
     "type": "dword",
-    "value": 5770
+    "value": 706
   },
   "Cursed": {
     "type": "byte",
@@ -30,9 +30,7 @@
   },
   "Description": {
     "type": "cexolocstring",
-    "value": {
-      "0": ""
-    }
+    "value": {}
   },
   "Identified": {
     "type": "byte",
@@ -41,16 +39,24 @@
   "LocalizedName": {
     "type": "cexolocstring",
     "value": {
-      "0": "Ranger's Belt"
+      "0": "Boots of the Assassin"
     }
   },
   "ModelPart1": {
     "type": "byte",
-    "value": 2
+    "value": 27
+  },
+  "ModelPart2": {
+    "type": "byte",
+    "value": 41
+  },
+  "ModelPart3": {
+    "type": "byte",
+    "value": 52
   },
   "PaletteID": {
     "type": "byte",
-    "value": 16
+    "value": 15
   },
   "Plot": {
     "type": "byte",
@@ -67,7 +73,38 @@
         },
         "CostTable": {
           "type": "byte",
-          "value": 1
+          "value": 25
+        },
+        "CostValue": {
+          "type": "word",
+          "value": 5
+        },
+        "Param1": {
+          "type": "byte",
+          "value": 255
+        },
+        "Param1Value": {
+          "type": "byte",
+          "value": 0
+        },
+        "PropertyName": {
+          "type": "word",
+          "value": 52
+        },
+        "Subtype": {
+          "type": "word",
+          "value": 8
+        }
+      },
+      {
+        "__struct_id": 0,
+        "ChanceAppear": {
+          "type": "byte",
+          "value": 100
+        },
+        "CostTable": {
+          "type": "byte",
+          "value": 25
         },
         "CostValue": {
           "type": "word",
@@ -83,11 +120,11 @@
         },
         "PropertyName": {
           "type": "word",
-          "value": 0
+          "value": 52
         },
         "Subtype": {
           "type": "word",
-          "value": 1
+          "value": 21
         }
       },
       {
@@ -118,7 +155,7 @@
         },
         "Subtype": {
           "type": "word",
-          "value": 7
+          "value": 8
         }
       }
     ]
@@ -133,14 +170,22 @@
   },
   "Tag": {
     "type": "cexostring",
-    "value": "GS_ITEM"
+    "value": "BootsoftheRabbit"
   },
   "TemplateResRef": {
     "type": "resref",
-    "value": "gs_item255"
+    "value": "bootsoftherab001"
   },
   "xModelPart1": {
     "type": "word",
-    "value": 2
+    "value": 27
+  },
+  "xModelPart2": {
+    "type": "word",
+    "value": 41
+  },
+  "xModelPart3": {
+    "type": "word",
+    "value": 52
   }
 }
