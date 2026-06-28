@@ -5,7 +5,7 @@
 #include "gs_inc_theft"
 #include "gs_inc_time"
 
-const int GS_TIMEOUT = 300; //TIME UPDATE: 5 minutes
+const int GS_TIMEOUT = 300; //TIME UPDATE: 5 minutes.  Used with gsTIGetGameTimestamp() so this is 5 REAL TIME minutes
 
 void main()
 {
