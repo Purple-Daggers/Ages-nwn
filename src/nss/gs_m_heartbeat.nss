@@ -164,6 +164,7 @@ void main()
             gsSEAdd("gs_run_cleanarea", oArea);
         }
 
+        //TIME UPDATE: gsEXExecuteHour is going to be per tick instead of per hour.
         SetCampaignInt("GS_SYSTEM", "TIMESTAMP", nTimestamp);
         SetLocalInt(OBJECT_SELF, "GS_HOUR", nCurrentHour);
 

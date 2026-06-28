@@ -31,7 +31,7 @@ void gsRun()
         oObject = GetNextObjectInArea(oArea);
     }
 
-    DelayCommand(HoursToSeconds(1), gsRun());
+    DelayCommand(1200.0f, gsRun()); //TIME UPDATE: 20 minutes
 }
 //----------------------------------------------------------------
 void main()

@@ -1,7 +1,7 @@
 #include "gs_inc_common"
 #include "gs_inc_time"
 
-const int GS_TIMEOUT = 7200; //2 hours
+const int GS_TIMEOUT = 2400; //TIME UPDATE: 20 minutes
 
 void main()
 {

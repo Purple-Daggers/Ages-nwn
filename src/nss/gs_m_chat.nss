@@ -298,7 +298,7 @@ int gsEmote(object oSpeaker, string sString)
                 int nTimestamp1 = gsTIGetActualTimestamp();
                 int nTimestamp2 = GetLocalInt(oSpeaker, "GS_LI_TIMESTAMP_DETECT_EVIL");
 
-                if (nTimestamp1 > nTimestamp2 + FloatToInt(HoursToSeconds(12)))
+                if (nTimestamp1 > nTimestamp2 + FloatToInt(HoursToSeconds(4))) //TIME UPDATE: 4 hours
                 {
                     location lLocation = GetLocation(oSpeaker);
                     object oCreature   = GetFirstObjectInShape(SHAPE_SPHERE, RADIUS_SIZE_COLOSSAL, lLocation);
