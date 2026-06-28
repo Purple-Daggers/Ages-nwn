@@ -5,7 +5,7 @@
 #include "gs_inc_theft"
 #include "gs_inc_time"
 
-const int GS_TIMEOUT = 300; //5 minutes
+const int GS_TIMEOUT = 300; //TIME UPDATE: 5 minutes
 
 void main()
 {

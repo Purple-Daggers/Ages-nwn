@@ -11,7 +11,7 @@
 #include "gs_inc_time"
 #include "gs_inc_worship"
 
-const int GS_TIMEOUT = 3600; //1 hour
+const int GS_TIMEOUT = 1200; //TIME UPDATE: 20 minutes
 
 void gsActivateRecreator(object oRecreator)
 {

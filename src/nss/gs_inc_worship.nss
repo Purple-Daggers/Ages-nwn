@@ -10,8 +10,8 @@
 
 //void main() {}
 
-const int GS_WO_TIMEOUT_FAVOR        = 10800; // 3 hours
-const int GS_WO_TIMEOUT_RESURRECTION = 43200; //12 hours
+const int GS_WO_TIMEOUT_FAVOR        = 3600; //TIME UPDATE: 1 hour
+const int GS_WO_TIMEOUT_RESURRECTION = 14400; //TIME UPDATE: 4 hours
 
 const int GS_WO_COST_LESSER_FAVOR    =     5;
 const int GS_WO_COST_GREATER_FAVOR   =    10;

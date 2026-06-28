@@ -11,7 +11,7 @@ const int GS_ST_SOBRIETY = 4;
 
 //set initial state of caller
 void gsSTSetInitialState();
-//apply state adjustment to caller, hourly call recommended
+//apply state adjustment to caller, hourly call recommended but we do it every 20 minutes
 void gsSTProcessState();
 //adjust nState of caller by fValue
 void gsSTAdjustState(int nState, float fValue);
@@ -32,18 +32,18 @@ void gsSTProcessState()
 {
     if (GetIsDead(OBJECT_SELF)) return;
 
-    gsSTAdjustState(GS_ST_FOOD,  -2.083); //48 hours
-    gsSTAdjustState(GS_ST_WATER, -4.166); //24 hours
+    gsSTAdjustState(GS_ST_FOOD,  -0.715); //TIME UPDATE: ~48 hours
+    gsSTAdjustState(GS_ST_WATER, -1.431); //TIME UPDATE: ~24 hours
 
     // Addition by Mithreas. If someone is sitting or kneeling, make them get
     // tired more slowly..  --[
     if (GetLocation(OBJECT_SELF) == GetLocalLocation(OBJECT_SELF, "MI_SIT_LOCATION"))
     {
-      gsSTAdjustState(GS_ST_REST,  -2.083); //48 hours
+      gsSTAdjustState(GS_ST_REST,  -0.715); //TIME UPDATE: ~48 hours
     }
     else
     {
-      gsSTAdjustState(GS_ST_REST,  -4.166); //24 hours
+      gsSTAdjustState(GS_ST_REST,  -1.431); //TIME UPDATE: ~24 hours
     }
     // ]-- end addition
     gsSTAdjustState(GS_ST_SOBRIETY,

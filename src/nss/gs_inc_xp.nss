@@ -269,7 +269,7 @@ void gsXPGiveExperience(object oCreature, int nAmount, int nFloat = TRUE, int nK
 
                 if (nTimeout < nTimestamp)
                 {
-                    nTimeout = nTimestamp + gsTIGetGameTimestamp(86400); //24 hours
+                    nTimeout = nTimestamp + gsTIGetGameTimestamp(28800); //TIME UPDATE: 8 hours
                     gsXPSetKillTimeout(oCreature, nTimeout);
                 }
                 else

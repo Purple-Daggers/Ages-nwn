@@ -59,7 +59,7 @@ void Scrying(object oPC,object oTarg){
 
   if (nTimeout < nTimestamp)
   {
-    nTimeout = nTimestamp + 86400; //24 hours
+    nTimeout = nTimestamp + 28800; //TIME UPDATE: 8 hours
 
     SetLocalInt(oPC, "MI_SCRY_TIMEOUT", nTimeout);
     SetCampaignInt("MI_SCRY_TIMEOUT", gsPCGetPlayerID(oPC), nTimeout);
