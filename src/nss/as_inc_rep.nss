@@ -64,12 +64,12 @@ json asRPGetReputations(object oPlayer)
 
 int asRPGetNextReputation(json jReputationsList, int nNth)
 {
-    JsonGetType(JsonArrayGet(jReputationsList, nNth + 1)) == JSON_TYPE_NULL ? -1 : nNth + 1;
+    return JsonGetType(JsonArrayGet(jReputationsList, nNth + 1)) == JSON_TYPE_NULL ? -1 : nNth + 1;
 }
 
 int asRPGetPreviousReputation(json jReputationsList, int nNth)
 {
-    JsonGetType(JsonArrayGet(jReputationsList, nNth - 1)) == JSON_TYPE_NULL ? -1 : nNth - 1;
+    return JsonGetType(JsonArrayGet(jReputationsList, nNth - 1)) == JSON_TYPE_NULL ? -1 : nNth - 1;
 }
 
 json _asRPGetReputationJson(object oPlayer){
