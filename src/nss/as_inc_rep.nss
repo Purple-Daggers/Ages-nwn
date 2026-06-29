@@ -6,6 +6,8 @@ int asRPGetReputation(object oPlayer, string sFaction);
 void asRPSetReputation(object oPlayer, string sFaction, int nNewReputation);
 void asRPDeleteReputation(object oPlayer, string sFaction);
 void asRPAdjustReputation(object oPlayer, string sFaction, int nChange);
+json asRPGetReputations(object oPlayer);
+int asRPGetNextReputation(json jReputationsList, int nNth);
 json _asRPGetReputationJson(object oPlayer);
 void _asRPSetReputationJson(object oPlayer, json jNewJson);
 
@@ -60,6 +62,15 @@ json asRPGetReputations(object oPlayer)
     return JsonObjectKeys(jReputations);
 }
 
+int asRPGetNextReputation(json jReputationsList, int nNth)
+{
+    JsonGetType(JsonArrayGet(jReputationsList, nNth + 1)) == JSON_TYPE_NULL ? -1 : nNth + 1;
+}
+
+int asRPGetPreviousReputation(json jReputationsList, int nNth)
+{
+    JsonGetType(JsonArrayGet(jReputationsList, nNth - 1)) == JSON_TYPE_NULL ? -1 : nNth - 1;
+}
 
 json _asRPGetReputationJson(object oPlayer){
     string sDatabase = AS_RP_REPUTATION_DATABASE;
