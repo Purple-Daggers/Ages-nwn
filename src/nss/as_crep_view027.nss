@@ -3,6 +3,7 @@
 void main()
 {
     int nNth1 = GetLocalInt(OBJECT_SELF, "AS_REP_PAGE_START");
+    json jReputationsList = GetLocalJson(OBJECT_SELF, "AS_REP_REPUTATIONS_LIST");
 
     if (nNth1 > 0)
     {
@@ -11,7 +12,7 @@ void main()
 
         for (; nNth2 < 10; nNth2++)
         {
-            nNth3 = asRPGetPreviousReputation(nNth1);
+            nNth3 = asRPGetPreviousReputation(jReputationsList, nNth1);
             if (nNth3 == -1) break;
             nNth1 = nNth3;
         }
