@@ -21,6 +21,12 @@ void main()
                 asFXSetObjectSelection(oPlayer, oTarget);
             }
         break;
+        case TARGETING_MODE_REPUTATION_VIEW:
+            if(GetIsObjectValid(oTarget) && GetIsPC(oTarget)){
+                SetLocalObject(oPlayer, "AS_REP_TARGET", oTarget);
+                AssignCommand(oPlayer, ActionStartConversation(oPlayer, "as_crep_view", TRUE, FALSE));
+            }
+        break;
         default:
             SendMessageToPC(oPlayer, "Invalid targeting mode bug.");
         break;
