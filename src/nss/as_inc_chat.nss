@@ -2,12 +2,14 @@
 
 #include "gs_inc_language"
 #include "as_inc_fxnui"
+#include "as_inc_target"
 
 const int CHAT_COMMAND_INVALID = -1;
 const int CHAT_COMMAND_SAVE = 0;
 const int CHAT_COMMAND_LANGUAGE = 1;
 const int CHAT_COMMAND_MOVE_FIXTURE = 2;
 const int CHAT_COMMAND_ROLL_DICE = 3;
+const int CHAT_COMMAND_REPUTATION_VIEW = 4;
 
 //return matching integer if tag matches a chat command
 int gsCTGetChatCommand(string sTag);
@@ -21,6 +23,7 @@ int gsCTGetChatCommand(string sTag)
     if(sTag == "language") return CHAT_COMMAND_LANGUAGE;
     if(sTag == "move") return CHAT_COMMAND_MOVE_FIXTURE;
     if(sTag == "roll") return CHAT_COMMAND_ROLL_DICE;
+    if(sTag == "rep" || sTag == "reputation") return CHAT_COMMAND_REPUTATION_VIEW;
     return CHAT_COMMAND_INVALID;
 }
 
@@ -39,6 +42,10 @@ void gsCTProcessCommand(object oSpeaker, int nCommand, string sParams){
             SetLocalString(oSpeaker, "dmfi_univ_conv", "pc_dicebag");
             AssignCommand(oSpeaker, ClearAllActions());
             AssignCommand(oSpeaker, ActionStartConversation(OBJECT_SELF, "dmfi_universal", TRUE)); break;
+        break;
+        case CHAT_COMMAND_REPUTATION_VIEW:
+            SetLocalInt(oSpeaker, "AS_TARGET_MODE_ID", TARGETING_MODE_REPUTATION_VIEW);
+            EnterTargetingMode(oSpeaker, OBJECT_TYPE_CREATURE);
         break;
         case CHAT_COMMAND_LANGUAGE:
             SendMessageToPC(
