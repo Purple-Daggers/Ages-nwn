@@ -24,8 +24,9 @@ void main()
         case TARGETING_MODE_REPUTATION_VIEW:
             if(GetIsObjectValid(oTarget) && GetIsPC(oTarget)){
                 SetLocalObject(oPlayer, "AS_REP_TARGET", oTarget);
-                ActionStartConversation(oPlayer, "as_crep_view", TRUE, FALSE);
+                AssignCommand(oPlayer, ActionStartConversation(oPlayer, "as_crep_view", TRUE, FALSE));
             }
+        break;
         default:
             SendMessageToPC(oPlayer, "Invalid targeting mode bug.");
         break;
