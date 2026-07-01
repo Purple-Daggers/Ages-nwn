@@ -8,11 +8,12 @@ int StartingConditional()
     if (!GetLocalInt(OBJECT_SELF, "AS_REP_LOADED"))
     {
         jReputationsList = asRPGetReputations(oPlayer);
-        jReputationsList = JsonArrayTransform(jReputationsList, JSON_ARRAY_SORT_DESCENDING);
+        jReputationsList = JsonArrayTransform(jReputationsList, JSON_ARRAY_SORT_ASCENDING);
         SetLocalInt(OBJECT_SELF, "AS_REP_REPUTATION", -1);
         SetLocalInt(OBJECT_SELF, "AS_REP_LOADED", TRUE);
         SetLocalJson(OBJECT_SELF, "AS_REP_REPUTATIONS_LIST", jReputationsList);
     }
+    jReputationsList = GetLocalJson(OBJECT_SELF, "AS_REP_REPUTATIONS_LIST");
 
     string sKey = "";
     int nRep = 0;
@@ -31,7 +32,7 @@ int StartingConditional()
             sKey = JsonGetString(JsonArrayGet(jReputationsList, nNth));
             nRep = asRPGetReputation(oPlayer, sKey);
             gsTKSetToken(100 + nSlot, "<cþë¦>" + sKey + "<câÛÂ>");
-            gsTKSetToken(110 + nSlot, "<c(”þ>" + IntToString(nRep));
+            gsTKSetToken(110 + nSlot, "<c(”þ> Rep: " + IntToString(nRep));
         }
 
         if (++nSlot > 10) break;

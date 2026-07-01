@@ -359,7 +359,7 @@
   },
   "NumWords": {
     "type": "dword",
-    "value": 45
+    "value": 35
   },
   "PreventZoomIn": {
     "type": "byte",
@@ -581,7 +581,31 @@
         },
         "EntriesList": {
           "type": "list",
-          "value": []
+          "value": [
+            {
+              "__struct_id": 0,
+              "Active": {
+                "type": "resref",
+                "value": "as_crep_view001"
+              },
+              "ConditionParams": {
+                "type": "list",
+                "value": []
+              },
+              "Index": {
+                "type": "dword",
+                "value": 0
+              },
+              "IsChild": {
+                "type": "byte",
+                "value": 1
+              },
+              "LinkComment": {
+                "type": "cexostring",
+                "value": ""
+              }
+            }
+          ]
         },
         "Quest": {
           "type": "cexostring",
@@ -589,7 +613,7 @@
         },
         "Script": {
           "type": "resref",
-          "value": "as_crep_view029"
+          "value": "as_crep_view030"
         },
         "Sound": {
           "type": "resref",
@@ -628,7 +652,31 @@
         },
         "EntriesList": {
           "type": "list",
-          "value": []
+          "value": [
+            {
+              "__struct_id": 0,
+              "Active": {
+                "type": "resref",
+                "value": "as_crep_view001"
+              },
+              "ConditionParams": {
+                "type": "list",
+                "value": []
+              },
+              "Index": {
+                "type": "dword",
+                "value": 0
+              },
+              "IsChild": {
+                "type": "byte",
+                "value": 1
+              },
+              "LinkComment": {
+                "type": "cexostring",
+                "value": ""
+              }
+            }
+          ]
         },
         "Quest": {
           "type": "cexostring",
@@ -636,7 +684,7 @@
         },
         "Script": {
           "type": "resref",
-          "value": "as_crep_view028"
+          "value": "as_crep_view029"
         },
         "Sound": {
           "type": "resref",
@@ -716,7 +764,7 @@
         "Text": {
           "type": "cexolocstring",
           "value": {
-            "0": "<CUSTOM110> by <CUSTOM120>",
+            "0": "<CUSTOM110> <CUSTOM120>",
             "4": "<CUSTOM105> von <CUSTOM110>",
             "5": "<CUSTOM105> von <CUSTOM110>"
           }
@@ -787,7 +835,7 @@
         "Text": {
           "type": "cexolocstring",
           "value": {
-            "0": "<CUSTOM109> by <CUSTOM119>",
+            "0": "<CUSTOM109> <CUSTOM119>",
             "4": "<CUSTOM105> von <CUSTOM110>",
             "5": "<CUSTOM105> von <CUSTOM110>"
           }
@@ -858,7 +906,7 @@
         "Text": {
           "type": "cexolocstring",
           "value": {
-            "0": "<CUSTOM108> by <CUSTOM118>",
+            "0": "<CUSTOM108> <CUSTOM118>",
             "4": "<CUSTOM105> von <CUSTOM110>",
             "5": "<CUSTOM105> von <CUSTOM110>"
           }
@@ -929,7 +977,7 @@
         "Text": {
           "type": "cexolocstring",
           "value": {
-            "0": "<CUSTOM107> by <CUSTOM117>",
+            "0": "<CUSTOM107> <CUSTOM117>",
             "4": "<CUSTOM105> von <CUSTOM110>",
             "5": "<CUSTOM105> von <CUSTOM110>"
           }
@@ -1000,7 +1048,7 @@
         "Text": {
           "type": "cexolocstring",
           "value": {
-            "0": "<CUSTOM106> by <CUSTOM116>",
+            "0": "<CUSTOM106> <CUSTOM116>",
             "4": "<CUSTOM105> von <CUSTOM110>",
             "5": "<CUSTOM105> von <CUSTOM110>"
           }
@@ -1071,7 +1119,7 @@
         "Text": {
           "type": "cexolocstring",
           "value": {
-            "0": "<CUSTOM105> by <CUSTOM115>",
+            "0": "<CUSTOM105> <CUSTOM115>",
             "4": "<CUSTOM105> von <CUSTOM110>",
             "5": "<CUSTOM105> von <CUSTOM110>"
           }
@@ -1142,7 +1190,7 @@
         "Text": {
           "type": "cexolocstring",
           "value": {
-            "0": "<CUSTOM104> by <CUSTOM114>",
+            "0": "<CUSTOM104> <CUSTOM114>",
             "4": "<CUSTOM104> von <CUSTOM109>",
             "5": "<CUSTOM104> von <CUSTOM109>"
           }
@@ -1213,7 +1261,7 @@
         "Text": {
           "type": "cexolocstring",
           "value": {
-            "0": "<CUSTOM103> by <CUSTOM113>",
+            "0": "<CUSTOM103> <CUSTOM113>",
             "4": "<CUSTOM103> von <CUSTOM108>",
             "5": "<CUSTOM103> von <CUSTOM108>"
           }
@@ -1284,7 +1332,7 @@
         "Text": {
           "type": "cexolocstring",
           "value": {
-            "0": "<CUSTOM102> by <CUSTOM112>",
+            "0": "<CUSTOM102> <CUSTOM112>",
             "4": "<CUSTOM102> von <CUSTOM107>",
             "5": "<CUSTOM102> von <CUSTOM107>"
           }
@@ -1355,7 +1403,7 @@
         "Text": {
           "type": "cexolocstring",
           "value": {
-            "0": "<CUSTOM101> by <CUSTOM111>",
+            "0": "<CUSTOM101> <CUSTOM111>",
             "4": "<CUSTOM101> von <CUSTOM106>",
             "5": "<CUSTOM101> von <CUSTOM106>"
           }
