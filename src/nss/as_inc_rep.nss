@@ -35,13 +35,13 @@ int asRPGetReputation(object oPlayer, string sFaction){
 
 void asRPSetReputation(object oPlayer, string sFaction, int nNewReputation){
     json jReputations = _asRPGetReputationJson(oPlayer);
-    JsonObjectSetInplace(jReputations, sFaction, JsonInt(nNewReputation));
+    jReputations = JsonObjectSet(jReputations, sFaction, JsonInt(nNewReputation));
     _asRPSetReputationJson(oPlayer, jReputations);
 }
 
 void asRPDeleteReputation(object oPlayer, string sFaction){
     json jReputations = _asRPGetReputationJson(oPlayer);
-    JsonObjectDelInplace(jReputations, sFaction);
+    jReputations = JsonObjectDel(jReputations, sFaction);
     _asRPSetReputationJson(oPlayer, jReputations);
 }
 
@@ -52,7 +52,8 @@ void asRPAdjustReputation(object oPlayer, string sFaction, int nChange){
     if(JsonGetType(jOldReputationJsonInt) != JSON_TYPE_NULL){
         nOldReputation = JsonGetInt(jOldReputationJsonInt);
     }
-    JsonObjectSetInplace(jReputations, sFaction, JsonInt(nOldReputation + nChange));
+    jReputations = JsonObjectSet(jReputations, sFaction, JsonInt(nOldReputation + nChange));
+    //SendMessageToPC(oPlayer, "Faction: " + sFaction + " nChange: " + IntToString(nChange));
     _asRPSetReputationJson(oPlayer, jReputations);
 }
 
@@ -73,6 +74,9 @@ int asRPGetPreviousReputation(json jReputationsList, int nNth)
 }
 
 json _asRPGetReputationJson(object oPlayer){
+    if(!GetIsPC(oPlayer)){
+        return JsonObject();
+    }
     string sDatabase = AS_RP_REPUTATION_DATABASE;
     sqlquery sqlCreateReputationTable = SqlPrepareQueryCampaign(sDatabase, "CREATE TABLE IF NOT EXISTS reputations (player_id TEXT PRIMARY KEY, json TEXT);");
     SqlStep(sqlCreateReputationTable);
@@ -88,6 +92,10 @@ json _asRPGetReputationJson(object oPlayer){
     }
     else
     {
+        sqlquery sqlMakePlayerReputationJson = SqlPrepareQueryCampaign(sDatabase, "INSERT INTO reputations (player_id, json) VALUES (@player_id, @json);");
+        SqlBindString(sqlMakePlayerReputationJson, "@player_id", gsPCGetPlayerID(oPlayer));
+        SqlBindJson(sqlMakePlayerReputationJson, "@json", JsonObject());
+        SqlStep(sqlMakePlayerReputationJson);
         return JsonObject();
     }
 }
@@ -100,5 +108,6 @@ void _asRPSetReputationJson(object oPlayer, json jNewJson){
     sqlquery sqlUpdateReputationJson = SqlPrepareQueryCampaign(sDatabase, "UPDATE reputations SET json = @json WHERE player_id = @id");
     SqlBindString(sqlUpdateReputationJson, "@id", gsPCGetPlayerID(oPlayer));
     SqlBindJson(sqlUpdateReputationJson, "@json", jNewJson);
+    //SendMessageToPC(oPlayer, JsonDump(jNewJson));
     SqlStep(sqlUpdateReputationJson);
 }

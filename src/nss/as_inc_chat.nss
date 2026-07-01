@@ -58,7 +58,9 @@ void gsCTProcessCommand(object oSpeaker, int nCommand, string sParams){
                 SetLocalInt(oSpeaker, "AS_TARGET_MODE_ID", TARGETING_MODE_REPUTATION_GIVE);
                 int nChange = StringToInt(sParams);
                 SetLocalInt(oSpeaker, "AS_REPUTATION_CHANGE", nChange);
+                EnterTargetingMode(oSpeaker, OBJECT_TYPE_CREATURE);
             }
+        break;
         case CHAT_COMMAND_LANGUAGE:
             SendMessageToPC(
                 oSpeaker,

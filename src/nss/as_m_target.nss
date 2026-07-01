@@ -29,10 +29,22 @@ void main()
             }
         break;
         case TARGETING_MODE_REPUTATION_GIVE:
+            //Testing mode:
+            /*if(GetIsDM(oPlayer) && GetIsObjectValid(oTarget)){
+                int nChange = GetLocalInt(oPlayer, "AS_REPUTATION_CHANGE");
+                string sFaction = GetName(oTarget);
+                asRPAdjustReputation(oPlayer, sFaction, nChange);
+                DeleteLocalInt(oPlayer, "AS_REPUTATION_CHANGE");
+            }*/
             if(GetIsDMPossessed(oPlayer) && GetIsObjectValid(oTarget) && GetIsPC(oTarget)){
                 int nChange = GetLocalInt(oPlayer, "AS_REPUTATION_CHANGE");
                 string sFaction = GetName(oPlayer);
-                asRPAdjustReputation(oTarget, sFaction, nChange);
+                object oTargetPlayer = oTarget;
+                while(GetIsObjectValid(GetMaster(oTarget)))
+                {
+                    oTargetPlayer = GetMaster(oTarget);
+                }
+                asRPAdjustReputation(oTargetPlayer, sFaction, nChange);
                 DeleteLocalInt(oPlayer, "AS_REPUTATION_CHANGE");
             }
         break;
