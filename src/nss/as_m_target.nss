@@ -1,4 +1,5 @@
 #include "as_inc_target"
+#include "as_inc_rep"
 #include "as_inc_fxnui"
 
 void main()
@@ -22,9 +23,17 @@ void main()
             }
         break;
         case TARGETING_MODE_REPUTATION_VIEW:
-            if(GetIsObjectValid(oTarget) && GetIsPC(oTarget)){
+            if((GetIsDM(oPlayer) || GetIsDMPossessed(oPlayer)) && GetIsObjectValid(oTarget) && GetIsPC(oTarget)){
                 SetLocalObject(oPlayer, "AS_REP_TARGET", oTarget);
                 AssignCommand(oPlayer, ActionStartConversation(oPlayer, "as_crep_view", TRUE, FALSE));
+            }
+        break;
+        case TARGETING_MODE_REPUTATION_GIVE:
+            if(GetIsDMPossessed(oPlayer) && GetIsObjectValid(oTarget) && GetIsPC(oTarget)){
+                int nChange = GetLocalInt(oPlayer, "AS_REPUTATION_CHANGE");
+                string sFaction = GetName(oPlayer);
+                asRPAdjustReputation(oTarget, sFaction, nChange);
+                DeleteLocalInt(oPlayer, "AS_REPUTATION_CHANGE");
             }
         break;
         default:
