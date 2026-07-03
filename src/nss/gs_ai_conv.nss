@@ -13,6 +13,15 @@ void main()
     switch (GetListenPatternNumber())
     {
     case -1:
+        //DMFI
+        if (GetIsPC(oSpeaker) &&(GetLocalInt(GetModule(), "dmfi_AllMute") || GetLocalInt(OBJECT_SELF, "dmfi_Mute")))
+        {
+            SendMessageToAllDMs(GetName(oSpeaker) + " is trying to speak to a muted NPC, " + GetName(OBJECT_SELF) + ", in area " + GetName(GetArea(OBJECT_SELF)));
+            SendMessageToPC(oSpeaker, "This NPC is muted. A DM will be here shortly.");
+            return;
+        }
+        //DMFI END
+
         if (! gsCBGetHasAttackTarget() &&
             gsCBGetIsPerceived(oSpeaker))
         {

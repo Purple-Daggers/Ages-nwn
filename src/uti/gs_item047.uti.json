@@ -18,7 +18,7 @@
   },
   "Cost": {
     "type": "dword",
-    "value": 4203
+    "value": 3423
   },
   "Cursed": {
     "type": "byte",
@@ -43,20 +43,20 @@
   "LocalizedName": {
     "type": "cexolocstring",
     "value": {
-      "0": "Mage Staff"
+      "0": "Apprentice Staff"
     }
   },
   "ModelPart1": {
     "type": "byte",
-    "value": 32
+    "value": 241
   },
   "ModelPart2": {
     "type": "byte",
-    "value": 22
+    "value": 241
   },
   "ModelPart3": {
     "type": "byte",
-    "value": 52
+    "value": 15
   },
   "PaletteID": {
     "type": "byte",
@@ -129,37 +129,6 @@
         "Subtype": {
           "type": "word",
           "value": 10
-        }
-      },
-      {
-        "__struct_id": 0,
-        "ChanceAppear": {
-          "type": "byte",
-          "value": 100
-        },
-        "CostTable": {
-          "type": "byte",
-          "value": 18
-        },
-        "CostValue": {
-          "type": "word",
-          "value": 1
-        },
-        "Param1": {
-          "type": "byte",
-          "value": 9
-        },
-        "Param1Value": {
-          "type": "byte",
-          "value": 5
-        },
-        "PropertyName": {
-          "type": "word",
-          "value": 44
-        },
-        "Subtype": {
-          "type": "word",
-          "value": 0
         }
       },
       {
@@ -275,14 +244,14 @@
   },
   "xModelPart1": {
     "type": "word",
-    "value": 32
+    "value": 241
   },
   "xModelPart2": {
     "type": "word",
-    "value": 22
+    "value": 241
   },
   "xModelPart3": {
     "type": "word",
-    "value": 52
+    "value": 15
   }
 }

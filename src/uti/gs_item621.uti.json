@@ -18,7 +18,7 @@
   },
   "Cost": {
     "type": "dword",
-    "value": 1930
+    "value": 30
   },
   "Cursed": {
     "type": "byte",
@@ -26,29 +26,33 @@
   },
   "DescIdentified": {
     "type": "cexolocstring",
-    "value": {}
+    "value": {
+      "0": "This straight-bladed sword features a double-edged blade forged from common iron ore. It possesses a simple crossguard and a rounded pommel designed to act as a counterweight. The iron is darker and grainier than steel, requiring frequent whetting to maintain its edge and regular oiling to ward off the orange tint of rust. While it may not slice through silk mid-air, it is a sturdy, dependable weapon capable of delivering crushing blows and deep thrusts. The grip is traditionally wrapped in rough cowhide or boiled leather to ensure a firm hold during the chaos of a muddy skirmish.\n"
+    }
   },
   "Description": {
     "type": "cexolocstring",
-    "value": {}
+    "value": {
+      "0": "This straight-bladed sword features a double-edged blade forged from common iron ore. It possesses a simple crossguard and a rounded pommel designed to act as a counterweight. The iron is darker and grainier than steel, requiring frequent whetting to maintain its edge and regular oiling to ward off the orange tint of rust. While it may not slice through silk mid-air, it is a sturdy, dependable weapon capable of delivering crushing blows and deep thrusts. The grip is traditionally wrapped in rough cowhide or boiled leather to ensure a firm hold during the chaos of a muddy skirmish.\n"
+    }
   },
   "Identified": {
     "type": "byte",
-    "value": 0
+    "value": 1
   },
   "LocalizedName": {
     "type": "cexolocstring",
     "value": {
-      "0": "Longsword (Iron)"
+      "0": "Iron Longsword"
     }
   },
   "ModelPart1": {
     "type": "byte",
-    "value": 61
+    "value": 11
   },
   "ModelPart2": {
     "type": "byte",
-    "value": 51
+    "value": 11
   },
   "ModelPart3": {
     "type": "byte",
@@ -64,70 +68,7 @@
   },
   "PropertiesList": {
     "type": "list",
-    "value": [
-      {
-        "__struct_id": 0,
-        "ChanceAppear": {
-          "type": "byte",
-          "value": 100
-        },
-        "CostTable": {
-          "type": "byte",
-          "value": 2
-        },
-        "CostValue": {
-          "type": "word",
-          "value": 1
-        },
-        "Param1": {
-          "type": "byte",
-          "value": 255
-        },
-        "Param1Value": {
-          "type": "byte",
-          "value": 0
-        },
-        "PropertyName": {
-          "type": "word",
-          "value": 56
-        },
-        "Subtype": {
-          "type": "word",
-          "value": 0
-        }
-      },
-      {
-        "__struct_id": 0,
-        "ChanceAppear": {
-          "type": "byte",
-          "value": 100
-        },
-        "CostTable": {
-          "type": "byte",
-          "value": 4
-        },
-        "CostValue": {
-          "type": "word",
-          "value": 1
-        },
-        "Param1": {
-          "type": "byte",
-          "value": 255
-        },
-        "Param1Value": {
-          "type": "byte",
-          "value": 0
-        },
-        "PropertyName": {
-          "type": "word",
-          "value": 16
-        },
-        "Subtype": {
-          "type": "word",
-          "value": 2
-        }
-      }
-    ]
+    "value": []
   },
   "StackSize": {
     "type": "word",
@@ -139,7 +80,7 @@
   },
   "Tag": {
     "type": "cexostring",
-    "value": "GS_ITEM"
+    "value": "Iron_Longsword"
   },
   "TemplateResRef": {
     "type": "resref",
@@ -147,11 +88,11 @@
   },
   "xModelPart1": {
     "type": "word",
-    "value": 61
+    "value": 11
   },
   "xModelPart2": {
     "type": "word",
-    "value": 51
+    "value": 11
   },
   "xModelPart3": {
     "type": "word",

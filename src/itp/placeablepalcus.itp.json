@@ -239,11 +239,88 @@
                     "__struct_id": 0,
                     "NAME": {
                       "type": "cexostring",
-                      "value": "Building1"
+                      "value": "Building01"
                     },
                     "RESREF": {
                       "type": "resref",
                       "value": "blueprint049"
+                    }
+                  },
+                  {
+                    "__struct_id": 0,
+                    "NAME": {
+                      "type": "cexostring",
+                      "value": "Building02"
+                    },
+                    "RESREF": {
+                      "type": "resref",
+                      "value": "blueprint053"
+                    }
+                  },
+                  {
+                    "__struct_id": 0,
+                    "NAME": {
+                      "type": "cexostring",
+                      "value": "Building03"
+                    },
+                    "RESREF": {
+                      "type": "resref",
+                      "value": "blueprint054"
+                    }
+                  },
+                  {
+                    "__struct_id": 0,
+                    "NAME": {
+                      "type": "cexostring",
+                      "value": "Building05"
+                    },
+                    "RESREF": {
+                      "type": "resref",
+                      "value": "blueprint055"
+                    }
+                  },
+                  {
+                    "__struct_id": 0,
+                    "NAME": {
+                      "type": "cexostring",
+                      "value": "Building06"
+                    },
+                    "RESREF": {
+                      "type": "resref",
+                      "value": "blueprint056"
+                    }
+                  },
+                  {
+                    "__struct_id": 0,
+                    "NAME": {
+                      "type": "cexostring",
+                      "value": "Building07"
+                    },
+                    "RESREF": {
+                      "type": "resref",
+                      "value": "blueprint057"
+                    }
+                  },
+                  {
+                    "__struct_id": 0,
+                    "NAME": {
+                      "type": "cexostring",
+                      "value": "Building08"
+                    },
+                    "RESREF": {
+                      "type": "resref",
+                      "value": "blueprint058"
+                    }
+                  },
+                  {
+                    "__struct_id": 0,
+                    "NAME": {
+                      "type": "cexostring",
+                      "value": "Building09"
+                    },
+                    "RESREF": {
+                      "type": "resref",
+                      "value": "blueprint059"
                     }
                   },
                   {
@@ -332,83 +409,6 @@
                     "RESREF": {
                       "type": "resref",
                       "value": "building17"
-                    }
-                  },
-                  {
-                    "__struct_id": 0,
-                    "NAME": {
-                      "type": "cexostring",
-                      "value": "Building2"
-                    },
-                    "RESREF": {
-                      "type": "resref",
-                      "value": "blueprint053"
-                    }
-                  },
-                  {
-                    "__struct_id": 0,
-                    "NAME": {
-                      "type": "cexostring",
-                      "value": "Building3"
-                    },
-                    "RESREF": {
-                      "type": "resref",
-                      "value": "blueprint054"
-                    }
-                  },
-                  {
-                    "__struct_id": 0,
-                    "NAME": {
-                      "type": "cexostring",
-                      "value": "Building5"
-                    },
-                    "RESREF": {
-                      "type": "resref",
-                      "value": "blueprint055"
-                    }
-                  },
-                  {
-                    "__struct_id": 0,
-                    "NAME": {
-                      "type": "cexostring",
-                      "value": "Building6"
-                    },
-                    "RESREF": {
-                      "type": "resref",
-                      "value": "blueprint056"
-                    }
-                  },
-                  {
-                    "__struct_id": 0,
-                    "NAME": {
-                      "type": "cexostring",
-                      "value": "Building7"
-                    },
-                    "RESREF": {
-                      "type": "resref",
-                      "value": "blueprint057"
-                    }
-                  },
-                  {
-                    "__struct_id": 0,
-                    "NAME": {
-                      "type": "cexostring",
-                      "value": "Building8"
-                    },
-                    "RESREF": {
-                      "type": "resref",
-                      "value": "blueprint058"
-                    }
-                  },
-                  {
-                    "__struct_id": 0,
-                    "NAME": {
-                      "type": "cexostring",
-                      "value": "Building9"
-                    },
-                    "RESREF": {
-                      "type": "resref",
-                      "value": "blueprint059"
                     }
                   },
                   {
@@ -668,6 +668,17 @@
                     "__struct_id": 0,
                     "NAME": {
                       "type": "cexostring",
+                      "value": "Door06"
+                    },
+                    "RESREF": {
+                      "type": "resref",
+                      "value": "furniture010"
+                    }
+                  },
+                  {
+                    "__struct_id": 0,
+                    "NAME": {
+                      "type": "cexostring",
                       "value": "Farm1"
                     },
                     "RESREF": {
@@ -712,18 +723,7 @@
                     "__struct_id": 0,
                     "NAME": {
                       "type": "cexostring",
-                      "value": "Fence0"
-                    },
-                    "RESREF": {
-                      "type": "resref",
-                      "value": "blueprint093"
-                    }
-                  },
-                  {
-                    "__struct_id": 0,
-                    "NAME": {
-                      "type": "cexostring",
-                      "value": "Fence1"
+                      "value": "Fence_Stone01"
                     },
                     "RESREF": {
                       "type": "resref",
@@ -734,7 +734,7 @@
                     "__struct_id": 0,
                     "NAME": {
                       "type": "cexostring",
-                      "value": "Fence2"
+                      "value": "Fence_Stone02"
                     },
                     "RESREF": {
                       "type": "resref",
@@ -745,7 +745,7 @@
                     "__struct_id": 0,
                     "NAME": {
                       "type": "cexostring",
-                      "value": "Fence3"
+                      "value": "Fence_Stone03"
                     },
                     "RESREF": {
                       "type": "resref",
@@ -756,7 +756,7 @@
                     "__struct_id": 0,
                     "NAME": {
                       "type": "cexostring",
-                      "value": "Fence4"
+                      "value": "Fence_Stone04"
                     },
                     "RESREF": {
                       "type": "resref",
@@ -767,7 +767,7 @@
                     "__struct_id": 0,
                     "NAME": {
                       "type": "cexostring",
-                      "value": "Fence5"
+                      "value": "Fence_Stone05"
                     },
                     "RESREF": {
                       "type": "resref",
@@ -778,7 +778,7 @@
                     "__struct_id": 0,
                     "NAME": {
                       "type": "cexostring",
-                      "value": "Fence6"
+                      "value": "Fence_Stone06"
                     },
                     "RESREF": {
                       "type": "resref",
@@ -789,7 +789,7 @@
                     "__struct_id": 0,
                     "NAME": {
                       "type": "cexostring",
-                      "value": "Fence7"
+                      "value": "Fence_Stone07"
                     },
                     "RESREF": {
                       "type": "resref",
@@ -800,7 +800,7 @@
                     "__struct_id": 0,
                     "NAME": {
                       "type": "cexostring",
-                      "value": "Fence8"
+                      "value": "Fence_Stone08"
                     },
                     "RESREF": {
                       "type": "resref",
@@ -811,11 +811,99 @@
                     "__struct_id": 0,
                     "NAME": {
                       "type": "cexostring",
-                      "value": "Fence9"
+                      "value": "Fence_Stone09"
                     },
                     "RESREF": {
                       "type": "resref",
                       "value": "blueprint092"
+                    }
+                  },
+                  {
+                    "__struct_id": 0,
+                    "NAME": {
+                      "type": "cexostring",
+                      "value": "Fence_Stone10"
+                    },
+                    "RESREF": {
+                      "type": "resref",
+                      "value": "blueprint093"
+                    }
+                  },
+                  {
+                    "__struct_id": 0,
+                    "NAME": {
+                      "type": "cexostring",
+                      "value": "Fence_Wood01"
+                    },
+                    "RESREF": {
+                      "type": "resref",
+                      "value": "woodfence1"
+                    }
+                  },
+                  {
+                    "__struct_id": 0,
+                    "NAME": {
+                      "type": "cexostring",
+                      "value": "Fence_Wood02"
+                    },
+                    "RESREF": {
+                      "type": "resref",
+                      "value": "woodfence2"
+                    }
+                  },
+                  {
+                    "__struct_id": 0,
+                    "NAME": {
+                      "type": "cexostring",
+                      "value": "Fence_Wood03"
+                    },
+                    "RESREF": {
+                      "type": "resref",
+                      "value": "woodfence3"
+                    }
+                  },
+                  {
+                    "__struct_id": 0,
+                    "NAME": {
+                      "type": "cexostring",
+                      "value": "Fence_Wood04"
+                    },
+                    "RESREF": {
+                      "type": "resref",
+                      "value": "woodfence004"
+                    }
+                  },
+                  {
+                    "__struct_id": 0,
+                    "NAME": {
+                      "type": "cexostring",
+                      "value": "Fence_Wood05"
+                    },
+                    "RESREF": {
+                      "type": "resref",
+                      "value": "woodfence005"
+                    }
+                  },
+                  {
+                    "__struct_id": 0,
+                    "NAME": {
+                      "type": "cexostring",
+                      "value": "Fence_Wood06"
+                    },
+                    "RESREF": {
+                      "type": "resref",
+                      "value": "woodfence006"
+                    }
+                  },
+                  {
+                    "__struct_id": 0,
+                    "NAME": {
+                      "type": "cexostring",
+                      "value": "Fence_Wood07"
+                    },
+                    "RESREF": {
+                      "type": "resref",
+                      "value": "woodfence007"
                     }
                   },
                   {
@@ -1608,6 +1696,17 @@
                     "RESREF": {
                       "type": "resref",
                       "value": "blueprint061"
+                    }
+                  },
+                  {
+                    "__struct_id": 0,
+                    "NAME": {
+                      "type": "cexostring",
+                      "value": "Ladder01"
+                    },
+                    "RESREF": {
+                      "type": "resref",
+                      "value": "ladder01"
                     }
                   },
                   {
@@ -2428,7 +2527,7 @@
                     "__struct_id": 0,
                     "NAME": {
                       "type": "cexostring",
-                      "value": "Tool1"
+                      "value": "Tool01"
                     },
                     "RESREF": {
                       "type": "resref",
@@ -2439,7 +2538,7 @@
                     "__struct_id": 0,
                     "NAME": {
                       "type": "cexostring",
-                      "value": "Tool2"
+                      "value": "Tool02"
                     },
                     "RESREF": {
                       "type": "resref",
@@ -2450,11 +2549,22 @@
                     "__struct_id": 0,
                     "NAME": {
                       "type": "cexostring",
-                      "value": "Tool3"
+                      "value": "Tool03"
                     },
                     "RESREF": {
                       "type": "resref",
                       "value": "blueprint182"
+                    }
+                  },
+                  {
+                    "__struct_id": 0,
+                    "NAME": {
+                      "type": "cexostring",
+                      "value": "Tool04"
+                    },
+                    "RESREF": {
+                      "type": "resref",
+                      "value": "blueprint190"
                     }
                   },
                   {
@@ -2604,6 +2714,17 @@
                     "__struct_id": 0,
                     "NAME": {
                       "type": "cexostring",
+                      "value": "Vent01"
+                    },
+                    "RESREF": {
+                      "type": "resref",
+                      "value": "vent01"
+                    }
+                  },
+                  {
+                    "__struct_id": 0,
+                    "NAME": {
+                      "type": "cexostring",
                       "value": "Wagon1"
                     },
                     "RESREF": {
@@ -2686,39 +2807,6 @@
                     "RESREF": {
                       "type": "resref",
                       "value": "blueprint137"
-                    }
-                  },
-                  {
-                    "__struct_id": 0,
-                    "NAME": {
-                      "type": "cexostring",
-                      "value": "Wood Fence 1"
-                    },
-                    "RESREF": {
-                      "type": "resref",
-                      "value": "woodfence1"
-                    }
-                  },
-                  {
-                    "__struct_id": 0,
-                    "NAME": {
-                      "type": "cexostring",
-                      "value": "Wood Fence 2"
-                    },
-                    "RESREF": {
-                      "type": "resref",
-                      "value": "woodfence2"
-                    }
-                  },
-                  {
-                    "__struct_id": 0,
-                    "NAME": {
-                      "type": "cexostring",
-                      "value": "Wood Fence 3"
-                    },
-                    "RESREF": {
-                      "type": "resref",
-                      "value": "woodfence3"
                     }
                   }
                 ]

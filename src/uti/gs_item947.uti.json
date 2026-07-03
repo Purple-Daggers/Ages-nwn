@@ -18,7 +18,7 @@
   },
   "Cost": {
     "type": "dword",
-    "value": 34890
+    "value": 25950
   },
   "Cursed": {
     "type": "byte",
@@ -39,20 +39,20 @@
   "LocalizedName": {
     "type": "cexolocstring",
     "value": {
-      "0": "Masterly Longsword (Greensteel)"
+      "0": "Highsteel Longsword"
     }
   },
   "ModelPart1": {
     "type": "byte",
-    "value": 54
+    "value": 253
   },
   "ModelPart2": {
     "type": "byte",
-    "value": 44
+    "value": 251
   },
   "ModelPart3": {
     "type": "byte",
-    "value": 54
+    "value": 251
   },
   "PaletteID": {
     "type": "byte",
@@ -77,7 +77,7 @@
         },
         "CostValue": {
           "type": "word",
-          "value": 2
+          "value": 3
         },
         "Param1": {
           "type": "byte",
@@ -139,7 +139,7 @@
         },
         "CostValue": {
           "type": "word",
-          "value": 4
+          "value": 3
         },
         "Param1": {
           "type": "byte",
@@ -156,37 +156,6 @@
         "Subtype": {
           "type": "word",
           "value": 2
-        }
-      },
-      {
-        "__struct_id": 0,
-        "ChanceAppear": {
-          "type": "byte",
-          "value": 100
-        },
-        "CostTable": {
-          "type": "byte",
-          "value": 18
-        },
-        "CostValue": {
-          "type": "word",
-          "value": 1
-        },
-        "Param1": {
-          "type": "byte",
-          "value": 9
-        },
-        "Param1Value": {
-          "type": "byte",
-          "value": 4
-        },
-        "PropertyName": {
-          "type": "word",
-          "value": 44
-        },
-        "Subtype": {
-          "type": "word",
-          "value": 0
         }
       },
       {
@@ -232,7 +201,7 @@
   },
   "Tag": {
     "type": "cexostring",
-    "value": "GS_ITEM"
+    "value": "HS_Longsword"
   },
   "TemplateResRef": {
     "type": "resref",
@@ -240,14 +209,14 @@
   },
   "xModelPart1": {
     "type": "word",
-    "value": 54
+    "value": 253
   },
   "xModelPart2": {
     "type": "word",
-    "value": 44
+    "value": 251
   },
   "xModelPart3": {
     "type": "word",
-    "value": 54
+    "value": 251
   }
 }

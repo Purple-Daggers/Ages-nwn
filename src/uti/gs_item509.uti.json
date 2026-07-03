@@ -18,7 +18,7 @@
   },
   "Cost": {
     "type": "dword",
-    "value": 20492
+    "value": 12
   },
   "Cursed": {
     "type": "byte",
@@ -34,25 +34,25 @@
   },
   "Identified": {
     "type": "byte",
-    "value": 0
+    "value": 1
   },
   "LocalizedName": {
     "type": "cexolocstring",
     "value": {
-      "0": "Handaxe (Damask)"
+      "0": "Iron Handaxe"
     }
   },
   "ModelPart1": {
     "type": "byte",
-    "value": 44
+    "value": 11
   },
   "ModelPart2": {
     "type": "byte",
-    "value": 14
+    "value": 71
   },
   "ModelPart3": {
     "type": "byte",
-    "value": 34
+    "value": 11
   },
   "PaletteID": {
     "type": "byte",
@@ -64,70 +64,7 @@
   },
   "PropertiesList": {
     "type": "list",
-    "value": [
-      {
-        "__struct_id": 0,
-        "ChanceAppear": {
-          "type": "byte",
-          "value": 100
-        },
-        "CostTable": {
-          "type": "byte",
-          "value": 2
-        },
-        "CostValue": {
-          "type": "word",
-          "value": 3
-        },
-        "Param1": {
-          "type": "byte",
-          "value": 255
-        },
-        "Param1Value": {
-          "type": "byte",
-          "value": 0
-        },
-        "PropertyName": {
-          "type": "word",
-          "value": 56
-        },
-        "Subtype": {
-          "type": "word",
-          "value": 0
-        }
-      },
-      {
-        "__struct_id": 0,
-        "ChanceAppear": {
-          "type": "byte",
-          "value": 100
-        },
-        "CostTable": {
-          "type": "byte",
-          "value": 4
-        },
-        "CostValue": {
-          "type": "word",
-          "value": 3
-        },
-        "Param1": {
-          "type": "byte",
-          "value": 255
-        },
-        "Param1Value": {
-          "type": "byte",
-          "value": 0
-        },
-        "PropertyName": {
-          "type": "word",
-          "value": 16
-        },
-        "Subtype": {
-          "type": "word",
-          "value": 2
-        }
-      }
-    ]
+    "value": []
   },
   "StackSize": {
     "type": "word",
@@ -147,14 +84,14 @@
   },
   "xModelPart1": {
     "type": "word",
-    "value": 44
+    "value": 11
   },
   "xModelPart2": {
     "type": "word",
-    "value": 14
+    "value": 71
   },
   "xModelPart3": {
     "type": "word",
-    "value": 34
+    "value": 11
   }
 }

@@ -14,7 +14,7 @@ void main()
     }
     else
     {
-        if(sConv == "voice" || sConv == "pc_emote")
+        if(sConv == "voice" || sConv == "pc_emote" || sConv == "faction")
         {
             SetLocalInt(oPC, "dmfi_univ_int", 10);
             ExecuteScript("dmfi_execute", oPC);

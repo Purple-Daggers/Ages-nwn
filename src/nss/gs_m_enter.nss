@@ -2,6 +2,7 @@
 #include "gs_inc_effect"
 #include "gs_inc_finance"
 #include "gs_inc_text"
+#include "dmfi_init_inc"
 
 void main()
 {
@@ -68,4 +69,7 @@ void main()
 
     //activity
     SetLocalInt(oEntering, "GS_ACTIVE", TRUE);
+
+    //DMFI
+    dmfiInitialize(oEntering);
 }

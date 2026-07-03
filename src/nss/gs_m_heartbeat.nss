@@ -80,6 +80,7 @@ void main()
     int nCurrentHour    = GetTimeHour();
     int nTimestamp      = gsTIGetActualTimestamp();
     int nRestartTimeout = GetLocalInt(OBJECT_SELF, "GS_RESTART_TIMEOUT");
+    int nTickTimeout = GetLocalInt(OBJECT_SELF, "GS_TICK_TIMEOUT");
     int nNth            = 0;
 
     //reboot
@@ -100,8 +101,12 @@ void main()
     }
 
     //per hour
-    if (nPreviousHour != nCurrentHour)
+    //if (nPreviousHour != nCurrentHour)
+
+    //TIME UPDATE: 20 minutes (every 6.6 minutes real time)
+    if (nTimestamp >= nTickTimeout)
     {
+        SetLocalInt(OBJECT_SELF, "GS_TICK_TIMEOUT", nTimestamp + 1200); //TIME UPDATE: 20 minutes (every 6.6 minutes real time)
         string sDeity = "";
 
         //process deity power

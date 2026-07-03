@@ -2,11 +2,11 @@
   "__data_type": "UTI ",
   "AddCost": {
     "type": "dword",
-    "value": 0
+    "value": 2
   },
   "BaseItem": {
     "type": "int",
-    "value": 27
+    "value": 20
   },
   "Charges": {
     "type": "byte",
@@ -18,7 +18,7 @@
   },
   "Cost": {
     "type": "dword",
-    "value": 0
+    "value": 198
   },
   "Cursed": {
     "type": "byte",
@@ -30,25 +30,35 @@
   },
   "Description": {
     "type": "cexolocstring",
-    "value": {}
+    "value": {
+      "0": ""
+    }
   },
   "Identified": {
     "type": "byte",
-    "value": 1
+    "value": 0
   },
   "LocalizedName": {
     "type": "cexolocstring",
     "value": {
-      "0": "Bullet (Bronze)"
+      "0": "Silver Arrow"
     }
   },
   "ModelPart1": {
     "type": "byte",
+    "value": 14
+  },
+  "ModelPart2": {
+    "type": "byte",
     "value": 13
+  },
+  "ModelPart3": {
+    "type": "byte",
+    "value": 31
   },
   "PaletteID": {
     "type": "byte",
-    "value": 29
+    "value": 27
   },
   "Plot": {
     "type": "byte",
@@ -56,7 +66,70 @@
   },
   "PropertiesList": {
     "type": "list",
-    "value": []
+    "value": [
+      {
+        "__struct_id": 0,
+        "ChanceAppear": {
+          "type": "byte",
+          "value": 100
+        },
+        "CostTable": {
+          "type": "byte",
+          "value": 4
+        },
+        "CostValue": {
+          "type": "word",
+          "value": 1
+        },
+        "Param1": {
+          "type": "byte",
+          "value": 0
+        },
+        "Param1Value": {
+          "type": "byte",
+          "value": 0
+        },
+        "PropertyName": {
+          "type": "word",
+          "value": 18
+        },
+        "Subtype": {
+          "type": "word",
+          "value": 24
+        }
+      },
+      {
+        "__struct_id": 0,
+        "ChanceAppear": {
+          "type": "byte",
+          "value": 100
+        },
+        "CostTable": {
+          "type": "byte",
+          "value": 28
+        },
+        "CostValue": {
+          "type": "word",
+          "value": 13
+        },
+        "Param1": {
+          "type": "byte",
+          "value": 255
+        },
+        "Param1Value": {
+          "type": "byte",
+          "value": 0
+        },
+        "PropertyName": {
+          "type": "word",
+          "value": 85
+        },
+        "Subtype": {
+          "type": "word",
+          "value": 0
+        }
+      }
+    ]
   },
   "StackSize": {
     "type": "word",
@@ -68,7 +141,7 @@
   },
   "Tag": {
     "type": "cexostring",
-    "value": "GS_ITEM"
+    "value": "Silver_Arrow"
   },
   "TemplateResRef": {
     "type": "resref",
@@ -76,6 +149,14 @@
   },
   "xModelPart1": {
     "type": "word",
+    "value": 14
+  },
+  "xModelPart2": {
+    "type": "word",
     "value": 13
+  },
+  "xModelPart3": {
+    "type": "word",
+    "value": 31
   }
 }

@@ -18,7 +18,7 @@
   },
   "Cost": {
     "type": "dword",
-    "value": 3920
+    "value": 2
   },
   "Cursed": {
     "type": "byte",
@@ -41,20 +41,20 @@
   "LocalizedName": {
     "type": "cexolocstring",
     "value": {
-      "0": "Masterly Barbed Slayer (Bronze)"
+      "0": "Club"
     }
   },
   "ModelPart1": {
     "type": "byte",
-    "value": 13
+    "value": 11
   },
   "ModelPart2": {
     "type": "byte",
-    "value": 43
+    "value": 61
   },
   "ModelPart3": {
     "type": "byte",
-    "value": 23
+    "value": 16
   },
   "PaletteID": {
     "type": "byte",
@@ -75,7 +75,7 @@
         },
         "CostTable": {
           "type": "byte",
-          "value": 2
+          "value": 20
         },
         "CostValue": {
           "type": "word",
@@ -91,42 +91,11 @@
         },
         "PropertyName": {
           "type": "word",
-          "value": 6
+          "value": 10
         },
         "Subtype": {
           "type": "word",
           "value": 0
-        }
-      },
-      {
-        "__struct_id": 0,
-        "ChanceAppear": {
-          "type": "byte",
-          "value": 100
-        },
-        "CostTable": {
-          "type": "byte",
-          "value": 0
-        },
-        "CostValue": {
-          "type": "word",
-          "value": 0
-        },
-        "Param1": {
-          "type": "byte",
-          "value": 255
-        },
-        "Param1Value": {
-          "type": "byte",
-          "value": 0
-        },
-        "PropertyName": {
-          "type": "word",
-          "value": 33
-        },
-        "Subtype": {
-          "type": "word",
-          "value": 1
         }
       }
     ]
@@ -149,14 +118,14 @@
   },
   "xModelPart1": {
     "type": "word",
-    "value": 13
+    "value": 11
   },
   "xModelPart2": {
     "type": "word",
-    "value": 43
+    "value": 61
   },
   "xModelPart3": {
     "type": "word",
-    "value": 23
+    "value": 16
   }
 }
