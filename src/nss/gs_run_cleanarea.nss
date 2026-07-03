@@ -4,7 +4,7 @@
 #include "gs_inc_encounter"
 #include "gs_inc_flag"
 
-const int GS_TIMEOUT = 3600; //1 hour
+const int GS_TIMEOUT = 1200; //TIME UPDATE: 20 minutes
 
 void main()
 {

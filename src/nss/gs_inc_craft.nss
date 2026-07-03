@@ -347,7 +347,7 @@ int gsCRGetCraftPoints(object oPC)
 
     if (nTimeout < nTimestamp)
     {
-        nTimeout = nTimestamp + 86400; //24 hours
+        nTimeout = nTimestamp + 28800; //TIME UPDATE: 8 hours
         nValue   = _gsCRGetSkillPoints(oPC);
 
         gsCRSetCraftTimeout(oPC, nTimeout);

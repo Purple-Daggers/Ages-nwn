@@ -1,7 +1,7 @@
 #include "gs_inc_common"
 #include "gs_inc_time"
 
-const int GS_TIMEOUT            = 21600; //6 hours
+const int GS_TIMEOUT            = 7200; //TIME UPDATE: 2 hours
 const int GS_LIMIT_GOLD         =  2000;
 const int GS_LIMIT_VALUE_LOW    =  2500;
 const int GS_LIMIT_VALUE_MEDIUM =  7500;

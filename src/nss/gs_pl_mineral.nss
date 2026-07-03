@@ -71,7 +71,7 @@ void main()
     if (nTotalDamage > GetMaxHitPoints() && !GetLocalInt(OBJECT_SELF, "destroyed"))
     {
       SetLocalInt(OBJECT_SELF, "destroyed", 1);
-      int GS_TIMEOUT = 7200; //2 hours
+      int GS_TIMEOUT = 2400; //TIME UPDATE: 40 minutes
       gsCMCreateRecreator(gsTIGetActualTimestamp() + GS_TIMEOUT);
       DestroyObject(OBJECT_SELF);
     }

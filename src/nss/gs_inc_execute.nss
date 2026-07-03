@@ -21,7 +21,7 @@ void gsEXExecuteRound();
 void gsEXRegisterHour(object oObject, string sScript);
 //unregister functions of oObject from execution per game hour
 void gsEXUnregisterHour(object oObject = OBJECT_INVALID);
-//execute registered functions once per game hour
+//execute registered functions once per game hour. PER GAME TICK actually edit heartbeat to return to original behavior
 void gsEXExecuteHour();
 //internally used
 void gsEXRegister(object oObject, string sScript, string sCountName, string sObjectName, string sScriptName);
@@ -56,7 +56,7 @@ void gsEXUnregisterHour(object oObject = OBJECT_INVALID)
 }
 //----------------------------------------------------------------
 void gsEXExecuteHour()
-{
+{   //This actually runs per game tick, which is every 20 minutes in-game right now
     gsEXExecute(GS_EX_HOUR_COUNT, GS_EX_HOUR_OBJECT, GS_EX_HOUR_SCRIPT);
 }
 //----------------------------------------------------------------

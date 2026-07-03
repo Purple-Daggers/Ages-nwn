@@ -31,6 +31,7 @@ void main()
     }
 
     //disallowed properties
+    /*
     while (GetIsItemPropertyValid(ipProperty))
     {
         if (GetItemPropertyDurationType(ipProperty) == DURATION_TYPE_PERMANENT)
@@ -44,60 +45,60 @@ void main()
             {
             case ITEM_PROPERTY_DAMAGE_BONUS:
                 if (nSubType == IP_CONST_DAMAGETYPE_MAGICAL)
-                    RemoveItemProperty(oEquipped, ipProperty);
+                    //RemoveItemProperty(oEquipped, ipProperty);
                 break;
 
             case ITEM_PROPERTY_DAMAGE_RESISTANCE:
                 if (nSubType == IP_CONST_DAMAGETYPE_MAGICAL)
                 {
-                    RemoveItemProperty(oEquipped, ipProperty);
+                    //RemoveItemProperty(oEquipped, ipProperty);
                 }
                 else if (nSubType == IP_CONST_DAMAGETYPE_BLUDGEONING ||
                          nSubType == IP_CONST_DAMAGETYPE_PIERCING ||
                          nSubType == IP_CONST_DAMAGETYPE_SLASHING)
                 {
-                    RemoveItemProperty(oEquipped, ipProperty);
-                    ipProperty = ItemPropertyDamageImmunity(nSubType, IP_CONST_DAMAGEIMMUNITY_5_PERCENT);
-                    gsIPAddItemProperty(oEquipped, ipProperty);
+                    //RemoveItemProperty(oEquipped, ipProperty);
+                    //ipProperty = ItemPropertyDamageImmunity(nSubType, IP_CONST_DAMAGEIMMUNITY_5_PERCENT);
+                    //gsIPAddItemProperty(oEquipped, ipProperty);
                 }
                 else if (nCost != IP_CONST_DAMAGERESIST_5)
                 {
-                    RemoveItemProperty(oEquipped, ipProperty);
-                    ipProperty = ItemPropertyDamageResistance(nSubType, IP_CONST_DAMAGERESIST_5);
-                    gsIPAddItemProperty(oEquipped, ipProperty);
+                    //RemoveItemProperty(oEquipped, ipProperty);
+                    //ipProperty = ItemPropertyDamageResistance(nSubType, IP_CONST_DAMAGERESIST_5);
+                    //gsIPAddItemProperty(oEquipped, ipProperty);
                 }
                 break;
 
             case ITEM_PROPERTY_IMMUNITY_DAMAGE_TYPE:
                 if (nSubType == IP_CONST_DAMAGETYPE_MAGICAL)
-                    RemoveItemProperty(oEquipped, ipProperty);
+                    //RemoveItemProperty(oEquipped, ipProperty);
                 break;
 
             case ITEM_PROPERTY_DAMAGE_BONUS_VS_ALIGNMENT_GROUP:
                 if (nParam == IP_CONST_DAMAGETYPE_MAGICAL)
-                    RemoveItemProperty(oEquipped, ipProperty);
+                    //RemoveItemProperty(oEquipped, ipProperty);
                 break;
 
             case ITEM_PROPERTY_DAMAGE_BONUS_VS_RACIAL_GROUP:
                 if (nParam == IP_CONST_DAMAGETYPE_MAGICAL)
-                    RemoveItemProperty(oEquipped, ipProperty);
+                    //RemoveItemProperty(oEquipped, ipProperty);
                 break;
 
             case ITEM_PROPERTY_DAMAGE_BONUS_VS_SPECIFIC_ALIGNMENT:
                 if (nParam == IP_CONST_DAMAGETYPE_MAGICAL)
-                    RemoveItemProperty(oEquipped, ipProperty);
+                    //RemoveItemProperty(oEquipped, ipProperty);
                 break;
 
             case ITEM_PROPERTY_DAMAGE_REDUCTION:
-                RemoveItemProperty(oEquipped, ipProperty);
+                //RemoveItemProperty(oEquipped, ipProperty);
                 break;
 
             case ITEM_PROPERTY_SKILL_BONUS:
                 if (nCost > 5)
                 {
-                    RemoveItemProperty(oEquipped, ipProperty);
-                    ipProperty = ItemPropertySkillBonus(nSubType, 5);
-                    gsIPAddItemProperty(oEquipped, ipProperty);
+                    //RemoveItemProperty(oEquipped, ipProperty);
+                    //ipProperty = ItemPropertySkillBonus(nSubType, 5);
+                    //gsIPAddItemProperty(oEquipped, ipProperty);
                 }
                 break;
             }
@@ -105,6 +106,7 @@ void main()
 
         ipProperty = GetNextItemProperty(oEquipped);
     }
+    */
 
     if (! GetIsDM(oEquippedBy))
     {
@@ -148,6 +150,7 @@ void main()
         }
 
         //movement penalty
+        /*
         int nAC      = gsCMGetItemBaseAC(oEquipped);
         int nPenalty = 0;
 
@@ -174,5 +177,6 @@ void main()
                     GS_T_16777419,
                     IntToString(nPenalty)));
         }
+        */
     }
 }
