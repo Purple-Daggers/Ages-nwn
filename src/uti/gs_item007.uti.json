@@ -2,7 +2,7 @@
   "__data_type": "UTI ",
   "AddCost": {
     "type": "dword",
-    "value": 0
+    "value": 20
   },
   "BaseItem": {
     "type": "int",
@@ -18,7 +18,7 @@
   },
   "Cost": {
     "type": "dword",
-    "value": 2
+    "value": 22
   },
   "Cursed": {
     "type": "byte",
@@ -34,12 +34,12 @@
   },
   "Identified": {
     "type": "byte",
-    "value": 1
+    "value": 0
   },
   "LocalizedName": {
     "type": "cexolocstring",
     "value": {
-      "0": "Quarterstaff"
+      "0": "Ash Quarterstaff"
     }
   },
   "ModelPart1": {
@@ -52,7 +52,7 @@
   },
   "ModelPart3": {
     "type": "byte",
-    "value": 13
+    "value": 233
   },
   "PaletteID": {
     "type": "byte",
@@ -64,7 +64,39 @@
   },
   "PropertiesList": {
     "type": "list",
-    "value": []
+    "value": [
+      {
+        "__struct_id": 0,
+        "ChanceAppear": {
+          "type": "byte",
+          "value": 100
+        },
+        "CostTable": {
+          "type": "byte",
+          "value": 28
+        },
+        "CostValue": {
+          "type": "word",
+          "value": 41
+        },
+        "Param1": {
+          "type": "byte",
+          "value": 255
+        },
+        "Param1Value": {
+          "type": "byte",
+          "value": 0
+        },
+        "PropertyName": {
+          "type": "word",
+          "value": 85
+        },
+        "Subtype": {
+          "type": "word",
+          "value": 0
+        }
+      }
+    ]
   },
   "StackSize": {
     "type": "word",
@@ -92,6 +124,6 @@
   },
   "xModelPart3": {
     "type": "word",
-    "value": 13
+    "value": 233
   }
 }

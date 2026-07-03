@@ -18,7 +18,7 @@
   },
   "Cost": {
     "type": "dword",
-    "value": 1688
+    "value": 106
   },
   "Cursed": {
     "type": "byte",
@@ -39,20 +39,20 @@
   "LocalizedName": {
     "type": "cexolocstring",
     "value": {
-      "0": "Masterly Bastard Sword (Bronze)"
+      "0": "Sivler Bastard Sword"
     }
   },
   "ModelPart1": {
     "type": "byte",
-    "value": 43
+    "value": 111
   },
   "ModelPart2": {
     "type": "byte",
-    "value": 43
+    "value": 251
   },
   "ModelPart3": {
     "type": "byte",
-    "value": 13
+    "value": 221
   },
   "PaletteID": {
     "type": "byte",
@@ -89,7 +89,38 @@
         },
         "PropertyName": {
           "type": "word",
-          "value": 6
+          "value": 58
+        },
+        "Subtype": {
+          "type": "word",
+          "value": 24
+        }
+      },
+      {
+        "__struct_id": 0,
+        "ChanceAppear": {
+          "type": "byte",
+          "value": 100
+        },
+        "CostTable": {
+          "type": "byte",
+          "value": 28
+        },
+        "CostValue": {
+          "type": "word",
+          "value": 13
+        },
+        "Param1": {
+          "type": "byte",
+          "value": 255
+        },
+        "Param1Value": {
+          "type": "byte",
+          "value": 0
+        },
+        "PropertyName": {
+          "type": "word",
+          "value": 85
         },
         "Subtype": {
           "type": "word",
@@ -116,14 +147,14 @@
   },
   "xModelPart1": {
     "type": "word",
-    "value": 43
+    "value": 111
   },
   "xModelPart2": {
     "type": "word",
-    "value": 43
+    "value": 251
   },
   "xModelPart3": {
     "type": "word",
-    "value": 13
+    "value": 221
   }
 }

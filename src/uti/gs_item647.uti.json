@@ -18,7 +18,7 @@
   },
   "Cost": {
     "type": "dword",
-    "value": 20482
+    "value": 2
   },
   "Cursed": {
     "type": "byte",
@@ -39,20 +39,20 @@
   "LocalizedName": {
     "type": "cexolocstring",
     "value": {
-      "0": "Spear (Damask)"
+      "0": "Iron Spear"
     }
   },
   "ModelPart1": {
     "type": "byte",
-    "value": 44
+    "value": 21
   },
   "ModelPart2": {
     "type": "byte",
-    "value": 24
+    "value": 11
   },
   "ModelPart3": {
     "type": "byte",
-    "value": 24
+    "value": 81
   },
   "PaletteID": {
     "type": "byte",
@@ -73,11 +73,11 @@
         },
         "CostTable": {
           "type": "byte",
-          "value": 2
+          "value": 28
         },
         "CostValue": {
           "type": "word",
-          "value": 3
+          "value": 9
         },
         "Param1": {
           "type": "byte",
@@ -89,42 +89,11 @@
         },
         "PropertyName": {
           "type": "word",
-          "value": 56
+          "value": 85
         },
         "Subtype": {
           "type": "word",
           "value": 0
-        }
-      },
-      {
-        "__struct_id": 0,
-        "ChanceAppear": {
-          "type": "byte",
-          "value": 100
-        },
-        "CostTable": {
-          "type": "byte",
-          "value": 4
-        },
-        "CostValue": {
-          "type": "word",
-          "value": 3
-        },
-        "Param1": {
-          "type": "byte",
-          "value": 255
-        },
-        "Param1Value": {
-          "type": "byte",
-          "value": 0
-        },
-        "PropertyName": {
-          "type": "word",
-          "value": 16
-        },
-        "Subtype": {
-          "type": "word",
-          "value": 1
         }
       }
     ]
@@ -147,14 +116,14 @@
   },
   "xModelPart1": {
     "type": "word",
-    "value": 44
+    "value": 21
   },
   "xModelPart2": {
     "type": "word",
-    "value": 24
+    "value": 11
   },
   "xModelPart3": {
     "type": "word",
-    "value": 24
+    "value": 81
   }
 }
