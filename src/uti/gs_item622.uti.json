@@ -18,7 +18,7 @@
   },
   "Cost": {
     "type": "dword",
-    "value": 6690
+    "value": 3216
   },
   "Cursed": {
     "type": "byte",
@@ -39,20 +39,20 @@
   "LocalizedName": {
     "type": "cexolocstring",
     "value": {
-      "0": "Longsword (Steel)"
+      "0": "Steel Longsword"
     }
   },
   "ModelPart1": {
     "type": "byte",
-    "value": 51
+    "value": 111
   },
   "ModelPart2": {
     "type": "byte",
-    "value": 41
+    "value": 121
   },
   "ModelPart3": {
     "type": "byte",
-    "value": 51
+    "value": 171
   },
   "PaletteID": {
     "type": "byte",
@@ -77,7 +77,7 @@
         },
         "CostValue": {
           "type": "word",
-          "value": 2
+          "value": 1
         },
         "Param1": {
           "type": "byte",
@@ -104,11 +104,42 @@
         },
         "CostTable": {
           "type": "byte",
+          "value": 10
+        },
+        "CostValue": {
+          "type": "word",
+          "value": 1
+        },
+        "Param1": {
+          "type": "byte",
+          "value": 255
+        },
+        "Param1Value": {
+          "type": "byte",
+          "value": 0
+        },
+        "PropertyName": {
+          "type": "word",
+          "value": 11
+        },
+        "Subtype": {
+          "type": "word",
+          "value": 0
+        }
+      },
+      {
+        "__struct_id": 0,
+        "ChanceAppear": {
+          "type": "byte",
+          "value": 100
+        },
+        "CostTable": {
+          "type": "byte",
           "value": 4
         },
         "CostValue": {
           "type": "word",
-          "value": 2
+          "value": 1
         },
         "Param1": {
           "type": "byte",
@@ -126,6 +157,37 @@
           "type": "word",
           "value": 2
         }
+      },
+      {
+        "__struct_id": 0,
+        "ChanceAppear": {
+          "type": "byte",
+          "value": 100
+        },
+        "CostTable": {
+          "type": "byte",
+          "value": 4
+        },
+        "CostValue": {
+          "type": "word",
+          "value": 6
+        },
+        "Param1": {
+          "type": "byte",
+          "value": 255
+        },
+        "Param1Value": {
+          "type": "byte",
+          "value": 0
+        },
+        "PropertyName": {
+          "type": "word",
+          "value": 74
+        },
+        "Subtype": {
+          "type": "word",
+          "value": 0
+        }
       }
     ]
   },
@@ -139,7 +201,7 @@
   },
   "Tag": {
     "type": "cexostring",
-    "value": "GS_ITEM"
+    "value": "Steel_Longsword"
   },
   "TemplateResRef": {
     "type": "resref",
@@ -147,14 +209,14 @@
   },
   "xModelPart1": {
     "type": "word",
-    "value": 51
+    "value": 111
   },
   "xModelPart2": {
     "type": "word",
-    "value": 41
+    "value": 121
   },
   "xModelPart3": {
     "type": "word",
-    "value": 51
+    "value": 171
   }
 }

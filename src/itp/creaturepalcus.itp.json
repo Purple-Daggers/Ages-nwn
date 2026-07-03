@@ -1433,6 +1433,68 @@
                       "type": "byte",
                       "value": 6
                     },
+                    "LIST": {
+                      "type": "list",
+                      "value": [
+                        {
+                          "__struct_id": 0,
+                          "CR": {
+                            "type": "float",
+                            "value": 0.25
+                          },
+                          "FACTION": {
+                            "type": "cexostring",
+                            "value": "Commoner"
+                          },
+                          "NAME": {
+                            "type": "cexostring",
+                            "value": "Chicken01"
+                          },
+                          "RESREF": {
+                            "type": "resref",
+                            "value": "chicken01"
+                          }
+                        },
+                        {
+                          "__struct_id": 0,
+                          "CR": {
+                            "type": "float",
+                            "value": 0.25
+                          },
+                          "FACTION": {
+                            "type": "cexostring",
+                            "value": "Commoner"
+                          },
+                          "NAME": {
+                            "type": "cexostring",
+                            "value": "Chicken02"
+                          },
+                          "RESREF": {
+                            "type": "resref",
+                            "value": "chicken002"
+                          }
+                        },
+                        {
+                          "__struct_id": 0,
+                          "CR": {
+                            "type": "float",
+                            "value": 0.25
+                          },
+                          "FACTION": {
+                            "type": "cexostring",
+                            "value": "Commoner"
+                          },
+                          "NAME": {
+                            "type": "cexostring",
+                            "value": "Chicken03"
+                          },
+                          "RESREF": {
+                            "type": "resref",
+                            "value": "chicken003"
+                          }
+                        }
+                      ]
+                    },
                     "STRREF": {
                       "type": "dword",
                       "value": 6696
@@ -4397,49 +4459,6 @@
         "ID": {
           "type": "byte",
           "value": 46
-        },
-        "LIST": {
-          "type": "list",
-          "value": [
-            {
-              "__struct_id": 0,
-              "CR": {
-                "type": "float",
-                "value": 9.0
-              },
-              "FACTION": {
-                "type": "cexostring",
-                "value": "Neutral"
-              },
-              "NAME": {
-                "type": "cexostring",
-                "value": "Settings Adjuster"
-              },
-              "RESREF": {
-                "type": "resref",
-                "value": "dmfi_setting"
-              }
-            },
-            {
-              "__struct_id": 0,
-              "CR": {
-                "type": "float",
-                "value": 2.0
-              },
-              "FACTION": {
-                "type": "cexostring",
-                "value": "Neutral"
-              },
-              "NAME": {
-                "type": "cexostring",
-                "value": "The Voice"
-              },
-              "RESREF": {
-                "type": "resref",
-                "value": "dmfi_voice"
-              }
-            }
-          ]
         },
         "STRREF": {
           "type": "dword",

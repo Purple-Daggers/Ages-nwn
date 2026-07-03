@@ -39,20 +39,20 @@
   "LocalizedName": {
     "type": "cexolocstring",
     "value": {
-      "0": "Bastard Sword (Iron)"
+      "0": "Steel Bastard Sword"
     }
   },
   "ModelPart1": {
     "type": "byte",
-    "value": 11
+    "value": 111
   },
   "ModelPart2": {
     "type": "byte",
-    "value": 21
+    "value": 251
   },
   "ModelPart3": {
     "type": "byte",
-    "value": 21
+    "value": 251
   },
   "PaletteID": {
     "type": "byte",
@@ -126,6 +126,37 @@
           "type": "word",
           "value": 2
         }
+      },
+      {
+        "__struct_id": 0,
+        "ChanceAppear": {
+          "type": "byte",
+          "value": 100
+        },
+        "CostTable": {
+          "type": "byte",
+          "value": 28
+        },
+        "CostValue": {
+          "type": "word",
+          "value": 15
+        },
+        "Param1": {
+          "type": "byte",
+          "value": 255
+        },
+        "Param1Value": {
+          "type": "byte",
+          "value": 0
+        },
+        "PropertyName": {
+          "type": "word",
+          "value": 85
+        },
+        "Subtype": {
+          "type": "word",
+          "value": 0
+        }
       }
     ]
   },
@@ -147,14 +178,14 @@
   },
   "xModelPart1": {
     "type": "word",
-    "value": 11
+    "value": 111
   },
   "xModelPart2": {
     "type": "word",
-    "value": 21
+    "value": 251
   },
   "xModelPart3": {
     "type": "word",
-    "value": 21
+    "value": 251
   }
 }

@@ -18,7 +18,7 @@
   },
   "Cost": {
     "type": "dword",
-    "value": 1920
+    "value": 20
   },
   "Cursed": {
     "type": "byte",
@@ -34,25 +34,25 @@
   },
   "Identified": {
     "type": "byte",
-    "value": 0
+    "value": 1
   },
   "LocalizedName": {
     "type": "cexolocstring",
     "value": {
-      "0": "Battleaxe (Iron)"
+      "0": "Iron Battleaxe"
     }
   },
   "ModelPart1": {
     "type": "byte",
-    "value": 41
+    "value": 18
   },
   "ModelPart2": {
     "type": "byte",
-    "value": 11
+    "value": 18
   },
   "ModelPart3": {
     "type": "byte",
-    "value": 61
+    "value": 18
   },
   "PaletteID": {
     "type": "byte",
@@ -64,70 +64,7 @@
   },
   "PropertiesList": {
     "type": "list",
-    "value": [
-      {
-        "__struct_id": 0,
-        "ChanceAppear": {
-          "type": "byte",
-          "value": 100
-        },
-        "CostTable": {
-          "type": "byte",
-          "value": 2
-        },
-        "CostValue": {
-          "type": "word",
-          "value": 1
-        },
-        "Param1": {
-          "type": "byte",
-          "value": 255
-        },
-        "Param1Value": {
-          "type": "byte",
-          "value": 0
-        },
-        "PropertyName": {
-          "type": "word",
-          "value": 56
-        },
-        "Subtype": {
-          "type": "word",
-          "value": 0
-        }
-      },
-      {
-        "__struct_id": 0,
-        "ChanceAppear": {
-          "type": "byte",
-          "value": 100
-        },
-        "CostTable": {
-          "type": "byte",
-          "value": 4
-        },
-        "CostValue": {
-          "type": "word",
-          "value": 1
-        },
-        "Param1": {
-          "type": "byte",
-          "value": 255
-        },
-        "Param1Value": {
-          "type": "byte",
-          "value": 0
-        },
-        "PropertyName": {
-          "type": "word",
-          "value": 16
-        },
-        "Subtype": {
-          "type": "word",
-          "value": 2
-        }
-      }
-    ]
+    "value": []
   },
   "StackSize": {
     "type": "word",
@@ -147,14 +84,14 @@
   },
   "xModelPart1": {
     "type": "word",
-    "value": 41
+    "value": 18
   },
   "xModelPart2": {
     "type": "word",
-    "value": 11
+    "value": 18
   },
   "xModelPart3": {
     "type": "word",
-    "value": 61
+    "value": 18
   }
 }

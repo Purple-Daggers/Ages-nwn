@@ -786,6 +786,17 @@
                     "__struct_id": 0,
                     "NAME": {
                       "type": "cexostring",
+                      "value": "Smith's Apron"
+                    },
+                    "RESREF": {
+                      "type": "resref",
+                      "value": "smithapron"
+                    }
+                  },
+                  {
+                    "__struct_id": 0,
+                    "NAME": {
+                      "type": "cexostring",
                       "value": "Travler's Clothes"
                     },
                     "RESREF": {
@@ -2850,39 +2861,6 @@
                     "__struct_id": 0,
                     "NAME": {
                       "type": "cexostring",
-                      "value": ""
-                    },
-                    "RESREF": {
-                      "type": "resref",
-                      "value": "gs_item106"
-                    }
-                  },
-                  {
-                    "__struct_id": 0,
-                    "NAME": {
-                      "type": "cexostring",
-                      "value": ""
-                    },
-                    "RESREF": {
-                      "type": "resref",
-                      "value": "gs_item215"
-                    }
-                  },
-                  {
-                    "__struct_id": 0,
-                    "NAME": {
-                      "type": "cexostring",
-                      "value": ""
-                    },
-                    "RESREF": {
-                      "type": "resref",
-                      "value": "gs_item347"
-                    }
-                  },
-                  {
-                    "__struct_id": 0,
-                    "NAME": {
-                      "type": "cexostring",
                       "value": "Astral Deva"
                     },
                     "RESREF": {
@@ -3015,11 +2993,44 @@
                     "__struct_id": 0,
                     "NAME": {
                       "type": "cexostring",
+                      "value": "Imp"
+                    },
+                    "RESREF": {
+                      "type": "resref",
+                      "value": "gs_item215"
+                    }
+                  },
+                  {
+                    "__struct_id": 0,
+                    "NAME": {
+                      "type": "cexostring",
+                      "value": "Kyton (Baatezu)"
+                    },
+                    "RESREF": {
+                      "type": "resref",
+                      "value": "gs_item106"
+                    }
+                  },
+                  {
+                    "__struct_id": 0,
+                    "NAME": {
+                      "type": "cexostring",
                       "value": "Lemure (Baatezu)"
                     },
                     "RESREF": {
                       "type": "resref",
                       "value": "gs_item361"
+                    }
+                  },
+                  {
+                    "__struct_id": 0,
+                    "NAME": {
+                      "type": "cexostring",
+                      "value": "Osyluth (Baatezu)"
+                    },
+                    "RESREF": {
+                      "type": "resref",
+                      "value": "gs_item347"
                     }
                   },
                   {
@@ -8481,363 +8492,6 @@
                 "type": "byte",
                 "value": 4
               },
-              "LIST": {
-                "type": "list",
-                "value": [
-                  {
-                    "__struct_id": 0,
-                    "NAME": {
-                      "type": "cexostring",
-                      "value": "Abyssal"
-                    },
-                    "RESREF": {
-                      "type": "resref",
-                      "value": "hlslang_11"
-                    }
-                  },
-                  {
-                    "__struct_id": 0,
-                    "NAME": {
-                      "type": "cexostring",
-                      "value": "Animal"
-                    },
-                    "RESREF": {
-                      "type": "resref",
-                      "value": "hlslang_8"
-                    }
-                  },
-                  {
-                    "__struct_id": 0,
-                    "NAME": {
-                      "type": "cexostring",
-                      "value": "Book of Player Voice Commands"
-                    },
-                    "RESREF": {
-                      "type": "resref",
-                      "value": "dmfi_playerbook"
-                    }
-                  },
-                  {
-                    "__struct_id": 0,
-                    "NAME": {
-                      "type": "cexostring",
-                      "value": "Celestial"
-                    },
-                    "RESREF": {
-                      "type": "resref",
-                      "value": "hlslang_10"
-                    }
-                  },
-                  {
-                    "__struct_id": 0,
-                    "NAME": {
-                      "type": "cexostring",
-                      "value": "Custom Language 1"
-                    },
-                    "RESREF": {
-                      "type": "resref",
-                      "value": "hlslang_101"
-                    }
-                  },
-                  {
-                    "__struct_id": 0,
-                    "NAME": {
-                      "type": "cexostring",
-                      "value": "Custom Language 2"
-                    },
-                    "RESREF": {
-                      "type": "resref",
-                      "value": "hlslang_102"
-                    }
-                  },
-                  {
-                    "__struct_id": 0,
-                    "NAME": {
-                      "type": "cexostring",
-                      "value": "Custom Language 3"
-                    },
-                    "RESREF": {
-                      "type": "resref",
-                      "value": "hlslang_103"
-                    }
-                  },
-                  {
-                    "__struct_id": 0,
-                    "NAME": {
-                      "type": "cexostring",
-                      "value": "Custom Language 4"
-                    },
-                    "RESREF": {
-                      "type": "resref",
-                      "value": "hlslang_104"
-                    }
-                  },
-                  {
-                    "__struct_id": 0,
-                    "NAME": {
-                      "type": "cexostring",
-                      "value": "Custom Language 5"
-                    },
-                    "RESREF": {
-                      "type": "resref",
-                      "value": "hlslang_105"
-                    }
-                  },
-                  {
-                    "__struct_id": 0,
-                    "NAME": {
-                      "type": "cexostring",
-                      "value": "Custom Language 6"
-                    },
-                    "RESREF": {
-                      "type": "resref",
-                      "value": "hlslang_106"
-                    }
-                  },
-                  {
-                    "__struct_id": 0,
-                    "NAME": {
-                      "type": "cexostring",
-                      "value": "Custom Language 7"
-                    },
-                    "RESREF": {
-                      "type": "resref",
-                      "value": "hlslang_107"
-                    }
-                  },
-                  {
-                    "__struct_id": 0,
-                    "NAME": {
-                      "type": "cexostring",
-                      "value": "Custom Language 8"
-                    },
-                    "RESREF": {
-                      "type": "resref",
-                      "value": "hlslang_108"
-                    }
-                  },
-                  {
-                    "__struct_id": 0,
-                    "NAME": {
-                      "type": "cexostring",
-                      "value": "Custom Language 9"
-                    },
-                    "RESREF": {
-                      "type": "resref",
-                      "value": "hlslang_109"
-                    }
-                  },
-                  {
-                    "__struct_id": 0,
-                    "NAME": {
-                      "type": "cexostring",
-                      "value": "DMFI Bed Roll"
-                    },
-                    "RESREF": {
-                      "type": "resref",
-                      "value": "dmfi_pc_rest002"
-                    }
-                  },
-                  {
-                    "__struct_id": 0,
-                    "NAME": {
-                      "type": "cexostring",
-                      "value": "DMFI Firewood"
-                    },
-                    "RESREF": {
-                      "type": "resref",
-                      "value": "dmfi_pc_rest001"
-                    }
-                  },
-                  {
-                    "__struct_id": 0,
-                    "NAME": {
-                      "type": "cexostring",
-                      "value": "DMFI Portable Tent"
-                    },
-                    "RESREF": {
-                      "type": "resref",
-                      "value": "dmfi_pc_rest003"
-                    }
-                  },
-                  {
-                    "__struct_id": 0,
-                    "NAME": {
-                      "type": "cexostring",
-                      "value": "Draconic"
-                    },
-                    "RESREF": {
-                      "type": "resref",
-                      "value": "hlslang_7"
-                    }
-                  },
-                  {
-                    "__struct_id": 0,
-                    "NAME": {
-                      "type": "cexostring",
-                      "value": "Drow"
-                    },
-                    "RESREF": {
-                      "type": "resref",
-                      "value": "hlslang_13"
-                    }
-                  },
-                  {
-                    "__struct_id": 0,
-                    "NAME": {
-                      "type": "cexostring",
-                      "value": "Dwarven"
-                    },
-                    "RESREF": {
-                      "type": "resref",
-                      "value": "hlslang_4"
-                    }
-                  },
-                  {
-                    "__struct_id": 0,
-                    "NAME": {
-                      "type": "cexostring",
-                      "value": "Elven"
-                    },
-                    "RESREF": {
-                      "type": "resref",
-                      "value": "hlslang_1"
-                    }
-                  },
-                  {
-                    "__struct_id": 0,
-                    "NAME": {
-                      "type": "cexostring",
-                      "value": "Gnome"
-                    },
-                    "RESREF": {
-                      "type": "resref",
-                      "value": "hlslang_2"
-                    }
-                  },
-                  {
-                    "__struct_id": 0,
-                    "NAME": {
-                      "type": "cexostring",
-                      "value": "Goblin"
-                    },
-                    "RESREF": {
-                      "type": "resref",
-                      "value": "hlslang_6"
-                    }
-                  },
-                  {
-                    "__struct_id": 0,
-                    "NAME": {
-                      "type": "cexostring",
-                      "value": "Halfling"
-                    },
-                    "RESREF": {
-                      "type": "resref",
-                      "value": "hlslang_3"
-                    }
-                  },
-                  {
-                    "__struct_id": 0,
-                    "NAME": {
-                      "type": "cexostring",
-                      "value": "Infernal"
-                    },
-                    "RESREF": {
-                      "type": "resref",
-                      "value": "hlslang_12"
-                    }
-                  },
-                  {
-                    "__struct_id": 0,
-                    "NAME": {
-                      "type": "cexostring",
-                      "value": "Mulhorandi"
-                    },
-                    "RESREF": {
-                      "type": "resref",
-                      "value": "hlslang_016"
-                    }
-                  },
-                  {
-                    "__struct_id": 0,
-                    "NAME": {
-                      "type": "cexostring",
-                      "value": "Orc"
-                    },
-                    "RESREF": {
-                      "type": "resref",
-                      "value": "hlslang_5"
-                    }
-                  },
-                  {
-                    "__struct_id": 0,
-                    "NAME": {
-                      "type": "cexostring",
-                      "value": "PC Autofollow Widget"
-                    },
-                    "RESREF": {
-                      "type": "resref",
-                      "value": "dmfi_pc_follow"
-                    }
-                  },
-                  {
-                    "__struct_id": 0,
-                    "NAME": {
-                      "type": "cexostring",
-                      "value": "PC Dicebag"
-                    },
-                    "RESREF": {
-                      "type": "resref",
-                      "value": "dmfi_pc_dicebag"
-                    }
-                  },
-                  {
-                    "__struct_id": 0,
-                    "NAME": {
-                      "type": "cexostring",
-                      "value": "PC Emote Wand"
-                    },
-                    "RESREF": {
-                      "type": "resref",
-                      "value": "dmfi_pc_emote"
-                    }
-                  },
-                  {
-                    "__struct_id": 0,
-                    "NAME": {
-                      "type": "cexostring",
-                      "value": "Rashemi"
-                    },
-                    "RESREF": {
-                      "type": "resref",
-                      "value": "hlslang_015"
-                    }
-                  },
-                  {
-                    "__struct_id": 0,
-                    "NAME": {
-                      "type": "cexostring",
-                      "value": "Sylvan"
-                    },
-                    "RESREF": {
-                      "type": "resref",
-                      "value": "hlslang_014"
-                    }
-                  },
-                  {
-                    "__struct_id": 0,
-                    "NAME": {
-                      "type": "cexostring",
-                      "value": "Thieves' Cant"
-                    },
-                    "RESREF": {
-                      "type": "resref",
-                      "value": "hlslang_9"
-                    }
-                  }
-                ]
-              },
               "STRREF": {
                 "type": "dword",
                 "value": 6692
@@ -8859,17 +8513,6 @@
         "LIST": {
           "type": "list",
           "value": [
-            {
-              "__struct_id": 0,
-              "NAME": {
-                "type": "cexostring",
-                "value": "Book of DM Voice Commands"
-              },
-              "RESREF": {
-                "type": "resref",
-                "value": "dmfi_dmbook"
-              }
-            },
             {
               "__struct_id": 0,
               "NAME": {
@@ -8957,270 +8600,6 @@
                 "type": "resref",
                 "value": "gs_item018"
               }
-            },
-            {
-              "__struct_id": 0,
-              "NAME": {
-                "type": "cexostring",
-                "value": "DMFI Admin Server Wand"
-              },
-              "RESREF": {
-                "type": "resref",
-                "value": "dmfi_server"
-              }
-            },
-            {
-              "__struct_id": 0,
-              "NAME": {
-                "type": "cexostring",
-                "value": "DMFI Affliction Wand"
-              },
-              "RESREF": {
-                "type": "resref",
-                "value": "dmfi_afflict"
-              }
-            },
-            {
-              "__struct_id": 0,
-              "NAME": {
-                "type": "cexostring",
-                "value": "DMFI Buff Wand"
-              },
-              "RESREF": {
-                "type": "resref",
-                "value": "dmfi_buff"
-              }
-            },
-            {
-              "__struct_id": 0,
-              "NAME": {
-                "type": "cexostring",
-                "value": "DMFI Destroy Object Widget"
-              },
-              "RESREF": {
-                "type": "resref",
-                "value": "dmfi_remove"
-              }
-            },
-            {
-              "__struct_id": 0,
-              "NAME": {
-                "type": "cexostring",
-                "value": "DMFI Dicebag"
-              },
-              "RESREF": {
-                "type": "resref",
-                "value": "dmfi_dicebag"
-              }
-            },
-            {
-              "__struct_id": 0,
-              "NAME": {
-                "type": "cexostring",
-                "value": "DMFI DM Wand"
-              },
-              "RESREF": {
-                "type": "resref",
-                "value": "dmfi_dmw"
-              }
-            },
-            {
-              "__struct_id": 0,
-              "NAME": {
-                "type": "cexostring",
-                "value": "DMFI Emote Wand"
-              },
-              "RESREF": {
-                "type": "resref",
-                "value": "dmfi_emote"
-              }
-            },
-            {
-              "__struct_id": 0,
-              "NAME": {
-                "type": "cexostring",
-                "value": "DMFI Encounter Ditto Widget"
-              },
-              "RESREF": {
-                "type": "resref",
-                "value": "dmfi_en_ditto"
-              }
-            },
-            {
-              "__struct_id": 0,
-              "NAME": {
-                "type": "cexostring",
-                "value": "DMFI Encounter Wand"
-              },
-              "RESREF": {
-                "type": "resref",
-                "value": "dmfi_encounte"
-              }
-            },
-            {
-              "__struct_id": 0,
-              "NAME": {
-                "type": "cexostring",
-                "value": "DMFI Exploder Widget"
-              },
-              "RESREF": {
-                "type": "resref",
-                "value": "dmfi_exploder"
-              }
-            },
-            {
-              "__struct_id": 0,
-              "NAME": {
-                "type": "cexostring",
-                "value": "DMFI FX Wand"
-              },
-              "RESREF": {
-                "type": "resref",
-                "value": "dmfi_fx"
-              }
-            },
-            {
-              "__struct_id": 0,
-              "NAME": {
-                "type": "cexostring",
-                "value": "DMFI Jail Widget"
-              },
-              "RESREF": {
-                "type": "resref",
-                "value": "dmfi_jail_widget"
-              }
-            },
-            {
-              "__struct_id": 0,
-              "NAME": {
-                "type": "cexostring",
-                "value": "DMFI Music Wand"
-              },
-              "RESREF": {
-                "type": "resref",
-                "value": "dmfi_music"
-              }
-            },
-            {
-              "__struct_id": 0,
-              "NAME": {
-                "type": "cexostring",
-                "value": "DMFI Mute All NPCs Widget"
-              },
-              "RESREF": {
-                "type": "resref",
-                "value": "dmfi_mute"
-              }
-            },
-            {
-              "__struct_id": 0,
-              "NAME": {
-                "type": "cexostring",
-                "value": "DMFI Naming Wand"
-              },
-              "RESREF": {
-                "type": "resref",
-                "value": "dmfi_naming"
-              }
-            },
-            {
-              "__struct_id": 0,
-              "NAME": {
-                "type": "cexostring",
-                "value": "DMFI NPC Control Wand"
-              },
-              "RESREF": {
-                "type": "resref",
-                "value": "dmfi_faction"
-              }
-            },
-            {
-              "__struct_id": 0,
-              "NAME": {
-                "type": "cexostring",
-                "value": "DMFI Party 500 XP"
-              },
-              "RESREF": {
-                "type": "resref",
-                "value": "dmfi_500xp"
-              }
-            },
-            {
-              "__struct_id": 0,
-              "NAME": {
-                "type": "cexostring",
-                "value": "DMFI Sound Wand"
-              },
-              "RESREF": {
-                "type": "resref",
-                "value": "dmfi_sound"
-              }
-            },
-            {
-              "__struct_id": 0,
-              "NAME": {
-                "type": "cexostring",
-                "value": "DMFI Stop Combat Widget"
-              },
-              "RESREF": {
-                "type": "resref",
-                "value": "dmfi_peace"
-              }
-            },
-            {
-              "__struct_id": 0,
-              "NAME": {
-                "type": "cexostring",
-                "value": "DMFI Target / Appearance Data Widget"
-              },
-              "RESREF": {
-                "type": "resref",
-                "value": "dmfi_target"
-              }
-            },
-            {
-              "__struct_id": 0,
-              "NAME": {
-                "type": "cexostring",
-                "value": "DMFI Voice Wand"
-              },
-              "RESREF": {
-                "type": "resref",
-                "value": "dmfi_voice"
-              }
-            },
-            {
-              "__struct_id": 0,
-              "NAME": {
-                "type": "cexostring",
-                "value": "DMFI Voice Widget"
-              },
-              "RESREF": {
-                "type": "resref",
-                "value": "dmfi_voicewidget"
-              }
-            },
-            {
-              "__struct_id": 0,
-              "NAME": {
-                "type": "cexostring",
-                "value": "DMFI XP Wand"
-              },
-              "RESREF": {
-                "type": "resref",
-                "value": "dmfi_xp"
-              }
-            },
-            {
-              "__struct_id": 0,
-              "NAME": {
-                "type": "cexostring",
-                "value": "The One Ring"
-              },
-              "RESREF": {
-                "type": "resref",
-                "value": "dmfi_onering"
-              }
             }
           ]
         },
@@ -9252,40 +8631,7 @@
                           "__struct_id": 0,
                           "NAME": {
                             "type": "cexostring",
-                            "value": "Arrow (Bronze)"
-                          },
-                          "RESREF": {
-                            "type": "resref",
-                            "value": "gs_item081"
-                          }
-                        },
-                        {
-                          "__struct_id": 0,
-                          "NAME": {
-                            "type": "cexostring",
-                            "value": "Arrow (Damask)"
-                          },
-                          "RESREF": {
-                            "type": "resref",
-                            "value": "gs_item085"
-                          }
-                        },
-                        {
-                          "__struct_id": 0,
-                          "NAME": {
-                            "type": "cexostring",
-                            "value": "Arrow (Greensteel)"
-                          },
-                          "RESREF": {
-                            "type": "resref",
-                            "value": "gs_item089"
-                          }
-                        },
-                        {
-                          "__struct_id": 0,
-                          "NAME": {
-                            "type": "cexostring",
-                            "value": "Arrow (Iron)"
+                            "value": "Iron Arrow"
                           },
                           "RESREF": {
                             "type": "resref",
@@ -9296,7 +8642,18 @@
                           "__struct_id": 0,
                           "NAME": {
                             "type": "cexostring",
-                            "value": "Arrow (Steel)"
+                            "value": "Silver Arrow"
+                          },
+                          "RESREF": {
+                            "type": "resref",
+                            "value": "gs_item084"
+                          }
+                        },
+                        {
+                          "__struct_id": 0,
+                          "NAME": {
+                            "type": "cexostring",
+                            "value": "Steel Arrow"
                           },
                           "RESREF": {
                             "type": "resref",
@@ -9323,40 +8680,7 @@
                           "__struct_id": 0,
                           "NAME": {
                             "type": "cexostring",
-                            "value": "Bolt (Bronze)"
-                          },
-                          "RESREF": {
-                            "type": "resref",
-                            "value": "gs_item061"
-                          }
-                        },
-                        {
-                          "__struct_id": 0,
-                          "NAME": {
-                            "type": "cexostring",
-                            "value": "Bolt (Damask)"
-                          },
-                          "RESREF": {
-                            "type": "resref",
-                            "value": "gs_item064"
-                          }
-                        },
-                        {
-                          "__struct_id": 0,
-                          "NAME": {
-                            "type": "cexostring",
-                            "value": "Bolt (Greensteel)"
-                          },
-                          "RESREF": {
-                            "type": "resref",
-                            "value": "gs_item065"
-                          }
-                        },
-                        {
-                          "__struct_id": 0,
-                          "NAME": {
-                            "type": "cexostring",
-                            "value": "Bolt (Iron)"
+                            "value": "Iron Bolt"
                           },
                           "RESREF": {
                             "type": "resref",
@@ -9367,7 +8691,7 @@
                           "__struct_id": 0,
                           "NAME": {
                             "type": "cexostring",
-                            "value": "Bolt (Steel)"
+                            "value": "Steel Bolt"
                           },
                           "RESREF": {
                             "type": "resref",
@@ -9390,39 +8714,6 @@
                     "LIST": {
                       "type": "list",
                       "value": [
-                        {
-                          "__struct_id": 0,
-                          "NAME": {
-                            "type": "cexostring",
-                            "value": "Bullet (Bronze)"
-                          },
-                          "RESREF": {
-                            "type": "resref",
-                            "value": "gs_item084"
-                          }
-                        },
-                        {
-                          "__struct_id": 0,
-                          "NAME": {
-                            "type": "cexostring",
-                            "value": "Bullet (Damask)"
-                          },
-                          "RESREF": {
-                            "type": "resref",
-                            "value": "gs_item088"
-                          }
-                        },
-                        {
-                          "__struct_id": 0,
-                          "NAME": {
-                            "type": "cexostring",
-                            "value": "Bullet (Greensteel)"
-                          },
-                          "RESREF": {
-                            "type": "resref",
-                            "value": "gs_item090"
-                          }
-                        },
                         {
                           "__struct_id": 0,
                           "NAME": {
@@ -9470,6 +8761,44 @@
                       "type": "byte",
                       "value": 32
                     },
+                    "LIST": {
+                      "type": "list",
+                      "value": [
+                        {
+                          "__struct_id": 0,
+                          "NAME": {
+                            "type": "cexostring",
+                            "value": "Iron Greataxe"
+                          },
+                          "RESREF": {
+                            "type": "resref",
+                            "value": "irongreataxe"
+                          }
+                        },
+                        {
+                          "__struct_id": 0,
+                          "NAME": {
+                            "type": "cexostring",
+                            "value": "Silver Greataxe"
+                          },
+                          "RESREF": {
+                            "type": "resref",
+                            "value": "silvergreataxe"
+                          }
+                        },
+                        {
+                          "__struct_id": 0,
+                          "NAME": {
+                            "type": "cexostring",
+                            "value": "Steel Greataxe"
+                          },
+                          "RESREF": {
+                            "type": "resref",
+                            "value": "irongreataxe001"
+                          }
+                        }
+                      ]
+                    },
                     "STRREF": {
                       "type": "dword",
                       "value": 6762
@@ -9488,40 +8817,7 @@
                           "__struct_id": 0,
                           "NAME": {
                             "type": "cexostring",
-                            "value": "Battleaxe (Bronze)"
-                          },
-                          "RESREF": {
-                            "type": "resref",
-                            "value": "gs_item514"
-                          }
-                        },
-                        {
-                          "__struct_id": 0,
-                          "NAME": {
-                            "type": "cexostring",
-                            "value": "Battleaxe (Damask)"
-                          },
-                          "RESREF": {
-                            "type": "resref",
-                            "value": "gs_item517"
-                          }
-                        },
-                        {
-                          "__struct_id": 0,
-                          "NAME": {
-                            "type": "cexostring",
-                            "value": "Battleaxe (Greensteel)"
-                          },
-                          "RESREF": {
-                            "type": "resref",
-                            "value": "gs_item934"
-                          }
-                        },
-                        {
-                          "__struct_id": 0,
-                          "NAME": {
-                            "type": "cexostring",
-                            "value": "Battleaxe (Iron)"
+                            "value": "Iron Battleaxe"
                           },
                           "RESREF": {
                             "type": "resref",
@@ -9532,84 +8828,7 @@
                           "__struct_id": 0,
                           "NAME": {
                             "type": "cexostring",
-                            "value": "Battleaxe (Steel)"
-                          },
-                          "RESREF": {
-                            "type": "resref",
-                            "value": "gs_item516"
-                          }
-                        },
-                        {
-                          "__struct_id": 0,
-                          "NAME": {
-                            "type": "cexostring",
-                            "value": "Dwarven Waraxe (Bronze)"
-                          },
-                          "RESREF": {
-                            "type": "resref",
-                            "value": "gs_item099"
-                          }
-                        },
-                        {
-                          "__struct_id": 0,
-                          "NAME": {
-                            "type": "cexostring",
-                            "value": "Dwarven Waraxe (Damask)"
-                          },
-                          "RESREF": {
-                            "type": "resref",
-                            "value": "gs_item351"
-                          }
-                        },
-                        {
-                          "__struct_id": 0,
-                          "NAME": {
-                            "type": "cexostring",
-                            "value": "Dwarven Waraxe (Greensteel)"
-                          },
-                          "RESREF": {
-                            "type": "resref",
-                            "value": "gs_item406"
-                          }
-                        },
-                        {
-                          "__struct_id": 0,
-                          "NAME": {
-                            "type": "cexostring",
-                            "value": "Dwarven Waraxe (Iron)"
-                          },
-                          "RESREF": {
-                            "type": "resref",
-                            "value": "gs_item338"
-                          }
-                        },
-                        {
-                          "__struct_id": 0,
-                          "NAME": {
-                            "type": "cexostring",
-                            "value": "Dwarven Waraxe (Steel)"
-                          },
-                          "RESREF": {
-                            "type": "resref",
-                            "value": "gs_item346"
-                          }
-                        },
-                        {
-                          "__struct_id": 0,
-                          "NAME": {
-                            "type": "cexostring",
-                            "value": "Handaxe (Bronze)"
-                          },
-                          "RESREF": {
-                            "type": "resref",
-                            "value": "gs_item506"
-                          }
-                        },
-                        {
-                          "__struct_id": 0,
-                          "NAME": {
-                            "type": "cexostring",
-                            "value": "Handaxe (Damask)"
+                            "value": "Iron Handaxe"
                           },
                           "RESREF": {
                             "type": "resref",
@@ -9620,187 +8839,22 @@
                           "__struct_id": 0,
                           "NAME": {
                             "type": "cexostring",
-                            "value": "Handaxe (Greensteel)"
+                            "value": "Steel Battleaxe"
                           },
                           "RESREF": {
                             "type": "resref",
-                            "value": "gs_item935"
+                            "value": "gs_item517"
                           }
                         },
                         {
                           "__struct_id": 0,
                           "NAME": {
                             "type": "cexostring",
-                            "value": "Handaxe (Iron)"
+                            "value": "Steel Handaxe"
                           },
                           "RESREF": {
                             "type": "resref",
                             "value": "gs_item507"
-                          }
-                        },
-                        {
-                          "__struct_id": 0,
-                          "NAME": {
-                            "type": "cexostring",
-                            "value": "Handaxe (Steel)"
-                          },
-                          "RESREF": {
-                            "type": "resref",
-                            "value": "gs_item508"
-                          }
-                        },
-                        {
-                          "__struct_id": 0,
-                          "NAME": {
-                            "type": "cexostring",
-                            "value": "Masterly Battleaxe (Bronze)"
-                          },
-                          "RESREF": {
-                            "type": "resref",
-                            "value": "gs_item518"
-                          }
-                        },
-                        {
-                          "__struct_id": 0,
-                          "NAME": {
-                            "type": "cexostring",
-                            "value": "Masterly Battleaxe (Damask)"
-                          },
-                          "RESREF": {
-                            "type": "resref",
-                            "value": "gs_item519"
-                          }
-                        },
-                        {
-                          "__struct_id": 0,
-                          "NAME": {
-                            "type": "cexostring",
-                            "value": "Masterly Battleaxe (Greensteel)"
-                          },
-                          "RESREF": {
-                            "type": "resref",
-                            "value": "gs_item936"
-                          }
-                        },
-                        {
-                          "__struct_id": 0,
-                          "NAME": {
-                            "type": "cexostring",
-                            "value": "Masterly Battleaxe (Iron)"
-                          },
-                          "RESREF": {
-                            "type": "resref",
-                            "value": "gs_item520"
-                          }
-                        },
-                        {
-                          "__struct_id": 0,
-                          "NAME": {
-                            "type": "cexostring",
-                            "value": "Masterly Battleaxe (Steel)"
-                          },
-                          "RESREF": {
-                            "type": "resref",
-                            "value": "gs_item521"
-                          }
-                        },
-                        {
-                          "__struct_id": 0,
-                          "NAME": {
-                            "type": "cexostring",
-                            "value": "Masterly Dwarven Waraxe (Damask)"
-                          },
-                          "RESREF": {
-                            "type": "resref",
-                            "value": "gs_item355"
-                          }
-                        },
-                        {
-                          "__struct_id": 0,
-                          "NAME": {
-                            "type": "cexostring",
-                            "value": "Masterly Dwarven Waraxe (Greensteel)"
-                          },
-                          "RESREF": {
-                            "type": "resref",
-                            "value": "gs_item407"
-                          }
-                        },
-                        {
-                          "__struct_id": 0,
-                          "NAME": {
-                            "type": "cexostring",
-                            "value": "Masterly Dwarven Waraxe (Iron)"
-                          },
-                          "RESREF": {
-                            "type": "resref",
-                            "value": "gs_item353"
-                          }
-                        },
-                        {
-                          "__struct_id": 0,
-                          "NAME": {
-                            "type": "cexostring",
-                            "value": "Masterly Dwarven Waraxe (Steel)"
-                          },
-                          "RESREF": {
-                            "type": "resref",
-                            "value": "gs_item354"
-                          }
-                        },
-                        {
-                          "__struct_id": 0,
-                          "NAME": {
-                            "type": "cexostring",
-                            "value": "Masterly Handaxe (Bronze)"
-                          },
-                          "RESREF": {
-                            "type": "resref",
-                            "value": "gs_item510"
-                          }
-                        },
-                        {
-                          "__struct_id": 0,
-                          "NAME": {
-                            "type": "cexostring",
-                            "value": "Masterly Handaxe (Damask)"
-                          },
-                          "RESREF": {
-                            "type": "resref",
-                            "value": "gs_item511"
-                          }
-                        },
-                        {
-                          "__struct_id": 0,
-                          "NAME": {
-                            "type": "cexostring",
-                            "value": "Masterly Handaxe (Greensteel)"
-                          },
-                          "RESREF": {
-                            "type": "resref",
-                            "value": "gs_item937"
-                          }
-                        },
-                        {
-                          "__struct_id": 0,
-                          "NAME": {
-                            "type": "cexostring",
-                            "value": "Masterly Handaxe (Iron)"
-                          },
-                          "RESREF": {
-                            "type": "resref",
-                            "value": "gs_item512"
-                          }
-                        },
-                        {
-                          "__struct_id": 0,
-                          "NAME": {
-                            "type": "cexostring",
-                            "value": "Masterly Handaxe (Steel)"
-                          },
-                          "RESREF": {
-                            "type": "resref",
-                            "value": "gs_item513"
                           }
                         }
                       ]
@@ -9819,28 +8873,6 @@
                     "LIST": {
                       "type": "list",
                       "value": [
-                        {
-                          "__struct_id": 0,
-                          "NAME": {
-                            "type": "cexostring",
-                            "value": "Greataxe (Bronze)"
-                          },
-                          "RESREF": {
-                            "type": "resref",
-                            "value": "gs_item449"
-                          }
-                        },
-                        {
-                          "__struct_id": 0,
-                          "NAME": {
-                            "type": "cexostring",
-                            "value": "Greataxe (Damask)"
-                          },
-                          "RESREF": {
-                            "type": "resref",
-                            "value": "gs_item501"
-                          }
-                        },
                         {
                           "__struct_id": 0,
                           "NAME": {
@@ -9872,28 +8904,6 @@
                           "RESREF": {
                             "type": "resref",
                             "value": "gs_item500"
-                          }
-                        },
-                        {
-                          "__struct_id": 0,
-                          "NAME": {
-                            "type": "cexostring",
-                            "value": "Masterly Greataxe (Bronze)"
-                          },
-                          "RESREF": {
-                            "type": "resref",
-                            "value": "gs_item502"
-                          }
-                        },
-                        {
-                          "__struct_id": 0,
-                          "NAME": {
-                            "type": "cexostring",
-                            "value": "Masterly Greataxe (Damask)"
-                          },
-                          "RESREF": {
-                            "type": "resref",
-                            "value": "gs_item503"
                           }
                         },
                         {
@@ -9961,18 +8971,7 @@
                           "__struct_id": 0,
                           "NAME": {
                             "type": "cexostring",
-                            "value": "Bastard Sword (Bronze)"
-                          },
-                          "RESREF": {
-                            "type": "resref",
-                            "value": "gs_item604"
-                          }
-                        },
-                        {
-                          "__struct_id": 0,
-                          "NAME": {
-                            "type": "cexostring",
-                            "value": "Bastard Sword (Damask)"
+                            "value": "Iron Bastard Sword"
                           },
                           "RESREF": {
                             "type": "resref",
@@ -9983,40 +8982,7 @@
                           "__struct_id": 0,
                           "NAME": {
                             "type": "cexostring",
-                            "value": "Bastard Sword (Greensteel)"
-                          },
-                          "RESREF": {
-                            "type": "resref",
-                            "value": "gs_item940"
-                          }
-                        },
-                        {
-                          "__struct_id": 0,
-                          "NAME": {
-                            "type": "cexostring",
-                            "value": "Bastard Sword (Iron)"
-                          },
-                          "RESREF": {
-                            "type": "resref",
-                            "value": "gs_item605"
-                          }
-                        },
-                        {
-                          "__struct_id": 0,
-                          "NAME": {
-                            "type": "cexostring",
-                            "value": "Bastard Sword (Steel)"
-                          },
-                          "RESREF": {
-                            "type": "resref",
-                            "value": "gs_item606"
-                          }
-                        },
-                        {
-                          "__struct_id": 0,
-                          "NAME": {
-                            "type": "cexostring",
-                            "value": "Masterly Bastard Sword (Bronze)"
+                            "value": "Sivler Bastard Sword"
                           },
                           "RESREF": {
                             "type": "resref",
@@ -10027,44 +8993,11 @@
                           "__struct_id": 0,
                           "NAME": {
                             "type": "cexostring",
-                            "value": "Masterly Bastard Sword (Damask)"
+                            "value": "Steel Bastard Sword"
                           },
                           "RESREF": {
                             "type": "resref",
-                            "value": "gs_item609"
-                          }
-                        },
-                        {
-                          "__struct_id": 0,
-                          "NAME": {
-                            "type": "cexostring",
-                            "value": "Masterly Bastard Sword (Greensteel)"
-                          },
-                          "RESREF": {
-                            "type": "resref",
-                            "value": "gs_item941"
-                          }
-                        },
-                        {
-                          "__struct_id": 0,
-                          "NAME": {
-                            "type": "cexostring",
-                            "value": "Masterly Bastard Sword (Iron)"
-                          },
-                          "RESREF": {
-                            "type": "resref",
-                            "value": "gs_item610"
-                          }
-                        },
-                        {
-                          "__struct_id": 0,
-                          "NAME": {
-                            "type": "cexostring",
-                            "value": "Masterly Bastard Sword (Steel)"
-                          },
-                          "RESREF": {
-                            "type": "resref",
-                            "value": "gs_item611"
+                            "value": "gs_item605"
                           }
                         }
                       ]
@@ -10087,95 +9020,7 @@
                           "__struct_id": 0,
                           "NAME": {
                             "type": "cexostring",
-                            "value": "Dagger (Bronze)"
-                          },
-                          "RESREF": {
-                            "type": "resref",
-                            "value": "gs_item446"
-                          }
-                        },
-                        {
-                          "__struct_id": 0,
-                          "NAME": {
-                            "type": "cexostring",
-                            "value": "Dagger (Damask)"
-                          },
-                          "RESREF": {
-                            "type": "resref",
-                            "value": "gs_item445"
-                          }
-                        },
-                        {
-                          "__struct_id": 0,
-                          "NAME": {
-                            "type": "cexostring",
-                            "value": "Dagger (Greensteel)"
-                          },
-                          "RESREF": {
-                            "type": "resref",
-                            "value": "gs_item942"
-                          }
-                        },
-                        {
-                          "__struct_id": 0,
-                          "NAME": {
-                            "type": "cexostring",
-                            "value": "Dagger (Iron)"
-                          },
-                          "RESREF": {
-                            "type": "resref",
-                            "value": "gs_item441"
-                          }
-                        },
-                        {
-                          "__struct_id": 0,
-                          "NAME": {
-                            "type": "cexostring",
-                            "value": "Dagger (Steel)"
-                          },
-                          "RESREF": {
-                            "type": "resref",
-                            "value": "gs_item443"
-                          }
-                        },
-                        {
-                          "__struct_id": 0,
-                          "NAME": {
-                            "type": "cexostring",
-                            "value": "Masterly Dagger (Bronze)"
-                          },
-                          "RESREF": {
-                            "type": "resref",
-                            "value": "gs_item447"
-                          }
-                        },
-                        {
-                          "__struct_id": 0,
-                          "NAME": {
-                            "type": "cexostring",
-                            "value": "Masterly Dagger (Damask)"
-                          },
-                          "RESREF": {
-                            "type": "resref",
-                            "value": "gs_item448"
-                          }
-                        },
-                        {
-                          "__struct_id": 0,
-                          "NAME": {
-                            "type": "cexostring",
-                            "value": "Masterly Dagger (Greensteel)"
-                          },
-                          "RESREF": {
-                            "type": "resref",
-                            "value": "gs_item943"
-                          }
-                        },
-                        {
-                          "__struct_id": 0,
-                          "NAME": {
-                            "type": "cexostring",
-                            "value": "Masterly Dagger (Iron)"
+                            "value": "Iron Dagger"
                           },
                           "RESREF": {
                             "type": "resref",
@@ -10186,11 +9031,22 @@
                           "__struct_id": 0,
                           "NAME": {
                             "type": "cexostring",
-                            "value": "Masterly Dagger (Steel)"
+                            "value": "Silver Dagger"
                           },
                           "RESREF": {
                             "type": "resref",
-                            "value": "gs_item444"
+                            "value": "gs_item443"
+                          }
+                        },
+                        {
+                          "__struct_id": 0,
+                          "NAME": {
+                            "type": "cexostring",
+                            "value": "Steel Dagger"
+                          },
+                          "RESREF": {
+                            "type": "resref",
+                            "value": "gs_item441"
                           }
                         }
                       ]
@@ -10224,28 +9080,6 @@
                           "__struct_id": 0,
                           "NAME": {
                             "type": "cexostring",
-                            "value": "Greatsword (Bronze)"
-                          },
-                          "RESREF": {
-                            "type": "resref",
-                            "value": "gs_item628"
-                          }
-                        },
-                        {
-                          "__struct_id": 0,
-                          "NAME": {
-                            "type": "cexostring",
-                            "value": "Greatsword (Damask)"
-                          },
-                          "RESREF": {
-                            "type": "resref",
-                            "value": "gs_item631"
-                          }
-                        },
-                        {
-                          "__struct_id": 0,
-                          "NAME": {
-                            "type": "cexostring",
                             "value": "Greatsword (Greensteel)"
                           },
                           "RESREF": {
@@ -10274,72 +9108,6 @@
                             "type": "resref",
                             "value": "gs_item630"
                           }
-                        },
-                        {
-                          "__struct_id": 0,
-                          "NAME": {
-                            "type": "cexostring",
-                            "value": "Masterly Greatsword (Bronze)"
-                          },
-                          "RESREF": {
-                            "type": "resref",
-                            "value": "gs_item632"
-                          }
-                        },
-                        {
-                          "__struct_id": 0,
-                          "NAME": {
-                            "type": "cexostring",
-                            "value": "Masterly Greatsword (Damask)"
-                          },
-                          "RESREF": {
-                            "type": "resref",
-                            "value": "gs_item633"
-                          }
-                        },
-                        {
-                          "__struct_id": 0,
-                          "NAME": {
-                            "type": "cexostring",
-                            "value": "Masterly Greatsword (Greensteel)"
-                          },
-                          "RESREF": {
-                            "type": "resref",
-                            "value": "gs_item945"
-                          }
-                        },
-                        {
-                          "__struct_id": 0,
-                          "NAME": {
-                            "type": "cexostring",
-                            "value": "Masterly Greatsword (Iron)"
-                          },
-                          "RESREF": {
-                            "type": "resref",
-                            "value": "gs_item634"
-                          }
-                        },
-                        {
-                          "__struct_id": 0,
-                          "NAME": {
-                            "type": "cexostring",
-                            "value": "Masterly Greatsword (Steel)"
-                          },
-                          "RESREF": {
-                            "type": "resref",
-                            "value": "gs_item635"
-                          }
-                        },
-                        {
-                          "__struct_id": 0,
-                          "NAME": {
-                            "type": "cexostring",
-                            "value": "Paladin Greatsword"
-                          },
-                          "RESREF": {
-                            "type": "resref",
-                            "value": "gs_item920"
-                          }
                         }
                       ]
                     },
@@ -10361,95 +9129,7 @@
                           "__struct_id": 0,
                           "NAME": {
                             "type": "cexostring",
-                            "value": "Longsword (Bronze)"
-                          },
-                          "RESREF": {
-                            "type": "resref",
-                            "value": "gs_item620"
-                          }
-                        },
-                        {
-                          "__struct_id": 0,
-                          "NAME": {
-                            "type": "cexostring",
-                            "value": "Longsword (Damask)"
-                          },
-                          "RESREF": {
-                            "type": "resref",
-                            "value": "gs_item623"
-                          }
-                        },
-                        {
-                          "__struct_id": 0,
-                          "NAME": {
-                            "type": "cexostring",
-                            "value": "Longsword (Greensteel)"
-                          },
-                          "RESREF": {
-                            "type": "resref",
-                            "value": "gs_item946"
-                          }
-                        },
-                        {
-                          "__struct_id": 0,
-                          "NAME": {
-                            "type": "cexostring",
-                            "value": "Longsword (Iron)"
-                          },
-                          "RESREF": {
-                            "type": "resref",
-                            "value": "gs_item621"
-                          }
-                        },
-                        {
-                          "__struct_id": 0,
-                          "NAME": {
-                            "type": "cexostring",
-                            "value": "Longsword (Steel)"
-                          },
-                          "RESREF": {
-                            "type": "resref",
-                            "value": "gs_item622"
-                          }
-                        },
-                        {
-                          "__struct_id": 0,
-                          "NAME": {
-                            "type": "cexostring",
-                            "value": "Longsword of an Erinye"
-                          },
-                          "RESREF": {
-                            "type": "resref",
-                            "value": "gs_item341"
-                          }
-                        },
-                        {
-                          "__struct_id": 0,
-                          "NAME": {
-                            "type": "cexostring",
-                            "value": "Masterly Longsword (Bronze)"
-                          },
-                          "RESREF": {
-                            "type": "resref",
-                            "value": "gs_item624"
-                          }
-                        },
-                        {
-                          "__struct_id": 0,
-                          "NAME": {
-                            "type": "cexostring",
-                            "value": "Masterly Longsword (Damask)"
-                          },
-                          "RESREF": {
-                            "type": "resref",
-                            "value": "gs_item625"
-                          }
-                        },
-                        {
-                          "__struct_id": 0,
-                          "NAME": {
-                            "type": "cexostring",
-                            "value": "Masterly Longsword (Greensteel)"
+                            "value": "Highsteel Longsword"
                           },
                           "RESREF": {
                             "type": "resref",
@@ -10460,22 +9140,66 @@
                           "__struct_id": 0,
                           "NAME": {
                             "type": "cexostring",
-                            "value": "Masterly Longsword (Iron)"
+                            "value": "Iron Longsword"
                           },
                           "RESREF": {
                             "type": "resref",
-                            "value": "gs_item626"
+                            "value": "gs_item621"
                           }
                         },
                         {
                           "__struct_id": 0,
                           "NAME": {
                             "type": "cexostring",
-                            "value": "Masterly Longsword (Steel)"
+                            "value": "Iron Rapier"
                           },
                           "RESREF": {
                             "type": "resref",
-                            "value": "gs_item627"
+                            "value": "ironrapier"
+                          }
+                        },
+                        {
+                          "__struct_id": 0,
+                          "NAME": {
+                            "type": "cexostring",
+                            "value": "Lunarite Longsword"
+                          },
+                          "RESREF": {
+                            "type": "resref",
+                            "value": "gs_item624"
+                          }
+                        },
+                        {
+                          "__struct_id": 0,
+                          "NAME": {
+                            "type": "cexostring",
+                            "value": "Silver Longsword"
+                          },
+                          "RESREF": {
+                            "type": "resref",
+                            "value": "gs_item623"
+                          }
+                        },
+                        {
+                          "__struct_id": 0,
+                          "NAME": {
+                            "type": "cexostring",
+                            "value": "Steel Longsword"
+                          },
+                          "RESREF": {
+                            "type": "resref",
+                            "value": "gs_item622"
+                          }
+                        },
+                        {
+                          "__struct_id": 0,
+                          "NAME": {
+                            "type": "cexostring",
+                            "value": "Steel Rapier"
+                          },
+                          "RESREF": {
+                            "type": "resref",
+                            "value": "ironrapier001"
                           }
                         }
                       ]
@@ -10833,83 +9557,6 @@
                           "__struct_id": 0,
                           "NAME": {
                             "type": "cexostring",
-                            "value": "Masterly Short Sword (Bronze)"
-                          },
-                          "RESREF": {
-                            "type": "resref",
-                            "value": "gs_item616"
-                          }
-                        },
-                        {
-                          "__struct_id": 0,
-                          "NAME": {
-                            "type": "cexostring",
-                            "value": "Masterly Short Sword (Damask)"
-                          },
-                          "RESREF": {
-                            "type": "resref",
-                            "value": "gs_item617"
-                          }
-                        },
-                        {
-                          "__struct_id": 0,
-                          "NAME": {
-                            "type": "cexostring",
-                            "value": "Masterly Short Sword (Greensteel)"
-                          },
-                          "RESREF": {
-                            "type": "resref",
-                            "value": "gs_item954"
-                          }
-                        },
-                        {
-                          "__struct_id": 0,
-                          "NAME": {
-                            "type": "cexostring",
-                            "value": "Masterly Short Sword (Iron)"
-                          },
-                          "RESREF": {
-                            "type": "resref",
-                            "value": "gs_item618"
-                          }
-                        },
-                        {
-                          "__struct_id": 0,
-                          "NAME": {
-                            "type": "cexostring",
-                            "value": "Masterly Short Sword (Steel)"
-                          },
-                          "RESREF": {
-                            "type": "resref",
-                            "value": "gs_item619"
-                          }
-                        },
-                        {
-                          "__struct_id": 0,
-                          "NAME": {
-                            "type": "cexostring",
-                            "value": "Short Sword (Bronze)"
-                          },
-                          "RESREF": {
-                            "type": "resref",
-                            "value": "gs_item612"
-                          }
-                        },
-                        {
-                          "__struct_id": 0,
-                          "NAME": {
-                            "type": "cexostring",
-                            "value": "Short Sword (Damask)"
-                          },
-                          "RESREF": {
-                            "type": "resref",
-                            "value": "gs_item615"
-                          }
-                        },
-                        {
-                          "__struct_id": 0,
-                          "NAME": {
-                            "type": "cexostring",
                             "value": "Short Sword (Greensteel)"
                           },
                           "RESREF": {
@@ -10971,62 +9618,7 @@
                           "__struct_id": 0,
                           "NAME": {
                             "type": "cexostring",
-                            "value": "Barbed Slayer (Bronze)"
-                          },
-                          "RESREF": {
-                            "type": "resref",
-                            "value": "gs_item101"
-                          }
-                        },
-                        {
-                          "__struct_id": 0,
-                          "NAME": {
-                            "type": "cexostring",
-                            "value": "Barbed Slayer (Damask)"
-                          },
-                          "RESREF": {
-                            "type": "resref",
-                            "value": "gs_item117"
-                          }
-                        },
-                        {
-                          "__struct_id": 0,
-                          "NAME": {
-                            "type": "cexostring",
-                            "value": "Barbed Slayer (Greensteel)"
-                          },
-                          "RESREF": {
-                            "type": "resref",
-                            "value": "gs_item408"
-                          }
-                        },
-                        {
-                          "__struct_id": 0,
-                          "NAME": {
-                            "type": "cexostring",
-                            "value": "Barbed Slayer (Iron)"
-                          },
-                          "RESREF": {
-                            "type": "resref",
-                            "value": "gs_item104"
-                          }
-                        },
-                        {
-                          "__struct_id": 0,
-                          "NAME": {
-                            "type": "cexostring",
-                            "value": "Barbed Slayer (Steel)"
-                          },
-                          "RESREF": {
-                            "type": "resref",
-                            "value": "gs_item109"
-                          }
-                        },
-                        {
-                          "__struct_id": 0,
-                          "NAME": {
-                            "type": "cexostring",
-                            "value": "Masterly Barbed Slayer (Bronze)"
+                            "value": "Club"
                           },
                           "RESREF": {
                             "type": "resref",
@@ -11037,7 +9629,7 @@
                           "__struct_id": 0,
                           "NAME": {
                             "type": "cexostring",
-                            "value": "Masterly Barbed Slayer (Damask)"
+                            "value": "Iron Club"
                           },
                           "RESREF": {
                             "type": "resref",
@@ -11048,55 +9640,11 @@
                           "__struct_id": 0,
                           "NAME": {
                             "type": "cexostring",
-                            "value": "Masterly Barbed Slayer (Greensteel)"
+                            "value": "Steel Club"
                           },
                           "RESREF": {
                             "type": "resref",
-                            "value": "gs_item409"
-                          }
-                        },
-                        {
-                          "__struct_id": 0,
-                          "NAME": {
-                            "type": "cexostring",
-                            "value": "Masterly Barbed Slayer (Iron)"
-                          },
-                          "RESREF": {
-                            "type": "resref",
-                            "value": "gs_item316"
-                          }
-                        },
-                        {
-                          "__struct_id": 0,
-                          "NAME": {
-                            "type": "cexostring",
-                            "value": "Masterly Barbed Slayer (Steel)"
-                          },
-                          "RESREF": {
-                            "type": "resref",
-                            "value": "gs_item319"
-                          }
-                        },
-                        {
-                          "__struct_id": 0,
-                          "NAME": {
-                            "type": "cexostring",
-                            "value": "Masterly Slayer"
-                          },
-                          "RESREF": {
-                            "type": "resref",
-                            "value": "gs_item102"
-                          }
-                        },
-                        {
-                          "__struct_id": 0,
-                          "NAME": {
-                            "type": "cexostring",
-                            "value": "Slayer"
-                          },
-                          "RESREF": {
-                            "type": "resref",
-                            "value": "gs_item103"
+                            "value": "gs_item104"
                           }
                         }
                       ]
@@ -11119,18 +9667,7 @@
                           "__struct_id": 0,
                           "NAME": {
                             "type": "cexostring",
-                            "value": "Heavy Flail (Bronze)"
-                          },
-                          "RESREF": {
-                            "type": "resref",
-                            "value": "gs_item660"
-                          }
-                        },
-                        {
-                          "__struct_id": 0,
-                          "NAME": {
-                            "type": "cexostring",
-                            "value": "Heavy Flail (Damask)"
+                            "value": "Heavy Iron Flail"
                           },
                           "RESREF": {
                             "type": "resref",
@@ -11141,18 +9678,7 @@
                           "__struct_id": 0,
                           "NAME": {
                             "type": "cexostring",
-                            "value": "Heavy Flail (Greensteel)"
-                          },
-                          "RESREF": {
-                            "type": "resref",
-                            "value": "gs_item956"
-                          }
-                        },
-                        {
-                          "__struct_id": 0,
-                          "NAME": {
-                            "type": "cexostring",
-                            "value": "Heavy Flail (Iron)"
+                            "value": "Heavy Steel Flail"
                           },
                           "RESREF": {
                             "type": "resref",
@@ -11163,29 +9689,7 @@
                           "__struct_id": 0,
                           "NAME": {
                             "type": "cexostring",
-                            "value": "Heavy Flail (Steel)"
-                          },
-                          "RESREF": {
-                            "type": "resref",
-                            "value": "gs_item662"
-                          }
-                        },
-                        {
-                          "__struct_id": 0,
-                          "NAME": {
-                            "type": "cexostring",
-                            "value": "Light Flail (Bronze)"
-                          },
-                          "RESREF": {
-                            "type": "resref",
-                            "value": "gs_item652"
-                          }
-                        },
-                        {
-                          "__struct_id": 0,
-                          "NAME": {
-                            "type": "cexostring",
-                            "value": "Light Flail (Damask)"
+                            "value": "Light Iron Flail"
                           },
                           "RESREF": {
                             "type": "resref",
@@ -11196,143 +9700,11 @@
                           "__struct_id": 0,
                           "NAME": {
                             "type": "cexostring",
-                            "value": "Light Flail (Greensteel)"
-                          },
-                          "RESREF": {
-                            "type": "resref",
-                            "value": "gs_item957"
-                          }
-                        },
-                        {
-                          "__struct_id": 0,
-                          "NAME": {
-                            "type": "cexostring",
-                            "value": "Light Flail (Iron)"
+                            "value": "Light Steel Flail"
                           },
                           "RESREF": {
                             "type": "resref",
                             "value": "gs_item653"
-                          }
-                        },
-                        {
-                          "__struct_id": 0,
-                          "NAME": {
-                            "type": "cexostring",
-                            "value": "Light Flail (Steel)"
-                          },
-                          "RESREF": {
-                            "type": "resref",
-                            "value": "gs_item654"
-                          }
-                        },
-                        {
-                          "__struct_id": 0,
-                          "NAME": {
-                            "type": "cexostring",
-                            "value": "Masterly Heavy Flail (Bronze)"
-                          },
-                          "RESREF": {
-                            "type": "resref",
-                            "value": "gs_item664"
-                          }
-                        },
-                        {
-                          "__struct_id": 0,
-                          "NAME": {
-                            "type": "cexostring",
-                            "value": "Masterly Heavy Flail (Damask)"
-                          },
-                          "RESREF": {
-                            "type": "resref",
-                            "value": "gs_item665"
-                          }
-                        },
-                        {
-                          "__struct_id": 0,
-                          "NAME": {
-                            "type": "cexostring",
-                            "value": "Masterly Heavy Flail (Greensteel)"
-                          },
-                          "RESREF": {
-                            "type": "resref",
-                            "value": "gs_item958"
-                          }
-                        },
-                        {
-                          "__struct_id": 0,
-                          "NAME": {
-                            "type": "cexostring",
-                            "value": "Masterly Heavy Flail (Iron)"
-                          },
-                          "RESREF": {
-                            "type": "resref",
-                            "value": "gs_item666"
-                          }
-                        },
-                        {
-                          "__struct_id": 0,
-                          "NAME": {
-                            "type": "cexostring",
-                            "value": "Masterly Heavy Flail (Steel)"
-                          },
-                          "RESREF": {
-                            "type": "resref",
-                            "value": "gs_item667"
-                          }
-                        },
-                        {
-                          "__struct_id": 0,
-                          "NAME": {
-                            "type": "cexostring",
-                            "value": "Masterly Light Flail (Bronze)"
-                          },
-                          "RESREF": {
-                            "type": "resref",
-                            "value": "gs_item656"
-                          }
-                        },
-                        {
-                          "__struct_id": 0,
-                          "NAME": {
-                            "type": "cexostring",
-                            "value": "Masterly Light Flail (Damask)"
-                          },
-                          "RESREF": {
-                            "type": "resref",
-                            "value": "gs_item657"
-                          }
-                        },
-                        {
-                          "__struct_id": 0,
-                          "NAME": {
-                            "type": "cexostring",
-                            "value": "Masterly Light Flail (Greensteel)"
-                          },
-                          "RESREF": {
-                            "type": "resref",
-                            "value": "gs_item959"
-                          }
-                        },
-                        {
-                          "__struct_id": 0,
-                          "NAME": {
-                            "type": "cexostring",
-                            "value": "Masterly Light Flail (Iron)"
-                          },
-                          "RESREF": {
-                            "type": "resref",
-                            "value": "gs_item658"
-                          }
-                        },
-                        {
-                          "__struct_id": 0,
-                          "NAME": {
-                            "type": "cexostring",
-                            "value": "Masterly Light Flail (Steel)"
-                          },
-                          "RESREF": {
-                            "type": "resref",
-                            "value": "gs_item659"
                           }
                         }
                       ]
@@ -11355,18 +9727,18 @@
                           "__struct_id": 0,
                           "NAME": {
                             "type": "cexostring",
-                            "value": "Light Hammer (Bronze)"
+                            "value": "Iron Warhammer"
                           },
                           "RESREF": {
                             "type": "resref",
-                            "value": "gs_item668"
+                            "value": "gs_item678"
                           }
                         },
                         {
                           "__struct_id": 0,
                           "NAME": {
                             "type": "cexostring",
-                            "value": "Light Hammer (Damask)"
+                            "value": "Light Iron Hammer"
                           },
                           "RESREF": {
                             "type": "resref",
@@ -11377,18 +9749,7 @@
                           "__struct_id": 0,
                           "NAME": {
                             "type": "cexostring",
-                            "value": "Light Hammer (Greensteel)"
-                          },
-                          "RESREF": {
-                            "type": "resref",
-                            "value": "gs_item960"
-                          }
-                        },
-                        {
-                          "__struct_id": 0,
-                          "NAME": {
-                            "type": "cexostring",
-                            "value": "Light Hammer (Iron)"
+                            "value": "Light Steel Hammer"
                           },
                           "RESREF": {
                             "type": "resref",
@@ -11399,176 +9760,11 @@
                           "__struct_id": 0,
                           "NAME": {
                             "type": "cexostring",
-                            "value": "Light Hammer (Steel)"
-                          },
-                          "RESREF": {
-                            "type": "resref",
-                            "value": "gs_item670"
-                          }
-                        },
-                        {
-                          "__struct_id": 0,
-                          "NAME": {
-                            "type": "cexostring",
-                            "value": "Masterly Light Hammer (Bronze)"
-                          },
-                          "RESREF": {
-                            "type": "resref",
-                            "value": "gs_item672"
-                          }
-                        },
-                        {
-                          "__struct_id": 0,
-                          "NAME": {
-                            "type": "cexostring",
-                            "value": "Masterly Light Hammer (Damask)"
-                          },
-                          "RESREF": {
-                            "type": "resref",
-                            "value": "gs_item673"
-                          }
-                        },
-                        {
-                          "__struct_id": 0,
-                          "NAME": {
-                            "type": "cexostring",
-                            "value": "Masterly Light Hammer (Greensteel)"
-                          },
-                          "RESREF": {
-                            "type": "resref",
-                            "value": "gs_item961"
-                          }
-                        },
-                        {
-                          "__struct_id": 0,
-                          "NAME": {
-                            "type": "cexostring",
-                            "value": "Masterly Light Hammer (Iron)"
-                          },
-                          "RESREF": {
-                            "type": "resref",
-                            "value": "gs_item674"
-                          }
-                        },
-                        {
-                          "__struct_id": 0,
-                          "NAME": {
-                            "type": "cexostring",
-                            "value": "Masterly Light Hammer (Steel)"
-                          },
-                          "RESREF": {
-                            "type": "resref",
-                            "value": "gs_item675"
-                          }
-                        },
-                        {
-                          "__struct_id": 0,
-                          "NAME": {
-                            "type": "cexostring",
-                            "value": "Masterly Warhammer (Bronze)"
-                          },
-                          "RESREF": {
-                            "type": "resref",
-                            "value": "gs_item724"
-                          }
-                        },
-                        {
-                          "__struct_id": 0,
-                          "NAME": {
-                            "type": "cexostring",
-                            "value": "Masterly Warhammer (Damask)"
-                          },
-                          "RESREF": {
-                            "type": "resref",
-                            "value": "gs_item725"
-                          }
-                        },
-                        {
-                          "__struct_id": 0,
-                          "NAME": {
-                            "type": "cexostring",
-                            "value": "Masterly Warhammer (Greensteel)"
-                          },
-                          "RESREF": {
-                            "type": "resref",
-                            "value": "gs_item962"
-                          }
-                        },
-                        {
-                          "__struct_id": 0,
-                          "NAME": {
-                            "type": "cexostring",
-                            "value": "Masterly Warhammer (Iron)"
-                          },
-                          "RESREF": {
-                            "type": "resref",
-                            "value": "gs_item726"
-                          }
-                        },
-                        {
-                          "__struct_id": 0,
-                          "NAME": {
-                            "type": "cexostring",
-                            "value": "Masterly Warhammer (Steel)"
-                          },
-                          "RESREF": {
-                            "type": "resref",
-                            "value": "gs_item727"
-                          }
-                        },
-                        {
-                          "__struct_id": 0,
-                          "NAME": {
-                            "type": "cexostring",
-                            "value": "Warhammer (Bronze)"
-                          },
-                          "RESREF": {
-                            "type": "resref",
-                            "value": "gs_item676"
-                          }
-                        },
-                        {
-                          "__struct_id": 0,
-                          "NAME": {
-                            "type": "cexostring",
-                            "value": "Warhammer (Damask)"
-                          },
-                          "RESREF": {
-                            "type": "resref",
-                            "value": "gs_item679"
-                          }
-                        },
-                        {
-                          "__struct_id": 0,
-                          "NAME": {
-                            "type": "cexostring",
-                            "value": "Warhammer (Greensteel)"
-                          },
-                          "RESREF": {
-                            "type": "resref",
-                            "value": "gs_item963"
-                          }
-                        },
-                        {
-                          "__struct_id": 0,
-                          "NAME": {
-                            "type": "cexostring",
-                            "value": "Warhammer (Iron)"
+                            "value": "Steel Warhammer"
                           },
                           "RESREF": {
                             "type": "resref",
                             "value": "gs_item677"
-                          }
-                        },
-                        {
-                          "__struct_id": 0,
-                          "NAME": {
-                            "type": "cexostring",
-                            "value": "Warhammer (Steel)"
-                          },
-                          "RESREF": {
-                            "type": "resref",
-                            "value": "gs_item678"
                           }
                         }
                       ]
@@ -11587,28 +9783,6 @@
                     "LIST": {
                       "type": "list",
                       "value": [
-                        {
-                          "__struct_id": 0,
-                          "NAME": {
-                            "type": "cexostring",
-                            "value": "Mace (Bronze)"
-                          },
-                          "RESREF": {
-                            "type": "resref",
-                            "value": "gs_item688"
-                          }
-                        },
-                        {
-                          "__struct_id": 0,
-                          "NAME": {
-                            "type": "cexostring",
-                            "value": "Mace (Damask)"
-                          },
-                          "RESREF": {
-                            "type": "resref",
-                            "value": "gs_item691"
-                          }
-                        },
                         {
                           "__struct_id": 0,
                           "NAME": {
@@ -11652,61 +9826,6 @@
                             "type": "resref",
                             "value": "gs_item314"
                           }
-                        },
-                        {
-                          "__struct_id": 0,
-                          "NAME": {
-                            "type": "cexostring",
-                            "value": "Masterly Mace (Bronze)"
-                          },
-                          "RESREF": {
-                            "type": "resref",
-                            "value": "gs_item692"
-                          }
-                        },
-                        {
-                          "__struct_id": 0,
-                          "NAME": {
-                            "type": "cexostring",
-                            "value": "Masterly Mace (Damask)"
-                          },
-                          "RESREF": {
-                            "type": "resref",
-                            "value": "gs_item693"
-                          }
-                        },
-                        {
-                          "__struct_id": 0,
-                          "NAME": {
-                            "type": "cexostring",
-                            "value": "Masterly Mace (Greensteel)"
-                          },
-                          "RESREF": {
-                            "type": "resref",
-                            "value": "gs_item965"
-                          }
-                        },
-                        {
-                          "__struct_id": 0,
-                          "NAME": {
-                            "type": "cexostring",
-                            "value": "Masterly Mace (Iron)"
-                          },
-                          "RESREF": {
-                            "type": "resref",
-                            "value": "gs_item694"
-                          }
-                        },
-                        {
-                          "__struct_id": 0,
-                          "NAME": {
-                            "type": "cexostring",
-                            "value": "Masterly Mace (Steel)"
-                          },
-                          "RESREF": {
-                            "type": "resref",
-                            "value": "gs_item695"
-                          }
                         }
                       ]
                     },
@@ -11724,83 +9843,6 @@
                     "LIST": {
                       "type": "list",
                       "value": [
-                        {
-                          "__struct_id": 0,
-                          "NAME": {
-                            "type": "cexostring",
-                            "value": "Masterly Morningstar (Bronze)"
-                          },
-                          "RESREF": {
-                            "type": "resref",
-                            "value": "gs_item684"
-                          }
-                        },
-                        {
-                          "__struct_id": 0,
-                          "NAME": {
-                            "type": "cexostring",
-                            "value": "Masterly Morningstar (Damask)"
-                          },
-                          "RESREF": {
-                            "type": "resref",
-                            "value": "gs_item685"
-                          }
-                        },
-                        {
-                          "__struct_id": 0,
-                          "NAME": {
-                            "type": "cexostring",
-                            "value": "Masterly Morningstar (Greensteel)"
-                          },
-                          "RESREF": {
-                            "type": "resref",
-                            "value": "gs_item966"
-                          }
-                        },
-                        {
-                          "__struct_id": 0,
-                          "NAME": {
-                            "type": "cexostring",
-                            "value": "Masterly Morningstar (Iron)"
-                          },
-                          "RESREF": {
-                            "type": "resref",
-                            "value": "gs_item686"
-                          }
-                        },
-                        {
-                          "__struct_id": 0,
-                          "NAME": {
-                            "type": "cexostring",
-                            "value": "Masterly Morningstar (Steel)"
-                          },
-                          "RESREF": {
-                            "type": "resref",
-                            "value": "gs_item687"
-                          }
-                        },
-                        {
-                          "__struct_id": 0,
-                          "NAME": {
-                            "type": "cexostring",
-                            "value": "Morningstar (Bronze)"
-                          },
-                          "RESREF": {
-                            "type": "resref",
-                            "value": "gs_item680"
-                          }
-                        },
-                        {
-                          "__struct_id": 0,
-                          "NAME": {
-                            "type": "cexostring",
-                            "value": "Morningstar (Damask)"
-                          },
-                          "RESREF": {
-                            "type": "resref",
-                            "value": "gs_item683"
-                          }
-                        },
                         {
                           "__struct_id": 0,
                           "NAME": {
@@ -11872,825 +9914,11 @@
                     "__struct_id": 0,
                     "NAME": {
                       "type": "cexostring",
-                      "value": "Double Axe (Bronze)"
+                      "value": "Megaton Hammer"
                     },
                     "RESREF": {
                       "type": "resref",
-                      "value": "gs_item522"
-                    }
-                  },
-                  {
-                    "__struct_id": 0,
-                    "NAME": {
-                      "type": "cexostring",
-                      "value": "Double Axe (Damask)"
-                    },
-                    "RESREF": {
-                      "type": "resref",
-                      "value": "gs_item525"
-                    }
-                  },
-                  {
-                    "__struct_id": 0,
-                    "NAME": {
-                      "type": "cexostring",
-                      "value": "Double Axe (Greensteel)"
-                    },
-                    "RESREF": {
-                      "type": "resref",
-                      "value": "gs_item968"
-                    }
-                  },
-                  {
-                    "__struct_id": 0,
-                    "NAME": {
-                      "type": "cexostring",
-                      "value": "Double Axe (Iron)"
-                    },
-                    "RESREF": {
-                      "type": "resref",
-                      "value": "gs_item523"
-                    }
-                  },
-                  {
-                    "__struct_id": 0,
-                    "NAME": {
-                      "type": "cexostring",
-                      "value": "Double Axe (Steel)"
-                    },
-                    "RESREF": {
-                      "type": "resref",
-                      "value": "gs_item524"
-                    }
-                  },
-                  {
-                    "__struct_id": 0,
-                    "NAME": {
-                      "type": "cexostring",
-                      "value": "Kama (Bronze)"
-                    },
-                    "RESREF": {
-                      "type": "resref",
-                      "value": "gs_item538"
-                    }
-                  },
-                  {
-                    "__struct_id": 0,
-                    "NAME": {
-                      "type": "cexostring",
-                      "value": "Kama (Damask)"
-                    },
-                    "RESREF": {
-                      "type": "resref",
-                      "value": "gs_item541"
-                    }
-                  },
-                  {
-                    "__struct_id": 0,
-                    "NAME": {
-                      "type": "cexostring",
-                      "value": "Kama (Greensteel)"
-                    },
-                    "RESREF": {
-                      "type": "resref",
-                      "value": "gs_item969"
-                    }
-                  },
-                  {
-                    "__struct_id": 0,
-                    "NAME": {
-                      "type": "cexostring",
-                      "value": "Kama (Iron)"
-                    },
-                    "RESREF": {
-                      "type": "resref",
-                      "value": "gs_item539"
-                    }
-                  },
-                  {
-                    "__struct_id": 0,
-                    "NAME": {
-                      "type": "cexostring",
-                      "value": "Kama (Steel)"
-                    },
-                    "RESREF": {
-                      "type": "resref",
-                      "value": "gs_item540"
-                    }
-                  },
-                  {
-                    "__struct_id": 0,
-                    "NAME": {
-                      "type": "cexostring",
-                      "value": "Kukri (Bronze)"
-                    },
-                    "RESREF": {
-                      "type": "resref",
-                      "value": "gs_item546"
-                    }
-                  },
-                  {
-                    "__struct_id": 0,
-                    "NAME": {
-                      "type": "cexostring",
-                      "value": "Kukri (Damask)"
-                    },
-                    "RESREF": {
-                      "type": "resref",
-                      "value": "gs_item549"
-                    }
-                  },
-                  {
-                    "__struct_id": 0,
-                    "NAME": {
-                      "type": "cexostring",
-                      "value": "Kukri (Greensteel)"
-                    },
-                    "RESREF": {
-                      "type": "resref",
-                      "value": "gs_item584"
-                    }
-                  },
-                  {
-                    "__struct_id": 0,
-                    "NAME": {
-                      "type": "cexostring",
-                      "value": "Kukri (Iron)"
-                    },
-                    "RESREF": {
-                      "type": "resref",
-                      "value": "gs_item547"
-                    }
-                  },
-                  {
-                    "__struct_id": 0,
-                    "NAME": {
-                      "type": "cexostring",
-                      "value": "Kukri (Steel)"
-                    },
-                    "RESREF": {
-                      "type": "resref",
-                      "value": "gs_item548"
-                    }
-                  },
-                  {
-                    "__struct_id": 0,
-                    "NAME": {
-                      "type": "cexostring",
-                      "value": "Masterly Double Axe (Bronze)"
-                    },
-                    "RESREF": {
-                      "type": "resref",
-                      "value": "gs_item526"
-                    }
-                  },
-                  {
-                    "__struct_id": 0,
-                    "NAME": {
-                      "type": "cexostring",
-                      "value": "Masterly Double Axe (Damask)"
-                    },
-                    "RESREF": {
-                      "type": "resref",
-                      "value": "gs_item527"
-                    }
-                  },
-                  {
-                    "__struct_id": 0,
-                    "NAME": {
-                      "type": "cexostring",
-                      "value": "Masterly Double Axe (Greensteel)"
-                    },
-                    "RESREF": {
-                      "type": "resref",
-                      "value": "gs_item970"
-                    }
-                  },
-                  {
-                    "__struct_id": 0,
-                    "NAME": {
-                      "type": "cexostring",
-                      "value": "Masterly Double Axe (Iron)"
-                    },
-                    "RESREF": {
-                      "type": "resref",
-                      "value": "gs_item528"
-                    }
-                  },
-                  {
-                    "__struct_id": 0,
-                    "NAME": {
-                      "type": "cexostring",
-                      "value": "Masterly Double Axe (Steel)"
-                    },
-                    "RESREF": {
-                      "type": "resref",
-                      "value": "gs_item529"
-                    }
-                  },
-                  {
-                    "__struct_id": 0,
-                    "NAME": {
-                      "type": "cexostring",
-                      "value": "Masterly Kama (Bronze)"
-                    },
-                    "RESREF": {
-                      "type": "resref",
-                      "value": "gs_item542"
-                    }
-                  },
-                  {
-                    "__struct_id": 0,
-                    "NAME": {
-                      "type": "cexostring",
-                      "value": "Masterly Kama (Damask)"
-                    },
-                    "RESREF": {
-                      "type": "resref",
-                      "value": "gs_item543"
-                    }
-                  },
-                  {
-                    "__struct_id": 0,
-                    "NAME": {
-                      "type": "cexostring",
-                      "value": "Masterly Kama (Greensteel)"
-                    },
-                    "RESREF": {
-                      "type": "resref",
-                      "value": "gs_item971"
-                    }
-                  },
-                  {
-                    "__struct_id": 0,
-                    "NAME": {
-                      "type": "cexostring",
-                      "value": "Masterly Kama (Iron)"
-                    },
-                    "RESREF": {
-                      "type": "resref",
-                      "value": "gs_item544"
-                    }
-                  },
-                  {
-                    "__struct_id": 0,
-                    "NAME": {
-                      "type": "cexostring",
-                      "value": "Masterly Kama (Steel)"
-                    },
-                    "RESREF": {
-                      "type": "resref",
-                      "value": "gs_item545"
-                    }
-                  },
-                  {
-                    "__struct_id": 0,
-                    "NAME": {
-                      "type": "cexostring",
-                      "value": "Masterly Kukri (Bronze)"
-                    },
-                    "RESREF": {
-                      "type": "resref",
-                      "value": "gs_item550"
-                    }
-                  },
-                  {
-                    "__struct_id": 0,
-                    "NAME": {
-                      "type": "cexostring",
-                      "value": "Masterly Kukri (Damask)"
-                    },
-                    "RESREF": {
-                      "type": "resref",
-                      "value": "gs_item551"
-                    }
-                  },
-                  {
-                    "__struct_id": 0,
-                    "NAME": {
-                      "type": "cexostring",
-                      "value": "Masterly Kukri (Greensteel)"
-                    },
-                    "RESREF": {
-                      "type": "resref",
-                      "value": "gs_item972"
-                    }
-                  },
-                  {
-                    "__struct_id": 0,
-                    "NAME": {
-                      "type": "cexostring",
-                      "value": "Masterly Kukri (Iron)"
-                    },
-                    "RESREF": {
-                      "type": "resref",
-                      "value": "gs_item552"
-                    }
-                  },
-                  {
-                    "__struct_id": 0,
-                    "NAME": {
-                      "type": "cexostring",
-                      "value": "Masterly Kukri (Steel)"
-                    },
-                    "RESREF": {
-                      "type": "resref",
-                      "value": "gs_item553"
-                    }
-                  },
-                  {
-                    "__struct_id": 0,
-                    "NAME": {
-                      "type": "cexostring",
-                      "value": "Masterly Mistreater (Bronze)"
-                    },
-                    "RESREF": {
-                      "type": "resref",
-                      "value": "gs_item558"
-                    }
-                  },
-                  {
-                    "__struct_id": 0,
-                    "NAME": {
-                      "type": "cexostring",
-                      "value": "Masterly Mistreater (Damask)"
-                    },
-                    "RESREF": {
-                      "type": "resref",
-                      "value": "gs_item559"
-                    }
-                  },
-                  {
-                    "__struct_id": 0,
-                    "NAME": {
-                      "type": "cexostring",
-                      "value": "Masterly Mistreater (Greensteel)"
-                    },
-                    "RESREF": {
-                      "type": "resref",
-                      "value": "gs_item973"
-                    }
-                  },
-                  {
-                    "__struct_id": 0,
-                    "NAME": {
-                      "type": "cexostring",
-                      "value": "Masterly Mistreater (Iron)"
-                    },
-                    "RESREF": {
-                      "type": "resref",
-                      "value": "gs_item560"
-                    }
-                  },
-                  {
-                    "__struct_id": 0,
-                    "NAME": {
-                      "type": "cexostring",
-                      "value": "Masterly Mistreater (Steel)"
-                    },
-                    "RESREF": {
-                      "type": "resref",
-                      "value": "gs_item561"
-                    }
-                  },
-                  {
-                    "__struct_id": 0,
-                    "NAME": {
-                      "type": "cexostring",
-                      "value": "Masterly Scythe (Bronze)"
-                    },
-                    "RESREF": {
-                      "type": "resref",
-                      "value": "gs_item566"
-                    }
-                  },
-                  {
-                    "__struct_id": 0,
-                    "NAME": {
-                      "type": "cexostring",
-                      "value": "Masterly Scythe (Damask)"
-                    },
-                    "RESREF": {
-                      "type": "resref",
-                      "value": "gs_item567"
-                    }
-                  },
-                  {
-                    "__struct_id": 0,
-                    "NAME": {
-                      "type": "cexostring",
-                      "value": "Masterly Scythe (Greensteel)"
-                    },
-                    "RESREF": {
-                      "type": "resref",
-                      "value": "gs_item974"
-                    }
-                  },
-                  {
-                    "__struct_id": 0,
-                    "NAME": {
-                      "type": "cexostring",
-                      "value": "Masterly Scythe (Iron)"
-                    },
-                    "RESREF": {
-                      "type": "resref",
-                      "value": "gs_item570"
-                    }
-                  },
-                  {
-                    "__struct_id": 0,
-                    "NAME": {
-                      "type": "cexostring",
-                      "value": "Masterly Scythe (Steel)"
-                    },
-                    "RESREF": {
-                      "type": "resref",
-                      "value": "gs_item571"
-                    }
-                  },
-                  {
-                    "__struct_id": 0,
-                    "NAME": {
-                      "type": "cexostring",
-                      "value": "Masterly Sickle (Bronze)"
-                    },
-                    "RESREF": {
-                      "type": "resref",
-                      "value": "gs_item576"
-                    }
-                  },
-                  {
-                    "__struct_id": 0,
-                    "NAME": {
-                      "type": "cexostring",
-                      "value": "Masterly Sickle (Damask)"
-                    },
-                    "RESREF": {
-                      "type": "resref",
-                      "value": "gs_item577"
-                    }
-                  },
-                  {
-                    "__struct_id": 0,
-                    "NAME": {
-                      "type": "cexostring",
-                      "value": "Masterly Sickle (Greensteel)"
-                    },
-                    "RESREF": {
-                      "type": "resref",
-                      "value": "gs_item975"
-                    }
-                  },
-                  {
-                    "__struct_id": 0,
-                    "NAME": {
-                      "type": "cexostring",
-                      "value": "Masterly Sickle (Iron)"
-                    },
-                    "RESREF": {
-                      "type": "resref",
-                      "value": "gs_item578"
-                    }
-                  },
-                  {
-                    "__struct_id": 0,
-                    "NAME": {
-                      "type": "cexostring",
-                      "value": "Masterly Sickle (Steel)"
-                    },
-                    "RESREF": {
-                      "type": "resref",
-                      "value": "gs_item579"
-                    }
-                  },
-                  {
-                    "__struct_id": 0,
-                    "NAME": {
-                      "type": "cexostring",
-                      "value": "Masterly Two-Bladed Sword (Bronze)"
-                    },
-                    "RESREF": {
-                      "type": "resref",
-                      "value": "gs_item534"
-                    }
-                  },
-                  {
-                    "__struct_id": 0,
-                    "NAME": {
-                      "type": "cexostring",
-                      "value": "Masterly Two-Bladed Sword (Damask)"
-                    },
-                    "RESREF": {
-                      "type": "resref",
-                      "value": "gs_item535"
-                    }
-                  },
-                  {
-                    "__struct_id": 0,
-                    "NAME": {
-                      "type": "cexostring",
-                      "value": "Masterly Two-Bladed Sword (Greensteel)"
-                    },
-                    "RESREF": {
-                      "type": "resref",
-                      "value": "gs_item976"
-                    }
-                  },
-                  {
-                    "__struct_id": 0,
-                    "NAME": {
-                      "type": "cexostring",
-                      "value": "Masterly Two-Bladed Sword (Iron)"
-                    },
-                    "RESREF": {
-                      "type": "resref",
-                      "value": "gs_item536"
-                    }
-                  },
-                  {
-                    "__struct_id": 0,
-                    "NAME": {
-                      "type": "cexostring",
-                      "value": "Masterly Two-Bladed Sword (Steel)"
-                    },
-                    "RESREF": {
-                      "type": "resref",
-                      "value": "gs_item537"
-                    }
-                  },
-                  {
-                    "__struct_id": 0,
-                    "NAME": {
-                      "type": "cexostring",
-                      "value": "Masterly Whip"
-                    },
-                    "RESREF": {
-                      "type": "resref",
-                      "value": "gs_item021"
-                    }
-                  },
-                  {
-                    "__struct_id": 0,
-                    "NAME": {
-                      "type": "cexostring",
-                      "value": "Mistreater (Bronze)"
-                    },
-                    "RESREF": {
-                      "type": "resref",
-                      "value": "gs_item554"
-                    }
-                  },
-                  {
-                    "__struct_id": 0,
-                    "NAME": {
-                      "type": "cexostring",
-                      "value": "Mistreater (Damask)"
-                    },
-                    "RESREF": {
-                      "type": "resref",
-                      "value": "gs_item557"
-                    }
-                  },
-                  {
-                    "__struct_id": 0,
-                    "NAME": {
-                      "type": "cexostring",
-                      "value": "Mistreater (Greensteel)"
-                    },
-                    "RESREF": {
-                      "type": "resref",
-                      "value": "gs_item977"
-                    }
-                  },
-                  {
-                    "__struct_id": 0,
-                    "NAME": {
-                      "type": "cexostring",
-                      "value": "Mistreater (Iron)"
-                    },
-                    "RESREF": {
-                      "type": "resref",
-                      "value": "gs_item555"
-                    }
-                  },
-                  {
-                    "__struct_id": 0,
-                    "NAME": {
-                      "type": "cexostring",
-                      "value": "Mistreater (Steel)"
-                    },
-                    "RESREF": {
-                      "type": "resref",
-                      "value": "gs_item556"
-                    }
-                  },
-                  {
-                    "__struct_id": 0,
-                    "NAME": {
-                      "type": "cexostring",
-                      "value": "Rope of an Erinye"
-                    },
-                    "RESREF": {
-                      "type": "resref",
-                      "value": "gs_item343"
-                    }
-                  },
-                  {
-                    "__struct_id": 0,
-                    "NAME": {
-                      "type": "cexostring",
-                      "value": "Scythe (Bronze)"
-                    },
-                    "RESREF": {
-                      "type": "resref",
-                      "value": "gs_item562"
-                    }
-                  },
-                  {
-                    "__struct_id": 0,
-                    "NAME": {
-                      "type": "cexostring",
-                      "value": "Scythe (Damask)"
-                    },
-                    "RESREF": {
-                      "type": "resref",
-                      "value": "gs_item565"
-                    }
-                  },
-                  {
-                    "__struct_id": 0,
-                    "NAME": {
-                      "type": "cexostring",
-                      "value": "Scythe (Greensteel)"
-                    },
-                    "RESREF": {
-                      "type": "resref",
-                      "value": "gs_item978"
-                    }
-                  },
-                  {
-                    "__struct_id": 0,
-                    "NAME": {
-                      "type": "cexostring",
-                      "value": "Scythe (Iron)"
-                    },
-                    "RESREF": {
-                      "type": "resref",
-                      "value": "gs_item563"
-                    }
-                  },
-                  {
-                    "__struct_id": 0,
-                    "NAME": {
-                      "type": "cexostring",
-                      "value": "Scythe (Steel)"
-                    },
-                    "RESREF": {
-                      "type": "resref",
-                      "value": "gs_item564"
-                    }
-                  },
-                  {
-                    "__struct_id": 0,
-                    "NAME": {
-                      "type": "cexostring",
-                      "value": "Scythe of the Soul Guardian"
-                    },
-                    "RESREF": {
-                      "type": "resref",
-                      "value": "gs_item015"
-                    }
-                  },
-                  {
-                    "__struct_id": 0,
-                    "NAME": {
-                      "type": "cexostring",
-                      "value": "Sickle (Bronze)"
-                    },
-                    "RESREF": {
-                      "type": "resref",
-                      "value": "gs_item572"
-                    }
-                  },
-                  {
-                    "__struct_id": 0,
-                    "NAME": {
-                      "type": "cexostring",
-                      "value": "Sickle (Damask)"
-                    },
-                    "RESREF": {
-                      "type": "resref",
-                      "value": "gs_item575"
-                    }
-                  },
-                  {
-                    "__struct_id": 0,
-                    "NAME": {
-                      "type": "cexostring",
-                      "value": "Sickle (Greensteel)"
-                    },
-                    "RESREF": {
-                      "type": "resref",
-                      "value": "gs_item979"
-                    }
-                  },
-                  {
-                    "__struct_id": 0,
-                    "NAME": {
-                      "type": "cexostring",
-                      "value": "Sickle (Iron)"
-                    },
-                    "RESREF": {
-                      "type": "resref",
-                      "value": "gs_item573"
-                    }
-                  },
-                  {
-                    "__struct_id": 0,
-                    "NAME": {
-                      "type": "cexostring",
-                      "value": "Sickle (Steel)"
-                    },
-                    "RESREF": {
-                      "type": "resref",
-                      "value": "gs_item574"
-                    }
-                  },
-                  {
-                    "__struct_id": 0,
-                    "NAME": {
-                      "type": "cexostring",
-                      "value": "Two-Bladed Sword (Bronze)"
-                    },
-                    "RESREF": {
-                      "type": "resref",
-                      "value": "gs_item530"
-                    }
-                  },
-                  {
-                    "__struct_id": 0,
-                    "NAME": {
-                      "type": "cexostring",
-                      "value": "Two-Bladed Sword (Damask)"
-                    },
-                    "RESREF": {
-                      "type": "resref",
-                      "value": "gs_item533"
-                    }
-                  },
-                  {
-                    "__struct_id": 0,
-                    "NAME": {
-                      "type": "cexostring",
-                      "value": "Two-Bladed Sword (Greensteel)"
-                    },
-                    "RESREF": {
-                      "type": "resref",
-                      "value": "gs_item980"
-                    }
-                  },
-                  {
-                    "__struct_id": 0,
-                    "NAME": {
-                      "type": "cexostring",
-                      "value": "Two-Bladed Sword (Iron)"
-                    },
-                    "RESREF": {
-                      "type": "resref",
-                      "value": "gs_item531"
-                    }
-                  },
-                  {
-                    "__struct_id": 0,
-                    "NAME": {
-                      "type": "cexostring",
-                      "value": "Two-Bladed Sword (Steel)"
-                    },
-                    "RESREF": {
-                      "type": "resref",
-                      "value": "gs_item532"
-                    }
-                  },
-                  {
-                    "__struct_id": 0,
-                    "NAME": {
-                      "type": "cexostring",
-                      "value": "Two-Bladed Sword of an Entropy Warrior"
-                    },
-                    "RESREF": {
-                      "type": "resref",
-                      "value": "gs_item892"
-                    }
-                  },
-                  {
-                    "__struct_id": 0,
-                    "NAME": {
-                      "type": "cexostring",
-                      "value": "Whip"
-                    },
-                    "RESREF": {
-                      "type": "resref",
-                      "value": "gs_item020"
+                      "value": "megatonhammer"
                     }
                   }
                 ]
@@ -12729,22 +9957,22 @@
                           "__struct_id": 0,
                           "NAME": {
                             "type": "cexostring",
-                            "value": "Elven Mage Staff"
+                            "value": "Apprentice Staff"
                           },
                           "RESREF": {
                             "type": "resref",
-                            "value": "gs_item044"
+                            "value": "gs_item047"
                           }
                         },
                         {
                           "__struct_id": 0,
                           "NAME": {
                             "type": "cexostring",
-                            "value": "Mage Staff"
+                            "value": "Elven Mage Staff"
                           },
                           "RESREF": {
                             "type": "resref",
-                            "value": "gs_item047"
+                            "value": "gs_item044"
                           }
                         }
                       ]
@@ -12812,238 +10040,7 @@
                     "__struct_id": 0,
                     "NAME": {
                       "type": "cexostring",
-                      "value": "Glaive of a Barbazu"
-                    },
-                    "RESREF": {
-                      "type": "resref",
-                      "value": "gs_item893"
-                    }
-                  },
-                  {
-                    "__struct_id": 0,
-                    "NAME": {
-                      "type": "cexostring",
-                      "value": "Halberd (Bronze)"
-                    },
-                    "RESREF": {
-                      "type": "resref",
-                      "value": "gs_item636"
-                    }
-                  },
-                  {
-                    "__struct_id": 0,
-                    "NAME": {
-                      "type": "cexostring",
-                      "value": "Halberd (Damask)"
-                    },
-                    "RESREF": {
-                      "type": "resref",
-                      "value": "gs_item639"
-                    }
-                  },
-                  {
-                    "__struct_id": 0,
-                    "NAME": {
-                      "type": "cexostring",
-                      "value": "Halberd (Greensteel)"
-                    },
-                    "RESREF": {
-                      "type": "resref",
-                      "value": "gs_item981"
-                    }
-                  },
-                  {
-                    "__struct_id": 0,
-                    "NAME": {
-                      "type": "cexostring",
-                      "value": "Halberd (Iron)"
-                    },
-                    "RESREF": {
-                      "type": "resref",
-                      "value": "gs_item637"
-                    }
-                  },
-                  {
-                    "__struct_id": 0,
-                    "NAME": {
-                      "type": "cexostring",
-                      "value": "Halberd (Steel)"
-                    },
-                    "RESREF": {
-                      "type": "resref",
-                      "value": "gs_item638"
-                    }
-                  },
-                  {
-                    "__struct_id": 0,
-                    "NAME": {
-                      "type": "cexostring",
-                      "value": "Masterly Halberd (Bronze)"
-                    },
-                    "RESREF": {
-                      "type": "resref",
-                      "value": "gs_item640"
-                    }
-                  },
-                  {
-                    "__struct_id": 0,
-                    "NAME": {
-                      "type": "cexostring",
-                      "value": "Masterly Halberd (Damask)"
-                    },
-                    "RESREF": {
-                      "type": "resref",
-                      "value": "gs_item641"
-                    }
-                  },
-                  {
-                    "__struct_id": 0,
-                    "NAME": {
-                      "type": "cexostring",
-                      "value": "Masterly Halberd (Greensteel)"
-                    },
-                    "RESREF": {
-                      "type": "resref",
-                      "value": "gs_item982"
-                    }
-                  },
-                  {
-                    "__struct_id": 0,
-                    "NAME": {
-                      "type": "cexostring",
-                      "value": "Masterly Halberd (Iron)"
-                    },
-                    "RESREF": {
-                      "type": "resref",
-                      "value": "gs_item642"
-                    }
-                  },
-                  {
-                    "__struct_id": 0,
-                    "NAME": {
-                      "type": "cexostring",
-                      "value": "Masterly Halberd (Steel)"
-                    },
-                    "RESREF": {
-                      "type": "resref",
-                      "value": "gs_item643"
-                    }
-                  },
-                  {
-                    "__struct_id": 0,
-                    "NAME": {
-                      "type": "cexostring",
-                      "value": "Masterly Quarterstaff"
-                    },
-                    "RESREF": {
-                      "type": "resref",
-                      "value": "gs_item012"
-                    }
-                  },
-                  {
-                    "__struct_id": 0,
-                    "NAME": {
-                      "type": "cexostring",
-                      "value": "Masterly Spear (Bronze)"
-                    },
-                    "RESREF": {
-                      "type": "resref",
-                      "value": "gs_item648"
-                    }
-                  },
-                  {
-                    "__struct_id": 0,
-                    "NAME": {
-                      "type": "cexostring",
-                      "value": "Masterly Spear (Damask)"
-                    },
-                    "RESREF": {
-                      "type": "resref",
-                      "value": "gs_item649"
-                    }
-                  },
-                  {
-                    "__struct_id": 0,
-                    "NAME": {
-                      "type": "cexostring",
-                      "value": "Masterly Spear (Greensteel)"
-                    },
-                    "RESREF": {
-                      "type": "resref",
-                      "value": "gs_item983"
-                    }
-                  },
-                  {
-                    "__struct_id": 0,
-                    "NAME": {
-                      "type": "cexostring",
-                      "value": "Masterly Spear (Iron)"
-                    },
-                    "RESREF": {
-                      "type": "resref",
-                      "value": "gs_item650"
-                    }
-                  },
-                  {
-                    "__struct_id": 0,
-                    "NAME": {
-                      "type": "cexostring",
-                      "value": "Masterly Spear (Steel)"
-                    },
-                    "RESREF": {
-                      "type": "resref",
-                      "value": "gs_item651"
-                    }
-                  },
-                  {
-                    "__struct_id": 0,
-                    "NAME": {
-                      "type": "cexostring",
-                      "value": "Masterly Trident (Damask)"
-                    },
-                    "RESREF": {
-                      "type": "resref",
-                      "value": "gs_item995"
-                    }
-                  },
-                  {
-                    "__struct_id": 0,
-                    "NAME": {
-                      "type": "cexostring",
-                      "value": "Masterly Trident (Greensteel)"
-                    },
-                    "RESREF": {
-                      "type": "resref",
-                      "value": "gs_item996"
-                    }
-                  },
-                  {
-                    "__struct_id": 0,
-                    "NAME": {
-                      "type": "cexostring",
-                      "value": "Masterly Trident (Iron)"
-                    },
-                    "RESREF": {
-                      "type": "resref",
-                      "value": "gs_item997"
-                    }
-                  },
-                  {
-                    "__struct_id": 0,
-                    "NAME": {
-                      "type": "cexostring",
-                      "value": "Masterly Trident (Steel)"
-                    },
-                    "RESREF": {
-                      "type": "resref",
-                      "value": "gs_item998"
-                    }
-                  },
-                  {
-                    "__struct_id": 0,
-                    "NAME": {
-                      "type": "cexostring",
-                      "value": "Quarterstaff"
+                      "value": "Ash Quarterstaff"
                     },
                     "RESREF": {
                       "type": "resref",
@@ -13054,44 +10051,22 @@
                     "__struct_id": 0,
                     "NAME": {
                       "type": "cexostring",
-                      "value": "Spear (Bronze)"
+                      "value": "Iron Halberd"
                     },
                     "RESREF": {
                       "type": "resref",
-                      "value": "gs_item644"
+                      "value": "gs_item637"
                     }
                   },
                   {
                     "__struct_id": 0,
                     "NAME": {
                       "type": "cexostring",
-                      "value": "Spear (Damask)"
+                      "value": "Iron Spear"
                     },
                     "RESREF": {
                       "type": "resref",
                       "value": "gs_item647"
-                    }
-                  },
-                  {
-                    "__struct_id": 0,
-                    "NAME": {
-                      "type": "cexostring",
-                      "value": "Spear (Greensteel)"
-                    },
-                    "RESREF": {
-                      "type": "resref",
-                      "value": "gs_item984"
-                    }
-                  },
-                  {
-                    "__struct_id": 0,
-                    "NAME": {
-                      "type": "cexostring",
-                      "value": "Spear (Iron)"
-                    },
-                    "RESREF": {
-                      "type": "resref",
-                      "value": "gs_item645"
                     }
                   },
                   {
@@ -13109,33 +10084,22 @@
                     "__struct_id": 0,
                     "NAME": {
                       "type": "cexostring",
-                      "value": "Trident (Bronze)"
+                      "value": "Steel Halberd"
                     },
                     "RESREF": {
                       "type": "resref",
-                      "value": "gs_item051"
+                      "value": "gs_item638"
                     }
                   },
                   {
                     "__struct_id": 0,
                     "NAME": {
                       "type": "cexostring",
-                      "value": "Trident (Damask)"
+                      "value": "Steel Spear"
                     },
                     "RESREF": {
                       "type": "resref",
-                      "value": "gs_item993"
-                    }
-                  },
-                  {
-                    "__struct_id": 0,
-                    "NAME": {
-                      "type": "cexostring",
-                      "value": "Trident (Greensteel)"
-                    },
-                    "RESREF": {
-                      "type": "resref",
-                      "value": "gs_item994"
+                      "value": "gs_item645"
                     }
                   },
                   {

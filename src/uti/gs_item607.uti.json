@@ -18,7 +18,7 @@
   },
   "Cost": {
     "type": "dword",
-    "value": 20550
+    "value": 70
   },
   "Cursed": {
     "type": "byte",
@@ -39,20 +39,20 @@
   "LocalizedName": {
     "type": "cexolocstring",
     "value": {
-      "0": "Bastard Sword (Damask)"
+      "0": "Iron Bastard Sword"
     }
   },
   "ModelPart1": {
     "type": "byte",
-    "value": 64
+    "value": 111
   },
   "ModelPart2": {
     "type": "byte",
-    "value": 34
+    "value": 251
   },
   "ModelPart3": {
     "type": "byte",
-    "value": 44
+    "value": 254
   },
   "PaletteID": {
     "type": "byte",
@@ -73,11 +73,11 @@
         },
         "CostTable": {
           "type": "byte",
-          "value": 2
+          "value": 28
         },
         "CostValue": {
           "type": "word",
-          "value": 3
+          "value": 9
         },
         "Param1": {
           "type": "byte",
@@ -89,42 +89,11 @@
         },
         "PropertyName": {
           "type": "word",
-          "value": 56
+          "value": 85
         },
         "Subtype": {
           "type": "word",
           "value": 0
-        }
-      },
-      {
-        "__struct_id": 0,
-        "ChanceAppear": {
-          "type": "byte",
-          "value": 100
-        },
-        "CostTable": {
-          "type": "byte",
-          "value": 4
-        },
-        "CostValue": {
-          "type": "word",
-          "value": 3
-        },
-        "Param1": {
-          "type": "byte",
-          "value": 255
-        },
-        "Param1Value": {
-          "type": "byte",
-          "value": 0
-        },
-        "PropertyName": {
-          "type": "word",
-          "value": 16
-        },
-        "Subtype": {
-          "type": "word",
-          "value": 2
         }
       }
     ]
@@ -147,14 +116,14 @@
   },
   "xModelPart1": {
     "type": "word",
-    "value": 64
+    "value": 111
   },
   "xModelPart2": {
     "type": "word",
-    "value": 34
+    "value": 251
   },
   "xModelPart3": {
     "type": "word",
-    "value": 44
+    "value": 254
   }
 }
