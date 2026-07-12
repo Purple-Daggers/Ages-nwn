@@ -11,6 +11,7 @@ const int CHAT_COMMAND_MOVE_FIXTURE = 2;
 const int CHAT_COMMAND_ROLL_DICE = 3;
 const int CHAT_COMMAND_REPUTATION_VIEW = 4;
 const int CHAT_COMMAND_REPUTATION_GIVE = 5;
+const int CHAT_COMMAND_MODIFY_EARS = 6;
 
 //return matching integer if tag matches a chat command
 int gsCTGetChatCommand(string sTag);
@@ -26,6 +27,7 @@ int gsCTGetChatCommand(string sTag)
     if(sTag == "roll") return CHAT_COMMAND_ROLL_DICE;
     if(sTag == "rep" || sTag == "reputation") return CHAT_COMMAND_REPUTATION_VIEW;
     if(sTag == "giverep") return CHAT_COMMAND_REPUTATION_GIVE;
+    if(sTag == "ears") return CHAT_COMMAND_MODIFY_EARS;
     return CHAT_COMMAND_INVALID;
 }
 
@@ -43,7 +45,7 @@ void gsCTProcessCommand(object oSpeaker, int nCommand, string sParams){
         case CHAT_COMMAND_ROLL_DICE:
             SetLocalString(oSpeaker, "dmfi_univ_conv", "pc_dicebag");
             AssignCommand(oSpeaker, ClearAllActions());
-            AssignCommand(oSpeaker, ActionStartConversation(OBJECT_SELF, "dmfi_universal", TRUE)); break;
+            AssignCommand(oSpeaker, ActionStartConversation(OBJECT_SELF, "dmfi_universal", TRUE, FALSE));
         break;
         case CHAT_COMMAND_REPUTATION_VIEW:
             if(GetIsDM(oSpeaker) || GetIsDMPossessed(oSpeaker))
@@ -60,6 +62,10 @@ void gsCTProcessCommand(object oSpeaker, int nCommand, string sParams){
                 SetLocalInt(oSpeaker, "AS_REPUTATION_CHANGE", nChange);
                 EnterTargetingMode(oSpeaker, OBJECT_TYPE_CREATURE);
             }
+        break;
+        case CHAT_COMMAND_MODIFY_EARS:
+            AssignCommand(oSpeaker, ClearAllActions());
+            AssignCommand(oSpeaker, ActionStartConversation(OBJECT_SELF, "as_ears", TRUE, FALSE));
         break;
         case CHAT_COMMAND_LANGUAGE:
             SendMessageToPC(
