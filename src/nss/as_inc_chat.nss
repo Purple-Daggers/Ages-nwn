@@ -13,6 +13,7 @@ const int CHAT_COMMAND_REPUTATION_VIEW = 4;
 const int CHAT_COMMAND_REPUTATION_GIVE = 5;
 const int CHAT_COMMAND_MODIFY_EARS = 6;
 const int CHAT_COMMAND_MODIFY_TAIL = 7;
+const int CHAT_COMMAND_MODIFY_WHISPERSTALKER = 8;
 
 //return matching integer if tag matches a chat command
 int gsCTGetChatCommand(string sTag);
@@ -30,6 +31,7 @@ int gsCTGetChatCommand(string sTag)
     if(sTag == "giverep") return CHAT_COMMAND_REPUTATION_GIVE;
     if(sTag == "ears") return CHAT_COMMAND_MODIFY_EARS;
     if(sTag == "tail") return CHAT_COMMAND_MODIFY_TAIL;
+    if(sTag == "cat") return CHAT_COMMAND_MODIFY_WHISPERSTALKER;
     return CHAT_COMMAND_INVALID;
 }
 
@@ -72,6 +74,10 @@ void gsCTProcessCommand(object oSpeaker, int nCommand, string sParams){
         case CHAT_COMMAND_MODIFY_TAIL:
             AssignCommand(oSpeaker, ClearAllActions());
             AssignCommand(oSpeaker, ActionStartConversation(OBJECT_SELF, "as_tails", TRUE, FALSE));
+        break;
+        case CHAT_COMMAND_MODIFY_WHISPERSTALKER:
+            AssignCommand(oSpeaker, ClearAllActions());
+            AssignCommand(oSpeaker, ActionStartConversation(OBJECT_SELF, "as_cats", TRUE, FALSE));
         break;
         case CHAT_COMMAND_LANGUAGE:
             SendMessageToPC(
