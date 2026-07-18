@@ -108,15 +108,24 @@ void main()
     gsSUParseGift(oProperty, sGift4);
     gsSUParseGift(oProperty, sGift5);
 
+    int nCharismaGift = GetLocalInt(oProperty, "GS_SU_CHARISMA");
+    int nConstitutionGift = GetLocalInt(oProperty, "GS_SU_CONSTITUTION");
+    int nIntelligenceGift = GetLocalInt(oProperty, "GS_SU_INTELLIGENCE");
+    int nDexterityGift = GetLocalInt(oProperty, "GS_SU_DEXTERITY");
+    int nStrengthGift = GetLocalInt(oProperty, "GS_SU_STRENGTH");
+    int nWisdomGift = GetLocalInt(oProperty, "GS_SU_WISDOM");
+
+    gsSUSetSubRace(oSpeaker, nSubRace, nStrengthGift, nDexterityGift, nConstitutionGift, nIntelligenceGift, nWisdomGift, nCharismaGift);
+
     if (GetIsObjectValid(oProperty))
     {
-        gsSUApplyProperty(oProperty, nSubRace, nLevel);
+        gsSUApplyProperty(oProperty, nLevel);
         if (nFlag) AssignCommand(oSpeaker, ActionEquipItem(oProperty, INVENTORY_SLOT_CARMOUR));
     }
 
     if (GetIsObjectValid(oAbility))
     {
-        gsSUApplyAbility(oAbility, nSubRace, nLevel);
+        gsSUApplyAbility(oAbility, nLevel);
     }
 
     SetSubRace(oSpeaker, gsSUGetNameBySubRace(nSubRace));
@@ -134,5 +143,18 @@ void main()
     case GS_SU_SPECIAL_KOBOLD:
         SetCreatureAppearanceType(oSpeaker, APPEARANCE_TYPE_KOBOLD_A);
         break;
+    }
+
+    if(gsSUGetHasDigitigradeLegs(oSpeaker))
+    {
+        SetCreatureBodyPart(CREATURE_PART_LEFT_SHIN, 137, oSpeaker);
+        SetCreatureBodyPart(CREATURE_PART_RIGHT_SHIN, 137, oSpeaker);
+        SetCreatureBodyPart(CREATURE_PART_LEFT_FOOT, 136, oSpeaker);
+        SetCreatureBodyPart(CREATURE_PART_RIGHT_FOOT, 136, oSpeaker);
+        object oArmor = GetItemInSlot(INVENTORY_SLOT_CHEST, oSpeaker);
+        if(GetIsObjectValid(oArmor)){
+            AssignCommand(oSpeaker, ActionUnequipItem(oArmor));
+            AssignCommand(oSpeaker, ActionEquipItem(oArmor, INVENTORY_SLOT_CHEST));
+        }
     }
 }

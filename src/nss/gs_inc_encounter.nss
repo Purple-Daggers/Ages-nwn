@@ -247,8 +247,7 @@ float gsENGetRatingAtLocation(location lLocation, float fRange = 40.0)
 
             if (GetIsPC(oCreature))
             {
-                nSubRace         = gsSUGetSubRaceByName(GetSubRace(oCreature));
-                fRating          = IntToFloat(gsSUGetECL(nSubRace, GetHitDice(oCreature)));
+                fRating          = IntToFloat(GetHitDice(oCreature));
                 nEquipmentValue  = 0;
 
                 oEquipment       = GetItemInSlot(INVENTORY_SLOT_ARMS,      oCreature);

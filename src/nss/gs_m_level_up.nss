@@ -144,18 +144,13 @@ void main()
         break;
     }
 
-    int nSubRace = gsSUGetSubRaceByName(GetSubRace(oPC));
+    //property
+    object oItem = GetItemInSlot(INVENTORY_SLOT_CARMOUR, oPC);
+    if (GetIsObjectValid(oItem)) gsSUApplyProperty(oItem, nLevel);
 
-    if (nSubRace)
-    {
-        //property
-        object oItem = GetItemInSlot(INVENTORY_SLOT_CARMOUR, oPC);
-        if (GetIsObjectValid(oItem)) gsSUApplyProperty(oItem, nSubRace, nLevel);
-
-        //ability
-        oItem        = GetItemPossessedBy(oPC, "GS_SU_ABILITY");
-        if (GetIsObjectValid(oItem)) gsSUApplyAbility(oItem, nSubRace, nLevel);
-    }
+    //ability
+    oItem        = GetItemPossessedBy(oPC, "GS_SU_ABILITY");
+    if (GetIsObjectValid(oItem)) gsSUApplyAbility(oItem, nLevel);
 
     gsCMCalculateMaximumMana(oPC);
 
