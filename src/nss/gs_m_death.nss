@@ -1,4 +1,3 @@
-#include "gs_inc_chain"
 #include "gs_inc_common"
 #include "gs_inc_flag"
 #include "gs_inc_pc"
@@ -64,9 +63,6 @@ void gsDeath()
             gsXPApplyDeathPenalty(OBJECT_SELF, GetHitDice(OBJECT_SELF) * GS_PENALTY_PER_LEVEL, TRUE);
         }
     }
-
-    //chain
-    if (gsCHGetHasChain()) gsCHRemoveChain(gsCHGetChain());
 
     //teleport
     SetPlotFlag(OBJECT_SELF, TRUE);

@@ -1,4 +1,3 @@
-#include "gs_inc_chain"
 #include "gs_inc_fixture"
 #include "gs_inc_flag"
 #include "gs_inc_text"
@@ -24,13 +23,6 @@ void main()
 
         CopyItem(oItem, oLostBy, TRUE);
         DestroyObject(oItem);
-        return;
-    }
-
-    //chain
-    if (sTag == "GS_CHAIN")
-    {
-        gsCHRemoveChain(oItem);
         return;
     }
 
