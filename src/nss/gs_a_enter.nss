@@ -262,10 +262,11 @@ void main()
         SetLocalLocation(oEntering, "GS_LOCATION", GetLocation(oEntering));
 
         //subrace selection
-        if (gsSUGetSubrace(oEntering) == GS_SU_NONE){
+        if (gsSUGetSubRace(oEntering) == GS_SU_NONE){
             ActionStartConversation(oEntering, "gs_su_select", TRUE, FALSE);
         }
         break;
+
 
     case -1:
 
