@@ -10,6 +10,7 @@
 #include "gs_inc_text"
 #include "gs_inc_time"
 #include "gs_inc_worship"
+#include "gs_inc_subrace"
 
 const int GS_TIMEOUT = 1200; //TIME UPDATE: 20 minutes
 
@@ -261,10 +262,11 @@ void main()
         SetLocalLocation(oEntering, "GS_LOCATION", GetLocation(oEntering));
 
         //subrace selection
-        if (! GetIsObjectValid(GetItemInSlot(INVENTORY_SLOT_CARMOUR, oEntering)))
-            AssignCommand(oEntering, ActionStartConversation(oEntering, "gs_su_select", TRUE, FALSE));
-
+        if (gsSUGetSubRace(oEntering) == GS_SU_NONE){
+            ActionStartConversation(oEntering, "gs_su_select", TRUE, FALSE);
+        }
         break;
+
 
     case -1:
 

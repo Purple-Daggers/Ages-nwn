@@ -4,6 +4,7 @@
 #include "gs_inc_strack"
 #include "gs_inc_text"
 #include "mi_inc_checker"
+#include "gs_inc_subrace"
 
 const int GS_EXPERIENCE_BASE = 1000; //level 2
 
@@ -45,58 +46,52 @@ void gsInitialize()
 {
     SetCommandable(TRUE);
 
-    if (! GetIsObjectValid(GetItemInSlot(INVENTORY_SLOT_CARMOUR)))
+    if (gsSUGetSubRace(OBJECT_SELF) == GS_SU_NONE)
     {
-        if (GetHitDice(OBJECT_SELF) == 1)
+        
+        // Edit by Mithreas: enable this block to check if character is
+        // valid before initialising them.  You may need to raise the
+        // server TMI (too many instructions) limit if yours is low.
+        /*
+        if (!miCharacterIsLegal(OBJECT_SELF))
         {
-            // Edit by Mithreas: enable this block to check if character is
-            // valid before initialising them.  You may need to raise the
-            // server TMI (too many instructions) limit if yours is low.
-            /*
-            if (!miCharacterIsLegal(OBJECT_SELF))
-            {
-              SendMessageToPC(OBJECT_SELF, "!!!Illegal character!!!");
-            }
-            else
-            {
-              SendMessageToPC(OBJECT_SELF, "Character is legal.");
-            } */
-
-            //remove gold
-            TakeGoldFromCreature(GetGold(), OBJECT_SELF, TRUE);
-
-            //remove inventory
-            gsCMDestroyInventory();
-
-            //give base experience
-            if (GetXP(OBJECT_SELF) < GS_EXPERIENCE_BASE)
-                GiveXPToCreature(OBJECT_SELF, GS_EXPERIENCE_BASE);
-
-            //remove tattoos
-            SetCreatureBodyPart(CREATURE_PART_LEFT_BICEP,    CREATURE_MODEL_TYPE_SKIN);
-            SetCreatureBodyPart(CREATURE_PART_LEFT_FOREARM,  CREATURE_MODEL_TYPE_SKIN);
-            SetCreatureBodyPart(CREATURE_PART_LEFT_SHIN,     CREATURE_MODEL_TYPE_SKIN);
-            SetCreatureBodyPart(CREATURE_PART_LEFT_THIGH,    CREATURE_MODEL_TYPE_SKIN);
-            SetCreatureBodyPart(CREATURE_PART_RIGHT_BICEP,   CREATURE_MODEL_TYPE_SKIN);
-            SetCreatureBodyPart(CREATURE_PART_RIGHT_FOREARM, CREATURE_MODEL_TYPE_SKIN);
-            SetCreatureBodyPart(CREATURE_PART_RIGHT_SHIN,    CREATURE_MODEL_TYPE_SKIN);
-            SetCreatureBodyPart(CREATURE_PART_RIGHT_THIGH,   CREATURE_MODEL_TYPE_SKIN);
-            SetCreatureBodyPart(CREATURE_PART_TORSO,         CREATURE_MODEL_TYPE_SKIN);
-
-            //remove tail
-            SetCreatureTailType(CREATURE_TAIL_TYPE_NONE);
-
-            //remove wings
-            SetCreatureWingType(CREATURE_WING_TYPE_NONE);
+            SendMessageToPC(OBJECT_SELF, "!!!Illegal character!!!");
         }
-
-        //clean inventory
         else
         {
-            string sItemStripScript = GetLocalString(GetModule(), "GS_ITEM_STRIP_SCRIPT");
+            SendMessageToPC(OBJECT_SELF, "Character is legal.");
+        } */
 
-            if (sItemStripScript != "") ExecuteScript(sItemStripScript, OBJECT_SELF);
-        }
+        //remove gold
+        TakeGoldFromCreature(GetGold(), OBJECT_SELF, TRUE);
+
+        //remove inventory
+        gsCMDestroyInventory();
+
+        //destroy player hide if has one
+        object oItem = GetItemInSlot(INVENTORY_SLOT_CARMOUR, OBJECT_SELF);
+        if (GetIsObjectValid(oItem)) DestroyObject(oItem);
+
+        //give base experience
+        if (GetXP(OBJECT_SELF) < GS_EXPERIENCE_BASE)
+            GiveXPToCreature(OBJECT_SELF, GS_EXPERIENCE_BASE);
+
+        //remove tattoos
+        SetCreatureBodyPart(CREATURE_PART_LEFT_BICEP,    CREATURE_MODEL_TYPE_SKIN);
+        SetCreatureBodyPart(CREATURE_PART_LEFT_FOREARM,  CREATURE_MODEL_TYPE_SKIN);
+        SetCreatureBodyPart(CREATURE_PART_LEFT_SHIN,     CREATURE_MODEL_TYPE_SKIN);
+        SetCreatureBodyPart(CREATURE_PART_LEFT_THIGH,    CREATURE_MODEL_TYPE_SKIN);
+        SetCreatureBodyPart(CREATURE_PART_RIGHT_BICEP,   CREATURE_MODEL_TYPE_SKIN);
+        SetCreatureBodyPart(CREATURE_PART_RIGHT_FOREARM, CREATURE_MODEL_TYPE_SKIN);
+        SetCreatureBodyPart(CREATURE_PART_RIGHT_SHIN,    CREATURE_MODEL_TYPE_SKIN);
+        SetCreatureBodyPart(CREATURE_PART_RIGHT_THIGH,   CREATURE_MODEL_TYPE_SKIN);
+        SetCreatureBodyPart(CREATURE_PART_TORSO,         CREATURE_MODEL_TYPE_SKIN);
+
+        //remove tail
+        SetCreatureTailType(CREATURE_TAIL_TYPE_NONE);
+
+        //remove wings
+        SetCreatureWingType(CREATURE_WING_TYPE_NONE);
 
         //create base inventory
         DelayCommand(0.5, gsCreateBaseInventory());
@@ -105,14 +100,9 @@ void gsInitialize()
         ActionStartConversation(OBJECT_SELF, "gs_su_select", TRUE, FALSE);
     }
 
-    //chain
-    else if (gsCHGetHasChain())
-    {
-        object oChain = gsCHGetChain();
-
-        gsCHRemoveChain(oChain);
-        gsCHApplyChain(oChain, OBJECT_SELF);
-    }
+    //clean inventory
+    string sItemStripScript = GetLocalString(GetModule(), "GS_ITEM_STRIP_SCRIPT");
+    if (sItemStripScript != "") ExecuteScript(sItemStripScript, OBJECT_SELF);
 
     //listener
     //gsLICreateListener(OBJECT_SELF);

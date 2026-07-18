@@ -257,7 +257,7 @@ void gsXPGiveExperience(object oCreature, int nAmount, int nFloat = TRUE, int nK
     {
         int nLevel   = GetHitDice(oCreature);
         int nXPLevel = (nLevel + 1) * nLevel / 2 * 1000;
-        int nSubRace = gsSUGetSubRaceByName(GetSubRace(oCreature));
+        int nSubRace = GS_SU_NONE;
 
         if (nKill)
         {

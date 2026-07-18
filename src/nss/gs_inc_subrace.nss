@@ -3,8 +3,21 @@
 #include "gs_inc_common"
 #include "gs_inc_iprop"
 #include "gs_inc_text"
+#include "gs_inc_pc"
 
 //void main() {}
+
+const string AS_SUBRACE_DATABASE = "AS_SUBRACES";
+
+struct SubraceGifts
+{
+    int Str;
+    int Dex;
+    int Con;
+    int Int;
+    int Wis;
+    int Cha;
+};
 
 const string GS_SU_TEMPLATE_PROPERTY      = "gs_item317";
 const string GS_SU_TEMPLATE_ABILITY       = "gs_item318";
@@ -129,9 +142,9 @@ const int GS_SU_HUMAN_NAVARREE_CIPHER = 75;
 
 
 //apply properties for nSubrace of nLevel to oItem
-void gsSUApplyProperty(object oItem, int nSubRace, int nLevel);
+void gsSUApplyProperty(object oItem, int nLevel);
 //apply abilities for nSubrace of nLevel to oItem
-void gsSUApplyAbility(object oItem, int nSubRace, int nLevel);
+void gsSUApplyAbility(object oItem, int nLevel);
 //return subrace constant resembling sSubRace
 int gsSUGetSubRaceByName(string sSubRace);
 //return name of nSubRace
@@ -144,6 +157,68 @@ int gsSUGetFavoredClass(int nSubRace, int nGender = GENDER_MALE);
 void gsSUAddGift(object oItem, int nAbility, int nIncrease);
 //remove a gift local variable to a subrace item
 void gsSURemoveGift(object oItem, int nAbility, int nIncrease);
+//record subrace and gifts to database
+void gsSUSetSubRace(object oPlayer, int nSubrace, int nStrGift, int nDexGift, int nConGift, int nIntGift, int nWisGift, int nChaGift);
+//return subrace integer
+int gsSUGetSubRace(object oPlayer);
+//return struct containing gift information
+struct SubraceGifts gsSUGetGifts(object oPlayer);
+//return TRUE if race has digitigrade legs
+int gsSUGetHasDigitigradeLegs(object oPlayer);
+
+void gsSUSetSubRace(object oPlayer, int nSubRace, int nStrGift, int nDexGift, int nConGift, int nIntGift, int nWisGift, int nChaGift)
+{
+    sqlquery sqlCreateTable = SqlPrepareQueryCampaign(AS_SUBRACE_DATABASE, "CREATE TABLE IF NOT EXISTS subraces (id TEXT PRIMARY KEY, subrace INTEGER, str_gift INTEGER, dex_gift INTEGER, con_gift INTEGER, int_gift INTEGER, wis_gift INTEGER, cha_gift INTEGER);");
+    SqlStep(sqlCreateTable);
+
+    sqlquery sqlInitializeSubrace = SqlPrepareQueryCampaign(AS_SUBRACE_DATABASE, "INSERT INTO subraces (id, subrace, str_gift, dex_gift, con_gift, int_gift, wis_gift, cha_gift) VALUES (@id, @subrace, @str_gift, @dex_gift, @con_gift, @int_gift, @wis_gift, @cha_gift);");
+    SqlBindString(sqlInitializeSubrace, "@id", gsPCGetPlayerID(oPlayer));
+    SqlBindInt(sqlInitializeSubrace, "@subrace", nSubRace);
+    SqlBindInt(sqlInitializeSubrace, "@str_gift", nStrGift);
+    SqlBindInt(sqlInitializeSubrace, "@dex_gift", nDexGift);
+    SqlBindInt(sqlInitializeSubrace, "@con_gift", nConGift);
+    SqlBindInt(sqlInitializeSubrace, "@int_gift", nIntGift);
+    SqlBindInt(sqlInitializeSubrace, "@wis_gift", nWisGift);
+    SqlBindInt(sqlInitializeSubrace, "@cha_gift", nChaGift);
+    SqlStep(sqlInitializeSubrace);
+}
+
+int gsSUGetSubRace(object oPlayer)
+{
+    int nSubRace = GS_SU_NONE;
+    sqlquery sqlGetSubrace = SqlPrepareQueryCampaign(AS_SUBRACE_DATABASE, "SELECT subrace from subraces WHERE id = @id");
+    SqlBindString(sqlGetSubrace, "@id", gsPCGetPlayerID(oPlayer));
+    if(SqlStep(sqlGetSubrace))
+    {
+        nSubRace = SqlGetInt(sqlGetSubrace, 0);
+    }
+    return nSubRace;
+}
+
+struct SubraceGifts gsSUGetGifts(object oPlayer)
+{
+    struct SubraceGifts gGifts;
+    gGifts.Str = 0;
+    gGifts.Dex = 0;
+    gGifts.Con = 0;
+    gGifts.Int = 0;
+    gGifts.Wis = 0;
+    gGifts.Cha = 0;
+    sqlquery sqlGetGifts = SqlPrepareQueryCampaign(AS_SUBRACE_DATABASE, "SELECT str_gift, dex_gift, con_gift, int_gift, wis_gift, cha_gift from subraces WHERE id = @id");
+    SqlBindString(sqlGetGifts, "@id", gsPCGetPlayerID(oPlayer));
+    if(SqlStep(sqlGetGifts))
+    {
+        gGifts.Str = SqlGetInt(sqlGetGifts, 0);
+        gGifts.Dex = SqlGetInt(sqlGetGifts, 1);
+        gGifts.Con = SqlGetInt(sqlGetGifts, 2);
+        gGifts.Int = SqlGetInt(sqlGetGifts, 3);
+        gGifts.Wis = SqlGetInt(sqlGetGifts, 4);
+        gGifts.Cha = SqlGetInt(sqlGetGifts, 5);
+    }
+    return gGifts;
+}
+
+
 
 void gsSUAddGift(object oItem, int nAbility, int nIncrease)
 {
@@ -199,9 +274,10 @@ void gsSURemoveGifts(object oItem, int nAbility)
     }
 }
 
-void gsSUApplyProperty(object oItem, int nSubRace, int nLevel)
+void gsSUApplyProperty(object oItem, int nLevel)
 {
     object oPossessor = GetItemPossessor(oItem);
+    int nSubRace = gsSUGetSubRace(oPossessor);
     int nRacialType   = GetIsObjectValid(oPossessor) ?
                         GetRacialType(oPossessor) : -1;
 
@@ -2959,12 +3035,14 @@ void gsSUApplyProperty(object oItem, int nSubRace, int nLevel)
     }
     //Gift system
 
-    int nCharismaGift = GetLocalInt(oItem, "GS_SU_CHARISMA");
-    int nConstitutionGift = GetLocalInt(oItem, "GS_SU_CONSTITUTION");
-    int nIntelligenceGift = GetLocalInt(oItem, "GS_SU_INTELLIGENCE");
-    int nDexterityGift = GetLocalInt(oItem, "GS_SU_DEXTERITY");
-    int nStrengthGift = GetLocalInt(oItem, "GS_SU_STRENGTH");
-    int nWisdomGift = GetLocalInt(oItem, "GS_SU_WISDOM");
+    struct SubraceGifts gGifts = gsSUGetGifts(oPossessor);
+
+    int nCharismaGift = gGifts.Cha;
+    int nConstitutionGift = gGifts.Con;
+    int nIntelligenceGift = gGifts.Int;
+    int nDexterityGift = gGifts.Dex;
+    int nStrengthGift = gGifts.Str;
+    int nWisdomGift = gGifts.Wis;
 
     if(nCharismaGift > 0) {
         AddItemProperty(DURATION_TYPE_PERMANENT,
@@ -3032,9 +3110,12 @@ void gsSUApplyProperty(object oItem, int nSubRace, int nLevel)
 
 
 //----------------------------------------------------------------
-void gsSUApplyAbility(object oItem, int nSubRace, int nLevel)
+void gsSUApplyAbility(object oItem, int nLevel)
 {
     gsIPRemoveAllProperties(oItem);
+
+    object oPossessor = GetItemPossessor(oItem);
+    int nSubRace = gsSUGetSubRace(oPossessor);
 
     switch (nSubRace)
     {
@@ -4048,4 +4129,22 @@ int gsSUGetFavoredClass(int nSubRace, int nGender = GENDER_MALE)
     }
 
     return CLASS_TYPE_INVALID;
+}
+
+int gsSUGetHasDigitigradeLegs(object oPlayer)
+{
+    int nSubRace  = gsSUGetSubRace(oPlayer);
+    switch(nSubRace)
+    {
+        case GS_SU_NUJIIT_PADARR_FANGLORD:
+        case GS_SU_NUJIIT_PADARR_BRIGHTMOON:
+        case GS_SU_NUJIIT_KOMALARI_FANGLORD:
+        case GS_SU_NUJIIT_KOMALARI_BRIGHTMOON:
+        case GS_SU_NUJIIT_RIVERLORD_FANGLORD:
+        case GS_SU_NUJIIT_RIVERLORD_BRIGHTMOON:
+        case GS_SU_NUJIIT_RESPLENDENT_FANGLORD:
+        case GS_SU_NUJIIT_RESPLENDENT_BRIGHTMOON:
+        return TRUE;
+    }
+    return FALSE;
 }
