@@ -1,4 +1,3 @@
-#include "gs_inc_chain"
 #include "gs_inc_common"
 #include "gs_inc_listener"
 #include "gs_inc_strack"
@@ -48,7 +47,7 @@ void gsInitialize()
 
     if (gsSUGetSubRace(OBJECT_SELF) == GS_SU_NONE)
     {
-        
+
         // Edit by Mithreas: enable this block to check if character is
         // valid before initialising them.  You may need to raise the
         // server TMI (too many instructions) limit if yours is low.

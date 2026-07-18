@@ -1,5 +1,4 @@
 #include "gs_inc_boss"
-#include "gs_inc_chain"
 #include "gs_inc_common"
 #include "gs_inc_encounter"
 #include "gs_inc_flag"
@@ -24,14 +23,6 @@ void main()
     object oActivator  = GetItemActivator();
     object oTarget     = GetItemActivatedTarget();
     location lLocation = GetItemActivatedTargetLocation();
-
-    //chain
-    if (sTag == "GS_CHAIN")
-    {
-        gsCHRemoveChain(oItem);
-        gsCHApplyChain(oItem, oTarget);
-        return;
-    }
 
     //portal lens
     if (sTag == "GS_PO_LENS")

@@ -1,7 +1,6 @@
 #include "gs_inc_boss"
 #include "gs_inc_common"
 #include "gs_inc_encounter"
-#include "gs_inc_justice"
 #include "gs_inc_location"
 #include "gs_inc_fixture"
 #include "gs_inc_flag"
@@ -304,46 +303,6 @@ void main()
         {
             SetDeity(oEntering, "");
             SendMessageToPC(oEntering, GS_T_16777297);
-        }
-    }
-
-    //banishment
-    string sTag = GetLocalString(oArea, "GS_JUSTICE");
-
-    if (sTag != "")
-    {
-        object oJustice = gsCMGetObject(sTag, OBJECT_TYPE_PLACEABLE);
-
-        if (GetIsObjectValid(oJustice) &&
-            gsJUGetIsConvict(oJustice, oEntering))
-        {
-            object oAreaExit = GetAreaFromLocation(lLocationExit);
-
-            if (GetIsObjectValid(oAreaExit) &&
-                oAreaExit != oArea &&
-                GetLocalString(oAreaExit, "GS_JUSTICE") != sTag &&
-                GetTag(oAreaExit) != "GS_AREA_DEATH")
-            {
-                AssignCommand(oEntering, JumpToLocation(lLocationExit));
-                SendMessageToPC(oEntering, GS_T_16777524);
-            }
-            else
-            {
-                object oTargetExit = gsCMGetObject("GS_TARGET_" + sTag);
-
-                if (GetIsObjectValid(oTargetExit))
-                {
-                    lLocationExit = GetLocation(oTargetExit);
-                    oAreaExit     = GetAreaFromLocation(lLocationExit);
-
-                    if (oAreaExit != oArea &&
-                        GetLocalString(oAreaExit, "GS_JUSTICE") != sTag)
-                    {
-                        AssignCommand(oEntering, JumpToLocation(lLocationExit));
-                        SendMessageToPC(oEntering, GS_T_16777525);
-                    }
-                }
-            }
         }
     }
 }
