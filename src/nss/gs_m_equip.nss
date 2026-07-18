@@ -117,7 +117,7 @@ void main()
         int nLeftFootAppearance = GetItemAppearance(oEquipped, ITEM_APPR_TYPE_ARMOR_MODEL, ITEM_APPR_ARMOR_MODEL_LFOOT);
         int nRightFootAppearance = GetItemAppearance(oEquipped, ITEM_APPR_TYPE_ARMOR_MODEL, ITEM_APPR_ARMOR_MODEL_RFOOT);
         if(gsSUGetHasDigitigradeLegs(oEquippedBy)) {
-            if(nLeftShinAppearance != 136 || nRightShinAppearance != 137 || nLeftFootAppearance != 136 || nRightFootAppearance != 136){
+            if((nLeftShinAppearance != 136 && nLeftShinAppearance != 137) || (nRightShinAppearance != 136 && nRightShinAppearance != 137) || nLeftFootAppearance != 136 || nRightFootAppearance != 136){
                 object oItem1 = CopyItemAndModify(oEquipped, ITEM_APPR_TYPE_ARMOR_MODEL, ITEM_APPR_ARMOR_MODEL_LSHIN, 136, TRUE);
                 DestroyObject(oEquipped);
                 object oItem2 = CopyItemAndModify(oItem1, ITEM_APPR_TYPE_ARMOR_MODEL, ITEM_APPR_ARMOR_MODEL_RSHIN, 136, TRUE);
@@ -129,7 +129,7 @@ void main()
                 AssignCommand(oEquippedBy, ActionEquipItem(oItem4, INVENTORY_SLOT_CHEST));
             }
         } else {
-            if(nLeftShinAppearance == 136 || nRightShinAppearance == 137 || nLeftFootAppearance == 136 || nRightFootAppearance == 136){
+            if((nLeftShinAppearance == 136 || nLeftShinAppearance == 137) || (nRightShinAppearance == 136 || nRightShinAppearance == 137) || nLeftFootAppearance == 136 || nRightFootAppearance == 136){
                 object oItem1 = CopyItemAndModify(oEquipped, ITEM_APPR_TYPE_ARMOR_MODEL, ITEM_APPR_ARMOR_MODEL_LSHIN, 1, TRUE);
                 DestroyObject(oEquipped);
                 object oItem2 = CopyItemAndModify(oItem1, ITEM_APPR_TYPE_ARMOR_MODEL, ITEM_APPR_ARMOR_MODEL_RSHIN, 1, TRUE);
