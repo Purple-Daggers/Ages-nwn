@@ -128,8 +128,6 @@ void main()
         gsSUApplyAbility(oAbility, nLevel);
     }
 
-    SetSubRace(oSpeaker, gsSUGetNameBySubRace(nSubRace));
-
     switch (nSubRace)
     {
     case GS_SU_SPECIAL_FEY:

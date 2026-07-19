@@ -4193,6 +4193,8 @@ void gsSUApplySubRaceParts(object oPlayer)
                                 1.25f + (Random(101) * 0.001f));
         }
     }
+
+    SetSubRace(oPlayer, gsSUGetNameBySubRace(nSubRace));
 }
 
 int gsSUGetHasDigitigradeLegs(int nSubRace)
