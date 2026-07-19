@@ -109,6 +109,7 @@ void main()
     }
     */
 
+
     //Make sure that races with digitigrade legs have an appropriate shin model.
     if(GetBaseItemType(oEquipped) == BASE_ITEM_ARMOR)
     {
@@ -116,29 +117,88 @@ void main()
         int nRightShinAppearance = GetItemAppearance(oEquipped, ITEM_APPR_TYPE_ARMOR_MODEL, ITEM_APPR_ARMOR_MODEL_RSHIN);
         int nLeftFootAppearance = GetItemAppearance(oEquipped, ITEM_APPR_TYPE_ARMOR_MODEL, ITEM_APPR_ARMOR_MODEL_LFOOT);
         int nRightFootAppearance = GetItemAppearance(oEquipped, ITEM_APPR_TYPE_ARMOR_MODEL, ITEM_APPR_ARMOR_MODEL_RFOOT);
-        if(gsSUGetHasDigitigradeLegs(oEquippedBy)) {
-            if((nLeftShinAppearance != 136 && nLeftShinAppearance != 137) || (nRightShinAppearance != 136 && nRightShinAppearance != 137) || nLeftFootAppearance != 136 || nRightFootAppearance != 136){
-                object oItem1 = CopyItemAndModify(oEquipped, ITEM_APPR_TYPE_ARMOR_MODEL, ITEM_APPR_ARMOR_MODEL_LSHIN, 136, TRUE);
-                DestroyObject(oEquipped);
-                object oItem2 = CopyItemAndModify(oItem1, ITEM_APPR_TYPE_ARMOR_MODEL, ITEM_APPR_ARMOR_MODEL_RSHIN, 136, TRUE);
-                DestroyObject(oItem1);
-                object oItem3 = CopyItemAndModify(oItem2, ITEM_APPR_TYPE_ARMOR_MODEL, ITEM_APPR_ARMOR_MODEL_LFOOT, 136, TRUE);
-                DestroyObject(oItem2);
-                object oItem4 = CopyItemAndModify(oItem3, ITEM_APPR_TYPE_ARMOR_MODEL, ITEM_APPR_ARMOR_MODEL_RFOOT, 136, TRUE);
-                DestroyObject(oItem3);
-                AssignCommand(oEquippedBy, ActionEquipItem(oItem4, INVENTORY_SLOT_CHEST));
+        if(gsSUGetHasDigitigradeLegs(gsSUGetSubRace(oEquippedBy)))
+        {
+            if(nLeftShinAppearance != 136 && nLeftShinAppearance != 137){
+                object oItem = CopyItemAndModify(oEquipped, ITEM_APPR_TYPE_ARMOR_MODEL, ITEM_APPR_ARMOR_MODEL_LSHIN, 136, TRUE);
+                if(GetIsObjectValid(oItem))
+                {
+                    DestroyObject(oEquipped);
+                    AssignCommand(oEquippedBy, ActionEquipItem(oItem, INVENTORY_SLOT_CHEST));
+                    return;
+                }
             }
-        } else {
-            if((nLeftShinAppearance == 136 || nLeftShinAppearance == 137) || (nRightShinAppearance == 136 || nRightShinAppearance == 137) || nLeftFootAppearance == 136 || nRightFootAppearance == 136){
-                object oItem1 = CopyItemAndModify(oEquipped, ITEM_APPR_TYPE_ARMOR_MODEL, ITEM_APPR_ARMOR_MODEL_LSHIN, 1, TRUE);
-                DestroyObject(oEquipped);
-                object oItem2 = CopyItemAndModify(oItem1, ITEM_APPR_TYPE_ARMOR_MODEL, ITEM_APPR_ARMOR_MODEL_RSHIN, 1, TRUE);
-                DestroyObject(oItem1);
-                object oItem3 = CopyItemAndModify(oItem2, ITEM_APPR_TYPE_ARMOR_MODEL, ITEM_APPR_ARMOR_MODEL_LFOOT, 1, TRUE);
-                DestroyObject(oItem2);
-                object oItem4 = CopyItemAndModify(oItem3, ITEM_APPR_TYPE_ARMOR_MODEL, ITEM_APPR_ARMOR_MODEL_RFOOT, 1, TRUE);
-                DestroyObject(oItem3);
-                AssignCommand(oEquippedBy, ActionEquipItem(oItem4, INVENTORY_SLOT_CHEST));
+            if(nRightShinAppearance != 136 && nRightShinAppearance != 137){
+                object oItem = CopyItemAndModify(oEquipped, ITEM_APPR_TYPE_ARMOR_MODEL, ITEM_APPR_ARMOR_MODEL_RSHIN, 136, TRUE);
+                if(GetIsObjectValid(oItem))
+                {
+                    DestroyObject(oEquipped);
+                    AssignCommand(oEquippedBy, ActionEquipItem(oItem, INVENTORY_SLOT_CHEST));
+                    return;
+                }
+            }
+            if(nLeftFootAppearance != 136)
+            {
+                object oItem = CopyItemAndModify(oEquipped, ITEM_APPR_TYPE_ARMOR_MODEL, ITEM_APPR_ARMOR_MODEL_LFOOT, 136, TRUE);
+                if(GetIsObjectValid(oItem))
+                {
+                    DestroyObject(oEquipped);
+                    AssignCommand(oEquippedBy, ActionEquipItem(oItem, INVENTORY_SLOT_CHEST));
+                    return;
+                }
+            }
+            if(nRightFootAppearance != 136)
+            {
+                object oItem = CopyItemAndModify(oEquipped, ITEM_APPR_TYPE_ARMOR_MODEL, ITEM_APPR_ARMOR_MODEL_RFOOT, 136, TRUE);
+                if(GetIsObjectValid(oItem))
+                {
+                    DestroyObject(oEquipped);
+                    AssignCommand(oEquippedBy, ActionEquipItem(oItem, INVENTORY_SLOT_CHEST));
+                    return;
+                }
+            }
+        }   
+        else 
+        {
+            if(nLeftShinAppearance == 136 || nLeftShinAppearance == 137)
+            {
+                object oItem = CopyItemAndModify(oEquipped, ITEM_APPR_TYPE_ARMOR_MODEL, ITEM_APPR_ARMOR_MODEL_LSHIN, 1, TRUE);
+                if(GetIsObjectValid(oItem))
+                {
+                    DestroyObject(oEquipped);
+                    AssignCommand(oEquippedBy, ActionEquipItem(oItem, INVENTORY_SLOT_CHEST));
+                    return;
+                }
+            }
+            if(nRightShinAppearance == 136 || nRightShinAppearance == 137)
+            {
+                object oItem = CopyItemAndModify(oEquipped, ITEM_APPR_TYPE_ARMOR_MODEL, ITEM_APPR_ARMOR_MODEL_RSHIN, 1, TRUE);
+                if(GetIsObjectValid(oItem))
+                {
+                    DestroyObject(oEquipped);
+                    AssignCommand(oEquippedBy, ActionEquipItem(oItem, INVENTORY_SLOT_CHEST));
+                    return;
+                }
+            }   
+            if(nLeftFootAppearance == 136)
+            {
+                object oItem = CopyItemAndModify(oEquipped, ITEM_APPR_TYPE_ARMOR_MODEL, ITEM_APPR_ARMOR_MODEL_LFOOT, 1, TRUE);
+                if(GetIsObjectValid(oItem))
+                {
+                    DestroyObject(oEquipped);
+                    AssignCommand(oEquippedBy, ActionEquipItem(oItem, INVENTORY_SLOT_CHEST));
+                    return;
+                }
+            }
+            if(nRightFootAppearance == 136)
+            {
+                object oItem = CopyItemAndModify(oEquipped, ITEM_APPR_TYPE_ARMOR_MODEL, ITEM_APPR_ARMOR_MODEL_RFOOT, 1, TRUE);
+                if(GetIsObjectValid(oItem))
+                {
+                    DestroyObject(oEquipped);
+                    AssignCommand(oEquippedBy, ActionEquipItem(oItem, INVENTORY_SLOT_CHEST));
+                    return;
+                }
             }
         }
     }

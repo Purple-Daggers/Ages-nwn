@@ -99,6 +99,8 @@ void gsInitialize()
         ActionStartConversation(OBJECT_SELF, "gs_su_select", TRUE, FALSE);
     }
 
+    gsSUApplySubRaceParts(OBJECT_SELF);
+
     //clean inventory
     string sItemStripScript = GetLocalString(GetModule(), "GS_ITEM_STRIP_SCRIPT");
     if (sItemStripScript != "") ExecuteScript(sItemStripScript, OBJECT_SELF);

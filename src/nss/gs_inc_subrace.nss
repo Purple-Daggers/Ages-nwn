@@ -4,6 +4,7 @@
 #include "gs_inc_iprop"
 #include "gs_inc_text"
 #include "gs_inc_pc"
+#include "as_inc_ear"
 
 //void main() {}
 
@@ -163,8 +164,28 @@ void gsSUSetSubRace(object oPlayer, int nSubrace, int nStrGift, int nDexGift, in
 int gsSUGetSubRace(object oPlayer);
 //return struct containing gift information
 struct SubraceGifts gsSUGetGifts(object oPlayer);
-//return TRUE if race has digitigrade legs
-int gsSUGetHasDigitigradeLegs(object oPlayer);
+//Apply subrace parts to player
+void gsSUApplySubRaceParts(object oPlayer);
+//return TRUE if player's race has digitigrade legs
+int gsSUGetHasDigitigradeLegs(int nSubRace);
+//return TRUE if player's race has a cat tail
+int gsSUGetHasCatTail(int nSubRace);
+//return TRUE if player's race has cat ears
+int gsSUGetHasCatEars(int nSubRace);
+//return TRUE if player's race has a tiger face
+int gsSUGetHasTigerFace(int nSubRace);
+//return TRUE if player's race has a 4-legged cat model.
+int gsSUGetHasCatModel(int nSubRace);
+//return TRUE if player's race is a skyblessed veydran
+int gsSUGetSkyBlessed(int nSubRace);
+//return TRUE if player's race is a stonewrought veydran
+int gsSUGetStoneWrought(int nSubRace);
+//return TRUE if player's race is a seaforged veydran
+int gsSUGetSeaForged(int nSubRace);
+
+
+
+
 
 void gsSUSetSubRace(object oPlayer, int nSubRace, int nStrGift, int nDexGift, int nConGift, int nIntGift, int nWisGift, int nChaGift)
 {
@@ -4131,9 +4152,53 @@ int gsSUGetFavoredClass(int nSubRace, int nGender = GENDER_MALE)
     return CLASS_TYPE_INVALID;
 }
 
-int gsSUGetHasDigitigradeLegs(object oPlayer)
+void gsSUApplySubRaceParts(object oPlayer)
 {
-    int nSubRace  = gsSUGetSubRace(oPlayer);
+    int nSubRace = gsSUGetSubRace(oPlayer);
+    if(gsSUGetHasDigitigradeLegs(nSubRace))
+    {
+        SetCreatureBodyPart(CREATURE_PART_LEFT_SHIN, 137, oPlayer);
+        SetCreatureBodyPart(CREATURE_PART_RIGHT_SHIN, 137, oPlayer);
+        SetCreatureBodyPart(CREATURE_PART_LEFT_FOOT, 136, oPlayer);
+        SetCreatureBodyPart(CREATURE_PART_RIGHT_FOOT, 136, oPlayer);
+        object oArmor = GetItemInSlot(INVENTORY_SLOT_CHEST, oPlayer);
+        if(GetIsObjectValid(oArmor)){
+            AssignCommand(oPlayer, ActionUnequipItem(oArmor));
+            AssignCommand(oPlayer, ActionEquipItem(oArmor, INVENTORY_SLOT_CHEST));
+        }
+    }
+
+    if(gsSUGetHasCatTail(nSubRace))
+    {
+        SetCreatureTailType(10013, oPlayer);
+    }
+
+    if(gsSUGetHasCatEars(nSubRace))
+    {
+        asEACreateEars(oPlayer);
+    }
+
+    if(gsSUGetHasTigerFace(nSubRace))
+    {
+        SetCreatureBodyPart(CREATURE_PART_HEAD, 194, oPlayer);
+    }
+
+    if(gsSUGetHasCatModel(nSubRace))
+    {
+        int nAppearanceType = GetAppearanceType(oPlayer);
+        if(!(nAppearanceType >= 15117 && nAppearanceType <= 15125))
+        {
+            SetCreatureAppearanceType(oPlayer, 15117);
+            SetObjectVisualTransform(oPlayer, OBJECT_VISUAL_TRANSFORM_SCALE,
+                                1.25f + (Random(101) * 0.001f));
+        }
+    }
+
+    SetSubRace(oPlayer, gsSUGetNameBySubRace(nSubRace));
+}
+
+int gsSUGetHasDigitigradeLegs(int nSubRace)
+{
     switch(nSubRace)
     {
         case GS_SU_NUJIIT_PADARR_FANGLORD:
@@ -4148,3 +4213,104 @@ int gsSUGetHasDigitigradeLegs(object oPlayer)
     }
     return FALSE;
 }
+
+int gsSUGetHasCatTail(int nSubRace)
+{
+    switch(nSubRace)
+    {
+        case GS_SU_NUJIIT_PADARR_TWILIGHTBORN:
+        case GS_SU_NUJIIT_PADARR_FANGLORD:
+        case GS_SU_NUJIIT_PADARR_BRIGHTMOON:
+        case GS_SU_NUJIIT_KOMALARI_TWILIGHTBORN:
+        case GS_SU_NUJIIT_KOMALARI_FANGLORD:
+        case GS_SU_NUJIIT_KOMALARI_BRIGHTMOON:
+        case GS_SU_NUJIIT_RIVERLORD_TWILIGHTBORN:
+        case GS_SU_NUJIIT_RIVERLORD_FANGLORD:
+        case GS_SU_NUJIIT_RIVERLORD_BRIGHTMOON:
+        case GS_SU_NUJIIT_RESPLENDENT_TWILIGHTBORN:
+        case GS_SU_NUJIIT_RESPLENDENT_FANGLORD:
+        case GS_SU_NUJIIT_RESPLENDENT_BRIGHTMOON:
+        return TRUE;
+    }
+    return FALSE;
+}
+
+int gsSUGetHasCatEars(int nSubRace)
+{
+    switch(nSubRace)
+    {
+        case GS_SU_NUJIIT_PADARR_TWILIGHTBORN:
+        case GS_SU_NUJIIT_PADARR_BRIGHTMOON:
+        case GS_SU_NUJIIT_KOMALARI_TWILIGHTBORN:
+        case GS_SU_NUJIIT_KOMALARI_BRIGHTMOON:
+        case GS_SU_NUJIIT_RIVERLORD_TWILIGHTBORN:
+        case GS_SU_NUJIIT_RIVERLORD_BRIGHTMOON:
+        case GS_SU_NUJIIT_RESPLENDENT_TWILIGHTBORN:
+        case GS_SU_NUJIIT_RESPLENDENT_BRIGHTMOON:
+        return TRUE;
+    }
+    return FALSE;
+}
+
+int gsSUGetHasTigerFace(int nSubRace)
+{
+    switch(nSubRace)
+    {
+        case GS_SU_NUJIIT_PADARR_FANGLORD:
+        case GS_SU_NUJIIT_KOMALARI_FANGLORD:
+        case GS_SU_NUJIIT_RIVERLORD_FANGLORD:
+        case GS_SU_NUJIIT_RESPLENDENT_FANGLORD:
+        return TRUE;
+    }
+    return FALSE;
+}
+
+int gsSUGetHasCatModel(int nSubRace)
+{
+    switch(nSubRace)
+    {
+        case GS_SU_NUJIIT_PADARR_WHISPERSTALKER:
+        case GS_SU_NUJIIT_KOMALARI_WHISPERSTALKER:
+        case GS_SU_NUJIIT_RIVERLORD_WHISPERSTALKER:
+        case GS_SU_NUJIIT_RESPLENDENT_WHISPERSTALKER:
+        return TRUE;
+    }
+    return FALSE;
+}
+
+int gsSUGetSkyBlessed(int nSubRace)
+{
+    switch(nSubRace)
+    {
+        case GS_SU_VEYDRAN_ABYSSALCOURT_SKYBLESSED:
+        case GS_SU_VEYDRAN_WYRMBLOODED_SKYBLESSED:
+        case GS_SU_VEYDRAN_UNFADING_SKYBLESSED:
+        return TRUE;
+    }
+    return FALSE;
+}
+
+int gsSUGetSeaForged(int nSubRace)
+{
+    switch(nSubRace)
+    {
+        case GS_SU_VEYDRAN_ABYSSALCOURT_SEAFORGED:
+        case GS_SU_VEYDRAN_WYRMBLOODED_SEAFORGED:
+        case GS_SU_VEYDRAN_UNFADING_SEAFORGED:
+        return TRUE;
+    }
+    return FALSE;
+}
+
+int gsSUGetStoneWrought(int nSubRace)
+{
+    switch(nSubRace)
+    {
+        case GS_SU_VEYDRAN_ABYSSALCOURT_STONEWROUGHT:
+        case GS_SU_VEYDRAN_WYRMBLOODED_STONEWROUGHT:
+        case GS_SU_VEYDRAN_UNFADING_STONEWROUGHT:
+        return TRUE;
+    }
+    return FALSE;
+}
+

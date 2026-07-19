@@ -128,8 +128,6 @@ void main()
         gsSUApplyAbility(oAbility, nLevel);
     }
 
-    SetSubRace(oSpeaker, gsSUGetNameBySubRace(nSubRace));
-
     switch (nSubRace)
     {
     case GS_SU_SPECIAL_FEY:
@@ -145,16 +143,5 @@ void main()
         break;
     }
 
-    if(gsSUGetHasDigitigradeLegs(oSpeaker))
-    {
-        SetCreatureBodyPart(CREATURE_PART_LEFT_SHIN, 137, oSpeaker);
-        SetCreatureBodyPart(CREATURE_PART_RIGHT_SHIN, 137, oSpeaker);
-        SetCreatureBodyPart(CREATURE_PART_LEFT_FOOT, 136, oSpeaker);
-        SetCreatureBodyPart(CREATURE_PART_RIGHT_FOOT, 136, oSpeaker);
-        object oArmor = GetItemInSlot(INVENTORY_SLOT_CHEST, oSpeaker);
-        if(GetIsObjectValid(oArmor)){
-            AssignCommand(oSpeaker, ActionUnequipItem(oArmor));
-            AssignCommand(oSpeaker, ActionEquipItem(oArmor, INVENTORY_SLOT_CHEST));
-        }
-    }
+    gsSUApplySubRaceParts(oSpeaker);
 }
