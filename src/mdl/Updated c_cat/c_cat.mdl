@@ -1,5 +1,5 @@
-# NeverBlender 4.1.0|Blender 4.0.0|2026-07-17
-filedependancy c_cat.blend
+# NeverBlender 4.1.0|Blender 4.0.0|2026-07-19
+filedependancy c_cat more hits.blend
 newmodel c_cat
 setsupermodel c_cat null
 classification CHARACTER
@@ -20,7 +20,7 @@ node dummy handconjure
 endnode
 node dummy rootdummy
   parent c_cat
-  position  0.00000 -0.15774  0.76681
+  position  0.00000  0.26119  0.61440
   orientation  0.00000  1.00000  0.00000  0.00000
 endnode
 node trimesh cat_hips
@@ -185,7 +185,7 @@ endnode
 node trimesh cat_lbackthigh
   parent cat_hips
   position -0.03709 -0.28147 -0.02584
-  orientation -0.99973  0.01555  0.01718  0.92799
+  orientation -0.98402 -0.16769 -0.05989  1.22993
   wirecolor 1.00 1.00 1.00
   bitmap c_cat
   texture1 null
@@ -319,7 +319,7 @@ endnode
 node trimesh cat_lbackforepaw
   parent cat_lbackthigh
   position -0.10657 -0.03552 -0.42321
-  orientation  0.99068 -0.02893 -0.13311  0.15354
+  orientation -0.94791  0.26513  0.17654  0.70763
   wirecolor 1.00 1.00 1.00
   bitmap c_cat
   texture1 null
@@ -424,7 +424,7 @@ endnode
 node trimesh cat_lbackpaw
   parent cat_lbackforepaw
   position -0.00919  0.13371 -0.22452
-  orientation  1.00000  0.00000  0.00000  0.50477
+  orientation  0.98104 -0.16181  0.10671  0.74304
   wirecolor 1.00 1.00 1.00
   bitmap c_cat
   texture1 null
@@ -512,7 +512,7 @@ endnode
 node trimesh cat_lbackthigh01
   parent cat_hips
   position  0.03709 -0.28147 -0.02584
-  orientation -0.96661 -0.08688 -0.24108  0.54211
+  orientation -0.91435 -0.36492 -0.17549  1.25824
   wirecolor 1.00 1.00 1.00
   bitmap c_cat
   texture1 null
@@ -646,7 +646,7 @@ endnode
 node trimesh cat_lbackforepaw01
   parent cat_lbackthigh01
   position  0.10657 -0.03552 -0.42321
-  orientation  0.97575  0.18818  0.11184  0.64476
+  orientation  0.15227  0.96008  0.23466  0.83937
   wirecolor 1.00 1.00 1.00
   bitmap c_cat
   texture1 null
@@ -751,7 +751,7 @@ endnode
 node trimesh cat_lbackpaw01
   parent cat_lbackforepaw01
   position  0.00919  0.13371 -0.22452
-  orientation -0.95064 -0.20671  0.23145  0.33541
+  orientation  0.76647 -0.45028  0.45801  0.86667
   wirecolor 1.00 1.00 1.00
   bitmap c_cat
   texture1 null
@@ -839,7 +839,7 @@ endnode
 node trimesh cat_tailbase
   parent cat_hips
   position  0.00000 -0.50621  0.00858
-  orientation -1.00000  0.00000  0.00000  0.16348
+  orientation -1.00000  0.00000  0.00000  0.37810
   wirecolor 1.00 1.00 1.00
   bitmap c_cat
   texture1 null
@@ -927,7 +927,7 @@ endnode
 node trimesh cat_tailtip
   parent cat_tailbase
   position  0.00000 -0.37402 -0.12671
-  orientation -1.00000  0.00000  0.00000  0.25947
+  orientation -1.00000  0.00000  0.00000  0.33081
   wirecolor 1.00 1.00 1.00
   bitmap c_cat
   texture1 null
@@ -1060,7 +1060,7 @@ endnode
 node trimesh cat_thorax
   parent rootdummy
   position  0.00000  0.00000  0.00000
-  orientation -1.00000  0.00000  0.00000  0.19199
+  orientation -0.99518  0.09739  0.01116  0.32787
   wirecolor 1.00 1.00 1.00
   bitmap c_cat
   texture1 null
@@ -1276,7 +1276,7 @@ endnode
 node trimesh cat_neck
   parent cat_thorax
   position  0.00000  0.77200  0.04796
-  orientation  0.00000  1.00000  0.00000  0.00000
+  orientation -0.30367  0.52645  0.79417  0.11916
   wirecolor 1.00 1.00 1.00
   bitmap c_cat
   texture1 null
@@ -1395,7 +1395,7 @@ endnode
 node trimesh cat_head
   parent cat_neck
   position  0.00000  0.17103  0.00000
-  orientation  1.00000  0.00000  0.00000  0.52525
+  orientation  0.92872 -0.26317 -0.26119  0.37851
   wirecolor 1.00 1.00 1.00
   bitmap c_cat
   texture1 null
@@ -1966,7 +1966,7 @@ endnode
 node trimesh jaw
   parent cat_head
   position  0.00000  0.12613  0.01319
-  orientation -1.00000  0.00000  0.00000  0.22224
+  orientation -0.98524  0.12888  0.11263  1.52106
   wirecolor 1.00 1.00 1.00
   bitmap c_cat
   texture1 null
@@ -2312,7 +2312,7 @@ endnode
 node trimesh cat_lfrontbicep01
   parent cat_thorax
   position  0.12760  0.54767  0.02056
-  orientation  0.99980 -0.00913  0.01804  0.35650
+  orientation -0.82157 -0.06769 -0.56608  0.71319
   wirecolor 1.00 1.00 1.00
   bitmap c_cat
   texture1 null
@@ -2457,7 +2457,7 @@ endnode
 node trimesh cat_lfrontforepaw01
   parent cat_lfrontbicep01
   position  0.01302 -0.03251 -0.44111
-  orientation  1.00000  0.00000  0.00000  0.98986
+  orientation  0.95964  0.26724 -0.08760  2.22948
   wirecolor 1.00 1.00 1.00
   bitmap c_cat
   texture1 null
@@ -2544,7 +2544,7 @@ endnode
 node trimesh cat_lfrontpaw01
   parent cat_lfrontforepaw01
   position  0.02339 -0.02997 -0.25426
-  orientation -0.99998 -0.00111 -0.00622  1.13121
+  orientation -0.93917  0.00570  0.34341  1.39380
   wirecolor 1.00 1.00 1.00
   bitmap c_cat
   texture1 null
@@ -2649,7 +2649,7 @@ endnode
 node trimesh cat_lfrontbicep
   parent cat_thorax
   position -0.12760  0.54767  0.02056
-  orientation  0.88482  0.18942 -0.42570  0.72360
+  orientation -0.89400  0.33372 -0.29899  0.32712
   wirecolor 1.00 1.00 1.00
   bitmap c_cat
   texture1 null
@@ -2794,7 +2794,7 @@ endnode
 node trimesh cat_lfrontforepaw
   parent cat_lfrontbicep
   position -0.01302 -0.03251 -0.44111
-  orientation  1.00000  0.00000  0.00000  0.54081
+  orientation  0.99660 -0.05901 -0.05743  2.27305
   wirecolor 1.00 1.00 1.00
   bitmap c_cat
   texture1 null
@@ -2881,7 +2881,7 @@ endnode
 node trimesh cat_lfrontpaw
   parent cat_lfrontforepaw
   position -0.02339 -0.02997 -0.25426
-  orientation -0.94221 -0.04530  0.33195  1.02174
+  orientation -0.98091  0.12365  0.15010  1.63212
   wirecolor 1.00 1.00 1.00
   bitmap c_cat
   texture1 null
@@ -4980,6 +4980,7 @@ newanim ccloseh c_cat
   animroot c_cat
   event 0.567 snd_footstep
   event 0.667 snd_footstep
+  event 0.567 hit
   node dummy c_cat
     parent null
   endnode
@@ -5367,6 +5368,7 @@ newanim cclosel c_cat
   length 1.0
   transtime 0.25
   animroot c_cat
+  event 0.467 hit
   node dummy c_cat
     parent null
   endnode
@@ -13068,6 +13070,7 @@ newanim creach c_cat
   event 0.4 snd_footstep
   event 0.5 snd_footstep
   event 0.933 snd_footstep
+  event 0.4 hit
   node dummy c_cat
     parent null
   endnode
