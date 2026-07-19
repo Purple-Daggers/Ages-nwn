@@ -3,6 +3,7 @@
 #include "gs_inc_language"
 #include "as_inc_fxnui"
 #include "as_inc_target"
+#include "gs_inc_subrace"
 
 const int CHAT_COMMAND_INVALID = -1;
 const int CHAT_COMMAND_SAVE = 0;
@@ -68,16 +69,22 @@ void gsCTProcessCommand(object oSpeaker, int nCommand, string sParams){
             }
         break;
         case CHAT_COMMAND_MODIFY_EARS:
-            AssignCommand(oSpeaker, ClearAllActions());
-            AssignCommand(oSpeaker, ActionStartConversation(OBJECT_SELF, "as_ears", TRUE, FALSE));
+            if(GetIsDM(oSpeaker) || GetIsDMPossessed(oSpeaker) || gsSUGetHasCatEars(gsSUGetSubRace(oSpeaker))){
+                AssignCommand(oSpeaker, ClearAllActions());
+                AssignCommand(oSpeaker, ActionStartConversation(OBJECT_SELF, "as_ears", TRUE, FALSE));
+            }
         break;
         case CHAT_COMMAND_MODIFY_TAIL:
-            AssignCommand(oSpeaker, ClearAllActions());
-            AssignCommand(oSpeaker, ActionStartConversation(OBJECT_SELF, "as_tails", TRUE, FALSE));
+            if(GetIsDM(oSpeaker) || GetIsDMPossessed(oSpeaker) || gsSUGetHasCatTail(gsSUGetSubRace(oSpeaker))){
+                AssignCommand(oSpeaker, ClearAllActions());
+                AssignCommand(oSpeaker, ActionStartConversation(OBJECT_SELF, "as_tails", TRUE, FALSE));
+            }
         break;
         case CHAT_COMMAND_MODIFY_WHISPERSTALKER:
-            AssignCommand(oSpeaker, ClearAllActions());
-            AssignCommand(oSpeaker, ActionStartConversation(OBJECT_SELF, "as_cats", TRUE, FALSE));
+            if(GetIsDM(oSpeaker) || GetIsDMPossessed(oSpeaker) || gsSUGetHasCatModel(gsSUGetSubRace(oSpeaker))){
+                AssignCommand(oSpeaker, ClearAllActions());
+                AssignCommand(oSpeaker, ActionStartConversation(OBJECT_SELF, "as_cats", TRUE, FALSE));
+            }
         break;
         case CHAT_COMMAND_LANGUAGE:
             SendMessageToPC(
