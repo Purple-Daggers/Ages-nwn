@@ -4185,10 +4185,13 @@ void gsSUApplySubRaceParts(object oPlayer)
 
     if(gsSUGetHasCatModel(nSubRace))
     {
-        SetCreatureAppearanceType(oPlayer, 15117);
-        SetObjectVisualTransform(oPlayer, OBJECT_VISUAL_TRANSFORM_SCALE,
-                               1.25f + (Random(101) * 0.001f));
-        
+        int nAppearanceType = GetAppearanceType(oPlayer);
+        if(!(nAppearanceType >= 15117 && nAppearanceType <= 15125))
+        {
+            SetCreatureAppearanceType(oPlayer, 15117);
+            SetObjectVisualTransform(oPlayer, OBJECT_VISUAL_TRANSFORM_SCALE,
+                                1.25f + (Random(101) * 0.001f));
+        }
     }
 }
 
