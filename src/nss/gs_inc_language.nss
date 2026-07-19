@@ -76,7 +76,7 @@ int gsLAGetCanSpeakLanguage(int nLanguage, object oPC = OBJECT_SELF)
     if (GetIsObjectValid(oItem)) return TRUE;
 
     int nRace        = GetRacialType(oPC);
-    int nSubRace     = gsSUGetSubRaceByName(GetSubRace(oPC));
+    int nSubRace     = gsSUGetSubRace(oPC);
     int nAlignmentGE = GetAlignmentGoodEvil(oPC);
     int nAlignmentLC = GetAlignmentLawChaos(oPC);
 
