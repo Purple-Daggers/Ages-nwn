@@ -157,7 +157,7 @@ void main()
                     return;
                 }
             }
-        }
+        }   
         else 
         {
             if(nLeftShinAppearance == 136 || nLeftShinAppearance == 137)
