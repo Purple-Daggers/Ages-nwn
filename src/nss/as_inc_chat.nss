@@ -15,6 +15,8 @@ const int CHAT_COMMAND_REPUTATION_GIVE = 5;
 const int CHAT_COMMAND_MODIFY_EARS = 6;
 const int CHAT_COMMAND_MODIFY_TAIL = 7;
 const int CHAT_COMMAND_MODIFY_WHISPERSTALKER = 8;
+const int CHAT_COMMAND_SET_COLOR_SKIN = 9;
+const int CHAT_COMMAND_SET_COLOR_HAIR = 10;
 
 //return matching integer if tag matches a chat command
 int gsCTGetChatCommand(string sTag);
@@ -33,10 +35,13 @@ int gsCTGetChatCommand(string sTag)
     if(sTag == "ears") return CHAT_COMMAND_MODIFY_EARS;
     if(sTag == "tail") return CHAT_COMMAND_MODIFY_TAIL;
     if(sTag == "cat") return CHAT_COMMAND_MODIFY_WHISPERSTALKER;
+    if(sTag == "skin") return CHAT_COMMAND_SET_COLOR_SKIN;
+    if(sTag == "hair") return CHAT_COMMAND_SET_COLOR_HAIR;
     return CHAT_COMMAND_INVALID;
 }
 
 void gsCTProcessCommand(object oSpeaker, int nCommand, string sParams){
+    int nParam = StringToInt(sParams);
     switch(nCommand)
     {
         case CHAT_COMMAND_INVALID:
@@ -63,8 +68,7 @@ void gsCTProcessCommand(object oSpeaker, int nCommand, string sParams){
             if(GetIsDM(oSpeaker) || GetIsDMPossessed(oSpeaker))
             {
                 SetLocalInt(oSpeaker, "AS_TARGET_MODE_ID", TARGETING_MODE_REPUTATION_GIVE);
-                int nChange = StringToInt(sParams);
-                SetLocalInt(oSpeaker, "AS_REPUTATION_CHANGE", nChange);
+                SetLocalInt(oSpeaker, "AS_REPUTATION_CHANGE", nParam);
                 EnterTargetingMode(oSpeaker, OBJECT_TYPE_CREATURE);
             }
         break;
@@ -85,6 +89,12 @@ void gsCTProcessCommand(object oSpeaker, int nCommand, string sParams){
                 AssignCommand(oSpeaker, ClearAllActions());
                 AssignCommand(oSpeaker, ActionStartConversation(OBJECT_SELF, "as_cats", TRUE, FALSE));
             }
+        break;
+        case CHAT_COMMAND_SET_COLOR_SKIN:
+            SetColor(oSpeaker, COLOR_CHANNEL_SKIN, nParam);
+        break;
+        case CHAT_COMMAND_SET_COLOR_HAIR:
+            SetColor(oSpeaker, COLOR_CHANNEL_HAIR, nParam);
         break;
         case CHAT_COMMAND_LANGUAGE:
             SendMessageToPC(
