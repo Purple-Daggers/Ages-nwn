@@ -1347,6 +1347,49 @@
           "type": "byte",
           "value": 51
         },
+        "LIST": {
+          "type": "list",
+          "value": [
+            {
+              "__struct_id": 0,
+              "CR": {
+                "type": "float",
+                "value": 0.5
+              },
+              "FACTION": {
+                "type": "cexostring",
+                "value": "Merchant"
+              },
+              "NAME": {
+                "type": "cexostring",
+                "value": "Tailor"
+              },
+              "RESREF": {
+                "type": "resref",
+                "value": "ct_female"
+              }
+            },
+            {
+              "__struct_id": 0,
+              "CR": {
+                "type": "float",
+                "value": 0.5
+              },
+              "FACTION": {
+                "type": "cexostring",
+                "value": "Merchant"
+              },
+              "NAME": {
+                "type": "cexostring",
+                "value": "Tailor"
+              },
+              "RESREF": {
+                "type": "resref",
+                "value": "ct_male"
+              }
+            }
+          ]
+        },
         "STRREF": {
           "type": "dword",
           "value": 16967223
@@ -3536,6 +3579,25 @@
                     "__struct_id": 0,
                     "CR": {
                       "type": "float",
+                      "value": 0.5
+                    },
+                    "FACTION": {
+                      "type": "cexostring",
+                      "value": "Commoner"
+                    },
+                    "NAME": {
+                      "type": "cexostring",
+                      "value": "Female Body Model"
+                    },
+                    "RESREF": {
+                      "type": "resref",
+                      "value": "btlr_female"
+                    }
+                  },
+                  {
+                    "__struct_id": 0,
+                    "CR": {
+                      "type": "float",
                       "value": 2.0
                     },
                     "FACTION": {
@@ -3644,6 +3706,25 @@
                     "RESREF": {
                       "type": "resref",
                       "value": "gs_creature092"
+                    }
+                  },
+                  {
+                    "__struct_id": 0,
+                    "CR": {
+                      "type": "float",
+                      "value": 0.5
+                    },
+                    "FACTION": {
+                      "type": "cexostring",
+                      "value": "Commoner"
+                    },
+                    "NAME": {
+                      "type": "cexostring",
+                      "value": "Male Body Model"
+                    },
+                    "RESREF": {
+                      "type": "resref",
+                      "value": "btlr_male"
                     }
                   },
                   {
@@ -4459,6 +4540,49 @@
         "ID": {
           "type": "byte",
           "value": 46
+        },
+        "LIST": {
+          "type": "list",
+          "value": [
+            {
+              "__struct_id": 0,
+              "CR": {
+                "type": "float",
+                "value": 9.0
+              },
+              "FACTION": {
+                "type": "cexostring",
+                "value": "Neutral"
+              },
+              "NAME": {
+                "type": "cexostring",
+                "value": "Settings Adjuster"
+              },
+              "RESREF": {
+                "type": "resref",
+                "value": "dmfi_setting"
+              }
+            },
+            {
+              "__struct_id": 0,
+              "CR": {
+                "type": "float",
+                "value": 2.0
+              },
+              "FACTION": {
+                "type": "cexostring",
+                "value": "Neutral"
+              },
+              "NAME": {
+                "type": "cexostring",
+                "value": "The Voice"
+              },
+              "RESREF": {
+                "type": "resref",
+                "value": "dmfi_voice"
+              }
+            }
+          ]
         },
         "STRREF": {
           "type": "dword",
