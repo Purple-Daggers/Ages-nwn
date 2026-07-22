@@ -1,0 +1,182 @@
+2DA V2.0
+
+      	Variable                        TypeID         	Type		Value		Description
+0
+0	"***************************************************************************************************"
+0	"***************** DON'T MODIFY COLUMNS THE FOLLOWING COLUMNS: 'Variable', 'TypeID' ****************"
+0	"***************** Edit column 'Value' to change settings.                          ****************"
+0	"***************** DON'T CHANGE LAST LINE (*END* -1)
+0	"***************************************************************************************************"
+0
+0	"1.) Enable/Disable features:"
+0
+0	"1.1.) Main features:"
+0
+0	MK_DISABLE_CRAFT_01             1               INTEGER		0		"Disable modify armor"
+0 	MK_DISABLE_CRAFT_03             1               INTEGER        	0		"Disable modify helmet"
+0 	MK_DISABLE_CRAFT_05             1               INTEGER        	0		"Disable modify cloak"
+0 	MK_DISABLE_CRAFT_07             1               INTEGER       	0               "Disable modify shield"
+0 	MK_DISABLE_CRAFT_09             1               INTEGER        	0               "Disable modify weapon"
+0 	MK_DISABLE_CRAFT_11             1               INTEGER        	1               "Disable change portrait"
+0 	MK_DISABLE_CRAFT_12             1               INTEGER        	1               "Disable change head"
+0 	MK_DISABLE_CRAFT_13             1               INTEGER        	1               "Disable change phenotype"
+0 	MK_DISABLE_CRAFT_14             1               INTEGER       	1               "Disable modify body"
+0 	MK_DISABLE_CRAFT_15             1               INTEGER        	1               "Disable change tail"
+0 	MK_DISABLE_CRAFT_16             1               INTEGER        	1               "Disable change wings"
+0 	MK_DISABLE_CRAFT_17             1               INTEGER        	1		"Disable change color"
+0 	MK_DISABLE_CRAFT_19             1               INTEGER        	1               "Disable save/restore body"
+0       MK_DISABLE_CRAFT_20		1               INTEGER        	1               "Disable riding"
+0       MK_DISABLE_CRAFT_21		1               INTEGER        	1               "Disable scale character"
+0       MK_DISABLE_CRAFT_22             1               INTEGER		1		"Disable change appearance"
+0       MK_DISABLE_CRAFT_23             1               INTEGER        	1		"Disable edit character description"
+0       MK_DISABLE_CRAFT_24             1               INTEGER        	1		"Disable apply vfx"
+0       MK_DISABLE_CRAFT_25             1               INTEGER        	1		"Disable change footsteptype"
+0       MK_DISABLE_CRAFT_26             1               INTEGER        	1		"Disable set deity"
+0       MK_ENABLE_EDIT_DESCRIPTION      1               INTEGER        	1		"Enable edit item description"
+0       MK_ENABLE_RENAME_ITEMS          1               INTEGER        	1		"Enable rename item"
+0       MK_DISABLE_SAVE_ITEM_APPEARANCE 1               INTEGER        	1		"Disable save/read item appearance"
+0	MK_ENABLE_CHEATS		1		INTEGER		0		"Enable cheats"
+0
+0	"1.2.) Other features:"
+0
+0       MK_DISABLE_HIDE_ARMOR           1               INTEGER        	1		"Disable hide armor (EE)"
+0       MK_DISABLE_HIDE_HELMET          1               INTEGER        	0		"Disable hide helmet (EE)"
+0       MK_DISABLE_HIDE_CLOAK           1               INTEGER        	0		"Disable hide cloak (EE)"
+0       MK_DISABLE_HIDE_WEAPON          1               INTEGER        	1               "Disable hide weapon (EE)"
+0       MK_DISABLE_HIDE_SHIELD          1               INTEGER        	1		"Disable hide shield (EE)"
+0
+0	"1.3.) Plot items:"
+0
+0	MK_ENABLE_MODIFY_PLOT_ITEMS     1               INTEGER        	0		"Enable modify plot items"
+0
+0	"1.4.) Select target:"
+0
+0	MK_ENABLE_SELECT_TARGET		1		INTEGER		0		"Enables select target (0: disabled, 1: henchmen, 2: all creatures)"
+0	MK_ENABLE_OPEN_INVENTORY	1		INTEGER		0		"Enables open henchmen inventory"
+0
+0	"2. CCOH settings:"
+0
+0	"2.1.) Portraits:"
+0
+0       MK_PORTRAIT_DELAY               2               FLOAT          	0.2		"Pauses the CCOH dialog, so changes to the portrait can be seen in the dialog window"
+0       MK_PORTRAIT_IGNORE_GENDER       1               INTEGER        	0		"Scanning the portraits will ignore gender"
+0       MK_PORTRAIT_IGNORE_RACE         1               INTEGER        	1		"Scanning the portraits will ignore race"
+0
+0	"2.2.) Editor:"
+0
+0 	MK_DISABLE_TEXT_EDITOR          1              	INTEGER        	0		"Disables the text editor: also disables 'rename item', 'edit description' and 'edit slotname'"
+0       MK_ITEM_NAME_MAX_LENGTH         1              	INTEGER        	50
+0       MK_EDITOR_USE_CHAT_EVENT        1              	INTEGER        	0		"0: editor uses GetPCChatMessage(), 1: editor uses GetLocalString (should be set in the OnPlayerChat event)"
+0
+0	"2.3.) 2DA sizes:"
+0
+0 	MK_2DA_MAX_HOLE_SIZE		1		INTEGER		150	        "After reading a set number of empty rows the CCOH will go to row no 0 again"
+0       MK_HEAD_MAX_ID                  1               INTEGER        	255		"Maximum head ID"
+0
+0	"2.4.) List page sizes:"
+0
+0       MK_NUMBER_OF_COLORS_PER_GROUP   1		INTEGER		16		"Number of colors per page"
+0 	MK_VFX_PER_PAGE                 1              	INTEGER		10		"Number of vfx per page"
+0
+0	"2.5.) Colors:"
+0
+0       14435                           4              	TOKEN          	"</c>"		"Color: close tag"
+0       14436                           4              	TOKEN       	"<cþ¥ >"	"Color: highligt"
+0       14437                           4              	TOKEN        	"<cþ þ>"	"Color: back"
+0       14438                           4              	TOKEN	 	"<c ¿þ>"	"Color: model name"
+0       14439                           4              	TOKEN 		"<cþþ >"	"Color: make changes"
+0       14480                           4              	TOKEN 		"<c  þ>"	"Color: action"
+0	14481				4		TOKEN		"<cÿ ÿ>"	"Color: item name"
+0	14482				4		TOKEN		"<cÿÿ >"	"Color: item value"
+0	14483				4		TOKEN		"<c ÿÿ>"	"Color: item property"
+0	14484				4		TOKEN		"<c ÿÿ>"	"Color: item charges"
+0	14485				4		TOKEN		"<cÿÿ >"	"Color: gold"
+0       MK_TOKEN_COLOR1                 3              	STRING 		"<c ¿þ>"	"Color: material to dye"
+0       MK_TOKEN_COLOR2                 3              	STRING  	"<c¥¥¥>"	"Color: material"
+0       MK_2DA_DISP_CURRENT_COLOR       3    		STRING     	"<c ÿ >"    	"Color used for highlighting the current element"
+0       MK_2DA_DISP_DEFAULT_COLOR       3              	STRING        	"<c À >"   	"Default color used for displaying elements"
+0	MK_DELIMITER_COLOR              3              	STRING    	"<cfff>"
+0	MK_DISABLED_OPTIONS_COLOR       3              	STRING    	"<cfff>"
+0	MK_WARNING_COLOR		3		STRING		"<cÿ  >"
+0	MK_GOLD_COLOR			3		STRING		"<cÿÿ >"
+0
+0	"2.6.) ACP:"
+0
+0	MK_ACP_PHENOTYPE                3              	STRING		"MA_TigerFang"	"To detect ACP installation the CCOH searches 'phenotype.2da' for a specific ACP phenotype"
+0       MK_ACP_MAX_ROW                  1              	INTEGER     	63		"Maximum no of rows the CCOH searches for ACP phenotype"
+0
+0	"2.7.) NWN version/language detection
+0
+0	MK_NWN_VERSION_DETECTION        3              	STRING		AUTO		"AUTO: Auto detection, ****=current, n.mm=Version n.mm"
+0
+0	"2.8.) Other:"
+0
+0	MK_USE_DELIMITER                1              	INTEGER        	1 		"Enables/Disables use of delimiters ('------- ... ---') in the dialog."
+0 	MK_RESTOREBODY_DELAY            2              	FLOAT          	0.5		"Pauses the dialog for restoring body parts"
+0       MK_KEEP_TEMP_ITEM_PROPS         1              	INTEGER        	0		"Tempory item properties might cause problems when modifying items."
+0 	MK_LIGHTEFFECT_DURATION         2              	FLOAT          	120.0		"Duration of light effect for nwn original"
+0       MK_SAVERESTORE_USE_DATABASE     1              	INTEGER        	1	 	"1=Use Database, 0=Use local strings"
+0 	MK_MODIFYSHIELD_MODE		1	 	INTEGER        	2		"2: Model/Color-Mode, 1: SimpleModel-Mode, 0: Auto (EE uses 2, 1.69 and older uses 1). SimpleModel-Mode is required for 1.69 and custom shield using color 5-9 (e.g., CEP shields)"
+0 	MK_MODIFYWEAPON_MODE		1	 	INTEGER        	2		"2: Model/Color-Mode, 1: SimpleModel-Mode. SimpleModel-Mode is required for custom weapons using color 0 (e.g., CEP weapons)"
+0       MK_SCALE_MIN                    2              	FLOAT          	0.1		"Min scale factor"
+0       MK_SCALE_MAX                    2              	FLOAT          	5.0		"Max scale factor"
+0
+0	"2.9.) Deities:"
+0
+0	MK_DEITY_2DA_FILE		3		STRING		"MK_DEITIES"    "Name of deities 2DA file"
+0	MK_DEITY_IGNORE_RACIALTYPE	1		INTEGER		0		"Ignore racial type when choosing a deity"
+0	MK_DEITY_IGNORE_ALIGNMENT	1		INTEGER		0		"Ignore alignment when choosing a deity"
+0	MK_DEITY_IGNORE_CLASSES		1		INTEGER		0		"Ignore class when choosing a deity"
+0	MK_DEITY_IGNORE_GENDER		1		INTEGER		0		"Ignore gender when choosing a deity"
+0	MK_DEITY_DISABLE_EDIT_NAME	1		INTEGER		0		"Disable editing deity name"
+0
+0	"2.10) Horses:"
+0
+0	MK_2DA_VALID_HORSES             67             	STRING         	"MK_HORSES"     "Valid horses i.e. list if tails that are actually horses"
+0	MK_HORSE_HORSE_SYSTEM		65		INTEGER		2		"1: Simple Horse CCOH system, 2: Bioware Horse Mounting and Control System."
+0       MK_SCRIPT_ON_MOUNT		67		STRING		****	   	"OnMount script: called before mounting. If blank 'mk_on_mount' will be called."
+0	MK_SCRIPT_ON_MOUNTED		67		STRING		****		"OnMounted script: called after mounting. If blank 'mk_on_mounted' will be called."
+0	MK_SCRIPT_ON_DISMOUNT		67		STRING		****		"OnDismount script: called before dismounting. If blank 'mk_on_dismount' will be called."
+0	MK_SCRIPT_ON_DISMOUNTED		67		STRING		****		"OnDismounted script: called before dismounting. If blank mk_on_dismounted' will be called."
+0
+0	"2.11) VFX editing"
+0
+0	MK_VFX_SCALE_STEP		2		FLOAT		0.05		"VFX scale step"
+0	MK_VFX_TRANSLATE_STEP		2		FLOAT		0.1		"VFX translate step"
+0	MK_VFX_ROTATE_STEP		2		FLOAT		1.0		"VFX rotate step"
+0
+0	"2.12) Heads"
+0
+0	MK_HEAD_DEFAULT_FILTER		3		STRING		""		"Default filter: NNNNNN where N=0/1 (1=enable nth filter, 2=disable nth filter)"
+0	MK_HEAD_DISABLE_CHANGE_FILTER   1		INTEGER		0		"Disable change filter"
+0
+0	"3.) Cheats:"
+0
+0	MK_CHEATS_51_ENABLED		1		INTEGER		0		"Enable Level/XP cheat"
+0	MK_CHEATS_52_ENABLED		1		INTEGER		0		"Enable Gold cheat"
+0	MK_CHEATS_53_ENABLED		1		INTEGER		0		"Enable Alignment cheat"
+0	MK_CHEATS_54_ENABLED		1		INTEGER		0		"Enable Feats cheat"
+0	MK_CHEATS_55_ENABLED		1		INTEGER		0		"Enable Cursed Flag cheat"
+0	MK_CHEATS_56_ENABLED		1		INTEGER		0		"Enable Store cheat"
+0	MK_CHEATS_57_ENABLED		1		INTEGER		0		"Enable Skillpoint cheat"
+0	MK_CHEATS_58_ENABLED		1		INTEGER		0		"Enable Item Property cheat"
+0	MK_CHEATS_59_ENABLED		1		INTEGER		0		"Enable Charge Item cheat"
+0	MK_CHEATS_60_ENABLED		1		INTEGER		0		"Enable Plot Flag cheat"
+0	MK_CHEATS_61_ENABLED		1		INTEGER		0		"Enable Stolen Flag cheat"
+0	MK_CHEATS_62_ENABLED		1		INTEGER		0		"Enable Identify cheat"
+0	MK_CHEATS_63_ENABLED		1		INTEGER		0		"Enable Swap Item Properties cheat"
+0
+0	MK_CHEATS_MAX_LEVEL		1		INTEGER		40		"Maximum level"
+0	MK_CHEATS_ITEM_BUY		2		FLOAT		1.0		"Multiplicator for buying item upgrades (0.0 / **** = no payment required)"
+0	MK_CHEATS_ITEM_SELL		2		FLOAT		1.0		"Multiplicator for selling item upgrades (0.0 / **** = no gold returned)"
+0	MK_CHEATS_ITEM_IDENTIFY		1		INTEGER		100		"Gold you want to pay for identifying items"
+0	MK_CHEATS_EXTITDLGONOPENSTORE	1		INTEGER		0		"Close CCOH dialog when opening store"
+0	MK_CHEATS_FLAGS_COLOR		3		STRING          "<cþ¥ >"        "Color used for highlighting Cursed/Plot/Stolen/Unidentified/Charges"
+0	MK_CHEATS_IGNORE_MINMAX_PROPS	1		INTEGER		0		"Ignore min/max number of Cast Spell properties"
+0
+0	"4.) Debugging:"
+0
+0      	MK_DISPLAY_DEBUG_MESSAGES       65  		INTEGER		0		"Display debug messages"
+0
+0	*END*				-1
+
