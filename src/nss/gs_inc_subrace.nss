@@ -176,6 +176,8 @@ int gsSUGetHasCatEars(int nSubRace);
 int gsSUGetHasTigerFace(int nSubRace);
 //return TRUE if player's race has a 4-legged cat model.
 int gsSUGetHasCatModel(int nSubRace);
+//return TRUE if player's race is a veydran race.
+int gsSUGetIsVeydran(int nSubRace);
 //return TRUE if player's race is a skyblessed veydran
 int gsSUGetSkyBlessed(int nSubRace);
 //return TRUE if player's race is a stonewrought veydran
@@ -4273,6 +4275,24 @@ int gsSUGetHasCatModel(int nSubRace)
         case GS_SU_NUJIIT_KOMALARI_WHISPERSTALKER:
         case GS_SU_NUJIIT_RIVERLORD_WHISPERSTALKER:
         case GS_SU_NUJIIT_RESPLENDENT_WHISPERSTALKER:
+        return TRUE;
+    }
+    return FALSE;
+}
+
+int gsSUGetIsVeydran(int nSubRace)
+{
+    switch(nSubRace)
+    {
+        case GS_SU_VEYDRAN_ABYSSALCOURT_SKYBLESSED:
+        case GS_SU_VEYDRAN_WYRMBLOODED_SKYBLESSED:
+        case GS_SU_VEYDRAN_UNFADING_SKYBLESSED:
+        case GS_SU_VEYDRAN_ABYSSALCOURT_SEAFORGED:
+        case GS_SU_VEYDRAN_WYRMBLOODED_SEAFORGED:
+        case GS_SU_VEYDRAN_UNFADING_SEAFORGED:
+        case GS_SU_VEYDRAN_ABYSSALCOURT_STONEWROUGHT:
+        case GS_SU_VEYDRAN_WYRMBLOODED_STONEWROUGHT:
+        case GS_SU_VEYDRAN_UNFADING_STONEWROUGHT:
         return TRUE;
     }
     return FALSE;
