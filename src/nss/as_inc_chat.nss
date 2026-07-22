@@ -17,6 +17,7 @@ const int CHAT_COMMAND_MODIFY_TAIL = 7;
 const int CHAT_COMMAND_MODIFY_WHISPERSTALKER = 8;
 const int CHAT_COMMAND_SET_COLOR_SKIN = 9;
 const int CHAT_COMMAND_SET_COLOR_HAIR = 10;
+const int CHAT_COMMAND_MODIFY_VEYDRAN = 11;
 
 //return matching integer if tag matches a chat command
 int gsCTGetChatCommand(string sTag);
@@ -37,6 +38,7 @@ int gsCTGetChatCommand(string sTag)
     if(sTag == "cat") return CHAT_COMMAND_MODIFY_WHISPERSTALKER;
     if(sTag == "skin") return CHAT_COMMAND_SET_COLOR_SKIN;
     if(sTag == "hair") return CHAT_COMMAND_SET_COLOR_HAIR;
+    if(sTag == "veydran") return CHAT_COMMAND_MODIFY_VEYDRAN;
     return CHAT_COMMAND_INVALID;
 }
 
@@ -88,6 +90,12 @@ void gsCTProcessCommand(object oSpeaker, int nCommand, string sParams){
             if(GetIsDM(oSpeaker) || GetIsDMPossessed(oSpeaker) || gsSUGetHasCatModel(gsSUGetSubRace(oSpeaker))){
                 AssignCommand(oSpeaker, ClearAllActions());
                 AssignCommand(oSpeaker, ActionStartConversation(OBJECT_SELF, "as_cats", TRUE, FALSE));
+            }
+        break;
+        case CHAT_COMMAND_MODIFY_VEYDRAN:
+            if(GetIsDM(oSpeaker) || GetIsDMPossessed(oSpeaker) || gsSUGetIsVeydran(gsSUGetSubRace(oSpeaker))){
+                AssignCommand(oSpeaker, ClearAllActions());
+                AssignCommand(oSpeaker, ActionStartConversation(OBJECT_SELF, "as_vey", TRUE, FALSE));
             }
         break;
         case CHAT_COMMAND_SET_COLOR_SKIN:
