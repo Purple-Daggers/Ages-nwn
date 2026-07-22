@@ -1,0 +1,506 @@
+2DA V2.0
+
+	en              de_0		de_1
+0       English         Deutsch		Deutsch
+1       armor           Rüstung         ****
+2       weapon          Waffe           ****
+3	cloak           Umhang          ****
+4	helmet          Helm            ****
+5       shield          Schild	        ****
+6       character       Charakter	Charakterin
+7	"both shoulders"	"Beide Schultern"	****
+8	"both biceps"	"Beide Oberarme"	****
+9	"both forearms"	"Beide Unterarme"	****
+10	"both gloves"	"Beide Handschuhe"	****
+11	"both thighs"	"Beide Oberschenkel"	****
+12	"both shins"	"Beide Unterschenkel"	****
+13	"both feet"	"Beide Füße"	****
+14	"pants"		"Hose"		****
+15	"breeches"	"Reithose"	****
+16	"boots"		"Stiefel"	****
+17	"sleeves"	"Ärmel"		****
+18	"upper garment"	"Obere Rüstungsteile"	****
+19	"lower garment"	"Unter Rüstungsteile"	****
+20	"all parts"	"Alle Rüstungsteile"	****
+21	"pants (pelvis, thighs, shins)"	"Hose (Becken, Ober- und Unterschenkel)"	****
+22	"breeches (pelvis, thighs)"	"Reithose (Becken, Oberschenkel)"	****
+23	"boots (shins, feet)"	"Stiefel (Unterschenkel, Füße)"	****
+24	"sleeves (biceps, forerarms)"	"Ärmel (Ober- und Unterarm)"	****
+25	"upper garment (neck, chest, belt, arms)"	"Obere Rüstungsteile (Hals, Torso, Gürtel, Arme)"	****
+26	"lower garment (pelvis, legs)"	"Untere Rüstungsteile (Becken, Beine)"	****
+27	"all parts (19 pieces)"	"Alle Rüstungsteile (19 Stck.)"	****
+28	"Leather 1"	"Leder 1"	****
+29	"Leather 2"	"Leder 2"	****
+30	"Cloth 1"	"Stoff 1"	****
+31	"Cloth 2"	"Stoff 2"	****
+32	"Metal 1"	"Metall 1"	****
+33	"Metal 2"	"Metall 2"	****
+34	"Leather 1+2"	"Leder 1+2"	****
+35	"Cloth 1+2"	"Stoff 1+2"	****
+36	"Metal 1+2"	"Metall 1+2"	****
+37	"Leather and Cloth"	"Leder und Stoff"	****
+38	"Leather, Cloth and Metal"	"Leder, Stoff und Metall"	****
+39	"[X] "	"[X] "  		****
+40	"[<c   >_</c>] " "[<c   >_</c>] " ****
+41      "your armor"    "Eure Rüstung"  ****
+42      "your weapon"   "Eure Waffe"    ****
+43	"your cloak"    "Euren Umhang"  ****
+44	"your helmet"   "Euren Helm"    ****
+45      "your shield"   "Euren Schild"  ****
+46      "your character" "Euren Charakter" "Eure Charakterin"
+47      "he armor"     "ie Rüstung"	****
+48	"he weapon"	"ie Waffe"	****
+49	"he cloak"	"er Umhang"	****
+50	"he helmet"	"er Helm"	****
+51	"he shield"	"er Schild"	****
+52	"he character"	"er Charakter"	"ie Charakterin"
+53	"your armor"	"Eurer Rüstung"	****
+54	"your weapon"	"Eurer Waffe"	****
+55	"your cloak"	"Eures Umhangs"	****
+56	"your helmet"	"Eures Helms"	****
+57	"your shield"	"Eures Schildes" ****
+58	"your character"	"Eures Charakters"	"Eurer Charakterin"
+59	"he armor"	"ie Rüstung"	****
+60	"he weapon"	"ie Waffe"	****
+61	"he cloak"	"en Umhang"	****
+62	"he helmet"	"en Helm"	****
+63	"he shield"	"en Schild"	****
+64	"he character"	"en Charakter"	"ie Charakterin"
+65	"of whom"	"von der"	****
+66	"of whom"	"von der"	****
+67	"of whom"	"von dem"	****
+68	"of whom"	"von dem"	****
+69	"of whom"	"von dem"	****
+70	"of whom"	"von dem"	"von der"
+71	"First Page"    "Erste Seite"   ****
+72	"Previous Page" "Vorherige Seite" ****
+73	"Next Page"     "Nächste Seite" ****
+74      "Last Page"     "Letzte Seite"  ****
+75	"Page"		"Seite"		****
+76	"Model"		"Modell"	****
+77	"Color"		"Farbe"		****
+78	"Write appearence" "Aussehen abspeichern" ****
+79      "Read appearance" "Aussehen laden" ****
+80	"Head"		"Kopf"		****
+81      ****		****		****
+82	"Tail"		"Schwanz"	****
+83	"Wings"		"Flügel"	****
+84	"Phenotype"	"Phänotyp"	****
+85	****		****		****
+86	"Portrait"	"Portrait"	****
+87	"Body parts"	"Körperteile"	****
+88	"Horse / Riding" "Pferd / Reitem" ****
+89	"Colors"	"Farben"	****
+90	"Appearance type" "Art des Aussehens" ****
+91	"read"		"lesen"		****
+92	"write"		"schreiben"	****
+93	"Scale"		"Skalierung"	****
+94	"Scale +0.1 (enlarge)"	"Skalierung +0.1 (vergrößern)" ****
+95	"Scale +0.01 (enlarge)"	"Skalierung +0.01 (vergrößern)" ****
+96	"Scale -0.01 (shrink)"	"Skalierung -0.01 (verkleinern)" ****
+97	"Scale -0.1 (shrink)"	"Skalierung -0.1 (verkleinern)" ****
+98      "Scale =1.0 (reset)" "Skalierung =1.0 (Zurücksetzen)" ****
+99      "Effects from visualeffects.2da" "Effekte aus visualeffects.2da" ****
+100	"Glowing eyes"	"Leuchtende Augen" ****
+101	"Light effects" "Lichteffekte" 	****
+102	"CEP effects"	"CEP Effekte"	****
+103	"<cþ  >Some effects seem to stay on your character even when they shouldn't. However save/reload usually should fix that.</c>"	"<cþ  >Manche Effekte verbleiben auf Eurem Charakter, auch wenn es eigentlich nicht sein sollte. Speichern/Laden korrigiert das üblicherweise."	"Manche Effekte verbleiben auf Eurer Charakterin, auch wenn es eigentlich nicht sein sollte. Speichern/Laden korrigiert das üblicherweise.</c>"
+104	"Lightest Tan/Brown"        "Braunes Leder (sehr hell)" ****
+105	"Light Tan/Brown"           "Braunes Leder (hell)" ****
+106	"Dark Tan/Brown"            "Braunes Leder (dunkel)" ****
+107     "Darkest Tan/Brown"         "Braunes Leder (sehr dunkel)" ****
+108     "Lightest Tan/Red"          "Rotes Leder (sehr hell)"   ****
+109     "Light Tan/Red"             "Rotes Leder (hell)"        ****
+110     "Dark Tan/Red"              "Rotes Leder (dunkel)"      ****
+111     "Darkest Tan/Red"           "Rotes Leder (sehr dunkel)" ****
+112     "Lightest Tan/Yellow"       "Gelbes Leder (sehr hell)"  ****
+113     "Light Tan/Yellow"          "Gelbes Leder (hell)"       ****
+114     "Dark Tan/Yellow"           "Gelbes Leder (dunkel)"     ****
+115     "Darkest Tan/Yellow"        "Gelbes Leder (sehr dunkel)" ****
+116     "Lightest Tan/Grey"         "Graues Leder (sehr hell)"  ****
+117     "Light Tan/Grey"            "Graues Leder (hell)"       ****
+118     "Dark Tan/Grey"             "Graues Leder (dunkel)"     ****
+119     "Darkest Tan/Grey"          "Graues Leder (sehr dunkel)" ****
+120     "Lightest Olive"            "Olive (sehr hell)"         ****
+121     "Light Olive"               "Olive (hell)"              ****
+122     "Dark Olive"                "Olive (dunkel)"            ****
+123     "Darkest Olive"             "Olive (sehr dunkel)"       ****
+124     "White"                     "Weiß"                      ****
+125     "Light Grey"                "Hellgrau"                  ****
+126     "Dark Grey"                 "Dunkelgrau"                ****
+127     "Charcoal"                  "Schwarz"                   ****
+128     "Light Blue"                "Hellblau"                  ****
+129     "Dark Blue"                 "Dunkelblau"                ****
+130     "Light Aqua"                "Hellaquamarin"          	****
+131     "Dark Aqua"                 "Dunkelaquamarin"       	****
+132     "Light Teal"                "Helltürkis"             	****
+133     "Dark Teal"                 "Dunkeltürkis"           	****
+134     "Light Green"               "Hellgrün"		    	****
+135     "Dark Green"                "Dunkelgrün"                ****
+136     "Light Yellow"              "Hellgelb"                  ****
+137     "Dark Yellow"               "Dunkelgelb"                ****
+138     "Light Orange"              "Hellorange"                ****
+139     "Dark Orange"               "Dunkelorange"              ****
+140     "Light Red"                 "Hellrot"                   ****
+141     "Dark Red"                  "Dunkelrot"                 ****
+142     "Light Pink"                "Hellrosa"                  ****
+143     "Dark Pink"                 "Dunkelrosa"                ****
+144     "Light Purple"              "Helllila"                  ****
+145     "Dark Purple"               "Dunkellila"                ****
+146     "Light Violet"              "Hellviolett"               ****
+147     "Dark Violet"               "Dunkelviolett"             ****
+148     "Shiny White"               "Weiß (glänzend)"           ****
+149     "Shiny Black"               "Schwarz (glänzend)"        ****
+150     "Shiny Blue"                "Blau (glänzend")           ****
+151     "Shiny Aqua"                "Aquamarin (glänzend)"      ****
+152     "Shiny Teal"                "Türkis (glänzend)"         ****
+153     "Shiny Green"               "Grün (glänzend)"           ****
+154     "Shiny Yellow"              "Gelb (glänzend)"           ****
+155     "Shiny Orange"              "Orange (glänzend)"         ****
+156     "Shiny Red"                 "Rot (glänzend)"            ****
+157     "Shiny Pink"                "Rosa (glänzend)"           ****
+158     "Shiny Purple"              "Lila (glänzend)"           ****
+159     "Shiny Violet"              "Violett (glänzend)"        ****
+160     "Silver"                    "Silber"                    ****
+161     "Obsidian"                  "Obsidian"                  ****
+162     "Gold"                      "Gold"                      ****
+163     "Copper"                    "Kupfer"                    ****
+164     "Grey"                      "Grau"                      ****
+165     "Mirror"                    "Spiegelnd"                 ****
+166     "Pure White"                "Reines Weiß"               ****
+167     "Pure Black"                "Reines Schwarz"            ****
+168     "Metallic Mauve"            "Malvenfarben Metallic      ****
+169     "Greyed Metallic Mauve"     "Malvenfarben Metallic (gegraut)" ****
+170     "Metallic Gold"             "Gold Metallic"             ****
+171     "Greyed Metallic Gold"      "Gold Metallic (gegraut)"   ****
+172     "Metallic Green"            "Grün Metallic"             ****
+173     "Greyed Metallic Green"     "Grün Metallic" (gegraut)"  ****
+174     "Metallic Indigo"           "Indigo Metallic"           ****
+175     "Greyed Metallic Indigo"    "Indigo Metallic (gegraut)" ****
+176     "Metallic Violet"           "Violett Metallic"          ****
+177     "Greyed Metallic Violet"    "Violett Metallic (gegraut)" ****
+178     "Metallic Brown"            "Braun Metallic"            ****
+179     "Greyed Metallic Brown"     "Braun Metallic (gegraut)"  ****
+180     "Metallic Teal"             "Türkis Metallic"           ****
+181     "Greyed Metallic Teal"      "Türkis Metallic (gegraut)" ****
+182     "Metallic Blue"             "Blau Metallic"             ****
+183     "Greyed Metallic Blue"      "Blau Metallic (gegraut)"   ****
+184     "Metallic Olive"            "Olive Metallic"            ****
+185     "Greyed Metallic Olive"     "Olive Metallic (gegraut)"  ****
+186     "Metallic Aqua"             "Aquamarin Metallic"        ****
+187     "Greyed Metallic Aqua"      "Aquamarin Metallic (gegraut)" ****
+188     "Greyed Metallic Fern Green" "Farngrün Metallic (gegraut)" ****
+189     "Metallic Marshland"        "Marshland Metallic"        ****
+190     "Greyed Metallic Marshland" "Marshland Metallic (gegraut)" ****
+191     "Metallic Fern Green"       "Farngrün Metallic"         ****
+192     "Lightest Metallic Red"     "Hellstes Rot Metallic"     ****
+193     "Light Metallic Red"        "Hellrot Metallic"          ****
+194     "Metallic Red"              "Rot Metallic"              ****
+195     "Dark Metallic Red"         "Dunkelrot Metallic"        ****
+196     "Lightest Metallic Yellow"  "Hellstes Gelb Metallic"    ****
+197     "Light Metallic Yellow"     "Hellgelb Metallic"         ****
+198     "Metallic Yellow"           "Gelb Metallic"             ****
+199     "Dark Metallic Yellow"      "Dunkelgelb Metallic"       ****
+200     "Lightest Mauve"            "Malvenfarben (sehr hell)"  ****
+201     "Light Mauve"               "Malvenfarben (hell)"       ****
+202     "Mauve"                     "Malvenfarben"              ****
+203     "Dark Mauve"                "Malvenfarben (dunkel)"     ****
+204     "Lightest Sangria"          "Sangriafarben" (sehr hell)" ****
+205     "Light Sangria"             "Sangriafarben" (hell)"     ****
+206     "Sangria"                   "Sangriafarben"             ****
+207     "Dark Sangria"              "Sangriafarben (dunkel)"    ****
+208     "Lightest Forest Green"     "Waldgrün" (sehr hell)"     ****
+209     "Light Forest Green"        "Waldgrün (hell)"           ****
+210     "Forest Green"              "Waldgrün"                  ****
+211     "Dark Forest Green"         "Waldgrün (dunkel)"         ****
+212     "Lightest Clover"           "Kleefarben (sehr hell)"    ****
+213     "Light Clover"              "Kleefarben (hell)"         ****
+214     "Clover"                    "Kleefarben"                ****
+215     "Dark Clover"               "Kleefarben (dunkel)"       ****
+216     "Lightest Marshland"        "Marshland (sehr hell)"     ****
+217     "Light Marshland"           "Marshland (hell)"          ****
+218     "Marshland"                 "Marshland"                 ****
+219     "Dark Marshland"            "Marshland (dunkel)"        ****
+220     "Lightest Sienna"           "Hellstes Sienna"           ****
+221     "Light Sienna"              "Helles Sienna"              ****
+222     "Sienna"                    "Sienna"                     ****
+223     "Dark Sienna"               "Dunkles Sienna"             ****
+224     "Lightest Acorn"            "Acorn (sehr hell)"         ****
+225     "Light Acorn"               "Acorn (hell)"              ****
+226     "Acorn"                     "Acorn"                     ****
+227     "Dark Acorn"                "Acorn (dunkel)"            ****
+228     "Lightest Gondola"          "Hellstes Gondola"          ****
+229     "Light Gondola"             "Hell-Gondola"		****
+230     "Gondola"                   "Gondola"                   ****
+231     "Dark Gondola"              "Dunkel-Gondola"            ****
+232     "Lightest Ash Brown"        "Hellstes Aschbraun"        ****
+233     "Light Ash Brown"           "Hell-Aschbraun"            ****
+234     "Ash Brown"                 "Aschbraun"                 ****
+235     "Dark Ash Brown"            "Dunkel-Aschbraun"          ****
+236     "Lightest Mirage"           "Hellstes Mirage"           ****
+237     "Light Mirage"              "Hell-Mirage"               ****
+238     "Mirage"                    "Mirage"                    ****
+239     "Dark Mirage"               "Dunkel-Mirage"             ****
+240     "Lightest Midnight Blue"    "Hellstes Mitternachtsblau" ****
+241     "Light Midnight Blue"       "Hell-Mitternachtsblau"     ****
+242     "Midnight Blue"             "Mitternachtsblau"          ****
+243     "Dark Midnight Blue"        "Dunkel-Mitternachtsblau"   ****
+244     "Lightest Dull Teal"        "Hellstes Matttürkis"       ****
+245     "Light Dull Teal"           "Helles Matttürkis"         ****
+246     "Dull Teal"                 "Matttürkis"                ****
+247     "Dark Dull Teal"            "Dunkles Matttürkis"        ****
+248     "Lightest Magenta"          "Hellstes Magenta"          ****
+249     "Light Magenta"             "Hellmagenta"               ****
+240     "Magenta"                   "Magenta"                   ****
+241     "Dark Magenta"              "Dunkelmagenta"             ****
+242     "Light Sky Blue"            "Hellhimmelblau"            ****
+243     "Sky Blue"                  "Himmelblau"                ****
+254     "Light Mosque"              "Hell-Mosque"               ****
+255     "Mosque"                    "Mosque"                    ****
+256     "Light Sap Green"           "Hell-Saftgrün"             ****
+257     "Sap Green"                 "Saftgrün"                  ****
+258     "Light Buttered Rum"        "Buttered Rum (Hell)"       ****
+259     "Buttered Rum"              "Buttered Rum"              ****
+250     "Light Burnt Sienna"        "Burnt Sienna (Hell)"       ****
+251     "Burnt Sienna"              "Burnt Sienna"              ****
+252     "Light Cherrywood"          "Cherrywood (Hell)"         ****
+253     "Cherrywood"                "Cherrywood"                ****
+264     "Light Blackberry"          "Brombeerfarben (Hell)"     ****
+265     "Blackberry"                "Brombeerfarben"            ****
+266     "Firebrick"                 "Ziegelfarben"              ****
+267     "Flirt"                     "Pink"                      ****
+268     "Pale Sky"                  "Pale Sky"                  ****
+269     "Raincloud"                 "Raincloud"                 ****
+260     "Snow"                      "Snow"                      ****
+261     "Pine Tree"                 "Kiefer"                    ****
+262     "Light Black Bean"          "Kastanie (hell)"           ****
+263     "Black Bean"                "Kastanie"                  ****
+274     "Valentino"                 "Valentino"                 ****
+275     "Ebony Clay"                "Ebony Clay"                ****
+276     "Black Forest"              "Black Forest"              ****
+277     "Dark Cedar"                "Dark Cedar"                ****
+278     "Wood Brown"                "Wood Brown"                ****
+279     "Speckled Gold"             "Gold gesprenkelt"          ****
+280	"Lightest Shiny Silver"     "Silber (sehr hell, glänzend)" ****
+281	"Light Shiny Silver"        "Silder (hell, glänzend)"	****
+282	"Dark Shiny Obsidian"       "Obsidian (dunkel, glänzend)" ****
+283     "Darkest Shiny Obsidian"    "Obsidian (sehr dunkel, glänzend)" ****
+284     "Lightest Dull Silver"      "Silber (sehr hell, matt)"	****
+285     "Light Dull Silver"         "Silber (hell, matt)"	****
+286     "Dark Dull Obsidian"        "Obsidian (dunkel, matt)"	****
+287     "Darkest Dull Obsidian"     "Obsidian (Sehr dunkel, matt)" ****
+288     "Lightest Gold"             "Gold (sehr hell)"		****
+289     "Light Gold"                "Gold (hell)"		****
+290     "Dark Gold"                 "Gold (dunkel)"             ****
+291     "Darkest Gold"              "Gold (sehr dunkel)"        ****
+292     "Lightest Celestial Gold"   "Gold (strahlend, sehr hell)" ****
+293     "Light Celestial Gold"      "Gold (strahlend, hell)"	****
+294     "Dark Celestial Gold"       "Gold (strahlend, dunkel)"	****
+295     "Darkest Celestial Gold"    "Gold (strahlend, sehr dunkel)" ****
+296     "Lightest Copper"           "Kupfer (sehr hell)"	****
+297     "Light Copper"              "Kupfer (hell)"		****
+298     "Dark Copper"               "Kupfer (dunkel)"		****
+299     "Darkest Copper"            "Kupfer (sehr dunkel)"	****
+300     "Lightest Brass"            "Bronze (sehr hell)"	****
+301     "Light Brass"               "Bronze (hell)"		****
+302     "Dark Brass"                "Bronze (dunkel)"		****
+303     "Darkest Brass"             "Bronze (sehr dunkel)"	****
+304     "Light Red"                 "Hellrot"			****
+305     "Dark Red"                  "Dunkelrot"			****
+306     "Light Dull Red"            "Hellrot (matt)"		****
+307     "Dark Dull Red"             "Dunkelrot (matt)"		****
+308     "Light Purple"              "Hellviolett"		****
+309     "Dark Purple"               "Dunkelviolett"		****
+310     "Light Dull Purple"         "Hellviolett (matt)"	****
+311     "Dark Dull Purple"          "Dunkelviolett (matt)"	****
+312     "Light Blue"                "Hellblau"			****
+313     "Dark Blue"                 "Dunkelblau"		****
+314     "Light Dull Blue"           "Hellblau (matt)"		****
+315     "Dark Dull Blue"            "Dunkelblau (matt)"		****
+316     "Light Teal"                "Helltürkis"		****
+317     "Dark Teal"                 "Dunkeltürkis"		****
+318     "Light Dull Teal"           "Helltürkis (matt)"		****
+319     "Dark Dull Teal"            "Dunkeltürkis (matt)"	****
+320     "Light Green"               "Hellgrün"			****
+321     "Dark Green"                "Dunkelgrün"		****
+322     "Light Dull Green"          "Hellgrün (matt)"		****
+323     "Dark Dull Green"           "Dunkelgrün (matt)"		****
+324     "Light Olive"               "Hellolive"			****
+325     "Dark Olive"                "Dunkelolive"		****
+326     "Light Dull Olive"          "Hellolive (matt)"		****
+327     "Dark Dull Olive"           "Dunkelolive (matt)"	****
+328     "Light Prismatic"           "Prismatisch (hell)"	****
+329     "Dark Prismatic"            "Prismatisch (dunkel)"	****
+330     "Lightest Rust"             "Rostfarbend (sehr hell)"	****
+331     "Light Rust"                "Rostfarbend (hell)"	****
+332     "Dark Rust"                 "Rostfarbend (dunkel)"	****
+333     "Darkest Rust"              "Rostfarbend (sehr dunkel)"	****
+334     "Light Aged Metal"          "Altes Metall (hell)"	****
+335     "Dark Aged Metal"           "Altes Metall (dunkel)"	****
+336     "Light golden brown"	"Hellgoldbraun"	****
+337     "Golden brown"		"Goldbraun"	****
+338	"Dark golden brown"	"Dunkelgoldbraun" ****
+339	"Maple brown"		"Ahornbraun"	****
+340	"Light reddish brown"	"Hellrotbraun"	****
+341	"Reddish brown"		"Rotbraun"	****
+342	"Dark reddish brown"	"Dunkelrotbraun" ****
+343	"Darkest reddish brown" "Dunkelstes rotbraun" ****
+344     "Platinum blond"	"Platinblond"	****
+345	"Light blond"		"Hellblond"	****
+346	"Blond"			"Blond"		****
+347	"Honey blond"		"Honigblond"	****
+348	"Dark blond"		"Dunkelblond"	****
+349	"Light brown"		"Hellbraun"	****
+350	"Brown"			"Braun"		****
+351	"Dark brown"		"Dunkelbraun"	****
+352	"White"			"Weiss"		****
+353	"Light grey"		"Hellgrau"	****
+354	"Grey"			"Grau"		****
+355	"Dark grey"		"Dunkelgrau"	****
+356	"Light grayish black"	"Hellgrauschwarz" ****
+357	"Grayish black"		"Grauschwarz"	****
+358	"Dark grayish black"	"Dunkelgrauschwarz" ****
+359	"Black"			"Black"		****
+360	"Shining violet"	"Violett (glänzend)" ****
+361	"Shining violet/black"	"Violett/Schwarz (glänzend)" ****
+362	"Dull violet"		"Violett (matt)" ****
+363	"Dull violet/black"	"Violett/Schwarz (matt)" ****
+364	"Shining blue"		"Blau (glänzend)" ****
+365	"Shining blue/black"	"Blau/Schwarz (glänzend)"	****
+366	"Dull blue"		"Blau (matt)" ****
+367	"Dull blue/black"	"Blau/Schwarz (matt)" ****
+368     "Shining teal" 		"Türkis (glänzend)" ****
+369	"Shining teal/black" 	"Türkis/Schwarz (glänzend)" ****
+370	"Dull teal"  		"Türkis (matt)" ****
+371	"Dull teal/black"	"Türkis/Schwarz (matt)" ****
+372	"Shining green"		"Grün (glänzend)" ****
+373	"Shining green/black"	"Grün/Schwarz (glänzend)" ****
+374	"Dull green"      	"Grün (matt)" ****
+375	"Dull green/black"      "Grün/Schwarz (matt)" ****
+376	"Shining light green"	"Hellgrün (glänzend)" ****
+377	"Shining light green/black" "Hellgrün/Schwarz (glänzend)" ****
+378	"Dull light green"	"Hellgrün (matt)" ****
+379	"Dull light green/black" "Hellgrün/Schwarz (matt)" ****
+380     "Shining olive"		"Olive (glänzend)" ****
+381     "Shining olive/black"	"Olive/Schwarz (glänzend)" ****
+382     "Dull olive"		"Olive (matt)" ****
+383     "Dull olive/black"	"Olive/Schwarz (matt)" ****
+384	"Shining blond"		"Blond (glänzend)" ****
+385	"Shining brown"		"Braun (glänzend)" ****
+386	"Dull blond"		"Blond (matt)"	****
+387	"Dull brown"		"Braun (matt)"	****
+388     "Shining red"		"Rot (glänzend)" ****
+389     "Shining red/black"	"Rot/Schwarz (glänzend)" ****
+390     "Dull red"		"Rot (matt)" 	****
+391     "Dull red/black"	"Rot/Schwarz (matt)" ****
+392	"Lightest"		"Sehr hell"	****
+393	"Light"			"Hell"		****
+394     "Light brownish"	"Hell bräunlich" ****
+395     "Brownish"		"Bräunlich"	****
+396     "Brown"			"Braun"		****
+397     "Dark brown"		"Dunkelbraun"	****
+398     "Dark"			"Dunkel"	****
+399	"Darkest"		"Sehr dunkel"	****
+400	"Lightest olive brown"	"Hellstes Olivbraun" ****
+401	"Light olive brown"	"Hellolivbraun"	****
+402	"Olive brown"		"Olivbraun"	****
+403	"Dark olive brown"	"Dunkelolivbraun" ****
+404	"Rosy"			"Rosa"		****
+405	"Reddish"   	      	"Rötlich" 	****
+406	"Reddish brown"		"Rotbraun"	****
+407	"Dark Reddish brown"	"Dunkel-Rotbraun" ****
+408	"Light taupe"		"Hellgraubraun"	****
+409	"Taupe"			"Graubraun"		****
+410     "Dark taupe"		"Dunkelgraubraun"	****
+411	"Darkest taupe"		"Dunkelstes graubraun" ****
+412	"Light bluish grey"	"Hellblaugrau" ****
+413	"Bluish grey"		"Blaugrau"	****
+414	"Dark bluish grey"	"Dunkelblaugrau" ****
+415	"Darkest bluish grey"	"Dunkelstes blaugrau" ****
+416	"Lightest olive green"	"Hellstes Olivgrün" ****
+417	"Light olive green"	"Hellolivgrün"	****
+418	"Olive green"		"Olivgrün"	****
+419	"Dark olive green"	"Dunkelolivgrün" ****
+420	"Grayish black"		"Grauschwarz"	****
+421	"Black"			"Schwarz"	****
+422	"Deep black"		"Tiefschwarz"	****
+423	"Pitch black"		"Pechschwarz"	****
+424	"Light green grey"	"Hellgrüngrau"	****
+425	"Green grey"		"Grüngrau"	****
+426	"Dark green grey"	"Dunkelgrüngrau" ****
+427	"Darkest green grey"	"Dunkelstes grüngrau" ****
+428	"Light teal"		"Hellblaugrün"	****
+429	"Teal"			"Aquamarin"	****
+430	"Dark teal"		"Dunkelaquamarin" ****
+431	"Darkest teal"		"Dunkelstes blaugrün" ****
+432	"Light grey"		"Hellgrau"	****
+433	"Grey"			"Grau"		****
+434	"Dark grey"		"Dunkelgrau"	****
+435	"Darkest grey"		"Dunkelstes grau" ****
+436	"Orange brown"		"Orangebraun"	****
+437	"Dark orange brown"	"Dunkelorangebraun" ****
+438	"Purple"                "Violett"	****
+439	"Dark purple"		"Dunkelviolett"	****
+440	"Blue"     		"Blau"		****
+441     "Dark blue"		"Dunkelblau"	****
+442	"Cyan"			"Blaugrün"	****
+443	"Dark cyan"		"Dunkelblaugrün" ****
+444	"Green"			"Grün"		****
+445	"Dark green"		"Dunkelgrün"	****
+446	"Olive"			"Oliv"		****
+447	"Dark olive"		"Dunkelolive"	****
+448     "Lightest brown"	"Hellstes braun" ****
+449	"Light brown"		"Hellbraun"	****
+450	"Brown"			"Braun"		****
+451	"Dark brown"		"Dunkelbraun"	****
+452	"Lightest red brown"	"Hellstes rotbraun" ****
+453	"Light red brown"	"Hellrotbraun"	****
+454	"Red brown"		"Rotbraun"	****
+455	"Dark red brown"	"Dunkelrotbraun" ****
+456     "Lightest olive brown"	"Hellstes olivbraun" ****
+457	"Light olive brown"	"Hellolivbraun"	****
+458	"Olive brown"		"Olivbraun"	****
+459	"Dark olive brown"	"Dunkelolivebraun" ****
+460     "Lightest grey brown"	"Hellstes graubraun" ****
+461	"Light grey brown"	"Hellgraubraun"	****
+462	"Grey brown"		"Graubraun"	****
+463	"Dark grey brown"	"Dunkelgraubraun" ****
+464     "*no skill selected*"   "*keine Fertigkeit ausgewählt*" ****
+465	" *not possible*"	" *nicht möglich*" ****
+466	" *disabled*"		" *deaktiviert*" ****
+467	" *not applicable*"	" *nicht anwendbar*" ****
+468     "an item"		"einen Gegenstand" ****
+469	"a property"		"eine Eigenschaft" ****
+470	"a subtype"		"einen Subtyp" 	****
+471	"a value"		"einen Wert"	****
+472     "param1"		"param1"	****
+473	" *not implemented*"	" *nicht implementiert*" ****
+474	" *not enough gold*"	" *nicht genug Gold*" ****
+475     "Level/XP Cheat"	"Level/XP-Cheat" ****
+476     "Gold Cheat"		"Gold-Cheat"	****
+477	"Alignment Cheat"	"Gesinnungs-Cheat" ****
+478	"Feat Cheat"		"Talente-Cheat" ****
+479	"Skill Cheat"		"Fertigkeiten-Cheat" ****
+480	"Item Property Cheat"	"Gegenstandseigenschaften-Cheat" ****
+481     "Cursed Item Cheat"	"Verfluchte-Gegenstände-Cheat" ****
+482	"Item Charges Cheat"	"Gegenstandsladungen-Cheat" ****
+483	"Store Cheat"		"Händler-Cheat"	****
+484	"Current Cheat"		"Aktueller Cheat" ****
+485	" *disabled for current game*"		" *deaktiviert (aktuelles Spiel)*" ****
+486     "Cursed Items are items you cannot drop, sell, put into containers or give to other players/henchmen." **** ****
+487     " While usually there's a reason for an item being cursed sometimes you just want to get rid of that item e.g. because the item doesn't belong to the module you're currently playing." **** ****
+488     " 'Uncursing' an item and then dropping it might break the module you're playing so be careful!" **** ****
+489     "Plot Item Cheat"	"Plotgegenstände-Cheat" ****
+490	"Items flagged as plot are items you cannot sell (because their gold piece value is 0." **** ****
+491     " Also sometimes these items are important for the module you're playing." **** ****
+492	" Removing the plot flag and selling or dropping the item might break the module you're playing so be careful!" **** ****
+493	"Stolen Item Cheat"	"Gestohlene Gegenstände Cheat" ****
+494	"Identify Cheat"	"Identifizieren Cheat" ****
+495	"Items flagged as stolen are items most merchants won't buy." **** ****
+496     "Merchants buying stolen items will do so usually at a lower price." **** ****
+497	****			****		****
+498	"Only identified items can be used by your character." **** ****
+499     " Also when selling unidentified items you will get a much lower price." **** ****
+500	" *item invalid*"	" *Gegenstand ungültig*" ****
+501	"Inventory Cheat"	"Inventar-Cheat" ****
+502	****			****		****

@@ -1,0 +1,75 @@
+const int MK_STATE_INVALID = 0;
+const int MK_STATE_COPY = 1;
+const int MK_STATE_MATERIAL = 2;
+const int MK_STATE_CGROUP = 3;
+const int MK_STATE_COLOR = 4;
+const int MK_STATE_SELECTPART = 5;
+const int MK_STATE_MODIFY = 6;
+const int MK_STATE_SELECTMODE = 7;
+const int MK_STATE_INIT = 8;
+const int MK_STATE_DATABASE_1 = 9;
+const int MK_STATE_DATABASE_2 = 10;
+const int MK_STATE_DATABASE_3 = 11;
+const int MK_STATE_DATABASE_4 = 12;
+
+const int MK_STATE_BODY_SELECT = 13;
+const int MK_STATE_BODY_MODIFY = 14;
+
+/////////////////////////////////////
+// !!! Don't change the numbers !!!
+const int MK_STATE_VFX_EYES = 24;
+const int MK_STATE_VFX_LIGHT = 25;
+const int MK_STATE_VFX_CEP = 26;
+const int MK_STATE_VFX_USER = 27;
+const int MK_STATE_VFX_ALL = 28;
+/////////////////////////////////////
+
+const int MK_STATE_VFX_INIT_FILTER = 29;
+const int MK_STATE_VFX_SELECT_FILTER = 30;
+const int MK_STATE_VFX_SELECT_EFFECT = 31;
+const int MK_STATE_VFX_EDIT_EFFECT = 131;
+
+const int MK_STATE_APPEARANCETYPE = 32;
+const int MK_STATE_SCALE = 33;
+const int MK_STATE_WINGS = 34;
+const int MK_STATE_TAIL = 35;
+const int MK_STATE_PHENO = 43;
+
+const int MK_STATE_HEAD_FILTER = 36;
+const int MK_STATE_HEAD_INIT = 37;
+const int MK_STATE_HEAD_MODIFY = 38;
+
+const int MK_STATE_FOOTSTEP = 39;
+
+const int MK_STATE_COLOR_SELECT = 40;
+const int MK_STATE_COLOR_MODIFY = 41;
+
+const int MK_STATE_DEITY = 42;
+
+const int MK_STATE_CHEATS = 50;
+const int MK_STATE_CHEATS_LEVEL = 51;
+const int MK_STATE_CHEATS_GOLD = 52;
+const int MK_STATE_CHEATS_ALIGNMENT = 53;
+const int MK_STATE_CHEATS_FEATS = 54;
+const int MK_STATE_CHEATS_CURSEDFLAG = 55;
+const int MK_STATE_CHEATS_OPENSTORE = 56;
+const int MK_STATE_CHEATS_SKILLPOINTS = 57;
+const int MK_STATE_CHEATS_ITEMPROPS = 58;
+const int MK_STATE_CHEATS_CHARGES = 59;
+const int MK_STATE_CHEATS_DISABLE = 49;
+const int MK_STATE_CHEATS_PLOTFLAG = 60;
+const int MK_STATE_CHEATS_STOLENFLAG = 61;
+const int MK_STATE_CHEATS_NOTIDENTIFIED = 62;
+const int MK_STATE_CHEATS_SWAPITEMPROPS = 63;
+
+const int MK_STATE_CHEATS_ITEMPROPS_ITEM = 58;
+const int MK_STATE_CHEATS_ITEMPROPS_FILTERITEMS = 70;
+const int MK_STATE_CHEATS_ITEMPROPS_PROPERTY = 71;
+const int MK_STATE_CHEATS_ITEMPROPS_SUBTYPE = 72;
+const int MK_STATE_CHEATS_ITEMPROPS_COSTTABLE = 73;
+const int MK_STATE_CHEATS_ITEMPROPS_PARAM1 = 74;
+
+const int MK_STATE_CHEATS_SWAPITEMPROPS_ITEM1 = 63;
+const int MK_STATE_CHEATS_SWAPITEMPROPS_ITEM2 = 75;
+const int MK_STATE_CHEATS_SWAPITEMPROPS_SWAP = 76;
+

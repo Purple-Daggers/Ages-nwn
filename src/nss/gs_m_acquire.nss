@@ -4,6 +4,7 @@
 #include "gs_inc_text"
 #include "gs_inc_theft"
 #include "gs_inc_time"
+#include "gs_inc_subrace"
 
 const int GS_TIMEOUT = 300; //TIME UPDATE: 5 minutes.  Used with gsTIGetGameTimestamp() so this is 5 REAL TIME minutes
 
@@ -124,6 +125,91 @@ void main()
         else if (oAcquiredBy == oStolenFrom)
         {
             gsTHResetStolenItem(oAcquired);
+        }
+    }
+
+    //Make sure that races with digitigrade legs have an appropriate shin model.
+    if(GetBaseItemType(oAcquired) == BASE_ITEM_ARMOR)
+    {
+        int nLeftShinAppearance = GetItemAppearance(oAcquired, ITEM_APPR_TYPE_ARMOR_MODEL, ITEM_APPR_ARMOR_MODEL_LSHIN);
+        int nRightShinAppearance = GetItemAppearance(oAcquired, ITEM_APPR_TYPE_ARMOR_MODEL, ITEM_APPR_ARMOR_MODEL_RSHIN);
+        int nLeftFootAppearance = GetItemAppearance(oAcquired, ITEM_APPR_TYPE_ARMOR_MODEL, ITEM_APPR_ARMOR_MODEL_LFOOT);
+        int nRightFootAppearance = GetItemAppearance(oAcquired, ITEM_APPR_TYPE_ARMOR_MODEL, ITEM_APPR_ARMOR_MODEL_RFOOT);
+        if(gsSUGetHasDigitigradeLegs(gsSUGetSubRace(oAcquiredBy)))
+        {
+            if(nLeftShinAppearance != 136 && nLeftShinAppearance != 137){
+                object oItem = CopyItemAndModify(oAcquired, ITEM_APPR_TYPE_ARMOR_MODEL, ITEM_APPR_ARMOR_MODEL_LSHIN, 136, TRUE);
+                if(GetIsObjectValid(oItem))
+                {
+                    DestroyObject(oAcquired);
+                    return;
+                }
+            }
+            if(nRightShinAppearance != 136 && nRightShinAppearance != 137){
+                object oItem = CopyItemAndModify(oAcquired, ITEM_APPR_TYPE_ARMOR_MODEL, ITEM_APPR_ARMOR_MODEL_RSHIN, 136, TRUE);
+                if(GetIsObjectValid(oItem))
+                {
+                    DestroyObject(oAcquired);
+                    return;
+                }
+            }
+            if(nLeftFootAppearance != 136)
+            {
+                object oItem = CopyItemAndModify(oAcquired, ITEM_APPR_TYPE_ARMOR_MODEL, ITEM_APPR_ARMOR_MODEL_LFOOT, 136, TRUE);
+                if(GetIsObjectValid(oItem))
+                {
+                    DestroyObject(oAcquired);
+                    return;
+                }
+            }
+            if(nRightFootAppearance != 136)
+            {
+                object oItem = CopyItemAndModify(oAcquired, ITEM_APPR_TYPE_ARMOR_MODEL, ITEM_APPR_ARMOR_MODEL_RFOOT, 136, TRUE);
+                if(GetIsObjectValid(oItem))
+                {
+                    DestroyObject(oAcquired);
+                    return;
+                }
+            }
+        }   
+        else 
+        {
+            if(nLeftShinAppearance == 136 || nLeftShinAppearance == 137)
+            {
+                object oItem = CopyItemAndModify(oAcquired, ITEM_APPR_TYPE_ARMOR_MODEL, ITEM_APPR_ARMOR_MODEL_LSHIN, 1, TRUE);
+                if(GetIsObjectValid(oItem))
+                {
+                    DestroyObject(oAcquired);
+                    return;
+                }
+            }
+            if(nRightShinAppearance == 136 || nRightShinAppearance == 137)
+            {
+                object oItem = CopyItemAndModify(oAcquired, ITEM_APPR_TYPE_ARMOR_MODEL, ITEM_APPR_ARMOR_MODEL_RSHIN, 1, TRUE);
+                if(GetIsObjectValid(oItem))
+                {
+                    DestroyObject(oAcquired);
+                    return;
+                }
+            }   
+            if(nLeftFootAppearance == 136)
+            {
+                object oItem = CopyItemAndModify(oAcquired, ITEM_APPR_TYPE_ARMOR_MODEL, ITEM_APPR_ARMOR_MODEL_LFOOT, 1, TRUE);
+                if(GetIsObjectValid(oItem))
+                {
+                    DestroyObject(oAcquired);
+                    return;
+                }
+            }
+            if(nRightFootAppearance == 136)
+            {
+                object oItem = CopyItemAndModify(oAcquired, ITEM_APPR_TYPE_ARMOR_MODEL, ITEM_APPR_ARMOR_MODEL_RFOOT, 1, TRUE);
+                if(GetIsObjectValid(oItem))
+                {
+                    DestroyObject(oAcquired);
+                    return;
+                }
+            }
         }
     }
 
