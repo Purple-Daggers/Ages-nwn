@@ -60,7 +60,7 @@
               },
               "Index": {
                 "type": "dword",
-                "value": 9
+                "value": 4
               },
               "IsChild": {
                 "type": "byte",
@@ -79,7 +79,7 @@
               },
               "Index": {
                 "type": "dword",
-                "value": 8
+                "value": 3
               },
               "IsChild": {
                 "type": "byte",
@@ -98,7 +98,7 @@
               },
               "Index": {
                 "type": "dword",
-                "value": 7
+                "value": 2
               },
               "IsChild": {
                 "type": "byte",
@@ -117,101 +117,6 @@
               },
               "Index": {
                 "type": "dword",
-                "value": 6
-              },
-              "IsChild": {
-                "type": "byte",
-                "value": 0
-              }
-            },
-            {
-              "__struct_id": 4,
-              "Active": {
-                "type": "resref",
-                "value": ""
-              },
-              "ConditionParams": {
-                "type": "list",
-                "value": []
-              },
-              "Index": {
-                "type": "dword",
-                "value": 5
-              },
-              "IsChild": {
-                "type": "byte",
-                "value": 0
-              }
-            },
-            {
-              "__struct_id": 5,
-              "Active": {
-                "type": "resref",
-                "value": ""
-              },
-              "ConditionParams": {
-                "type": "list",
-                "value": []
-              },
-              "Index": {
-                "type": "dword",
-                "value": 4
-              },
-              "IsChild": {
-                "type": "byte",
-                "value": 0
-              }
-            },
-            {
-              "__struct_id": 6,
-              "Active": {
-                "type": "resref",
-                "value": ""
-              },
-              "ConditionParams": {
-                "type": "list",
-                "value": []
-              },
-              "Index": {
-                "type": "dword",
-                "value": 3
-              },
-              "IsChild": {
-                "type": "byte",
-                "value": 0
-              }
-            },
-            {
-              "__struct_id": 7,
-              "Active": {
-                "type": "resref",
-                "value": ""
-              },
-              "ConditionParams": {
-                "type": "list",
-                "value": []
-              },
-              "Index": {
-                "type": "dword",
-                "value": 2
-              },
-              "IsChild": {
-                "type": "byte",
-                "value": 0
-              }
-            },
-            {
-              "__struct_id": 8,
-              "Active": {
-                "type": "resref",
-                "value": ""
-              },
-              "ConditionParams": {
-                "type": "list",
-                "value": []
-              },
-              "Index": {
-                "type": "dword",
                 "value": 1
               },
               "IsChild": {
@@ -220,7 +125,7 @@
               }
             },
             {
-              "__struct_id": 9,
+              "__struct_id": 4,
               "Active": {
                 "type": "resref",
                 "value": ""
@@ -255,7 +160,7 @@
         "Text": {
           "type": "cexolocstring",
           "value": {
-            "0": "How would you like to modify your cat ears?\n\nCurrent scale: <CUSTOM3000>\nCurrent X: <CUSTOM3001>\nCurrent Y: <CUSTOM3002>\nCurrent Z: <CUSTOM3003>"
+            "0": "Select a height"
           }
         }
       }
@@ -263,7 +168,7 @@
   },
   "NumWords": {
     "type": "dword",
-    "value": 57
+    "value": 8
   },
   "PreventZoomIn": {
     "type": "byte",
@@ -296,7 +201,31 @@
         },
         "EntriesList": {
           "type": "list",
-          "value": []
+          "value": [
+            {
+              "__struct_id": 0,
+              "Active": {
+                "type": "resref",
+                "value": ""
+              },
+              "ConditionParams": {
+                "type": "list",
+                "value": []
+              },
+              "Index": {
+                "type": "dword",
+                "value": 0
+              },
+              "IsChild": {
+                "type": "byte",
+                "value": 1
+              },
+              "LinkComment": {
+                "type": "cexostring",
+                "value": ""
+              }
+            }
+          ]
         },
         "Quest": {
           "type": "cexostring",
@@ -304,7 +233,7 @@
         },
         "Script": {
           "type": "resref",
-          "value": ""
+          "value": "as_scale006"
         },
         "Sound": {
           "type": "resref",
@@ -313,7 +242,7 @@
         "Text": {
           "type": "cexolocstring",
           "value": {
-            "0": "<StartAction>[Done]</Start>"
+            "0": "Shortest"
           }
         }
       },
@@ -346,7 +275,7 @@
               "__struct_id": 0,
               "Active": {
                 "type": "resref",
-                "value": "as_cears001"
+                "value": ""
               },
               "ConditionParams": {
                 "type": "list",
@@ -373,7 +302,7 @@
         },
         "Script": {
           "type": "resref",
-          "value": ""
+          "value": "as_scale005"
         },
         "Sound": {
           "type": "resref",
@@ -382,7 +311,7 @@
         "Text": {
           "type": "cexolocstring",
           "value": {
-            "0": "<StartAction>[Refresh ear VFX]</Start>"
+            "0": "Short"
           }
         }
       },
@@ -415,7 +344,7 @@
               "__struct_id": 0,
               "Active": {
                 "type": "resref",
-                "value": "as_cears001"
+                "value": ""
               },
               "ConditionParams": {
                 "type": "list",
@@ -442,7 +371,7 @@
         },
         "Script": {
           "type": "resref",
-          "value": "as_cears009"
+          "value": "as_scale004"
         },
         "Sound": {
           "type": "resref",
@@ -451,7 +380,7 @@
         "Text": {
           "type": "cexolocstring",
           "value": {
-            "0": "<StartAction>[Translate Z by -0.005]</Start>"
+            "0": "Average"
           }
         }
       },
@@ -484,7 +413,7 @@
               "__struct_id": 0,
               "Active": {
                 "type": "resref",
-                "value": "as_cears001"
+                "value": ""
               },
               "ConditionParams": {
                 "type": "list",
@@ -511,7 +440,7 @@
         },
         "Script": {
           "type": "resref",
-          "value": "as_cears008"
+          "value": "as_scale003"
         },
         "Sound": {
           "type": "resref",
@@ -520,7 +449,7 @@
         "Text": {
           "type": "cexolocstring",
           "value": {
-            "0": "<StartAction>[Translate Z by +0.005]</Start>"
+            "0": "Tall"
           }
         }
       },
@@ -553,7 +482,7 @@
               "__struct_id": 0,
               "Active": {
                 "type": "resref",
-                "value": "as_cears001"
+                "value": ""
               },
               "ConditionParams": {
                 "type": "list",
@@ -580,7 +509,7 @@
         },
         "Script": {
           "type": "resref",
-          "value": "as_cears007"
+          "value": "as_scale002"
         },
         "Sound": {
           "type": "resref",
@@ -589,352 +518,7 @@
         "Text": {
           "type": "cexolocstring",
           "value": {
-            "0": "<StartAction>[Translate Y by -0.005]</Start>"
-          }
-        }
-      },
-      {
-        "__struct_id": 5,
-        "ActionParams": {
-          "type": "list",
-          "value": []
-        },
-        "Animation": {
-          "type": "dword",
-          "value": 0
-        },
-        "AnimLoop": {
-          "type": "byte",
-          "value": 1
-        },
-        "Comment": {
-          "type": "cexostring",
-          "value": ""
-        },
-        "Delay": {
-          "type": "dword",
-          "value": 4294967295
-        },
-        "EntriesList": {
-          "type": "list",
-          "value": [
-            {
-              "__struct_id": 0,
-              "Active": {
-                "type": "resref",
-                "value": "as_cears001"
-              },
-              "ConditionParams": {
-                "type": "list",
-                "value": []
-              },
-              "Index": {
-                "type": "dword",
-                "value": 0
-              },
-              "IsChild": {
-                "type": "byte",
-                "value": 1
-              },
-              "LinkComment": {
-                "type": "cexostring",
-                "value": ""
-              }
-            }
-          ]
-        },
-        "Quest": {
-          "type": "cexostring",
-          "value": ""
-        },
-        "Script": {
-          "type": "resref",
-          "value": "as_cears006"
-        },
-        "Sound": {
-          "type": "resref",
-          "value": ""
-        },
-        "Text": {
-          "type": "cexolocstring",
-          "value": {
-            "0": "<StartAction>[Translate Y by +0.005]</Start>"
-          }
-        }
-      },
-      {
-        "__struct_id": 6,
-        "ActionParams": {
-          "type": "list",
-          "value": []
-        },
-        "Animation": {
-          "type": "dword",
-          "value": 0
-        },
-        "AnimLoop": {
-          "type": "byte",
-          "value": 1
-        },
-        "Comment": {
-          "type": "cexostring",
-          "value": ""
-        },
-        "Delay": {
-          "type": "dword",
-          "value": 4294967295
-        },
-        "EntriesList": {
-          "type": "list",
-          "value": [
-            {
-              "__struct_id": 0,
-              "Active": {
-                "type": "resref",
-                "value": "as_cears001"
-              },
-              "ConditionParams": {
-                "type": "list",
-                "value": []
-              },
-              "Index": {
-                "type": "dword",
-                "value": 0
-              },
-              "IsChild": {
-                "type": "byte",
-                "value": 1
-              },
-              "LinkComment": {
-                "type": "cexostring",
-                "value": ""
-              }
-            }
-          ]
-        },
-        "Quest": {
-          "type": "cexostring",
-          "value": ""
-        },
-        "Script": {
-          "type": "resref",
-          "value": "as_cears005"
-        },
-        "Sound": {
-          "type": "resref",
-          "value": ""
-        },
-        "Text": {
-          "type": "cexolocstring",
-          "value": {
-            "0": "<StartAction>[Translate X by -0.005]</Start>"
-          }
-        }
-      },
-      {
-        "__struct_id": 7,
-        "ActionParams": {
-          "type": "list",
-          "value": []
-        },
-        "Animation": {
-          "type": "dword",
-          "value": 0
-        },
-        "AnimLoop": {
-          "type": "byte",
-          "value": 1
-        },
-        "Comment": {
-          "type": "cexostring",
-          "value": ""
-        },
-        "Delay": {
-          "type": "dword",
-          "value": 4294967295
-        },
-        "EntriesList": {
-          "type": "list",
-          "value": [
-            {
-              "__struct_id": 0,
-              "Active": {
-                "type": "resref",
-                "value": "as_cears001"
-              },
-              "ConditionParams": {
-                "type": "list",
-                "value": []
-              },
-              "Index": {
-                "type": "dword",
-                "value": 0
-              },
-              "IsChild": {
-                "type": "byte",
-                "value": 1
-              },
-              "LinkComment": {
-                "type": "cexostring",
-                "value": ""
-              }
-            }
-          ]
-        },
-        "Quest": {
-          "type": "cexostring",
-          "value": ""
-        },
-        "Script": {
-          "type": "resref",
-          "value": "as_cears004"
-        },
-        "Sound": {
-          "type": "resref",
-          "value": ""
-        },
-        "Text": {
-          "type": "cexolocstring",
-          "value": {
-            "0": "<StartAction>[Translate X by +0.005]</Start>"
-          }
-        }
-      },
-      {
-        "__struct_id": 8,
-        "ActionParams": {
-          "type": "list",
-          "value": []
-        },
-        "Animation": {
-          "type": "dword",
-          "value": 0
-        },
-        "AnimLoop": {
-          "type": "byte",
-          "value": 1
-        },
-        "Comment": {
-          "type": "cexostring",
-          "value": ""
-        },
-        "Delay": {
-          "type": "dword",
-          "value": 4294967295
-        },
-        "EntriesList": {
-          "type": "list",
-          "value": [
-            {
-              "__struct_id": 0,
-              "Active": {
-                "type": "resref",
-                "value": "as_cears001"
-              },
-              "ConditionParams": {
-                "type": "list",
-                "value": []
-              },
-              "Index": {
-                "type": "dword",
-                "value": 0
-              },
-              "IsChild": {
-                "type": "byte",
-                "value": 1
-              },
-              "LinkComment": {
-                "type": "cexostring",
-                "value": ""
-              }
-            }
-          ]
-        },
-        "Quest": {
-          "type": "cexostring",
-          "value": ""
-        },
-        "Script": {
-          "type": "resref",
-          "value": "as_cears003"
-        },
-        "Sound": {
-          "type": "resref",
-          "value": ""
-        },
-        "Text": {
-          "type": "cexolocstring",
-          "value": {
-            "0": "<StartAction>[Decrease scale by 0.05]</Start>"
-          }
-        }
-      },
-      {
-        "__struct_id": 9,
-        "ActionParams": {
-          "type": "list",
-          "value": []
-        },
-        "Animation": {
-          "type": "dword",
-          "value": 0
-        },
-        "AnimLoop": {
-          "type": "byte",
-          "value": 1
-        },
-        "Comment": {
-          "type": "cexostring",
-          "value": ""
-        },
-        "Delay": {
-          "type": "dword",
-          "value": 4294967295
-        },
-        "EntriesList": {
-          "type": "list",
-          "value": [
-            {
-              "__struct_id": 0,
-              "Active": {
-                "type": "resref",
-                "value": "as_cears001"
-              },
-              "ConditionParams": {
-                "type": "list",
-                "value": []
-              },
-              "Index": {
-                "type": "dword",
-                "value": 0
-              },
-              "IsChild": {
-                "type": "byte",
-                "value": 1
-              },
-              "LinkComment": {
-                "type": "cexostring",
-                "value": ""
-              }
-            }
-          ]
-        },
-        "Quest": {
-          "type": "cexostring",
-          "value": ""
-        },
-        "Script": {
-          "type": "resref",
-          "value": "as_cears002"
-        },
-        "Sound": {
-          "type": "resref",
-          "value": ""
-        },
-        "Text": {
-          "type": "cexolocstring",
-          "value": {
-            "0": "<StartAction>[Increase scale by 0.05]</Start>"
+            "0": "Tallest"
           }
         }
       }
@@ -947,7 +531,7 @@
         "__struct_id": 0,
         "Active": {
           "type": "resref",
-          "value": "as_cears001"
+          "value": ""
         },
         "ConditionParams": {
           "type": "list",

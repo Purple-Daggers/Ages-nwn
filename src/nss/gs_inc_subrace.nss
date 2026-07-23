@@ -176,6 +176,8 @@ int gsSUGetHasCatEars(int nSubRace);
 int gsSUGetHasTigerFace(int nSubRace);
 //return TRUE if player's race has a 4-legged cat model.
 int gsSUGetHasCatModel(int nSubRace);
+//return TRUE if player has permission for subrace
+int gsSUGetSubracePermission(object oPlayer, string sPermission);
 //return TRUE if player's race is a veydran race.
 int gsSUGetIsVeydran(int nSubRace);
 //return TRUE if player's race is a skyblessed veydran
@@ -4159,20 +4161,28 @@ void gsSUApplySubRaceParts(object oPlayer)
     int nSubRace = gsSUGetSubRace(oPlayer);
     if(gsSUGetHasDigitigradeLegs(nSubRace))
     {
+        /*int nLeftShinPart = GetCreatureBodyPart(CREATURE_PART_LEFT_SHIN);
+        int nRightShinPart = GetCreatureBodyPart(CREATURE_PART_RIGHT_SHIN);
+        int nLeftFootPart = GetCreatureBodyPart(CREATURE_PART_LEFT_FOOT);
+        int nRightFootPart = GetCreatureBodyPart(CREATURE_PART_RIGHT_FOOT);*/
+
         SetCreatureBodyPart(CREATURE_PART_LEFT_SHIN, 137, oPlayer);
         SetCreatureBodyPart(CREATURE_PART_RIGHT_SHIN, 137, oPlayer);
         SetCreatureBodyPart(CREATURE_PART_LEFT_FOOT, 136, oPlayer);
         SetCreatureBodyPart(CREATURE_PART_RIGHT_FOOT, 136, oPlayer);
-        object oArmor = GetItemInSlot(INVENTORY_SLOT_CHEST, oPlayer);
+        /*object oArmor = GetItemInSlot(INVENTORY_SLOT_CHEST, oPlayer);
         if(GetIsObjectValid(oArmor)){
             AssignCommand(oPlayer, ActionUnequipItem(oArmor));
             AssignCommand(oPlayer, ActionEquipItem(oArmor, INVENTORY_SLOT_CHEST));
-        }
+        }*/
     }
 
     if(gsSUGetHasCatTail(nSubRace))
     {
-        SetCreatureTailType(10013, oPlayer);
+        if(GetCreatureTailType(oPlayer) == 0)
+        {
+            SetCreatureTailType(10013, oPlayer);
+        }
     }
 
     if(gsSUGetHasCatEars(nSubRace))
@@ -4193,6 +4203,74 @@ void gsSUApplySubRaceParts(object oPlayer)
             SetCreatureAppearanceType(oPlayer, 15117);
             SetObjectVisualTransform(oPlayer, OBJECT_VISUAL_TRANSFORM_SCALE,
                                 1.25f + (Random(101) * 0.001f));
+        }
+    }
+
+    if(gsSUGetSeaForged(nSubRace))
+    {
+        int nAppearanceType = GetAppearanceType(oPlayer);
+        if(nAppearanceType != 15109 && nAppearanceType != 15110 && nAppearanceType != 15111)
+        {
+            SetCreatureAppearanceType(oPlayer, 15111);
+            SetCreatureTailType(10007, oPlayer);
+        }
+
+        int nTailType = GetCreatureTailType(oPlayer);
+        if(nAppearanceType == 15109 && nTailType != 10006)
+        {
+            SetCreatureTailType(10006, oPlayer);
+        }
+        else if(nAppearanceType == 15110 && nTailType != 10005)
+        {
+            SetCreatureTailType(10005, oPlayer);
+        }
+        else if(nAppearanceType == 15111 && nTailType != 10007)
+        {
+            SetCreatureTailType(10007, oPlayer);
+        }
+    }
+
+    if(gsSUGetSkyBlessed(nSubRace))
+    {
+        int nAppearanceType = GetAppearanceType(oPlayer);
+        if(nAppearanceType != 15112 && nAppearanceType != 15113 && nAppearanceType != 15114)
+        {
+            SetCreatureAppearanceType(oPlayer, 15112);
+            SetCreatureTailType(10008, oPlayer);
+        }
+
+        int nTailType = GetCreatureTailType(oPlayer);
+        if(nAppearanceType == 15112 && nTailType != 10008)
+        {
+            SetCreatureTailType(10008, oPlayer);
+        }
+        else if(nAppearanceType == 15113 && nTailType != 10009)
+        {
+            SetCreatureTailType(10009, oPlayer);
+        }
+        else if(nAppearanceType == 15114 && nTailType != 10010)
+        {
+            SetCreatureTailType(10010, oPlayer);
+        }
+    }
+
+    if(gsSUGetStoneWrought(nSubRace))
+    {
+        int nAppearanceType = GetAppearanceType(oPlayer);
+        if(nAppearanceType != 15107 && nAppearanceType != 15108)
+        {
+            SetCreatureAppearanceType(oPlayer, 15107);
+            SetCreatureTailType(10003, oPlayer);
+        }
+
+        int nTailType = GetCreatureTailType(oPlayer);
+        if(nAppearanceType == 15107 && nTailType != 10003)
+        {
+            SetCreatureTailType(10003, oPlayer);
+        }
+        else if(nAppearanceType == 15108 && nTailType != 10004)
+        {
+            SetCreatureTailType(10004, oPlayer);
         }
     }
 
@@ -4278,6 +4356,45 @@ int gsSUGetHasCatModel(int nSubRace)
         return TRUE;
     }
     return FALSE;
+}
+
+int gsSUGetSubracePermission(object oPlayer, string sPermission)
+{
+    sqlquery sqlCreateTable = SqlPrepareQueryCampaign(AS_SUBRACE_DATABASE, "CREATE TABLE IF NOT EXISTS permissions (cd_key TEXT PRIMARY KEY, json TEXT);");
+    SqlStep(sqlCreateTable);
+
+    string sPlayerCDKey = GetPCPublicCDKey(oPlayer, TRUE);
+    
+    sqlquery sqlGetPermissions = SqlPrepareQueryCampaign(AS_SUBRACE_DATABASE, "SELECT json FROM permissions WHERE cd_key = @cd_key");
+    SqlBindString(sqlGetPermissions, "@cd_key", sPlayerCDKey);
+    if(SqlStep(sqlGetPermissions))
+    {
+        json jPermissions = SqlGetJson(sqlGetPermissions, 0);
+        if (JsonGetType(jPermissions) == JSON_TYPE_OBJECT)
+        {
+            json jPermission = JsonObjectGet(jPermissions, sPermission);
+            if(JsonGetType(jPermission) == JSON_TYPE_NULL)
+            {
+                return FALSE;
+            }
+            else
+            {
+                return JsonGetInt(jPermission);
+            }
+        }
+        else
+        {
+            return FALSE;
+        }
+    }
+    else
+    {
+        sqlquery sqlInitializePermissions = SqlPrepareQueryCampaign(AS_SUBRACE_DATABASE, "INSERT INTO permissions (cd_key, json) VALUES (@cd_key, @json);");
+        SqlBindString(sqlInitializePermissions, "@cd_key", sPlayerCDKey);
+        SqlBindJson(sqlInitializePermissions, "@json", JsonObject());
+        SqlStep(sqlInitializePermissions);
+        return FALSE;
+    }
 }
 
 int gsSUGetIsVeydran(int nSubRace)
