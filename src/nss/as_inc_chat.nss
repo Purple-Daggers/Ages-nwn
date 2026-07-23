@@ -18,6 +18,7 @@ const int CHAT_COMMAND_MODIFY_WHISPERSTALKER = 8;
 const int CHAT_COMMAND_SET_COLOR_SKIN = 9;
 const int CHAT_COMMAND_SET_COLOR_HAIR = 10;
 const int CHAT_COMMAND_MODIFY_VEYDRAN = 11;
+const int CHAT_COMMAND_MODIFY_SCALE = 12;
 
 //return matching integer if tag matches a chat command
 int gsCTGetChatCommand(string sTag);
@@ -39,6 +40,7 @@ int gsCTGetChatCommand(string sTag)
     if(sTag == "skin") return CHAT_COMMAND_SET_COLOR_SKIN;
     if(sTag == "hair") return CHAT_COMMAND_SET_COLOR_HAIR;
     if(sTag == "veydran") return CHAT_COMMAND_MODIFY_VEYDRAN;
+    if(sTag == "scale") return CHAT_COMMAND_MODIFY_SCALE;
     return CHAT_COMMAND_INVALID;
 }
 
@@ -103,6 +105,10 @@ void gsCTProcessCommand(object oSpeaker, int nCommand, string sParams){
         break;
         case CHAT_COMMAND_SET_COLOR_HAIR:
             SetColor(oSpeaker, COLOR_CHANNEL_HAIR, nParam);
+        break;
+        case CHAT_COMMAND_MODIFY_SCALE:
+                AssignCommand(oSpeaker, ClearAllActions());
+                AssignCommand(oSpeaker, ActionStartConversation(OBJECT_SELF, "as_scale", TRUE, FALSE));
         break;
         case CHAT_COMMAND_LANGUAGE:
             SendMessageToPC(
