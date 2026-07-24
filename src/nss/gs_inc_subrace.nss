@@ -20,7 +20,8 @@ struct SubraceGifts
     int Cha;
 };
 
-const string GS_SU_TEMPLATE_PROPERTY      = "gs_item317";
+const string GS_SU_TEMPLATE_PROPERTY      = "x3_it_pchide";
+//went from gs_item317 to x3_it_pchide
 const string GS_SU_TEMPLATE_ABILITY       = "gs_item318";
 
 const int IP_CONST_FEAT_WEAPON_SPEC_UNARMED = 1196;
@@ -166,6 +167,14 @@ int gsSUGetSubRace(object oPlayer);
 struct SubraceGifts gsSUGetGifts(object oPlayer);
 //Apply subrace parts to player
 void gsSUApplySubRaceParts(object oPlayer);
+//Get the visual transformation of a player's subrace
+float gsSUGetSubRaceScale(int nSubRace);
+//Get the variance of a player's subrace's height.
+float gsSUGetSubRaceScaleVariance(int nSubRace);
+//Save a player character's subrace scale to the database.
+void gsSUSavePlayerSubraceScale(object oPlayer, float fScale);
+//Get a player character's subrace scale from the database.
+float gsSUGetPlayerSubraceScale(object oPlayer);
 //return TRUE if player's race has digitigrade legs
 int gsSUGetHasDigitigradeLegs(int nSubRace);
 //return TRUE if player's race has a cat tail
@@ -4275,6 +4284,211 @@ void gsSUApplySubRaceParts(object oPlayer)
     }
 
     SetSubRace(oPlayer, gsSUGetNameBySubRace(nSubRace));
+}
+
+float gsSUGetSubRaceScale(int nSubRace)
+{
+    switch (nSubRace)
+    {
+//Heartlander
+    case GS_SU_HUMAN_PRASIENE: return 1.0f;
+    case GS_SU_HUMAN_ORI: return 1.0f;
+    case GS_SU_HUMAN_NAVARREE: return 1.0f;
+//Imperial
+    case GS_SU_HUMAN_ARCHONBLOODED_DAVURI: return 1.0f;
+    case GS_SU_HUMAN_ARCHONBLOODED_ASHLANDER: return 1.0f;
+    case GS_SU_HUMAN_CIVITAS_ASHLANDER: return 1.0f;
+    case GS_SU_HUMAN_CIVITAS_DAVURI: return 1.0f;
+//Nijaran
+    case GS_SU_HUMAN_INEN: return 1.05f;
+    case GS_SU_HUMAN_ASHARI: return 1.05f;
+//Bholdic
+    case GS_SU_HUMAN_FYRSTUMEN: return 1.05f;
+    case GS_SU_HUMAN_KALANORF: return 1.05f;
+//Adhean (half elves)
+    case GS_SU_ADHEAN_JUDHEAN: return 1.0f;
+    case GS_SU_ADHEAN_RUDHEAN: return 1.0f;
+//Malari (orcs)
+    case GS_SU_MALARI_ASHFORGED: return 1.05f;
+    case GS_SU_MALARI_TUSKKIN: return 1.05f;
+    case GS_SU_MALARI_VARTOARI: return 1.05f;
+    case GS_SU_MALARI_UNBOWED: return 1.05f;
+//Nujiit (khajiit)
+    case GS_SU_NUJIIT_PADARR_TWILIGHTBORN: return 1.0f;
+    case GS_SU_NUJIIT_PADARR_FANGLORD: return 1.0f;
+    case GS_SU_NUJIIT_PADARR_WHISPERSTALKER: return 1.3f;
+    case GS_SU_NUJIIT_PADARR_BRIGHTMOON: return 1.0f;
+    case GS_SU_NUJIIT_KOMALARI_TWILIGHTBORN: return 1.0f;
+    case GS_SU_NUJIIT_KOMALARI_FANGLORD: return 1.0f;
+    case GS_SU_NUJIIT_KOMALARI_WHISPERSTALKER: return 1.3f;
+    case GS_SU_NUJIIT_KOMALARI_BRIGHTMOON: return 1.0f;
+    case GS_SU_NUJIIT_RIVERLORD_TWILIGHTBORN: return 1.0f;
+    case GS_SU_NUJIIT_RIVERLORD_FANGLORD: return 1.0f;
+    case GS_SU_NUJIIT_RIVERLORD_WHISPERSTALKER: return 1.3f;
+    case GS_SU_NUJIIT_RIVERLORD_BRIGHTMOON: return 1.0f;
+    case GS_SU_NUJIIT_RESPLENDENT_TWILIGHTBORN: return 1.0f;
+    case GS_SU_NUJIIT_RESPLENDENT_FANGLORD: return 1.0f;
+    case GS_SU_NUJIIT_RESPLENDENT_WHISPERSTALKER: return 1.3f;
+    case GS_SU_NUJIIT_RESPLENDENT_BRIGHTMOON: return 1.0f;
+//Malosari (wood elves)
+    case GS_SU_MALOSARI_GREENSWORN: return 0.9f;
+    case GS_SU_MALOSARI_FREESWORN: return 0.9f;
+    case GS_SU_MALOSARI_HORNSWORN: return 0.9f;
+    case GS_SU_MALOSARI_EMERALD: return 0.9f;
+//Eldari (high elves)
+    case GS_SU_ELDARI_EMAELARI: return 1.2f;
+    case GS_SU_ELDARI_AURARI: return 1.2f;
+    case GS_SU_ELDARI_ALARI: return 1.2f;
+//Dunari (dark elves)
+    case GS_SU_DUNARI_FALLARI: return 1.2f;
+    case GS_SU_DUNARI_VRAILSIARI: return 1.2f;
+    case GS_SU_DUNARI_VULSWORN: return 1.2f;
+    case GS_SU_DUNARI_LANTERNBEARER: return 1.2f;
+//Veydran (dragonborn)
+    case GS_SU_VEYDRAN_ABYSSALCOURT_SKYBLESSED: return 1.0f;
+    case GS_SU_VEYDRAN_ABYSSALCOURT_SEAFORGED: return 1.0f;
+    case GS_SU_VEYDRAN_ABYSSALCOURT_STONEWROUGHT: return 1.0f;
+    case GS_SU_VEYDRAN_ABYSSALCOURT_TIMESWORN: return 1.0f;
+    case GS_SU_VEYDRAN_ABYSSALCOURT_AETHERTOUCHED: return 1.0f;
+    case GS_SU_VEYDRAN_WYRMBLOODED_SKYBLESSED: return 1.0f;
+    case GS_SU_VEYDRAN_WYRMBLOODED_SEAFORGED: return 1.0f;
+    case GS_SU_VEYDRAN_WYRMBLOODED_STONEWROUGHT: return 1.0f;
+    case GS_SU_VEYDRAN_WYRMBLOODED_TIMESWORN: return 1.0f;
+    case GS_SU_VEYDRAN_WYRMBLOODED_AETHERTOUCHED: return 1.0f;
+    case GS_SU_VEYDRAN_UNFADING_SKYBLESSED: return 1.0f;
+    case GS_SU_VEYDRAN_UNFADING_SEAFORGED: return 1.0f;
+    case GS_SU_VEYDRAN_UNFADING_STONEWROUGHT: return 1.0f;
+    case GS_SU_VEYDRAN_UNFADING_TIMESWORN: return 1.0f;
+    case GS_SU_VEYDRAN_UNFADING_AETHERTOUCHED: return 1.0f;
+//Cipher
+    case GS_SU_HUMAN_PRASIENE_CIPHER: return 1.0f;
+    case GS_SU_HUMAN_ORI_CIPHER: return 1.0f;
+    case GS_SU_HUMAN_NAVARREE_CIPHER: return 1.0f;
+    }
+
+    return 1.0f;
+}
+
+float gsSUGetSubRaceScaleVariance(int nSubRace)
+{
+    switch (nSubRace)
+    {
+//Heartlander
+    case GS_SU_HUMAN_PRASIENE: return 0.03f;
+    case GS_SU_HUMAN_ORI: return 0.03f;
+    case GS_SU_HUMAN_NAVARREE: return 0.03f;
+//Imperial
+    case GS_SU_HUMAN_ARCHONBLOODED_DAVURI: return 0.03f;
+    case GS_SU_HUMAN_ARCHONBLOODED_ASHLANDER: return 0.03f;
+    case GS_SU_HUMAN_CIVITAS_ASHLANDER: return 0.03f;
+    case GS_SU_HUMAN_CIVITAS_DAVURI: return 0.03f;
+//Nijaran
+    case GS_SU_HUMAN_INEN: return 0.03f;
+    case GS_SU_HUMAN_ASHARI: return 0.03f;
+//Bholdic
+    case GS_SU_HUMAN_FYRSTUMEN: return 0.03f;
+    case GS_SU_HUMAN_KALANORF: return 0.03f;
+//Adhean (half elves)
+    case GS_SU_ADHEAN_JUDHEAN: return 0.03f;
+    case GS_SU_ADHEAN_RUDHEAN: return 0.03f;
+//Malari (orcs)
+    case GS_SU_MALARI_ASHFORGED: return 0.03f;
+    case GS_SU_MALARI_TUSKKIN: return 0.03f;
+    case GS_SU_MALARI_VARTOARI: return 0.03f;
+    case GS_SU_MALARI_UNBOWED: return 0.03f;
+//Nujiit (khajiit)
+    case GS_SU_NUJIIT_PADARR_TWILIGHTBORN: return 0.03f;
+    case GS_SU_NUJIIT_PADARR_FANGLORD: return 0.03f;
+    case GS_SU_NUJIIT_PADARR_WHISPERSTALKER: return 0.05f;
+    case GS_SU_NUJIIT_PADARR_BRIGHTMOON: return 0.03f;
+    case GS_SU_NUJIIT_KOMALARI_TWILIGHTBORN: return 0.03f;
+    case GS_SU_NUJIIT_KOMALARI_FANGLORD: return 0.03f;
+    case GS_SU_NUJIIT_KOMALARI_WHISPERSTALKER: return 0.05f;
+    case GS_SU_NUJIIT_KOMALARI_BRIGHTMOON: return 0.03f;
+    case GS_SU_NUJIIT_RIVERLORD_TWILIGHTBORN: return 0.03f;
+    case GS_SU_NUJIIT_RIVERLORD_FANGLORD: return 0.03f;
+    case GS_SU_NUJIIT_RIVERLORD_WHISPERSTALKER: return 0.05f;
+    case GS_SU_NUJIIT_RIVERLORD_BRIGHTMOON: return 0.03f;
+    case GS_SU_NUJIIT_RESPLENDENT_TWILIGHTBORN: return 0.03f;
+    case GS_SU_NUJIIT_RESPLENDENT_FANGLORD: return 0.03f;
+    case GS_SU_NUJIIT_RESPLENDENT_WHISPERSTALKER: return 0.05f;
+    case GS_SU_NUJIIT_RESPLENDENT_BRIGHTMOON: return 0.03f;
+//Malosari (wood elves)
+    case GS_SU_MALOSARI_GREENSWORN: return 0.03f;
+    case GS_SU_MALOSARI_FREESWORN: return 0.03f;
+    case GS_SU_MALOSARI_HORNSWORN: return 0.03f;
+    case GS_SU_MALOSARI_EMERALD: return 0.03f;
+//Eldari (high elves)
+    case GS_SU_ELDARI_EMAELARI: return 0.03f;
+    case GS_SU_ELDARI_AURARI: return 0.03f;
+    case GS_SU_ELDARI_ALARI: return 0.03f;
+//Dunari (dark elves)
+    case GS_SU_DUNARI_FALLARI: return 0.03f;
+    case GS_SU_DUNARI_VRAILSIARI: return 0.03f;
+    case GS_SU_DUNARI_VULSWORN: return 0.03f;
+    case GS_SU_DUNARI_LANTERNBEARER: return 0.03f;
+//Veydran (dragonborn)
+    case GS_SU_VEYDRAN_ABYSSALCOURT_SKYBLESSED: return 0.02f;
+    case GS_SU_VEYDRAN_ABYSSALCOURT_SEAFORGED: return 0.02f;
+    case GS_SU_VEYDRAN_ABYSSALCOURT_STONEWROUGHT: return 0.02f;
+    case GS_SU_VEYDRAN_ABYSSALCOURT_TIMESWORN: return 0.02f;
+    case GS_SU_VEYDRAN_ABYSSALCOURT_AETHERTOUCHED: return 0.02f;
+    case GS_SU_VEYDRAN_WYRMBLOODED_SKYBLESSED: return 0.02f;
+    case GS_SU_VEYDRAN_WYRMBLOODED_SEAFORGED: return 0.02f;
+    case GS_SU_VEYDRAN_WYRMBLOODED_STONEWROUGHT: return 0.02f;
+    case GS_SU_VEYDRAN_WYRMBLOODED_TIMESWORN: return 0.02f;
+    case GS_SU_VEYDRAN_WYRMBLOODED_AETHERTOUCHED: return 0.02f;
+    case GS_SU_VEYDRAN_UNFADING_SKYBLESSED: return 0.02f;
+    case GS_SU_VEYDRAN_UNFADING_SEAFORGED: return 0.02f;
+    case GS_SU_VEYDRAN_UNFADING_STONEWROUGHT: return 0.02f;
+    case GS_SU_VEYDRAN_UNFADING_TIMESWORN: return 0.02f;
+    case GS_SU_VEYDRAN_UNFADING_AETHERTOUCHED: return 0.02f;
+//Cipher
+    case GS_SU_HUMAN_PRASIENE_CIPHER: return 0.03f;
+    case GS_SU_HUMAN_ORI_CIPHER: return 0.03f;
+    case GS_SU_HUMAN_NAVARREE_CIPHER: return 0.03f;
+    }
+
+    return 0.03f;
+}
+
+void gsSUSavePlayerSubraceScale(object oPlayer, float fScale)
+{
+    sqlquery sqlCreateTable = SqlPrepareQueryCampaign(AS_SUBRACE_DATABASE, "CREATE TABLE IF NOT EXISTS scales (id TEXT PRIMARY KEY, scale REAL);");
+    SqlStep(sqlCreateTable);
+    string sPlayerID = gsPCGetPlayerID(oPlayer);
+
+    sqlquery sqlGetPlayerScale = SqlPrepareQueryCampaign(AS_SUBRACE_DATABASE, "SELECT scale FROM scales WHERE id = @id");
+    SqlBindString(sqlGetPlayerScale, "@id", sPlayerID);
+    if(SqlStep(sqlGetPlayerScale))
+    {
+        sqlquery sqlUpdatePlayerScale = SqlPrepareQueryCampaign(AS_SUBRACE_DATABASE, "UPDATE scales SET scale = @scale WHERE id = @id;");
+        SqlBindString(sqlUpdatePlayerScale, "@id", sPlayerID);
+        SqlBindFloat(sqlUpdatePlayerScale, "@scale", fScale);
+        SqlStep(sqlUpdatePlayerScale);
+    }
+    else
+    {
+        sqlquery sqlSavePlayerScale = SqlPrepareQueryCampaign(AS_SUBRACE_DATABASE, "INSERT INTO scales (id, scale) VALUES (@id, @scale);");
+        SqlBindString(sqlSavePlayerScale, "@id", sPlayerID);
+        SqlBindFloat(sqlSavePlayerScale, "@scale", fScale);
+        SqlStep(sqlSavePlayerScale);
+    }
+}
+
+float gsSUGetPlayerSubraceScale(object oPlayer)
+{
+    string sPlayerID = gsPCGetPlayerID(oPlayer);
+    sqlquery sqlGetPlayerScale = SqlPrepareQueryCampaign(AS_SUBRACE_DATABASE, "SELECT scale FROM scales WHERE id = @id");
+    SqlBindString(sqlGetPlayerScale, "@id", sPlayerID);
+    if(SqlStep(sqlGetPlayerScale))
+    {
+        return SqlGetFloat(sqlGetPlayerScale, 0);
+    }
+    else
+    {
+        return 1.0f;
+    }
 }
 
 int gsSUGetHasDigitigradeLegs(int nSubRace)

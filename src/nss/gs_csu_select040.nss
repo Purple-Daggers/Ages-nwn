@@ -144,4 +144,5 @@ void main()
     }
 
     gsSUApplySubRaceParts(oSpeaker);
+    SetObjectVisualTransform(oSpeaker, OBJECT_VISUAL_TRANSFORM_SCALE, gsSUGetSubRaceScale(nSubRace));
 }
