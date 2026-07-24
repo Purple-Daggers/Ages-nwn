@@ -60,7 +60,7 @@
               },
               "Index": {
                 "type": "dword",
-                "value": 12
+                "value": 13
               },
               "IsChild": {
                 "type": "byte",
@@ -79,7 +79,7 @@
               },
               "Index": {
                 "type": "dword",
-                "value": 11
+                "value": 12
               },
               "IsChild": {
                 "type": "byte",
@@ -98,7 +98,7 @@
               },
               "Index": {
                 "type": "dword",
-                "value": 10
+                "value": 11
               },
               "IsChild": {
                 "type": "byte",
@@ -117,7 +117,7 @@
               },
               "Index": {
                 "type": "dword",
-                "value": 9
+                "value": 10
               },
               "IsChild": {
                 "type": "byte",
@@ -136,7 +136,7 @@
               },
               "Index": {
                 "type": "dword",
-                "value": 8
+                "value": 9
               },
               "IsChild": {
                 "type": "byte",
@@ -155,7 +155,7 @@
               },
               "Index": {
                 "type": "dword",
-                "value": 7
+                "value": 8
               },
               "IsChild": {
                 "type": "byte",
@@ -174,7 +174,7 @@
               },
               "Index": {
                 "type": "dword",
-                "value": 6
+                "value": 7
               },
               "IsChild": {
                 "type": "byte",
@@ -193,7 +193,7 @@
               },
               "Index": {
                 "type": "dword",
-                "value": 5
+                "value": 6
               },
               "IsChild": {
                 "type": "byte",
@@ -212,7 +212,7 @@
               },
               "Index": {
                 "type": "dword",
-                "value": 4
+                "value": 5
               },
               "IsChild": {
                 "type": "byte",
@@ -231,7 +231,7 @@
               },
               "Index": {
                 "type": "dword",
-                "value": 3
+                "value": 4
               },
               "IsChild": {
                 "type": "byte",
@@ -250,7 +250,7 @@
               },
               "Index": {
                 "type": "dword",
-                "value": 2
+                "value": 3
               },
               "IsChild": {
                 "type": "byte",
@@ -269,7 +269,7 @@
               },
               "Index": {
                 "type": "dword",
-                "value": 1
+                "value": 2
               },
               "IsChild": {
                 "type": "byte",
@@ -278,6 +278,25 @@
             },
             {
               "__struct_id": 12,
+              "Active": {
+                "type": "resref",
+                "value": ""
+              },
+              "ConditionParams": {
+                "type": "list",
+                "value": []
+              },
+              "Index": {
+                "type": "dword",
+                "value": 1
+              },
+              "IsChild": {
+                "type": "byte",
+                "value": 0
+              }
+            },
+            {
+              "__struct_id": 13,
               "Active": {
                 "type": "resref",
                 "value": ""
@@ -322,7 +341,7 @@
   },
   "NumWords": {
     "type": "dword",
-    "value": 36
+    "value": 39
   },
   "PreventZoomIn": {
     "type": "byte",
@@ -410,6 +429,51 @@
         },
         "Script": {
           "type": "resref",
+          "value": "gs_cip_form066"
+        },
+        "Sound": {
+          "type": "resref",
+          "value": ""
+        },
+        "Text": {
+          "type": "cexolocstring",
+          "value": {
+            "0": "Adjust Character Scale"
+          }
+        }
+      },
+      {
+        "__struct_id": 2,
+        "ActionParams": {
+          "type": "list",
+          "value": []
+        },
+        "Animation": {
+          "type": "dword",
+          "value": 0
+        },
+        "AnimLoop": {
+          "type": "byte",
+          "value": 1
+        },
+        "Comment": {
+          "type": "cexostring",
+          "value": ""
+        },
+        "Delay": {
+          "type": "dword",
+          "value": 4294967295
+        },
+        "EntriesList": {
+          "type": "list",
+          "value": []
+        },
+        "Quest": {
+          "type": "cexostring",
+          "value": ""
+        },
+        "Script": {
+          "type": "resref",
           "value": "gs_cip_form065"
         },
         "Sound": {
@@ -424,7 +488,7 @@
         }
       },
       {
-        "__struct_id": 2,
+        "__struct_id": 3,
         "ActionParams": {
           "type": "list",
           "value": []
@@ -469,7 +533,7 @@
         }
       },
       {
-        "__struct_id": 3,
+        "__struct_id": 4,
         "ActionParams": {
           "type": "list",
           "value": []
@@ -514,7 +578,7 @@
         }
       },
       {
-        "__struct_id": 4,
+        "__struct_id": 5,
         "ActionParams": {
           "type": "list",
           "value": []
@@ -559,7 +623,7 @@
         }
       },
       {
-        "__struct_id": 5,
+        "__struct_id": 6,
         "ActionParams": {
           "type": "list",
           "value": []
@@ -628,7 +692,7 @@
         }
       },
       {
-        "__struct_id": 6,
+        "__struct_id": 7,
         "ActionParams": {
           "type": "list",
           "value": []
@@ -697,7 +761,7 @@
         }
       },
       {
-        "__struct_id": 7,
+        "__struct_id": 8,
         "ActionParams": {
           "type": "list",
           "value": []
@@ -766,7 +830,7 @@
         }
       },
       {
-        "__struct_id": 8,
+        "__struct_id": 9,
         "ActionParams": {
           "type": "list",
           "value": []
@@ -835,7 +899,7 @@
         }
       },
       {
-        "__struct_id": 9,
+        "__struct_id": 10,
         "ActionParams": {
           "type": "list",
           "value": []
@@ -904,7 +968,7 @@
         }
       },
       {
-        "__struct_id": 10,
+        "__struct_id": 11,
         "ActionParams": {
           "type": "list",
           "value": []
@@ -973,7 +1037,7 @@
         }
       },
       {
-        "__struct_id": 11,
+        "__struct_id": 12,
         "ActionParams": {
           "type": "list",
           "value": []
@@ -1042,7 +1106,7 @@
         }
       },
       {
-        "__struct_id": 12,
+        "__struct_id": 13,
         "ActionParams": {
           "type": "list",
           "value": []
