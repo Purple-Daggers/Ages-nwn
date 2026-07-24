@@ -77,38 +77,47 @@ void gsCTProcessCommand(object oSpeaker, int nCommand, string sParams){
             }
         break;
         case CHAT_COMMAND_MODIFY_EARS:
-            if(GetIsDM(oSpeaker) || GetIsDMPossessed(oSpeaker) || gsSUGetHasCatEars(gsSUGetSubRace(oSpeaker))){
+            if(GetIsDM(oSpeaker) || GetIsDMPossessed(oSpeaker) || (gsSUGetHasCatEars(gsSUGetSubRace(oSpeaker)))){
                 AssignCommand(oSpeaker, ClearAllActions());
                 AssignCommand(oSpeaker, ActionStartConversation(OBJECT_SELF, "as_ears", TRUE, FALSE));
             }
         break;
         case CHAT_COMMAND_MODIFY_TAIL:
-            if(GetIsDM(oSpeaker) || GetIsDMPossessed(oSpeaker) || gsSUGetHasCatTail(gsSUGetSubRace(oSpeaker))){
+            if(GetIsDM(oSpeaker) || GetIsDMPossessed(oSpeaker) || (gsSUGetHasCatTail(gsSUGetSubRace(oSpeaker)) && GetLocalInt(GetArea(oSpeaker), "AS_CUSTOMIZE") == TRUE)){
                 AssignCommand(oSpeaker, ClearAllActions());
                 AssignCommand(oSpeaker, ActionStartConversation(OBJECT_SELF, "as_tails", TRUE, FALSE));
             }
         break;
         case CHAT_COMMAND_MODIFY_WHISPERSTALKER:
-            if(GetIsDM(oSpeaker) || GetIsDMPossessed(oSpeaker) || gsSUGetHasCatModel(gsSUGetSubRace(oSpeaker))){
+            if(GetIsDM(oSpeaker) || GetIsDMPossessed(oSpeaker) || (gsSUGetHasCatModel(gsSUGetSubRace(oSpeaker)) && GetLocalInt(GetArea(oSpeaker), "AS_CUSTOMIZE") == TRUE)){
                 AssignCommand(oSpeaker, ClearAllActions());
                 AssignCommand(oSpeaker, ActionStartConversation(OBJECT_SELF, "as_cats", TRUE, FALSE));
             }
         break;
         case CHAT_COMMAND_MODIFY_VEYDRAN:
-            if(GetIsDM(oSpeaker) || GetIsDMPossessed(oSpeaker) || gsSUGetIsVeydran(gsSUGetSubRace(oSpeaker))){
+            if(GetIsDM(oSpeaker) || GetIsDMPossessed(oSpeaker) || (gsSUGetIsVeydran(gsSUGetSubRace(oSpeaker)) && GetLocalInt(GetArea(oSpeaker), "AS_CUSTOMIZE") == TRUE)){
                 AssignCommand(oSpeaker, ClearAllActions());
                 AssignCommand(oSpeaker, ActionStartConversation(OBJECT_SELF, "as_vey", TRUE, FALSE));
             }
         break;
         case CHAT_COMMAND_SET_COLOR_SKIN:
-            SetColor(oSpeaker, COLOR_CHANNEL_SKIN, nParam);
+            if(GetIsDM(oSpeaker) || GetIsDMPossessed(oSpeaker) || GetLocalInt(GetArea(oSpeaker), "AS_CUSTOMIZE") == TRUE)
+            {
+                SetColor(oSpeaker, COLOR_CHANNEL_SKIN, nParam);
+            }
         break;
         case CHAT_COMMAND_SET_COLOR_HAIR:
-            SetColor(oSpeaker, COLOR_CHANNEL_HAIR, nParam);
+            if(GetIsDM(oSpeaker) || GetIsDMPossessed(oSpeaker) || GetLocalInt(GetArea(oSpeaker), "AS_CUSTOMIZE") == TRUE)
+            {
+                SetColor(oSpeaker, COLOR_CHANNEL_HAIR, nParam);
+            }
         break;
         case CHAT_COMMAND_MODIFY_SCALE:
+            if(GetIsDM(oSpeaker) || GetIsDMPossessed(oSpeaker))
+            {
                 AssignCommand(oSpeaker, ClearAllActions());
                 AssignCommand(oSpeaker, ActionStartConversation(OBJECT_SELF, "as_scale", TRUE, FALSE));
+            }
         break;
         case CHAT_COMMAND_LANGUAGE:
             SendMessageToPC(
