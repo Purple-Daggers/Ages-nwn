@@ -73,9 +73,10 @@ void gsSPApplySpellBreach(object oTarget, int nCount);
 void _gsSPApplySpellBreach(object oTarget, int nSpell);
 //make oCaster dispel area of effect oTarget by nChance
 void gsSPDispelAreaOfEffect(object oCaster, object oTarget, int nChance = 100);
-
+//handle magic surge activation text
+void gsSPMagicSurgeCallback(object oWildMagicHelper, object oCaster, string sSurgeName, string sSurgeTarget);
 //handle magic surge
-void gsSPMagicSurge(object oCaster, object oTarget, location lTarget);
+void gsSPMagicSurge(object oCaster, object oTarget, location lTarget, int nDoubleSurgeFlag = FALSE, int nForceSurge = 0);
 
 int gsSPGetSpellID()
 {
@@ -540,22 +541,24 @@ int gsSPGetMetaMagicLevel(int nMetaMagic)
     return 0;
 }
 //-----------------------------------------------------------------
-void gsSPMagicSurgeCallback(object oWildMagicHelper, string sSurgeName, string sSurgeTarget)
+void gsSPMagicSurgeCallback(object oWildMagicHelper, object oCaster, string sSurgeName, string sSurgeTarget)
 {
     if(sSurgeTarget != ""){
                             FloatingTextStringOnCreature(
                             "Magic Surge: " + sSurgeName + " | " + sSurgeTarget,
-                            OBJECT_SELF,
+                            oCaster,
                             TRUE);
     }
     DestroyObject(oWildMagicHelper, 60.0f);
 }
 
 //-----------------------------------------------------------------
-void gsSPMagicSurge(object oCaster, object oTarget, location lTarget)
+void gsSPMagicSurge(object oCaster, object oTarget, location lTarget, int nDoubleSurgeFlag = FALSE, int nForceSurge = 0)
 {
     string sSurgeName = "";
     string sSurgeTarget = "";
+    object oOriginalTarget = oTarget;
+    location lOriginalLocation = lTarget;
 
     location lCasterLocation = Location(GetArea(oCaster), GetPosition(oCaster), GetFacing(oCaster));
     ApplyEffectAtLocation(DURATION_TYPE_INSTANT,
@@ -578,14 +581,19 @@ void gsSPMagicSurge(object oCaster, object oTarget, location lTarget)
     object oWildMagicHelper = CreateObject(OBJECT_TYPE_PLACEABLE, "gs_sp_wmhelper", lTarget);
 
     //Some effects taken from Rod of Wonder item in toolset.
-    switch(d100(1)){
+    int nSurge = d100(1);
+    if(nForceSurge > 0)
+    {
+        nSurge = nForceSurge;
+    }
+    switch(nSurge){
         case 1: {
             sSurgeName = "Uuminen's Flash!";
             int nRand = Random(4) + 2;
             int i;
             float fDelay = 0.0f;
             effect eVis = EffectVisualEffect(VFX_FNF_MYSTICAL_EXPLOSION);
-            gsSPMagicSurgeCallback(oWildMagicHelper, sSurgeName, sSurgeTarget);
+            gsSPMagicSurgeCallback(oWildMagicHelper, oCaster, sSurgeName, sSurgeTarget);
             for(i = 1; i <= nRand; i++)
             {
                 AssignCommand(oWildMagicHelper, DelayCommand(fDelay, ApplyEffectToObject(DURATION_TYPE_INSTANT, eVis, oTarget)));
@@ -718,7 +726,7 @@ void gsSPMagicSurge(object oCaster, object oTarget, location lTarget)
             int nDur = Random(2) + 2;
             int i;
             float fDelay;
-            gsSPMagicSurgeCallback(oWildMagicHelper, sSurgeName, sSurgeTarget);
+            gsSPMagicSurgeCallback(oWildMagicHelper, oCaster, sSurgeName, sSurgeTarget);
             for(i = 1; i <= nDur; i++)
             {
                 AssignCommand(oWildMagicHelper,
@@ -730,16 +738,16 @@ void gsSPMagicSurge(object oCaster, object oTarget, location lTarget)
         break;
         case 10: {
             // target changes colors every round for 4-9 rounds
-            sSurgeName = "Rainbow!";
+            sSurgeName = "Glow!";
             int nDur = Random(6) + 4;
             int i;
             float fDelay = 0.0f;
             int nRand;
-            int nEffect;
-            effect eVis;
-            gsSPMagicSurgeCallback(oWildMagicHelper, sSurgeName, sSurgeTarget);
+            gsSPMagicSurgeCallback(oWildMagicHelper, oCaster, sSurgeName, sSurgeTarget);
             for(i = 1; i <= nDur; i++)
             {
+                effect eVis;
+                int nEffect;
                 nRand = Random(7) + 1;
                 if(nRand == 1)      nEffect = VFX_DUR_GLOW_PURPLE;
                 else if(nRand == 2) nEffect = VFX_DUR_GLOW_RED;
@@ -750,7 +758,7 @@ void gsSPMagicSurge(object oCaster, object oTarget, location lTarget)
                 else if(nRand == 7) nEffect = VFX_DUR_GLOW_GREY;
 
                 eVis = EffectVisualEffect(nEffect);
-                AssignCommand(oWildMagicHelper, DelayCommand(fDelay, ApplyEffectToObject(DURATION_TYPE_TEMPORARY, eVis, oTarget, 6.0)));
+                AssignCommand(oWildMagicHelper, DelayCommand(fDelay, ApplyEffectToObject(DURATION_TYPE_TEMPORARY, eVis, oTarget, 5.0)));
                 fDelay += 6.0;
 
             }
@@ -790,6 +798,15 @@ void gsSPMagicSurge(object oCaster, object oTarget, location lTarget)
         }
         break;
         case 12:
+            sSurgeName = "Two surges!";
+            if(nDoubleSurgeFlag == TRUE){
+                sSurgeName = "Nothing!";
+                gsSPMagicSurgeCallback(oWildMagicHelper, oCaster, sSurgeName, sSurgeTarget);
+                return;
+            }
+            AssignCommand(oWildMagicHelper, DelayCommand(3.0f, gsSPMagicSurge(oCaster, oOriginalTarget, lOriginalLocation, TRUE)));
+            AssignCommand(oWildMagicHelper, DelayCommand(6.0f, gsSPMagicSurge(oCaster, oOriginalTarget, lOriginalLocation, TRUE)));
+        break;
         case 13:
             sSurgeName = "Petrification!";
             ApplyEffectToObject(DURATION_TYPE_TEMPORARY, EffectPetrify(), oTarget, RoundsToSeconds(10));
@@ -800,7 +817,19 @@ void gsSPMagicSurge(object oCaster, object oTarget, location lTarget)
                                 EffectMovementSpeedDecrease(99), oTarget, RoundsToSeconds(2));
             ApplyEffectToObject(DURATION_TYPE_TEMPORARY, EffectVisualEffect(VFX_DUR_STONEHOLD), oTarget, RoundsToSeconds(2));
         break;
-        case 15:
+        case 15: {
+            sSurgeName = "Banished!";
+            sSurgeTarget = "Self";
+            oTarget = oCaster;
+            lTarget = lCasterLocation;
+            object oMazeWaypoint = GetWaypointByTag("MazeStart");
+            ApplyEffectAtLocation(DURATION_TYPE_INSTANT,
+                                EffectVisualEffect(VFX_FNF_IMPLOSION),
+                                lTarget);
+            AssignCommand(oWildMagicHelper, DelayCommand(1.0f, ClearAllActions(TRUE, oTarget)));
+            AssignCommand(oWildMagicHelper, DelayCommand(1.0f, AssignCommand(oTarget, JumpToLocation(GetLocation(oMazeWaypoint)))));
+        }
+        break;
         case 16:
         case 17:
         case 18:
@@ -1019,5 +1048,5 @@ void gsSPMagicSurge(object oCaster, object oTarget, location lTarget)
             sSurgeTarget = "What?";
         break;
     }
-    gsSPMagicSurgeCallback(oWildMagicHelper, sSurgeName, sSurgeTarget);
+    gsSPMagicSurgeCallback(oWildMagicHelper, oCaster, sSurgeName, sSurgeTarget);
 }
