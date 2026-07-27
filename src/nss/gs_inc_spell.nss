@@ -5,6 +5,7 @@
 #include "gs_inc_combat2"
 #include "x2_inc_spellhook"
 #include "x0_i0_position"
+#include "gs_inc_subrace"
 
 const float GS_SP_DURATION_INSTANT        = -1.0;
 const float GS_SP_DURATION_PERMANENT      = -2.0;
@@ -783,12 +784,11 @@ void gsSPMagicSurge(object oCaster, object oTarget, location lTarget, int nDoubl
                 } else {
                     sResRef += "08";
                 }
-                object oGem = CreateItemOnObject(sResRef,
-                                oTarget);
+                object oGem = CreateObject(OBJECT_TYPE_ITEM, sResRef, GetRandomLocation(GetArea(oTarget), oTarget, DISTANCE_TINY));//CreateItemOnObject(sResRef, oTarget);
                 if (GetIsObjectValid(oGem) == FALSE)
                 {
                     sResRef = GetStringUpperCase(sResRef);
-                    oGem = CreateItemOnObject(sResRef, oTarget);
+                    oGem = CreateObject(OBJECT_TYPE_ITEM, sResRef, GetRandomLocation(GetArea(oTarget), oTarget, DISTANCE_TINY));
                     if (GetIsObjectValid(oGem) == FALSE)
                     {
                     //  SpeakString("Gem " + sResRef + " is invalid");
@@ -830,9 +830,33 @@ void gsSPMagicSurge(object oCaster, object oTarget, location lTarget, int nDoubl
             AssignCommand(oWildMagicHelper, DelayCommand(1.0f, AssignCommand(oTarget, JumpToLocation(GetLocation(oMazeWaypoint)))));
         }
         break;
-        case 16:
-        case 17:
-        case 18:
+        case 16: {
+            sSurgeName = "Gold!";
+            int nGoldPiles = Random(3) + 1;
+            int i;
+            for (i=0; i < nGoldPiles; i++) {
+                object oGold = CreateObject(OBJECT_TYPE_PLACEABLE, "AS_GOLDPILE", GetRandomLocation(GetArea(oTarget), oTarget, DISTANCE_TINY));
+            }
+        }
+        break;
+        case 17: {
+            sSurgeName = "Shrink!";
+            float fDelay = 10.0f * IntToFloat(Random(5) + 1);
+            gsSPMagicSurgeCallback(oWildMagicHelper, oCaster, sSurgeName, sSurgeTarget);
+            SetObjectVisualTransform(oTarget, OBJECT_VISUAL_TRANSFORM_SCALE, gsSUGetPlayerSubraceScale(oTarget) - 0.5f);
+            AssignCommand(oWildMagicHelper, DelayCommand(fDelay, gsSUApplySubraceScale(oTarget)));
+            return;
+        }
+        break;
+        case 18: {
+            sSurgeName = "Enlarge!";
+            float fDelay = 10.0f * IntToFloat(Random(5) + 1);
+            gsSPMagicSurgeCallback(oWildMagicHelper, oCaster, sSurgeName, sSurgeTarget);
+            SetObjectVisualTransform(oTarget, OBJECT_VISUAL_TRANSFORM_SCALE, gsSUGetPlayerSubraceScale(oTarget) + 0.5f);
+            AssignCommand(oWildMagicHelper, DelayCommand(fDelay, gsSUApplySubraceScale(oTarget)));
+            return;
+        }
+        break;
         case 19:
         case 20: {
         sSurgeName = "Lightning!";

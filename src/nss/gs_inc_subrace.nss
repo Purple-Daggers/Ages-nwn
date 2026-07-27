@@ -175,6 +175,10 @@ float gsSUGetSubRaceScaleVariance(int nSubRace);
 void gsSUSavePlayerSubraceScale(object oPlayer, float fScale);
 //Get a player character's subrace scale from the database.
 float gsSUGetPlayerSubraceScale(object oPlayer);
+//Get a NPC's subrace scale based on stored AS_SUBRACE local integer or fallback to creature subrace name. 
+float gsSUGetNPCSubraceScale(object oCreature);
+//Get a player's selected subrace scale and apply it to them.
+void gsSUApplySubraceScale(object oPlayer);
 //return TRUE if player's race has digitigrade legs
 int gsSUGetHasDigitigradeLegs(int nSubRace);
 //return TRUE if player's race has a cat tail
@@ -4478,6 +4482,10 @@ void gsSUSavePlayerSubraceScale(object oPlayer, float fScale)
 
 float gsSUGetPlayerSubraceScale(object oPlayer)
 {
+    if(!GetIsPC(oPlayer))
+    {
+        return gsSUGetNPCSubraceScale(oPlayer);
+    }
     string sPlayerID = gsPCGetPlayerID(oPlayer);
     sqlquery sqlGetPlayerScale = SqlPrepareQueryCampaign(AS_SUBRACE_DATABASE, "SELECT scale FROM scales WHERE id = @id");
     SqlBindString(sqlGetPlayerScale, "@id", sPlayerID);
@@ -4489,6 +4497,26 @@ float gsSUGetPlayerSubraceScale(object oPlayer)
     {
         return 1.0f;
     }
+}
+
+float gsSUGetNPCSubraceScale(object oCreature)
+{
+    int nSubRace = GetLocalInt(oCreature, "AS_SUBRACE");
+    if(nSubRace != 0)
+    {
+        return gsSUGetSubRaceScale(GetLocalInt(oCreature, "AS_SUBRACE"));
+    }
+    else
+    {
+        //Fallback
+        return gsSUGetSubRaceScale(gsSUGetSubRaceByName(GetSubRace(oCreature)));
+    }
+}
+
+void gsSUApplySubraceScale(object oPlayer)
+{
+    float fScale = gsSUGetPlayerSubraceScale(oPlayer);
+    SetObjectVisualTransform(oPlayer, OBJECT_VISUAL_TRANSFORM_SCALE, fScale);
 }
 
 int gsSUGetHasDigitigradeLegs(int nSubRace)
