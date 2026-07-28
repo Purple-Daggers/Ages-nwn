@@ -8,6 +8,7 @@ const int GS_ST_FOOD     = 1;
 const int GS_ST_WATER    = 2;
 const int GS_ST_REST     = 3;
 const int GS_ST_SOBRIETY = 4;
+const int GS_ST_MANA = 5;
 
 //set initial state of caller
 void gsSTSetInitialState();
@@ -26,6 +27,7 @@ void gsSTSetInitialState()
     gsSTAdjustState(GS_ST_WATER,     75.0 - gsSTGetState(GS_ST_WATER));
     gsSTAdjustState(GS_ST_REST,      25.0 - gsSTGetState(GS_ST_REST));
     gsSTAdjustState(GS_ST_SOBRIETY, 100.0 - gsSTGetState(GS_ST_SOBRIETY));
+    gsSTAdjustState(GS_ST_MANA, 100.0f);
 }
 //----------------------------------------------------------------
 void gsSTProcessState()
@@ -79,6 +81,11 @@ void gsSTAdjustState(int nState, float fValue)
         sMessage = GS_T_16777302;
         break;
 
+    case GS_ST_MANA:
+        sState = "GS_ST_MANA";
+        sMessage = GS_T_16777650;
+        break;
+
     default:
         return;
     }
@@ -87,6 +94,7 @@ void gsSTAdjustState(int nState, float fValue)
     float fState    = GetLocalFloat(OBJECT_SELF, sState);
     float fStateNew = fState + fValue;
 
+    if(fStateNew < 0.0f && nState == GS_ST_MANA) fStateNew = 0.0;
     if (fStateNew < -100.0)     fStateNew = -100.0;
     else if (fStateNew > 100.0) fStateNew =  100.0;
 
@@ -223,6 +231,7 @@ void gsSTAdjustState(int nState, float fValue)
         fIntDecrease += fValue;
     }
 
+
     //limit penalty
     if (fConDecrease > 10.0) fConDecrease = 10.0;
     if (fDexDecrease > 10.0) fDexDecrease = 10.0;
@@ -290,6 +299,7 @@ float gsSTGetState(int nState, object oCreature = OBJECT_SELF)
     case GS_ST_WATER:    return GetLocalFloat(oCreature, "GS_ST_WATER");
     case GS_ST_REST:     return GetLocalFloat(oCreature, "GS_ST_REST");
     case GS_ST_SOBRIETY: return GetLocalFloat(oCreature, "GS_ST_SOBRIETY");
+    case GS_ST_MANA: return GetLocalFloat(oCreature, "GS_ST_MANA");
     }
 
     return 0.0;

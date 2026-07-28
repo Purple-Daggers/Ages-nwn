@@ -152,8 +152,6 @@ void main()
     oItem        = GetItemPossessedBy(oPC, "GS_SU_ABILITY");
     if (GetIsObjectValid(oItem)) gsSUApplyAbility(oItem, nLevel);
 
-    gsCMCalculateMaximumMana(oPC);
-
     gsPCMemorizeClassData(oPC);
     SendMessageToAllDMs(
         gsCMReplaceString(

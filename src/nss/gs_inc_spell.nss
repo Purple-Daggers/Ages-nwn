@@ -6,6 +6,7 @@
 #include "x2_inc_spellhook"
 #include "x0_i0_position"
 #include "gs_inc_subrace"
+#include "gs_inc_state"
 
 const float GS_SP_DURATION_INSTANT        = -1.0;
 const float GS_SP_DURATION_PERMANENT      = -2.0;
@@ -74,6 +75,8 @@ void gsSPApplySpellBreach(object oTarget, int nCount);
 void _gsSPApplySpellBreach(object oTarget, int nSpell);
 //make oCaster dispel area of effect oTarget by nChance
 void gsSPDispelAreaOfEffect(object oCaster, object oTarget, int nChance = 100);
+//return maximum mana of creature
+int gsCMCalculateMaximumMana(object oCreature);
 //handle magic surge activation text
 void gsSPMagicSurgeCallback(object oWildMagicHelper, object oCaster, string sSurgeName, string sSurgeTarget);
 //handle magic surge
@@ -542,6 +545,459 @@ int gsSPGetMetaMagicLevel(int nMetaMagic)
     return 0;
 }
 //-----------------------------------------------------------------
+int gsCMCalculateMaximumMana(object oCreature)
+{
+    int nMaximumMana = 0;
+    int nMaximumClassMana = 0;
+
+    switch(GetLevelByClass(CLASS_TYPE_CLERIC, oCreature))
+    {
+        case 0:
+            nMaximumClassMana = 0;
+        break;
+        case 1:
+            nMaximumClassMana = 4;
+        break;
+        case 2:
+            nMaximumClassMana = 6;
+        break;
+        case 3:
+            nMaximumClassMana = 14;
+        break;
+        case 4:
+            nMaximumClassMana = 17;
+        break;
+        case 5:
+            nMaximumClassMana = 27;
+        break;
+        case 6:
+            nMaximumClassMana = 32;
+        break;
+        case 7:
+            nMaximumClassMana = 38;
+        break;
+        case 8:
+            nMaximumClassMana = 44;
+        break;
+        case 9:
+            nMaximumClassMana = 57;
+        break;
+        case 10:
+            nMaximumClassMana = 64;
+        break;
+        case 11:
+            nMaximumClassMana = 73;
+        break;
+        case 12:
+            nMaximumClassMana = 73;
+        break;
+        case 13:
+            nMaximumClassMana = 83;
+        break;
+        case 14:
+            nMaximumClassMana = 83;
+        break;
+        case 15:
+            nMaximumClassMana = 94;
+        break;
+        case 16:
+            nMaximumClassMana = 94;
+        break;
+        case 17:
+            nMaximumClassMana = 107;
+        break;
+        case 18:
+            nMaximumClassMana = 114;
+        break;
+        case 19:
+            nMaximumClassMana = 123;
+        break;
+        case 20:
+            nMaximumClassMana = 133;
+        break;
+        default:
+            nMaximumClassMana = 133;
+        break;
+    }
+
+    if (nMaximumMana < nMaximumClassMana){
+        nMaximumMana = nMaximumClassMana; 
+    }
+
+    switch(GetLevelByClass(CLASS_TYPE_WIZARD, oCreature))
+    {
+        case 0:
+            nMaximumClassMana = 0;
+        break;
+        case 1:
+            nMaximumClassMana = 4;
+        break;
+        case 2:
+            nMaximumClassMana = 6;
+        break;
+        case 3:
+            nMaximumClassMana = 14;
+        break;
+        case 4:
+            nMaximumClassMana = 17;
+        break;
+        case 5:
+            nMaximumClassMana = 27;
+        break;
+        case 6:
+            nMaximumClassMana = 32;
+        break;
+        case 7:
+            nMaximumClassMana = 38;
+        break;
+        case 8:
+            nMaximumClassMana = 44;
+        break;
+        case 9:
+            nMaximumClassMana = 57;
+        break;
+        case 10:
+            nMaximumClassMana = 64;
+        break;
+        case 11:
+            nMaximumClassMana = 73;
+        break;
+        case 12:
+            nMaximumClassMana = 73;
+        break;
+        case 13:
+            nMaximumClassMana = 83;
+        break;
+        case 14:
+            nMaximumClassMana = 83;
+        break;
+        case 15:
+            nMaximumClassMana = 94;
+        break;
+        case 16:
+            nMaximumClassMana = 94;
+        break;
+        case 17:
+            nMaximumClassMana = 107;
+        break;
+        case 18:
+            nMaximumClassMana = 114;
+        break;
+        case 19:
+            nMaximumClassMana = 123;
+        break;
+        case 20:
+            nMaximumClassMana = 133;
+        break;
+        default:
+            nMaximumClassMana = 133;
+        break;
+    }
+
+    if (nMaximumMana < nMaximumClassMana){
+        nMaximumMana = nMaximumClassMana; 
+    }
+
+    switch(GetLevelByClass(CLASS_TYPE_DRUID, oCreature))
+    {
+        case 0:
+            nMaximumClassMana = 0;
+        break;
+        case 1:
+            nMaximumClassMana = 4;
+        break;
+        case 2:
+            nMaximumClassMana = 6;
+        break;
+        case 3:
+            nMaximumClassMana = 14;
+        break;
+        case 4:
+            nMaximumClassMana = 17;
+        break;
+        case 5:
+            nMaximumClassMana = 27;
+        break;
+        case 6:
+            nMaximumClassMana = 32;
+        break;
+        case 7:
+            nMaximumClassMana = 38;
+        break;
+        case 8:
+            nMaximumClassMana = 44;
+        break;
+        case 9:
+            nMaximumClassMana = 57;
+        break;
+        case 10:
+            nMaximumClassMana = 64;
+        break;
+        case 11:
+            nMaximumClassMana = 73;
+        break;
+        case 12:
+            nMaximumClassMana = 73;
+        break;
+        case 13:
+            nMaximumClassMana = 83;
+        break;
+        case 14:
+            nMaximumClassMana = 83;
+        break;
+        case 15:
+            nMaximumClassMana = 94;
+        break;
+        case 16:
+            nMaximumClassMana = 94;
+        break;
+        case 17:
+            nMaximumClassMana = 107;
+        break;
+        case 18:
+            nMaximumClassMana = 114;
+        break;
+        case 19:
+            nMaximumClassMana = 123;
+        break;
+        case 20:
+            nMaximumClassMana = 133;
+        break;
+        default:
+            nMaximumClassMana = 133;
+        break;
+    }
+
+    if (nMaximumMana < nMaximumClassMana){
+        nMaximumMana = nMaximumClassMana; 
+    }
+
+    switch(GetLevelByClass(CLASS_TYPE_SORCERER, oCreature))
+    {
+        case 0:
+            nMaximumClassMana = 0;
+        break;
+        case 1:
+            nMaximumClassMana = 5;
+        break;
+        case 2:
+            nMaximumClassMana = 8;
+        break;
+        case 3:
+            nMaximumClassMana = 17;
+        break;
+        case 4:
+            nMaximumClassMana = 21;
+        break;
+        case 5:
+            nMaximumClassMana = 32;
+        break;
+        case 6:
+            nMaximumClassMana = 40;
+        break;
+        case 7:
+            nMaximumClassMana = 47;
+        break;
+        case 8:
+            nMaximumClassMana = 55;
+        break;
+        case 9:
+            nMaximumClassMana = 71;
+        break;
+        case 10:
+            nMaximumClassMana = 80;
+        break;
+        case 11:
+            nMaximumClassMana = 91;
+        break;
+        case 12:
+            nMaximumClassMana = 91;
+        break;
+        case 13:
+            nMaximumClassMana = 103;
+        break;
+        case 14:
+            nMaximumClassMana = 103;
+        break;
+        case 15:
+            nMaximumClassMana = 117;
+        break;
+        case 16:
+            nMaximumClassMana = 117;
+        break;
+        case 17:
+            nMaximumClassMana = 133;
+        break;
+        case 18:
+            nMaximumClassMana = 142;
+        break;
+        case 19:
+            nMaximumClassMana = 153;
+        break;
+        case 20:
+            nMaximumClassMana = 166;
+        break;
+        default:
+            nMaximumClassMana = 166;
+        break;
+    }
+
+    if (nMaximumMana < nMaximumClassMana){
+        nMaximumMana = nMaximumClassMana; 
+    }
+
+    switch(GetLevelByClass(CLASS_TYPE_BARD, oCreature))
+    {
+        case 0:
+            nMaximumClassMana = 0;
+        break;
+        case 1:
+            nMaximumClassMana = 5;
+        break;
+        case 2:
+            nMaximumClassMana = 8;
+        break;
+        case 3:
+            nMaximumClassMana = 17;
+        break;
+        case 4:
+            nMaximumClassMana = 21;
+        break;
+        case 5:
+            nMaximumClassMana = 32;
+        break;
+        case 6:
+            nMaximumClassMana = 40;
+        break;
+        case 7:
+            nMaximumClassMana = 47;
+        break;
+        case 8:
+            nMaximumClassMana = 55;
+        break;
+        case 9:
+            nMaximumClassMana = 71;
+        break;
+        case 10:
+            nMaximumClassMana = 80;
+        break;
+        case 11:
+            nMaximumClassMana = 91;
+        break;
+        case 12:
+            nMaximumClassMana = 91;
+        break;
+        case 13:
+            nMaximumClassMana = 103;
+        break;
+        case 14:
+            nMaximumClassMana = 103;
+        break;
+        case 15:
+            nMaximumClassMana = 117;
+        break;
+        case 16:
+            nMaximumClassMana = 117;
+        break;
+        case 17:
+            nMaximumClassMana = 133;
+        break;
+        case 18:
+            nMaximumClassMana = 142;
+        break;
+        case 19:
+            nMaximumClassMana = 153;
+        break;
+        case 20:
+            nMaximumClassMana = 166;
+        break;
+        default:
+            nMaximumClassMana = 166;
+        break;
+    }
+
+    if (nMaximumMana < nMaximumClassMana){
+        nMaximumMana = nMaximumClassMana; 
+    }
+
+    switch(GetLevelByClass(CLASS_TYPE_PALADIN, oCreature))
+    {
+        case 0:
+            nMaximumClassMana = 0;
+        break;
+        case 1:
+            nMaximumClassMana = 0;
+        break;
+        case 2:
+            nMaximumClassMana = 4;
+        break;
+        case 3:
+            nMaximumClassMana = 5;
+        break;
+        case 4:
+            nMaximumClassMana = 6;
+        break;
+        case 5:
+            nMaximumClassMana = 10;
+        break;
+        case 6:
+            nMaximumClassMana = 14;
+        break;
+        case 7:
+            nMaximumClassMana = 15;
+        break;
+        case 8:
+            nMaximumClassMana = 17;
+        break;
+        case 9:
+            nMaximumClassMana = 22;
+        break;
+        case 10:
+            nMaximumClassMana = 27;
+        break;
+        case 11:
+            nMaximumClassMana = 29;
+        break;
+        case 12:
+            nMaximumClassMana = 32;
+        break;
+        case 13:
+            nMaximumClassMana = 35;
+        break;
+        case 14:
+            nMaximumClassMana = 38;
+        break;
+        case 15:
+            nMaximumClassMana = 41;
+        break;
+        case 16:
+            nMaximumClassMana = 44;
+        break;
+        case 17:
+            nMaximumClassMana = 50;
+        break;
+        case 18:
+            nMaximumClassMana = 57;
+        break;
+        case 19:
+            nMaximumClassMana = 60;
+        break;
+        case 20:
+            nMaximumClassMana = 64;
+        break;
+        default:
+            nMaximumClassMana = 64;
+        break;
+    }
+
+    if (nMaximumMana < nMaximumClassMana){
+        nMaximumMana = nMaximumClassMana; 
+    }
+
+    return nMaximumMana;
+}
+
+//-----------------------------------------------------------------
 void gsSPMagicSurgeCallback(object oWildMagicHelper, object oCaster, string sSurgeName, string sSurgeTarget)
 {
     if(sSurgeTarget != ""){
@@ -583,11 +1039,15 @@ void gsSPMagicSurge(object oCaster, object oTarget, location lTarget, int nDoubl
 
     //Some effects taken from Rod of Wonder item in toolset.
     int nSurge = d100(1);
-    if(nForceSurge > 0)
+    if(nForceSurge != 0)
     {
         nSurge = nForceSurge;
     }
     switch(nSurge){
+        case -1: {
+            sSurgeName = "Surge suppressed!";
+            sSurgeTarget = "Self";
+        }
         case 1: {
             sSurgeName = "Uuminen's Flash!";
             int nRand = Random(4) + 2;
@@ -858,6 +1318,10 @@ void gsSPMagicSurge(object oCaster, object oTarget, location lTarget, int nDoubl
         }
         break;
         case 19:
+            sSurgeName = "Hunger!";
+            sSurgeTarget = "Self";
+            gsSTAdjustState(GS_ST_FOOD, -35.0f);
+        break;
         case 20: {
         sSurgeName = "Lightning!";
         // lightning bolt
@@ -889,10 +1353,41 @@ void gsSPMagicSurge(object oCaster, object oTarget, location lTarget, int nDoubl
         }
         break;
         case 21:
+            sSurgeName = "Thirst!";
+            sSurgeTarget = "Self";
+            gsSTAdjustState(GS_ST_WATER, -35.0f);
+        break;
         case 22:
+            sSurgeName = "Torpor!";
+            sSurgeTarget = "Self";
+            gsSTAdjustState(GS_ST_REST, -35.0f);
+            gsSTAdjustState(GS_ST_FOOD, 15.0f);
+            gsSTAdjustState(GS_ST_WATER, 15.0f);
+        break;
         case 23:
+            sSurgeName = "Mana surge!";
+            sSurgeTarget = "Self";
+            ApplyEffectAtLocation(DURATION_TYPE_INSTANT,
+                          EffectVisualEffect(VFX_FNF_MYSTICAL_EXPLOSION),
+                          lCasterLocation);
+            gsSTAdjustState(GS_ST_MANA, 100.0f);
+        break;
         case 24:
+            sSurgeName = "Mana drain!";
+            sSurgeTarget = "Self";
+            ApplyEffectAtLocation(DURATION_TYPE_INSTANT,
+                          EffectVisualEffect(VFX_FNF_PWKILL),
+                          lCasterLocation);
+            gsSTAdjustState(GS_ST_MANA, -50.0f);
+        break;
         case 25:
+            sSurgeName = "Sunlight!";
+            AssignCommand(oWildMagicHelper, ActionCastSpellAtLocation(  SPELL_SUNBURST,
+                                                                                lTarget,
+                                                                                METAMAGIC_NONE,
+                                                                                TRUE,
+                                                                                PROJECTILE_PATH_TYPE_DEFAULT,
+                                                                                TRUE));
         case 26: {
             sSurgeName = "Grass!";
             effect eAOE = EffectAreaOfEffect(AOE_PER_ENTANGLE);

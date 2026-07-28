@@ -63,17 +63,18 @@ void main()
         gsSPTCast(OBJECT_SELF, nSpell, nMetaMagic);
         int nClass = GetLastSpellCastClass();
         int nLevel = gsSPGetSpellLevel(nSpell, nClass);
-        int nCurrentMana = GetLocalInt(OBJECT_SELF, "GS_CURRENT_MANA");
-        int nResultingMana = nCurrentMana - (nLevel * 2) - (gsSPGetMetaMagicLevel(nMetaMagic) * 2);
+        float fCurrentMana = gsSTGetState(GS_ST_MANA, OBJECT_SELF);
+        float fSpellCost = 100.0f * (((IntToFloat(nLevel) * 2.0f) + (IntToFloat(gsSPGetMetaMagicLevel(nMetaMagic)) * 2.0f)) / gsCMCalculateMaximumMana(OBJECT_SELF));
+        float fResultingMana = fCurrentMana - fSpellCost;
 
-        if (nResultingMana < 0){
+        if (fResultingMana < 0.0f){
                 FloatingTextStringOnCreature(
-                    gsCMReplaceString(GS_T_16777648, IntToString(nLevel)),
+                    gsCMReplaceString(GS_T_16777648, IntToString(nLevel + gsSPGetMetaMagicLevel(nMetaMagic))),
                     OBJECT_SELF,
                     FALSE);
                 gsSPSetOverrideSpell();
                 SetModuleOverrideSpellScriptFinished();
-                ReadySpellLevel(OBJECT_SELF, nLevel, CLASS_TYPE_INVALID, 255);
+                ReadySpellLevel(OBJECT_SELF, nLevel + gsSPGetMetaMagicLevel(nMetaMagic), CLASS_TYPE_INVALID, 255);
                 return;
         }
 
@@ -125,7 +126,13 @@ void main()
         }
 
         if (d100(1) <= nSurgeChance){
-            DelayCommand(0.8, gsSPMagicSurge(OBJECT_SELF, oTarget, lTarget));
+            if(GetLocalInt(OBJECT_SELF, "AS_SUPPRESS_SURGE") == TRUE)
+            {
+                DelayCommand(0.8, gsSPMagicSurge(OBJECT_SELF, oTarget, lTarget, FALSE, -1));
+                SetLocalInt(OBJECT_SELF, "AS_SUPPRESS_SURGE", FALSE);
+            } else {
+                DelayCommand(0.8, gsSPMagicSurge(OBJECT_SELF, oTarget, lTarget));
+            }
         }
         /*
         if (nLevel >= 7)
@@ -182,11 +189,12 @@ void main()
         }
         */
         
-        FloatingTextStringOnCreature(
+        /*FloatingTextStringOnCreature(
                     gsCMReplaceString(GS_T_16777647, IntToString(nResultingMana)),
                     OBJECT_SELF,
                     FALSE);
-        SetLocalInt(OBJECT_SELF, "GS_CURRENT_MANA", nResultingMana);
+        SetLocalInt(OBJECT_SELF, "GS_CURRENT_MANA", nResultingMana);*/
+        gsSTAdjustState(GS_ST_MANA, -1 * fSpellCost);
         ReadySpellLevel(OBJECT_SELF, nLevel + gsSPGetMetaMagicLevel(nMetaMagic), CLASS_TYPE_INVALID, 255);
     }
     else if(GetBaseItemType(GetSpellCastItem()) == BASE_ITEM_POTIONS || GetBaseItemType(GetSpellCastItem()) == BASE_ITEM_ENCHANTED_POTION)
