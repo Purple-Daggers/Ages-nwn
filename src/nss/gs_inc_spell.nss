@@ -1406,14 +1406,166 @@ void gsSPMagicSurge(object oCaster, object oTarget, location lTarget, int nDoubl
         }
         break;
         case 28:
-        case 29:
-        case 30:
-        case 31:
-        case 32:
-        case 33:
+            sSurgeName = "Slow!";
+            AssignCommand(oWildMagicHelper, ActionCastFakeSpellAtObject(SPELL_SLOW,
+                                                                                oTarget,
+                                                                                PROJECTILE_PATH_TYPE_DEFAULT));
+            AssignCommand(oWildMagicHelper, ApplyEffectToObject(DURATION_TYPE_TEMPORARY,
+                                                                            EffectSlow(),
+                                                                            oTarget,
+                                                                            RoundsToSeconds(10)));
+        break;
+        case 29: {
+            sSurgeName = "Ghostly!";
+            int nTurns = 30;
+
+            effect eReduction = EffectDamageReduction(5, DAMAGE_POWER_PLUS_ONE, 0, FALSE);
+            effect eConcealment = EffectConcealment(10, MISS_CHANCE_TYPE_NORMAL);
+            effect eSpellImmunity = EffectSpellLevelAbsorption(1, 0);
+            effect eVis = EffectVisualEffect(VFX_DUR_GHOSTLY_VISAGE);
+
+            //Link the visual and the damage reduction effect
+            effect eLink = EffectLinkEffects(eReduction, eConcealment);
+            eLink = EffectLinkEffects(eSpellImmunity, eLink);
+            eLink = EffectLinkEffects(eVis, eLink);
+
+            //Fire cast spell at event for the specified target
+            SignalEvent(oTarget, EventSpellCastAt(oTarget, SPELL_GHOSTLY_VISAGE, FALSE));
+
+            //Apply the linked effect
+            ApplyEffectToObject(DURATION_TYPE_TEMPORARY,
+                            eLink, oTarget, TurnsToSeconds(nTurns));
+        }
+        break;
+        case 30: {
+            sSurgeName = "Ethereal!";
+            int nTurns = 30;
+
+            effect eReduction = EffectDamageReduction(20, DAMAGE_POWER_PLUS_THREE, 0, FALSE);
+            effect eConcealment = EffectConcealment(25, MISS_CHANCE_TYPE_NORMAL);
+            effect eSpellImmunity = EffectSpellLevelAbsorption(2, 0);
+            effect eVis = EffectVisualEffect(VFX_DUR_ETHEREAL_VISAGE);
+
+            //Link the visual and the damage reduction effect
+            effect eLink = EffectLinkEffects(eReduction, eConcealment);
+            eLink = EffectLinkEffects(eSpellImmunity, eLink);
+            eLink = EffectLinkEffects(eVis, eLink);
+
+            //Fire cast spell at event for the specified target
+            SignalEvent(oTarget, EventSpellCastAt(oTarget, SPELL_ETHEREAL_VISAGE, FALSE));
+
+            //Apply the linked effect
+            ApplyEffectToObject(DURATION_TYPE_TEMPORARY,
+                            eLink, oTarget, TurnsToSeconds(nTurns));
+        }
+        break;
+        case 31: {
+            sSurgeName = "Clear mind!";
+            int nTurns = 30;
+
+            effect eImmunity = EffectImmunity(IMMUNITY_TYPE_MIND_SPELLS);
+            effect eVis = EffectVisualEffect(VFX_DUR_MIND_AFFECTING_POSITIVE);
+
+            //Link the visual and the damage reduction effect
+            effect eLink = EffectLinkEffects(eImmunity, eVis);
+
+            //Fire cast spell at event for the specified target
+            SignalEvent(oTarget, EventSpellCastAt(oTarget, SPELL_LESSER_MIND_BLANK, FALSE));
+
+            //Apply the linked effect
+            ApplyEffectToObject(DURATION_TYPE_TEMPORARY,
+                            eLink, oTarget, TurnsToSeconds(nTurns));
+        }
+        break;
+        case 32: {
+            sSurgeName = "Glyphs!";
+            int nDur = Random(5) + 2;
+            int i;
+            float fDelay;
+            gsSPMagicSurgeCallback(oWildMagicHelper, oCaster, sSurgeName, sSurgeTarget);
+            for(i = 1; i <= nDur; i++)
+            {
+                float fDistance = Random(2) ? DISTANCE_MEDIUM : DISTANCE_LARGE;
+                AssignCommand(oWildMagicHelper,
+                        DelayCommand(fDelay, ActionCastSpellAtLocation(SPELL_GLYPH_OF_WARDING, GetRandomLocation(GetArea(oTarget), oTarget, fDistance), METAMAGIC_EXTEND, TRUE, 0, PROJECTILE_PATH_TYPE_DEFAULT, TRUE)));
+                fDelay += 0.3;
+            }
+            return;
+        }
+        break;
+        case 33: {
+            sSurgeName = "Mass Shield!";
+            object oTarget = GetFirstObjectInShape(SHAPE_SPHERE,
+                                                RADIUS_SIZE_HUGE,
+                                                lTarget, TRUE,
+                                                OBJECT_TYPE_CREATURE);
+
+            while (GetIsObjectValid(oTarget))
+            {
+                int nTurns = 30;
+                effect eArmorClass = EffectACIncrease(4, AC_DEFLECTION_BONUS, AC_VS_DAMAGE_TYPE_ALL);
+                effect eVis = EffectVisualEffect(VFX_DUR_GLOBE_MINOR);
+
+                effect eLink = EffectLinkEffects(eArmorClass, eVis);
+
+                SignalEvent(oTarget, EventSpellCastAt(oTarget, SPELL_SHIELD, FALSE));
+
+                ApplyEffectToObject(DURATION_TYPE_TEMPORARY,
+                                eLink, oTarget, TurnsToSeconds(nTurns));
+
+                // Get the next target within the spell shape.
+                oTarget = GetNextObjectInShape(SHAPE_SPHERE,
+                                            RADIUS_SIZE_HUGE,
+                                            lTarget, TRUE,
+                                            OBJECT_TYPE_CREATURE);
+            }
+        }
+        break;
         case 34:
-        case 35:
-        case 36:
+            sSurgeName = "Darkness!";
+            AssignCommand(oWildMagicHelper, ActionCastSpellAtLocation(SPELL_DARKNESS,
+                                                                                lTarget,
+                                                                                METAMAGIC_EXTEND,
+                                                                                TRUE,
+                                                                                PROJECTILE_PATH_TYPE_DEFAULT,
+                                                                                TRUE));
+        break;
+        case 35: {
+            sSurgeName = "True seeing!";
+            int nTurns = 30;
+
+            effect eTrueSeeing = EffectTrueSeeing();
+            effect eVis = EffectVisualEffect(VFX_DUR_MAGICAL_SIGHT);
+
+            //Link the visual and the damage reduction effect
+            effect eLink = EffectLinkEffects(eTrueSeeing, eVis);
+
+            //Fire cast spell at event for the specified target
+            SignalEvent(oTarget, EventSpellCastAt(oTarget, SPELL_TRUE_SEEING, FALSE));
+
+            //Apply the linked effect
+            ApplyEffectToObject(DURATION_TYPE_TEMPORARY,
+                            eLink, oTarget, TurnsToSeconds(nTurns));
+        }
+        break;
+        case 36: {
+            sSurgeName = "Terror!";
+            int nRounds = 4;
+
+            effect eFear = EffectFrightened();
+            effect eVis = EffectVisualEffect(VFX_DUR_MIND_AFFECTING_FEAR);
+
+            //Link the visual and the damage reduction effect
+            effect eLink = EffectLinkEffects(eFear, eVis);
+
+            //Fire cast spell at event for the specified target
+            SignalEvent(oTarget, EventSpellCastAt(oTarget, SPELL_FEAR, FALSE));
+
+            //Apply the linked effect
+            ApplyEffectToObject(DURATION_TYPE_TEMPORARY,
+                            eLink, oTarget, RoundsToSeconds(nRounds));
+        }
+        break;
         case 37:
             sSurgeName = "Weird!";
             AssignCommand(oWildMagicHelper, ActionCastSpellAtLocation(  SPELL_WEIRD,
@@ -1424,11 +1576,122 @@ void gsSPMagicSurge(object oCaster, object oTarget, location lTarget, int nDoubl
                                                                                 TRUE));
         break;
         case 38:
+            sSurgeName = "Suffocation";
+            AssignCommand(oWildMagicHelper, ActionCastSpellAtLocation(  SPELL_DROWN,
+                                                                                lTarget,
+                                                                                METAMAGIC_NONE,
+                                                                                TRUE,
+                                                                                PROJECTILE_PATH_TYPE_DEFAULT,
+                                                                                TRUE));
+        break;
         case 39:
-        case 40:
-        case 41:
-        case 42:
-        case 43:
+            sSurgeName = "Stench!";
+            AssignCommand(oWildMagicHelper, ActionCastSpellAtLocation(SPELL_STINKING_CLOUD,
+                                                                                lTarget,
+                                                                                METAMAGIC_EXTEND,
+                                                                                TRUE,
+                                                                                PROJECTILE_PATH_TYPE_DEFAULT,
+                                                                                TRUE));
+        break;
+        case 40: {
+            sSurgeName = "Blessing!";
+            object oTarget = GetFirstObjectInShape(SHAPE_SPHERE,
+                                                RADIUS_SIZE_HUGE,
+                                                lTarget, TRUE,
+                                                OBJECT_TYPE_CREATURE);
+
+            while (GetIsObjectValid(oTarget))
+            {
+                int nTurns = 30;
+                effect eAttackBonus = EffectAttackIncrease(1);
+                effect eVisualEffect = EffectVisualEffect(VFX_IMP_HEAD_HOLY);
+
+
+                effect eLink = eAttackBonus;
+                ApplyEffectToObject(DURATION_TYPE_INSTANT, eVisualEffect, oTarget);
+
+                SignalEvent(oTarget, EventSpellCastAt(oTarget, SPELL_BLESS, FALSE));
+
+                ApplyEffectToObject(DURATION_TYPE_TEMPORARY,
+                                eLink, oTarget, TurnsToSeconds(nTurns));
+
+                // Get the next target within the spell shape.
+                oTarget = GetNextObjectInShape(SHAPE_SPHERE,
+                                            RADIUS_SIZE_HUGE,
+                                            lTarget, TRUE,
+                                            OBJECT_TYPE_CREATURE);
+            }
+        }
+        break;
+        case 41: {
+            sSurgeName = "Bane!";
+            object oTarget = GetFirstObjectInShape(SHAPE_SPHERE,
+                                                RADIUS_SIZE_HUGE,
+                                                lTarget, TRUE,
+                                                OBJECT_TYPE_CREATURE);
+
+            while (GetIsObjectValid(oTarget))
+            {
+                int nTurns = 30;
+                effect eAttackBonus = EffectAttackDecrease(1);
+                effect eVisualEffect = EffectVisualEffect(VFX_IMP_HEAD_EVIL);
+
+
+                effect eLink = eAttackBonus;
+                ApplyEffectToObject(DURATION_TYPE_INSTANT, eVisualEffect, oTarget);
+
+                SignalEvent(oTarget, EventSpellCastAt(oTarget, SPELL_BANE, FALSE));
+
+                ApplyEffectToObject(DURATION_TYPE_TEMPORARY,
+                                eLink, oTarget, TurnsToSeconds(nTurns));
+
+                // Get the next target within the spell shape.
+                oTarget = GetNextObjectInShape(SHAPE_SPHERE,
+                                            RADIUS_SIZE_HUGE,
+                                            lTarget, TRUE,
+                                            OBJECT_TYPE_CREATURE);
+            }
+        }
+        break;
+        case 42: {
+            sSurgeName = "Heal!";
+            int nRounds = 4;
+
+            effect eHeal = EffectHeal(1000);
+            effect eVisualEffect = EffectVisualEffect(VFX_IMP_HEALING_X);
+
+            //Link the visual and the damage reduction effect
+            effect eLink = eHeal;
+            ApplyEffectToObject(DURATION_TYPE_INSTANT, eVisualEffect, oTarget);
+
+            //Fire cast spell at event for the specified target
+            SignalEvent(oTarget, EventSpellCastAt(oTarget, SPELL_HEAL, FALSE));
+
+            //Apply the linked effect
+            ApplyEffectToObject(DURATION_TYPE_INSTANT,
+                            eLink, oTarget);
+        }
+        break;
+        case 43: {
+            sSurgeName = "Harm!";
+            int nRounds = 4;
+
+            int eHealth = GetCurrentHitPoints(oTarget);
+            effect eDamage = EffectDamage(eHealth - d4(1), DAMAGE_TYPE_NEGATIVE);
+            effect eVisualEffect = EffectVisualEffect(VFX_IMP_HARM);
+
+            //Link the visual and the damage reduction effect
+            effect eLink = eDamage;
+            ApplyEffectToObject(DURATION_TYPE_INSTANT, eVisualEffect, oTarget);
+
+            //Fire cast spell at event for the specified target
+            SignalEvent(oTarget, EventSpellCastAt(oTarget, SPELL_HARM, FALSE));
+
+            //Apply the linked effect
+            ApplyEffectToObject(DURATION_TYPE_INSTANT,
+                            eLink, oTarget);
+        }
+        break;
         case 44:
         case 45:
         case 46:
@@ -1463,11 +1726,11 @@ void gsSPMagicSurge(object oCaster, object oTarget, location lTarget, int nDoubl
             effect eLink = EffectLinkEffects(ePrem, eVis);
 
             //Fire cast spell at event for the specified target
-            SignalEvent(oCaster, EventSpellCastAt(oCaster, SPELL_PREMONITION, FALSE));
+            SignalEvent(oTarget, EventSpellCastAt(oTarget, SPELL_PREMONITION, FALSE));
 
             //Apply the linked effect
             ApplyEffectToObject(DURATION_TYPE_TEMPORARY,
-                            eLink, oCaster, RoundsToSeconds(nRounds));
+                            eLink, oTarget, RoundsToSeconds(nRounds));
         }
         break;
         case 59:
@@ -1480,8 +1743,8 @@ void gsSPMagicSurge(object oCaster, object oTarget, location lTarget, int nDoubl
         case 66:
         case 67:
         case 68:
-            sSurgeName = "Greater missile storm!";
-            AssignCommand(oWildMagicHelper, ActionCastSpellAtLocation(  SPELL_ISAACS_GREATER_MISSILE_STORM,
+            sSurgeName = "Missile storm!";
+            AssignCommand(oWildMagicHelper, ActionCastSpellAtLocation(SPELL_ISAACS_LESSER_MISSILE_STORM,
                                                                                 lTarget,
                                                                                 METAMAGIC_NONE,
                                                                                 TRUE,
