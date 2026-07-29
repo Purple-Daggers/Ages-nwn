@@ -131,7 +131,7 @@ void main()
                 DelayCommand(0.8, gsSPMagicSurge(OBJECT_SELF, oTarget, lTarget, FALSE, -1));
                 SetLocalInt(OBJECT_SELF, "AS_SUPPRESS_SURGE", FALSE);
             } else {
-                DelayCommand(0.8, gsSPMagicSurge(OBJECT_SELF, oTarget, lTarget));
+                DelayCommand(0.8, gsSPMagicSurge(OBJECT_SELF, oTarget, lTarget, FALSE, 46));
             }
         }
         /*

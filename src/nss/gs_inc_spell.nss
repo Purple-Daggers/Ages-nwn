@@ -1048,6 +1048,7 @@ void gsSPMagicSurge(object oCaster, object oTarget, location lTarget, int nDoubl
             sSurgeName = "Surge suppressed!";
             sSurgeTarget = "Self";
         }
+        break;
         case 1: {
             sSurgeName = "Uuminen's Flash!";
             int nRand = Random(4) + 2;
@@ -1140,7 +1141,7 @@ void gsSPMagicSurge(object oCaster, object oTarget, location lTarget, int nDoubl
                                                                     PROJECTILE_PATH_TYPE_DEFAULT, TRUE));
         break;
         case 5: {
-            sSurgeName = "Summon!";
+            sSurgeName = "Minor Summon!";
             location lTargetLoc = GetOppositeLocation(oTarget);
             int nSummon = d100();
             string sSummon = "";
@@ -1152,11 +1153,13 @@ void gsSPMagicSurge(object oCaster, object oTarget, location lTarget, int nDoubl
                 sSummon = "nw_deer";
             }
 
-            ApplyEffectAtLocation(DURATION_TYPE_INSTANT,
+            /*ApplyEffectAtLocation(DURATION_TYPE_INSTANT,
                                 EffectVisualEffect(VFX_FNF_SUMMON_MONSTER_1),
-                                lTargetLoc);
+                                lTargetLoc);*/
+            ApplyEffectToObject(DURATION_TYPE_INSTANT,
+                                    EffectSummonCreature(sSummon, VFX_FNF_SUMMON_MONSTER_1, 0.1f), oTarget);
 
-            CreateObject(OBJECT_TYPE_CREATURE, sSummon, lTargetLoc, TRUE);
+            //CreateObject(OBJECT_TYPE_CREATURE, sSummon, lTargetLoc, TRUE);
         }
         break;
         case 6:
@@ -1692,9 +1695,72 @@ void gsSPMagicSurge(object oCaster, object oTarget, location lTarget, int nDoubl
                             eLink, oTarget);
         }
         break;
-        case 44:
-        case 45:
-        case 46:
+        case 44:  {
+            sSurgeName = "Elemental!";
+            location lTargetLoc = GetOppositeLocation(oTarget);
+            int nSummon = d100();
+            string sSummon = "";
+            string sFriendlySummon = "";
+            switch(Random(4))
+            {
+                case 0:
+                    sSummon = "airhuge001";
+                    sFriendlySummon = "NW_S_AIRHUGE";
+                break;
+                case 1:
+                    sSummon = "firehuge001";
+                    sFriendlySummon = "NW_S_FIREHUGE";
+                break;
+                case 2:
+                    sSummon = "earthhuge001";
+                    sFriendlySummon = "NW_S_EARTHHUGE";
+                break;
+                case 3:
+                    sSummon = "waterhuge001";
+                    sFriendlySummon = "NW_S_WATERHUGE";
+                break;
+            }
+
+            if(Random(2) == TRUE)
+            {
+                //Hostile summon
+                ApplyEffectAtLocation(DURATION_TYPE_INSTANT,
+                                EffectVisualEffect(VFX_FNF_SUMMON_MONSTER_2),
+                                lTargetLoc);
+                CreateObject(OBJECT_TYPE_CREATURE, sSummon, lTargetLoc, TRUE);
+            }
+            else
+            {
+                //Friendly summon
+                ApplyEffectToObject(DURATION_TYPE_INSTANT,
+                                    EffectSummonCreature(sFriendlySummon, VFX_FNF_SUMMON_MONSTER_2, 0.1f), oTarget);
+            }
+        }
+        break;
+        case 45:  {
+            sSurgeName = "Demonic Summoning!";
+            location lTargetLoc = GetOppositeLocation(oTarget);
+            int nSummon = d100();
+            string sSummon = "dmfury001";
+
+                //Hostile summon
+            ApplyEffectAtLocation(DURATION_TYPE_INSTANT,
+                            EffectVisualEffect(VFX_FNF_SUMMON_MONSTER_3),
+                            lTargetLoc);
+            CreateObject(OBJECT_TYPE_CREATURE, sSummon, lTargetLoc, TRUE);
+        }
+        break;
+        case 46: {
+            sSurgeName = "Spirit Summoning!";
+            location lTargetLoc = GetOppositeLocation(oTarget);
+            int nSummon = d100();
+            string sSummon = "sp_s_jub";
+
+                //Friendly summon
+                ApplyEffectToObject(DURATION_TYPE_INSTANT,
+                                    EffectSummonCreature(sSummon, VFX_FNF_SUMMON_MONSTER_3, 0.1f), oTarget);
+        }
+        break;
         case 47:
         case 48:
         case 49:
