@@ -116,15 +116,28 @@ void gsPLRemovePlaceable(int nSlot, object oArea = OBJECT_SELF)
 void gsPLSaveArea(object oArea = OBJECT_SELF)
 {
     location lLocation;
-    string sDatabase = "GS_PL_" + GetTag(oArea);
+    string sDatabase = "GS_PLACEABLES";//GetTag(oArea);
     string sNth      = "";
     int nNth         = 0;
+
+    sqlquery sqlCreatePlaceableTable = SqlPrepareQueryCampaign(sDatabase, "CREATE TABLE IF NOT EXISTS placeables (area TEXT, slot INTEGER, name TEXT, resref TEXT, position BLOB, direction REAL, PRIMARY KEY (area, slot));");
+    SqlStep(sqlCreatePlaceableTable);
 
     for (nNth = 1; nNth <= GS_PL_LIMIT_SLOT; nNth++)
     {
         lLocation = gsPLGetPlaceableLocation(nNth, oArea);
         sNth      = IntToString(nNth);
 
+        sqlquery sqlInsertPlaceable = SqlPrepareQueryCampaign(sDatabase, "INSERT INTO placeables (area, slot, name, resref, position, direction) VALUES (@area, @slot, @name, @resref, @position, @direction) ON CONFLICT (area, slot) DO UPDATE SET name = excluded.name, resref = excluded.resref, position = excluded.position, direction =  excluded.direction;");
+        SqlBindString(sqlInsertPlaceable, "@area", GetTag(oArea));
+        SqlBindInt(sqlInsertPlaceable, "@slot", nNth);
+        SqlBindString(sqlInsertPlaceable, "@name", gsPLGetPlaceableName(nNth, oArea));
+        SqlBindString(sqlInsertPlaceable, "@resref", gsPLGetPlaceableTemplate(nNth, oArea));
+        SqlBindVector(sqlInsertPlaceable, "@position", GetPositionFromLocation(lLocation));
+        SqlBindFloat(sqlInsertPlaceable, "@direction", GetFacingFromLocation(lLocation));
+        SqlStep(sqlInsertPlaceable);
+
+        /*
         SetCampaignString(sDatabase,
                           "NAME_" + sNth,
                           gsPLGetPlaceableName(nNth, oArea));
@@ -137,6 +150,7 @@ void gsPLSaveArea(object oArea = OBJECT_SELF)
         SetCampaignFloat(sDatabase,
                          "FACING_" + sNth,
                          GetFacingFromLocation(lLocation));
+        */
     }
 }
 //----------------------------------------------------------------
@@ -144,21 +158,28 @@ void gsPLLoadArea(object oArea = OBJECT_SELF)
 {
     object oObject   = OBJECT_INVALID;
     location lLocation;
-    string sDatabase = "GS_PL_" + GetTag(oArea);
+    string sDatabase = "GS_PLACEABLES";//GetTag(oArea);
     string sTemplate = "";
     string sNth      = "";
     int nNth         = 0;
 
-    for (nNth = 1; nNth <= GS_PL_LIMIT_SLOT; nNth++)
-    {
-        sNth      = IntToString(nNth);
-        sTemplate = GetCampaignString(sDatabase, "RESREF_" + sNth);
+    sqlquery sqlCreatePlaceableTable = SqlPrepareQueryCampaign(sDatabase, "CREATE TABLE IF NOT EXISTS placeables (area TEXT, slot INTEGER, name TEXT, resref TEXT, position BLOB, direction REAL, PRIMARY KEY (area, slot));");
+    SqlStep(sqlCreatePlaceableTable);
+
+    sqlquery sqlGetPlaceables = SqlPrepareQueryCampaign(sDatabase, "SELECT slot, name, resref, position, direction FROM placeables WHERE area = @area");
+    SqlBindString(sqlGetPlaceables, "@area", GetTag(oArea));
+
+    while(SqlStep(sqlGetPlaceables))
+    {   
+        nNth = SqlGetInt(sqlGetPlaceables, 0);
+        sNth = IntToString(nNth);
+        sTemplate = SqlGetString(sqlGetPlaceables, 2);
 
         if (sTemplate != "")
         {
             lLocation = Location(oArea,
-                                 GetCampaignVector(sDatabase, "POSITION_" + sNth),
-                                 GetCampaignFloat(sDatabase, "FACING_" + sNth));
+                                 SqlGetVector(sqlGetPlaceables, 3),
+                                 SqlGetFloat(sqlGetPlaceables, 4));
             oObject   = GetNearestObjectToLocation(OBJECT_TYPE_PLACEABLE, lLocation);
 
             if (! GetIsObjectValid(oObject) ||
@@ -171,7 +192,7 @@ void gsPLLoadArea(object oArea = OBJECT_SELF)
                     SetLocalInt(oObject, "GS_STATIC", TRUE);
                     SetLocalString(oArea,
                                    "GS_PL_NAME_" + sNth,
-                                   GetCampaignString(sDatabase, "NAME_" + sNth));
+                                   SqlGetString(sqlGetPlaceables, 1));
                     SetLocalString(oArea,
                                    "GS_PL_RESREF_" + sNth,
                                    sTemplate);
