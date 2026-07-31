@@ -888,7 +888,7 @@ void gsCRRemoveRecipeInSlot(int nSkill, int nSlot)
     DeleteLocalString(oModule, sString + "ID");
     //SetCampaignInt(sDatabase, "SLOT_" + sSlot, FALSE);
 
-    sqlquery sqlDeleteRecipe = SqlPrepareQueryCampaign(GS_CRAFTING_DATABASE, "DELETE FROM recipes WHERE id = @id);");
+    sqlquery sqlDeleteRecipe = SqlPrepareQueryCampaign(GS_CRAFTING_DATABASE, "DELETE FROM recipes WHERE id = @id;");
     SqlBindString(sqlDeleteRecipe, "@id", sID);
     SqlStep(sqlDeleteRecipe);
 
@@ -1060,7 +1060,7 @@ int __gsCRLoadRecipeList(int nSkill, int nSlot)
     object oModule   = GetModule();
     string sString   = sDatabase + "_" + sSlot + "_";
     string sID       = SqlGetString(sqlSelectRecipeBySlot, 0);//GetCampaignString(sDatabase, "ID_" + sSlot);
-    json jRecipe     = SqlGetJson(sqlSelectRecipeBySlot, 2);
+    json jRecipe     = SqlGetJson(sqlSelectRecipeBySlot, 1);
     string sNth      = "";
     int nCategory    = JsonGetInt(JsonObjectGet(jRecipe, "nCategory"));//GetCampaignInt(sDatabase, "CATEGORY_" + sSlot);
     int nNth         = 1;
