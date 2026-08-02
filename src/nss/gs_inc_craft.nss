@@ -227,9 +227,6 @@ int gsCRGetSkillRank(int nSkill, object oPC = OBJECT_SELF)
 
     if (! nRank)
     {
-        sqlquery sqlCreateSkillsTable = SqlPrepareQueryCampaign(GS_CRAFTING_DATABASE, "CREATE TABLE IF NOT EXISTS skill_ranks (id TEXT PRIMARY KEY, json TEXT);");
-        SqlStep(sqlCreateSkillsTable);
-
         sqlquery sqlGetSkills = SqlPrepareQueryCampaign(GS_CRAFTING_DATABASE, "SELECT json FROM skill_ranks WHERE id = @id");
         SqlBindString(sqlGetSkills, "@id", gsPCGetPlayerID(oPC));
         if(SqlStep(sqlGetSkills)){
@@ -407,9 +404,6 @@ void gsCRDecreaseCraftPoints(int nValue = 1, object oPC = OBJECT_SELF)
 //----------------------------------------------------------------
 void gsCRSetCraftPoints(object oPC, int nValue)
 {   
-    sqlquery sqlCreatePointsTable = SqlPrepareQueryCampaign(GS_CRAFTING_DATABASE, "CREATE TABLE IF NOT EXISTS craft_points (id TEXT PRIMARY KEY, points INTEGER);");
-    SqlStep(sqlCreatePointsTable);
-
     sqlquery sqlInsertOrUpdatePointsTable = SqlPrepareQueryCampaign(GS_CRAFTING_DATABASE, "INSERT INTO craft_points (id, points) VALUES (@id, @points) ON CONFLICT (id) DO UPDATE SET points = excluded.points;");  
     SqlBindString(sqlInsertOrUpdatePointsTable, "@id", gsPCGetPlayerID(oPC));
     SqlBindInt(sqlInsertOrUpdatePointsTable, "@points", nValue); 
@@ -463,9 +457,6 @@ int gsCRGetCraftPoints(object oPC)
 //----------------------------------------------------------------
 void gsCRSetCraftTimeout(object oPC, int nValue)
 {
-    sqlquery sqlCreateTimeoutTable = SqlPrepareQueryCampaign(GS_CRAFTING_DATABASE, "CREATE TABLE IF NOT EXISTS craft_timeout (id TEXT PRIMARY KEY, timeout INTEGER);");
-    SqlStep(sqlCreateTimeoutTable);
-
     sqlquery sqlInsertOrUpdateTimeoutTable = SqlPrepareQueryCampaign(GS_CRAFTING_DATABASE, "INSERT INTO craft_timeout (id, timeout) VALUES (@id, @timeout) ON CONFLICT (id) DO UPDATE SET timeout = excluded.timeout;");  
     SqlBindString(sqlInsertOrUpdateTimeoutTable, "@id", gsPCGetPlayerID(oPC));
     SqlBindInt(sqlInsertOrUpdateTimeoutTable, "@timeout", nValue); 
@@ -652,8 +643,6 @@ int __gsCRAddRecipe(struct gsCRRecipe stRecipe)
 
     if (nSlot > GS_CR_LIMIT_RECIPE) return FALSE; //no empty slot
 
-    sqlquery sqlCreateRecipeTable = SqlPrepareQueryCampaign(GS_CRAFTING_DATABASE, "CREATE TABLE IF NOT EXISTS recipes (id TEXT PRIMARY KEY, skill INTEGER, slot INTEGER, json TEXT);");
-    SqlStep(sqlCreateRecipeTable);
     sqlquery sqlAddRecipe = SqlPrepareQueryCampaign(GS_CRAFTING_DATABASE, "INSERT INTO recipes (id, skill, slot, json) VALUES (@id, @skill, @slot, @json);");
     SqlBindString(sqlAddRecipe, "@id", stRecipe.sID);
     SqlBindInt(sqlAddRecipe, "@skill", stRecipe.nSkill);
@@ -1046,9 +1035,6 @@ int __gsCRLoadRecipeList(int nSkill, int nSlot)
     string sSkill    = IntToString(nSkill);
     string sDatabase = "GS_CR_RECIPE_" + sSkill;
     string sSlot     = IntToString(nSlot);
-    
-    sqlquery sqlCreateRecipeTable = SqlPrepareQueryCampaign(GS_CRAFTING_DATABASE, "CREATE TABLE IF NOT EXISTS recipes (id TEXT PRIMARY KEY, skill INTEGER, slot INTEGER, json TEXT);");
-    SqlStep(sqlCreateRecipeTable);
 
     sqlquery sqlSelectRecipeBySlot = SqlPrepareQueryCampaign(GS_CRAFTING_DATABASE, "SELECT id, json FROM recipes WHERE skill = @skill AND slot = @slot;");
     SqlBindInt(sqlSelectRecipeBySlot, "@skill", nSkill);

@@ -78,8 +78,6 @@ json _asRPGetReputationJson(object oPlayer){
         return JsonObject();
     }
     string sDatabase = AS_RP_REPUTATION_DATABASE;
-    sqlquery sqlCreateReputationTable = SqlPrepareQueryCampaign(sDatabase, "CREATE TABLE IF NOT EXISTS reputations (player_id TEXT PRIMARY KEY, json TEXT);");
-    SqlStep(sqlCreateReputationTable);
     sqlquery sqlGetReputationJson = SqlPrepareQueryCampaign(sDatabase, "SELECT json FROM reputations WHERE player_id = @id");
     SqlBindString(sqlGetReputationJson, "@id", gsPCGetPlayerID(oPlayer));
     if(SqlStep(sqlGetReputationJson))

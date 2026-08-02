@@ -32,8 +32,6 @@ void gsBSLoadContent(object oShelf = OBJECT_SELF)
         sShelfID = "GS_BS_" + GetLocalString(oShelf, "GS_FX_ID");
     }
 
-    sqlquery sqlCreateTable = SqlPrepareQueryCampaign(sDatabase, "CREATE TABLE IF NOT EXISTS books (id TEXT PRIMARY KEY, shelf_id TEXT, name TEXT, description TEXT, count INTEGER, notebook TEXT);");
-    SqlStep(sqlCreateTable);
 
     string sBookID = "";
     string sName     = "";
@@ -187,9 +185,6 @@ int gsBSPostBook(string sBookName, string sBookDesc, string sNotebookID, object 
     {
         sShelfID = "GS_BS_" + GetLocalString(oShelf, "GS_FX_ID");
     }
-
-    sqlquery sqlCreateTable = SqlPrepareQueryCampaign(sDatabase, "CREATE TABLE IF NOT EXISTS books (id TEXT PRIMARY KEY, shelf_id TEXT, name TEXT, description TEXT, count INTEGER, notebook TEXT);");
-    SqlStep(sqlCreateTable);
 
     sqlquery sqlMatchBook = SqlPrepareQueryCampaign(sDatabase, "SELECT id FROM books WHERE shelf_id = @shelf_id AND name = @name AND description = @desc LIMIT 1;");
     SqlBindString(sqlMatchBook, "@shelf_id", sShelfID);
