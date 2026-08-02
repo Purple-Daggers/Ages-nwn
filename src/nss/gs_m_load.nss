@@ -14,6 +14,8 @@ const string GS_FORUM_DATABASE = "GS_FO_FORUMS";
 const string GS_MESSAGE_DATABASE = "GS_MESSAGE";
 const string GS_PLACEABLE_DATABASE = "GS_PLACEABLES";
 const string AS_SUBRACE_DATABASE = "AS_SUBRACES";
+const string GS_SHOP_DATABASE = "GS_SHOPS";
+const string GS_WORSHIP_DATABASE = "GS_WORSHIP";
 
 void main()
 {
@@ -76,6 +78,10 @@ void main()
     SqlStep(sqlCreatePlaceableTable);
     sqlquery sqlCreateSubRaceTable = SqlPrepareQueryCampaign(AS_SUBRACE_DATABASE, "CREATE TABLE IF NOT EXISTS subraces (id TEXT PRIMARY KEY, subrace INTEGER, str_gift INTEGER, dex_gift INTEGER, con_gift INTEGER, int_gift INTEGER, wis_gift INTEGER, cha_gift INTEGER);");
     SqlStep(sqlCreateSubRaceTable);
+    sqlquery sqlCreateShopTable = SqlPrepareQueryCampaign(GS_SHOP_DATABASE, "CREATE TABLE IF NOT EXISTS shops (class_id TEXT, instance INTEGER, markup INTEGER, faction TEXT, PRIMARY KEY (class_id, instance));");
+    SqlStep(sqlCreateShopTable);
+    sqlquery sqlCreateWorshipTable = SqlPrepareQueryCampaign(GS_WORSHIP_DATABASE, "CREATE TABLE IF NOT EXISTS deities (name TEXT PRIMARY KEY, presence INTEGER, power INTEGER);");
+    SqlStep(sqlCreateWorshipTable);
 
     gsAMInitialize();
 }

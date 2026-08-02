@@ -5,6 +5,8 @@
 
 //void main() {}
 
+const string GS_SHOP_DATABASE = "GS_SHOPS";
+
 //return TRUE if oPC is owner of oShop
 int gsSHGetIsOwner(object oShop, object oPC);
 //return owner id of oShop
@@ -170,14 +172,31 @@ void gsSHSetSalePrice(object oShop, int nValue)
     if (nValue < 1)         nValue =    1;
     else if (nValue > 1000) nValue = 1000;
 
-    SetCampaignInt("GS_SH_" + sID, "SALE_PRICE_" + IntToString(nInstance), nValue);
+    sqlquery sqlSetSalePrice = SqlPrepareQueryCampaign(GS_SHOP_DATABASE, "INSERT INTO shops (class_id, instance, markup) VALUES (@class_id, @instance, @markup) ON CONFLICT (class_id, instance) DO UPDATE SET markup = excluded.markup;");
+    SqlBindString(sqlSetSalePrice, "@class_id", sID);
+    SqlBindInt(sqlSetSalePrice, "@instance", nInstance);
+    SqlBindInt(sqlSetSalePrice, "@markup", nValue);
+    SqlStep(sqlSetSalePrice);
+    //SetCampaignInt("GS_SH_" + sID, "SALE_PRICE_" + IntToString(nInstance), nValue);
 }
 //----------------------------------------------------------------
 int gsSHGetSalePrice(object oShop)
 {
     string sID    = GetLocalString(oShop, "GS_CLASS");
     int nInstance = GetLocalInt(oShop, "GS_INSTANCE");
-    int nValue    = GetCampaignInt("GS_SH_" + sID, "SALE_PRICE_" + IntToString(nInstance));
+    int nValue;
+
+    sqlquery sqlGetSalePrice = SqlPrepareQueryCampaign(GS_SHOP_DATABASE, "SELECT markup from shops WHERE class_id = @class_id AND instance = @instance;");
+    SqlBindString(sqlGetSalePrice, "@class_id", sID);
+    SqlBindInt(sqlGetSalePrice, "@instance", nInstance);
+    if(SqlStep(sqlGetSalePrice))
+    {
+        nValue = SqlGetInt(sqlGetSalePrice, 0);
+    } else {
+        nValue = 0;
+    }
+
+    //int nValue    = GetCampaignInt("GS_SH_" + sID, "SALE_PRICE_" + IntToString(nInstance));
 
     return nValue <= 0 ? 100 : nValue;
 }

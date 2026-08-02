@@ -10,6 +10,8 @@
 
 //void main() {}
 
+const string GS_WORSHIP_DATABASE = "GS_WORSHIP";
+
 const int GS_WO_TIMEOUT_FAVOR        = 3600; //TIME UPDATE: 1 hour
 const int GS_WO_TIMEOUT_RESURRECTION = 14400; //TIME UPDATE: 4 hours
 
@@ -586,7 +588,15 @@ int gsWOGetPresence(string sDeity)
 
     if (! nPresence)
     {
-        nPresence = GetCampaignInt("GS_WO_PRESENCE", sDeity) + 1;
+        sqlquery sqlGetPresence = SqlPrepareQueryCampaign(GS_WORSHIP_DATABASE, "SELECT presence from deities WHERE name = @name");
+        SqlBindString(sqlGetPresence, "@name", sDeity);
+        if(SqlStep(sqlGetPresence))
+        {
+            nPresence = SqlGetInt(sqlGetPresence, 0) + 1;
+        } else {
+            nPresence = 1;
+        }
+        //nPresence = GetCampaignInt("GS_WO_PRESENCE", sDeity) + 1;
         SetLocalInt(oModule, "GS_WO_PR_" + sDeity, nPresence);
     }
 
@@ -607,7 +617,11 @@ void gsWOAdjustPresence(string sDeity, int nAmount)
     if (nPresence != nAmount)
     {
         SetLocalInt(GetModule(), "GS_WO_PR_" + sDeity, nAmount + 1);
-        SetCampaignInt("GS_WO_PRESENCE", sDeity, nAmount);
+        sqlquery sqlSetPresence = SqlPrepareQueryCampaign(GS_WORSHIP_DATABASE, "INSERT INTO deities (name, presence) VALUES (@name, @presence) ON CONFLICT (name) DO UPDATE SET presence = excluded.presence;");
+        SqlBindString(sqlSetPresence, "@name", sDeity);
+        SqlBindInt(sqlSetPresence, "@presence", nAmount);
+        SqlStep(sqlSetPresence);
+        //SetCampaignInt("GS_WO_PRESENCE", sDeity, nAmount);
     }
 }
 //----------------------------------------------------------------
@@ -628,7 +642,15 @@ int gsWOGetPower(string sDeity)
 
     if (! nPower)
     {
-        nPower = GetCampaignInt("GS_WO_POWER", sDeity) + 1;
+        sqlquery sqlGetPower = SqlPrepareQueryCampaign(GS_WORSHIP_DATABASE, "SELECT power from deities WHERE name = @name");
+        SqlBindString(sqlGetPower, "@name", sDeity);
+        if(SqlStep(sqlGetPower))
+        {
+            nPower = SqlGetInt(sqlGetPower, 0) + 1;
+        } else {
+            nPower = 1;
+        }
+        //nPower = GetCampaignInt("GS_WO_POWER", sDeity) + 1;
         SetLocalInt(oModule, "GS_WO_PO_" + sDeity, nPower);
     }
 
@@ -648,8 +670,12 @@ void gsWOAdjustPower(string sDeity, int nAmount)
 
     if (nPower != nAmount)
     {
+        sqlquery sqlSetPower = SqlPrepareQueryCampaign(GS_WORSHIP_DATABASE, "INSERT INTO deities (name, power) VALUES (@name, @power) ON CONFLICT (name) DO UPDATE SET power = excluded.power;");
+        SqlBindString(sqlSetPower, "@name", sDeity);
+        SqlBindInt(sqlSetPower, "@power", nAmount);
+        SqlStep(sqlSetPower);
         SetLocalInt(GetModule(), "GS_WO_PO_" + sDeity, nAmount + 1);
-        SetCampaignInt("GS_WO_POWER", sDeity, nAmount);
+        //SetCampaignInt("GS_WO_POWER", sDeity, nAmount);
     }
 }
 //----------------------------------------------------------------
