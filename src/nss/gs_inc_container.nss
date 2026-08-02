@@ -11,9 +11,6 @@ void gsCOSave(string sID, object oContainer, int nLimit = 10);
 
 void gsCOLoad(string sID, object oContainer, int nLimit = 10)
 {
-    sqlquery sqlCreateContainerTable = SqlPrepareQueryCampaign(GS_DATABASE, "CREATE TABLE IF NOT EXISTS containers (id TEXT, slot INTEGER, in_use INTEGER, object BLOB, PRIMARY KEY (id, slot));");
-    SqlStep(sqlCreateContainerTable);
-
     if (GetIsObjectValid(oContainer))
     {
         location lLocation = GetLocation(oContainer);
@@ -52,9 +49,6 @@ void gsCOLoad(string sID, object oContainer, int nLimit = 10)
 //----------------------------------------------------------------
 void gsCOSave(string sID, object oContainer, int nLimit = 10)
 {
-    sqlquery sqlCreateContainerTable = SqlPrepareQueryCampaign(GS_DATABASE, "CREATE TABLE IF NOT EXISTS containers (id TEXT, slot INTEGER, in_use INTEGER, object BLOB, PRIMARY KEY (id, slot));");
-    SqlStep(sqlCreateContainerTable);
-
     if (GetIsObjectValid(oContainer) &&
         GetHasInventory(oContainer))
     {

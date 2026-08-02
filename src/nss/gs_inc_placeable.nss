@@ -120,9 +120,6 @@ void gsPLSaveArea(object oArea = OBJECT_SELF)
     string sNth      = "";
     int nNth         = 0;
 
-    sqlquery sqlCreatePlaceableTable = SqlPrepareQueryCampaign(sDatabase, "CREATE TABLE IF NOT EXISTS placeables (area TEXT, slot INTEGER, name TEXT, resref TEXT, position BLOB, direction REAL, PRIMARY KEY (area, slot));");
-    SqlStep(sqlCreatePlaceableTable);
-
     for (nNth = 1; nNth <= GS_PL_LIMIT_SLOT; nNth++)
     {
         lLocation = gsPLGetPlaceableLocation(nNth, oArea);
@@ -162,9 +159,6 @@ void gsPLLoadArea(object oArea = OBJECT_SELF)
     string sTemplate = "";
     string sNth      = "";
     int nNth         = 0;
-
-    sqlquery sqlCreatePlaceableTable = SqlPrepareQueryCampaign(sDatabase, "CREATE TABLE IF NOT EXISTS placeables (area TEXT, slot INTEGER, name TEXT, resref TEXT, position BLOB, direction REAL, PRIMARY KEY (area, slot));");
-    SqlStep(sqlCreatePlaceableTable);
 
     sqlquery sqlGetPlaceables = SqlPrepareQueryCampaign(sDatabase, "SELECT slot, name, resref, position, direction FROM placeables WHERE area = @area");
     SqlBindString(sqlGetPlaceables, "@area", GetTag(oArea));

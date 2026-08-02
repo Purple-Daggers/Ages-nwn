@@ -206,9 +206,6 @@ int gsSUGetSeaForged(int nSubRace);
 
 void gsSUSetSubRace(object oPlayer, int nSubRace, int nStrGift, int nDexGift, int nConGift, int nIntGift, int nWisGift, int nChaGift)
 {
-    sqlquery sqlCreateTable = SqlPrepareQueryCampaign(AS_SUBRACE_DATABASE, "CREATE TABLE IF NOT EXISTS subraces (id TEXT PRIMARY KEY, subrace INTEGER, str_gift INTEGER, dex_gift INTEGER, con_gift INTEGER, int_gift INTEGER, wis_gift INTEGER, cha_gift INTEGER);");
-    SqlStep(sqlCreateTable);
-
     sqlquery sqlInitializeSubrace = SqlPrepareQueryCampaign(AS_SUBRACE_DATABASE, "INSERT INTO subraces (id, subrace, str_gift, dex_gift, con_gift, int_gift, wis_gift, cha_gift) VALUES (@id, @subrace, @str_gift, @dex_gift, @con_gift, @int_gift, @wis_gift, @cha_gift);");
     SqlBindString(sqlInitializeSubrace, "@id", gsPCGetPlayerID(oPlayer));
     SqlBindInt(sqlInitializeSubrace, "@subrace", nSubRace);
@@ -4458,8 +4455,6 @@ float gsSUGetSubRaceScaleVariance(int nSubRace)
 
 void gsSUSavePlayerSubraceScale(object oPlayer, float fScale)
 {
-    sqlquery sqlCreateTable = SqlPrepareQueryCampaign(AS_SUBRACE_DATABASE, "CREATE TABLE IF NOT EXISTS scales (id TEXT PRIMARY KEY, scale REAL);");
-    SqlStep(sqlCreateTable);
     string sPlayerID = gsPCGetPlayerID(oPlayer);
 
     sqlquery sqlGetPlayerScale = SqlPrepareQueryCampaign(AS_SUBRACE_DATABASE, "SELECT scale FROM scales WHERE id = @id");
@@ -4602,9 +4597,6 @@ int gsSUGetHasCatModel(int nSubRace)
 
 int gsSUGetSubracePermission(object oPlayer, string sPermission)
 {
-    sqlquery sqlCreateTable = SqlPrepareQueryCampaign(AS_SUBRACE_DATABASE, "CREATE TABLE IF NOT EXISTS permissions (cd_key TEXT PRIMARY KEY, json TEXT);");
-    SqlStep(sqlCreateTable);
-
     string sPlayerCDKey = GetPCPublicCDKey(oPlayer, TRUE);
     
     sqlquery sqlGetPermissions = SqlPrepareQueryCampaign(AS_SUBRACE_DATABASE, "SELECT json FROM permissions WHERE cd_key = @cd_key");

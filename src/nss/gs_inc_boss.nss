@@ -137,9 +137,6 @@ void gsBOSaveArea(object oArea = OBJECT_SELF)
     string sNth      = "";
     int nNth         = 0;
 
-    sqlquery sqlCreateBossTable = SqlPrepareQueryCampaign(sDatabase, "CREATE TABLE IF NOT EXISTS bosses (area TEXT, slot INTEGER, name TEXT, resref TEXT, rating REAL, position BLOB, direction REAL, enabled INTEGER, timeflag INTEGER, PRIMARY KEY (area, slot));");
-    SqlStep(sqlCreateBossTable);
-
     for (nNth = 1; nNth <= GS_BO_LIMIT_SLOT; nNth++)
     {
         sNth = IntToString(nNth);
@@ -182,9 +179,6 @@ void gsBOLoadArea(object oArea = OBJECT_SELF)
     string sDatabase = "GS_BOSSES";// + GetTag(oArea);
     string sNth      = "";
     int nNth         = 0;
-
-    sqlquery sqlCreateBossTable = SqlPrepareQueryCampaign(sDatabase, "CREATE TABLE IF NOT EXISTS bosses (area TEXT, slot INTEGER, name TEXT, resref TEXT, rating REAL, position BLOB, direction REAL, enabled INTEGER, timeflag INTEGER, PRIMARY KEY (area, slot));");
-    SqlStep(sqlCreateBossTable);
 
     sqlquery sqlGetBosses = SqlPrepareQueryCampaign(sDatabase, "SELECT slot, name, resref, rating, position, direction, enabled, timeflag FROM bosses WHERE area = @area");
     SqlBindString(sqlGetBosses, "@area", GetTag(oArea));
