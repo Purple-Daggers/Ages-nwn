@@ -1,6 +1,7 @@
 /* QUARTER library by Gigaschatten */
 
 #include "gs_inc_class"
+#include "gs_inc_common"
 
 const string GS_QU_TEMPLATE_KEY = "gs_item038";
 

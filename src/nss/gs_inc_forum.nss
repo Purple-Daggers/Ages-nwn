@@ -48,8 +48,6 @@ void gsFOLoadContent(object oForum = OBJECT_SELF)
     string sOwner     = "";
     string sNth       = "";
     int nNth          = 1;
-    sqlquery sqlCreateForumMessageTable = SqlPrepareQueryCampaign(sDatabase, "CREATE TABLE IF NOT EXISTS forum_messages (forum_id TEXT, message_id TEXT, timestamp INTEGER, message_poster TEXT, message_owner TEXT, PRIMARY KEY (forum_id, message_id, timestamp));");
-    SqlStep(sqlCreateForumMessageTable);
 
     sqlquery sqlGetNotes = SqlPrepareQueryCampaign(sDatabase, "SELECT message_id, message_poster, message_owner FROM (SELECT message_id, message_poster, message_owner, timestamp FROM forum_messages WHERE forum_id = @forum_id ORDER BY timestamp DESC LIMIT " + IntToString(GS_FO_LIMIT) + ") ORDER BY timestamp ASC LIMIT " + IntToString(GS_FO_LIMIT) + ";");
     SqlBindString(sqlGetNotes, "@forum_id", sForumID);
@@ -170,9 +168,6 @@ int gsFOPostMessage(string sMessageID, object oOwner, object oForum = OBJECT_SEL
     SetLocalInt(oForum, "GS_FO_OFFSET", nNth);
     SetLocalString(oForum, "GS_FO_MESSAGE_" + sNth, sMessageID);
     SetLocalString(oForum, "GS_FO_" + sMessageID + "_OWNER", sPlayerID);
-
-    sqlquery sqlCreateForumMessageTable = SqlPrepareQueryCampaign(sDatabase, "CREATE TABLE IF NOT EXISTS forum_messages (forum_id TEXT, message_id TEXT, timestamp INTEGER, message_poster TEXT, message_owner TEXT, PRIMARY KEY (forum_id, message_id, timestamp));");
-    SqlStep(sqlCreateForumMessageTable);
 
     sqlquery sqlInsertMessage = SqlPrepareQueryCampaign(sDatabase, "INSERT INTO forum_messages (forum_id, message_id, timestamp, message_poster, message_owner) VALUES (@forum_id, @message_id, @timestamp, @message_poster, @message_owner);");
     SqlBindString(sqlInsertMessage, "@forum_id", sForumID);

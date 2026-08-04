@@ -133,7 +133,7 @@ int gsBOGetIsBossCreature(object oCreature = OBJECT_SELF)
 //----------------------------------------------------------------
 void gsBOSaveArea(object oArea = OBJECT_SELF)
 {
-    string sDatabase = "GS_BO_" + GetTag(oArea);
+    string sDatabase = "GS_BOSSES";// + GetTag(oArea);
     string sNth      = "";
     int nNth         = 0;
 
@@ -141,42 +141,69 @@ void gsBOSaveArea(object oArea = OBJECT_SELF)
     {
         sNth = IntToString(nNth);
 
-        SetCampaignString(sDatabase,
-                          "NAME_" + sNth,
-                          gsBOGetCreatureName(nNth, oArea));
-        SetCampaignString(sDatabase,
-                          "RESREF_" + sNth,
-                          gsBOGetCreatureTemplate(nNth, oArea));
-        SetCampaignFloat(sDatabase,
-                         "RATING_" + sNth,
-                         gsBOGetCreatureRating(nNth, oArea));
-        gsLOSetDBLocation(sDatabase,
-                          "LOCATION_" + sNth,
-                          gsBOGetCreatureLocation(nNth, oArea));
+        sqlquery sqlGetBoss = SqlPrepareQueryCampaign(sDatabase, "SELECT * FROM bosses WHERE area = @area AND slot = @slot");
+        SqlBindString(sqlGetBoss, "@area", GetTag(oArea));
+        SqlBindInt(sqlGetBoss, "@slot", nNth);
+        if(SqlStep(sqlGetBoss)){
+            //update
+            sqlquery sqlUpdateBoss = SqlPrepareQueryCampaign(sDatabase, "UPDATE bosses SET name = @name, resref = @resref, rating = @rating, position = @position, direction = @direction, enabled = @enabled, timeflag = @timeflag WHERE area = @area AND slot = @slot");
+            SqlBindString(sqlUpdateBoss, "@area", GetTag(oArea));
+            SqlBindInt(sqlUpdateBoss, "@slot", nNth);
+            SqlBindString(sqlUpdateBoss, "@name", gsBOGetCreatureName(nNth, oArea));
+            SqlBindString(sqlUpdateBoss, "@resref", gsBOGetCreatureTemplate(nNth, oArea));
+            SqlBindFloat(sqlUpdateBoss, "@rating", gsBOGetCreatureRating(nNth, oArea));
+            SqlBindVector(sqlUpdateBoss, "@position", GetPositionFromLocation(gsBOGetCreatureLocation(nNth, oArea)));
+            SqlBindFloat(sqlUpdateBoss, "@direction", GetFacingFromLocation(gsBOGetCreatureLocation(nNth, oArea)));
+            SqlBindInt(sqlUpdateBoss, "@enabled", TRUE);
+            SqlBindInt(sqlUpdateBoss, "@timeflag", 0);
+            SqlStep(sqlUpdateBoss);
+        } else {
+            //insert
+            sqlquery sqlCreateBoss = SqlPrepareQueryCampaign(sDatabase, "INSERT INTO bosses (area, slot, name, resref, rating, position, direction, enabled, timeflag) VALUES (@area, @slot, @name, @resref, @rating, @position, @direction, @enabled, @timeflag)");
+            SqlBindString(sqlCreateBoss, "@area", GetTag(oArea));
+            SqlBindInt(sqlCreateBoss, "@slot", nNth);
+            SqlBindString(sqlCreateBoss, "@name", gsBOGetCreatureName(nNth, oArea));
+            SqlBindString(sqlCreateBoss, "@resref", gsBOGetCreatureTemplate(nNth, oArea));
+            SqlBindFloat(sqlCreateBoss, "@rating", gsBOGetCreatureRating(nNth, oArea));
+            SqlBindVector(sqlCreateBoss, "@position", GetPositionFromLocation(gsBOGetCreatureLocation(nNth, oArea)));
+            SqlBindFloat(sqlCreateBoss, "@direction", GetFacingFromLocation(gsBOGetCreatureLocation(nNth, oArea)));
+            SqlBindInt(sqlCreateBoss, "@enabled", TRUE);
+            SqlBindInt(sqlCreateBoss, "@timeflag", 0);
+            SqlStep(sqlCreateBoss);
+        }
     }
 }
 //----------------------------------------------------------------
 void gsBOLoadArea(object oArea = OBJECT_SELF)
 {
-    string sDatabase = "GS_BO_" + GetTag(oArea);
+    string sDatabase = "GS_BOSSES";// + GetTag(oArea);
     string sNth      = "";
     int nNth         = 0;
 
-    for (nNth = 1; nNth <= GS_BO_LIMIT_SLOT; nNth++)
-    {
+    sqlquery sqlGetBosses = SqlPrepareQueryCampaign(sDatabase, "SELECT slot, name, resref, rating, position, direction, enabled, timeflag FROM bosses WHERE area = @area");
+    SqlBindString(sqlGetBosses, "@area", GetTag(oArea));
+    while(SqlStep(sqlGetBosses)){
+        nNth = SqlGetInt(sqlGetBosses, 0);
         sNth = IntToString(nNth);
+        
 
         SetLocalString(oArea,
                        "GS_BO_NAME_" + sNth,
-                       GetCampaignString(sDatabase, "NAME_" + sNth));
+                       SqlGetString(sqlGetBosses, 1));
         SetLocalString(oArea,
                        "GS_BO_RESREF_" + sNth,
-                       GetCampaignString(sDatabase, "RESREF_" + sNth));
+                       SqlGetString(sqlGetBosses, 2));
         SetLocalFloat(oArea,
                       "GS_BO_RATING_" + sNth,
-                      GetCampaignFloat(sDatabase, "RATING_" + sNth));
+                      SqlGetFloat(sqlGetBosses, 3));
         SetLocalLocation(oArea,
                          "GS_BO_LOCATION_" + sNth,
-                         gsLOGetDBLocation(sDatabase, "LOCATION_" + sNth));
+                         gsLOConstructLocation(GetTag(oArea), SqlGetVector(sqlGetBosses, 4), SqlGetFloat(sqlGetBosses, 5)));
+        SetLocalInt(oArea,
+                      "GS_BO_ENABLED_" + sNth,
+                      SqlGetInt(sqlGetBosses, 6));
+        SetLocalInt(oArea,
+                      "GS_BO_TIMEFLAG_" + sNth,
+                      SqlGetInt(sqlGetBosses, 7));      
     }
 }

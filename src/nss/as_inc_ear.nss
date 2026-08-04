@@ -6,7 +6,6 @@ const float AS_EAR_SCALE_UPPER_LIMIT = 1.5;
 const float AS_EAR_SCALE_LOWER_LIMIT = 0.5;
 const float AS_EAR_TRANSLATE_LIMIT = 0.5;
 
-void asEACreateDatabase();
 void asEAInitializeEarRecord(object oPlayer);
 float asEAGetEarScale(object oPlayer);
 vector asEAGetEarVector(object oPlayer);
@@ -17,15 +16,9 @@ void asEATransformEarVector(object oPlayer, float fChangeX, float fChangeY, floa
 void asEARemoveEars(object oPlayer);
 void asEACreateEars(object oPlayer);
 
-void asEACreateDatabase()
-{
-    sqlquery sqlCreateTable = SqlPrepareQueryCampaign(AS_EAR_DATABASE, "CREATE TABLE IF NOT EXISTS ears (id TEXT PRIMARY KEY, scale REAL, translate BLOB, type INTEGER);");
-    SqlStep(sqlCreateTable);
-}
 
 void asEAInitializeEarRecord(object oPlayer)
 {
-    asEACreateDatabase();
     sqlquery sqlInitializeEars = SqlPrepareQueryCampaign(AS_EAR_DATABASE, "INSERT INTO ears (id, scale, translate, type) VALUES (@id, @scale, @translate, @type);");
     SqlBindString(sqlInitializeEars, "@id", gsPCGetPlayerID(oPlayer));
     SqlBindFloat(sqlInitializeEars, "@scale", 0.0f);

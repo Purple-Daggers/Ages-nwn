@@ -511,11 +511,6 @@ void gsENSaveArea(object oArea = OBJECT_SELF)
     string sNth      = "";
     int nNth         = 0;
 
-    sqlquery sqlCreateCreatureTable = SqlPrepareQueryCampaign(sDatabase, "CREATE TABLE IF NOT EXISTS creatures (area TEXT, slot INTEGER, name TEXT, resref TEXT, rating REAL, chance INTEGER, timeflag INTEGER, PRIMARY KEY (area, slot));");
-    SqlStep(sqlCreateCreatureTable);
-    sqlquery sqlCreateEncounterTable = SqlPrepareQueryCampaign(sDatabase, "CREATE TABLE IF NOT EXISTS encounters (area TEXT PRIMARY KEY, chance INTEGER, rating REAL);");
-    SqlStep(sqlCreateEncounterTable);
-
     for (nNth = 1; nNth <= GS_EN_LIMIT_SLOT; nNth++)
     {
         sNth = IntToString(nNth);
@@ -572,11 +567,6 @@ void gsENLoadArea(object oArea = OBJECT_SELF)
     string sDatabase = "GS_ENCOUNTERS";// + GetTag(oArea);
     string sNth      = "";
     int nNth         = 0;
-
-    sqlquery sqlCreateCreatureTable = SqlPrepareQueryCampaign(sDatabase, "CREATE TABLE IF NOT EXISTS creatures (area TEXT, slot INTEGER, name TEXT, resref TEXT, rating REAL, chance INTEGER, timeflag INTEGER, PRIMARY KEY (area, slot));");
-    SqlStep(sqlCreateCreatureTable);
-    sqlquery sqlCreateEncounterTable = SqlPrepareQueryCampaign(sDatabase, "CREATE TABLE IF NOT EXISTS encounters (area TEXT PRIMARY KEY, chance INTEGER, rating REAL);");
-    SqlStep(sqlCreateEncounterTable);
 
     sqlquery sqlGetCreatures = SqlPrepareQueryCampaign(sDatabase, "SELECT slot, name, resref, rating, chance, timeflag FROM creatures WHERE area = @area");
     SqlBindString(sqlGetCreatures, "@area", GetTag(oArea));

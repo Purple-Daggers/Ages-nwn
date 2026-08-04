@@ -110,10 +110,6 @@ void gsInitialize()
 
     SendMessageToPC(OBJECT_SELF, GS_T_16777216);
 
-    //mana system for magic
-
-    gsCMCalculateMaximumMana(OBJECT_SELF);
-
     SetLocalInt(OBJECT_SELF, "GS_ENABLED", TRUE);
 }
 //----------------------------------------------------------------

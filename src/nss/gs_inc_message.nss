@@ -23,8 +23,6 @@ string gsMEGetMessage(string sMessageID);
 void gsMESetMessage(string sMessageID, string sTitle, string sText, object oAuthor = OBJECT_SELF)
 {
     if (! GetIsPC(oAuthor)) return;
-    sqlquery sqlCreateTable = SqlPrepareQueryCampaign("GS_MESSAGE", "CREATE TABLE IF NOT EXISTS messages (id TEXT PRIMARY KEY, timestamp INTEGER, title TEXT, text TEXT, author TEXT, author_id TEXT);");
-    SqlStep(sqlCreateTable);
 
     sqlquery sqlInsertMessage = SqlPrepareQueryCampaign("GS_MESSAGE", "INSERT INTO messages (id, timestamp, title, text, author, author_id) VALUES (@id, @timestamp, @title, @text, @author, @author_id);");
     SqlBindString(sqlInsertMessage, "@id", GetSubString(sMessageID, 6, -1));

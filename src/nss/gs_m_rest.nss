@@ -5,32 +5,22 @@
 #include "gs_inc_strack"
 #include "gs_inc_text"
 
-void gsRestMonitor(int nEffect = TRUE)
+void gsRestMonitor(int nEffect = FALSE)
 {
     if (GetCurrentAction() == ACTION_REST)
     {
         gsSTAdjustState(GS_ST_REST, 5.0);
         gsSTAdjustState(GS_ST_SOBRIETY, 5.0);
-
-        int nCurrentMana = GetLocalInt(OBJECT_SELF, "GS_CURRENT_MANA");
-        int nMaximumMana = GetLocalInt(OBJECT_SELF, "GS_MAXIMUM_MANA");
-
-        if(nMaximumMana > nCurrentMana){
-            int nResultingMana = nCurrentMana += 5;
-            if(nResultingMana > nMaximumMana){
-                nResultingMana = nMaximumMana;
-            }
-            SetLocalInt(OBJECT_SELF, "GS_CURRENT_MANA", nResultingMana);
-        }
+        gsSTAdjustState(GS_ST_MANA, 5.0f);
 
         SetLocalInt(OBJECT_SELF, "GS_SPELL_EXHAUSTION_CURRENT", 0);
 
-        if (nEffect)
+        /*if (nEffect)
         {
             ApplyEffectToObject(DURATION_TYPE_INSTANT,
                                 EffectVisualEffect(VFX_IMP_SLEEP),
                                 OBJECT_SELF);
-        }
+        }*/
 
         DelayCommand(2.0, gsRestMonitor(! nEffect));
     }

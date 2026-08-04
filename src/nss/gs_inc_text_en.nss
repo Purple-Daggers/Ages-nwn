@@ -435,3 +435,4 @@ const string GS_T_16777646 = "Resplendent Bright-Moon";
 const string GS_T_16777647 = "Mana remaining: %1";
 const string GS_T_16777648 = "Insufficient mana to cast spell of level: %1";
 const string GS_T_16777649 = "You are exhausted by repeated high level spells.";
+const string GS_T_16777650 = "Mana";

@@ -29,9 +29,6 @@ void gsFXLoadFixture(string sAreaID, int nLimit = 40)
     int nNth         = 0;
     string sDatabase = GS_FX_FIXTURE_DATABASE;
 
-    sqlquery sqlCreateTable = SqlPrepareQueryCampaign(sDatabase, "CREATE TABLE IF NOT EXISTS fixtures (id TEXT PRIMARY KEY, template TEXT, name TEXT, description TEXT, owner TEXT, area TEXT, position BLOB, direction REAL, broken INTEGER);");
-    SqlStep(sqlCreateTable);
-
     sqlquery sqlGetFixtures = SqlPrepareQueryCampaign(sDatabase, "SELECT id, template, name, description, owner, area, position, direction, broken from fixtures WHERE area = @area;");
     SqlBindString(sqlGetFixtures, "@area", sAreaID);
     while(SqlStep(sqlGetFixtures))
@@ -51,9 +48,6 @@ void gsFXLoadFixture(string sAreaID, int nLimit = 40)
 int gsFXSaveFixture(string sAreaID, object oFixture = OBJECT_SELF, int nLimit = 40)
 {
     string sDatabase = GS_FX_FIXTURE_DATABASE;
-
-    sqlquery sqlCreateTable = SqlPrepareQueryCampaign(sDatabase, "CREATE TABLE IF NOT EXISTS fixtures (id TEXT PRIMARY KEY, template TEXT, name TEXT, description TEXT, owner TEXT, area TEXT, position BLOB, direction REAL, broken INTEGER);");
-    SqlStep(sqlCreateTable);
 
     sqlquery sqlGetFixtureCount = SqlPrepareQueryCampaign(sDatabase, "SELECT COUNT(*) from fixtures WHERE area = @area;");
     SqlBindString(sqlGetFixtureCount, "@area", sAreaID);
