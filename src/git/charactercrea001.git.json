@@ -1593,11 +1593,11 @@
         },
         "LinkedTo": {
           "type": "cexostring",
-          "value": "GS_DOOR_AAA_NN"
+          "value": "GS_TARGET_JW_03"
         },
         "LinkedToFlags": {
           "type": "byte",
-          "value": 1
+          "value": 2
         },
         "LoadScreenID": {
           "type": "word",
@@ -1614,6 +1614,7 @@
         "LocName": {
           "type": "cexolocstring",
           "value": {
+            "0": "Door",
             "id": 5349
           }
         },
@@ -1679,7 +1680,7 @@
         },
         "Plot": {
           "type": "byte",
-          "value": 0
+          "value": 1
         },
         "PortraitId": {
           "type": "word",
