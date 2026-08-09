@@ -1779,6 +1779,30 @@
                 "type": "byte",
                 "value": 20
               },
+              "LIST": {
+                "type": "list",
+                "value": [
+                  {
+                    "__struct_id": 0,
+                    "CR": {
+                      "type": "float",
+                      "value": 3.0
+                    },
+                    "FACTION": {
+                      "type": "cexostring",
+                      "value": "Defender"
+                    },
+                    "NAME": {
+                      "type": "cexostring",
+                      "value": "Sewer Keeper"
+                    },
+                    "RESREF": {
+                      "type": "resref",
+                      "value": "sewerkeeper"
+                    }
+                  }
+                ]
+              },
               "STRREF": {
                 "type": "dword",
                 "value": 6712
@@ -3986,6 +4010,25 @@
                     "RESREF": {
                       "type": "resref",
                       "value": "gs_creature031"
+                    }
+                  },
+                  {
+                    "__struct_id": 0,
+                    "CR": {
+                      "type": "float",
+                      "value": 1.0
+                    },
+                    "FACTION": {
+                      "type": "cexostring",
+                      "value": "Hostile"
+                    },
+                    "NAME": {
+                      "type": "cexostring",
+                      "value": "Sewer Outlaw"
+                    },
+                    "RESREF": {
+                      "type": "resref",
+                      "value": "seweroutlaw"
                     }
                   },
                   {
