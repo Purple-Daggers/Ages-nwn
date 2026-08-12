@@ -161,7 +161,7 @@ void gsENSpawnAtLocation(float fChallenge, int nCount, location lLocation, float
         {
             _nChance = fRating > fChallenge ?
                        FloatToInt(IntToFloat(_nChance) * _fChallenge / fRating) :
-                       FloatToInt(IntToFloat(_nChance) * fRating * 1.5 / fChallenge);
+                       FloatToInt(IntToFloat(_nChance) /* * fRating * 1.5 / fChallenge */);
 
             if (_nChance < 1)       _nChance =  1;
             else if (_nChance > 10) _nChance = 10;

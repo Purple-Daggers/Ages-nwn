@@ -14,7 +14,7 @@ const string GS_BOSS_HEAD_MEDIUM = "gs_item390";
 const string GS_BOSS_HEAD_LOW    = "gs_item391";
 const string GS_BOSS_HEAD_MINI   = "gs_item392";
 const int GS_TIMEOUT             = 7200; //TIME UPDATE: 2 hours
-const int GS_LIMIT_VALUE         = 10000;
+const int GS_LIMIT_VALUE         = 100;
 
 void _gsDropLoot()
 {
