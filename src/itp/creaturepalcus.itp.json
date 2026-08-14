@@ -1662,6 +1662,25 @@
                           "__struct_id": 0,
                           "CR": {
                             "type": "float",
+                            "value": 0.3333
+                          },
+                          "FACTION": {
+                            "type": "cexostring",
+                            "value": "Hostile"
+                          },
+                          "NAME": {
+                            "type": "cexostring",
+                            "value": "Dire Rat"
+                          },
+                          "RESREF": {
+                            "type": "resref",
+                            "value": "as_creature001"
+                          }
+                        },
+                        {
+                          "__struct_id": 0,
+                          "CR": {
+                            "type": "float",
                             "value": 0.125
                           },
                           "FACTION": {
@@ -2134,6 +2153,30 @@
                     "ID": {
                       "type": "byte",
                       "value": 11
+                    },
+                    "LIST": {
+                      "type": "list",
+                      "value": [
+                        {
+                          "__struct_id": 0,
+                          "CR": {
+                            "type": "float",
+                            "value": 0.3333
+                          },
+                          "FACTION": {
+                            "type": "cexostring",
+                            "value": "Hostile"
+                          },
+                          "NAME": {
+                            "type": "cexostring",
+                            "value": "Small Spider"
+                          },
+                          "RESREF": {
+                            "type": "resref",
+                            "value": "as_creature002"
+                          }
+                        }
+                      ]
                     },
                     "STRREF": {
                       "type": "dword",
