@@ -35,6 +35,7 @@ try:
         f'perl -p "{perl_file}" | '
         '.\\tools\\nwn_gff.exe -l json -o .\\src\\ifo\\module.ifo.json --pretty'
     )
+    print(cmd)
     result = os.system(cmd)
 
 finally:
