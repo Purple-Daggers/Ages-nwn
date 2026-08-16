@@ -25,20 +25,6 @@
         "__struct_id": 6,
         "Area_Name": {
           "type": "resref",
-          "value": "area001"
-        }
-      },
-      {
-        "__struct_id": 6,
-        "Area_Name": {
-          "type": "resref",
-          "value": "area002"
-        }
-      },
-      {
-        "__struct_id": 6,
-        "Area_Name": {
-          "type": "resref",
           "value": "area003"
         }
       },
@@ -144,62 +130,6 @@
         "__struct_id": 6,
         "Area_Name": {
           "type": "resref",
-          "value": "area018"
-        }
-      },
-      {
-        "__struct_id": 6,
-        "Area_Name": {
-          "type": "resref",
-          "value": "area019"
-        }
-      },
-      {
-        "__struct_id": 6,
-        "Area_Name": {
-          "type": "resref",
-          "value": "area020"
-        }
-      },
-      {
-        "__struct_id": 6,
-        "Area_Name": {
-          "type": "resref",
-          "value": "area021"
-        }
-      },
-      {
-        "__struct_id": 6,
-        "Area_Name": {
-          "type": "resref",
-          "value": "area022"
-        }
-      },
-      {
-        "__struct_id": 6,
-        "Area_Name": {
-          "type": "resref",
-          "value": "area023"
-        }
-      },
-      {
-        "__struct_id": 6,
-        "Area_Name": {
-          "type": "resref",
-          "value": "area024"
-        }
-      },
-      {
-        "__struct_id": 6,
-        "Area_Name": {
-          "type": "resref",
-          "value": "area025"
-        }
-      },
-      {
-        "__struct_id": 6,
-        "Area_Name": {
-          "type": "resref",
           "value": "bankofprasinos"
         }
       },
@@ -214,13 +144,6 @@
         "__struct_id": 6,
         "Area_Name": {
           "type": "resref",
-          "value": "cavedungeon"
-        }
-      },
-      {
-        "__struct_id": 6,
-        "Area_Name": {
-          "type": "resref",
           "value": "charactercrea001"
         }
       },
@@ -228,14 +151,21 @@
         "__struct_id": 6,
         "Area_Name": {
           "type": "resref",
-          "value": "crenelheights"
+          "value": "charactercreatio"
         }
       },
       {
         "__struct_id": 6,
         "Area_Name": {
           "type": "resref",
-          "value": "dmfi_custom_enc"
+          "value": "charactercreaton"
+        }
+      },
+      {
+        "__struct_id": 6,
+        "Area_Name": {
+          "type": "resref",
+          "value": "dormaniranch"
         }
       },
       {
@@ -291,13 +221,6 @@
         "__struct_id": 6,
         "Area_Name": {
           "type": "resref",
-          "value": "gs_area_inventor"
-        }
-      },
-      {
-        "__struct_id": 6,
-        "Area_Name": {
-          "type": "resref",
           "value": "gs_area_trade"
         }
       },
@@ -319,21 +242,7 @@
         "__struct_id": 6,
         "Area_Name": {
           "type": "resref",
-          "value": "loggerhillcave"
-        }
-      },
-      {
-        "__struct_id": 6,
-        "Area_Name": {
-          "type": "resref",
           "value": "loralon"
-        }
-      },
-      {
-        "__struct_id": 6,
-        "Area_Name": {
-          "type": "resref",
-          "value": "maze"
         }
       },
       {
@@ -347,27 +256,6 @@
         "__struct_id": 6,
         "Area_Name": {
           "type": "resref",
-          "value": "olddormani"
-        }
-      },
-      {
-        "__struct_id": 6,
-        "Area_Name": {
-          "type": "resref",
-          "value": "oldguildcella001"
-        }
-      },
-      {
-        "__struct_id": 6,
-        "Area_Name": {
-          "type": "resref",
-          "value": "oldguildcellar"
-        }
-      },
-      {
-        "__struct_id": 6,
-        "Area_Name": {
-          "type": "resref",
           "value": "prasinoscastle"
         }
       },
@@ -375,7 +263,7 @@
         "__struct_id": 6,
         "Area_Name": {
           "type": "resref",
-          "value": "prasinosoutsk001"
+          "value": "gs_area_inventor"
         }
       },
       {
@@ -389,42 +277,21 @@
         "__struct_id": 6,
         "Area_Name": {
           "type": "resref",
-          "value": "pra_sewers_c"
-        }
-      },
-      {
-        "__struct_id": 6,
-        "Area_Name": {
-          "type": "resref",
-          "value": "pra_sewers_e"
-        }
-      },
-      {
-        "__struct_id": 6,
-        "Area_Name": {
-          "type": "resref",
-          "value": "pra_sewers_n"
-        }
-      },
-      {
-        "__struct_id": 6,
-        "Area_Name": {
-          "type": "resref",
-          "value": "pra_sewers_s"
-        }
-      },
-      {
-        "__struct_id": 6,
-        "Area_Name": {
-          "type": "resref",
-          "value": "pra_sewers_w"
-        }
-      },
-      {
-        "__struct_id": 6,
-        "Area_Name": {
-          "type": "resref",
           "value": "thehighpath"
+        }
+      },
+      {
+        "__struct_id": 6,
+        "Area_Name": {
+          "type": "resref",
+          "value": "area001"
+        }
+      },
+      {
+        "__struct_id": 6,
+        "Area_Name": {
+          "type": "resref",
+          "value": "area002"
         }
       }
     ]
@@ -452,7 +319,8 @@
   "Mod_Description": {
     "type": "cexolocstring",
     "value": {
-      "0": ""
+      "0": "",
+      "4": "Khaarsis ist anders.\n\nHomepage: http://khaarsis.de.vu"
     }
   },
   "Mod_DuskHour": {
@@ -461,7 +329,7 @@
   },
   "Mod_Entry_Area": {
     "type": "resref",
-    "value": "oldguildcella001"
+    "value": "area001"
   },
   "Mod_Entry_Dir_X": {
     "type": "float",
@@ -473,15 +341,15 @@
   },
   "Mod_Entry_X": {
     "type": "float",
-    "value": 64.98429870605469
+    "value": 74.78319999999999
   },
   "Mod_Entry_Y": {
     "type": "float",
-    "value": 64.98690032958984
+    "value": 16.2685
   },
   "Mod_Entry_Z": {
     "type": "float",
-    "value": -0.0
+    "value": 0.0
   },
   "Mod_Expan_List": {
     "type": "list",
@@ -499,13 +367,6 @@
         "Mod_Hak": {
           "type": "cexostring",
           "value": "ages_2das"
-        }
-      },
-      {
-        "__struct_id": 8,
-        "Mod_Hak": {
-          "type": "cexostring",
-          "value": "ages_models"
         }
       },
       {
@@ -660,7 +521,7 @@
   },
   "Mod_MinPerHour": {
     "type": "byte",
-    "value": 20
+    "value": 6
   },
   "Mod_Name": {
     "type": "cexolocstring",
@@ -703,11 +564,11 @@
   },
   "Mod_OnNuiEvent": {
     "type": "resref",
-    "value": "as_m_nui"
+    "value": ""
   },
   "Mod_OnPlrChat": {
     "type": "resref",
-    "value": "gs_m_chat"
+    "value": ""
   },
   "Mod_OnPlrDeath": {
     "type": "resref",
@@ -735,7 +596,7 @@
   },
   "Mod_OnPlrTarget": {
     "type": "resref",
-    "value": "as_m_target"
+    "value": ""
   },
   "Mod_OnPlrTileAct": {
     "type": "resref",
@@ -763,7 +624,7 @@
   },
   "Mod_StartDay": {
     "type": "byte",
-    "value": 10
+    "value": 1
   },
   "Mod_StartHour": {
     "type": "byte",
@@ -771,7 +632,7 @@
   },
   "Mod_StartMonth": {
     "type": "byte",
-    "value": 3
+    "value": 1
   },
   "Mod_StartMovie": {
     "type": "resref",
@@ -779,7 +640,7 @@
   },
   "Mod_StartYear": {
     "type": "dword",
-    "value": 310
+    "value": 0
   },
   "Mod_Tag": {
     "type": "cexostring",
