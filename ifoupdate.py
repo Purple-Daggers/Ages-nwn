@@ -31,9 +31,9 @@ with tempfile.NamedTemporaryFile(
 
 try:
     cmd = (
-        'nwn_gff -i ./src/ifo/module.ifo.json -k json | '
+        '.\\tools\\nwn_gff.exe -i .\\src\\ifo\\module.ifo.json -k json | '
         f'perl -p "{perl_file}" | '
-        'nwn_gff -l json -o ./src/ifo/module.ifo.json --pretty'
+        '.\\tools\\nwn_gff.exe -l json -o .\\src\\ifo\\module.ifo.json --pretty'
     )
     result = os.system(cmd)
 
