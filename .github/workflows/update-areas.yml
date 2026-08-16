@@ -19,10 +19,8 @@ jobs:
         with:
           python-version: "3.x"
 
-      - name: Install dependencies
-        run: |
-          sudo apt-get update
-          sudo apt-get install -y perl
+      - name: Install Perl
+        run: choco install strawberryperl -y
 
       - name: Run update script
         run: python ifoupdate.py
@@ -34,10 +32,10 @@ jobs:
 
           git add .
 
-          if git diff --cached --quiet; then
-            echo "No changes to commit."
-          else
+          if (git diff --cached --quiet) {
+            Write-Host "No changes to commit."
+          }
+          else {
             git commit -m "Update area list"
             git push
-          fi
-          
+          }
