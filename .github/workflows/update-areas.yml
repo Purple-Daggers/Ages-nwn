@@ -1,43 +1,68 @@
-name: Update Area List
+name: Automatically repair Module.ifo
 
 on:
-  workflow_dispatch:
+  pull_request:
+    types: [opened, synchronize, reopened]
 
 permissions:
   contents: write
 
 jobs:
-  update:
+  resolve:
     runs-on: windows-latest
 
     steps:
-      - name: Checkout repository
+      - name: Checkout PR branch
         uses: actions/checkout@v4
-
-      - name: Set up Python
-        uses: actions/setup-python@v5
         with:
-          python-version: "3.x"
+          fetch-depth: 0
+          ref: ${{ github.event.pull_request.head.ref }}
 
-      - name: Install dependencies
-        run: |
-          sudo apt-get update
-          sudo apt-get install -y perl
-
-      - name: Run update script
-        run: python ifoupdate.py
-
-      - name: Commit changes
+      - name: Configure Git
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
 
-          git add .
+      - name: Install Perl
+        run: choco install strawberryperl -y
 
-          if git diff --cached --quiet; then
-            echo "No changes to commit."
-          else
-            git commit -m "Update area list"
-            git push
-          fi
-          
+      - name: Fetch target branch
+        run: |
+          git fetch origin ${{ github.event.pull_request.base.ref }}
+
+      - name: Attempt merge
+        id: merge
+        continue-on-error: true
+        run: |
+          git merge origin/${{ github.event.pull_request.base.ref }}
+
+      - name: Resolve module.ifo.json
+        if: steps.merge.outcome == 'failure'
+        shell: powershell
+        run: |
+          Write-Host "Resolving module.ifo.json..."
+
+          git checkout --ours ./src/ifo/module.ifo.json #Python script requires original file
+
+          python ifoupdate.py
+
+      - name: Finish merge
+        if: steps.merge.outcome == 'failure'
+        shell: powershell
+        run: |
+          git add ./src/ifo/module.ifo.json
+
+          git diff --cached --quiet
+
+          if ($LASTEXITCODE -ne 0) {
+            git commit -m "Automatically resolve module.ifo.json"
+          }
+          else {
+            Write-Host "No changes to commit."
+            exit 1
+          }
+
+      - name: Push resolution
+        if: steps.merge.outcome == 'failure'
+        run: |
+          git push origin HEAD:${{ github.event.pull_request.head.ref }}
