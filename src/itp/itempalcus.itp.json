@@ -1587,6 +1587,17 @@
                     "__struct_id": 0,
                     "NAME": {
                       "type": "cexostring",
+                      "value": "Astanus's Armor"
+                    },
+                    "RESREF": {
+                      "type": "resref",
+                      "value": "as_astanusarmor"
+                    }
+                  },
+                  {
+                    "__struct_id": 0,
+                    "NAME": {
+                      "type": "cexostring",
                       "value": "Chain Armor (Adamantine)"
                     },
                     "RESREF": {
@@ -2591,13 +2602,13 @@
                   },
                   {
                     "__struct_id": 0,
-                    "NAME": {
-                      "type": "cexostring",
-                      "value": "Dire Rat Bite"
-                    },
                     "RESREF": {
                       "type": "resref",
                       "value": "as_item001"
+                    },
+                    "STRREF": {
+                      "type": "dword",
+                      "value": 3108
                     }
                   },
                   {
@@ -3993,6 +4004,17 @@
                     "LIST": {
                       "type": "list",
                       "value": [
+                        {
+                          "__struct_id": 0,
+                          "NAME": {
+                            "type": "cexostring",
+                            "value": "Astanus's Cloak"
+                          },
+                          "RESREF": {
+                            "type": "resref",
+                            "value": "as_astanuscloak"
+                          }
+                        },
                         {
                           "__struct_id": 0,
                           "NAME": {
@@ -10788,6 +10810,17 @@
                     "LIST": {
                       "type": "list",
                       "value": [
+                        {
+                          "__struct_id": 0,
+                          "NAME": {
+                            "type": "cexostring",
+                            "value": "Astanus's Crossbow"
+                          },
+                          "RESREF": {
+                            "type": "resref",
+                            "value": "as_astanuscrossb"
+                          }
+                        },
                         {
                           "__struct_id": 0,
                           "NAME": {
