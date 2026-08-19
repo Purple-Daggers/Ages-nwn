@@ -2691,6 +2691,87 @@
                       "type": "byte",
                       "value": 30
                     },
+                    "LIST": {
+                      "type": "list",
+                      "value": [
+                        {
+                          "__struct_id": 0,
+                          "CR": {
+                            "type": "float",
+                            "value": 5.0
+                          },
+                          "FACTION": {
+                            "type": "cexostring",
+                            "value": "Hostile"
+                          },
+                          "NAME": {
+                            "type": "cexostring",
+                            "value": "Greater Shadow"
+                          },
+                          "RESREF": {
+                            "type": "resref",
+                            "value": "as_creature006"
+                          }
+                        },
+                        {
+                          "__struct_id": 0,
+                          "CR": {
+                            "type": "float",
+                            "value": 3.0
+                          },
+                          "FACTION": {
+                            "type": "cexostring",
+                            "value": "Hostile"
+                          },
+                          "NAME": {
+                            "type": "cexostring",
+                            "value": "Shadow"
+                          },
+                          "RESREF": {
+                            "type": "resref",
+                            "value": "as_creature005"
+                          }
+                        },
+                        {
+                          "__struct_id": 0,
+                          "CR": {
+                            "type": "float",
+                            "value": 12.0
+                          },
+                          "FACTION": {
+                            "type": "cexostring",
+                            "value": "Hostile"
+                          },
+                          "NAME": {
+                            "type": "cexostring",
+                            "value": "Unknown Shadow"
+                          },
+                          "RESREF": {
+                            "type": "resref",
+                            "value": "as_creature007"
+                          }
+                        },
+                        {
+                          "__struct_id": 0,
+                          "CR": {
+                            "type": "float",
+                            "value": 2.0
+                          },
+                          "FACTION": {
+                            "type": "cexostring",
+                            "value": "Hostile"
+                          },
+                          "NAME": {
+                            "type": "cexostring",
+                            "value": "Weak Shadow"
+                          },
+                          "RESREF": {
+                            "type": "resref",
+                            "value": "as_creature004"
+                          }
+                        }
+                      ]
+                    },
                     "STRREF": {
                       "type": "dword",
                       "value": 2116
@@ -2705,6 +2786,25 @@
                     "LIST": {
                       "type": "list",
                       "value": [
+                        {
+                          "__struct_id": 0,
+                          "CR": {
+                            "type": "float",
+                            "value": 0.5
+                          },
+                          "FACTION": {
+                            "type": "cexostring",
+                            "value": "Hostile"
+                          },
+                          "NAME": {
+                            "type": "cexostring",
+                            "value": "Skeletal Archer"
+                          },
+                          "RESREF": {
+                            "type": "resref",
+                            "value": "as_creature003"
+                          }
+                        },
                         {
                           "__struct_id": 0,
                           "CR": {
