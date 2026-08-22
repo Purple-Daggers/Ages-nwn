@@ -78,8 +78,46 @@ void main()
 
         //Head
         SetCreatureBodyPart(CREATURE_PART_HEAD, Random(19) + 1);
-        SetColor(OBJECT_SELF, COLOR_CHANNEL_HAIR, Random(16));
-        SetColor(OBJECT_SELF, COLOR_CHANNEL_SKIN, Random(8));
+
+        int nHairColorPercentage = Random(100);
+        if(nHairColorPercentage >= 84)
+        {
+            if(Random(2))
+            {
+                //Blond
+                SetColor(OBJECT_SELF, COLOR_CHANNEL_HAIR, 8 + Random(4));
+            }
+            else
+            {
+                //Red
+                SetColor(OBJECT_SELF, COLOR_CHANNEL_HAIR, 4 + Random(4));
+            }
+        }
+        else
+        {
+            if(Random(2))
+            {
+                //Brown 1st range
+                SetColor(OBJECT_SELF, COLOR_CHANNEL_HAIR, Random(4));
+            }
+            else
+            {
+                //Brown 2nd range
+                SetColor(OBJECT_SELF, COLOR_CHANNEL_HAIR, 12 + Random(4));
+            }
+        }
+
+        int nSkinColorPercentage = Random(100);
+        if(nSkinColorPercentage >= 69)
+        {
+            //Black or mixed
+            SetColor(OBJECT_SELF, COLOR_CHANNEL_SKIN, 4 + Random(4));
+        }
+        else
+        {
+            //White
+            SetColor(OBJECT_SELF, COLOR_CHANNEL_SKIN, Random(4));
+        }
 
         //Equipment
         int nClass = GetClassByPosition(1);
