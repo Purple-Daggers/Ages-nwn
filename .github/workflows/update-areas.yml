@@ -1,7 +1,7 @@
 name: Automatically repair Module.ifo
 
 on:
-  pull_request:
+  pull_request_target:
     types: [opened, synchronize, reopened]
 
 permissions:
@@ -43,7 +43,8 @@ jobs:
         run: |
           Write-Host "Resolving module.ifo.json..."
 
-          git checkout --ours ./src/ifo/module.ifo.json #Python script requires original file
+          git checkout --ours ./src/ifo/module.ifo.json
+          git restore --source origin/${{ github.event.pull_request.base.ref }} -- ifoupdate.py
 
           python ifoupdate.py
 
