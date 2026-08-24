@@ -5,6 +5,10 @@ void main()
     object oUser = GetLastUsedBy();
     string sTag  = GetTag(OBJECT_SELF);
 
+    if (!GetIsPC(oUser) || !GetIsPC(GetMaster(oUser)))
+    {
+        return;
+    }
     //workaround to prevent unwanted transitions
     //put underscore to beginning of lever tag
     if (GetStringLeft(sTag, 1) == "_")
