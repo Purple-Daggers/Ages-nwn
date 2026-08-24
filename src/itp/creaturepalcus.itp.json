@@ -1662,6 +1662,25 @@
                           "__struct_id": 0,
                           "CR": {
                             "type": "float",
+                            "value": 0.3333
+                          },
+                          "FACTION": {
+                            "type": "cexostring",
+                            "value": "Hostile"
+                          },
+                          "NAME": {
+                            "type": "cexostring",
+                            "value": "Dire Rat"
+                          },
+                          "RESREF": {
+                            "type": "resref",
+                            "value": "as_creature001"
+                          }
+                        },
+                        {
+                          "__struct_id": 0,
+                          "CR": {
+                            "type": "float",
                             "value": 0.125
                           },
                           "FACTION": {
@@ -1778,6 +1797,30 @@
               "ID": {
                 "type": "byte",
                 "value": 20
+              },
+              "LIST": {
+                "type": "list",
+                "value": [
+                  {
+                    "__struct_id": 0,
+                    "CR": {
+                      "type": "float",
+                      "value": 3.0
+                    },
+                    "FACTION": {
+                      "type": "cexostring",
+                      "value": "Defender"
+                    },
+                    "NAME": {
+                      "type": "cexostring",
+                      "value": "Sewer Keeper"
+                    },
+                    "RESREF": {
+                      "type": "resref",
+                      "value": "sewerkeeper"
+                    }
+                  }
+                ]
               },
               "STRREF": {
                 "type": "dword",
@@ -2110,6 +2153,30 @@
                     "ID": {
                       "type": "byte",
                       "value": 11
+                    },
+                    "LIST": {
+                      "type": "list",
+                      "value": [
+                        {
+                          "__struct_id": 0,
+                          "CR": {
+                            "type": "float",
+                            "value": 0.3333
+                          },
+                          "FACTION": {
+                            "type": "cexostring",
+                            "value": "Hostile"
+                          },
+                          "NAME": {
+                            "type": "cexostring",
+                            "value": "Small Spider"
+                          },
+                          "RESREF": {
+                            "type": "resref",
+                            "value": "as_creature002"
+                          }
+                        }
+                      ]
                     },
                     "STRREF": {
                       "type": "dword",
@@ -2624,6 +2691,87 @@
                       "type": "byte",
                       "value": 30
                     },
+                    "LIST": {
+                      "type": "list",
+                      "value": [
+                        {
+                          "__struct_id": 0,
+                          "CR": {
+                            "type": "float",
+                            "value": 5.0
+                          },
+                          "FACTION": {
+                            "type": "cexostring",
+                            "value": "Hostile"
+                          },
+                          "NAME": {
+                            "type": "cexostring",
+                            "value": "Greater Shadow"
+                          },
+                          "RESREF": {
+                            "type": "resref",
+                            "value": "as_creature006"
+                          }
+                        },
+                        {
+                          "__struct_id": 0,
+                          "CR": {
+                            "type": "float",
+                            "value": 3.0
+                          },
+                          "FACTION": {
+                            "type": "cexostring",
+                            "value": "Hostile"
+                          },
+                          "NAME": {
+                            "type": "cexostring",
+                            "value": "Shadow"
+                          },
+                          "RESREF": {
+                            "type": "resref",
+                            "value": "as_creature005"
+                          }
+                        },
+                        {
+                          "__struct_id": 0,
+                          "CR": {
+                            "type": "float",
+                            "value": 12.0
+                          },
+                          "FACTION": {
+                            "type": "cexostring",
+                            "value": "Hostile"
+                          },
+                          "NAME": {
+                            "type": "cexostring",
+                            "value": "Unknown Shadow"
+                          },
+                          "RESREF": {
+                            "type": "resref",
+                            "value": "as_creature007"
+                          }
+                        },
+                        {
+                          "__struct_id": 0,
+                          "CR": {
+                            "type": "float",
+                            "value": 2.0
+                          },
+                          "FACTION": {
+                            "type": "cexostring",
+                            "value": "Hostile"
+                          },
+                          "NAME": {
+                            "type": "cexostring",
+                            "value": "Weak Shadow"
+                          },
+                          "RESREF": {
+                            "type": "resref",
+                            "value": "as_creature004"
+                          }
+                        }
+                      ]
+                    },
                     "STRREF": {
                       "type": "dword",
                       "value": 2116
@@ -2638,6 +2786,25 @@
                     "LIST": {
                       "type": "list",
                       "value": [
+                        {
+                          "__struct_id": 0,
+                          "CR": {
+                            "type": "float",
+                            "value": 0.5
+                          },
+                          "FACTION": {
+                            "type": "cexostring",
+                            "value": "Hostile"
+                          },
+                          "NAME": {
+                            "type": "cexostring",
+                            "value": "Skeletal Archer"
+                          },
+                          "RESREF": {
+                            "type": "resref",
+                            "value": "as_creature003"
+                          }
+                        },
                         {
                           "__struct_id": 0,
                           "CR": {
@@ -3498,6 +3665,25 @@
                     "__struct_id": 0,
                     "CR": {
                       "type": "float",
+                      "value": 8.0
+                    },
+                    "FACTION": {
+                      "type": "cexostring",
+                      "value": "Commoner"
+                    },
+                    "NAME": {
+                      "type": "cexostring",
+                      "value": "Astanus"
+                    },
+                    "RESREF": {
+                      "type": "resref",
+                      "value": "as_astanusvaelen"
+                    }
+                  },
+                  {
+                    "__struct_id": 0,
+                    "CR": {
+                      "type": "float",
                       "value": 0.25
                     },
                     "FACTION": {
@@ -3986,6 +4172,25 @@
                     "RESREF": {
                       "type": "resref",
                       "value": "gs_creature031"
+                    }
+                  },
+                  {
+                    "__struct_id": 0,
+                    "CR": {
+                      "type": "float",
+                      "value": 1.0
+                    },
+                    "FACTION": {
+                      "type": "cexostring",
+                      "value": "Hostile"
+                    },
+                    "NAME": {
+                      "type": "cexostring",
+                      "value": "Sewer Outlaw"
+                    },
+                    "RESREF": {
+                      "type": "resref",
+                      "value": "seweroutlaw"
                     }
                   },
                   {

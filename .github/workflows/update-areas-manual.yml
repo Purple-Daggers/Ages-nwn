@@ -1,0 +1,43 @@
+name: Update Area List
+
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  update:
+    runs-on: windows-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          token: ${{ secrets.ASTANUS_BOT_TOKEN }}
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.x"
+
+      - name: Install Perl
+        run: choco install strawberryperl -y
+
+      - name: Run update script
+        run: python ifoupdate.py
+
+      - name: Commit changes
+        run: |
+          git config user.name "Astanus-Vaelen"
+          git config user.email "317461734+Astanus-Vaelen@users.noreply.github.com"
+
+          git add .
+
+          if (git diff --cached --quiet) {
+            Write-Host "No changes to commit."
+          }
+          else {
+            git commit -m "Update area list"
+            git push
+          }

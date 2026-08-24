@@ -1,0 +1,69 @@
+name: Automatically repair Module.ifo
+
+on:
+  pull_request:
+    types: [opened, synchronize, reopened]
+
+permissions:
+  contents: write
+
+jobs:
+  resolve:
+    runs-on: windows-latest
+
+    steps:
+      - name: Checkout PR branch
+        uses: actions/checkout@v4
+        with:
+          token: ${{ secrets.ASTANUS_BOT_TOKEN }}
+          fetch-depth: 0
+          ref: ${{ github.event.pull_request.head.ref }}
+
+      - name: Configure Git
+        run: |
+          git config user.name "Astanus-Vaelen"
+          git config user.email "317461734+Astanus-Vaelen@users.noreply.github.com"
+
+      - name: Install Perl
+        run: choco install strawberryperl -y
+
+      - name: Fetch target branch
+        run: |
+          git fetch origin ${{ github.event.pull_request.base.ref }}
+
+      - name: Attempt merge
+        id: merge
+        continue-on-error: true
+        run: |
+          git merge origin/${{ github.event.pull_request.base.ref }}
+
+      - name: Resolve module.ifo.json
+        if: steps.merge.outcome == 'failure'
+        shell: powershell
+        run: |
+          Write-Host "Resolving module.ifo.json..."
+
+          git checkout --ours ./src/ifo/module.ifo.json #Python script requires original file
+
+          python ifoupdate.py
+
+      - name: Finish merge
+        if: steps.merge.outcome == 'failure'
+        shell: powershell
+        run: |
+          git add ./src/ifo/module.ifo.json
+
+          git diff --cached --quiet
+
+          if ($LASTEXITCODE -ne 0) {
+            git commit -m "Automatically resolve module.ifo.json"
+          }
+          else {
+            Write-Host "No changes to commit."
+            exit 1
+          }
+
+      - name: Push resolution
+        if: steps.merge.outcome == 'failure'
+        run: |
+          git push origin HEAD:${{ github.event.pull_request.head.ref }}
