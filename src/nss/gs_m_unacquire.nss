@@ -83,7 +83,14 @@ void main()
 
             if (GetIsObjectValid(oFixture) && (GetLocalString(oFixture, "GS_FX_ID") != ""))
             {
-                gsFXSaveFixture(GetTag(GetArea(oFixture)), oFixture);
+                int nMaxFixtures = GetLocalInt(GetArea(oFixture), "GS_FX_MAX_FIXTURES");
+                if(nMaxFixtures)
+                {
+                    gsFXSaveFixture(GetTag(GetArea(oFixture)), oFixture, nMaxFixtures);
+                }
+                else {
+                    gsFXSaveFixture(GetTag(GetArea(oFixture)), oFixture);
+                }
                 DestroyObject(oItem);
             } else {
                 DestroyObject(oFixture);
