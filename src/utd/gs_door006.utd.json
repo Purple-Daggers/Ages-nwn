@@ -1,18 +1,14 @@
 {
-  "__data_type": "UTP ",
+  "__data_type": "UTD ",
   "AnimationState": {
     "type": "byte",
     "value": 0
   },
   "Appearance": {
     "type": "dword",
-    "value": 8
-  },
-  "AutoRemoveKey": {
-    "type": "byte",
     "value": 0
   },
-  "BodyBag": {
+  "AutoRemoveKey": {
     "type": "byte",
     "value": 0
   },
@@ -35,7 +31,7 @@
   "Description": {
     "type": "cexolocstring",
     "value": {
-      "0": "This chest serves to keep valuable items. Up to 100 objects can be permanently stored in it."
+      "0": ""
     }
   },
   "DisarmDC": {
@@ -50,13 +46,13 @@
     "type": "byte",
     "value": 250
   },
+  "GenericType_New": {
+    "type": "dword",
+    "value": 11
+  },
   "Hardness": {
     "type": "byte",
     "value": 250
-  },
-  "HasInventory": {
-    "type": "byte",
-    "value": 1
   },
   "HP": {
     "type": "short",
@@ -68,24 +64,36 @@
   },
   "KeyName": {
     "type": "cexostring",
-    "value": ""
+    "value": "GS_KEY_SPECIAL"
   },
   "KeyRequired": {
     "type": "byte",
+    "value": 1
+  },
+  "LinkedTo": {
+    "type": "cexostring",
+    "value": ""
+  },
+  "LinkedToFlags": {
+    "type": "byte",
+    "value": 0
+  },
+  "LoadScreenID": {
+    "type": "word",
     "value": 0
   },
   "Lockable": {
     "type": "byte",
-    "value": 0
+    "value": 1
   },
   "Locked": {
     "type": "byte",
-    "value": 0
+    "value": 1
   },
   "LocName": {
     "type": "cexolocstring",
     "value": {
-      "0": "Storage Chest"
+      "0": "Quarter Jovanos Apartment"
     }
   },
   "OnClick": {
@@ -94,7 +102,7 @@
   },
   "OnClosed": {
     "type": "resref",
-    "value": "gs_co_close"
+    "value": "gs_pl_lock"
   },
   "OnDamaged": {
     "type": "resref",
@@ -108,11 +116,11 @@
     "type": "resref",
     "value": ""
   },
-  "OnHeartbeat": {
+  "OnFailToOpen": {
     "type": "resref",
-    "value": ""
+    "value": "gs_qu_failopen"
   },
-  "OnInvDisturbed": {
+  "OnHeartbeat": {
     "type": "resref",
     "value": ""
   },
@@ -126,7 +134,7 @@
   },
   "OnOpen": {
     "type": "resref",
-    "value": "gs_co_open"
+    "value": ""
   },
   "OnSpellCastAt": {
     "type": "resref",
@@ -140,10 +148,6 @@
     "type": "resref",
     "value": ""
   },
-  "OnUsed": {
-    "type": "resref",
-    "value": ""
-  },
   "OnUserDefined": {
     "type": "resref",
     "value": ""
@@ -154,7 +158,7 @@
   },
   "PaletteID": {
     "type": "byte",
-    "value": 6
+    "value": 0
   },
   "Plot": {
     "type": "byte",
@@ -162,23 +166,19 @@
   },
   "PortraitId": {
     "type": "word",
-    "value": 366
+    "value": 558
   },
   "Ref": {
     "type": "byte",
     "value": 250
   },
-  "Static": {
-    "type": "byte",
-    "value": 0
-  },
   "Tag": {
     "type": "cexostring",
-    "value": "GS_CONTAINER"
+    "value": "GS_DOOR_AAA_NN"
   },
   "TemplateResRef": {
     "type": "resref",
-    "value": "gs_placeable004"
+    "value": "gs_door006"
   },
   "TrapDetectable": {
     "type": "byte",
@@ -204,14 +204,6 @@
     "type": "byte",
     "value": 0
   },
-  "Type": {
-    "type": "byte",
-    "value": 0
-  },
-  "Useable": {
-    "type": "byte",
-    "value": 1
-  },
   "VarTable": {
     "type": "list",
     "value": [
@@ -219,7 +211,22 @@
         "__struct_id": 0,
         "Name": {
           "type": "cexostring",
-          "value": "GS_LIMIT"
+          "value": "GS_CLASS"
+        },
+        "Type": {
+          "type": "dword",
+          "value": 3
+        },
+        "Value": {
+          "type": "cexostring",
+          "value": "QUARTER_JOVANOSAPARTMENTS"
+        }
+      },
+      {
+        "__struct_id": 0,
+        "Name": {
+          "type": "cexostring",
+          "value": "GS_INSTANCE"
         },
         "Type": {
           "type": "dword",
@@ -227,7 +234,7 @@
         },
         "Value": {
           "type": "int",
-          "value": 100
+          "value": 0
         }
       }
     ]
