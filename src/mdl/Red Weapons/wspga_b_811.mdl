@@ -1,0 +1,63 @@
+#MAXMODEL ASCII
+# model: WSpGa_b_011
+filedependancy WSpGa_b_011.max
+newmodel WSpGa_b_011
+setsupermodel WSpGa_b_011 NULL
+setanimationscale 1
+#MAXGEOM  ASCII
+beginmodelgeom WSpGa_b_011
+node dummy WSpGa_b_011
+  parent NULL
+  #part-number 0
+endnode
+node trimesh g_WSpGa_b_011
+  parent WSpGa_b_011
+  #part-number 1
+  ambient 0 0 0
+  diffuse 1 1 1
+  specular 0.0450000018 0.0450000018 0.0450000018
+  shininess 26
+  bitmap W_metalr_tex
+  verts 10
+    0 0 0
+    0 0.0333609991 0
+    0.0333609991 0 0
+    -0.0333609991 0 0
+    0 -0.0333609991 0
+    0 0.0333609991 0.133334994
+    0.0333609991 0 0.133334994
+    -0.0333609991 0 0.133334994
+    0 -0.0333609991 0.133334994
+    0 0 0.133334994
+  tverts 8
+    0.940683007 0.471150011 0
+    0.99148798 0.471150011 0
+    0.940683007 0.471150011 0
+    0.889878988 0.471150011 0
+    0.99148798 0.421656996 0
+    0.940683007 0.421656996 0
+    0.889878988 0.421656996 0
+    0.940683007 0.421656996 0
+  faces 16
+    0 1 2 1 0 1 2 2
+    0 3 1 1 0 2 1 2
+    0 4 3 1 0 3 2 2
+    0 2 4 1 0 2 3 2
+    2 5 6 2 0 4 5 3
+    2 1 5 2 0 1 4 3
+    1 7 5 2 1 5 4 3
+    1 3 7 2 1 0 5 3
+    3 8 7 2 0 6 5 3
+    3 4 8 2 0 3 6 3
+    4 6 8 2 3 5 6 3
+    4 2 6 2 3 0 5 3
+    9 6 5 1 5 7 4 1
+    9 5 7 1 5 4 7 1
+    9 7 8 1 5 7 6 1
+    9 8 6 1 5 6 7 1
+  position -0.000168323997 -0.0946101025 -0.000320468011
+  orientation -1 0 0 -1.57079995
+endnode
+endmodelgeom WSpGa_b_011
+
+donemodel WSpGa_b_011
