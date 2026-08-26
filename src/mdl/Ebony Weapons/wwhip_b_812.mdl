@@ -1,0 +1,1463 @@
+#MAXMODEL ASCII
+# model: WWhip_b_011
+filedependancy WWhip_b_011.max
+newmodel WWhip_b_011
+setsupermodel WWhip_b_011 NULL
+setanimationscale 1
+#MAXGEOM  ASCII
+beginmodelgeom WWhip_b_011
+node dummy WWhip_b_011
+  parent NULL
+endnode
+node trimesh g_WWhip_b_011
+  parent WWhip_b_011
+  ambient 1 1 1
+  diffuse 1 1 1
+  specular 0 0 0
+  shininess 1
+  bitmap W_metalb_tex
+  verts 6
+       0.0000000    0.0281357    0.0000000
+       0.0000000   -0.0050704    0.0436009
+       0.0436009   -0.0050703    0.0000000
+      -0.0436009   -0.0050703    0.0000000
+       0.0000000   -0.0050703   -0.0436008
+       0.0000000   -0.0447580    0.0000000
+  tverts 5
+       0.1112100    0.6662700  0
+       0.1112100    0.6053880  0
+       0.1720930    0.6053880  0
+       0.0503270    0.6053880  0
+       0.1112100    0.5445050  0
+  faces 8
+    0 1 2  1  0 1 2   2
+    0 3 1  1  0 3 1   2
+    0 4 3  1  0 1 3   2
+    0 2 4  1  0 2 1   2
+    5 2 1  1  4 2 1   1
+    5 1 3  1  4 1 3   1
+    5 3 4  1  4 3 1   1
+    5 4 2  1  4 1 2   1
+  position -0.00658363 -0.145618 -0.00911235
+  orientation -0.629774 0.6228409 0.46417 -0.11042
+endnode
+endmodelgeom WWhip_b_011
+
+#MAXANIM ASCII
+newanim 1hreadyr WWhip_b_011
+  length 1
+  transtime 0.5
+  animroot WWhip_b_011
+  node dummy WWhip_b_011
+    parent NULL
+  endnode
+  node dummy g_WWhip_b_011
+    parent WWhip_b_011
+    positionkey 2
+         0.0000000   -0.0064130   -0.1456330   -0.0088604
+         1.0000000   -0.0064970   -0.1456260   -0.0089843
+    orientationkey 2
+         0.0000000   -0.6297740    0.6228410    0.4641700   -0.1074980
+         1.0000000   -0.6297740    0.6228410    0.4641700   -0.1089350
+  endnode
+doneanim 1hreadyr WWhip_b_011
+
+#MAXANIM ASCII
+newanim 1hreadyl WWhip_b_011
+  length 1
+  transtime 0.5
+  animroot WWhip_b_011
+  node dummy WWhip_b_011
+    parent NULL
+  endnode
+  node dummy g_WWhip_b_011
+    parent WWhip_b_011
+    positionkey 2
+         0.0000000   -0.0064998   -0.1456260   -0.0089884
+         1.0000000   -0.0065836   -0.1456180   -0.0091123
+    orientationkey 2
+         0.0000000   -0.6297740    0.6228410    0.4641700   -0.1089830
+         1.0000000   -0.6297740    0.6228409    0.4641700   -0.1104200
+  endnode
+doneanim 1hreadyl WWhip_b_011
+
+#MAXANIM ASCII
+newanim 2wreadyr WWhip_b_011
+  length 1
+  transtime 0.5
+  animroot WWhip_b_011
+  node dummy WWhip_b_011
+    parent NULL
+  endnode
+  node dummy g_WWhip_b_011
+    parent WWhip_b_011
+    positionkey 2
+         0.0000000   -0.0069318   -0.1455850   -0.0096294
+         1.0000000   -0.0070150   -0.1455760   -0.0097537
+    orientationkey 2
+         0.0000000   -0.6297740    0.6228410    0.4641700   -0.1164080
+         1.0000000   -0.6297740    0.6228410    0.4641700   -0.1178450
+  endnode
+doneanim 2wreadyr WWhip_b_011
+
+#MAXANIM ASCII
+newanim 2wreadyl WWhip_b_011
+  length 1
+  transtime 0.5
+  animroot WWhip_b_011
+  node dummy WWhip_b_011
+    parent NULL
+  endnode
+  node dummy g_WWhip_b_011
+    parent WWhip_b_011
+    positionkey 2
+         0.0000000   -0.0070178   -0.1455760   -0.0097579
+         1.0000000   -0.0071009   -0.1455680   -0.0098822
+    orientationkey 2
+         0.0000000   -0.6297740    0.6228410    0.4641700   -0.1178930
+         1.0000000   -0.6297740    0.6228410    0.4641700   -0.1193300
+  endnode
+doneanim 2wreadyl WWhip_b_011
+
+#MAXANIM ASCII
+newanim 1hslashl WWhip_b_011
+  length 1
+  transtime 0.25
+  animroot WWhip_b_011
+  node dummy WWhip_b_011
+    parent NULL
+  endnode
+  node dummy g_WWhip_b_011
+    parent WWhip_b_011
+    positionkey 8
+         0.0000000   -0.0080430   -0.1454570   -0.0113086
+         0.1666670    0.0800537   -0.1021700    0.0501350
+         0.3666670    0.0136954   -0.1370920    0.0395940
+         0.4666670   -0.0734297   -0.1163360    0.0334533
+         0.5000000    0.0014296   -0.1379850    0.0392962
+         0.5666670    0.0014295   -0.1379850    0.0392961
+         0.9000000   -0.0142944   -0.1449090    0.0012429
+         1.0000000   -0.0080430   -0.1454570   -0.0113086
+    orientationkey 8
+         0.0000000   -0.6297740    0.6228411    0.4641700   -0.1357610
+         0.1666670    0.6297750   -0.6228400   -0.4641700   -1.0419400
+         0.3666670    0.3915741   -0.9177453    0.0664319   -0.8607650
+         0.4666670   -0.2486939   -0.9299437    0.2708429   -2.5667000
+         0.5000000    0.3463261   -0.9223673    0.1711631   -0.8540851
+         0.5666670    0.3463249   -0.9223678    0.1711629   -0.8540830
+         0.9000000    0.0889143    0.7551783    0.6494613   -0.1618710
+         1.0000000   -0.6297730    0.6228420    0.4641700   -0.1357620
+  endnode
+doneanim 1hslashl WWhip_b_011
+
+#MAXANIM ASCII
+newanim 1hslashr WWhip_b_011
+  length 1
+  transtime 0.25
+  animroot WWhip_b_011
+  node dummy WWhip_b_011
+    parent NULL
+  endnode
+  node dummy g_WWhip_b_011
+    parent WWhip_b_011
+    positionkey 8
+         0.0000000   -0.0080430   -0.1454570   -0.0113085
+         0.1000000   -0.0080430   -0.1454570   -0.0113084
+         0.2666670   -0.0336379   -0.0793776    0.1036620
+         0.4000000   -0.0510845   -0.1210100    0.0521589
+         0.4666670   -0.0355445   -0.0113852    0.1207490
+         0.5000000    0.0888927   -0.0912955    0.0526207
+         0.6000000    0.1098400   -0.0533723    0.0541728
+         1.0000000   -0.0231218   -0.1326700    0.0471435
+    orientationkey 8
+         0.0000000   -0.6297711    0.6228431    0.4641711   -0.1357620
+         0.1000000   -0.6297672    0.6228462    0.4641722   -0.1357610
+         0.2666670    0.9239376   -0.1034079    0.3683018   -1.0252100
+         0.4000000    0.4060218   -0.6026456    0.6869967   -0.7793430
+         0.4666670    0.8805197   -0.1647110    0.4444719   -1.5936300
+         0.5000000    0.6423851   -0.4484571   -0.6214721   -1.0274000
+         0.6000000    0.3037070    0.1856420   -0.9345048   -1.2873698
+         1.0000000    0.6918021    0.7069561    0.1470470   -0.5841339
+  endnode
+doneanim 1hslashr WWhip_b_011
+
+#MAXANIM ASCII
+newanim 1hstab WWhip_b_011
+  length 1
+  transtime 0.25
+  animroot WWhip_b_011
+  node dummy WWhip_b_011
+    parent NULL
+  endnode
+  node dummy g_WWhip_b_011
+    parent WWhip_b_011
+    positionkey 6
+         0.0000000    0.0001835   -0.1457100    0.0001920
+         0.2000000   -0.0006569   -0.1439610   -0.0273128
+         0.4666670   -0.1282250   -0.0026822    0.0196950
+         0.5333330    0.0003475   -0.1444880    0.0133601
+         0.7000000    0.0826978   -0.1106980   -0.0381593
+         1.0000000    0.0001835   -0.1457100    0.0001920
+    orientationkey 6
+         0.0000000    0.0000000    0.0000000    0.0000000    0.0000000
+         0.2000000   -0.9644154   -0.2640871    0.0126861   -0.2185800
+         0.4666670    0.6814050    0.5451700    0.4883410   -2.0896599
+         0.5333330    0.3843599    0.9187819   -0.0900404   -0.2590550
+         0.7000000   -0.5323580    0.5940440   -0.6030810   -0.9895640
+         1.0000000    0.0000000    0.0000000    0.0000000    0.0000000
+  endnode
+doneanim 1hstab WWhip_b_011
+
+#MAXANIM ASCII
+newanim 1hcloseh WWhip_b_011
+  length 1
+  transtime 0.25
+  animroot WWhip_b_011
+  node dummy WWhip_b_011
+    parent NULL
+  endnode
+  node dummy g_WWhip_b_011
+    parent WWhip_b_011
+    positionkey 8
+         0.0000000    0.0001835   -0.1457100    0.0001920
+         0.2000000    0.0181959   -0.0482776    0.1199520
+         0.4666670   -0.0026945   -0.1262090    0.0635938
+         0.5000000   -0.0156674   -0.0794640    0.1075610
+         0.6000000    0.0260185    0.0300487    0.1148380
+         0.7666670    0.0183386   -0.0646412    0.1143760
+         0.8333330    0.0357262   -0.1290020    0.0478627
+         1.0000000    0.0322621   -0.1415190    0.0017972
+    orientationkey 8
+         0.0000000    0.0000000    0.0000000    0.0000000    0.0000000
+         0.2000000    0.9843073   -0.1764050   -0.0045270   -1.2954100
+         0.4666670    0.9919026    0.1268589    0.0060092   -0.5166920
+         0.5000000    0.8379647   -0.4004299    0.3707709   -1.1281800
+         0.6000000    0.9714859   -0.2120220    0.1061220   -1.9496399
+         0.7666670    0.9718836    0.0892487   -0.2178919   -1.1448500
+         0.8333330    0.7861993    0.0769841   -0.6131592   -0.4786470
+         1.0000000    0.0824817   -0.2631691   -0.9612174   -0.2544520
+  endnode
+doneanim 1hcloseh WWhip_b_011
+
+#MAXANIM ASCII
+newanim 1hclosel WWhip_b_011
+  length 1
+  transtime 0.25
+  animroot WWhip_b_011
+  node dummy WWhip_b_011
+    parent NULL
+  endnode
+  node dummy g_WWhip_b_011
+    parent WWhip_b_011
+    positionkey 8
+         0.0000000    0.0347505   -0.1395220    0.0142940
+         0.1666670    0.0347505   -0.1395220    0.0142939
+         0.3333330    0.0353791   -0.1398920    0.0104221
+         0.4000000   -0.0300266   -0.1423950   -0.0066126
+         0.5000000    0.0632808   -0.1178690    0.0446977
+         0.6000000    0.0264514   -0.1311350   -0.0593062
+         0.7000000    0.0237753   -0.1277340   -0.0672013
+         1.0000000    0.0325491   -0.1344510   -0.0473916
+    orientationkey 8
+         0.0000000    0.3699900    0.0476264   -0.9278142   -0.2910950
+         0.1666670    0.3699909    0.0476261   -0.9278138   -0.2910950
+         0.3333330    0.3166700   -0.4217920   -0.8495950   -0.3085910
+         0.4000000   -0.2130940   -0.8047460    0.5540530   -0.4257580
+         0.5000000    0.6389859   -0.3708690   -0.6739089   -0.6808330
+         0.6000000   -0.8924875    0.3229458   -0.3149159   -0.5479140
+         0.7000000   -0.9119865    0.3407872   -0.2283521   -0.6105480
+         1.0000000   -0.8271909    0.2490590   -0.5037110   -0.4698200
+  endnode
+doneanim 1hclosel WWhip_b_011
+
+#MAXANIM ASCII
+newanim 1hreach WWhip_b_011
+  length 1
+  transtime 0.25
+  animroot WWhip_b_011
+  node dummy WWhip_b_011
+    parent NULL
+  endnode
+  node dummy g_WWhip_b_011
+    parent WWhip_b_011
+    positionkey 9
+         0.0000000    0.0403982   -0.1390110    0.0038394
+         0.2666670    0.0133083    0.0332324    0.1157110
+         0.4000000    0.0362917   -0.1403180   -0.0139291
+         0.4333330    0.0332985   -0.1413390   -0.0105360
+         0.5000000    0.0538867   -0.0545105    0.1071300
+         0.5333330    0.0309805   -0.0957278    0.0928444
+         0.5666670    0.0329685   -0.0864132    0.0992143
+         0.7333330    0.0322621   -0.1415190    0.0017972
+         1.0000000    0.0322621   -0.1415190    0.0017973
+    orientationkey 9
+         0.0000000    0.0809830    0.0557017   -0.9951578   -0.3153990
+         0.2666670    0.9978869   -0.0402767   -0.0509855   -1.9075001
+         0.4000000   -0.3848128    0.4053178   -0.8292385   -0.3346750
+         0.4333330   -0.3297329    0.3065669   -0.8929126   -0.2864330
+         0.5000000    0.9057270   -0.4107690   -0.1045340   -1.3622800
+         0.5333330    0.9055352   -0.4174451   -0.0757997   -0.9579230
+         0.5666670    0.9475990   -0.2859030   -0.1425330   -0.9961030
+         0.7333330    0.0824818   -0.2631679   -0.9612176   -0.2544520
+         1.0000000    0.0824828   -0.2631682   -0.9612175   -0.2544520
+  endnode
+doneanim 1hreach WWhip_b_011
+
+#MAXANIM ASCII
+newanim 1hparryr WWhip_b_011
+  length 1
+  transtime 0.3
+  animroot WWhip_b_011
+  node dummy WWhip_b_011
+    parent NULL
+  endnode
+  node dummy g_WWhip_b_011
+    parent WWhip_b_011
+    positionkey 2
+         0.0000000   -0.0064130   -0.1456330   -0.0088604
+         1.0000000   -0.0064130   -0.1456330   -0.0088604
+    orientationkey 2
+         0.0000000   -0.6297740    0.6228410    0.4641700   -0.1074980
+         1.0000000   -0.6297740    0.6228410    0.4641700   -0.1074980
+  endnode
+doneanim 1hparryr WWhip_b_011
+
+#MAXANIM ASCII
+newanim 1hparryl WWhip_b_011
+  length 1
+  transtime 0.3
+  animroot WWhip_b_011
+  node dummy WWhip_b_011
+    parent NULL
+  endnode
+  node dummy g_WWhip_b_011
+    parent WWhip_b_011
+    positionkey 2
+         0.0000000   -0.0064130   -0.1456330   -0.0088604
+         1.0000000   -0.0064130   -0.1456330   -0.0088604
+    orientationkey 2
+         0.0000000   -0.6297740    0.6228410    0.4641700   -0.1074980
+         1.0000000   -0.6297740    0.6228410    0.4641700   -0.1074980
+  endnode
+doneanim 1hparryl WWhip_b_011
+
+#MAXANIM ASCII
+newanim 1hparrys WWhip_b_011
+  length 1
+  transtime 0.3
+  animroot WWhip_b_011
+  node dummy WWhip_b_011
+    parent NULL
+  endnode
+  node dummy g_WWhip_b_011
+    parent WWhip_b_011
+    positionkey 2
+         0.0000000   -0.0064130   -0.1456330   -0.0088604
+         1.0000000   -0.0064130   -0.1456330   -0.0088604
+    orientationkey 2
+         0.0000000   -0.6297740    0.6228410    0.4641700   -0.1074980
+         1.0000000   -0.6297740    0.6228410    0.4641700   -0.1074980
+  endnode
+doneanim 1hparrys WWhip_b_011
+
+#MAXANIM ASCII
+newanim dodgelr WWhip_b_011
+  length 1
+  transtime 0.25
+  animroot WWhip_b_011
+  node dummy WWhip_b_011
+    parent NULL
+  endnode
+  node dummy g_WWhip_b_011
+    parent WWhip_b_011
+    positionkey 2
+         0.0000000   -0.0064130   -0.1456330   -0.0088604
+         1.0000000   -0.0064130   -0.1456330   -0.0088604
+    orientationkey 2
+         0.0000000   -0.6297740    0.6228410    0.4641700   -0.1074980
+         1.0000000   -0.6297740    0.6228410    0.4641700   -0.1074980
+  endnode
+doneanim dodgelr WWhip_b_011
+
+#MAXANIM ASCII
+newanim dodges WWhip_b_011
+  length 1
+  transtime 0.25
+  animroot WWhip_b_011
+  node dummy WWhip_b_011
+    parent NULL
+  endnode
+  node dummy g_WWhip_b_011
+    parent WWhip_b_011
+    positionkey 2
+         0.0000000   -0.0064130   -0.1456330   -0.0088604
+         1.0000000   -0.0064130   -0.1456330   -0.0088604
+    orientationkey 2
+         0.0000000   -0.6297740    0.6228410    0.4641700   -0.1074980
+         1.0000000   -0.6297740    0.6228410    0.4641700   -0.1074980
+  endnode
+doneanim dodges WWhip_b_011
+
+#MAXANIM ASCII
+newanim damages WWhip_b_011
+  length 0.266667
+  transtime 0.125
+  animroot WWhip_b_011
+  node dummy WWhip_b_011
+    parent NULL
+  endnode
+  node dummy g_WWhip_b_011
+    parent WWhip_b_011
+    positionkey 2
+         0.0000000    0.0346314   -0.1400580   -0.0213727
+         0.2666670    0.0346314   -0.1400580   -0.0213727
+    orientationkey 2
+         0.0000000   -0.4474991    0.7238572   -0.5251431   -0.4756970
+         0.2666670   -0.4474983    0.7238575   -0.5251434   -0.4756970
+  endnode
+doneanim damages WWhip_b_011
+
+#MAXANIM ASCII
+newanim damageb WWhip_b_011
+  length 0.266667
+  transtime 0.125
+  animroot WWhip_b_011
+  node dummy WWhip_b_011
+    parent NULL
+  endnode
+  node dummy g_WWhip_b_011
+    parent WWhip_b_011
+    positionkey 2
+         0.0000000    0.0346314   -0.1400580   -0.0213726
+         0.2666670    0.0346314   -0.1400580   -0.0213725
+    orientationkey 2
+         0.0000000   -0.4474970    0.7238579   -0.5251439   -0.4756970
+         0.2666670   -0.4474959    0.7238579   -0.5251449   -0.4756970
+  endnode
+doneanim damageb WWhip_b_011
+
+#MAXANIM ASCII
+newanim cwalkf WWhip_b_011
+  length 0.5
+  transtime 0.25
+  animroot WWhip_b_011
+  node dummy WWhip_b_011
+    parent NULL
+  endnode
+  node dummy g_WWhip_b_011
+    parent WWhip_b_011
+    positionkey 2
+         0.0000000    0.0322621   -0.1415190    0.0017977
+         0.5000000    0.0322621   -0.1415190    0.0017973
+    orientationkey 2
+         0.0000000    0.0824973   -0.2631709   -0.9612156   -0.2544520
+         0.5000000    0.0824839   -0.2631690   -0.9612172   -0.2544520
+  endnode
+doneanim cwalkf WWhip_b_011
+
+#MAXANIM ASCII
+newanim cwalkb WWhip_b_011
+  length 0.5
+  transtime 0.25
+  animroot WWhip_b_011
+  node dummy WWhip_b_011
+    parent NULL
+  endnode
+  node dummy g_WWhip_b_011
+    parent WWhip_b_011
+    positionkey 2
+         0.0000000    0.0322621   -0.1415190    0.0017973
+         0.5000000    0.0322621   -0.1415190    0.0017974
+    orientationkey 2
+         0.0000000    0.0824846   -0.2631690   -0.9612172   -0.2544520
+         0.5000000    0.0824864   -0.2631690   -0.9612170   -0.2544520
+  endnode
+doneanim cwalkb WWhip_b_011
+
+#MAXANIM ASCII
+newanim cwalkl WWhip_b_011
+  length 0.5
+  transtime 0.25
+  animroot WWhip_b_011
+  node dummy WWhip_b_011
+    parent NULL
+  endnode
+  node dummy g_WWhip_b_011
+    parent WWhip_b_011
+    positionkey 2
+         0.0000000    0.0322621   -0.1415190    0.0017975
+         0.5000000    0.0322621   -0.1415190    0.0017975
+    orientationkey 2
+         0.0000000    0.0824895   -0.2631699   -0.9612165   -0.2544520
+         0.5000000    0.0824895   -0.2631699   -0.9612165   -0.2544520
+  endnode
+doneanim cwalkl WWhip_b_011
+
+#MAXANIM ASCII
+newanim cwalkr WWhip_b_011
+  length 0.5
+  transtime 0.25
+  animroot WWhip_b_011
+  node dummy WWhip_b_011
+    parent NULL
+  endnode
+  node dummy g_WWhip_b_011
+    parent WWhip_b_011
+    positionkey 2
+         0.0000000    0.0322621   -0.1415190    0.0017976
+         0.5000000    0.0322621   -0.1415190    0.0017976
+    orientationkey 2
+         0.0000000    0.0824949   -0.2631700   -0.9612160   -0.2544520
+         0.5000000    0.0824949   -0.2631700   -0.9612160   -0.2544520
+  endnode
+doneanim cwalkr WWhip_b_011
+
+#MAXANIM ASCII
+newanim 2wslashl WWhip_b_011
+  length 1
+  transtime 0.25
+  animroot WWhip_b_011
+  node dummy WWhip_b_011
+    parent NULL
+  endnode
+  node dummy g_WWhip_b_011
+    parent WWhip_b_011
+    positionkey 8
+         0.0000000    0.0322621   -0.1415190    0.0017973
+         0.1000000    0.0026989   -0.1448290   -0.0211483
+         0.1666670    0.0066737   -0.1454880   -0.0116236
+         0.3666670   -0.0023163   -0.1454000    0.0050466
+         0.6333330    0.0092138   -0.1422600   -0.0341261
+         0.6666670   -0.0123789   -0.1316270    0.0527530
+         0.8333330    0.0327302   -0.0909691    0.0960242
+         1.0000000    0.0327302   -0.0909690    0.0960243
+    orientationkey 8
+         0.0000000    0.0824830   -0.2631700   -0.9612170   -0.2544520
+         0.1000000   -0.1010450   -0.9934736   -0.0529147   -1.2440000
+         0.1666670   -0.0972764   -0.9926454   -0.0720591   -0.6917090
+         0.3666670    0.0294351   -0.9964684    0.0786406   -0.9655749
+         0.6333330   -0.3809051   -0.9046361   -0.1911670   -0.6188260
+         0.6666670    0.5125229   -0.7908870    0.3343920   -0.7371849
+         0.8333330    0.4888320    0.6755910   -0.5519240   -1.3178600
+         1.0000000    0.4888331    0.6755901   -0.5519241   -1.3178601
+  endnode
+doneanim 2wslashl WWhip_b_011
+
+#MAXANIM ASCII
+newanim 2wslashr WWhip_b_011
+  length 1
+  transtime 0.25
+  animroot WWhip_b_011
+  node dummy WWhip_b_011
+    parent NULL
+  endnode
+  node dummy g_WWhip_b_011
+    parent WWhip_b_011
+    positionkey 7
+         0.0000000    0.0322621   -0.1415190    0.0017973
+         0.3000000    0.0904981   -0.1091260   -0.0101316
+         0.4000000    0.0741453   -0.1226020   -0.0071334
+         0.5000000    0.0242215   -0.1433380    0.0014117
+         0.6000000   -0.0133892   -0.1449170    0.0027823
+         0.7333330   -0.0414169   -0.1389130    0.0030670
+         1.0000000    0.0184007   -0.1444780   -0.0038206
+    orientationkey 7
+         0.0000000    0.0824844   -0.2631681   -0.9612174   -0.2544520
+         0.3000000   -0.0855409   -0.0692970   -0.9939219   -0.7673360
+         0.4000000   -0.0731565   -0.0809613   -0.9940289   -0.6040300
+         0.5000000    0.0420258    0.0860001   -0.9954084   -0.1865040
+         0.6000000    0.1912100    0.0762031    0.9785867   -0.1058170
+         0.7333330    0.0584849   -0.0634737    0.9962683   -0.3259260
+         1.0000000   -0.1751790   -0.3748610   -0.9103799   -0.1517190
+  endnode
+doneanim 2wslashr WWhip_b_011
+
+#MAXANIM ASCII
+newanim 2wstab WWhip_b_011
+  length 1
+  transtime 0.25
+  animroot WWhip_b_011
+  node dummy WWhip_b_011
+    parent NULL
+  endnode
+  node dummy g_WWhip_b_011
+    parent WWhip_b_011
+    positionkey 7
+         0.0000000    0.0184007   -0.1444780   -0.0038206
+         0.3666670   -0.0671643   -0.1124970    0.0507662
+         0.4666670    0.0070521   -0.1447530   -0.0203307
+         0.6000000   -0.0070255   -0.1448960    0.0087394
+         0.6333330    0.0126708   -0.1448730    0.0036909
+         0.7333330    0.0182866   -0.1444920   -0.0036424
+         1.0000000    0.0153736   -0.1348700    0.0447389
+    orientationkey 7
+         0.0000000   -0.1751770   -0.3748611   -0.9103802   -0.1517180
+         0.3666670    0.1988900   -0.6764730    0.7091030   -1.0204700
+         0.4666670   -0.1860150   -0.9766191   -0.1077660   -0.7013770
+         0.6000000    0.3179549   -0.8803497    0.3519789   -0.1926450
+         0.6333330    0.1038380   -0.9853877   -0.1350140   -0.4943900
+         0.7333330   -0.1799180   -0.2875070   -0.9407280   -0.1462980
+         1.0000000    0.9429929   -0.1852860   -0.2764660   -0.3770020
+  endnode
+doneanim 2wstab WWhip_b_011
+
+#MAXANIM ASCII
+newanim 2wcloseh WWhip_b_011
+  length 1
+  transtime 0.25
+  animroot WWhip_b_011
+  node dummy WWhip_b_011
+    parent NULL
+  endnode
+  node dummy g_WWhip_b_011
+    parent WWhip_b_011
+    positionkey 7
+         0.0000000    0.0153736   -0.1448790   -0.0038500
+         0.2333330   -0.0159408   -0.1335470   -0.0583966
+         0.3333330   -0.0683518   -0.1254740    0.0114753
+         0.5000000   -0.0143889   -0.1022940    0.0911659
+         0.6000000    0.0470412   -0.0719701    0.1026210
+         0.7000000    0.0184132    0.0307399    0.1159960
+         1.0000000    0.0270331   -0.1416100   -0.0237485
+    orientationkey 7
+         0.0000000   -0.2186041   -0.3786092   -0.8993705   -0.1279080
+         0.2333330   -0.5258248   -0.8500006   -0.0317361   -0.9199470
+         0.3333330   -0.2089259   -0.9088756    0.3609639   -1.5949399
+         0.5000000    0.1714570   -0.8781739    0.4465569   -2.1466501
+         0.6000000    0.5899699   -0.7586819    0.2762920   -1.8825999
+         0.7000000    0.7668180   -0.4056740    0.4974120   -2.2191100
+         1.0000000   -0.5080422    0.7384973   -0.4433002   -0.4273570
+  endnode
+doneanim 2wcloseh WWhip_b_011
+
+#MAXANIM ASCII
+newanim 2wclosel WWhip_b_011
+  length 1
+  transtime 0.25
+  animroot WWhip_b_011
+  node dummy WWhip_b_011
+    parent NULL
+  endnode
+  node dummy g_WWhip_b_011
+    parent WWhip_b_011
+    positionkey 4
+         0.0000000    0.0270331   -0.1416100   -0.0237484
+         0.3333330    0.0270331   -0.1416100   -0.0237484
+         0.7333330    0.0079060   -0.1416240   -0.0371686
+         1.0000000    0.0273068   -0.1415790   -0.0235485
+    orientationkey 4
+         0.0000000   -0.5080411    0.7384980   -0.4433000   -0.4273560
+         0.3333330   -0.5080408    0.7384977   -0.4433008   -0.4273560
+         0.7333330   -0.6981561    0.7128641   -0.0663532   -0.4238410
+         1.0000000   -0.5046341    0.7379010   -0.4481591   -0.4279510
+  endnode
+doneanim 2wclosel WWhip_b_011
+
+#MAXANIM ASCII
+newanim 2wreach WWhip_b_011
+  length 1
+  transtime 0.25
+  animroot WWhip_b_011
+  node dummy WWhip_b_011
+    parent NULL
+  endnode
+  node dummy g_WWhip_b_011
+    parent WWhip_b_011
+    positionkey 7
+         0.0000000    0.0300035   -0.1409740   -0.0234645
+         0.2000000    0.0695331   -0.1136380   -0.0554916
+         0.4333330    0.0030966   -0.1081650    0.0865287
+         0.5333330    0.0437388   -0.1289770    0.0415070
+         0.6333330    0.0030898   -0.1403430    0.0320403
+         0.8333330   -0.0357593   -0.1400700   -0.0199728
+         1.0000000    0.0375488   -0.1392500   -0.0210394
+    orientationkey 7
+         0.0000000   -0.4960847    0.7231547   -0.4805698   -0.4423330
+         0.2000000   -0.6774460    0.4349940   -0.5931670   -0.8384530
+         0.4333330    0.8997157   -0.4105549    0.1481769   -0.8148700
+         0.5333330    0.4316748   -0.8973626   -0.0916364   -1.1212800
+         0.6333330    0.1485540   -0.9772901    0.1511150   -1.4959400
+         0.8333330   -0.4550801   -0.6219952    0.6372002   -0.4195160
+         1.0000000   -0.4373681    0.7081521   -0.5542831   -0.4923680
+  endnode
+doneanim 2wreach WWhip_b_011
+
+#MAXANIM ASCII
+newanim 2wparryl WWhip_b_011
+  length 1
+  transtime 0.3
+  animroot WWhip_b_011
+  node dummy WWhip_b_011
+    parent NULL
+  endnode
+  node dummy g_WWhip_b_011
+    parent WWhip_b_011
+    positionkey 2
+         0.0000000   -0.0064130   -0.1456330   -0.0088604
+         1.0000000   -0.0064130   -0.1456330   -0.0088604
+    orientationkey 2
+         0.0000000   -0.6297740    0.6228410    0.4641700   -0.1074980
+         1.0000000   -0.6297740    0.6228410    0.4641700   -0.1074980
+  endnode
+doneanim 2wparryl WWhip_b_011
+
+#MAXANIM ASCII
+newanim 2wparryr WWhip_b_011
+  length 1
+  transtime 0.3
+  animroot WWhip_b_011
+  node dummy WWhip_b_011
+    parent NULL
+  endnode
+  node dummy g_WWhip_b_011
+    parent WWhip_b_011
+    positionkey 2
+         0.0000000    0.0376068   -0.1392310   -0.0210523
+         1.0000000    0.0376068   -0.1392310   -0.0210523
+    orientationkey 2
+         0.0000000   -0.4376110    0.7072950   -0.5551850   -0.4924020
+         1.0000000   -0.4376110    0.7072950   -0.5551850   -0.4924020
+  endnode
+doneanim 2wparryr WWhip_b_011
+
+#MAXANIM ASCII
+newanim 2wparrys WWhip_b_011
+  length 1
+  transtime 0.25
+  animroot WWhip_b_011
+  node dummy WWhip_b_011
+    parent NULL
+  endnode
+  node dummy g_WWhip_b_011
+    parent WWhip_b_011
+    positionkey 2
+         0.0000000    0.0376043   -0.1392320   -0.0210526
+         1.0000000    0.0375276   -0.1392540   -0.0210611
+    orientationkey 2
+         0.0000000   -0.4376201    0.7073081   -0.5551611   -0.4923880
+         1.0000000   -0.4378739    0.7077339   -0.5544179   -0.4919480
+  endnode
+doneanim 2wparrys WWhip_b_011
+
+#MAXANIM ASCII
+newanim shieldl WWhip_b_011
+  length 1
+  transtime 0.3
+  animroot WWhip_b_011
+  node dummy WWhip_b_011
+    parent NULL
+  endnode
+  node dummy g_WWhip_b_011
+    parent WWhip_b_011
+    positionkey 2
+         0.0000000    0.0375250   -0.1392550   -0.0210614
+         1.0000000    0.0375250   -0.1392550   -0.0210614
+    orientationkey 2
+         0.0000000   -0.4378829    0.7077479   -0.5543929   -0.4919340
+         1.0000000   -0.4378829    0.7077479   -0.5543929   -0.4919340
+  endnode
+doneanim shieldl WWhip_b_011
+
+#MAXANIM ASCII
+newanim shieldr WWhip_b_011
+  length 1
+  transtime 0.3
+  animroot WWhip_b_011
+  node dummy WWhip_b_011
+    parent NULL
+  endnode
+  node dummy g_WWhip_b_011
+    parent WWhip_b_011
+    positionkey 2
+         0.0000000    0.0375224   -0.1392560   -0.0210617
+         1.0000000    0.0375224   -0.1392560   -0.0210617
+    orientationkey 2
+         0.0000000   -0.4378912    0.7077622   -0.5543681   -0.4919190
+         1.0000000   -0.4378912    0.7077622   -0.5543681   -0.4919190
+  endnode
+doneanim shieldr WWhip_b_011
+
+#MAXANIM ASCII
+newanim shields WWhip_b_011
+  length 1
+  transtime 0.3
+  animroot WWhip_b_011
+  node dummy WWhip_b_011
+    parent NULL
+  endnode
+  node dummy g_WWhip_b_011
+    parent WWhip_b_011
+    positionkey 2
+         0.0000000   -0.0064130   -0.1456330   -0.0088604
+         1.0000000   -0.0064130   -0.1456330   -0.0088604
+    orientationkey 2
+         0.0000000   -0.6297740    0.6228410    0.4641700   -0.1074980
+         1.0000000   -0.6297740    0.6228410    0.4641700   -0.1074980
+  endnode
+doneanim shields WWhip_b_011
+
+#MAXANIM ASCII
+newanim kdbck WWhip_b_011
+  length 1
+  transtime 0.125
+  animroot WWhip_b_011
+  node dummy WWhip_b_011
+    parent NULL
+  endnode
+  node dummy g_WWhip_b_011
+    parent WWhip_b_011
+    positionkey 2
+         0.0000000   -0.0064130   -0.1456330   -0.0088604
+         1.0000000   -0.0064130   -0.1456330   -0.0088604
+    orientationkey 2
+         0.0000000   -0.6297740    0.6228410    0.4641700   -0.1074980
+         1.0000000   -0.6297740    0.6228410    0.4641700   -0.1074980
+  endnode
+doneanim kdbck WWhip_b_011
+
+#MAXANIM ASCII
+newanim kdbckps WWhip_b_011
+  length 1
+  transtime 0.25
+  animroot WWhip_b_011
+  node dummy WWhip_b_011
+    parent NULL
+  endnode
+  node dummy g_WWhip_b_011
+    parent WWhip_b_011
+    positionkey 2
+         0.0000000   -0.0064130   -0.1456330   -0.0088604
+         1.0000000   -0.0064130   -0.1456330   -0.0088604
+    orientationkey 2
+         0.0000000   -0.6297743    0.6228413    0.4641692   -0.1074980
+         1.0000000   -0.6297743    0.6228413    0.4641692   -0.1074980
+  endnode
+doneanim kdbckps WWhip_b_011
+
+#MAXANIM ASCII
+newanim kdbckdmg WWhip_b_011
+  length 0.333333
+  transtime 0.125
+  animroot WWhip_b_011
+  node dummy WWhip_b_011
+    parent NULL
+  endnode
+  node dummy g_WWhip_b_011
+    parent WWhip_b_011
+    positionkey 2
+         0.0000000   -0.0064130   -0.1456330   -0.0088604
+         0.3333330   -0.0064130   -0.1456330   -0.0088604
+    orientationkey 2
+         0.0000000   -0.6297743    0.6228413    0.4641692   -0.1074980
+         0.3333330   -0.6297743    0.6228413    0.4641692   -0.1074980
+  endnode
+doneanim kdbckdmg WWhip_b_011
+
+#MAXANIM ASCII
+newanim kdbckdie WWhip_b_011
+  length 1
+  transtime 0.25
+  animroot WWhip_b_011
+  node dummy WWhip_b_011
+    parent NULL
+  endnode
+  node dummy g_WWhip_b_011
+    parent WWhip_b_011
+    positionkey 2
+         0.0000000   -0.0064130   -0.1456330   -0.0088604
+         1.0000000   -0.0064130   -0.1456330   -0.0088604
+    orientationkey 2
+         0.0000000   -0.6297743    0.6228413    0.4641692   -0.1074980
+         1.0000000   -0.6297743    0.6228413    0.4641692   -0.1074980
+  endnode
+doneanim kdbckdie WWhip_b_011
+
+#MAXANIM ASCII
+newanim gutokdb WWhip_b_011
+  length 1
+  transtime 0.25
+  animroot WWhip_b_011
+  node dummy WWhip_b_011
+    parent NULL
+  endnode
+  node dummy g_WWhip_b_011
+    parent WWhip_b_011
+    positionkey 2
+         0.0000000   -0.0064130   -0.1456330   -0.0088604
+         1.0000000   -0.0064130   -0.1456330   -0.0088604
+    orientationkey 2
+         0.0000000   -0.6297743    0.6228413    0.4641692   -0.1074980
+         1.0000000   -0.6297743    0.6228413    0.4641692   -0.1074980
+  endnode
+doneanim gutokdb WWhip_b_011
+
+#MAXANIM ASCII
+newanim gustandb WWhip_b_011
+  length 1
+  transtime 0.25
+  animroot WWhip_b_011
+  node dummy WWhip_b_011
+    parent NULL
+  endnode
+  node dummy g_WWhip_b_011
+    parent WWhip_b_011
+    positionkey 2
+         0.0000000   -0.0064130   -0.1456330   -0.0088604
+         1.0000000   -0.0064130   -0.1456330   -0.0088604
+    orientationkey 2
+         0.0000000   -0.6297743    0.6228413    0.4641692   -0.1074980
+         1.0000000   -0.6297743    0.6228413    0.4641692   -0.1074980
+  endnode
+doneanim gustandb WWhip_b_011
+
+#MAXANIM ASCII
+newanim kdfnt WWhip_b_011
+  length 1
+  transtime 0.125
+  animroot WWhip_b_011
+  node dummy WWhip_b_011
+    parent NULL
+  endnode
+  node dummy g_WWhip_b_011
+    parent WWhip_b_011
+    positionkey 2
+         0.0000000   -0.0064130   -0.1456330   -0.0088604
+         1.0000000   -0.0064130   -0.1456330   -0.0088604
+    orientationkey 2
+         0.0000000   -0.6297743    0.6228413    0.4641692   -0.1074980
+         1.0000000   -0.6297743    0.6228413    0.4641692   -0.1074980
+  endnode
+doneanim kdfnt WWhip_b_011
+
+#MAXANIM ASCII
+newanim kdfntps WWhip_b_011
+  length 1
+  transtime 0.25
+  animroot WWhip_b_011
+  node dummy WWhip_b_011
+    parent NULL
+  endnode
+  node dummy g_WWhip_b_011
+    parent WWhip_b_011
+    positionkey 2
+         0.0000000   -0.0064130   -0.1456330   -0.0088604
+         1.0000000   -0.0064130   -0.1456330   -0.0088604
+    orientationkey 2
+         0.0000000   -0.6297743    0.6228413    0.4641692   -0.1074980
+         1.0000000   -0.6297743    0.6228413    0.4641692   -0.1074980
+  endnode
+doneanim kdfntps WWhip_b_011
+
+#MAXANIM ASCII
+newanim kdfntdmg WWhip_b_011
+  length 0.333333
+  transtime 0.125
+  animroot WWhip_b_011
+  node dummy WWhip_b_011
+    parent NULL
+  endnode
+  node dummy g_WWhip_b_011
+    parent WWhip_b_011
+    positionkey 2
+         0.0000000   -0.0064130   -0.1456330   -0.0088604
+         0.3333330   -0.0064130   -0.1456330   -0.0088604
+    orientationkey 2
+         0.0000000   -0.6297743    0.6228413    0.4641692   -0.1074980
+         0.3333330   -0.6297743    0.6228413    0.4641692   -0.1074980
+  endnode
+doneanim kdfntdmg WWhip_b_011
+
+#MAXANIM ASCII
+newanim kdfntdie WWhip_b_011
+  length 1
+  transtime 0.25
+  animroot WWhip_b_011
+  node dummy WWhip_b_011
+    parent NULL
+  endnode
+  node dummy g_WWhip_b_011
+    parent WWhip_b_011
+    positionkey 2
+         0.0000000   -0.0064130   -0.1456330   -0.0088604
+         1.0000000   -0.0064130   -0.1456330   -0.0088604
+    orientationkey 2
+         0.0000000   -0.6297743    0.6228413    0.4641692   -0.1074980
+         1.0000000   -0.6297743    0.6228413    0.4641692   -0.1074980
+  endnode
+doneanim kdfntdie WWhip_b_011
+
+#MAXANIM ASCII
+newanim gutokdf WWhip_b_011
+  length 1
+  transtime 0.25
+  animroot WWhip_b_011
+  node dummy WWhip_b_011
+    parent NULL
+  endnode
+  node dummy g_WWhip_b_011
+    parent WWhip_b_011
+    positionkey 2
+         0.0000000   -0.0064130   -0.1456330   -0.0088604
+         1.0000000   -0.0064130   -0.1456330   -0.0088604
+    orientationkey 2
+         0.0000000   -0.6297743    0.6228413    0.4641692   -0.1074980
+         1.0000000   -0.6297743    0.6228413    0.4641692   -0.1074980
+  endnode
+doneanim gutokdf WWhip_b_011
+
+#MAXANIM ASCII
+newanim gustandf WWhip_b_011
+  length 1
+  transtime 0.25
+  animroot WWhip_b_011
+  node dummy WWhip_b_011
+    parent NULL
+  endnode
+  node dummy g_WWhip_b_011
+    parent WWhip_b_011
+    positionkey 2
+         0.0000000   -0.0064130   -0.1456330   -0.0088604
+         1.0000000   -0.0064130   -0.1456330   -0.0088604
+    orientationkey 2
+         0.0000000   -0.6297743    0.6228413    0.4641692   -0.1074980
+         1.0000000   -0.6297740    0.6228410    0.4641700   -0.1074980
+  endnode
+doneanim gustandf WWhip_b_011
+
+#MAXANIM ASCII
+newanim damagel WWhip_b_011
+  length 0.266667
+  transtime 0.25
+  animroot WWhip_b_011
+  node dummy WWhip_b_011
+    parent NULL
+  endnode
+  node dummy g_WWhip_b_011
+    parent WWhip_b_011
+    positionkey 2
+         0.0000000    0.0346836   -0.1400440   -0.0213673
+         0.2666670    0.0376091   -0.1392300   -0.0210520
+    orientationkey 2
+         0.0000000   -0.4473267    0.7235655   -0.5256917   -0.4759830
+         0.2666670   -0.4376030    0.7072819   -0.5552080   -0.4924160
+  endnode
+doneanim damagel WWhip_b_011
+
+#MAXANIM ASCII
+newanim damager WWhip_b_011
+  length 0.266667
+  transtime 0.25
+  animroot WWhip_b_011
+  node dummy WWhip_b_011
+    parent NULL
+  endnode
+  node dummy g_WWhip_b_011
+    parent WWhip_b_011
+    positionkey 2
+         0.0000000    0.0375385   -0.1392510   -0.0210598
+         0.2666670    0.0376092   -0.1392300   -0.0210520
+    orientationkey 2
+         0.0000000   -0.4378361    0.7076741   -0.5545241   -0.4920110
+         0.2666670   -0.4376031    0.7072811   -0.5552090   -0.4924160
+  endnode
+doneanim damager WWhip_b_011
+
+#MAXANIM ASCII
+newanim spasm WWhip_b_011
+  length 0.666667
+  transtime 0.25
+  animroot WWhip_b_011
+  node dummy WWhip_b_011
+    parent NULL
+  endnode
+  node dummy g_WWhip_b_011
+    parent WWhip_b_011
+    positionkey 2
+         0.0000000    0.0376092   -0.1392300   -0.0210520
+         0.6666670    0.0376092   -0.1392300   -0.0210520
+    orientationkey 2
+         0.0000000   -0.4376031    0.7072811   -0.5552090   -0.4924160
+         0.6666670   -0.4376031    0.7072811   -0.5552090   -0.4924160
+  endnode
+doneanim spasm WWhip_b_011
+
+#MAXANIM ASCII
+newanim deadfnt WWhip_b_011
+  length 0.0333333
+  transtime 0.25
+  animroot WWhip_b_011
+  node dummy WWhip_b_011
+    parent NULL
+  endnode
+  node dummy g_WWhip_b_011
+    parent WWhip_b_011
+    positionkey 2
+         0.0000000   -0.0064130   -0.1456330   -0.0088604
+         0.0333333   -0.0064130   -0.1456330   -0.0088604
+    orientationkey 2
+         0.0000000   -0.6297743    0.6228413    0.4641692   -0.1074980
+         0.0333333   -0.6297743    0.6228413    0.4641692   -0.1074980
+  endnode
+doneanim deadfnt WWhip_b_011
+
+#MAXANIM ASCII
+newanim cturnr WWhip_b_011
+  length 0.5
+  transtime 0.25
+  animroot WWhip_b_011
+  node dummy WWhip_b_011
+    parent NULL
+  endnode
+  node dummy g_WWhip_b_011
+    parent WWhip_b_011
+    positionkey 2
+         0.0000000    0.0373291   -0.1393110   -0.0210830
+         0.5000000    0.0373291   -0.1393110   -0.0210830
+    orientationkey 2
+         0.0000000   -0.4385310    0.7088361   -0.5524871   -0.4908130
+         0.5000000   -0.4385310    0.7088361   -0.5524871   -0.4908130
+  endnode
+doneanim cturnr WWhip_b_011
+
+#MAXANIM ASCII
+newanim deadbck WWhip_b_011
+  length 0.0333333
+  transtime 0.25
+  animroot WWhip_b_011
+  node dummy WWhip_b_011
+    parent NULL
+  endnode
+  node dummy g_WWhip_b_011
+    parent WWhip_b_011
+    positionkey 2
+         0.0000000   -0.0064130   -0.1456330   -0.0088604
+         0.0333333   -0.0064130   -0.1456330   -0.0088604
+    orientationkey 2
+         0.0000000   -0.6297743    0.6228413    0.4641692   -0.1074980
+         0.0333333   -0.6297743    0.6228413    0.4641692   -0.1074980
+  endnode
+doneanim deadbck WWhip_b_011
+
+#MAXANIM ASCII
+newanim 1hslasho WWhip_b_011
+  length 1
+  transtime 0.25
+  animroot WWhip_b_011
+  node dummy WWhip_b_011
+    parent NULL
+  endnode
+  node dummy g_WWhip_b_011
+    parent WWhip_b_011
+    positionkey 6
+         0.0000000    0.0001835   -0.1457100    0.0001920
+         0.2000000   -0.0006569   -0.1439610   -0.0273128
+         0.4666670   -0.1282250   -0.0026822    0.0196950
+         0.5333330    0.0003475   -0.1444880    0.0133601
+         0.7000000    0.0826978   -0.1106980   -0.0381593
+         1.0000000    0.0001835   -0.1457100    0.0001920
+    orientationkey 6
+         0.0000000    0.0000000    0.0000000    0.0000000    0.0000000
+         0.2000000   -0.9644154   -0.2640871    0.0126861   -0.2185800
+         0.4666670    0.6814050    0.5451700    0.4883410   -2.0896599
+         0.5333330    0.3843599    0.9187819   -0.0900404   -0.2590550
+         0.7000000   -0.5323580    0.5940440   -0.6030810   -0.9895640
+         1.0000000    0.0000000    0.0000000    0.0000000    0.0000000
+  endnode
+doneanim 1hslasho WWhip_b_011
+
+#MAXANIM ASCII
+newanim 2wslasho WWhip_b_011
+  length 1
+  transtime 0.25
+  animroot WWhip_b_011
+  node dummy WWhip_b_011
+    parent NULL
+  endnode
+  node dummy g_WWhip_b_011
+    parent WWhip_b_011
+    positionkey 7
+         0.0000000    0.0184007   -0.1444780   -0.0038206
+         0.3666670   -0.0671643   -0.1124970    0.0507662
+         0.4666670    0.0070521   -0.1447530   -0.0203307
+         0.6000000   -0.0070255   -0.1448960    0.0087394
+         0.6333330    0.0126708   -0.1448730    0.0036909
+         0.7333330    0.0182866   -0.1444920   -0.0036424
+         1.0000000    0.0153736   -0.1348700    0.0447389
+    orientationkey 7
+         0.0000000   -0.1751770   -0.3748611   -0.9103802   -0.1517180
+         0.3666670    0.1988900   -0.6764730    0.7091030   -1.0204700
+         0.4666670   -0.1860150   -0.9766191   -0.1077660   -0.7013770
+         0.6000000    0.3179549   -0.8803497    0.3519789   -0.1926450
+         0.6333330    0.1038380   -0.9853877   -0.1350140   -0.4943900
+         0.7333330   -0.1799180   -0.2875070   -0.9407280   -0.1462980
+         1.0000000    0.9429929   -0.1852860   -0.2764660   -0.3770020
+  endnode
+doneanim 2wslasho WWhip_b_011
+
+#MAXANIM ASCII
+newanim default WWhip_b_011
+  length 0.5
+  transtime 0.25
+  animroot WWhip_b_011
+  node dummy WWhip_b_011
+    parent NULL
+  endnode
+  node dummy g_WWhip_b_011
+    parent WWhip_b_011
+    positionkey 2
+         0.0000000    0.0001836   -0.1457100    0.0001920
+         0.5000000    0.0001836   -0.1457100    0.0001920
+    orientationkey 2
+         0.0000000    0.0000000    0.0000000    0.0000000    0.0000000
+         0.5000000    0.0000000    0.0000000    0.0000000    0.0000000
+  endnode
+doneanim default WWhip_b_011
+
+#MAXANIM ASCII
+newanim 2hreadyr WWhip_b_011
+  length 1
+  transtime 0.5
+  animroot WWhip_b_011
+  node dummy WWhip_b_011
+    parent NULL
+  endnode
+  node dummy g_WWhip_b_011
+    parent WWhip_b_011
+    positionkey 2
+         0.0000000   -0.0065864   -0.1456180   -0.0091165
+         1.0000000   -0.0066701   -0.1456100   -0.0092405
+    orientationkey 2
+         0.0000000   -0.6297740    0.6228410    0.4641700   -0.1104680
+         1.0000000   -0.6297740    0.6228410    0.4641700   -0.1119050
+  endnode
+doneanim 2hreadyr WWhip_b_011
+
+#MAXANIM ASCII
+newanim 2hreadyl WWhip_b_011
+  length 1
+  transtime 0.5
+  animroot WWhip_b_011
+  node dummy WWhip_b_011
+    parent NULL
+  endnode
+  node dummy g_WWhip_b_011
+    parent WWhip_b_011
+    positionkey 2
+         0.0000000   -0.0066729   -0.1456100   -0.0092446
+         1.0000000   -0.0067566   -0.1456020   -0.0093687
+    orientationkey 2
+         0.0000000   -0.6297740    0.6228410    0.4641700   -0.1119530
+         1.0000000   -0.6297740    0.6228410    0.4641700   -0.1133900
+  endnode
+doneanim 2hreadyl WWhip_b_011
+
+#MAXANIM ASCII
+newanim 2hslashl WWhip_b_011
+  length 1
+  transtime 0.25
+  animroot WWhip_b_011
+  node dummy WWhip_b_011
+    parent NULL
+  endnode
+  node dummy g_WWhip_b_011
+    parent WWhip_b_011
+    positionkey 2
+         0.0000000    0.0321251   -0.1415560    0.0017689
+         1.0000000    0.0280020   -0.1425850    0.0008842
+    orientationkey 2
+         0.0000000    0.0816049   -0.2624839   -0.9614795   -0.2532900
+         1.0000000    0.0509055   -0.2383710   -0.9698391   -0.2185990
+  endnode
+doneanim 2hslashl WWhip_b_011
+
+#MAXANIM ASCII
+newanim 2hslashr WWhip_b_011
+  length 1
+  transtime 0.25
+  animroot WWhip_b_011
+  node dummy WWhip_b_011
+    parent NULL
+  endnode
+  node dummy g_WWhip_b_011
+    parent WWhip_b_011
+    positionkey 2
+         0.0000000    0.0278642   -0.1426170    0.0008536
+         1.0000000    0.0237225   -0.1435020   -0.0000988
+    orientationkey 2
+         0.0000000    0.0497126   -0.2374281   -0.9701322   -0.2174500
+         1.0000000    0.0069747   -0.2033189   -0.9790877   -0.1832540
+  endnode
+doneanim 2hslashr WWhip_b_011
+
+#MAXANIM ASCII
+newanim 2hstab WWhip_b_011
+  length 1
+  transtime 0.25
+  animroot WWhip_b_011
+  node dummy WWhip_b_011
+    parent NULL
+  endnode
+  node dummy g_WWhip_b_011
+    parent WWhip_b_011
+    positionkey 2
+         0.0000000    0.0235842   -0.1435290   -0.0001317
+         1.0000000    0.0194297   -0.1442670   -0.0011504
+    orientationkey 2
+         0.0000000    0.0052743   -0.2019499   -0.9793817   -0.1821260
+         1.0000000   -0.0575439   -0.1506779   -0.9869067   -0.1487800
+  endnode
+doneanim 2hstab WWhip_b_011
+
+#MAXANIM ASCII
+newanim 2hcloseh WWhip_b_011
+  length 1
+  transtime 0.25
+  animroot WWhip_b_011
+  node dummy WWhip_b_011
+    parent NULL
+  endnode
+  node dummy g_WWhip_b_011
+    parent WWhip_b_011
+    positionkey 2
+         0.0000000    0.0192911   -0.1442900   -0.0011855
+         1.0000000    0.0151295   -0.1448810   -0.0022692
+    orientationkey 2
+         0.0000000   -0.0601168   -0.1485500   -0.9870759   -0.1476890
+         1.0000000   -0.1586030   -0.0654040   -0.9851738   -0.1159540
+  endnode
+doneanim 2hcloseh WWhip_b_011
+
+#MAXANIM ASCII
+newanim 2hclosel WWhip_b_011
+  length 1
+  transtime 0.25
+  animroot WWhip_b_011
+  node dummy WWhip_b_011
+    parent NULL
+  endnode
+  node dummy g_WWhip_b_011
+    parent WWhip_b_011
+    positionkey 2
+         0.0000000    0.0149907   -0.1448980   -0.0023064
+         1.0000000    0.0108277   -0.1453410   -0.0034536
+    orientationkey 2
+         0.0000000   -0.1627610   -0.0618196   -0.9847270   -0.1149390
+         1.0000000   -0.3254770    0.0835662   -0.9418500   -0.0866719
+  endnode
+doneanim 2hclosel WWhip_b_011
+
+#MAXANIM ASCII
+newanim 2hreach WWhip_b_011
+  length 1
+  transtime 0.25
+  animroot WWhip_b_011
+  node dummy WWhip_b_011
+    parent NULL
+  endnode
+  node dummy g_WWhip_b_011
+    parent WWhip_b_011
+    positionkey 2
+         0.0000000    0.0106889   -0.1453530   -0.0034929
+         1.0000000    0.0065302   -0.1456470   -0.0047020
+    orientationkey 2
+         0.0000000   -0.3323641    0.0899585   -0.9388512   -0.0858284
+         1.0000000   -0.5774099    0.3350719   -0.7445298   -0.0658434
+  endnode
+doneanim 2hreach WWhip_b_011
+
+#MAXANIM ASCII
+newanim 2hparryl WWhip_b_011
+  length 1
+  transtime 0.3
+  animroot WWhip_b_011
+  node dummy WWhip_b_011
+    parent NULL
+  endnode
+  node dummy g_WWhip_b_011
+    parent WWhip_b_011
+    positionkey 2
+         0.0000000    0.0021051   -0.1458020   -0.0060559
+         1.0000000   -0.0020277   -0.1457970   -0.0073837
+    orientationkey 2
+         0.0000000   -0.7660741    0.5944850   -0.2443730   -0.0628310
+         1.0000000   -0.7285379    0.6535859    0.2050810   -0.0790703
+  endnode
+doneanim 2hparryl WWhip_b_011
+
+#MAXANIM ASCII
+newanim 2hparryr WWhip_b_011
+  length 1
+  transtime 0.3
+  animroot WWhip_b_011
+  node dummy WWhip_b_011
+    parent NULL
+  endnode
+  node dummy g_WWhip_b_011
+    parent WWhip_b_011
+    positionkey 2
+         0.0000000    0.0063918   -0.1456550   -0.0047433
+         1.0000000    0.0022432   -0.1457990   -0.0060126
+    orientationkey 2
+         0.0000000   -0.5860491    0.3445861   -0.7333531   -0.0654123
+         1.0000000   -0.7641831    0.5893021   -0.2621970   -0.0625730
+  endnode
+doneanim 2hparryr WWhip_b_011
+
+#MAXANIM ASCII
+newanim 2hparrys WWhip_b_011
+  length 0.5
+  transtime 0.25
+  animroot WWhip_b_011
+  node dummy WWhip_b_011
+    parent NULL
+  endnode
+  node dummy g_WWhip_b_011
+    parent WWhip_b_011
+    positionkey 2
+         0.0000000    0.0001836   -0.1457100    0.0001920
+         0.5000000    0.0001836   -0.1457100    0.0001920
+    orientationkey 2
+         0.0000000    0.0000000    0.0000000    0.0000000    0.0000000
+         0.5000000    0.0000000    0.0000000    0.0000000    0.0000000
+  endnode
+doneanim 2hparrys WWhip_b_011
+
+#MAXANIM ASCII
+newanim damagel WWhip_b_011
+  length 0.266667
+  transtime 0.125
+  animroot WWhip_b_011
+  node dummy WWhip_b_011
+    parent NULL
+  endnode
+  node dummy g_WWhip_b_011
+    parent WWhip_b_011
+    positionkey 2
+         0.0000000    0.0346836   -0.1400440   -0.0213673
+         0.2666670    0.0376091   -0.1392300   -0.0210520
+    orientationkey 2
+         0.0000000   -0.4473267    0.7235655   -0.5256917   -0.4759830
+         0.2666670   -0.4376030    0.7072819   -0.5552080   -0.4924160
+  endnode
+doneanim damagel WWhip_b_011
+
+#MAXANIM ASCII
+newanim damager WWhip_b_011
+  length 0.266667
+  transtime 0.125
+  animroot WWhip_b_011
+  node dummy WWhip_b_011
+    parent NULL
+  endnode
+  node dummy g_WWhip_b_011
+    parent WWhip_b_011
+    positionkey 2
+         0.0000000    0.0375385   -0.1392510   -0.0210598
+         0.2666670    0.0376092   -0.1392300   -0.0210520
+    orientationkey 2
+         0.0000000   -0.4378361    0.7076741   -0.5545241   -0.4920110
+         0.2666670   -0.4376031    0.7072811   -0.5552090   -0.4924160
+  endnode
+doneanim damager WWhip_b_011
+
+donemodel WWhip_b_011
