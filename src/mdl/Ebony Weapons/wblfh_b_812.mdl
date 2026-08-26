@@ -1,0 +1,46 @@
+#MAXMODEL ASCII
+# model: WBlFh_b_011
+filedependancy WBlFh_b_011.max
+newmodel WBlFh_b_011
+setsupermodel WBlFh_b_011 NULL
+setanimationscale 1
+#MAXGEOM  ASCII
+beginmodelgeom WBlFh_b_011
+node dummy WBlFh_b_011
+  parent NULL
+endnode
+node trimesh g_WBlFh_b_011
+  parent WBlFh_b_011
+  ambient 1 1 1
+  diffuse 1 1 1
+  specular 0 0 0
+  shininess 1
+  bitmap W_metalb_tex
+  verts 6
+      -0.0000197    0.0594072   -0.0000207
+      -0.0000197   -0.0168512    0.0625424
+       0.0625433   -0.0168512   -0.0000206
+      -0.0625828   -0.0168512   -0.0000206
+      -0.0000197   -0.0168512   -0.0625837
+      -0.0000197   -0.0986700   -0.0000206
+  tverts 5
+       0.0061279    0.6935780  0
+       0.0061279    0.6044650  0
+       0.0984895    0.6044650  0
+       0.0982344    0.6044650  0
+       0.0061279    0.5088540  0
+  faces 8
+    0 1 2  1  0 1 2   2
+    0 3 1  1  0 3 1   2
+    0 4 3  1  0 1 3   2
+    0 2 4  1  0 2 1   2
+    5 2 1  1  4 2 1   1
+    5 1 3  1  4 1 3   1
+    5 3 4  1  4 3 1   1
+    5 4 2  1  4 1 2   1
+  position -0.00292578 -0.175373 0.00610176
+  orientation 0 0 0 0
+endnode
+endmodelgeom WBlFh_b_011
+
+donemodel WBlFh_b_011
