@@ -18,7 +18,7 @@ const string GS_CR_TEMPLATE_CRAFT_ART = "gs_item431";
 const string GS_CR_TEMPLATE_FORGE     = "gs_item432";
 const string GS_CR_TEMPLATE_MELD      = "gs_item433";
 const string GS_CR_TEMPLATE_SEW       = "gs_item434";
-const string GS_CR_TEMPLATE_GADGET       = "TODO";
+const string GS_CR_TEMPLATE_GADGET       = "gs_item444";
 const string GS_CR_TEMPLATE_UNKNOWN       = "TODO";
 
 const int GS_CR_LIMIT_RECIPE          = 500;
@@ -294,7 +294,9 @@ int _gsCRGetSkillPoints(object oPC)
            gsCRGetSkillRank(GS_CR_SKILL_CRAFT_ART, oPC) +
            gsCRGetSkillRank(GS_CR_SKILL_FORGE,     oPC) +
            gsCRGetSkillRank(GS_CR_SKILL_MELD,      oPC) +
-           gsCRGetSkillRank(GS_CR_SKILL_SEW,       oPC);
+           gsCRGetSkillRank(GS_CR_SKILL_SEW,       oPC) +
+           gsCRGetSkillRank(GS_CR_SKILL_GADGET,       oPC) +
+           gsCRGetSkillRank(GS_CR_SKILL_UNKNOWN,       oPC);
 }
 //----------------------------------------------------------------
 void gsCRIncreaseSkillRank(int nSkill, object oPC = OBJECT_SELF)
@@ -387,6 +389,7 @@ string gsCRGetSkillName(int nSkill)
     case GS_CR_SKILL_FORGE:     return "<cmÎö>" + GS_T_16777224 + "<cþþþ>";
     case GS_CR_SKILL_MELD:      return "<c»‹¾>" + GS_T_16777225 + "<cþþþ>";
     case GS_CR_SKILL_SEW:       return "<cÄ›m>" + GS_T_16777226 + "<cþþþ>";
+    case GS_CR_SKILL_GADGET:    return "<cÿ?B>" + GS_T_16777651 + "<cþþþ>";
     }
 
     return "";
@@ -1574,7 +1577,7 @@ void gsCRPlaySound(int nSkill)
         break;
 
     case GS_CR_SKILL_GADGET:
-        PlaySound("as_na_leafmove1");
+        PlaySound("as_cv_winch1");
         break;
 
     case GS_CR_SKILL_UNKNOWN:
