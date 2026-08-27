@@ -9,6 +9,7 @@ int StartingConditional()
     gsTKSetToken(103, gsCRGetSkillName(GS_CR_SKILL_MELD));
     gsTKSetToken(104, gsCRGetSkillName(GS_CR_SKILL_CRAFT_ART));
     gsTKSetToken(105, gsCRGetSkillName(GS_CR_SKILL_COOK));
+    gsTKSetToken(106, gsCRGetSkillName(GS_CR_SKILL_GADGET));
 
     return TRUE;
 }

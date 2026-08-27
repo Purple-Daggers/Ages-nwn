@@ -11,6 +11,7 @@ void main()
     gsCRLoadRecipeList(GS_CR_SKILL_FORGE);
     gsCRLoadRecipeList(GS_CR_SKILL_MELD);
     gsCRLoadRecipeList(GS_CR_SKILL_SEW);
+    gsCRLoadRecipeList(GS_CR_SKILL_GADGET);
     ActionDoCommand(gsCRLoadCategoryList());
 
     ActionDoCommand(DestroyObject(OBJECT_SELF));

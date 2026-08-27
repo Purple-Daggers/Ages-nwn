@@ -38,6 +38,10 @@ void gsUpdateRecipe(int nSkill = GS_CR_SKILL_CARPENTER, int nSlot = 0)
             break;
 
         case GS_CR_SKILL_SEW:
+            nSkill = GS_CR_SKILL_GADGET;
+            break;
+
+        case GS_CR_SKILL_GADGET:
             SendMessageToAllDMs("CRAFT DATABASE: RECONSTRUCTION COMPLETED");
             return;
         }
@@ -63,12 +67,16 @@ void gsUpdateRecipe(int nSkill = GS_CR_SKILL_CARPENTER, int nSlot = 0)
             _gsCRProduce(stRecipe.nInputCount3, stRecipe.sInputResRef3, oInput);
             _gsCRProduce(stRecipe.nInputCount4, stRecipe.sInputResRef4, oInput);
             _gsCRProduce(stRecipe.nInputCount5, stRecipe.sInputResRef5, oInput);
+            _gsCRProduce(stRecipe.nInputCount6, stRecipe.sInputResRef6, oInput);
+            _gsCRProduce(stRecipe.nInputCount7, stRecipe.sInputResRef7, oInput);
 
             _gsCRProduce(stRecipe.nOutputCount1, stRecipe.sOutputResRef1, oOutput);
             _gsCRProduce(stRecipe.nOutputCount2, stRecipe.sOutputResRef2, oOutput);
             _gsCRProduce(stRecipe.nOutputCount3, stRecipe.sOutputResRef3, oOutput);
             _gsCRProduce(stRecipe.nOutputCount4, stRecipe.sOutputResRef4, oOutput);
             _gsCRProduce(stRecipe.nOutputCount5, stRecipe.sOutputResRef5, oOutput);
+            _gsCRProduce(stRecipe.nOutputCount6, stRecipe.sOutputResRef6, oOutput);
+            _gsCRProduce(stRecipe.nOutputCount7, stRecipe.sOutputResRef7, oOutput);
 
             gsCRRemoveRecipeInSlot(nSkill, nSlot);
             gsCRAddRecipe(oInput, oOutput, nSkill, stRecipe.sID);

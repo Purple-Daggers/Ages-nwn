@@ -16,12 +16,15 @@ int StartingConditional()
     gsTKSetToken(104, gsCRGetSkillName(GS_CR_SKILL_MELD));
     gsTKSetToken(105, gsCRGetSkillName(GS_CR_SKILL_CRAFT_ART));
     gsTKSetToken(106, gsCRGetSkillName(GS_CR_SKILL_COOK));
+    gsTKSetToken(113, gsCRGetSkillName(GS_CR_SKILL_GADGET));
+
     gsTKSetToken(107, IntToString(gsCRGetSkillRank(GS_CR_SKILL_FORGE,     oSpeaker)));
     gsTKSetToken(108, IntToString(gsCRGetSkillRank(GS_CR_SKILL_CARPENTER, oSpeaker)));
     gsTKSetToken(109, IntToString(gsCRGetSkillRank(GS_CR_SKILL_SEW,       oSpeaker)));
     gsTKSetToken(110, IntToString(gsCRGetSkillRank(GS_CR_SKILL_MELD,      oSpeaker)));
     gsTKSetToken(111, IntToString(gsCRGetSkillRank(GS_CR_SKILL_CRAFT_ART, oSpeaker)));
     gsTKSetToken(112, IntToString(gsCRGetSkillRank(GS_CR_SKILL_COOK,      oSpeaker)));
+    gsTKSetToken(114, IntToString(gsCRGetSkillRank(GS_CR_SKILL_GADGET,      oSpeaker)));
 
     return TRUE;
 }
