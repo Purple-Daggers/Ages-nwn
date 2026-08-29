@@ -14,6 +14,33 @@
                 "type": "byte",
                 "value": 0
               },
+              "LIST": {
+                "type": "list",
+                "value": [
+                  {
+                    "__struct_id": 0,
+                    "NAME": {
+                      "type": "cexostring",
+                      "value": "Secret Door Destination"
+                    },
+                    "RESREF": {
+                      "type": "resref",
+                      "value": "dst_as_secret"
+                    }
+                  },
+                  {
+                    "__struct_id": 0,
+                    "NAME": {
+                      "type": "cexostring",
+                      "value": "Secret Door Spawn"
+                    },
+                    "RESREF": {
+                      "type": "resref",
+                      "value": "loc_as_secret"
+                    }
+                  }
+                ]
+              },
               "STRREF": {
                 "type": "dword",
                 "value": 6688
