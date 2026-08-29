@@ -10,6 +10,7 @@
 #include "gs_inc_time"
 #include "gs_inc_worship"
 #include "gs_inc_subrace"
+#include "x0_i0_secret"
 
 const int GS_TIMEOUT = 1200; //TIME UPDATE: 20 minutes
 
@@ -187,7 +188,13 @@ void main()
                 break;
 
             case OBJECT_TYPE_TRIGGER:
-
+                if(GetResRef(oObject) == "as_secretdoor")
+                {
+                    if(nTimeout)
+                    {
+                        ResetSecretItem(oObject);
+                    }
+                }
                 break;
 
             case OBJECT_TYPE_WAYPOINT:
