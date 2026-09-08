@@ -1363,6 +1363,49 @@
                 "type": "byte",
                 "value": 48
               },
+              "LIST": {
+                "type": "list",
+                "value": [
+                  {
+                    "__struct_id": 0,
+                    "CR": {
+                      "type": "float",
+                      "value": 0.5
+                    },
+                    "FACTION": {
+                      "type": "cexostring",
+                      "value": "Hostile"
+                    },
+                    "NAME": {
+                      "type": "cexostring",
+                      "value": "Carrion Crawler"
+                    },
+                    "RESREF": {
+                      "type": "resref",
+                      "value": "as_creature"
+                    }
+                  },
+                  {
+                    "__struct_id": 0,
+                    "CR": {
+                      "type": "float",
+                      "value": 0.5
+                    },
+                    "FACTION": {
+                      "type": "cexostring",
+                      "value": "Hostile"
+                    },
+                    "NAME": {
+                      "type": "cexostring",
+                      "value": "Rust Monster"
+                    },
+                    "RESREF": {
+                      "type": "resref",
+                      "value": "as_creature021"
+                    }
+                  }
+                ]
+              },
               "STRREF": {
                 "type": "dword",
                 "value": 63235
@@ -1918,6 +1961,25 @@
                     "__struct_id": 0,
                     "CR": {
                       "type": "float",
+                      "value": 0.3333
+                    },
+                    "FACTION": {
+                      "type": "cexostring",
+                      "value": "Hostile"
+                    },
+                    "NAME": {
+                      "type": "cexostring",
+                      "value": "Air Fundamental"
+                    },
+                    "RESREF": {
+                      "type": "resref",
+                      "value": "as_creature014"
+                    }
+                  },
+                  {
+                    "__struct_id": 0,
+                    "CR": {
+                      "type": "float",
                       "value": 0.25
                     },
                     "FACTION": {
@@ -1945,11 +2007,49 @@
                     },
                     "NAME": {
                       "type": "cexostring",
+                      "value": "Earth Fundamental"
+                    },
+                    "RESREF": {
+                      "type": "resref",
+                      "value": "as_creature016"
+                    }
+                  },
+                  {
+                    "__struct_id": 0,
+                    "CR": {
+                      "type": "float",
+                      "value": 0.3333
+                    },
+                    "FACTION": {
+                      "type": "cexostring",
+                      "value": "Hostile"
+                    },
+                    "NAME": {
+                      "type": "cexostring",
                       "value": "Fire Elemental 01"
                     },
                     "RESREF": {
                       "type": "resref",
                       "value": "fireelemental01"
+                    }
+                  },
+                  {
+                    "__struct_id": 0,
+                    "CR": {
+                      "type": "float",
+                      "value": 0.3333
+                    },
+                    "FACTION": {
+                      "type": "cexostring",
+                      "value": "Hostile"
+                    },
+                    "NAME": {
+                      "type": "cexostring",
+                      "value": "Fire Fundamental"
+                    },
+                    "RESREF": {
+                      "type": "resref",
+                      "value": "as_creature018"
                     }
                   },
                   {
@@ -1969,6 +2069,25 @@
                     "RESREF": {
                       "type": "resref",
                       "value": "waterelemental01"
+                    }
+                  },
+                  {
+                    "__struct_id": 0,
+                    "CR": {
+                      "type": "float",
+                      "value": 0.3333
+                    },
+                    "FACTION": {
+                      "type": "cexostring",
+                      "value": "Hostile"
+                    },
+                    "NAME": {
+                      "type": "cexostring",
+                      "value": "Water Fundamental"
+                    },
+                    "RESREF": {
+                      "type": "resref",
+                      "value": "as_creature017"
                     }
                   }
                 ]
@@ -2145,6 +2264,49 @@
                       "type": "byte",
                       "value": 10
                     },
+                    "LIST": {
+                      "type": "list",
+                      "value": [
+                        {
+                          "__struct_id": 0,
+                          "CR": {
+                            "type": "float",
+                            "value": 2.0
+                          },
+                          "FACTION": {
+                            "type": "cexostring",
+                            "value": "Hostile"
+                          },
+                          "NAME": {
+                            "type": "cexostring",
+                            "value": "Slicer Beetle"
+                          },
+                          "RESREF": {
+                            "type": "resref",
+                            "value": "as_creature012"
+                          }
+                        },
+                        {
+                          "__struct_id": 0,
+                          "CR": {
+                            "type": "float",
+                            "value": 2.0
+                          },
+                          "FACTION": {
+                            "type": "cexostring",
+                            "value": "Hostile"
+                          },
+                          "NAME": {
+                            "type": "cexostring",
+                            "value": "Slicer Beetle (Small)"
+                          },
+                          "RESREF": {
+                            "type": "resref",
+                            "value": "as_creature013"
+                          }
+                        }
+                      ]
+                    },
                     "STRREF": {
                       "type": "dword",
                       "value": 6701
@@ -2181,6 +2343,25 @@
                     "LIST": {
                       "type": "list",
                       "value": [
+                        {
+                          "__struct_id": 0,
+                          "CR": {
+                            "type": "float",
+                            "value": 3.0
+                          },
+                          "FACTION": {
+                            "type": "cexostring",
+                            "value": "Hostile"
+                          },
+                          "NAME": {
+                            "type": "cexostring",
+                            "value": "Pale Spider"
+                          },
+                          "RESREF": {
+                            "type": "resref",
+                            "value": "as_creature020"
+                          }
+                        },
                         {
                           "__struct_id": 0,
                           "CR": {
@@ -2241,6 +2422,49 @@
               "ID": {
                 "type": "byte",
                 "value": 116
+              },
+              "LIST": {
+                "type": "list",
+                "value": [
+                  {
+                    "__struct_id": 0,
+                    "CR": {
+                      "type": "float",
+                      "value": 0.25
+                    },
+                    "FACTION": {
+                      "type": "cexostring",
+                      "value": "Hostile"
+                    },
+                    "NAME": {
+                      "type": "cexostring",
+                      "value": "Mimic"
+                    },
+                    "RESREF": {
+                      "type": "resref",
+                      "value": "as_creature015"
+                    }
+                  },
+                  {
+                    "__struct_id": 0,
+                    "CR": {
+                      "type": "float",
+                      "value": 0.25
+                    },
+                    "FACTION": {
+                      "type": "cexostring",
+                      "value": "Hostile"
+                    },
+                    "NAME": {
+                      "type": "cexostring",
+                      "value": "Sewer Slime"
+                    },
+                    "RESREF": {
+                      "type": "resref",
+                      "value": "as_creature019"
+                    }
+                  }
+                ]
               },
               "STRREF": {
                 "type": "dword",
@@ -2875,6 +3099,82 @@
                     "LIST": {
                       "type": "list",
                       "value": [
+                        {
+                          "__struct_id": 0,
+                          "CR": {
+                            "type": "float",
+                            "value": 0.5
+                          },
+                          "FACTION": {
+                            "type": "cexostring",
+                            "value": "Hostile"
+                          },
+                          "NAME": {
+                            "type": "cexostring",
+                            "value": "Desiccated Zombie"
+                          },
+                          "RESREF": {
+                            "type": "resref",
+                            "value": "as_creature008"
+                          }
+                        },
+                        {
+                          "__struct_id": 0,
+                          "CR": {
+                            "type": "float",
+                            "value": 0.5
+                          },
+                          "FACTION": {
+                            "type": "cexostring",
+                            "value": "Hostile"
+                          },
+                          "NAME": {
+                            "type": "cexostring",
+                            "value": "Desiccated Zombie"
+                          },
+                          "RESREF": {
+                            "type": "resref",
+                            "value": "as_creature009"
+                          }
+                        },
+                        {
+                          "__struct_id": 0,
+                          "CR": {
+                            "type": "float",
+                            "value": 0.5
+                          },
+                          "FACTION": {
+                            "type": "cexostring",
+                            "value": "Hostile"
+                          },
+                          "NAME": {
+                            "type": "cexostring",
+                            "value": "Desiccated Zombie"
+                          },
+                          "RESREF": {
+                            "type": "resref",
+                            "value": "as_creature010"
+                          }
+                        },
+                        {
+                          "__struct_id": 0,
+                          "CR": {
+                            "type": "float",
+                            "value": 0.5
+                          },
+                          "FACTION": {
+                            "type": "cexostring",
+                            "value": "Hostile"
+                          },
+                          "NAME": {
+                            "type": "cexostring",
+                            "value": "Desiccated Zombie"
+                          },
+                          "RESREF": {
+                            "type": "resref",
+                            "value": "as_creature011"
+                          }
+                        },
                         {
                           "__struct_id": 0,
                           "CR": {
