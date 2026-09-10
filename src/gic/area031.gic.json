@@ -11,6 +11,13 @@
         "__struct_id": 8,
         "Comment": {
           "type": "cexostring",
+          "value": "MineExit"
+        }
+      },
+      {
+        "__struct_id": 8,
+        "Comment": {
+          "type": "cexostring",
           "value": "CaveExit"
         }
       },
@@ -18,63 +25,21 @@
         "__struct_id": 8,
         "Comment": {
           "type": "cexostring",
-          "value": "This door only opens when the lever is pulled from the other side."
+          "value": "Cloth Door"
         }
       },
       {
         "__struct_id": 8,
         "Comment": {
           "type": "cexostring",
-          "value": ""
+          "value": "Cloth Door"
         }
       },
       {
         "__struct_id": 8,
         "Comment": {
           "type": "cexostring",
-          "value": "Hard Rusted Door 2\r\n\r\nHardness DC: 50"
-        }
-      },
-      {
-        "__struct_id": 8,
-        "Comment": {
-          "type": "cexostring",
-          "value": "Hard Rusted Door 2\r\n\r\nHardness DC: 50"
-        }
-      },
-      {
-        "__struct_id": 8,
-        "Comment": {
-          "type": "cexostring",
-          "value": "Rusted Door"
-        }
-      },
-      {
-        "__struct_id": 8,
-        "Comment": {
-          "type": "cexostring",
-          "value": "Rusted Door"
-        }
-      },
-      {
-        "__struct_id": 8,
-        "Comment": {
-          "type": "cexostring",
-          "value": "Rusted Door"
-        }
-      },
-      {
-        "__struct_id": 8,
-        "Comment": {
-          "type": "cexostring",
-          "value": ""
-        }
-      },
-      {
-        "__struct_id": 8,
-        "Comment": {
-          "type": "cexostring",
-          "value": "MineExit"
+          "value": "Cloth Door"
         }
       }
     ]
@@ -145,48 +110,6 @@
           "type": "cexostring",
           "value": ""
         }
-      },
-      {
-        "__struct_id": 9,
-        "Comment": {
-          "type": "cexostring",
-          "value": ""
-        }
-      },
-      {
-        "__struct_id": 9,
-        "Comment": {
-          "type": "cexostring",
-          "value": ""
-        }
-      },
-      {
-        "__struct_id": 9,
-        "Comment": {
-          "type": "cexostring",
-          "value": ""
-        }
-      },
-      {
-        "__struct_id": 9,
-        "Comment": {
-          "type": "cexostring",
-          "value": ""
-        }
-      },
-      {
-        "__struct_id": 9,
-        "Comment": {
-          "type": "cexostring",
-          "value": ""
-        }
-      },
-      {
-        "__struct_id": 9,
-        "Comment": {
-          "type": "cexostring",
-          "value": ""
-        }
       }
     ]
   },
@@ -200,10 +123,26 @@
   },
   "TriggerList": {
     "type": "list",
-    "value": []
+    "value": [
+      {
+        "__struct_id": 1,
+        "Comment": {
+          "type": "cexostring",
+          "value": ""
+        }
+      }
+    ]
   },
   "WaypointList": {
     "type": "list",
-    "value": []
+    "value": [
+      {
+        "__struct_id": 5,
+        "Comment": {
+          "type": "cexostring",
+          "value": ""
+        }
+      }
+    ]
   }
 }
