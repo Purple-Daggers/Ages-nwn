@@ -1,4 +1,3 @@
-#include "gs_inc_common"
 void main()
 {
     object oPlayer = GetPCSpeaker();
