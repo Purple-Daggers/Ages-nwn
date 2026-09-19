@@ -1,17 +1,23 @@
-const int GS_TIMEOUT = 10800; //TIME UPDATE: 3 Hours
+const int GS_TIMEOUT = 3600; //TIME UPDATE: 1 Hour
 
-int StartingConditional()
+void main()
 {
     object oSelf = OBJECT_SELF;
-    string sTradeGood = GetLocalString(oSelf, "AS_TRADEGOOD");
-    int nWillBuy = GetLocalInt(oSelf, "AS_WILLBUY");
-    string sTradeName = GetLocalString(oSelf, "AS_TRADENAME");
-    int nTradePrice = GetLocalInt(oSelf, "AS_PRICE");
+    object oPlayer = GetPCSpeaker();
+    if(!GetIsPC(oPlayer))
+    {
+        return;
+    }
+    string sTradeGood;
+    int nWillBuy;
+    string sTradeName;
+    int nTradePrice;
+    string sDestination;
     int nTimestamp = GetLocalInt(GetModule(), "GS_TIMESTAMP");
-    int nTimestampTrade = GetLocalInt(oSelf, "GS_TIMESTAMP");
+    int nTimestampTrade = GetLocalInt(oPlayer, "AS_PROSPECT_TIMESTAMP");
     int nTimeout = nTimestamp - nTimestampTrade > GS_TIMEOUT;
 
-    if(!GetLocalInt(oSelf, "AS_ENABLED") || nTimeout)
+    if(nTimeout)
     {
         //Pick a random tradegood to sell
         sTradeGood = "as_tradegood001";
@@ -42,26 +48,35 @@ int StartingConditional()
 
         nWillBuy = 10 + Random(11);
         sTradeName = GetName(oTradeGood);
+        DestroyObject(oTradeGood);
 
-        SetLocalInt(oSelf, "AS_ENABLED", TRUE);
-        SetLocalString(oSelf, "AS_TRADEGOOD", sTradeGood);
-        SetLocalInt(oSelf, "AS_PRICE", nTradePrice);
-        SetLocalInt(oSelf, "AS_WILLBUY", nWillBuy);
-        SetLocalString(oSelf, "AS_TRADENAME", sTradeName);
-        SetLocalInt(oSelf, "GS_TIMESTAMP", nTimestamp);
-    }
+        //Pick a random destination
+        switch((1+ Random(2)))
+        {
+            case 1: sDestination = "Loralon"; break;
+            case 2: sDestination = "Somewhere"; break;
+            case 3: sDestination = "Elsewhere"; break;
+            default: sDestination = "Loralon"; break;
+        }
 
-    SetCustomToken(1000, sTradeName);
-    SetCustomToken(1001, IntToString(nTradePrice));
-    SetCustomToken(1002, IntToString(nWillBuy));
+        //Create prospect item
+        object oProspectPapers = CreateItemOnObject("as_prospect", oPlayer);
 
-    if(nWillBuy > 0)
-    {
-        return TRUE;
+        SetLocalInt(oProspectPapers, "AS_ENABLED", TRUE);
+        SetLocalString(oProspectPapers, "AS_TRADEGOOD", sTradeGood);
+        SetLocalInt(oProspectPapers, "AS_PRICE", nTradePrice);
+        SetLocalInt(oProspectPapers, "AS_WILLBUY", nWillBuy);
+        SetLocalString(oProspectPapers, "AS_TRADENAME", sTradeName);
+        SetLocalString(oProspectPapers, "AS_DESTINATION", sDestination);
+
+        SetDescription(oProspectPapers, "This trading prospect says I can deliver up to " + IntToString(nWillBuy) + " crates of " + sTradeName + " to " + sDestination + " for " + IntToString(nTradePrice) + " coins each.");
+
+        SetLocalInt(oPlayer, "AS_PROSPECT_TIMESTAMP", nTimestamp);
     }
     else
     {
-        return FALSE;
+        SendMessageToPC(oPlayer, "You cannot get another trading prospect at this time.");
     }
 }
+
 
