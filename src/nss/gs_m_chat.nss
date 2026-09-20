@@ -407,7 +407,7 @@ void main()
             if (sString != "")
             {
                 //emote or speak common
-                if (nEmote || nLanguage1 == GS_LA_LANGUAGE_COMMON)
+                if (nEmote || nLanguage1 == GS_LA_LANGUAGE_EYNNELIC)
                 {
                     sOutput               = sString;
                     sLanguageName         = "";
@@ -416,12 +416,12 @@ void main()
                 //speak other language
                 else
                 {
-                    switch (nLanguage1)
+                    /*switch (nLanguage1)
                     {
                     case GS_LA_LANGUAGE_SIGN:
                     case GS_LA_LANGUAGE_THIEF:
                         sString = GetStringLeft(sString, 25);
-                    }
+                    }*/
 
                     //distribute input
                     string sLanguageColor = gsLAGetLanguageColor(nLanguage1);

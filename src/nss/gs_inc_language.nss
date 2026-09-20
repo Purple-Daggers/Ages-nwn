@@ -8,22 +8,22 @@
 
 const string GS_LA_COLOR_EMOTE       = "<cþþþ>";
 
-const int GS_LA_LANGUAGE_INVALID     = -1;
-const int GS_LA_LANGUAGE_COMMON      =  0;
-const int GS_LA_LANGUAGE_ABYSSAL     =  1;
-const int GS_LA_LANGUAGE_ANIMAL      =  2;
-const int GS_LA_LANGUAGE_CELESTIAL   =  3;
-const int GS_LA_LANGUAGE_DRACONIC    =  4;
-const int GS_LA_LANGUAGE_DWARVEN     =  5;
-const int GS_LA_LANGUAGE_ELVEN       =  6;
-const int GS_LA_LANGUAGE_GNOME       =  7;
-const int GS_LA_LANGUAGE_GOBLIN      =  8;
-const int GS_LA_LANGUAGE_HALFLING    =  9;
-const int GS_LA_LANGUAGE_INFERNAL    = 10;
-const int GS_LA_LANGUAGE_ORC         = 11;
-const int GS_LA_LANGUAGE_SIGN        = 12;
-const int GS_LA_LANGUAGE_THIEF       = 13;
-const int GS_LA_LANGUAGE_UNDERCOMMON = 14;
+const int GS_LA_LANGUAGE_INVALID      = -1;
+const int GS_LA_LANGUAGE_EYNNELIC     =  0;
+const int GS_LA_LANGUAGE_ORIS         =  1;
+const int GS_LA_LANGUAGE_ADHEAS       =  2;
+const int GS_LA_LANGUAGE_DORVIN       =  3;
+const int GS_LA_LANGUAGE_VUTA         =  4;
+const int GS_LA_LANGUAGE_OLD_DULRIC   =  5;
+const int GS_LA_LANGUAGE_LOW_ELDARIS  =  6;
+const int GS_LA_LANGUAGE_RUDHEAS      =  7;
+const int GS_LA_LANGUAGE_RASHEMI      =  8;
+const int GS_LA_LANGUAGE_ROST         =  9;
+const int GS_LA_LANGUAGE_BOSHA        =  10;
+const int GS_LA_LANGUAGE_VEYDISH      =  11;
+const int GS_LA_LANGUAGE_VIVERIC      =  12;
+
+
 
 //return TRUE if oPC can speak nLanguage
 int gsLAGetCanSpeakLanguage(int nLanguage, object oPC = OBJECT_SELF);
@@ -39,32 +39,20 @@ string gsLAGetLanguageColor(int nLanguage);
 string gsLATranslate(string sString, int nLanguage);
 //return sign language
 string gsLATranslateSign();
-//return sString translated to infernal language
-string gsLATranslateInfernal(string sString);
-//return sString translated to abyssal language
-string gsLATranslateAbyssal(string sString);
-//return sString translated to celestial language
-string gsLATranslateCelestial(string sString);
-//return sString translated to goblin language
-string gsLATranslateGoblin(string sString);
-//return sString translated to draconic language
-string gsLATranslateDraconic(string sString);
-//return sString translated to dwarf language
-string gsLATranslateDwarven(string sString);
-//return sString translated to elven language
-string gsLATranslateElven(string sString);
-//return sString translated to gnome language
-string gsLATranslateGnome(string sString);
-//return sString translated to halfling language
-string gsLATranslateHalfling(string sString);
-//return sString translated to orc language
-string gsLATranslateOrc(string sString);
-//return sString translated to animal language
-string gsLATranslateAnimal(string sString);
-//return sString translated to thief language
-string gsLATranslateThief(string sString);
-//return sString translated to undercommon language
-string gsLATranslateUndercommon(string sString);
+
+//return sString translated to oris language
+string gsLATranslateOris(string sString);
+string gsLATranslateAdheas(string sString);
+string gsLATranslateDorvin(string sString);
+string gsLATranslateVuta(string sString);
+string gsLATranslateOldDulric(string sString);
+string gsLATranslateLowEldaris(string sString);
+string gsLATranslateRudheas(string sString);
+string gsLATranslateRashemi(string sString);
+string gsLATranslateRost(string sString);
+string gsLATranslateBosha(string sString);
+string gsLATranslateVeydish(string sString);
+string gsLATranslateViveric(string sString);
 
 int gsLAGetCanSpeakLanguage(int nLanguage, object oPC = OBJECT_SELF)
 {
@@ -82,73 +70,42 @@ int gsLAGetCanSpeakLanguage(int nLanguage, object oPC = OBJECT_SELF)
 
     switch (nLanguage)
     {
-    case GS_LA_LANGUAGE_COMMON:
+    case GS_LA_LANGUAGE_EYNNELIC:
         return TRUE;
-
+    case GS_LA_LANGUAGE_ORIS:
+        return TRUE;
+    case GS_LA_LANGUAGE_ADHEAS:
+        return TRUE;
+    case GS_LA_LANGUAGE_DORVIN:
+        return TRUE;
+    case GS_LA_LANGUAGE_VUTA:
+        return TRUE;
+    case GS_LA_LANGUAGE_OLD_DULRIC:
+        return TRUE;
+    case GS_LA_LANGUAGE_LOW_ELDARIS:
+        return TRUE;
+    case GS_LA_LANGUAGE_RUDHEAS:
+        return TRUE;
+    case GS_LA_LANGUAGE_RASHEMI:
+        return TRUE;
+    case GS_LA_LANGUAGE_ROST:
+        return TRUE;
+    case GS_LA_LANGUAGE_BOSHA:
+        return TRUE;
+    case GS_LA_LANGUAGE_VEYDISH:
+        return TRUE;
+    case GS_LA_LANGUAGE_VIVERIC:
+        return TRUE;
+        
+        /*
     case GS_LA_LANGUAGE_ABYSSAL:
+
         return nAlignmentGE == ALIGNMENT_EVIL &&
                nAlignmentLC != ALIGNMENT_LAWFUL &&
                (nSubRace == GS_SU_PLANETOUCHED_TIEFLING ||
                 gsCMGetHasClass(CLASS_TYPE_CLERIC, oPC) ||
                 gsCMGetHasClass(CLASS_TYPE_BLACKGUARD, oPC));
-
-    case GS_LA_LANGUAGE_ANIMAL:
-        return nSubRace == GS_SU_SPECIAL_FEY ||
-               gsCMGetHasClass(CLASS_TYPE_DRUID, oPC) ||
-               gsCMGetHasClass(CLASS_TYPE_RANGER, oPC);
-
-    case GS_LA_LANGUAGE_CELESTIAL:
-        return nSubRace == GS_SU_PLANETOUCHED_AASIMAR ||
-               (nAlignmentGE == ALIGNMENT_GOOD &&
-                gsCMGetHasClass(CLASS_TYPE_CLERIC, oPC)) ||
-                gsCMGetHasClass(CLASS_TYPE_PALADIN, oPC);
-
-    case GS_LA_LANGUAGE_DRACONIC:
-        return nSubRace == GS_SU_SPECIAL_KOBOLD ||
-               gsCMGetHasClass(CLASS_TYPE_DRAGON_DISCIPLE, oPC) ||
-               gsCMGetHasClass(CLASS_TYPE_WIZARD, oPC);
-
-    case GS_LA_LANGUAGE_DWARVEN:
-        return nRace == RACIAL_TYPE_DWARF;
-
-    case GS_LA_LANGUAGE_ELVEN:
-        return nRace == RACIAL_TYPE_ELF ||
-               nRace == RACIAL_TYPE_HALFELF;
-
-    case GS_LA_LANGUAGE_GNOME:
-        return nRace == RACIAL_TYPE_GNOME;
-
-    case GS_LA_LANGUAGE_GOBLIN:
-        return nSubRace == GS_SU_SPECIAL_GOBLIN;
-
-    case GS_LA_LANGUAGE_HALFLING:
-        return nRace == RACIAL_TYPE_HALFLING &&
-               nSubRace != GS_SU_SPECIAL_FEY &&
-               nSubRace != GS_SU_SPECIAL_GOBLIN &&
-               nSubRace != GS_SU_SPECIAL_KOBOLD;
-
-    case GS_LA_LANGUAGE_INFERNAL:
-        return nAlignmentGE == ALIGNMENT_EVIL &&
-               nAlignmentLC == ALIGNMENT_LAWFUL &&
-               (nSubRace == GS_SU_PLANETOUCHED_TIEFLING ||
-                gsCMGetHasClass(CLASS_TYPE_CLERIC, oPC) ||
-                gsCMGetHasClass(CLASS_TYPE_BLACKGUARD, oPC));
-
-    case GS_LA_LANGUAGE_ORC:
-        return nRace == RACIAL_TYPE_HALFORC;
-
-    case GS_LA_LANGUAGE_SIGN:
-        return nSubRace == GS_SU_ELF_DROW;
-
-    case GS_LA_LANGUAGE_THIEF:
-        return gsCMGetHasClass(CLASS_TYPE_ROGUE, oPC);
-
-    case GS_LA_LANGUAGE_UNDERCOMMON:
-        return nSubRace == GS_SU_DWARF_GRAY ||
-               nSubRace == GS_SU_ELF_DROW ||
-               nSubRace == GS_SU_GNOME_DEEP ||
-               nSubRace == GS_SU_SPECIAL_GOBLIN ||
-               nSubRace == GS_SU_SPECIAL_KOBOLD;;
+        */
     }
 
     return FALSE;
@@ -158,21 +115,20 @@ int gsLAGetLanguageByKey(string sKey)
 {
     sKey = GetStringLowerCase(sKey);
 
-    if (sKey == GS_T_16777530) return GS_LA_LANGUAGE_COMMON;
-    if (sKey == GS_T_16777357) return GS_LA_LANGUAGE_ABYSSAL;
-    if (sKey == GS_T_16777358) return GS_LA_LANGUAGE_ANIMAL;
-    if (sKey == GS_T_16777359) return GS_LA_LANGUAGE_CELESTIAL;
-    if (sKey == GS_T_16777360) return GS_LA_LANGUAGE_DRACONIC;
-    if (sKey == GS_T_16777361) return GS_LA_LANGUAGE_DWARVEN;
-    if (sKey == GS_T_16777362) return GS_LA_LANGUAGE_ELVEN;
-    if (sKey == GS_T_16777363) return GS_LA_LANGUAGE_GNOME;
-    if (sKey == GS_T_16777364) return GS_LA_LANGUAGE_GOBLIN;
-    if (sKey == GS_T_16777365) return GS_LA_LANGUAGE_HALFLING;
-    if (sKey == GS_T_16777366) return GS_LA_LANGUAGE_INFERNAL;
-    if (sKey == GS_T_16777367) return GS_LA_LANGUAGE_ORC;
-    if (sKey == GS_T_16777368) return GS_LA_LANGUAGE_SIGN;
-    if (sKey == GS_T_16777369) return GS_LA_LANGUAGE_THIEF;
-    if (sKey == GS_T_16777439) return GS_LA_LANGUAGE_UNDERCOMMON;
+    if (sKey == GS_T_16777530) return GS_LA_LANGUAGE_EYNNELIC;
+    if (sKey == GS_T_16777664) return GS_LA_LANGUAGE_ORIS;
+    if (sKey == GS_T_16777665) return GS_LA_LANGUAGE_ADHEAS;
+    if (sKey == GS_T_16777666) return GS_LA_LANGUAGE_DORVIN;
+    if (sKey == GS_T_16777667) return GS_LA_LANGUAGE_VUTA;
+    if (sKey == GS_T_16777668) return GS_LA_LANGUAGE_OLD_DULRIC;
+    if (sKey == GS_T_16777669) return GS_LA_LANGUAGE_LOW_ELDARIS;
+    if (sKey == GS_T_16777670) return GS_LA_LANGUAGE_RUDHEAS;
+    if (sKey == GS_T_16777671) return GS_LA_LANGUAGE_RASHEMI;
+    if (sKey == GS_T_16777672) return GS_LA_LANGUAGE_ROST;
+    if (sKey == GS_T_16777673) return GS_LA_LANGUAGE_BOSHA;
+    if (sKey == GS_T_16777674) return GS_LA_LANGUAGE_VEYDISH;
+    if (sKey == GS_T_16777675) return GS_LA_LANGUAGE_VIVERIC;
+
 
     return GS_LA_LANGUAGE_INVALID;
 }
@@ -181,21 +137,19 @@ string gsLAGetLanguageName(int nLanguage)
 {
     switch (nLanguage)
     {
-    case GS_LA_LANGUAGE_COMMON:      return GS_T_16777529;
-    case GS_LA_LANGUAGE_ABYSSAL:     return GS_T_16777344;
-    case GS_LA_LANGUAGE_ANIMAL:      return GS_T_16777355;
-    case GS_LA_LANGUAGE_CELESTIAL:   return GS_T_16777345;
-    case GS_LA_LANGUAGE_DRACONIC:    return GS_T_16777346;
-    case GS_LA_LANGUAGE_DWARVEN:     return GS_T_16777347;
-    case GS_LA_LANGUAGE_ELVEN:       return GS_T_16777348;
-    case GS_LA_LANGUAGE_GNOME:       return GS_T_16777349;
-    case GS_LA_LANGUAGE_GOBLIN:      return GS_T_16777350;
-    case GS_LA_LANGUAGE_HALFLING:    return GS_T_16777351;
-    case GS_LA_LANGUAGE_INFERNAL:    return GS_T_16777352;
-    case GS_LA_LANGUAGE_ORC:         return GS_T_16777353;
-    case GS_LA_LANGUAGE_SIGN:        return GS_T_16777356;
-    case GS_LA_LANGUAGE_THIEF:       return GS_T_16777354;
-    case GS_LA_LANGUAGE_UNDERCOMMON: return GS_T_16777440;
+    case GS_LA_LANGUAGE_EYNNELIC:      return GS_T_16777651;
+    case GS_LA_LANGUAGE_ORIS:          return GS_T_16777652;
+    case GS_LA_LANGUAGE_ADHEAS:        return GS_T_16777653;
+    case GS_LA_LANGUAGE_DORVIN:        return GS_T_16777654;
+    case GS_LA_LANGUAGE_VUTA:          return GS_T_16777655;
+    case GS_LA_LANGUAGE_OLD_DULRIC:    return GS_T_16777656;
+    case GS_LA_LANGUAGE_LOW_ELDARIS:   return GS_T_16777657;
+    case GS_LA_LANGUAGE_RUDHEAS:       return GS_T_16777658;
+    case GS_LA_LANGUAGE_RASHEMI:       return GS_T_16777659;
+    case GS_LA_LANGUAGE_ROST:          return GS_T_16777660;
+    case GS_LA_LANGUAGE_BOSHA:         return GS_T_16777661;
+    case GS_LA_LANGUAGE_VEYDISH:       return GS_T_16777662;
+    case GS_LA_LANGUAGE_VIVERIC:       return GS_T_16777663;
     }
 
     return "";
@@ -205,21 +159,19 @@ string gsLAGetLanguageKey(int nLanguage)
 {
     switch (nLanguage)
     {
-    case GS_LA_LANGUAGE_COMMON:      return GS_T_16777530;
-    case GS_LA_LANGUAGE_ABYSSAL:     return GS_T_16777357;
-    case GS_LA_LANGUAGE_ANIMAL:      return GS_T_16777358;
-    case GS_LA_LANGUAGE_CELESTIAL:   return GS_T_16777359;
-    case GS_LA_LANGUAGE_DRACONIC:    return GS_T_16777360;
-    case GS_LA_LANGUAGE_DWARVEN:     return GS_T_16777361;
-    case GS_LA_LANGUAGE_ELVEN:       return GS_T_16777362;
-    case GS_LA_LANGUAGE_GNOME:       return GS_T_16777363;
-    case GS_LA_LANGUAGE_GOBLIN:      return GS_T_16777364;
-    case GS_LA_LANGUAGE_HALFLING:    return GS_T_16777365;
-    case GS_LA_LANGUAGE_INFERNAL:    return GS_T_16777366;
-    case GS_LA_LANGUAGE_ORC:         return GS_T_16777367;
-    case GS_LA_LANGUAGE_SIGN:        return GS_T_16777368;
-    case GS_LA_LANGUAGE_THIEF:       return GS_T_16777369;
-    case GS_LA_LANGUAGE_UNDERCOMMON: return GS_T_16777439;
+    case GS_LA_LANGUAGE_EYNNELIC:      return GS_T_16777530;
+    case GS_LA_LANGUAGE_ORIS:          return GS_T_16777664;
+    case GS_LA_LANGUAGE_ADHEAS:        return GS_T_16777665;
+    case GS_LA_LANGUAGE_DORVIN:        return GS_T_16777666;
+    case GS_LA_LANGUAGE_VUTA:          return GS_T_16777667;
+    case GS_LA_LANGUAGE_OLD_DULRIC:    return GS_T_16777668;
+    case GS_LA_LANGUAGE_LOW_ELDARIS:   return GS_T_16777669;
+    case GS_LA_LANGUAGE_RUDHEAS:       return GS_T_16777670;
+    case GS_LA_LANGUAGE_RASHEMI:       return GS_T_16777671;
+    case GS_LA_LANGUAGE_ROST:          return GS_T_16777672;
+    case GS_LA_LANGUAGE_BOSHA:         return GS_T_16777673;
+    case GS_LA_LANGUAGE_VEYDISH:       return GS_T_16777674;
+    case GS_LA_LANGUAGE_VIVERIC:       return GS_T_16777675;
     }
 
     return "";
@@ -229,21 +181,21 @@ string gsLAGetLanguageColor(int nLanguage)
 {
     switch (nLanguage)
     {
-    case GS_LA_LANGUAGE_COMMON:      return "";
-    case GS_LA_LANGUAGE_ABYSSAL:     return "<cT  >";
-    case GS_LA_LANGUAGE_ANIMAL:      return "<c^|@>";
-    case GS_LA_LANGUAGE_CELESTIAL:   return "<cþì•>";
-    case GS_LA_LANGUAGE_DRACONIC:    return "<c»#K>";
-    case GS_LA_LANGUAGE_DWARVEN:     return "<c‰‡y>";
-    case GS_LA_LANGUAGE_ELVEN:       return "<cÊßt>";
-    case GS_LA_LANGUAGE_GNOME:       return "<cÃ™V>";
-    case GS_LA_LANGUAGE_GOBLIN:      return "<ct¦L>";
-    case GS_LA_LANGUAGE_HALFLING:    return "<cÖ¹G>";
-    case GS_LA_LANGUAGE_INFERNAL:    return "<c². >";
-    case GS_LA_LANGUAGE_ORC:         return "<c]nD>";
-    case GS_LA_LANGUAGE_SIGN:        return "<chYj>";
-    case GS_LA_LANGUAGE_THIEF:       return "";
-    case GS_LA_LANGUAGE_UNDERCOMMON: return "<c€2¡>";
+    case GS_LA_LANGUAGE_EYNNELIC:      return "";
+    case GS_LA_LANGUAGE_ORIS:     return "<cT  >";
+    case GS_LA_LANGUAGE_ADHEAS:      return "<c^|@>";
+    case GS_LA_LANGUAGE_DORVIN:   return "<cþì•>";
+    case GS_LA_LANGUAGE_VUTA:    return "<c»#K>";
+    case GS_LA_LANGUAGE_OLD_DULRIC:     return "<c‰‡y>";
+    case GS_LA_LANGUAGE_LOW_ELDARIS:       return "<cÊßt>";
+    case GS_LA_LANGUAGE_RUDHEAS:       return "<cÃ™V>";
+    case GS_LA_LANGUAGE_RASHEMI:      return "<ct¦L>";
+    case GS_LA_LANGUAGE_ROST:    return "<cÖ¹G>";
+    case GS_LA_LANGUAGE_BOSHA:    return "<c². >";
+    case GS_LA_LANGUAGE_VEYDISH:         return "<c]nD>";
+    case GS_LA_LANGUAGE_VIVERIC:        return "<chYj>";
+    /*case GS_LA_LANGUAGE_THIEF:       return "";
+    case GS_LA_LANGUAGE_UNDERCOMMON: return "<c€2¡>";*/
     }
 
     return "";
@@ -253,34 +205,32 @@ string gsLATranslate(string sString, int nLanguage)
 {
     switch (nLanguage)
     {
-    case GS_LA_LANGUAGE_COMMON:      return sString;
-    case GS_LA_LANGUAGE_ABYSSAL:     return gsLATranslateAbyssal(sString);
-    case GS_LA_LANGUAGE_ANIMAL:      return gsLATranslateAnimal(sString);
-    case GS_LA_LANGUAGE_CELESTIAL:   return gsLATranslateCelestial(sString);
-    case GS_LA_LANGUAGE_DRACONIC:    return gsLATranslateDraconic(sString);
-    case GS_LA_LANGUAGE_DWARVEN:     return gsLATranslateDwarven(sString);
-    case GS_LA_LANGUAGE_ELVEN:       return gsLATranslateElven(sString);
-    case GS_LA_LANGUAGE_GNOME:       return gsLATranslateGnome(sString);
-    case GS_LA_LANGUAGE_GOBLIN:      return gsLATranslateGoblin(sString);
-    case GS_LA_LANGUAGE_HALFLING:    return gsLATranslateHalfling(sString);
-    case GS_LA_LANGUAGE_INFERNAL:    return gsLATranslateInfernal(sString);
-    case GS_LA_LANGUAGE_ORC:         return gsLATranslateOrc(sString);
-    case GS_LA_LANGUAGE_SIGN:        return gsLATranslateSign();
-    case GS_LA_LANGUAGE_THIEF:       return gsLATranslateThief(sString);
-    case GS_LA_LANGUAGE_UNDERCOMMON: return gsLATranslateUndercommon(sString);
+    case GS_LA_LANGUAGE_EYNNELIC:      return sString;
+    case GS_LA_LANGUAGE_ORIS:     return gsLATranslateOris(sString);
+    case GS_LA_LANGUAGE_ADHEAS:   return gsLATranslateAdheas(sString);
+    case GS_LA_LANGUAGE_DORVIN:    return gsLATranslateDorvin(sString);
+    case GS_LA_LANGUAGE_VUTA:     return gsLATranslateVuta(sString);
+    case GS_LA_LANGUAGE_OLD_DULRIC:       return gsLATranslateOldDulric(sString);
+    case GS_LA_LANGUAGE_LOW_ELDARIS:       return gsLATranslateLowEldaris(sString);
+    case GS_LA_LANGUAGE_RUDHEAS:      return gsLATranslateRudheas(sString);
+    case GS_LA_LANGUAGE_RASHEMI:    return gsLATranslateRashemi(sString);
+    case GS_LA_LANGUAGE_ROST:    return gsLATranslateRost(sString);
+    case GS_LA_LANGUAGE_BOSHA:         return gsLATranslateBosha(sString);
+    case GS_LA_LANGUAGE_VEYDISH:       return gsLATranslateVeydish(sString);
+    case GS_LA_LANGUAGE_VIVERIC: return gsLATranslateViveric(sString);
     }
 
     return sString;
 }
 //----------------------------------------------------------------
-string gsLATranslateSign()
+/*string gsLATranslateSign()
 {
     return gsLAGetLanguageColor(GS_LA_LANGUAGE_SIGN) + GS_T_16777403;
-}
+}*/
 //----------------------------------------------------------------
-string gsLATranslateInfernal(string sString)
+string gsLATranslateOris(string sString)
 {
-    string sColor       = gsLAGetLanguageColor(GS_LA_LANGUAGE_INFERNAL);
+    string sColor       = gsLAGetLanguageColor(GS_LA_LANGUAGE_ORIS);
     string sTranslation = sColor;
     string sC           = ""; //character
     string sCU          = ""; //character uppercase
@@ -354,9 +304,9 @@ string gsLATranslateInfernal(string sString)
     return sTranslation;
 }
 //----------------------------------------------------------------
-string gsLATranslateAbyssal(string sString)
+string gsLATranslateAdheas(string sString)
 {
-    string sColor       = gsLAGetLanguageColor(GS_LA_LANGUAGE_ABYSSAL);
+    string sColor       = gsLAGetLanguageColor(GS_LA_LANGUAGE_ADHEAS);
     string sTranslation = sColor;
     string sC           = ""; //character
     string sCU          = ""; //character uppercase
@@ -439,9 +389,9 @@ string gsLATranslateAbyssal(string sString)
     return sTranslation;
 }
 //----------------------------------------------------------------
-string gsLATranslateCelestial(string sString)
+string gsLATranslateDorvin(string sString)
 {
-    string sColor       = gsLAGetLanguageColor(GS_LA_LANGUAGE_CELESTIAL);
+    string sColor       = gsLAGetLanguageColor(GS_LA_LANGUAGE_DORVIN);
     string sTranslation = sColor;
     string sC           = ""; //character
     string sCU          = ""; //character uppercase
@@ -525,9 +475,9 @@ string gsLATranslateCelestial(string sString)
     return sTranslation;
 }
 //----------------------------------------------------------------
-string gsLATranslateGoblin(string sString)
+string gsLATranslateVuta(string sString)
 {
-    string sColor       = gsLAGetLanguageColor(GS_LA_LANGUAGE_GOBLIN);
+    string sColor       = gsLAGetLanguageColor(GS_LA_LANGUAGE_VUTA);
     string sTranslation = sColor;
     string sC           = ""; //character
     string sCU          = ""; //character uppercase
@@ -601,9 +551,9 @@ string gsLATranslateGoblin(string sString)
     return sTranslation;
 }
 //----------------------------------------------------------------
-string gsLATranslateDraconic(string sString)
+string gsLATranslateOldDulric(string sString)
 {
-    string sColor       = gsLAGetLanguageColor(GS_LA_LANGUAGE_DRACONIC);
+    string sColor       = gsLAGetLanguageColor(GS_LA_LANGUAGE_OLD_DULRIC);
     string sTranslation = sColor;
     string sC           = ""; //character
     string sCU          = ""; //character uppercase
@@ -687,9 +637,9 @@ string gsLATranslateDraconic(string sString)
     return sTranslation;
 }
 //----------------------------------------------------------------
-string gsLATranslateDwarven(string sString)
+string gsLATranslateLowEldaris(string sString)
 {
-    string sColor       = gsLAGetLanguageColor(GS_LA_LANGUAGE_DWARVEN);
+    string sColor       = gsLAGetLanguageColor(GS_LA_LANGUAGE_LOW_ELDARIS);
     string sTranslation = sColor;
     string sC           = ""; //character
     string sCU          = ""; //character uppercase
@@ -773,9 +723,9 @@ string gsLATranslateDwarven(string sString)
     return sTranslation;
 }
 //----------------------------------------------------------------
-string gsLATranslateElven(string sString)
+string gsLATranslateRudheas(string sString)
 {
-    string sColor       = gsLAGetLanguageColor(GS_LA_LANGUAGE_ELVEN);
+    string sColor       = gsLAGetLanguageColor(GS_LA_LANGUAGE_RUDHEAS);
     string sTranslation = sColor;
     string sC           = ""; //character
     string sCU          = ""; //character uppercase
@@ -859,9 +809,9 @@ string gsLATranslateElven(string sString)
     return sTranslation;
 }
 //----------------------------------------------------------------
-string gsLATranslateGnome(string sString)
+string gsLATranslateRashemi(string sString)
 {
-    string sColor       = gsLAGetLanguageColor(GS_LA_LANGUAGE_GNOME);
+    string sColor       = gsLAGetLanguageColor(GS_LA_LANGUAGE_RASHEMI);
     string sTranslation = sColor;
     string sC           = ""; //character
     string sCU          = ""; //character uppercase
@@ -935,9 +885,9 @@ string gsLATranslateGnome(string sString)
     return sTranslation;
 }
 //----------------------------------------------------------------
-string gsLATranslateHalfling(string sString)
+string gsLATranslateRost(string sString)
 {
-    string sColor       = gsLAGetLanguageColor(GS_LA_LANGUAGE_HALFLING);
+    string sColor       = gsLAGetLanguageColor(GS_LA_LANGUAGE_ROST);
     string sTranslation = sColor;
     string sC           = ""; //character
     string sCU          = ""; //character uppercase
@@ -1011,9 +961,9 @@ string gsLATranslateHalfling(string sString)
     return sTranslation;
 }
 //----------------------------------------------------------------
-string gsLATranslateOrc(string sString)
+string gsLATranslateBosha(string sString)
 {
-    string sColor       = gsLAGetLanguageColor(GS_LA_LANGUAGE_ORC);
+    string sColor       = gsLAGetLanguageColor(GS_LA_LANGUAGE_BOSHA);
     string sTranslation = sColor;
     string sC           = ""; //character
     string sCU          = ""; //character uppercase
@@ -1097,7 +1047,7 @@ string gsLATranslateOrc(string sString)
     return sTranslation;
 }
 //----------------------------------------------------------------
-string gsLATranslateAnimal(string sString)
+/*string gsLATranslateAnimal(string sString)
 {
     string sColor       = gsLAGetLanguageColor(GS_LA_LANGUAGE_ANIMAL);
     string sTranslation = sColor;
@@ -1166,11 +1116,11 @@ string gsLATranslateAnimal(string sString)
     }
 
     return sTranslation;
-}
+}*/
 //----------------------------------------------------------------
-string gsLATranslateThief(string sString)
+string gsLATranslateVeydish(string sString)
 {
-    string sColor = gsLAGetLanguageColor(GS_LA_LANGUAGE_THIEF);
+    string sColor = gsLAGetLanguageColor(GS_LA_LANGUAGE_VEYDISH);
     string sC     = GetStringLeft(sString, 1);
     string sCL    = GetStringLowerCase(sC);
 
@@ -1204,9 +1154,9 @@ string gsLATranslateThief(string sString)
     return sColor + GS_T_16777383;
 }
 //----------------------------------------------------------------
-string gsLATranslateUndercommon(string sString)
+string gsLATranslateViveric(string sString)
 {
-    string sColor       = gsLAGetLanguageColor(GS_LA_LANGUAGE_UNDERCOMMON);
+    string sColor       = gsLAGetLanguageColor(GS_LA_LANGUAGE_VIVERIC);
     string sTranslation = sColor;
     string sC           = ""; //character
     string sCU          = ""; //character uppercase
