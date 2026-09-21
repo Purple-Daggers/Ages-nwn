@@ -73,39 +73,30 @@ int gsLAGetCanSpeakLanguage(int nLanguage, object oPC = OBJECT_SELF)
     case GS_LA_LANGUAGE_EYNNELIC:
         return TRUE;
     case GS_LA_LANGUAGE_ORIS:
-        return TRUE;
+        return nSubRace == GS_SU_HUMAN_ORI;
     case GS_LA_LANGUAGE_ADHEAS:
-        return TRUE;
+        return nSubRace == GS_SU_ADHEAN_JUDHEAN || nSubRace == GS_SU_ADHEAN_RUDHEAN;
     case GS_LA_LANGUAGE_DORVIN:
-        return TRUE;
+        return nSubRace == GS_SU_HUMAN_ARCHONBLOODED_ASHLANDER || nSubRace == GS_SU_HUMAN_CIVITAS_ASHLANDER;
     case GS_LA_LANGUAGE_VUTA:
-        return TRUE;
+        return nSubRace == GS_SU_HUMAN_INEN || nSubRace == GS_SU_HUMAN_ASHARI;
     case GS_LA_LANGUAGE_OLD_DULRIC:
-        return TRUE;
+        return nSubRace == GS_SU_MALARI_ASHFORGED || nSubRace == GS_SU_MALARI_TUSKKIN || nSubRace == GS_SU_MALARI_UNBOWED || nSubRace == GS_SU_MALARI_VARTOARI;
     case GS_LA_LANGUAGE_LOW_ELDARIS:
-        return TRUE;
+        return nSubRace == GS_SU_MALOSARI_EMERALD || nSubRace == GS_SU_MALOSARI_FREESWORN || nSubRace == GS_SU_MALOSARI_GREENSWORN || nSubRace == GS_SU_MALOSARI_HORNSWORN ||
+                nSubRace == GS_SU_ELDARI_ALARI || nSubRace == GS_SU_ELDARI_AURARI || nSubRace == GS_SU_ELDARI_EMAELARI;
     case GS_LA_LANGUAGE_RUDHEAS:
-        return TRUE;
+        return nSubRace == GS_SU_ADHEAN_RUDHEAN;
     case GS_LA_LANGUAGE_RASHEMI:
-        return TRUE;
+        return nSubRace == GS_SU_HUMAN_NAVARREE;
     case GS_LA_LANGUAGE_ROST:
-        return TRUE;
+        return nSubRace == GS_SU_HUMAN_FYRSTUMEN || nSubRace == GS_SU_HUMAN_KALANORF;
     case GS_LA_LANGUAGE_BOSHA:
-        return TRUE;
+        return gsSUGetHasCatModel(nSubRace) || gsSUGetHasCatTail(nSubRace) || gsSUGetHasCatEars(nSubRace) || gsSUGetHasDigitigradeLegs(nSubRace) || gsSUGetHasTigerFace(nSubRace);
     case GS_LA_LANGUAGE_VEYDISH:
-        return TRUE;
+        return nSubRace == GS_SU_HUMAN_ARCHONBLOODED_DAVURI || nSubRace == GS_SU_HUMAN_CIVITAS_DAVURI;
     case GS_LA_LANGUAGE_VIVERIC:
-        return TRUE;
-        
-        /*
-    case GS_LA_LANGUAGE_ABYSSAL:
-
-        return nAlignmentGE == ALIGNMENT_EVIL &&
-               nAlignmentLC != ALIGNMENT_LAWFUL &&
-               (nSubRace == GS_SU_PLANETOUCHED_TIEFLING ||
-                gsCMGetHasClass(CLASS_TYPE_CLERIC, oPC) ||
-                gsCMGetHasClass(CLASS_TYPE_BLACKGUARD, oPC));
-        */
+        return FALSE;
     }
 
     return FALSE;
