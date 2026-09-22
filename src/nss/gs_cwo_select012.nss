@@ -1,6 +1,6 @@
 #include "gs_inc_worship"
 
-int StartingConditional()
+void main()
 {
-    return gsWOGetIsDeityAvailable(GS_WO_OGHMA, GetPCSpeaker());
+    SetLocalInt(GetPCSpeaker(), "GS_WO_SELECTION", GS_WO_GREAT_LEVIATHANS);
 }

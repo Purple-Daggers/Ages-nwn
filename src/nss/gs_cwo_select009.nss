@@ -1,6 +1,6 @@
 #include "gs_inc_worship"
 
-int StartingConditional()
+void main()
 {
-    return gsWOGetIsDeityAvailable(GS_WO_KOSSUTH, GetPCSpeaker());
+    SetLocalInt(GetPCSpeaker(), "GS_WO_SELECTION", GS_WO_BLACK_COMMUNION);
 }
