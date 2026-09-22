@@ -6,7 +6,7 @@
   },
   "Appearance": {
     "type": "dword",
-    "value": 5519
+    "value": 241
   },
   "AutoRemoveKey": {
     "type": "byte",
@@ -26,7 +26,7 @@
   },
   "Conversation": {
     "type": "resref",
-    "value": "gs_cr_recipe"
+    "value": ""
   },
   "CurrentHP": {
     "type": "short",
@@ -35,12 +35,13 @@
   "Description": {
     "type": "cexolocstring",
     "value": {
-      "0": "Fixture objects can be placed on the floor by dragging them from the inventory to a desired location. A maximum of 40 fixture objects are permanently stored per area. This way you can for example customize the interior furnishings of a house individually. The inventory of a fixture object is NOT saved.\n\nWorkstations are special fixture objects that are required to practice a trade."
+      "0": "These tracks look to have been left by a humanoid creature.",
+      "id": 12330
     }
   },
   "DisarmDC": {
     "type": "byte",
-    "value": 0
+    "value": 15
   },
   "Faction": {
     "type": "dword",
@@ -48,7 +49,7 @@
   },
   "Fort": {
     "type": "byte",
-    "value": 15
+    "value": 16
   },
   "Hardness": {
     "type": "byte",
@@ -56,7 +57,7 @@
   },
   "HasInventory": {
     "type": "byte",
-    "value": 1
+    "value": 0
   },
   "HP": {
     "type": "short",
@@ -64,7 +65,7 @@
   },
   "Interruptable": {
     "type": "byte",
-    "value": 0
+    "value": 1
   },
   "KeyName": {
     "type": "cexostring",
@@ -85,7 +86,7 @@
   "LocName": {
     "type": "cexolocstring",
     "value": {
-      "0": "Workstation: Gadgetcrafting"
+      "id": 12331
     }
   },
   "OnClick": {
@@ -94,7 +95,7 @@
   },
   "OnClosed": {
     "type": "resref",
-    "value": "gs_fx_close"
+    "value": ""
   },
   "OnDamaged": {
     "type": "resref",
@@ -102,7 +103,7 @@
   },
   "OnDeath": {
     "type": "resref",
-    "value": "gs_fx_death"
+    "value": ""
   },
   "OnDisarm": {
     "type": "resref",
@@ -142,7 +143,7 @@
   },
   "OnUsed": {
     "type": "resref",
-    "value": "gs_fx_used"
+    "value": ""
   },
   "OnUserDefined": {
     "type": "resref",
@@ -150,19 +151,19 @@
   },
   "OpenLockDC": {
     "type": "byte",
-    "value": 0
+    "value": 18
   },
   "PaletteID": {
     "type": "byte",
-    "value": 3
+    "value": 11
   },
   "Plot": {
     "type": "byte",
-    "value": 0
+    "value": 1
   },
   "PortraitId": {
     "type": "word",
-    "value": 0
+    "value": 801
   },
   "Ref": {
     "type": "byte",
@@ -174,11 +175,11 @@
   },
   "Tag": {
     "type": "cexostring",
-    "value": "GS_FX_gs_item446"
+    "value": "as_tracks"
   },
   "TemplateResRef": {
     "type": "resref",
-    "value": "gs_placeable273"
+    "value": "as_tracks"
   },
   "TrapDetectable": {
     "type": "byte",
@@ -210,42 +211,7 @@
   },
   "Useable": {
     "type": "byte",
-    "value": 1
-  },
-  "VarTable": {
-    "type": "list",
-    "value": [
-      {
-        "__struct_id": 0,
-        "Name": {
-          "type": "cexostring",
-          "value": "GS_STATIC"
-        },
-        "Type": {
-          "type": "dword",
-          "value": 1
-        },
-        "Value": {
-          "type": "int",
-          "value": 1
-        }
-      },
-      {
-        "__struct_id": 0,
-        "Name": {
-          "type": "cexostring",
-          "value": "GS_SKILL"
-        },
-        "Type": {
-          "type": "dword",
-          "value": 1
-        },
-        "Value": {
-          "type": "int",
-          "value": 7
-        }
-      }
-    ]
+    "value": 0
   },
   "Will": {
     "type": "byte",
