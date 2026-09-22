@@ -229,6 +229,18 @@ void main()
         gsBOSetUpArea();
     }
 
+    //Report
+    object oReport = GetItemPossessedBy(oEntering, "as_report");
+    if(GetIsObjectValid(oReport))
+    {
+        if(GetLocalInt(oReport, GetResRef(oArea)) == FALSE && GetLocalInt(oReport, "AS_DISABLED") != TRUE)
+        {
+            SetLocalInt(oReport, GetResRef(oArea), TRUE);
+            SetLocalInt(oReport, "AS_PLACES_VISITED", GetLocalInt(oReport, "AS_PLACES_VISITED") + 1);
+            SendMessageToPC(oEntering, "You write some information about this area in your report.");
+        }
+    }
+
     if (GetIsPossessedFamiliar(oEntering)) return;
     if (GetIsDMPossessed(oEntering))       return;
     if (GetIsDM(oEntering))
@@ -272,8 +284,6 @@ void main()
             ActionStartConversation(oEntering, "gs_su_select", TRUE, FALSE);
         }
         break;
-
-
     case -1:
 
         //initialisation

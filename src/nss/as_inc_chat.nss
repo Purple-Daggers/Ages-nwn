@@ -124,64 +124,63 @@ void gsCTProcessCommand(object oSpeaker, int nCommand, string sParams){
                 oSpeaker,
                 GS_T_16777343 + ":\n" +
                                                                                  "<cþôh>" +
-                "/dm -" + gsLAGetLanguageKey(GS_LA_LANGUAGE_COMMON)      + " <cþþþ>... " +
-                "<cVs·>" + gsLAGetLanguageName(GS_LA_LANGUAGE_COMMON)    + "\n" +
+                "/dm -" + gsLAGetLanguageKey(GS_LA_LANGUAGE_EYNNELIC)      + " <cþþþ>... " +
+                "<cVs·>" + gsLAGetLanguageName(GS_LA_LANGUAGE_EYNNELIC)    + "\n" + 
 
-                (gsLAGetCanSpeakLanguage(GS_LA_LANGUAGE_ABYSSAL,     oSpeaker) ? "<cþôh>" : "<cþ((>") +
-                "/dm -" + gsLAGetLanguageKey(GS_LA_LANGUAGE_ABYSSAL)     + " <cþþþ>... " +
-                "<cVs·>" + gsLAGetLanguageName(GS_LA_LANGUAGE_ABYSSAL)   + "\n" +
+                (gsLAGetCanSpeakLanguage(GS_LA_LANGUAGE_ORIS,     oSpeaker) ? "<cþôh>" : "<cþ((>") +
+                "/dm -" + gsLAGetLanguageKey(GS_LA_LANGUAGE_ORIS)     + " <cþþþ>... " +
+                "<cVs·>" + gsLAGetLanguageName(GS_LA_LANGUAGE_ORIS)   + "\n" +
 
-                (gsLAGetCanSpeakLanguage(GS_LA_LANGUAGE_ANIMAL,      oSpeaker) ? "<cþôh>" : "<cþ((>") +
-                "/dm -" + gsLAGetLanguageKey(GS_LA_LANGUAGE_ANIMAL)      + " <cþþþ>... " +
-                "<cVs·>" + gsLAGetLanguageName(GS_LA_LANGUAGE_ANIMAL)    + "\n" +
+                (gsLAGetCanSpeakLanguage(GS_LA_LANGUAGE_ADHEAS,     oSpeaker) ? "<cþôh>" : "<cþ((>") +
+                "/dm -" + gsLAGetLanguageKey(GS_LA_LANGUAGE_ADHEAS)     + " <cþþþ>... " +
+                "<cVs·>" + gsLAGetLanguageName(GS_LA_LANGUAGE_ADHEAS)   + "\n" +
 
-                (gsLAGetCanSpeakLanguage(GS_LA_LANGUAGE_CELESTIAL,   oSpeaker) ? "<cþôh>" : "<cþ((>") +
-                "/dm -" + gsLAGetLanguageKey(GS_LA_LANGUAGE_CELESTIAL)   + " <cþþþ>... " +
-                "<cVs·>" + gsLAGetLanguageName(GS_LA_LANGUAGE_CELESTIAL) + "\n" +
+                (gsLAGetCanSpeakLanguage(GS_LA_LANGUAGE_ADHEAS,     oSpeaker) ? "<cþôh>" : "<cþ((>") +
+                "/dm -" + gsLAGetLanguageKey(GS_LA_LANGUAGE_ADHEAS)     + " <cþþþ>... " +
+                "<cVs·>" + gsLAGetLanguageName(GS_LA_LANGUAGE_ADHEAS)   + "\n" +
 
-                (gsLAGetCanSpeakLanguage(GS_LA_LANGUAGE_DRACONIC,    oSpeaker) ? "<cþôh>" : "<cþ((>") +
-                "/dm -" + gsLAGetLanguageKey(GS_LA_LANGUAGE_DRACONIC)    + " <cþþþ>... " +
-                "<cVs·>" + gsLAGetLanguageName(GS_LA_LANGUAGE_DRACONIC)  + "\n" +
+                (gsLAGetCanSpeakLanguage(GS_LA_LANGUAGE_DORVIN,     oSpeaker) ? "<cþôh>" : "<cþ((>") +
+                "/dm -" + gsLAGetLanguageKey(GS_LA_LANGUAGE_DORVIN)     + " <cþþþ>... " +
+                "<cVs·>" + gsLAGetLanguageName(GS_LA_LANGUAGE_DORVIN)   + "\n" +
 
-                (gsLAGetCanSpeakLanguage(GS_LA_LANGUAGE_DWARVEN,     oSpeaker) ? "<cþôh>" : "<cþ((>") +
-                "/dm -" + gsLAGetLanguageKey(GS_LA_LANGUAGE_DWARVEN)     + " <cþþþ>... " +
-                "<cVs·>" + gsLAGetLanguageName(GS_LA_LANGUAGE_DWARVEN)   + "\n" +
+                (gsLAGetCanSpeakLanguage(GS_LA_LANGUAGE_VUTA,     oSpeaker) ? "<cþôh>" : "<cþ((>") +
+                "/dm -" + gsLAGetLanguageKey(GS_LA_LANGUAGE_VUTA)     + " <cþþþ>... " +
+                "<cVs·>" + gsLAGetLanguageName(GS_LA_LANGUAGE_VUTA)   + "\n" +
 
-                (gsLAGetCanSpeakLanguage(GS_LA_LANGUAGE_ELVEN,       oSpeaker) ? "<cþôh>" : "<cþ((>") +
-                "/dm -" + gsLAGetLanguageKey(GS_LA_LANGUAGE_ELVEN)       + " <cþþþ>... " +
-                "<cVs·>" + gsLAGetLanguageName(GS_LA_LANGUAGE_ELVEN)     + "\n" +
+                (gsLAGetCanSpeakLanguage(GS_LA_LANGUAGE_OLD_DULRIC,     oSpeaker) ? "<cþôh>" : "<cþ((>") +
+                "/dm -" + gsLAGetLanguageKey(GS_LA_LANGUAGE_OLD_DULRIC)     + " <cþþþ>... " +
+                "<cVs·>" + gsLAGetLanguageName(GS_LA_LANGUAGE_OLD_DULRIC)   + "\n" +
 
-                (gsLAGetCanSpeakLanguage(GS_LA_LANGUAGE_GNOME,       oSpeaker) ? "<cþôh>" : "<cþ((>") +
-                "/dm -" + gsLAGetLanguageKey(GS_LA_LANGUAGE_GNOME)       + " <cþþþ>... " +
-                "<cVs·>" + gsLAGetLanguageName(GS_LA_LANGUAGE_GNOME)     + "\n" +
+                (gsLAGetCanSpeakLanguage(GS_LA_LANGUAGE_LOW_ELDARIS,     oSpeaker) ? "<cþôh>" : "<cþ((>") +
+                "/dm -" + gsLAGetLanguageKey(GS_LA_LANGUAGE_LOW_ELDARIS)     + " <cþþþ>... " +
+                "<cVs·>" + gsLAGetLanguageName(GS_LA_LANGUAGE_LOW_ELDARIS)   + "\n" +
 
-                (gsLAGetCanSpeakLanguage(GS_LA_LANGUAGE_GOBLIN,      oSpeaker) ? "<cþôh>" : "<cþ((>") +
-                "/dm -" + gsLAGetLanguageKey(GS_LA_LANGUAGE_GOBLIN)      + " <cþþþ>... " +
-                "<cVs·>" + gsLAGetLanguageName(GS_LA_LANGUAGE_GOBLIN)    + "\n" +
+                (gsLAGetCanSpeakLanguage(GS_LA_LANGUAGE_RUDHEAS,     oSpeaker) ? "<cþôh>" : "<cþ((>") +
+                "/dm -" + gsLAGetLanguageKey(GS_LA_LANGUAGE_RUDHEAS)     + " <cþþþ>... " +
+                "<cVs·>" + gsLAGetLanguageName(GS_LA_LANGUAGE_RUDHEAS)   + "\n" +
 
-                (gsLAGetCanSpeakLanguage(GS_LA_LANGUAGE_HALFLING,    oSpeaker) ? "<cþôh>" : "<cþ((>") +
-                "/dm -" + gsLAGetLanguageKey(GS_LA_LANGUAGE_HALFLING)    + " <cþþþ>... " +
-                "<cVs·>" + gsLAGetLanguageName(GS_LA_LANGUAGE_HALFLING)  + "\n" +
+                (gsLAGetCanSpeakLanguage(GS_LA_LANGUAGE_RASHEMI,     oSpeaker) ? "<cþôh>" : "<cþ((>") +
+                "/dm -" + gsLAGetLanguageKey(GS_LA_LANGUAGE_RASHEMI)     + " <cþþþ>... " +
+                "<cVs·>" + gsLAGetLanguageName(GS_LA_LANGUAGE_RASHEMI)   + "\n" +
 
-                (gsLAGetCanSpeakLanguage(GS_LA_LANGUAGE_INFERNAL,    oSpeaker) ? "<cþôh>" : "<cþ((>") +
-                "/dm -" + gsLAGetLanguageKey(GS_LA_LANGUAGE_INFERNAL)    + " <cþþþ>... " +
-                "<cVs·>" + gsLAGetLanguageName(GS_LA_LANGUAGE_INFERNAL)  + "\n" +
+                (gsLAGetCanSpeakLanguage(GS_LA_LANGUAGE_ROST,     oSpeaker) ? "<cþôh>" : "<cþ((>") +
+                "/dm -" + gsLAGetLanguageKey(GS_LA_LANGUAGE_ROST)     + " <cþþþ>... " +
+                "<cVs·>" + gsLAGetLanguageName(GS_LA_LANGUAGE_ROST)   + "\n" +
 
-                (gsLAGetCanSpeakLanguage(GS_LA_LANGUAGE_ORC,         oSpeaker) ? "<cþôh>" : "<cþ((>") +
-                "/dm -" + gsLAGetLanguageKey(GS_LA_LANGUAGE_ORC)         + " <cþþþ>... " +
-                "<cVs·>" + gsLAGetLanguageName(GS_LA_LANGUAGE_ORC)       + "\n" +
+                (gsLAGetCanSpeakLanguage(GS_LA_LANGUAGE_BOSHA,     oSpeaker) ? "<cþôh>" : "<cþ((>") +
+                "/dm -" + gsLAGetLanguageKey(GS_LA_LANGUAGE_BOSHA)     + " <cþþþ>... " +
+                "<cVs·>" + gsLAGetLanguageName(GS_LA_LANGUAGE_BOSHA)   + "\n" +
 
-                (gsLAGetCanSpeakLanguage(GS_LA_LANGUAGE_SIGN,        oSpeaker) ? "<cþôh>" : "<cþ((>") +
-                "/dm -" + gsLAGetLanguageKey(GS_LA_LANGUAGE_SIGN)        + " <cþþþ>... " +
-                "<cVs·>" + gsLAGetLanguageName(GS_LA_LANGUAGE_SIGN)      + "\n" +
+                (gsLAGetCanSpeakLanguage(GS_LA_LANGUAGE_VEYDISH,     oSpeaker) ? "<cþôh>" : "<cþ((>") +
+                "/dm -" + gsLAGetLanguageKey(GS_LA_LANGUAGE_VEYDISH)     + " <cþþþ>... " +
+                "<cVs·>" + gsLAGetLanguageName(GS_LA_LANGUAGE_VEYDISH)   + "\n" + 
 
-                (gsLAGetCanSpeakLanguage(GS_LA_LANGUAGE_THIEF,       oSpeaker) ? "<cþôh>" : "<cþ((>") +
-                "/dm -" + gsLAGetLanguageKey(GS_LA_LANGUAGE_THIEF)       + " <cþþþ>... " +
-                "<cVs·>" + gsLAGetLanguageName(GS_LA_LANGUAGE_THIEF)     + "\n" +
-
-                (gsLAGetCanSpeakLanguage(GS_LA_LANGUAGE_UNDERCOMMON, oSpeaker) ? "<cþôh>" : "<cþ((>") +
-                "/dm -" + gsLAGetLanguageKey(GS_LA_LANGUAGE_UNDERCOMMON) + " <cþþþ>... " +
-                "<cVs·>" + gsLAGetLanguageName(GS_LA_LANGUAGE_UNDERCOMMON));
+                (gsLAGetCanSpeakLanguage(GS_LA_LANGUAGE_VIVERIC,     oSpeaker) ? "<cþôh>" : "<cþ((>") +
+                "/dm -" + gsLAGetLanguageKey(GS_LA_LANGUAGE_VIVERIC)     + " <cþþþ>... " +
+                "<cVs·>" + gsLAGetLanguageName(GS_LA_LANGUAGE_VIVERIC)
+                
+                
+                );
         break;
     }
 }

@@ -140,6 +140,24 @@ void gsXPRewardKill(object oVictim = OBJECT_SELF, float fRange = 40.0)
         if (GetIsPC(oCreature) &&
             GetIsReactionTypeHostile(oVictim, oCreature))
         {
+            //Report
+            object oReport = GetItemPossessedBy(oCreature, "as_report");
+            if(GetIsObjectValid(oReport))
+            {
+                if(GetLocalInt(oReport, "AS_DISABLED") == FALSE)
+                {
+                    if(GetLocalInt(oReport, GetResRef(OBJECT_SELF)) == FALSE)
+                    {
+                        SetLocalInt(oReport, GetResRef(OBJECT_SELF), TRUE);
+                        SetLocalInt(oReport, "AS_UNIQUE_ENEMIES", GetLocalInt(oReport, "AS_UNIQUE_ENEMIES") + 1);
+                        SetLocalInt(oReport, "AS_TOTAL_KILLS", GetLocalInt(oReport, "AS_TOTAL_KILLS") + 1);
+                        SendMessageToPC(oCreature, "You write some information about a slain enemy in your report.");
+                    } else {
+                        SetLocalInt(oReport, "AS_TOTAL_KILLS", GetLocalInt(oReport, "AS_TOTAL_KILLS") + 1);
+                    }
+                }
+            }
+            
             //adjust alignment
             if (nApplyAlignmentShift)
             {
