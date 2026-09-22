@@ -2,5 +2,5 @@
 
 int StartingConditional()
 {
-    return gsWOGetIsDeityAvailable(GS_WO_GRUMBAR, GetPCSpeaker());
+    return gsWOGetIsDeityAvailable(GS_WO_GREEN, GetPCSpeaker());
 }
