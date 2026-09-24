@@ -47,7 +47,50 @@
         },
         "RepliesList": {
           "type": "list",
-          "value": []
+          "value": [
+            {
+              "__struct_id": 0,
+              "Active": {
+                "type": "resref",
+                "value": ""
+              },
+              "ConditionParams": {
+                "type": "list",
+                "value": []
+              },
+              "Index": {
+                "type": "dword",
+                "value": 0
+              },
+              "IsChild": {
+                "type": "byte",
+                "value": 0
+              }
+            },
+            {
+              "__struct_id": 1,
+              "Active": {
+                "type": "resref",
+                "value": ""
+              },
+              "ConditionParams": {
+                "type": "list",
+                "value": []
+              },
+              "Index": {
+                "type": "dword",
+                "value": 1
+              },
+              "IsChild": {
+                "type": "byte",
+                "value": 1
+              },
+              "LinkComment": {
+                "type": "cexostring",
+                "value": ""
+              }
+            }
+          ]
         },
         "Script": {
           "type": "resref",
@@ -64,7 +107,7 @@
         "Text": {
           "type": "cexolocstring",
           "value": {
-            "0": "You do not have a report to sell."
+            "0": "Greetings. I will purchase reports on your adventures. I have the paperwork for you to begin writing a report available right here if you would like to begin writing one."
           }
         }
       },
@@ -109,7 +152,7 @@
               },
               "Index": {
                 "type": "dword",
-                "value": 1
+                "value": 2
               },
               "IsChild": {
                 "type": "byte",
@@ -128,7 +171,7 @@
               },
               "Index": {
                 "type": "dword",
-                "value": 0
+                "value": 1
               },
               "IsChild": {
                 "type": "byte",
@@ -160,7 +203,7 @@
   },
   "NumWords": {
     "type": "dword",
-    "value": 25
+    "value": 50
   },
   "PreventZoomIn": {
     "type": "byte",
@@ -171,6 +214,51 @@
     "value": [
       {
         "__struct_id": 0,
+        "ActionParams": {
+          "type": "list",
+          "value": []
+        },
+        "Animation": {
+          "type": "dword",
+          "value": 0
+        },
+        "AnimLoop": {
+          "type": "byte",
+          "value": 1
+        },
+        "Comment": {
+          "type": "cexostring",
+          "value": ""
+        },
+        "Delay": {
+          "type": "dword",
+          "value": 4294967295
+        },
+        "EntriesList": {
+          "type": "list",
+          "value": []
+        },
+        "Quest": {
+          "type": "cexostring",
+          "value": ""
+        },
+        "Script": {
+          "type": "resref",
+          "value": "as_creport003"
+        },
+        "Sound": {
+          "type": "resref",
+          "value": ""
+        },
+        "Text": {
+          "type": "cexolocstring",
+          "value": {
+            "0": "<StartAction>[Begin a report]</Start>"
+          }
+        }
+      },
+      {
+        "__struct_id": 1,
         "ActionParams": {
           "type": "list",
           "value": []
@@ -215,7 +303,7 @@
         }
       },
       {
-        "__struct_id": 1,
+        "__struct_id": 2,
         "ActionParams": {
           "type": "list",
           "value": []
