@@ -201,6 +201,14 @@ void main()
     {
         float fConstitution = IntToFloat(GetAbilityScore(OBJECT_SELF, ABILITY_CONSTITUTION));
         float fSobriety = -250.0f / fConstitution;
+        switch(nSpell)
+        {
+            case 406:
+            case 407:
+            case 408:
+            fSobriety = 0.0f;
+            break;
+        }
         gsSTAdjustState(GS_ST_SOBRIETY,  fSobriety);
     }
 
