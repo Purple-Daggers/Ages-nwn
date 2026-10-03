@@ -5,7 +5,7 @@
 #include "mi_inc_checker"
 #include "gs_inc_subrace"
 
-const int GS_EXPERIENCE_BASE = 1000; //level 2
+const int GS_EXPERIENCE_BASE = 900; //level 3
 
 void gsCreateBaseInventory()
 {
