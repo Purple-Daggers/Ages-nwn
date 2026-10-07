@@ -2,7 +2,7 @@
   "__data_type": "UTC ",
   "Appearance_Type": {
     "type": "word",
-    "value": 1162
+    "value": 1474
   },
   "BodyBag": {
     "type": "byte",
@@ -10,11 +10,11 @@
   },
   "Cha": {
     "type": "byte",
-    "value": 8
+    "value": 14
   },
   "ChallengeRating": {
     "type": "float",
-    "value": 4.0
+    "value": 0.25
   },
   "ClassList": {
     "type": "list",
@@ -23,22 +23,11 @@
         "__struct_id": 2,
         "Class": {
           "type": "int",
-          "value": 14
+          "value": 38
         },
         "ClassLevel": {
           "type": "short",
-          "value": 3
-        }
-      },
-      {
-        "__struct_id": 2,
-        "Class": {
-          "type": "int",
-          "value": 4
-        },
-        "ClassLevel": {
-          "type": "short",
-          "value": 3
+          "value": 1
         }
       }
     ]
@@ -49,7 +38,7 @@
   },
   "Con": {
     "type": "byte",
-    "value": 13
+    "value": 14
   },
   "Conversation": {
     "type": "resref",
@@ -61,7 +50,7 @@
   },
   "CurrentHitPoints": {
     "type": "short",
-    "value": 30
+    "value": 5
   },
   "DecayTime": {
     "type": "dword",
@@ -77,30 +66,15 @@
   },
   "Dex": {
     "type": "byte",
-    "value": 10
+    "value": 8
   },
   "Disarmable": {
     "type": "byte",
-    "value": 1
+    "value": 0
   },
   "Equip_ItemList": {
     "type": "list",
-    "value": [
-      {
-        "__struct_id": 2,
-        "EquippedRes": {
-          "type": "resref",
-          "value": "aarcl003"
-        }
-      },
-      {
-        "__struct_id": 16,
-        "EquippedRes": {
-          "type": "resref",
-          "value": "gs_item118"
-        }
-      }
-    ]
+    "value": []
   },
   "FactionID": {
     "type": "word",
@@ -108,111 +82,12 @@
   },
   "FeatList": {
     "type": "list",
-    "value": [
-      {
-        "__struct_id": 1,
-        "Feat": {
-          "type": "word",
-          "value": 2
-        }
-      },
-      {
-        "__struct_id": 1,
-        "Feat": {
-          "type": "word",
-          "value": 3
-        }
-      },
-      {
-        "__struct_id": 1,
-        "Feat": {
-          "type": "word",
-          "value": 4
-        }
-      },
-      {
-        "__struct_id": 1,
-        "Feat": {
-          "type": "word",
-          "value": 6
-        }
-      },
-      {
-        "__struct_id": 1,
-        "Feat": {
-          "type": "word",
-          "value": 228
-        }
-      },
-      {
-        "__struct_id": 1,
-        "Feat": {
-          "type": "word",
-          "value": 391
-        }
-      },
-      {
-        "__struct_id": 1,
-        "Feat": {
-          "type": "word",
-          "value": 1089
-        }
-      },
-      {
-        "__struct_id": 1,
-        "Feat": {
-          "type": "word",
-          "value": 28
-        }
-      },
-      {
-        "__struct_id": 1,
-        "Feat": {
-          "type": "word",
-          "value": 426
-        }
-      },
-      {
-        "__struct_id": 1,
-        "Feat": {
-          "type": "word",
-          "value": 383
-        }
-      },
-      {
-        "__struct_id": 1,
-        "Feat": {
-          "type": "word",
-          "value": 32
-        }
-      },
-      {
-        "__struct_id": 1,
-        "Feat": {
-          "type": "word",
-          "value": 375
-        }
-      },
-      {
-        "__struct_id": 1,
-        "Feat": {
-          "type": "word",
-          "value": 45
-        }
-      },
-      {
-        "__struct_id": 1,
-        "Feat": {
-          "type": "word",
-          "value": 46
-        }
-      }
-    ]
+    "value": []
   },
   "FirstName": {
     "type": "cexolocstring",
     "value": {
-      "0": "Blind Foot Warrior"
+      "0": "White Slime"
     }
   },
   "fortbonus": {
@@ -221,19 +96,19 @@
   },
   "Gender": {
     "type": "byte",
-    "value": 0
+    "value": 4
   },
   "GoodEvil": {
     "type": "byte",
-    "value": 0
+    "value": 50
   },
   "HitPoints": {
     "type": "short",
-    "value": 30
+    "value": 5
   },
   "Int": {
     "type": "byte",
-    "value": 8
+    "value": 10
   },
   "Interruptable": {
     "type": "byte",
@@ -263,7 +138,7 @@
   },
   "MaxHitPoints": {
     "type": "short",
-    "value": 36
+    "value": 7
   },
   "NaturalAC": {
     "type": "byte",
@@ -275,7 +150,7 @@
   },
   "PaletteID": {
     "type": "byte",
-    "value": 16
+    "value": 116
   },
   "PerceptionRange": {
     "type": "byte",
@@ -291,11 +166,11 @@
   },
   "PortraitId": {
     "type": "word",
-    "value": 2002
+    "value": 2251
   },
   "Race": {
     "type": "byte",
-    "value": 12
+    "value": 29
   },
   "refbonus": {
     "type": "short",
@@ -303,55 +178,55 @@
   },
   "ScriptAttacked": {
     "type": "resref",
-    "value": "x2_def_attacked"
+    "value": ""
   },
   "ScriptDamaged": {
     "type": "resref",
-    "value": "x2_def_ondamage"
+    "value": ""
   },
   "ScriptDeath": {
     "type": "resref",
-    "value": "x2_def_ondeath"
+    "value": ""
   },
   "ScriptDialogue": {
     "type": "resref",
-    "value": "x2_def_onconv"
+    "value": ""
   },
   "ScriptDisturbed": {
     "type": "resref",
-    "value": "x2_def_ondisturb"
+    "value": ""
   },
   "ScriptEndRound": {
     "type": "resref",
-    "value": "x2_def_endcombat"
+    "value": ""
   },
   "ScriptHeartbeat": {
     "type": "resref",
-    "value": "x2_def_heartbeat"
+    "value": ""
   },
   "ScriptOnBlocked": {
     "type": "resref",
-    "value": "x2_def_onblocked"
+    "value": ""
   },
   "ScriptOnNotice": {
     "type": "resref",
-    "value": "x2_def_percept"
+    "value": ""
   },
   "ScriptRested": {
     "type": "resref",
-    "value": "x2_def_rested"
+    "value": ""
   },
   "ScriptSpawn": {
     "type": "resref",
-    "value": "x2_def_spawn"
+    "value": ""
   },
   "ScriptSpellAt": {
     "type": "resref",
-    "value": "x2_def_spellcast"
+    "value": ""
   },
   "ScriptUserDefine": {
     "type": "resref",
-    "value": "x2_def_userdef"
+    "value": ""
   },
   "SkillList": {
     "type": "list",
@@ -381,7 +256,7 @@
         "__struct_id": 0,
         "Rank": {
           "type": "byte",
-          "value": 15
+          "value": 0
         }
       },
       {
@@ -395,14 +270,7 @@
         "__struct_id": 0,
         "Rank": {
           "type": "byte",
-          "value": 10
-        }
-      },
-      {
-        "__struct_id": 0,
-        "Rank": {
-          "type": "byte",
-          "value": 10
+          "value": 0
         }
       },
       {
@@ -416,13 +284,6 @@
         "__struct_id": 0,
         "Rank": {
           "type": "byte",
-          "value": 10
-        }
-      },
-      {
-        "__struct_id": 0,
-        "Rank": {
-          "type": "byte",
           "value": 0
         }
       },
@@ -430,7 +291,7 @@
         "__struct_id": 0,
         "Rank": {
           "type": "byte",
-          "value": 20
+          "value": 0
         }
       },
       {
@@ -479,20 +340,6 @@
         "__struct_id": 0,
         "Rank": {
           "type": "byte",
-          "value": 10
-        }
-      },
-      {
-        "__struct_id": 0,
-        "Rank": {
-          "type": "byte",
-          "value": 15
-        }
-      },
-      {
-        "__struct_id": 0,
-        "Rank": {
-          "type": "byte",
           "value": 0
         }
       },
@@ -528,7 +375,35 @@
         "__struct_id": 0,
         "Rank": {
           "type": "byte",
-          "value": 20
+          "value": 0
+        }
+      },
+      {
+        "__struct_id": 0,
+        "Rank": {
+          "type": "byte",
+          "value": 0
+        }
+      },
+      {
+        "__struct_id": 0,
+        "Rank": {
+          "type": "byte",
+          "value": 0
+        }
+      },
+      {
+        "__struct_id": 0,
+        "Rank": {
+          "type": "byte",
+          "value": 0
+        }
+      },
+      {
+        "__struct_id": 0,
+        "Rank": {
+          "type": "byte",
+          "value": 0
         }
       },
       {
@@ -556,50 +431,19 @@
   },
   "SoundSetFile": {
     "type": "word",
-    "value": 0
+    "value": 852
   },
   "SpecAbilityList": {
     "type": "list",
-    "value": [
-      {
-        "__struct_id": 4,
-        "Spell": {
-          "type": "word",
-          "value": 157
-        },
-        "SpellCasterLevel": {
-          "type": "byte",
-          "value": 1
-        },
-        "SpellFlags": {
-          "type": "byte",
-          "value": 1
-        }
-      },
-      {
-        "__struct_id": 4,
-        "Spell": {
-          "type": "word",
-          "value": 157
-        },
-        "SpellCasterLevel": {
-          "type": "byte",
-          "value": 1
-        },
-        "SpellFlags": {
-          "type": "byte",
-          "value": 1
-        }
-      }
-    ]
+    "value": []
   },
   "StartingPackage": {
     "type": "byte",
-    "value": 76
+    "value": 0
   },
   "Str": {
     "type": "byte",
-    "value": 16
+    "value": 14
   },
   "Subrace": {
     "type": "cexostring",
@@ -607,7 +451,7 @@
   },
   "Tag": {
     "type": "cexostring",
-    "value": "BlindFootWarrior"
+    "value": "gs_creature"
   },
   "Tail_New": {
     "type": "dword",
@@ -619,11 +463,11 @@
   },
   "TemplateResRef": {
     "type": "resref",
-    "value": "blindfootwarrior"
+    "value": "gs_creature096"
   },
   "WalkRate": {
     "type": "int",
-    "value": 4
+    "value": 2
   },
   "willbonus": {
     "type": "short",
@@ -635,6 +479,6 @@
   },
   "Wis": {
     "type": "byte",
-    "value": 11
+    "value": 16
   }
 }
