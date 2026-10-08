@@ -2451,6 +2451,30 @@
                       "type": "byte",
                       "value": 18
                     },
+                    "LIST": {
+                      "type": "list",
+                      "value": [
+                        {
+                          "__struct_id": 0,
+                          "CR": {
+                            "type": "float",
+                            "value": 0.25
+                          },
+                          "FACTION": {
+                            "type": "cexostring",
+                            "value": "Hostile"
+                          },
+                          "NAME": {
+                            "type": "cexostring",
+                            "value": "Minotaur"
+                          },
+                          "RESREF": {
+                            "type": "resref",
+                            "value": "as_creature041"
+                          }
+                        }
+                      ]
+                    },
                     "STRREF": {
                       "type": "dword",
                       "value": 6710
@@ -2461,6 +2485,87 @@
                     "ID": {
                       "type": "byte",
                       "value": 19
+                    },
+                    "LIST": {
+                      "type": "list",
+                      "value": [
+                        {
+                          "__struct_id": 0,
+                          "CR": {
+                            "type": "float",
+                            "value": 0.25
+                          },
+                          "FACTION": {
+                            "type": "cexostring",
+                            "value": "Hostile"
+                          },
+                          "NAME": {
+                            "type": "cexostring",
+                            "value": "Orc"
+                          },
+                          "RESREF": {
+                            "type": "resref",
+                            "value": "as_creature042"
+                          }
+                        },
+                        {
+                          "__struct_id": 0,
+                          "CR": {
+                            "type": "float",
+                            "value": 0.25
+                          },
+                          "FACTION": {
+                            "type": "cexostring",
+                            "value": "Hostile"
+                          },
+                          "NAME": {
+                            "type": "cexostring",
+                            "value": "Orc Boss"
+                          },
+                          "RESREF": {
+                            "type": "resref",
+                            "value": "as_creature044"
+                          }
+                        },
+                        {
+                          "__struct_id": 0,
+                          "CR": {
+                            "type": "float",
+                            "value": 0.25
+                          },
+                          "FACTION": {
+                            "type": "cexostring",
+                            "value": "Hostile"
+                          },
+                          "NAME": {
+                            "type": "cexostring",
+                            "value": "Orc Chief"
+                          },
+                          "RESREF": {
+                            "type": "resref",
+                            "value": "as_creature045"
+                          }
+                        },
+                        {
+                          "__struct_id": 0,
+                          "CR": {
+                            "type": "float",
+                            "value": 0.25
+                          },
+                          "FACTION": {
+                            "type": "cexostring",
+                            "value": "Hostile"
+                          },
+                          "NAME": {
+                            "type": "cexostring",
+                            "value": "Orc Ranger"
+                          },
+                          "RESREF": {
+                            "type": "resref",
+                            "value": "as_creature043"
+                          }
+                        }
+                      ]
                     },
                     "STRREF": {
                       "type": "dword",
@@ -2631,6 +2736,25 @@
                     "LIST": {
                       "type": "list",
                       "value": [
+                        {
+                          "__struct_id": 0,
+                          "CR": {
+                            "type": "float",
+                            "value": 0.5
+                          },
+                          "FACTION": {
+                            "type": "cexostring",
+                            "value": "Hostile"
+                          },
+                          "NAME": {
+                            "type": "cexostring",
+                            "value": "Flies"
+                          },
+                          "RESREF": {
+                            "type": "resref",
+                            "value": "as_creature040"
+                          }
+                        },
                         {
                           "__struct_id": 0,
                           "CR": {
@@ -2988,6 +3112,25 @@
                           "__struct_id": 0,
                           "CR": {
                             "type": "float",
+                            "value": 0.3333
+                          },
+                          "FACTION": {
+                            "type": "cexostring",
+                            "value": "Hostile"
+                          },
+                          "NAME": {
+                            "type": "cexostring",
+                            "value": "Arrogant"
+                          },
+                          "RESREF": {
+                            "type": "resref",
+                            "value": "as_creature046"
+                          }
+                        },
+                        {
+                          "__struct_id": 0,
+                          "CR": {
+                            "type": "float",
                             "value": 6.0
                           },
                           "FACTION": {
@@ -3210,6 +3353,25 @@
                           "RESREF": {
                             "type": "resref",
                             "value": "as_creature038"
+                          }
+                        },
+                        {
+                          "__struct_id": 0,
+                          "CR": {
+                            "type": "float",
+                            "value": 0.3333
+                          },
+                          "FACTION": {
+                            "type": "cexostring",
+                            "value": "Hostile"
+                          },
+                          "NAME": {
+                            "type": "cexostring",
+                            "value": "Nasty"
+                          },
+                          "RESREF": {
+                            "type": "resref",
+                            "value": "as_creature047"
                           }
                         },
                         {
