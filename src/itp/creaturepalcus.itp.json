@@ -1964,6 +1964,25 @@
                       "type": "resref",
                       "value": "gs_creature061"
                     }
+                  },
+                  {
+                    "__struct_id": 0,
+                    "CR": {
+                      "type": "float",
+                      "value": 0.25
+                    },
+                    "FACTION": {
+                      "type": "cexostring",
+                      "value": "Hostile"
+                    },
+                    "NAME": {
+                      "type": "cexostring",
+                      "value": "Wyvern"
+                    },
+                    "RESREF": {
+                      "type": "resref",
+                      "value": "as_creature050"
+                    }
                   }
                 ]
               },
@@ -3589,6 +3608,30 @@
                       "type": "byte",
                       "value": 28
                     },
+                    "LIST": {
+                      "type": "list",
+                      "value": [
+                        {
+                          "__struct_id": 0,
+                          "CR": {
+                            "type": "float",
+                            "value": 0.25
+                          },
+                          "FACTION": {
+                            "type": "cexostring",
+                            "value": "Hostile"
+                          },
+                          "NAME": {
+                            "type": "cexostring",
+                            "value": "Mummy"
+                          },
+                          "RESREF": {
+                            "type": "resref",
+                            "value": "as_creature051"
+                          }
+                        }
+                      ]
+                    },
                     "STRREF": {
                       "type": "dword",
                       "value": 6722
@@ -3756,6 +3799,49 @@
                     "ID": {
                       "type": "byte",
                       "value": 32
+                    },
+                    "LIST": {
+                      "type": "list",
+                      "value": [
+                        {
+                          "__struct_id": 0,
+                          "CR": {
+                            "type": "float",
+                            "value": 0.5
+                          },
+                          "FACTION": {
+                            "type": "cexostring",
+                            "value": "Hostile"
+                          },
+                          "NAME": {
+                            "type": "cexostring",
+                            "value": "Frost Wraith"
+                          },
+                          "RESREF": {
+                            "type": "resref",
+                            "value": "as_creature049"
+                          }
+                        },
+                        {
+                          "__struct_id": 0,
+                          "CR": {
+                            "type": "float",
+                            "value": 0.5
+                          },
+                          "FACTION": {
+                            "type": "cexostring",
+                            "value": "Hostile"
+                          },
+                          "NAME": {
+                            "type": "cexostring",
+                            "value": "Wraith"
+                          },
+                          "RESREF": {
+                            "type": "resref",
+                            "value": "as_creature048"
+                          }
+                        }
+                      ]
                     },
                     "STRREF": {
                       "type": "dword",
