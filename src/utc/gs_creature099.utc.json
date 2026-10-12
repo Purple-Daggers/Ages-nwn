@@ -10,11 +10,11 @@
   },
   "Cha": {
     "type": "byte",
-    "value": 14
+    "value": 3
   },
   "ChallengeRating": {
     "type": "float",
-    "value": 0.25
+    "value": 3.0
   },
   "ClassList": {
     "type": "list",
@@ -27,7 +27,7 @@
         },
         "ClassLevel": {
           "type": "short",
-          "value": 1
+          "value": 5
         }
       }
     ]
@@ -50,7 +50,7 @@
   },
   "CurrentHitPoints": {
     "type": "short",
-    "value": 5
+    "value": 27
   },
   "DecayTime": {
     "type": "dword",
@@ -66,7 +66,7 @@
   },
   "Dex": {
     "type": "byte",
-    "value": 8
+    "value": 16
   },
   "Disarmable": {
     "type": "byte",
@@ -74,7 +74,29 @@
   },
   "Equip_ItemList": {
     "type": "list",
-    "value": []
+    "value": [
+      {
+        "__struct_id": 16384,
+        "EquippedRes": {
+          "type": "resref",
+          "value": "x2_it_crewpb002"
+        }
+      },
+      {
+        "__struct_id": 32768,
+        "EquippedRes": {
+          "type": "resref",
+          "value": "nw_it_crewpb015"
+        }
+      },
+      {
+        "__struct_id": 131072,
+        "EquippedRes": {
+          "type": "resref",
+          "value": "x2_it_oozeprop"
+        }
+      }
+    ]
   },
   "FactionID": {
     "type": "word",
@@ -82,7 +104,15 @@
   },
   "FeatList": {
     "type": "list",
-    "value": []
+    "value": [
+      {
+        "__struct_id": 1,
+        "Feat": {
+          "type": "word",
+          "value": 289
+        }
+      }
+    ]
   },
   "FirstName": {
     "type": "cexolocstring",
@@ -104,11 +134,11 @@
   },
   "HitPoints": {
     "type": "short",
-    "value": 5
+    "value": 27
   },
   "Int": {
     "type": "byte",
-    "value": 10
+    "value": 3
   },
   "Interruptable": {
     "type": "byte",
@@ -138,7 +168,7 @@
   },
   "MaxHitPoints": {
     "type": "short",
-    "value": 7
+    "value": 37
   },
   "NaturalAC": {
     "type": "byte",
@@ -443,7 +473,7 @@
   },
   "Str": {
     "type": "byte",
-    "value": 14
+    "value": 12
   },
   "Subrace": {
     "type": "cexostring",
@@ -479,6 +509,6 @@
   },
   "Wis": {
     "type": "byte",
-    "value": 16
+    "value": 3
   }
 }
