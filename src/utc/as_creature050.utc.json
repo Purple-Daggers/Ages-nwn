@@ -14,7 +14,7 @@
   },
   "ChallengeRating": {
     "type": "float",
-    "value": 0.25
+    "value": 1.0
   },
   "ClassList": {
     "type": "list",
@@ -443,7 +443,23 @@
   },
   "SpecAbilityList": {
     "type": "list",
-    "value": []
+    "value": [
+      {
+        "__struct_id": 4,
+        "Spell": {
+          "type": "word",
+          "value": 246
+        },
+        "SpellCasterLevel": {
+          "type": "byte",
+          "value": 0
+        },
+        "SpellFlags": {
+          "type": "byte",
+          "value": 1
+        }
+      }
+    ]
   },
   "StartingPackage": {
     "type": "byte",
