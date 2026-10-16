@@ -14,7 +14,7 @@
   },
   "ChallengeRating": {
     "type": "float",
-    "value": 1.0
+    "value": 4.0
   },
   "ClassList": {
     "type": "list",
@@ -27,7 +27,7 @@
         },
         "ClassLevel": {
           "type": "short",
-          "value": 1
+          "value": 7
         }
       }
     ]
@@ -50,7 +50,7 @@
   },
   "CurrentHitPoints": {
     "type": "short",
-    "value": 6
+    "value": 45
   },
   "DecayTime": {
     "type": "dword",
@@ -76,10 +76,24 @@
     "type": "list",
     "value": [
       {
-        "__struct_id": 131072,
+        "__struct_id": 16384,
         "EquippedRes": {
           "type": "resref",
-          "value": "nw_it_creitemdra"
+          "value": "nw_it_crewpsp027"
+        }
+      },
+      {
+        "__struct_id": 32768,
+        "EquippedRes": {
+          "type": "resref",
+          "value": "nw_it_crewpsp027"
+        }
+      },
+      {
+        "__struct_id": 65536,
+        "EquippedRes": {
+          "type": "resref",
+          "value": "x3_it_wyvernt1"
         }
       }
     ]
@@ -90,7 +104,15 @@
   },
   "FeatList": {
     "type": "list",
-    "value": []
+    "value": [
+      {
+        "__struct_id": 1,
+        "Feat": {
+          "type": "word",
+          "value": 289
+        }
+      }
+    ]
   },
   "FirstName": {
     "type": "cexolocstring",
@@ -112,7 +134,7 @@
   },
   "HitPoints": {
     "type": "short",
-    "value": 6
+    "value": 45
   },
   "Int": {
     "type": "byte",
@@ -146,7 +168,7 @@
   },
   "MaxHitPoints": {
     "type": "short",
-    "value": 7
+    "value": 52
   },
   "NaturalAC": {
     "type": "byte",
@@ -313,7 +335,7 @@
         "__struct_id": 0,
         "Rank": {
           "type": "byte",
-          "value": 4
+          "value": 10
         }
       },
       {
@@ -467,7 +489,7 @@
   },
   "Str": {
     "type": "byte",
-    "value": 13
+    "value": 14
   },
   "Subrace": {
     "type": "cexostring",
