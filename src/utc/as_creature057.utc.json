@@ -14,7 +14,7 @@
   },
   "ChallengeRating": {
     "type": "float",
-    "value": 0.25
+    "value": 5.0
   },
   "ClassList": {
     "type": "list",
@@ -24,6 +24,17 @@
         "Class": {
           "type": "int",
           "value": 22
+        },
+        "ClassLevel": {
+          "type": "short",
+          "value": 6
+        }
+      },
+      {
+        "__struct_id": 2,
+        "Class": {
+          "type": "int",
+          "value": 4
         },
         "ClassLevel": {
           "type": "short",
@@ -50,7 +61,7 @@
   },
   "CurrentHitPoints": {
     "type": "short",
-    "value": 4
+    "value": 36
   },
   "DecayTime": {
     "type": "dword",
@@ -74,7 +85,22 @@
   },
   "Equip_ItemList": {
     "type": "list",
-    "value": []
+    "value": [
+      {
+        "__struct_id": 16384,
+        "EquippedRes": {
+          "type": "resref",
+          "value": "nw_it_crewpb014"
+        }
+      },
+      {
+        "__struct_id": 32768,
+        "EquippedRes": {
+          "type": "resref",
+          "value": "nw_it_crewpb014"
+        }
+      }
+    ]
   },
   "FactionID": {
     "type": "word",
@@ -82,7 +108,71 @@
   },
   "FeatList": {
     "type": "list",
-    "value": []
+    "value": [
+      {
+        "__struct_id": 1,
+        "Feat": {
+          "type": "word",
+          "value": 2
+        }
+      },
+      {
+        "__struct_id": 1,
+        "Feat": {
+          "type": "word",
+          "value": 3
+        }
+      },
+      {
+        "__struct_id": 1,
+        "Feat": {
+          "type": "word",
+          "value": 4
+        }
+      },
+      {
+        "__struct_id": 1,
+        "Feat": {
+          "type": "word",
+          "value": 584
+        }
+      },
+      {
+        "__struct_id": 1,
+        "Feat": {
+          "type": "word",
+          "value": 1089
+        }
+      },
+      {
+        "__struct_id": 1,
+        "Feat": {
+          "type": "word",
+          "value": 32
+        }
+      },
+      {
+        "__struct_id": 1,
+        "Feat": {
+          "type": "word",
+          "value": 289
+        }
+      },
+      {
+        "__struct_id": 1,
+        "Feat": {
+          "type": "word",
+          "value": 45
+        }
+      },
+      {
+        "__struct_id": 1,
+        "Feat": {
+          "type": "word",
+          "value": 46
+        }
+      }
+    ]
   },
   "FirstName": {
     "type": "cexolocstring",
@@ -104,7 +194,7 @@
   },
   "HitPoints": {
     "type": "short",
-    "value": 4
+    "value": 36
   },
   "Int": {
     "type": "byte",
@@ -138,7 +228,7 @@
   },
   "MaxHitPoints": {
     "type": "short",
-    "value": 8
+    "value": 64
   },
   "NaturalAC": {
     "type": "byte",
@@ -256,7 +346,7 @@
         "__struct_id": 0,
         "Rank": {
           "type": "byte",
-          "value": 2
+          "value": 9
         }
       },
       {
@@ -443,7 +533,7 @@
   },
   "Str": {
     "type": "byte",
-    "value": 25
+    "value": 26
   },
   "Subrace": {
     "type": "cexostring",
@@ -463,7 +553,7 @@
   },
   "TemplateResRef": {
     "type": "resref",
-    "value": "as_creature052"
+    "value": "as_creature057"
   },
   "WalkRate": {
     "type": "int",
