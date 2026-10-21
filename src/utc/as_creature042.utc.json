@@ -14,7 +14,7 @@
   },
   "ChallengeRating": {
     "type": "float",
-    "value": 0.25
+    "value": 1.0
   },
   "ClassList": {
     "type": "list",
@@ -24,6 +24,17 @@
         "Class": {
           "type": "int",
           "value": 14
+        },
+        "ClassLevel": {
+          "type": "short",
+          "value": 1
+        }
+      },
+      {
+        "__struct_id": 2,
+        "Class": {
+          "type": "int",
+          "value": 4
         },
         "ClassLevel": {
           "type": "short",
@@ -50,7 +61,7 @@
   },
   "CurrentHitPoints": {
     "type": "short",
-    "value": 4
+    "value": 9
   },
   "DecayTime": {
     "type": "dword",
@@ -82,7 +93,64 @@
   },
   "FeatList": {
     "type": "list",
-    "value": []
+    "value": [
+      {
+        "__struct_id": 1,
+        "Feat": {
+          "type": "word",
+          "value": 2
+        }
+      },
+      {
+        "__struct_id": 1,
+        "Feat": {
+          "type": "word",
+          "value": 3
+        }
+      },
+      {
+        "__struct_id": 1,
+        "Feat": {
+          "type": "word",
+          "value": 4
+        }
+      },
+      {
+        "__struct_id": 1,
+        "Feat": {
+          "type": "word",
+          "value": 584
+        }
+      },
+      {
+        "__struct_id": 1,
+        "Feat": {
+          "type": "word",
+          "value": 1089
+        }
+      },
+      {
+        "__struct_id": 1,
+        "Feat": {
+          "type": "word",
+          "value": 32
+        }
+      },
+      {
+        "__struct_id": 1,
+        "Feat": {
+          "type": "word",
+          "value": 45
+        }
+      },
+      {
+        "__struct_id": 1,
+        "Feat": {
+          "type": "word",
+          "value": 46
+        }
+      }
+    ]
   },
   "FirstName": {
     "type": "cexolocstring",
@@ -104,7 +172,7 @@
   },
   "HitPoints": {
     "type": "short",
-    "value": 4
+    "value": 9
   },
   "Int": {
     "type": "byte",
@@ -138,7 +206,7 @@
   },
   "MaxHitPoints": {
     "type": "short",
-    "value": 5
+    "value": 11
   },
   "NaturalAC": {
     "type": "byte",
@@ -256,7 +324,7 @@
         "__struct_id": 0,
         "Rank": {
           "type": "byte",
-          "value": 0
+          "value": 1
         }
       },
       {
