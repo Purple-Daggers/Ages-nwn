@@ -10,7 +10,7 @@
   },
   "Cha": {
     "type": "byte",
-    "value": 11
+    "value": 3
   },
   "ChallengeRating": {
     "type": "float",
@@ -38,7 +38,7 @@
   },
   "Con": {
     "type": "byte",
-    "value": 13
+    "value": 20
   },
   "Conversation": {
     "type": "resref",
@@ -76,6 +76,13 @@
     "type": "list",
     "value": [
       {
+        "__struct_id": 16384,
+        "EquippedRes": {
+          "type": "resref",
+          "value": "nw_it_crewpb005"
+        }
+      },
+      {
         "__struct_id": 131072,
         "EquippedRes": {
           "type": "resref",
@@ -90,7 +97,15 @@
   },
   "FeatList": {
     "type": "list",
-    "value": []
+    "value": [
+      {
+        "__struct_id": 1,
+        "Feat": {
+          "type": "word",
+          "value": 289
+        }
+      }
+    ]
   },
   "FirstName": {
     "type": "cexolocstring",
@@ -116,7 +131,7 @@
   },
   "Int": {
     "type": "byte",
-    "value": 4
+    "value": 3
   },
   "Interruptable": {
     "type": "byte",
@@ -146,7 +161,7 @@
   },
   "MaxHitPoints": {
     "type": "short",
-    "value": 5
+    "value": 9
   },
   "NaturalAC": {
     "type": "byte",
@@ -451,7 +466,7 @@
   },
   "Str": {
     "type": "byte",
-    "value": 17
+    "value": 16
   },
   "Subrace": {
     "type": "cexostring",
@@ -487,6 +502,6 @@
   },
   "Wis": {
     "type": "byte",
-    "value": 11
+    "value": 3
   }
 }
