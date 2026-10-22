@@ -10,11 +10,11 @@
   },
   "Cha": {
     "type": "byte",
-    "value": 17
+    "value": 8
   },
   "ChallengeRating": {
     "type": "float",
-    "value": 0.25
+    "value": 5.0
   },
   "ClassList": {
     "type": "list",
@@ -29,6 +29,17 @@
           "type": "short",
           "value": 1
         }
+      },
+      {
+        "__struct_id": 2,
+        "Class": {
+          "type": "int",
+          "value": 4
+        },
+        "ClassLevel": {
+          "type": "short",
+          "value": 6
+        }
       }
     ]
   },
@@ -38,7 +49,7 @@
   },
   "Con": {
     "type": "byte",
-    "value": 19
+    "value": 20
   },
   "Conversation": {
     "type": "resref",
@@ -50,7 +61,7 @@
   },
   "CurrentHitPoints": {
     "type": "short",
-    "value": 4
+    "value": 37
   },
   "DecayTime": {
     "type": "dword",
@@ -66,7 +77,7 @@
   },
   "Dex": {
     "type": "byte",
-    "value": 8
+    "value": 12
   },
   "Disarmable": {
     "type": "byte",
@@ -74,7 +85,15 @@
   },
   "Equip_ItemList": {
     "type": "list",
-    "value": []
+    "value": [
+      {
+        "__struct_id": 16,
+        "EquippedRes": {
+          "type": "resref",
+          "value": "as_item008"
+        }
+      }
+    ]
   },
   "FactionID": {
     "type": "word",
@@ -82,7 +101,85 @@
   },
   "FeatList": {
     "type": "list",
-    "value": []
+    "value": [
+      {
+        "__struct_id": 1,
+        "Feat": {
+          "type": "word",
+          "value": 2
+        }
+      },
+      {
+        "__struct_id": 1,
+        "Feat": {
+          "type": "word",
+          "value": 3
+        }
+      },
+      {
+        "__struct_id": 1,
+        "Feat": {
+          "type": "word",
+          "value": 4
+        }
+      },
+      {
+        "__struct_id": 1,
+        "Feat": {
+          "type": "word",
+          "value": 490
+        }
+      },
+      {
+        "__struct_id": 1,
+        "Feat": {
+          "type": "word",
+          "value": 584
+        }
+      },
+      {
+        "__struct_id": 1,
+        "Feat": {
+          "type": "word",
+          "value": 754
+        }
+      },
+      {
+        "__struct_id": 1,
+        "Feat": {
+          "type": "word",
+          "value": 756
+        }
+      },
+      {
+        "__struct_id": 1,
+        "Feat": {
+          "type": "word",
+          "value": 1089
+        }
+      },
+      {
+        "__struct_id": 1,
+        "Feat": {
+          "type": "word",
+          "value": 32
+        }
+      },
+      {
+        "__struct_id": 1,
+        "Feat": {
+          "type": "word",
+          "value": 45
+        }
+      },
+      {
+        "__struct_id": 1,
+        "Feat": {
+          "type": "word",
+          "value": 46
+        }
+      }
+    ]
   },
   "FirstName": {
     "type": "cexolocstring",
@@ -104,11 +201,11 @@
   },
   "HitPoints": {
     "type": "short",
-    "value": 4
+    "value": 37
   },
   "Int": {
     "type": "byte",
-    "value": 6
+    "value": 12
   },
   "Interruptable": {
     "type": "byte",
@@ -138,11 +235,11 @@
   },
   "MaxHitPoints": {
     "type": "short",
-    "value": 8
+    "value": 72
   },
   "NaturalAC": {
     "type": "byte",
-    "value": 0
+    "value": 3
   },
   "NoPermDeath": {
     "type": "byte",
@@ -256,7 +353,7 @@
         "__struct_id": 0,
         "Rank": {
           "type": "byte",
-          "value": 2
+          "value": 8
         }
       },
       {
@@ -443,7 +540,7 @@
   },
   "Str": {
     "type": "byte",
-    "value": 25
+    "value": 28
   },
   "Subrace": {
     "type": "cexostring",
@@ -479,6 +576,6 @@
   },
   "Wis": {
     "type": "byte",
-    "value": 10
+    "value": 12
   }
 }

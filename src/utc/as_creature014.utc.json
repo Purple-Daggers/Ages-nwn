@@ -10,11 +10,11 @@
   },
   "Cha": {
     "type": "byte",
-    "value": 11
+    "value": 3
   },
   "ChallengeRating": {
     "type": "float",
-    "value": 0.3333
+    "value": 1.0
   },
   "ClassList": {
     "type": "list",
@@ -38,7 +38,7 @@
   },
   "Con": {
     "type": "byte",
-    "value": 13
+    "value": 12
   },
   "Conversation": {
     "type": "resref",
@@ -66,7 +66,7 @@
   },
   "Dex": {
     "type": "byte",
-    "value": 8
+    "value": 16
   },
   "Disarmable": {
     "type": "byte",
@@ -75,6 +75,13 @@
   "Equip_ItemList": {
     "type": "list",
     "value": [
+      {
+        "__struct_id": 16384,
+        "EquippedRes": {
+          "type": "resref",
+          "value": "nw_it_crewpb001"
+        }
+      },
       {
         "__struct_id": 131072,
         "EquippedRes": {
@@ -90,7 +97,15 @@
   },
   "FeatList": {
     "type": "list",
-    "value": []
+    "value": [
+      {
+        "__struct_id": 1,
+        "Feat": {
+          "type": "word",
+          "value": 289
+        }
+      }
+    ]
   },
   "FirstName": {
     "type": "cexolocstring",
@@ -116,7 +131,7 @@
   },
   "Int": {
     "type": "byte",
-    "value": 4
+    "value": 3
   },
   "Interruptable": {
     "type": "byte",
@@ -150,7 +165,7 @@
   },
   "NaturalAC": {
     "type": "byte",
-    "value": 0
+    "value": 1
   },
   "NoPermDeath": {
     "type": "byte",
@@ -443,7 +458,23 @@
   },
   "SpecAbilityList": {
     "type": "list",
-    "value": []
+    "value": [
+      {
+        "__struct_id": 4,
+        "Spell": {
+          "type": "word",
+          "value": 75
+        },
+        "SpellCasterLevel": {
+          "type": "byte",
+          "value": 6
+        },
+        "SpellFlags": {
+          "type": "byte",
+          "value": 1
+        }
+      }
+    ]
   },
   "StartingPackage": {
     "type": "byte",
@@ -451,7 +482,7 @@
   },
   "Str": {
     "type": "byte",
-    "value": 17
+    "value": 12
   },
   "Subrace": {
     "type": "cexostring",
@@ -487,6 +518,6 @@
   },
   "Wis": {
     "type": "byte",
-    "value": 11
+    "value": 3
   }
 }
