@@ -14,7 +14,7 @@
   },
   "ChallengeRating": {
     "type": "float",
-    "value": 0.125
+    "value": 1.0
   },
   "ClassList": {
     "type": "list",
@@ -27,7 +27,7 @@
         },
         "ClassLevel": {
           "type": "short",
-          "value": 1
+          "value": 2
         }
       }
     ]
@@ -38,7 +38,7 @@
   },
   "Con": {
     "type": "byte",
-    "value": 12
+    "value": 18
   },
   "Conversation": {
     "type": "resref",
@@ -50,7 +50,7 @@
   },
   "CurrentHitPoints": {
     "type": "short",
-    "value": 4
+    "value": 8
   },
   "DecayTime": {
     "type": "dword",
@@ -66,7 +66,7 @@
   },
   "Dex": {
     "type": "byte",
-    "value": 17
+    "value": 3
   },
   "Disarmable": {
     "type": "byte",
@@ -74,7 +74,29 @@
   },
   "Equip_ItemList": {
     "type": "list",
-    "value": []
+    "value": [
+      {
+        "__struct_id": 16384,
+        "EquippedRes": {
+          "type": "resref",
+          "value": "nw_it_crewpsp026"
+        }
+      },
+      {
+        "__struct_id": 32768,
+        "EquippedRes": {
+          "type": "resref",
+          "value": "nw_it_crewpsp026"
+        }
+      },
+      {
+        "__struct_id": 131072,
+        "EquippedRes": {
+          "type": "resref",
+          "value": "as_item012"
+        }
+      }
+    ]
   },
   "FactionID": {
     "type": "word",
@@ -82,7 +104,15 @@
   },
   "FeatList": {
     "type": "list",
-    "value": []
+    "value": [
+      {
+        "__struct_id": 1,
+        "Feat": {
+          "type": "word",
+          "value": 289
+        }
+      }
+    ]
   },
   "FirstName": {
     "type": "cexolocstring",
@@ -104,11 +134,11 @@
   },
   "HitPoints": {
     "type": "short",
-    "value": 4
+    "value": 8
   },
   "Int": {
     "type": "byte",
-    "value": 10
+    "value": 3
   },
   "Interruptable": {
     "type": "byte",
@@ -138,11 +168,11 @@
   },
   "MaxHitPoints": {
     "type": "short",
-    "value": 5
+    "value": 16
   },
   "NaturalAC": {
     "type": "byte",
-    "value": 0
+    "value": 3
   },
   "NoPermDeath": {
     "type": "byte",
@@ -256,7 +286,7 @@
         "__struct_id": 0,
         "Rank": {
           "type": "byte",
-          "value": 2
+          "value": 3
         }
       },
       {
@@ -443,7 +473,7 @@
   },
   "Str": {
     "type": "byte",
-    "value": 11
+    "value": 18
   },
   "Subrace": {
     "type": "cexostring",
@@ -451,7 +481,7 @@
   },
   "Tag": {
     "type": "cexostring",
-    "value": "Stickman"
+    "value": "AssassinVine"
   },
   "Tail_New": {
     "type": "dword",
@@ -479,6 +509,6 @@
   },
   "Wis": {
     "type": "byte",
-    "value": 10
+    "value": 3
   }
 }
