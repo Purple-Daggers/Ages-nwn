@@ -465,7 +465,53 @@
   },
   "SpecAbilityList": {
     "type": "list",
-    "value": []
+    "value": [
+      {
+        "__struct_id": 4,
+        "Spell": {
+          "type": "word",
+          "value": 53
+        },
+        "SpellCasterLevel": {
+          "type": "byte",
+          "value": 3
+        },
+        "SpellFlags": {
+          "type": "byte",
+          "value": 1
+        }
+      },
+      {
+        "__struct_id": 4,
+        "Spell": {
+          "type": "word",
+          "value": 53
+        },
+        "SpellCasterLevel": {
+          "type": "byte",
+          "value": 3
+        },
+        "SpellFlags": {
+          "type": "byte",
+          "value": 1
+        }
+      },
+      {
+        "__struct_id": 4,
+        "Spell": {
+          "type": "word",
+          "value": 53
+        },
+        "SpellCasterLevel": {
+          "type": "byte",
+          "value": 3
+        },
+        "SpellFlags": {
+          "type": "byte",
+          "value": 1
+        }
+      }
+    ]
   },
   "StartingPackage": {
     "type": "byte",
@@ -497,7 +543,7 @@
   },
   "WalkRate": {
     "type": "int",
-    "value": 7
+    "value": 1
   },
   "willbonus": {
     "type": "short",
