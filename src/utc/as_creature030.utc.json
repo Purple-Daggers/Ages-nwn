@@ -14,7 +14,7 @@
   },
   "ChallengeRating": {
     "type": "float",
-    "value": 0.3333
+    "value": 1.0
   },
   "ClassList": {
     "type": "list",
@@ -27,7 +27,7 @@
         },
         "ClassLevel": {
           "type": "short",
-          "value": 1
+          "value": 2
         }
       }
     ]
@@ -38,7 +38,7 @@
   },
   "Con": {
     "type": "byte",
-    "value": 12
+    "value": 16
   },
   "Conversation": {
     "type": "resref",
@@ -50,7 +50,7 @@
   },
   "CurrentHitPoints": {
     "type": "short",
-    "value": 4
+    "value": 8
   },
   "DecayTime": {
     "type": "dword",
@@ -66,7 +66,7 @@
   },
   "Dex": {
     "type": "byte",
-    "value": 17
+    "value": 16
   },
   "Disarmable": {
     "type": "byte",
@@ -75,6 +75,27 @@
   "Equip_ItemList": {
     "type": "list",
     "value": [
+      {
+        "__struct_id": 16384,
+        "EquippedRes": {
+          "type": "resref",
+          "value": "nw_it_crewpsp005"
+        }
+      },
+      {
+        "__struct_id": 32768,
+        "EquippedRes": {
+          "type": "resref",
+          "value": "nw_it_crewpsp005"
+        }
+      },
+      {
+        "__struct_id": 65536,
+        "EquippedRes": {
+          "type": "resref",
+          "value": "nw_it_crewps010"
+        }
+      },
       {
         "__struct_id": 131072,
         "EquippedRes": {
@@ -90,7 +111,15 @@
   },
   "FeatList": {
     "type": "list",
-    "value": []
+    "value": [
+      {
+        "__struct_id": 1,
+        "Feat": {
+          "type": "word",
+          "value": 289
+        }
+      }
+    ]
   },
   "FirstName": {
     "type": "cexolocstring",
@@ -112,11 +141,11 @@
   },
   "HitPoints": {
     "type": "short",
-    "value": 4
+    "value": 8
   },
   "Int": {
     "type": "byte",
-    "value": 10
+    "value": 3
   },
   "Interruptable": {
     "type": "byte",
@@ -146,7 +175,7 @@
   },
   "MaxHitPoints": {
     "type": "short",
-    "value": 5
+    "value": 14
   },
   "NaturalAC": {
     "type": "byte",
@@ -264,7 +293,7 @@
         "__struct_id": 0,
         "Rank": {
           "type": "byte",
-          "value": 2
+          "value": 3
         }
       },
       {
@@ -451,7 +480,7 @@
   },
   "Str": {
     "type": "byte",
-    "value": 11
+    "value": 16
   },
   "Subrace": {
     "type": "cexostring",
@@ -487,6 +516,6 @@
   },
   "Wis": {
     "type": "byte",
-    "value": 10
+    "value": 3
   }
 }
