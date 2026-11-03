@@ -1934,6 +1934,25 @@
                     "__struct_id": 0,
                     "CR": {
                       "type": "float",
+                      "value": 0.5
+                    },
+                    "FACTION": {
+                      "type": "cexostring",
+                      "value": "Hostile"
+                    },
+                    "NAME": {
+                      "type": "cexostring",
+                      "value": "Animated Armor"
+                    },
+                    "RESREF": {
+                      "type": "resref",
+                      "value": "as_creature070"
+                    }
+                  },
+                  {
+                    "__struct_id": 0,
+                    "CR": {
+                      "type": "float",
                       "value": 5.0
                     },
                     "FACTION": {
@@ -2345,6 +2364,30 @@
                     "ID": {
                       "type": "byte",
                       "value": 37
+                    },
+                    "LIST": {
+                      "type": "list",
+                      "value": [
+                        {
+                          "__struct_id": 0,
+                          "CR": {
+                            "type": "float",
+                            "value": 0.25
+                          },
+                          "FACTION": {
+                            "type": "cexostring",
+                            "value": "Hostile"
+                          },
+                          "NAME": {
+                            "type": "cexostring",
+                            "value": "Troll"
+                          },
+                          "RESREF": {
+                            "type": "resref",
+                            "value": "as_creature068"
+                          }
+                        }
+                      ]
                     },
                     "STRREF": {
                       "type": "dword",
@@ -3093,6 +3136,25 @@
                     "RESREF": {
                       "type": "resref",
                       "value": "as_creature028"
+                    }
+                  },
+                  {
+                    "__struct_id": 0,
+                    "CR": {
+                      "type": "float",
+                      "value": 0.25
+                    },
+                    "FACTION": {
+                      "type": "cexostring",
+                      "value": "Neutral"
+                    },
+                    "NAME": {
+                      "type": "cexostring",
+                      "value": "Star Strider"
+                    },
+                    "RESREF": {
+                      "type": "resref",
+                      "value": "as_creature069"
                     }
                   }
                 ]
