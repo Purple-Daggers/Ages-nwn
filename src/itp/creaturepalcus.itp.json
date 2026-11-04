@@ -3896,6 +3896,30 @@
                       "type": "byte",
                       "value": 29
                     },
+                    "LIST": {
+                      "type": "list",
+                      "value": [
+                        {
+                          "__struct_id": 0,
+                          "CR": {
+                            "type": "float",
+                            "value": 0.5
+                          },
+                          "FACTION": {
+                            "type": "cexostring",
+                            "value": "Hostile"
+                          },
+                          "NAME": {
+                            "type": "cexostring",
+                            "value": "Flaming Skull"
+                          },
+                          "RESREF": {
+                            "type": "resref",
+                            "value": "as_creature071"
+                          }
+                        }
+                      ]
+                    },
                     "STRREF": {
                       "type": "dword",
                       "value": 201
@@ -4019,6 +4043,25 @@
                           "RESREF": {
                             "type": "resref",
                             "value": "as_creature003"
+                          }
+                        },
+                        {
+                          "__struct_id": 0,
+                          "CR": {
+                            "type": "float",
+                            "value": 0.5
+                          },
+                          "FACTION": {
+                            "type": "cexostring",
+                            "value": "Hostile"
+                          },
+                          "NAME": {
+                            "type": "cexostring",
+                            "value": "Skeletal Minotaur"
+                          },
+                          "RESREF": {
+                            "type": "resref",
+                            "value": "as_creature072"
                           }
                         },
                         {
