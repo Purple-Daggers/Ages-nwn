@@ -10,11 +10,11 @@
   },
   "Cha": {
     "type": "byte",
-    "value": 11
+    "value": 13
   },
   "ChallengeRating": {
     "type": "float",
-    "value": 0.5
+    "value": 5.0
   },
   "ClassList": {
     "type": "list",
@@ -27,7 +27,7 @@
         },
         "ClassLevel": {
           "type": "short",
-          "value": 1
+          "value": 4
         }
       }
     ]
@@ -50,7 +50,7 @@
   },
   "CurrentHitPoints": {
     "type": "short",
-    "value": 6
+    "value": 44
   },
   "DecayTime": {
     "type": "dword",
@@ -66,7 +66,7 @@
   },
   "Dex": {
     "type": "byte",
-    "value": 12
+    "value": 14
   },
   "Disarmable": {
     "type": "byte",
@@ -75,6 +75,20 @@
   "Equip_ItemList": {
     "type": "list",
     "value": [
+      {
+        "__struct_id": 16384,
+        "EquippedRes": {
+          "type": "resref",
+          "value": "nw_it_crewpb001"
+        }
+      },
+      {
+        "__struct_id": 32768,
+        "EquippedRes": {
+          "type": "resref",
+          "value": "nw_it_crewpb001"
+        }
+      },
       {
         "__struct_id": 131072,
         "EquippedRes": {
@@ -90,7 +104,15 @@
   },
   "FeatList": {
     "type": "list",
-    "value": []
+    "value": [
+      {
+        "__struct_id": 1,
+        "Feat": {
+          "type": "word",
+          "value": 289
+        }
+      }
+    ]
   },
   "FirstName": {
     "type": "cexolocstring",
@@ -112,11 +134,11 @@
   },
   "HitPoints": {
     "type": "short",
-    "value": 6
+    "value": 44
   },
   "Int": {
     "type": "byte",
-    "value": 10
+    "value": 13
   },
   "Interruptable": {
     "type": "byte",
@@ -146,11 +168,11 @@
   },
   "MaxHitPoints": {
     "type": "short",
-    "value": 6
+    "value": 44
   },
   "NaturalAC": {
     "type": "byte",
-    "value": 0
+    "value": 2
   },
   "NoPermDeath": {
     "type": "byte",
@@ -264,7 +286,7 @@
         "__struct_id": 0,
         "Rank": {
           "type": "byte",
-          "value": 4
+          "value": 9
         }
       },
       {
@@ -313,7 +335,7 @@
         "__struct_id": 0,
         "Rank": {
           "type": "byte",
-          "value": 4
+          "value": 9
         }
       },
       {
@@ -443,7 +465,128 @@
   },
   "SpecAbilityList": {
     "type": "list",
-    "value": []
+    "value": [
+      {
+        "__struct_id": 4,
+        "Spell": {
+          "type": "word",
+          "value": 518
+        },
+        "SpellCasterLevel": {
+          "type": "byte",
+          "value": 4
+        },
+        "SpellFlags": {
+          "type": "byte",
+          "value": 1
+        }
+      },
+      {
+        "__struct_id": 4,
+        "Spell": {
+          "type": "word",
+          "value": 232
+        },
+        "SpellCasterLevel": {
+          "type": "byte",
+          "value": 0
+        },
+        "SpellFlags": {
+          "type": "byte",
+          "value": 1
+        }
+      },
+      {
+        "__struct_id": 4,
+        "Spell": {
+          "type": "word",
+          "value": 58
+        },
+        "SpellCasterLevel": {
+          "type": "byte",
+          "value": 4
+        },
+        "SpellFlags": {
+          "type": "byte",
+          "value": 1
+        }
+      },
+      {
+        "__struct_id": 4,
+        "Spell": {
+          "type": "word",
+          "value": 107
+        },
+        "SpellCasterLevel": {
+          "type": "byte",
+          "value": 4
+        },
+        "SpellFlags": {
+          "type": "byte",
+          "value": 1
+        }
+      },
+      {
+        "__struct_id": 4,
+        "Spell": {
+          "type": "word",
+          "value": 107
+        },
+        "SpellCasterLevel": {
+          "type": "byte",
+          "value": 4
+        },
+        "SpellFlags": {
+          "type": "byte",
+          "value": 1
+        }
+      },
+      {
+        "__struct_id": 4,
+        "Spell": {
+          "type": "word",
+          "value": 107
+        },
+        "SpellCasterLevel": {
+          "type": "byte",
+          "value": 4
+        },
+        "SpellFlags": {
+          "type": "byte",
+          "value": 1
+        }
+      },
+      {
+        "__struct_id": 4,
+        "Spell": {
+          "type": "word",
+          "value": 107
+        },
+        "SpellCasterLevel": {
+          "type": "byte",
+          "value": 4
+        },
+        "SpellFlags": {
+          "type": "byte",
+          "value": 1
+        }
+      },
+      {
+        "__struct_id": 4,
+        "Spell": {
+          "type": "word",
+          "value": 107
+        },
+        "SpellCasterLevel": {
+          "type": "byte",
+          "value": 4
+        },
+        "SpellFlags": {
+          "type": "byte",
+          "value": 1
+        }
+      }
+    ]
   },
   "StartingPackage": {
     "type": "byte",
@@ -451,7 +594,7 @@
   },
   "Str": {
     "type": "byte",
-    "value": 10
+    "value": 8
   },
   "Subrace": {
     "type": "cexostring",
@@ -487,6 +630,6 @@
   },
   "Wis": {
     "type": "byte",
-    "value": 10
+    "value": 13
   }
 }
