@@ -10,11 +10,11 @@
   },
   "Cha": {
     "type": "byte",
-    "value": 11
+    "value": 16
   },
   "ChallengeRating": {
     "type": "float",
-    "value": 0.5
+    "value": 8.0
   },
   "ClassList": {
     "type": "list",
@@ -27,7 +27,7 @@
         },
         "ClassLevel": {
           "type": "short",
-          "value": 1
+          "value": 9
         }
       }
     ]
@@ -38,7 +38,7 @@
   },
   "Con": {
     "type": "byte",
-    "value": 13
+    "value": 28
   },
   "Conversation": {
     "type": "resref",
@@ -50,7 +50,7 @@
   },
   "CurrentHitPoints": {
     "type": "short",
-    "value": 4
+    "value": 40
   },
   "DecayTime": {
     "type": "dword",
@@ -66,7 +66,7 @@
   },
   "Dex": {
     "type": "byte",
-    "value": 8
+    "value": 28
   },
   "Disarmable": {
     "type": "byte",
@@ -75,6 +75,20 @@
   "Equip_ItemList": {
     "type": "list",
     "value": [
+      {
+        "__struct_id": 16384,
+        "EquippedRes": {
+          "type": "resref",
+          "value": "nw_it_crewpsp015"
+        }
+      },
+      {
+        "__struct_id": 32768,
+        "EquippedRes": {
+          "type": "resref",
+          "value": "nw_it_crewpsp015"
+        }
+      },
       {
         "__struct_id": 131072,
         "EquippedRes": {
@@ -90,7 +104,15 @@
   },
   "FeatList": {
     "type": "list",
-    "value": []
+    "value": [
+      {
+        "__struct_id": 1,
+        "Feat": {
+          "type": "word",
+          "value": 289
+        }
+      }
+    ]
   },
   "FirstName": {
     "type": "cexolocstring",
@@ -112,11 +134,11 @@
   },
   "HitPoints": {
     "type": "short",
-    "value": 4
+    "value": 40
   },
   "Int": {
     "type": "byte",
-    "value": 4
+    "value": 16
   },
   "Interruptable": {
     "type": "byte",
@@ -146,7 +168,7 @@
   },
   "MaxHitPoints": {
     "type": "short",
-    "value": 5
+    "value": 121
   },
   "NaturalAC": {
     "type": "byte",
@@ -264,7 +286,7 @@
         "__struct_id": 0,
         "Rank": {
           "type": "byte",
-          "value": 2
+          "value": 10
         }
       },
       {
@@ -439,11 +461,27 @@
   },
   "SoundSetFile": {
     "type": "word",
-    "value": 0
+    "value": 37
   },
   "SpecAbilityList": {
     "type": "list",
-    "value": []
+    "value": [
+      {
+        "__struct_id": 4,
+        "Spell": {
+          "type": "word",
+          "value": 124
+        },
+        "SpellCasterLevel": {
+          "type": "byte",
+          "value": 10
+        },
+        "SpellFlags": {
+          "type": "byte",
+          "value": 1
+        }
+      }
+    ]
   },
   "StartingPackage": {
     "type": "byte",
@@ -451,7 +489,7 @@
   },
   "Str": {
     "type": "byte",
-    "value": 17
+    "value": 20
   },
   "Subrace": {
     "type": "cexostring",
@@ -479,7 +517,7 @@
   },
   "willbonus": {
     "type": "short",
-    "value": 0
+    "value": 3
   },
   "Wings_New": {
     "type": "dword",
@@ -487,6 +525,6 @@
   },
   "Wis": {
     "type": "byte",
-    "value": 11
+    "value": 16
   }
 }
