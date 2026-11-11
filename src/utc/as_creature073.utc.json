@@ -10,11 +10,11 @@
   },
   "Cha": {
     "type": "byte",
-    "value": 11
+    "value": 10
   },
   "ChallengeRating": {
     "type": "float",
-    "value": 0.3333
+    "value": 4.0
   },
   "ClassList": {
     "type": "list",
@@ -27,7 +27,7 @@
         },
         "ClassLevel": {
           "type": "short",
-          "value": 1
+          "value": 5
         }
       }
     ]
@@ -38,7 +38,7 @@
   },
   "Con": {
     "type": "byte",
-    "value": 13
+    "value": 18
   },
   "Conversation": {
     "type": "resref",
@@ -50,7 +50,7 @@
   },
   "CurrentHitPoints": {
     "type": "short",
-    "value": 4
+    "value": 22
   },
   "DecayTime": {
     "type": "dword",
@@ -66,7 +66,7 @@
   },
   "Dex": {
     "type": "byte",
-    "value": 8
+    "value": 20
   },
   "Disarmable": {
     "type": "byte",
@@ -75,6 +75,20 @@
   "Equip_ItemList": {
     "type": "list",
     "value": [
+      {
+        "__struct_id": 16384,
+        "EquippedRes": {
+          "type": "resref",
+          "value": "nw_it_crewps010"
+        }
+      },
+      {
+        "__struct_id": 32768,
+        "EquippedRes": {
+          "type": "resref",
+          "value": "nw_it_crewps010"
+        }
+      },
       {
         "__struct_id": 131072,
         "EquippedRes": {
@@ -90,7 +104,15 @@
   },
   "FeatList": {
     "type": "list",
-    "value": []
+    "value": [
+      {
+        "__struct_id": 1,
+        "Feat": {
+          "type": "word",
+          "value": 289
+        }
+      }
+    ]
   },
   "FirstName": {
     "type": "cexolocstring",
@@ -112,11 +134,11 @@
   },
   "HitPoints": {
     "type": "short",
-    "value": 4
+    "value": 22
   },
   "Int": {
     "type": "byte",
-    "value": 4
+    "value": 10
   },
   "Interruptable": {
     "type": "byte",
@@ -146,11 +168,11 @@
   },
   "MaxHitPoints": {
     "type": "short",
-    "value": 5
+    "value": 42
   },
   "NaturalAC": {
     "type": "byte",
-    "value": 0
+    "value": 1
   },
   "NoPermDeath": {
     "type": "byte",
@@ -264,7 +286,7 @@
         "__struct_id": 0,
         "Rank": {
           "type": "byte",
-          "value": 2
+          "value": 6
         }
       },
       {
@@ -439,7 +461,7 @@
   },
   "SoundSetFile": {
     "type": "word",
-    "value": 65535
+    "value": 35
   },
   "SpecAbilityList": {
     "type": "list",
@@ -451,7 +473,7 @@
   },
   "Str": {
     "type": "byte",
-    "value": 17
+    "value": 14
   },
   "Subrace": {
     "type": "cexostring",
@@ -487,6 +509,6 @@
   },
   "Wis": {
     "type": "byte",
-    "value": 11
+    "value": 10
   }
 }
