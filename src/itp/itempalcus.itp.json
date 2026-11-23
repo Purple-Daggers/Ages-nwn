@@ -3030,6 +3030,22 @@
                 "type": "byte",
                 "value": 59
               },
+              "LIST": {
+                "type": "list",
+                "value": [
+                  {
+                    "__struct_id": 0,
+                    "NAME": {
+                      "type": "cexostring",
+                      "value": "Minotaur Battleaxe"
+                    },
+                    "RESREF": {
+                      "type": "resref",
+                      "value": "as_item008"
+                    }
+                  }
+                ]
+              },
               "STRREF": {
                 "type": "dword",
                 "value": 6814
@@ -9873,6 +9889,17 @@
                           "__struct_id": 0,
                           "NAME": {
                             "type": "cexostring",
+                            "value": "Greataxe (Ebony)"
+                          },
+                          "RESREF": {
+                            "type": "resref",
+                            "value": "irongreataxe003"
+                          }
+                        },
+                        {
+                          "__struct_id": 0,
+                          "NAME": {
+                            "type": "cexostring",
                             "value": "Greataxe (Firesteel)"
                           },
                           "RESREF": {
@@ -9933,11 +9960,33 @@
                           "__struct_id": 0,
                           "NAME": {
                             "type": "cexostring",
+                            "value": "Battleaxe (Ebony)"
+                          },
+                          "RESREF": {
+                            "type": "resref",
+                            "value": "gs_item519"
+                          }
+                        },
+                        {
+                          "__struct_id": 0,
+                          "NAME": {
+                            "type": "cexostring",
                             "value": "Battleaxe (Firesteel)"
                           },
                           "RESREF": {
                             "type": "resref",
                             "value": "gs_item518"
+                          }
+                        },
+                        {
+                          "__struct_id": 0,
+                          "NAME": {
+                            "type": "cexostring",
+                            "value": "Handaxe (Ebony)"
+                          },
+                          "RESREF": {
+                            "type": "resref",
+                            "value": "gs_item510"
                           }
                         },
                         {
@@ -10015,6 +10064,17 @@
                           "__struct_id": 0,
                           "NAME": {
                             "type": "cexostring",
+                            "value": "Greataxe (Ebony)"
+                          },
+                          "RESREF": {
+                            "type": "resref",
+                            "value": "gs_item940"
+                          }
+                        },
+                        {
+                          "__struct_id": 0,
+                          "NAME": {
+                            "type": "cexostring",
                             "value": "Greataxe (Firesteel)"
                           },
                           "RESREF": {
@@ -10075,17 +10135,6 @@
                           "RESREF": {
                             "type": "resref",
                             "value": "gs_item505"
-                          }
-                        },
-                        {
-                          "__struct_id": 0,
-                          "NAME": {
-                            "type": "cexostring",
-                            "value": "Minotaur Battleaxe"
-                          },
-                          "RESREF": {
-                            "type": "resref",
-                            "value": "as_item008"
                           }
                         }
                       ]
